@@ -6,11 +6,15 @@ on:
     paths:
       - 'docs/**'
       - 'src/icons/**'
+      - 'svg/**'
       - 'icons.json'
+      - 'icons-manifest.json'
   workflow_run:
-    workflows: ['Publish to NPM']
+    workflows: ['Publish to NPM', 'Sync Icons from Figma']
     types:
       - completed
+    branches: [main]
+  workflow_dispatch: # 允许手动触发
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:

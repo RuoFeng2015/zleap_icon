@@ -116,24 +116,24 @@ figma.ui.onmessage = function (msg) { return __awaiter(void 0, void 0, void 0, f
 // ============================================
 function handleLoadConfig() {
     return __awaiter(this, void 0, void 0, function () {
-        var savedConfig, fileKey, config;
+        var savedConfig, autoFileKey, config;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, figma.clientStorage.getAsync(CONFIG_KEY)];
                 case 1:
                     savedConfig = _a.sent();
-                    fileKey = getFileKey();
+                    autoFileKey = getFileKey();
                     config = savedConfig
                         ? {
                             githubRepo: savedConfig.githubRepo || '',
                             githubToken: savedConfig.githubToken || '',
-                            figmaFileKey: fileKey,
+                            figmaFileKey: savedConfig.figmaFileKey || autoFileKey,
                             defaultBranch: savedConfig.defaultBranch || 'main',
                         }
                         : {
                             githubRepo: '',
                             githubToken: '',
-                            figmaFileKey: fileKey,
+                            figmaFileKey: autoFileKey !== 'auto-detect-on-sync' ? autoFileKey : '',
                             defaultBranch: 'main',
                         };
                     sendToUI({
@@ -172,6 +172,7 @@ function handleSaveConfig(config) {
                         githubRepo: config.githubRepo,
                         githubToken: config.githubToken,
                         defaultBranch: config.defaultBranch || 'main',
+                        figmaFileKey: config.figmaFileKey || getFileKey(),
                     };
                     return [4 /*yield*/, figma.clientStorage.setAsync(CONFIG_KEY, configToStore)
                         // Send back the full config to UI so it knows configuration is complete
@@ -185,7 +186,7 @@ function handleSaveConfig(config) {
                             githubRepo: configToStore.githubRepo,
                             githubToken: configToStore.githubToken,
                             defaultBranch: configToStore.defaultBranch,
-                            figmaFileKey: getFileKey(),
+                            figmaFileKey: configToStore.figmaFileKey,
                         },
                     });
                     return [2 /*return*/];
@@ -296,10 +297,14 @@ function handleTriggerSync(params) {
                     if (!savedConfig || !savedConfig.githubRepo || !savedConfig.githubToken) {
                         throw new Error('Plugin not configured. Please enter GitHub repository and token.');
                     }
+                    if (!savedConfig.figmaFileKey ||
+                        savedConfig.figmaFileKey === 'auto-detect-on-sync') {
+                        throw new Error('Figma File Key is required. Please enter it in Settings.');
+                    }
                     syncRequest = {
                         version: params.version,
                         message: params.message,
-                        fileKey: getFileKey(),
+                        fileKey: savedConfig.figmaFileKey,
                         timestamp: new Date().toISOString(),
                     };
                     // The actual GitHub API call will be made from the UI

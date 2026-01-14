@@ -104,19 +104,19 @@ figma.ui.onmessage = async (msg: MessageFromUI) => {
 
 async function handleLoadConfig(): Promise<void> {
   const savedConfig = await figma.clientStorage.getAsync(CONFIG_KEY)
-  const fileKey = getFileKey()
+  const autoFileKey = getFileKey()
 
   const config: PluginConfig = savedConfig
     ? {
         githubRepo: savedConfig.githubRepo || '',
         githubToken: savedConfig.githubToken || '',
-        figmaFileKey: fileKey,
+        figmaFileKey: savedConfig.figmaFileKey || autoFileKey,
         defaultBranch: savedConfig.defaultBranch || 'main',
       }
     : {
         githubRepo: '',
         githubToken: '',
-        figmaFileKey: fileKey,
+        figmaFileKey: autoFileKey !== 'auto-detect-on-sync' ? autoFileKey : '',
         defaultBranch: 'main',
       }
 
@@ -274,10 +274,17 @@ async function handleTriggerSync(params: {
     )
   }
 
+  if (
+    !savedConfig.figmaFileKey ||
+    savedConfig.figmaFileKey === 'auto-detect-on-sync'
+  ) {
+    throw new Error('Figma File Key is required. Please enter it in Settings.')
+  }
+
   const syncRequest: SyncRequest = {
     version: params.version,
     message: params.message,
-    fileKey: getFileKey(),
+    fileKey: savedConfig.figmaFileKey,
     timestamp: new Date().toISOString(),
   }
 
