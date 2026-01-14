@@ -1,0 +1,22 @@
+{
+  "name": "Icon Sync to GitHub",
+  "id": "icon-sync-to-github",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "editorType": [
+    "figma"
+  ],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": [
+      "https://api.github.com"
+    ],
+    "reasoning": "Required to trigger GitHub Actions workflow via repository_dispatch API"
+  },
+  "permissions": [
+    "currentuser"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "@your-org/icons",
+  "version": "1.0.0",
+  "description": "Icon library auto-generated from Figma",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./svg/*": "./svg/*",
+    "./sprite": "./sprite/icons.svg"
+  },
+  "files": [
+    "dist",
+    "svg",
+    "sprite",
+    "icons.json"
+  ],
+  "scripts": {
+    "fetch-icons": "tsx scripts/fetch-icons.ts",
+    "validate-icons": "tsx scripts/validate-icons.ts",
+    "transform-svg": "tsx scripts/transform-svg.ts",
+    "generate-components": "tsx scripts/generate-components.ts",
+    "generate-outputs": "tsx scripts/generate-outputs.ts",
+    "generate-changelog": "tsx scripts/generate-changelog.ts",
+    "build": "npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build:docs": "vite build --config vite.docs.config.ts",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:property": "vitest run tests/property",
+    "test:integration": "vitest run tests/integration",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.3.7",
+    "fast-check": "^3.15.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.3.1",
+    "svgo": "^3.2.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.2.0"
+  }
+}
