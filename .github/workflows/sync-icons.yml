@@ -9,6 +9,7 @@ env:
   FIGMA_FILE_KEY: ${{ github.event.client_payload.figma_file_key }}
   VERSION: ${{ github.event.client_payload.version }}
   MESSAGE: ${{ github.event.client_payload.message }}
+  NODE_IDS: ${{ github.event.client_payload.node_ids }}
 
 jobs:
   sync:
@@ -35,6 +36,7 @@ jobs:
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           FIGMA_FILE_KEY: ${{ env.FIGMA_FILE_KEY }}
+          NODE_IDS: ${{ env.NODE_IDS }}
 
       - name: Validate icons
         run: npm run validate-icons

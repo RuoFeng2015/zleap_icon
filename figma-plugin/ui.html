@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Icon Sync to GitHub</title>
+  <title>zleap-icon 图标同步</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,7 +13,7 @@
     }
 
     body {
-      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
       font-size: 12px;
       color: #333;
       background: #fff;
@@ -256,52 +256,60 @@
   <div class="container">
     <!-- Tabs -->
     <div class="tabs">
-      <button class="tab active" data-tab="sync">Sync</button>
-      <button class="tab" data-tab="config">Settings</button>
+      <button class="tab active" data-tab="sync">同步</button>
+      <button class="tab" data-tab="config">设置</button>
     </div>
 
     <!-- Sync Tab -->
     <div id="sync-tab" class="tab-content active">
       <div id="not-configured" class="status status-info">
-        Please configure GitHub settings first.
+        请先配置 GitHub 设置
         <button class="btn btn-secondary" style="margin-top: 8px;" onclick="switchTab('config')">
-          Go to Settings
+          前往设置
         </button>
       </div>
 
       <div id="sync-form" class="hidden">
         <div class="summary">
           <div class="summary-item">
-            <span>Repository:</span>
+            <span>仓库地址：</span>
             <span id="display-repo">-</span>
           </div>
           <div class="summary-item">
-            <span>Icons found:</span>
+            <span>同步范围：</span>
+            <span id="display-selection">整个页面</span>
+          </div>
+          <div class="summary-item">
+            <span>发现图标：</span>
             <span id="display-icon-count">-</span>
           </div>
         </div>
 
+        <div id="selection-hint" class="status status-info" style="margin-bottom: 12px;">
+          💡 提示：选中一个 Frame 可以只同步该区域内的图标
+        </div>
+
         <div class="form-group">
-          <label>Version <span class="label-hint">(e.g., 1.2.0)</span></label>
+          <label>版本号 <span class="label-hint">（如 1.2.0）</span></label>
           <input type="text" id="version" placeholder="1.0.0" pattern="^\d+\.\d+\.\d+$">
         </div>
 
         <div class="form-group">
-          <label>Update Message</label>
-          <textarea id="message" placeholder="Describe the changes in this update..."></textarea>
+          <label>更新说明</label>
+          <textarea id="message" placeholder="描述本次更新的内容..."></textarea>
         </div>
 
         <button id="sync-btn" class="btn btn-primary btn-block" onclick="triggerSync()">
-          Sync Icons to GitHub
+          同步图标到 GitHub
         </button>
 
         <div id="sync-status" class="hidden"></div>
 
         <div class="form-group" style="margin-top: 16px;">
-          <label>Icons in this file:</label>
+          <label>当前文件中的图标：</label>
           <div id="icon-list" class="icon-list">
             <div class="icon-item">
-              <span class="icon-name">Loading...</span>
+              <span class="icon-name">加载中...</span>
             </div>
           </div>
         </div>
@@ -311,35 +319,34 @@
     <!-- Config Tab -->
     <div id="config-tab" class="tab-content">
       <div class="form-group">
-        <label>GitHub Repository <span class="label-hint">(org/repo)</span></label>
+        <label>GitHub 仓库 <span class="label-hint">（用户名/仓库名）</span></label>
         <input type="text" id="github-repo" placeholder="your-org/icon-library">
       </div>
 
       <div class="form-group">
-        <label>GitHub Token <span class="label-hint">(Personal Access Token)</span></label>
+        <label>GitHub Token <span class="label-hint">（个人访问令牌）</span></label>
         <input type="password" id="github-token" placeholder="ghp_xxxxxxxxxxxx">
         <div style="margin-top: 4px; font-size: 11px; color: #666;">
-          Token needs <code>repo</code> scope.
-          <a href="https://github.com/settings/tokens/new" target="_blank">Create token</a>
+          Token 需要 <code>repo</code> 权限。
+          <a href="https://github.com/settings/tokens/new" target="_blank">创建 Token</a>
         </div>
       </div>
 
       <div class="form-group">
-        <label>Default Branch</label>
+        <label>默认分支</label>
         <input type="text" id="default-branch" placeholder="main" value="main">
       </div>
 
       <div class="form-group">
-        <label>Figma File Key <span class="label-hint">(from URL:
-            figma.com/file/<strong>FILE_KEY</strong>/...)</span></label>
-        <input type="text" id="figma-file-key" placeholder="e.g., ABC123xyz">
+        <label>Figma 文件 Key <span class="label-hint">（从 URL 获取：figma.com/file/<strong>文件Key</strong>/...）</span></label>
+        <input type="text" id="figma-file-key" placeholder="例如：ABC123xyz">
         <div style="margin-top: 4px; font-size: 11px; color: #666;">
-          Find it in your Figma file URL after /file/
+          在 Figma 文件 URL 中 /file/ 后面的部分
         </div>
       </div>
 
       <button class="btn btn-primary btn-block" onclick="saveConfig()">
-        Save Settings
+        保存设置
       </button>
 
       <div id="config-status" class="hidden"></div>
@@ -395,6 +402,9 @@
         case 'icons-loaded':
           handleIconsLoaded(msg.payload);
           break;
+        case 'selection-changed':
+          handleSelectionChanged(msg.payload);
+          break;
         case 'sync-result':
           await handleSyncResult(msg.payload);
           break;
@@ -420,7 +430,7 @@
       // Check if configured - both repo and token must be non-empty
       const isConfigured = !!(config.githubRepo && config.githubToken);
 
-      console.log('Config loaded:', {
+      console.log('配置已加载:', {
         hasRepo: !!config.githubRepo,
         hasToken: !!config.githubToken,
         isConfigured
@@ -437,7 +447,7 @@
 
         // Show success message and switch to sync tab if we just saved
         if (document.querySelector('[data-tab="config"]').classList.contains('active')) {
-          showStatus('config-status', 'Settings saved successfully! You can now sync icons.', 'success');
+          showStatus('config-status', '设置保存成功！现在可以同步图标了。', 'success');
           // Auto switch to sync tab after a short delay
           setTimeout(() => switchTab('sync'), 1000);
         }
@@ -449,16 +459,16 @@
         githubRepo: document.getElementById('github-repo').value.trim(),
         githubToken: document.getElementById('github-token').value.trim(),
         defaultBranch: document.getElementById('default-branch').value.trim() || 'main',
-        figmaFileKey: document.getElementById('figma-file-key').value
+        figmaFileKey: document.getElementById('figma-file-key').value.trim()
       };
 
       if (!config.githubRepo) {
-        showStatus('config-status', 'Please enter a GitHub repository', 'error');
+        showStatus('config-status', '请输入 GitHub 仓库地址', 'error');
         return;
       }
 
       if (!config.githubToken) {
-        showStatus('config-status', 'Please enter a GitHub token', 'error');
+        showStatus('config-status', '请输入 GitHub Token', 'error');
         return;
       }
 
@@ -471,11 +481,35 @@
 
     function handleIconsLoaded(data) {
       icons = data.icons;
+      updateIconDisplay(data);
+    }
+
+    function handleSelectionChanged(data) {
+      icons = data.icons;
+      updateIconDisplay(data);
+
+      // 更新选区显示
+      document.getElementById('display-selection').textContent = data.selectionName || '整个页面';
+
+      // 显示/隐藏选区提示
+      const hintEl = document.getElementById('selection-hint');
+      if (data.hasSelection) {
+        hintEl.innerHTML = `✓ 已选中 <strong>${data.selectionName}</strong>，将只同步该区域内的图标`;
+        hintEl.className = 'status status-success';
+        hintEl.style.marginBottom = '12px';
+      } else {
+        hintEl.innerHTML = '💡 提示：选中一个 Frame 可以只同步该区域内的图标';
+        hintEl.className = 'status status-info';
+        hintEl.style.marginBottom = '12px';
+      }
+    }
+
+    function updateIconDisplay(data) {
       document.getElementById('display-icon-count').textContent = data.totalCount;
 
       const listEl = document.getElementById('icon-list');
       if (icons.length === 0) {
-        listEl.innerHTML = '<div class="icon-item"><span class="icon-name">No icons found</span></div>';
+        listEl.innerHTML = '<div class="icon-item"><span class="icon-name">未找到图标</span></div>';
       } else {
         listEl.innerHTML = icons.map(icon => `
           <div class="icon-item">
@@ -497,23 +531,23 @@
       const message = document.getElementById('message').value.trim();
 
       if (!version) {
-        showStatus('sync-status', 'Please enter a version number', 'error');
+        showStatus('sync-status', '请输入版本号', 'error');
         return;
       }
 
       if (!/^\d+\.\d+\.\d+$/.test(version)) {
-        showStatus('sync-status', 'Version must be in format X.Y.Z (e.g., 1.2.0)', 'error');
+        showStatus('sync-status', '版本号格式错误，请使用 X.Y.Z 格式（如 1.2.0）', 'error');
         return;
       }
 
       if (!message) {
-        showStatus('sync-status', 'Please enter an update message', 'error');
+        showStatus('sync-status', '请输入更新说明', 'error');
         return;
       }
 
       isSyncing = true;
       updateSyncButton(true);
-      showStatus('sync-status', '<span class="loading"></span>Triggering sync...', 'info');
+      showStatus('sync-status', '<span class="loading"></span>正在触发同步...', 'info');
 
       postMessage('trigger-sync', { version, message });
     }
@@ -530,17 +564,17 @@
 
           if (result.success) {
             showStatus('sync-status', `
-              <strong>✓ Sync triggered successfully!</strong><br>
+              <strong>✓ 同步触发成功！</strong><br>
               <div style="margin-top: 8px;">
-                Version: <strong>${escapeHtml(data.syncRequest.version)}</strong><br>
-                A GitHub Actions workflow has been triggered. It will:
+                版本：<strong>${escapeHtml(data.syncRequest.version)}</strong><br>
+                GitHub Actions 工作流已触发，将会：
                 <ul style="margin: 8px 0 8px 16px; padding: 0;">
-                  <li>Fetch icons from Figma</li>
-                  <li>Generate React components</li>
-                  <li>Create a Pull Request</li>
+                  <li>从 Figma 获取图标</li>
+                  <li>生成 React 组件</li>
+                  <li>创建 Pull Request</li>
                 </ul>
                 <a href="${result.prUrl}" target="_blank" style="display: inline-block; margin-top: 4px;">
-                  View Pull Requests →
+                  查看 Pull Requests →
                 </a>
               </div>
             `, 'success');
@@ -564,21 +598,21 @@
       let suggestion = '';
 
       if (errorMessage.includes('404')) {
-        suggestion = 'Check that the repository exists and your token has access.';
+        suggestion = '请检查仓库是否存在以及 Token 是否有访问权限。';
       } else if (errorMessage.includes('401') || errorMessage.includes('403')) {
-        suggestion = 'Your GitHub token may be invalid or expired. Please update it in Settings.';
+        suggestion = 'GitHub Token 可能无效或已过期，请在设置中更新。';
       } else if (errorMessage.includes('network') || errorMessage.includes('fetch')) {
-        suggestion = 'Check your internet connection and try again.';
+        suggestion = '请检查网络连接后重试。';
       }
 
       showStatus('sync-status', `
-        <strong>✗ Sync failed</strong><br>
+        <strong>✗ 同步失败</strong><br>
         <div style="margin-top: 4px;">
           ${escapeHtml(errorMessage)}
           ${suggestion ? `<br><br><em>${suggestion}</em>` : ''}
         </div>
         <button class="btn btn-secondary" style="margin-top: 8px;" onclick="triggerSync()">
-          Retry
+          重试
         </button>
       `, 'error');
     }
@@ -600,7 +634,8 @@
               version: syncRequest.version,
               message: syncRequest.message,
               figma_file_key: syncRequest.fileKey,
-              triggered_at: syncRequest.timestamp
+              triggered_at: syncRequest.timestamp,
+              node_ids: syncRequest.nodeIds ? syncRequest.nodeIds.join(',') : ''
             }
           })
         });
@@ -646,8 +681,8 @@
       const btn = document.getElementById('sync-btn');
       btn.disabled = loading;
       btn.innerHTML = loading
-        ? '<span class="loading"></span>Syncing...'
-        : 'Sync Icons to GitHub';
+        ? '<span class="loading"></span>同步中...'
+        : '同步图标到 GitHub';
     }
 
     function escapeHtml(text) {

@@ -52,15 +52,143 @@ var __values = (this && this.__values) || function(o) {
 // ============================================
 var CONFIG_KEY = 'icon-sync-config';
 var UI_WIDTH = 400;
-var UI_HEIGHT = 500;
+var UI_HEIGHT = 550;
+// ============================================
+// State
+// ============================================
+var currentIcons = [];
 // ============================================
 // Plugin Initialization
 // ============================================
 figma.showUI(__html__, {
     width: UI_WIDTH,
     height: UI_HEIGHT,
-    title: 'Icon Sync to GitHub',
+    title: 'zleap-icon 图标同步',
 });
+// ============================================
+// Selection Change Handler
+// ============================================
+figma.on('selectionchange', function () {
+    updateIconsFromSelection();
+});
+/**
+ * 根据当前选区更新图标列表
+ */
+function updateIconsFromSelection() {
+    var selection = figma.currentPage.selection;
+    if (selection.length === 0) {
+        // 没有选中任何内容，显示当前页面所有图标
+        currentIcons = findIconsInNodes([figma.currentPage]);
+    }
+    else {
+        // 在选中的节点中查找图标
+        currentIcons = findIconsInNodes(selection);
+    }
+    sendToUI({
+        type: 'selection-changed',
+        payload: {
+            icons: currentIcons,
+            totalCount: currentIcons.length,
+            hasSelection: selection.length > 0,
+            selectionName: selection.length === 1
+                ? selection[0].name
+                : selection.length > 1
+                    ? "".concat(selection.length, " \u4E2A\u9009\u4E2D\u9879")
+                    : '整个页面',
+        },
+    });
+}
+/**
+ * 在指定节点中查找图标
+ */
+function findIconsInNodes(nodes) {
+    var e_1, _a;
+    var icons = [];
+    try {
+        for (var nodes_1 = __values(nodes), nodes_1_1 = nodes_1.next(); !nodes_1_1.done; nodes_1_1 = nodes_1.next()) {
+            var node = nodes_1_1.value;
+            traverseNode(node, icons);
+        }
+    }
+    catch (e_1_1) { e_1 = { error: e_1_1 }; }
+    finally {
+        try {
+            if (nodes_1_1 && !nodes_1_1.done && (_a = nodes_1.return)) _a.call(nodes_1);
+        }
+        finally { if (e_1) throw e_1.error; }
+    }
+    // 按名称排序
+    icons.sort(function (a, b) { return a.name.localeCompare(b.name); });
+    return icons;
+}
+/**
+ * 递归遍历节点查找图标
+ */
+function traverseNode(node, icons) {
+    var e_2, _a;
+    // 检查是否是图标（COMPONENT 或 FRAME 类型，合适的尺寸）
+    if (isIconNode(node)) {
+        icons.push({
+            id: node.id,
+            name: node.name,
+            width: Math.round(node.width),
+            height: Math.round(node.height),
+        });
+    }
+    // 递归处理子节点
+    if ('children' in node) {
+        try {
+            for (var _b = __values(node.children), _c = _b.next(); !_c.done; _c = _b.next()) {
+                var child = _c.value;
+                traverseNode(child, icons);
+            }
+        }
+        catch (e_2_1) { e_2 = { error: e_2_1 }; }
+        finally {
+            try {
+                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+            }
+            finally { if (e_2) throw e_2.error; }
+        }
+    }
+}
+/**
+ * 判断节点是否是图标
+ */
+function isIconNode(node) {
+    if (node.type !== 'COMPONENT' && node.type !== 'FRAME') {
+        return false;
+    }
+    var frameNode = node;
+    var width = Math.round(frameNode.width);
+    var height = Math.round(frameNode.height);
+    // 尺寸在 8-256 之间
+    if (width < 8 || width > 256 || height < 8 || height > 256) {
+        return false;
+    }
+    // 宽高比在 0.5-2 之间（大致正方形）
+    var aspectRatio = width / height;
+    if (aspectRatio < 0.5 || aspectRatio > 2) {
+        return false;
+    }
+    // 对于 FRAME，检查是否包含矢量内容
+    if (node.type === 'FRAME') {
+        var hasVectorContent = frameNode.findOne(function (child) {
+            return child.type === 'VECTOR' ||
+                child.type === 'BOOLEAN_OPERATION' ||
+                child.type === 'LINE' ||
+                child.type === 'ELLIPSE' ||
+                child.type === 'RECTANGLE' ||
+                child.type === 'POLYGON' ||
+                child.type === 'STAR' ||
+                child.type === 'GROUP';
+        });
+        if (!hasVectorContent) {
+            return false;
+        }
+    }
+    return true;
+}
 // ============================================
 // Message Handlers
 // ============================================
@@ -78,9 +206,13 @@ figma.ui.onmessage = function (msg) { return __awaiter(void 0, void 0, void 0, f
                     case 'trigger-sync': return [3 /*break*/, 7];
                 }
                 return [3 /*break*/, 9];
-            case 1: return [4 /*yield*/, handleLoadConfig()];
+            case 1: return [4 /*yield*/, handleLoadConfig()
+                // 初始化时也更新图标列表
+            ];
             case 2:
                 _b.sent();
+                // 初始化时也更新图标列表
+                updateIconsFromSelection();
                 return [3 /*break*/, 10];
             case 3: return [4 /*yield*/, handleSaveConfig(msg.payload)];
             case 4:
@@ -103,7 +235,7 @@ figma.ui.onmessage = function (msg) { return __awaiter(void 0, void 0, void 0, f
                 sendToUI({
                     type: 'error',
                     payload: {
-                        message: error_1 instanceof Error ? error_1.message : 'Unknown error occurred',
+                        message: error_1 instanceof Error ? error_1.message : '发生未知错误',
                     },
                 });
                 return [3 /*break*/, 12];
@@ -151,22 +283,18 @@ function handleSaveConfig(config) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    // Validate required fields
                     if (!config.githubRepo || !config.githubToken) {
-                        throw new Error('GitHub repository and token are required');
+                        throw new Error('请填写 GitHub 仓库地址和 Token');
                     }
                     repoPath = config.githubRepo.trim();
                     urlMatch = repoPath.match(/github\.com[\/:]([^\/]+\/[^\/]+?)(?:\.git)?(?:\/.*)?$/);
                     if (urlMatch) {
                         repoPath = urlMatch[1];
                     }
-                    // Remove trailing slashes
                     repoPath = repoPath.replace(/\/+$/, '');
-                    // Validate repository format (org/repo)
                     if (!/^[\w.-]+\/[\w.-]+$/.test(repoPath)) {
-                        throw new Error('Repository must be in format "org/repo" or a valid GitHub URL');
+                        throw new Error('仓库地址格式错误，请使用 "用户名/仓库名" 格式或完整的 GitHub URL');
                     }
-                    // Update config with normalized repo path
                     config.githubRepo = repoPath;
                     configToStore = {
                         githubRepo: config.githubRepo,
@@ -174,12 +302,9 @@ function handleSaveConfig(config) {
                         defaultBranch: config.defaultBranch || 'main',
                         figmaFileKey: config.figmaFileKey || getFileKey(),
                     };
-                    return [4 /*yield*/, figma.clientStorage.setAsync(CONFIG_KEY, configToStore)
-                        // Send back the full config to UI so it knows configuration is complete
-                    ];
+                    return [4 /*yield*/, figma.clientStorage.setAsync(CONFIG_KEY, configToStore)];
                 case 1:
                     _a.sent();
-                    // Send back the full config to UI so it knows configuration is complete
                     sendToUI({
                         type: 'config-loaded',
                         payload: {
@@ -199,21 +324,23 @@ function handleSaveConfig(config) {
 // ============================================
 function handleGetIcons() {
     return __awaiter(this, void 0, void 0, function () {
-        var icons;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: 
-                // Load all pages first (required for findAllWithCriteria in newer Figma versions)
-                return [4 /*yield*/, figma.loadAllPagesAsync()];
+                // 加载所有页面（新版 Figma 需要）
+                return [4 /*yield*/, figma.loadAllPagesAsync()
+                    // 更新图标列表
+                ];
                 case 1:
-                    // Load all pages first (required for findAllWithCriteria in newer Figma versions)
+                    // 加载所有页面（新版 Figma 需要）
                     _a.sent();
-                    icons = findIconComponents();
+                    // 更新图标列表
+                    updateIconsFromSelection();
                     sendToUI({
                         type: 'icons-loaded',
                         payload: {
-                            icons: icons,
-                            totalCount: icons.length,
+                            icons: currentIcons,
+                            totalCount: currentIcons.length,
                         },
                     });
                     return [2 /*return*/];
@@ -221,118 +348,35 @@ function handleGetIcons() {
         });
     });
 }
-/**
- * Find all icon components in the current Figma file
- * Supports:
- * - COMPONENT type nodes
- * - FRAME type nodes (imported SVGs are often frames)
- * - Filters by reasonable icon sizes
- */
-function findIconComponents() {
-    var e_1, _a;
-    var icons = [];
-    // Find both components and frames (SVGs are imported as frames)
-    var nodes = figma.root.findAllWithCriteria({
-        types: ['COMPONENT', 'FRAME'],
-    });
-    try {
-        for (var nodes_1 = __values(nodes), nodes_1_1 = nodes_1.next(); !nodes_1_1.done; nodes_1_1 = nodes_1.next()) {
-            var node = nodes_1_1.value;
-            var width = Math.round(node.width);
-            var height = Math.round(node.height);
-            // Filter by reasonable icon size (between 8 and 256 pixels)
-            if (width >= 8 && width <= 256 && height >= 8 && height <= 256) {
-                // Check aspect ratio - icons are usually square or close to it
-                var aspectRatio = width / height;
-                if (aspectRatio >= 0.5 && aspectRatio <= 2) {
-                    // For frames, check if they contain vector content (likely SVG)
-                    if (node.type === 'FRAME') {
-                        var hasVectorContent = node.findOne(function (child) {
-                            return child.type === 'VECTOR' ||
-                                child.type === 'BOOLEAN_OPERATION' ||
-                                child.type === 'LINE' ||
-                                child.type === 'ELLIPSE' ||
-                                child.type === 'RECTANGLE' ||
-                                child.type === 'POLYGON' ||
-                                child.type === 'STAR' ||
-                                child.type === 'GROUP';
-                        });
-                        if (!hasVectorContent)
-                            continue;
-                    }
-                    icons.push({
-                        id: node.id,
-                        name: node.name,
-                        width: width,
-                        height: height,
-                    });
-                }
-            }
-        }
-    }
-    catch (e_1_1) { e_1 = { error: e_1_1 }; }
-    finally {
-        try {
-            if (nodes_1_1 && !nodes_1_1.done && (_a = nodes_1.return)) _a.call(nodes_1);
-        }
-        finally { if (e_1) throw e_1.error; }
-    }
-    // Sort icons alphabetically by name
-    icons.sort(function (a, b) { return a.name.localeCompare(b.name); });
-    return icons;
-}
-/**
- * Determine if a component is an icon based on naming conventions
- * (Kept for reference but not used in current implementation)
- */
-function isIconComponent(component) {
-    var name = component.name.toLowerCase();
-    // Check component name patterns
-    if (name.includes('icon') ||
-        name.startsWith('ic-') ||
-        name.startsWith('ic_') ||
-        name.startsWith('ic/')) {
-        return true;
-    }
-    // Check if component is inside an "icons" frame or page
-    var parent = component.parent;
-    while (parent) {
-        if (parent.type === 'FRAME' || parent.type === 'PAGE') {
-            var parentName = parent.name.toLowerCase();
-            if (parentName === 'icons' || parentName.includes('icon')) {
-                return true;
-            }
-        }
-        parent = parent.parent;
-    }
-    return false;
-}
 // ============================================
 // Sync Trigger
 // ============================================
 function handleTriggerSync(params) {
     return __awaiter(this, void 0, void 0, function () {
-        var savedConfig, syncRequest;
+        var savedConfig, nodeIds, syncRequest;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, figma.clientStorage.getAsync(CONFIG_KEY)];
                 case 1:
                     savedConfig = _a.sent();
                     if (!savedConfig || !savedConfig.githubRepo || !savedConfig.githubToken) {
-                        throw new Error('Plugin not configured. Please enter GitHub repository and token.');
+                        throw new Error('插件未配置，请先填写 GitHub 仓库地址和 Token');
                     }
                     if (!savedConfig.figmaFileKey ||
                         savedConfig.figmaFileKey === 'auto-detect-on-sync') {
-                        throw new Error('Figma File Key is required. Please enter it in Settings.');
+                        throw new Error('请在设置中填写 Figma 文件 Key');
                     }
+                    if (currentIcons.length === 0) {
+                        throw new Error('没有找到可同步的图标，请选择包含图标的区域');
+                    }
+                    nodeIds = currentIcons.map(function (icon) { return icon.id; });
                     syncRequest = {
                         version: params.version,
                         message: params.message,
                         fileKey: savedConfig.figmaFileKey,
                         timestamp: new Date().toISOString(),
+                        nodeIds: nodeIds,
                     };
-                    // The actual GitHub API call will be made from the UI
-                    // because Figma's sandbox has limited network access
                     sendToUI({
                         type: 'sync-result',
                         payload: {
@@ -353,14 +397,9 @@ function handleTriggerSync(params) {
 // Utility Functions
 // ============================================
 function getFileKey() {
-    // Extract file key from the current document
-    // figma.fileKey is available in Figma desktop app
-    // It may be null in some contexts (e.g., when file is not saved)
     if (figma.fileKey) {
         return figma.fileKey;
     }
-    // Try to get from root name as fallback (not ideal but better than unknown)
-    // The file key is typically in the URL: figma.com/file/{fileKey}/...
     return 'auto-detect-on-sync';
 }
 function sendToUI(message) {

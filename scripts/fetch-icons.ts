@@ -42,6 +42,7 @@ interface ScriptConfig {
   outputDir: string
   manifestPath: string
   version: string
+  nodeIds: string[] // 指定要导出的节点 ID
 }
 
 /**
@@ -50,6 +51,7 @@ interface ScriptConfig {
 function loadConfig(): ScriptConfig {
   const figmaToken = process.env.FIGMA_TOKEN
   const figmaFileKey = process.env.FIGMA_FILE_KEY
+  const nodeIdsStr = process.env.NODE_IDS || ''
 
   if (!figmaToken) {
     throw new Error('FIGMA_TOKEN environment variable is required')
@@ -59,12 +61,19 @@ function loadConfig(): ScriptConfig {
     throw new Error('FIGMA_FILE_KEY environment variable is required')
   }
 
+  // 解析节点 ID 列表
+  const nodeIds = nodeIdsStr
+    .split(',')
+    .map((id) => id.trim())
+    .filter((id) => id.length > 0)
+
   return {
     figmaToken,
     figmaFileKey,
     outputDir: process.env.OUTPUT_DIR || './svg',
     manifestPath: process.env.MANIFEST_PATH || './icons-manifest.json',
     version: process.env.VERSION || '1.0.0',
+    nodeIds,
   }
 }
 
@@ -94,7 +103,13 @@ async function main(): Promise<void> {
     console.log(`📁 File Key: ${config.figmaFileKey}`)
     console.log(`📂 Output Directory: ${config.outputDir}`)
     console.log(`📋 Manifest Path: ${config.manifestPath}`)
-    console.log(`🏷️  Version: ${config.version}\n`)
+    console.log(`🏷️  Version: ${config.version}`)
+    if (config.nodeIds.length > 0) {
+      console.log(`🎯 指定节点: ${config.nodeIds.length} 个`)
+    } else {
+      console.log(`🎯 同步范围: 整个文件`)
+    }
+    console.log('')
   } catch (error) {
     console.error(
       '❌ Configuration Error:',
@@ -119,7 +134,18 @@ async function main(): Promise<void> {
       // Allow more flexible naming for icons
       namePattern: /^[a-z][a-z0-9-_]*$/i,
     }
-    const filterResult = filterIconComponents(fileResponse, filterConfig)
+
+    let filterResult = filterIconComponents(fileResponse, filterConfig)
+
+    // 如果指定了节点 ID，只保留这些节点
+    if (config.nodeIds.length > 0) {
+      const nodeIdSet = new Set(config.nodeIds)
+      filterResult = {
+        ...filterResult,
+        icons: filterResult.icons.filter((icon) => nodeIdSet.has(icon.id)),
+      }
+      console.log(`   已过滤到指定的 ${config.nodeIds.length} 个节点`)
+    }
 
     console.log(`   Total components processed: ${filterResult.totalProcessed}`)
     console.log(`   Icons found: ${filterResult.icons.length}`)

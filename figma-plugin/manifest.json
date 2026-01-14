@@ -1,6 +1,6 @@
 {
-  "name": "Icon Sync to GitHub",
-  "id": "icon-sync-to-github",
+  "name": "zleap-icon",
+  "id": "zleap-icon-sync",
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui.html",
@@ -17,7 +17,7 @@
     "allowedDomains": [
       "https://api.github.com"
     ],
-    "reasoning": "Required to trigger GitHub Actions workflow via repository_dispatch API"
+    "reasoning": "需要调用 GitHub Actions 工作流的 repository_dispatch API"
   },
   "permissions": [
     "currentuser"
