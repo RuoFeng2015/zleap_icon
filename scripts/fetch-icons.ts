@@ -21,7 +21,11 @@
 
 import * as fs from 'fs/promises'
 import * as path from 'path'
-import { createFigmaClient, FigmaApiError } from '../src/figma-client'
+import {
+  createFigmaClient,
+  FigmaApiError,
+  FigmaErrorCode,
+} from '../src/figma-client'
 import {
   filterIconComponents,
   DEFAULT_FILTER_CONFIG,
@@ -223,6 +227,18 @@ async function main(): Promise<void> {
       console.error('\n❌ Figma API Error:', error.message)
       if (error.suggestion) {
         console.error('   Suggestion:', error.suggestion)
+      }
+
+      // 针对限速错误提供更详细的说明
+      if (error.code === 'FIGMA_RATE_LIMIT') {
+        console.error('\n📊 Figma API 限速说明:')
+        console.error('   - Starter/Pro 用户: Tier 1 限制 10次/分钟')
+        console.error('   - Organization 用户: Tier 1 限制 15次/分钟')
+        console.error('   - Enterprise 用户: Tier 1 限制 20次/分钟')
+        console.error('\n💡 建议:')
+        console.error('   1. 等待 1-2 分钟后重试')
+        console.error('   2. 减少同步的图标数量（使用选区同步）')
+        console.error('   3. 如果频繁遇到限速，考虑升级 Figma 计划')
       }
     } else {
       console.error(

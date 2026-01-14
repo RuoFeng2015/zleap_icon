@@ -21,11 +21,15 @@ const FIGMA_API_BASE = 'https://api.figma.com/v1'
 
 /**
  * Default retry configuration
+ * 针对 Figma API 限速优化：
+ * - Starter/Pro 用户: Tier 1 限制 10次/分钟
+ * - Organization 用户: Tier 1 限制 15次/分钟
+ * - Enterprise 用户: Tier 1 限制 20次/分钟
  */
 const DEFAULT_RETRY_CONFIG = {
-  maxRetries: 3,
-  baseDelayMs: 1000,
-  maxDelayMs: 10000,
+  maxRetries: 5,
+  baseDelayMs: 2000,
+  maxDelayMs: 60000, // 最长等待 60 秒
 }
 
 /**
@@ -114,6 +118,7 @@ export class FigmaClient {
 
   /**
    * Makes an authenticated request to the Figma API with retry logic
+   * Properly handles Retry-After header for rate limiting
    */
   private async fetchWithRetry<T>(
     url: string,
@@ -134,6 +139,20 @@ export class FigmaClient {
 
         if (response.ok) {
           return (await response.json()) as T
+        }
+
+        // Handle rate limiting with Retry-After header
+        if (response.status === 429) {
+          const retryAfter = response.headers.get('Retry-After')
+          if (retryAfter) {
+            // Retry-After is in seconds, convert to ms and add buffer
+            const waitTime = (parseInt(retryAfter, 10) + 1) * 1000
+            console.log(`⏳ 限速中，等待 ${retryAfter} 秒后重试...`)
+            await this.sleep(waitTime)
+            // Don't count this as an attempt since we're respecting the server's request
+            attempt--
+            continue
+          }
         }
 
         // Handle specific HTTP errors
@@ -163,6 +182,11 @@ export class FigmaClient {
 
       // Wait before retrying (exponential backoff)
       if (attempt < this.retryConfig.maxRetries) {
+        console.log(
+          `⏳ 重试中 (${attempt + 1}/${this.retryConfig.maxRetries})，等待 ${
+            Math.min(delay, this.retryConfig.maxDelayMs) / 1000
+          } 秒...`
+        )
         await this.sleep(Math.min(delay, this.retryConfig.maxDelayMs))
         delay *= 2
       }

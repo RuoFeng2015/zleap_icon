@@ -165,6 +165,31 @@
       border: 1px solid #bbdefb;
     }
 
+    /* Progress Bar */
+    .progress-container {
+      margin-top: 12px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e5e5e5;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: #18a0fb;
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      margin-top: 4px;
+      font-size: 11px;
+      color: #666;
+    }
+
     /* Icon List */
     .icon-list {
       max-height: 150px;
@@ -303,6 +328,13 @@
           同步图标到 GitHub
         </button>
 
+        <div id="progress-container" class="progress-container hidden">
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+          </div>
+          <div id="progress-text" class="progress-text">准备中...</div>
+        </div>
+
         <div id="sync-status" class="hidden"></div>
 
         <div class="form-group" style="margin-top: 16px;">
@@ -335,14 +367,6 @@
       <div class="form-group">
         <label>默认分支</label>
         <input type="text" id="default-branch" placeholder="main" value="main">
-      </div>
-
-      <div class="form-group">
-        <label>Figma 文件 Key <span class="label-hint">（从 URL 获取：figma.com/file/<strong>文件Key</strong>/...）</span></label>
-        <input type="text" id="figma-file-key" placeholder="例如：ABC123xyz">
-        <div style="margin-top: 4px; font-size: 11px; color: #666;">
-          在 Figma 文件 URL 中 /file/ 后面的部分
-        </div>
       </div>
 
       <button class="btn btn-primary btn-block" onclick="saveConfig()">
@@ -405,6 +429,9 @@
         case 'selection-changed':
           handleSelectionChanged(msg.payload);
           break;
+        case 'export-progress':
+          handleExportProgress(msg.payload);
+          break;
         case 'sync-result':
           await handleSyncResult(msg.payload);
           break;
@@ -425,7 +452,6 @@
       document.getElementById('github-repo').value = config.githubRepo || '';
       document.getElementById('github-token').value = config.githubToken || '';
       document.getElementById('default-branch').value = config.defaultBranch || 'main';
-      document.getElementById('figma-file-key').value = config.figmaFileKey || '';
 
       // Check if configured - both repo and token must be non-empty
       const isConfigured = !!(config.githubRepo && config.githubToken);
@@ -458,8 +484,7 @@
       const config = {
         githubRepo: document.getElementById('github-repo').value.trim(),
         githubToken: document.getElementById('github-token').value.trim(),
-        defaultBranch: document.getElementById('default-branch').value.trim() || 'main',
-        figmaFileKey: document.getElementById('figma-file-key').value.trim()
+        defaultBranch: document.getElementById('default-branch').value.trim() || 'main'
       };
 
       if (!config.githubRepo) {
@@ -521,6 +546,22 @@
     }
 
     // ============================================
+    // Progress Handler
+    // ============================================
+
+    function handleExportProgress(data) {
+      const progressContainer = document.getElementById('progress-container');
+      const progressFill = document.getElementById('progress-fill');
+      const progressText = document.getElementById('progress-text');
+
+      progressContainer.classList.remove('hidden');
+
+      const percent = Math.round((data.current / data.total) * 100);
+      progressFill.style.width = `${percent}%`;
+      progressText.textContent = `导出中: ${data.current}/${data.total} - ${data.currentName}`;
+    }
+
+    // ============================================
     // Sync Handlers
     // ============================================
 
@@ -547,35 +588,39 @@
 
       isSyncing = true;
       updateSyncButton(true);
-      showStatus('sync-status', '<span class="loading"></span>正在触发同步...', 'info');
+      document.getElementById('progress-container').classList.remove('hidden');
+      document.getElementById('progress-fill').style.width = '0%';
+      document.getElementById('progress-text').textContent = '准备导出 SVG...';
+      document.getElementById('sync-status').classList.add('hidden');
 
       postMessage('trigger-sync', { version, message });
     }
 
     async function handleSyncResult(data) {
       if (data.action === 'trigger-github') {
-        // Make the GitHub API call from UI (has network access)
+        // Update progress
+        document.getElementById('progress-text').textContent = '正在上传到 GitHub...';
+        document.getElementById('progress-fill').style.width = '100%';
+
+        // Upload SVG files directly to GitHub
         try {
-          const result = await triggerGitHubAction(
+          const result = await uploadToGitHub(
             data.config.githubRepo,
             data.config.githubToken,
             data.syncRequest
           );
 
+          document.getElementById('progress-container').classList.add('hidden');
+
           if (result.success) {
             showStatus('sync-status', `
-              <strong>✓ 同步触发成功！</strong><br>
+              <strong>✓ 同步成功！</strong><br>
               <div style="margin-top: 8px;">
                 版本：<strong>${escapeHtml(data.syncRequest.version)}</strong><br>
-                GitHub Actions 工作流已触发，将会：
-                <ul style="margin: 8px 0 8px 16px; padding: 0;">
-                  <li>从 Figma 获取图标</li>
-                  <li>生成 React 组件</li>
-                  <li>创建 Pull Request</li>
-                </ul>
-                <a href="${result.prUrl}" target="_blank" style="display: inline-block; margin-top: 4px;">
-                  查看 Pull Requests →
-                </a>
+                已上传 <strong>${data.syncRequest.icons.length}</strong> 个图标<br>
+                <div style="margin-top: 8px;">
+                  <a href="${result.prUrl}" target="_blank">查看 Pull Request →</a>
+                </div>
               </div>
             `, 'success');
 
@@ -586,6 +631,7 @@
             showSyncError(result.error);
           }
         } catch (error) {
+          document.getElementById('progress-container').classList.add('hidden');
           showSyncError(error.message);
         }
 
@@ -617,47 +663,126 @@
       `, 'error');
     }
 
-    async function triggerGitHubAction(repo, token, syncRequest) {
-      const url = `https://api.github.com/repos/${repo}/dispatches`;
+    /**
+     * 直接上传 SVG 文件到 GitHub 并创建 PR
+     */
+    async function uploadToGitHub(repo, token, syncRequest) {
+      const headers = {
+        'Accept': 'application/vnd.github.v3+json',
+        'Authorization': `token ${token}`,
+        'Content-Type': 'application/json'
+      };
 
       try {
-        const response = await fetch(url, {
+        // 1. 获取默认分支的最新 commit SHA
+        const repoResponse = await fetch(`https://api.github.com/repos/${repo}`, { headers });
+        if (!repoResponse.ok) {
+          throw new Error(`获取仓库信息失败: ${repoResponse.status}`);
+        }
+        const repoData = await repoResponse.json();
+        const defaultBranch = repoData.default_branch;
+
+        // 获取默认分支的 ref
+        const refResponse = await fetch(`https://api.github.com/repos/${repo}/git/ref/heads/${defaultBranch}`, { headers });
+        if (!refResponse.ok) {
+          throw new Error(`获取分支信息失败: ${refResponse.status}`);
+        }
+        const refData = await refResponse.json();
+        const baseSha = refData.object.sha;
+
+        // 2. 创建新分支
+        const branchName = `icon-sync-${syncRequest.version}-${Date.now()}`;
+        const createBranchResponse = await fetch(`https://api.github.com/repos/${repo}/git/refs`, {
           method: 'POST',
-          headers: {
-            'Accept': 'application/vnd.github.v3+json',
-            'Authorization': `token ${token}`,
-            'Content-Type': 'application/json'
-          },
+          headers,
           body: JSON.stringify({
-            event_type: 'icon_sync',
-            client_payload: {
-              version: syncRequest.version,
-              message: syncRequest.message,
-              figma_file_key: syncRequest.fileKey,
-              triggered_at: syncRequest.timestamp,
-              node_ids: syncRequest.nodeIds ? syncRequest.nodeIds.join(',') : ''
-            }
+            ref: `refs/heads/${branchName}`,
+            sha: baseSha
           })
         });
 
-        if (response.status === 204 || response.status === 200) {
-          return {
-            success: true,
-            prUrl: `https://github.com/${repo}/pulls`
-          };
-        } else {
-          const errorData = await response.json().catch(() => ({}));
-          return {
-            success: false,
-            error: errorData.message || `HTTP ${response.status}`
-          };
+        if (!createBranchResponse.ok) {
+          const error = await createBranchResponse.json();
+          throw new Error(`创建分支失败: ${error.message || createBranchResponse.status}`);
         }
+
+        // 3. 上传每个 SVG 文件
+        for (const icon of syncRequest.icons) {
+          const fileName = sanitizeFilename(icon.name) + '.svg';
+          const filePath = `svg/${fileName}`;
+          const content = btoa(unescape(encodeURIComponent(icon.svg)));
+
+          // 检查文件是否存在
+          let existingSha = null;
+          try {
+            const fileResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branchName}`, { headers });
+            if (fileResponse.ok) {
+              const fileData = await fileResponse.json();
+              existingSha = fileData.sha;
+            }
+          } catch (e) {
+            // 文件不存在，继续
+          }
+
+          // 创建或更新文件
+          const updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+            method: 'PUT',
+            headers,
+            body: JSON.stringify({
+              message: `Update ${fileName}`,
+              content: content,
+              branch: branchName,
+              ...(existingSha ? { sha: existingSha } : {})
+            })
+          });
+
+          if (!updateResponse.ok) {
+            const error = await updateResponse.json();
+            console.error(`上传 ${fileName} 失败:`, error);
+          }
+        }
+
+        // 4. 创建 Pull Request
+        const prResponse = await fetch(`https://api.github.com/repos/${repo}/pulls`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({
+            title: `🎨 图标更新 v${syncRequest.version}`,
+            body: `## 图标同步\n\n${syncRequest.message}\n\n### 更新内容\n- 版本: ${syncRequest.version}\n- 图标数量: ${syncRequest.icons.length}\n- 同步时间: ${syncRequest.timestamp}\n\n---\n*由 zleap-icon Figma 插件自动创建*`,
+            head: branchName,
+            base: defaultBranch
+          })
+        });
+
+        if (!prResponse.ok) {
+          const error = await prResponse.json();
+          throw new Error(`创建 PR 失败: ${error.message || prResponse.status}`);
+        }
+
+        const prData = await prResponse.json();
+
+        return {
+          success: true,
+          prUrl: prData.html_url
+        };
+
       } catch (error) {
         return {
           success: false,
           error: error.message
         };
       }
+    }
+
+    /**
+     * 将文件名转换为安全的格式
+     */
+    function sanitizeFilename(name) {
+      return name
+        .toLowerCase()
+        .replace(/[^a-z0-9-]/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
     }
 
     // ============================================
@@ -672,6 +797,7 @@
     }
 
     function showError(message) {
+      document.getElementById('progress-container').classList.add('hidden');
       showStatus('sync-status', message, 'error');
       isSyncing = false;
       updateSyncButton(false);

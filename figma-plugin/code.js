@@ -1,5 +1,16 @@
 "use strict";
 /// <reference types="@figma/plugin-typings" />
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -190,10 +201,70 @@ function isIconNode(node) {
     return true;
 }
 // ============================================
+// SVG Export
+// ============================================
+/**
+ * 导出图标为 SVG
+ */
+function exportIconsToSvg(icons) {
+    return __awaiter(this, void 0, void 0, function () {
+        var results, total, i, icon, node, svgData, svgString, error_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    results = [];
+                    total = icons.length;
+                    i = 0;
+                    _a.label = 1;
+                case 1:
+                    if (!(i < icons.length)) return [3 /*break*/, 6];
+                    icon = icons[i];
+                    node = figma.getNodeById(icon.id);
+                    if (!node) {
+                        console.warn("\u8282\u70B9 ".concat(icon.id, " \u4E0D\u5B58\u5728\uFF0C\u8DF3\u8FC7"));
+                        return [3 /*break*/, 5];
+                    }
+                    _a.label = 2;
+                case 2:
+                    _a.trys.push([2, 4, , 5]);
+                    return [4 /*yield*/, node.exportAsync({
+                            format: 'SVG',
+                            svgSimplifyStroke: true,
+                            svgIdAttribute: false,
+                        })
+                        // 将 Uint8Array 转换为字符串
+                    ];
+                case 3:
+                    svgData = _a.sent();
+                    svgString = String.fromCharCode.apply(null, Array.from(svgData));
+                    results.push(__assign(__assign({}, icon), { svg: svgString }));
+                    // 发送进度更新
+                    sendToUI({
+                        type: 'export-progress',
+                        payload: {
+                            current: i + 1,
+                            total: total,
+                            currentName: icon.name,
+                        },
+                    });
+                    return [3 /*break*/, 5];
+                case 4:
+                    error_1 = _a.sent();
+                    console.error("\u5BFC\u51FA\u56FE\u6807 ".concat(icon.name, " \u5931\u8D25:"), error_1);
+                    return [3 /*break*/, 5];
+                case 5:
+                    i++;
+                    return [3 /*break*/, 1];
+                case 6: return [2 /*return*/, results];
+            }
+        });
+    });
+}
+// ============================================
 // Message Handlers
 // ============================================
 figma.ui.onmessage = function (msg) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, error_1;
+    var _a, error_2;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
@@ -231,11 +302,11 @@ figma.ui.onmessage = function (msg) { return __awaiter(void 0, void 0, void 0, f
                 _b.label = 10;
             case 10: return [3 /*break*/, 12];
             case 11:
-                error_1 = _b.sent();
+                error_2 = _b.sent();
                 sendToUI({
                     type: 'error',
                     payload: {
-                        message: error_1 instanceof Error ? error_1.message : '发生未知错误',
+                        message: error_2 instanceof Error ? error_2.message : '发生未知错误',
                     },
                 });
                 return [3 /*break*/, 12];
@@ -353,7 +424,7 @@ function handleGetIcons() {
 // ============================================
 function handleTriggerSync(params) {
     return __awaiter(this, void 0, void 0, function () {
-        var savedConfig, nodeIds, syncRequest;
+        var savedConfig, iconsWithSvg, syncRequest;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, figma.clientStorage.getAsync(CONFIG_KEY)];
@@ -362,20 +433,29 @@ function handleTriggerSync(params) {
                     if (!savedConfig || !savedConfig.githubRepo || !savedConfig.githubToken) {
                         throw new Error('插件未配置，请先填写 GitHub 仓库地址和 Token');
                     }
-                    if (!savedConfig.figmaFileKey ||
-                        savedConfig.figmaFileKey === 'auto-detect-on-sync') {
-                        throw new Error('请在设置中填写 Figma 文件 Key');
-                    }
                     if (currentIcons.length === 0) {
                         throw new Error('没有找到可同步的图标，请选择包含图标的区域');
                     }
-                    nodeIds = currentIcons.map(function (icon) { return icon.id; });
+                    // 直接在插件中导出 SVG
+                    sendToUI({
+                        type: 'export-progress',
+                        payload: {
+                            current: 0,
+                            total: currentIcons.length,
+                            currentName: '准备导出...',
+                        },
+                    });
+                    return [4 /*yield*/, exportIconsToSvg(currentIcons)];
+                case 2:
+                    iconsWithSvg = _a.sent();
+                    if (iconsWithSvg.length === 0) {
+                        throw new Error('导出 SVG 失败，没有成功导出任何图标');
+                    }
                     syncRequest = {
                         version: params.version,
                         message: params.message,
-                        fileKey: savedConfig.figmaFileKey,
                         timestamp: new Date().toISOString(),
-                        nodeIds: nodeIds,
+                        icons: iconsWithSvg,
                     };
                     sendToUI({
                         type: 'sync-result',

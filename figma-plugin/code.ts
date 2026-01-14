@@ -4,6 +4,7 @@
  * Figma Plugin Main Code - zleap-icon
  *
  * 支持选区同步：只同步选中区域内的图标
+ * 直接导出 SVG 内容，避免 Figma API 限速问题
  */
 
 // ============================================
@@ -24,12 +25,15 @@ interface IconInfo {
   height: number
 }
 
+interface IconWithSvg extends IconInfo {
+  svg: string
+}
+
 interface SyncRequest {
   version: string
   message: string
-  fileKey: string
   timestamp: string
-  nodeIds: string[] // 选中的节点 ID 列表
+  icons: IconWithSvg[] // 包含 SVG 内容的图标列表
 }
 
 interface MessageToUI {
@@ -39,6 +43,7 @@ interface MessageToUI {
     | 'sync-result'
     | 'error'
     | 'selection-changed'
+    | 'export-progress'
   payload: unknown
 }
 
@@ -193,6 +198,59 @@ function isIconNode(node: SceneNode | PageNode): boolean {
 }
 
 // ============================================
+// SVG Export
+// ============================================
+
+/**
+ * 导出图标为 SVG
+ */
+async function exportIconsToSvg(icons: IconInfo[]): Promise<IconWithSvg[]> {
+  const results: IconWithSvg[] = []
+  const total = icons.length
+
+  for (let i = 0; i < icons.length; i++) {
+    const icon = icons[i]
+    const node = figma.getNodeById(icon.id) as SceneNode
+
+    if (!node) {
+      console.warn(`节点 ${icon.id} 不存在，跳过`)
+      continue
+    }
+
+    try {
+      // 使用 Figma 内置的 exportAsync 导出 SVG
+      const svgData = await (node as FrameNode).exportAsync({
+        format: 'SVG',
+        svgSimplifyStroke: true,
+        svgIdAttribute: false,
+      })
+
+      // 将 Uint8Array 转换为字符串
+      const svgString = String.fromCharCode.apply(null, Array.from(svgData))
+
+      results.push({
+        ...icon,
+        svg: svgString,
+      })
+
+      // 发送进度更新
+      sendToUI({
+        type: 'export-progress',
+        payload: {
+          current: i + 1,
+          total: total,
+          currentName: icon.name,
+        },
+      })
+    } catch (error) {
+      console.error(`导出图标 ${icon.name} 失败:`, error)
+    }
+  }
+
+  return results
+}
+
+// ============================================
 // Message Handlers
 // ============================================
 
@@ -333,26 +391,31 @@ async function handleTriggerSync(params: {
     throw new Error('插件未配置，请先填写 GitHub 仓库地址和 Token')
   }
 
-  if (
-    !savedConfig.figmaFileKey ||
-    savedConfig.figmaFileKey === 'auto-detect-on-sync'
-  ) {
-    throw new Error('请在设置中填写 Figma 文件 Key')
-  }
-
   if (currentIcons.length === 0) {
     throw new Error('没有找到可同步的图标，请选择包含图标的区域')
   }
 
-  // 获取要同步的图标 ID 列表
-  const nodeIds = currentIcons.map((icon) => icon.id)
+  // 直接在插件中导出 SVG
+  sendToUI({
+    type: 'export-progress',
+    payload: {
+      current: 0,
+      total: currentIcons.length,
+      currentName: '准备导出...',
+    },
+  })
+
+  const iconsWithSvg = await exportIconsToSvg(currentIcons)
+
+  if (iconsWithSvg.length === 0) {
+    throw new Error('导出 SVG 失败，没有成功导出任何图标')
+  }
 
   const syncRequest: SyncRequest = {
     version: params.version,
     message: params.message,
-    fileKey: savedConfig.figmaFileKey,
     timestamp: new Date().toISOString(),
-    nodeIds: nodeIds,
+    icons: iconsWithSvg,
   }
 
   sendToUI({

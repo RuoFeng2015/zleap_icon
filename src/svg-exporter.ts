@@ -76,11 +76,12 @@ export interface BatchExportResult {
 
 /**
  * Default export options
+ * 降低并发数以减少限速风险
  */
 const DEFAULT_EXPORT_OPTIONS: Required<Omit<BatchExportOptions, 'onProgress'>> =
   {
     outputDir: './svg',
-    concurrency: 5,
+    concurrency: 3, // 降低并发数，减少限速风险
     simplifyStroke: true,
     includeId: false,
   }
