@@ -1,3 +1,5 @@
+/// <reference types="@figma/plugin-typings" />
+
 /**
  * Figma Plugin Main Code
  *
@@ -106,8 +108,10 @@ async function handleLoadConfig(): Promise<void> {
 
   const config: PluginConfig = savedConfig
     ? {
-        ...savedConfig,
+        githubRepo: savedConfig.githubRepo || '',
+        githubToken: savedConfig.githubToken || '',
         figmaFileKey: fileKey,
+        defaultBranch: savedConfig.defaultBranch || 'main',
       }
     : {
         githubRepo: '',
@@ -128,25 +132,48 @@ async function handleSaveConfig(config: PluginConfig): Promise<void> {
     throw new Error('GitHub repository and token are required')
   }
 
-  // Validate repository format (org/repo)
-  if (!/^[\w.-]+\/[\w.-]+$/.test(config.githubRepo)) {
-    throw new Error('Repository must be in format "org/repo"')
+  // Extract org/repo from full URL if provided
+  let repoPath = config.githubRepo.trim()
+
+  // Handle full GitHub URLs
+  const urlMatch = repoPath.match(
+    /github\.com[\/:]([^\/]+\/[^\/]+?)(?:\.git)?(?:\/.*)?$/
+  )
+  if (urlMatch) {
+    repoPath = urlMatch[1]
   }
 
-  // Don't store the file key as it's auto-detected
+  // Remove trailing slashes
+  repoPath = repoPath.replace(/\/+$/, '')
+
+  // Validate repository format (org/repo)
+  if (!/^[\w.-]+\/[\w.-]+$/.test(repoPath)) {
+    throw new Error(
+      'Repository must be in format "org/repo" or a valid GitHub URL'
+    )
+  }
+
+  // Update config with normalized repo path
+  config.githubRepo = repoPath
+
+  // Store the config including token and file key
   const configToStore = {
     githubRepo: config.githubRepo,
     githubToken: config.githubToken,
     defaultBranch: config.defaultBranch || 'main',
+    figmaFileKey: config.figmaFileKey || getFileKey(),
   }
 
   await figma.clientStorage.setAsync(CONFIG_KEY, configToStore)
 
+  // Send back the full config to UI so it knows configuration is complete
   sendToUI({
     type: 'config-loaded',
     payload: {
-      ...configToStore,
-      figmaFileKey: getFileKey(),
+      githubRepo: configToStore.githubRepo,
+      githubToken: configToStore.githubToken,
+      defaultBranch: configToStore.defaultBranch,
+      figmaFileKey: configToStore.figmaFileKey,
     },
   })
 }
@@ -156,6 +183,9 @@ async function handleSaveConfig(config: PluginConfig): Promise<void> {
 // ============================================
 
 async function handleGetIcons(): Promise<void> {
+  // Load all pages first (required for findAllWithCriteria in newer Figma versions)
+  await figma.loadAllPagesAsync()
+
   const icons = findIconComponents()
 
   sendToUI({
@@ -272,10 +302,16 @@ async function handleTriggerSync(params: {
 
 function getFileKey(): string {
   // Extract file key from the current document
-  // In Figma, the file key is part of the document URL
-  // Format: https://www.figma.com/file/{fileKey}/{fileName}
-  // We can get it from figma.fileKey if available
-  return figma.fileKey || 'unknown'
+  // figma.fileKey is available in Figma desktop app
+  // It may be null in some contexts (e.g., when file is not saved)
+
+  if (figma.fileKey) {
+    return figma.fileKey
+  }
+
+  // Try to get from root name as fallback (not ideal but better than unknown)
+  // The file key is typically in the URL: figma.com/file/{fileKey}/...
+  return 'auto-detect-on-sync'
 }
 
 function sendToUI(message: MessageToUI): void {
