@@ -159,8 +159,8 @@ export interface FigmaComponent {
   id: string
   /** Component name */
   name: string
-  /** Node type */
-  type: 'COMPONENT'
+  /** Node type (COMPONENT or FRAME for imported SVGs) */
+  type: 'COMPONENT' | 'FRAME' | string
   /** Bounding box dimensions */
   absoluteBoundingBox: {
     width: number
@@ -180,6 +180,13 @@ export interface FigmaNode {
   type: string
   /** Child nodes */
   children?: FigmaNode[]
+  /** Bounding box dimensions (available on most visible nodes) */
+  absoluteBoundingBox?: {
+    x?: number
+    y?: number
+    width: number
+    height: number
+  }
 }
 
 /**
@@ -187,9 +194,7 @@ export interface FigmaNode {
  */
 export interface FigmaFileResponse {
   /** Document structure */
-  document: {
-    children: FigmaNode[]
-  }
+  document: FigmaNode
   /** Components in the file */
   components: Record<string, FigmaComponent>
 }

@@ -70,10 +70,10 @@ const validIconComponentArbitrary = fc
   }))
 
 /**
- * Generates a non-COMPONENT Figma node (FRAME, GROUP, etc.)
+ * Generates a non-COMPONENT/non-FRAME Figma node (GROUP, RECTANGLE, etc.)
+ * These types should NOT be recognized as icons
  */
 const nonComponentTypeArbitrary = fc.constantFrom(
-  'FRAME',
   'GROUP',
   'RECTANGLE',
   'TEXT',
@@ -210,7 +210,7 @@ describe('Property 1: Icon Component Filtering', () => {
       )
     })
 
-    it('should reject non-COMPONENT types', () => {
+    it('should reject non-COMPONENT/non-FRAME types', () => {
       fc.assert(
         fc.property(nonComponentNodeArbitrary, (node) => {
           expect(isComponentType(node)).toBe(false)

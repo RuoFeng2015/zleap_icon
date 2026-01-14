@@ -223,34 +223,57 @@ function handleGetIcons() {
 }
 /**
  * Find all icon components in the current Figma file
- * Icons are identified by:
- * - Components with "icon" in the name (case-insensitive)
- * - Components starting with "ic-" or "ic_"
- * - Components in frames/pages named "Icons" or "icons"
+ * Supports:
+ * - COMPONENT type nodes
+ * - FRAME type nodes (imported SVGs are often frames)
+ * - Filters by reasonable icon sizes
  */
 function findIconComponents() {
     var e_1, _a;
     var icons = [];
-    var components = figma.root.findAllWithCriteria({
-        types: ['COMPONENT'],
+    // Find both components and frames (SVGs are imported as frames)
+    var nodes = figma.root.findAllWithCriteria({
+        types: ['COMPONENT', 'FRAME'],
     });
     try {
-        for (var components_1 = __values(components), components_1_1 = components_1.next(); !components_1_1.done; components_1_1 = components_1.next()) {
-            var component = components_1_1.value;
-            if (isIconComponent(component)) {
-                icons.push({
-                    id: component.id,
-                    name: component.name,
-                    width: Math.round(component.width),
-                    height: Math.round(component.height),
-                });
+        for (var nodes_1 = __values(nodes), nodes_1_1 = nodes_1.next(); !nodes_1_1.done; nodes_1_1 = nodes_1.next()) {
+            var node = nodes_1_1.value;
+            var width = Math.round(node.width);
+            var height = Math.round(node.height);
+            // Filter by reasonable icon size (between 8 and 256 pixels)
+            if (width >= 8 && width <= 256 && height >= 8 && height <= 256) {
+                // Check aspect ratio - icons are usually square or close to it
+                var aspectRatio = width / height;
+                if (aspectRatio >= 0.5 && aspectRatio <= 2) {
+                    // For frames, check if they contain vector content (likely SVG)
+                    if (node.type === 'FRAME') {
+                        var hasVectorContent = node.findOne(function (child) {
+                            return child.type === 'VECTOR' ||
+                                child.type === 'BOOLEAN_OPERATION' ||
+                                child.type === 'LINE' ||
+                                child.type === 'ELLIPSE' ||
+                                child.type === 'RECTANGLE' ||
+                                child.type === 'POLYGON' ||
+                                child.type === 'STAR' ||
+                                child.type === 'GROUP';
+                        });
+                        if (!hasVectorContent)
+                            continue;
+                    }
+                    icons.push({
+                        id: node.id,
+                        name: node.name,
+                        width: width,
+                        height: height,
+                    });
+                }
             }
         }
     }
     catch (e_1_1) { e_1 = { error: e_1_1 }; }
     finally {
         try {
-            if (components_1_1 && !components_1_1.done && (_a = components_1.return)) _a.call(components_1);
+            if (nodes_1_1 && !nodes_1_1.done && (_a = nodes_1.return)) _a.call(nodes_1);
         }
         finally { if (e_1) throw e_1.error; }
     }
@@ -260,6 +283,7 @@ function findIconComponents() {
 }
 /**
  * Determine if a component is an icon based on naming conventions
+ * (Kept for reference but not used in current implementation)
  */
 function isIconComponent(component) {
     var name = component.name.toLowerCase();

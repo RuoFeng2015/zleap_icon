@@ -142,15 +142,15 @@ export function hasValidIconDimensions(
 }
 
 /**
- * Checks if a Figma node is a COMPONENT type
+ * Checks if a Figma node is a COMPONENT or FRAME type (SVGs are imported as frames)
  *
  * @param node - Figma node or component to check
- * @returns True if the node is a COMPONENT type
+ * @returns True if the node is a COMPONENT or FRAME type
  */
 export function isComponentType(
   node: FigmaNode | FigmaComponent | { type?: string }
 ): boolean {
-  return node && node.type === 'COMPONENT'
+  return node && (node.type === 'COMPONENT' || node.type === 'FRAME')
 }
 
 /**
@@ -194,6 +194,7 @@ export function filterIconComponent(
 
 /**
  * Filters icon components from a Figma file response
+ * Searches both the components map and the document tree for FRAME nodes (imported SVGs)
  *
  * @param fileResponse - Figma file API response
  * @param config - Filter configuration
@@ -205,11 +206,14 @@ export function filterIconComponents(
 ): FilterResult {
   const icons: FilteredIconComponent[] = []
   const skipped: FilterResult['skipped'] = []
+  const processedIds = new Set<string>()
 
+  // First, process components from the components map
   const components = fileResponse.components || {}
   const componentEntries = Object.entries(components)
 
   for (const [id, component] of componentEntries) {
+    processedIds.add(id)
     const result = filterIconComponent(component, config)
 
     if (result.isIcon) {
@@ -230,10 +234,86 @@ export function filterIconComponents(
     }
   }
 
+  // Then, traverse the document tree to find FRAME nodes (imported SVGs)
+  if (fileResponse.document) {
+    traverseForFrames(
+      fileResponse.document,
+      config,
+      icons,
+      skipped,
+      processedIds
+    )
+  }
+
   return {
     icons,
     skipped,
-    totalProcessed: componentEntries.length,
+    totalProcessed: processedIds.size,
+  }
+}
+
+/**
+ * Recursively traverses the document tree to find FRAME nodes that could be icons
+ */
+function traverseForFrames(
+  node: FigmaNode,
+  config: IconFilterConfig,
+  icons: FilteredIconComponent[],
+  skipped: FilterResult['skipped'],
+  processedIds: Set<string>
+): void {
+  // Skip if already processed
+  if (processedIds.has(node.id)) {
+    return
+  }
+
+  // Check if this is a FRAME that could be an icon
+  if (node.type === 'FRAME' && node.absoluteBoundingBox) {
+    processedIds.add(node.id)
+    const { width, height } = node.absoluteBoundingBox
+
+    // Check if dimensions are valid for an icon
+    if (hasValidIconDimensions(width, height, config)) {
+      // Check aspect ratio - icons should be roughly square
+      const aspectRatio = width / height
+      if (aspectRatio >= 0.5 && aspectRatio <= 2) {
+        // Create a component-like object
+        const component: FigmaComponent = {
+          id: node.id,
+          name: node.name,
+          type: 'FRAME',
+          absoluteBoundingBox: { width, height },
+        }
+
+        // Use a more lenient name check for frames
+        const nameIsValid =
+          config.namePattern.test(node.name) ||
+          /^[a-zA-Z][a-zA-Z0-9-_\s]*$/.test(node.name)
+
+        if (nameIsValid) {
+          icons.push({
+            id: node.id,
+            name: node.name,
+            width,
+            height,
+            original: component,
+          })
+        } else {
+          skipped.push({
+            id: node.id,
+            name: node.name,
+            reason: `Name "${node.name}" does not match icon naming convention`,
+          })
+        }
+      }
+    }
+  }
+
+  // Recursively process children
+  if (node.children && Array.isArray(node.children)) {
+    for (const child of node.children) {
+      traverseForFrames(child, config, icons, skipped, processedIds)
+    }
   }
 }
 

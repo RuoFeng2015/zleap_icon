@@ -199,25 +199,51 @@ async function handleGetIcons(): Promise<void> {
 
 /**
  * Find all icon components in the current Figma file
- * Icons are identified by:
- * - Components with "icon" in the name (case-insensitive)
- * - Components starting with "ic-" or "ic_"
- * - Components in frames/pages named "Icons" or "icons"
+ * Supports:
+ * - COMPONENT type nodes
+ * - FRAME type nodes (imported SVGs are often frames)
+ * - Filters by reasonable icon sizes
  */
 function findIconComponents(): IconInfo[] {
   const icons: IconInfo[] = []
-  const components = figma.root.findAllWithCriteria({
-    types: ['COMPONENT'],
+
+  // Find both components and frames (SVGs are imported as frames)
+  const nodes = figma.root.findAllWithCriteria({
+    types: ['COMPONENT', 'FRAME'],
   })
 
-  for (const component of components) {
-    if (isIconComponent(component)) {
-      icons.push({
-        id: component.id,
-        name: component.name,
-        width: Math.round(component.width),
-        height: Math.round(component.height),
-      })
+  for (const node of nodes) {
+    const width = Math.round(node.width)
+    const height = Math.round(node.height)
+
+    // Filter by reasonable icon size (between 8 and 256 pixels)
+    if (width >= 8 && width <= 256 && height >= 8 && height <= 256) {
+      // Check aspect ratio - icons are usually square or close to it
+      const aspectRatio = width / height
+      if (aspectRatio >= 0.5 && aspectRatio <= 2) {
+        // For frames, check if they contain vector content (likely SVG)
+        if (node.type === 'FRAME') {
+          const hasVectorContent = node.findOne(
+            (child) =>
+              child.type === 'VECTOR' ||
+              child.type === 'BOOLEAN_OPERATION' ||
+              child.type === 'LINE' ||
+              child.type === 'ELLIPSE' ||
+              child.type === 'RECTANGLE' ||
+              child.type === 'POLYGON' ||
+              child.type === 'STAR' ||
+              child.type === 'GROUP'
+          )
+          if (!hasVectorContent) continue
+        }
+
+        icons.push({
+          id: node.id,
+          name: node.name,
+          width,
+          height,
+        })
+      }
     }
   }
 
@@ -229,6 +255,7 @@ function findIconComponents(): IconInfo[] {
 
 /**
  * Determine if a component is an icon based on naming conventions
+ * (Kept for reference but not used in current implementation)
  */
 function isIconComponent(component: ComponentNode): boolean {
   const name = component.name.toLowerCase()
