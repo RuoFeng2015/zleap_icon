@@ -1,6 +1,6 @@
 {
   "name": "@your-org/icons",
-  "version": "0.0.8",
+  "version": "0.0.32",
   "description": "Icon library auto-generated from Figma",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
