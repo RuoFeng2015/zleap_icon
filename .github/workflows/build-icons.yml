@@ -5,11 +5,10 @@ on:
   repository_dispatch:
     types: [icon_build]
 
-  # 当 svg 目录有变更时触发
+  # 当 svg 目录有变更时触发（只在 main 分支）
   push:
     branches:
       - main
-      - 'icon-sync-*'
     paths:
       - 'svg/**'
 
@@ -116,6 +115,11 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+
+          # 先拉取远程最新代码
+          git fetch origin ${{ steps.branch.outputs.name }}
+          git reset --soft origin/${{ steps.branch.outputs.name }}
+
           git add -A
           if git diff --staged --quiet; then
             echo "No changes to commit"
