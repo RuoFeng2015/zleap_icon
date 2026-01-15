@@ -47,6 +47,14 @@ jobs:
       - name: Build preview site
         run: npm run build:docs
 
+      - name: Copy icons data to dist
+        run: |
+          cp icons.json docs/dist/ || echo "icons.json not found"
+          mkdir -p docs/dist/svg
+          cp svg/*.svg docs/dist/svg/ || echo "No SVG files found"
+          ls -la docs/dist/
+          ls -la docs/dist/svg/ || echo "SVG dir empty"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
