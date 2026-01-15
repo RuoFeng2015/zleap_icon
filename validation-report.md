@@ -1,35 +1,37 @@
 # Icon Validation Report
 
-Generated at: 2026-01-15T06:31:31.229Z
+Generated at: 2026-01-15T06:41:25.436Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 3 |
+| Total Icons | 4 |
 | Valid Icons | 0 |
-| Invalid Icons | 3 |
-| Total Errors | 3 |
-| Total Warnings | 3 |
+| Invalid Icons | 4 |
+| Total Errors | 4 |
+| Total Warnings | 4 |
 
-⚠️ **3 icon(s) failed validation**
+⚠️ **4 icon(s) failed validation**
 
 ## Errors
 
-### size (3 errors)
+### size (4 errors)
 
 | Icon | Message |
 |------|---------|
+| 下载助手 | Icon size 48x48 not in allowed sizes: 16, 20, 24, 32 |
 | 企业版 | Icon size 48x48 not in allowed sizes: 16, 20, 24, 32 |
 | 系统配置 | Icon size 48x48 not in allowed sizes: 16, 20, 24, 32 |
 | 运营管理 | Icon size 48x48 not in allowed sizes: 16, 20, 24, 32 |
 
 ## Warnings
 
-### naming (3 warnings)
+### naming (4 warnings)
 
 | Icon | Message |
 |------|---------|
+| 下载助手 | Icon name "下载助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 企业版 | Icon name "企业版" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 系统配置 | Icon name "系统配置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 运营管理 | Icon name "运营管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
