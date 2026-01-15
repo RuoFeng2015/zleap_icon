@@ -49,7 +49,7 @@ export function filterIcons(icons, query) {
  */
 async function loadIcons() {
   try {
-    const response = await fetch('../icons.json');
+    const response = await fetch('./icons.json');
     const data = await response.json();
     icons = data.icons || [];
     filteredIcons = icons;
@@ -67,7 +67,8 @@ async function loadIcons() {
  */
 async function loadSvgContent(svgPath) {
   try {
-    const response = await fetch(`../${svgPath}`);
+    // svgPath 格式是 "svg/icon-name.svg"，直接使用
+    const response = await fetch(`./${svgPath}`);
     return await response.text();
   } catch (error) {
     console.error('Failed to load SVG:', error);

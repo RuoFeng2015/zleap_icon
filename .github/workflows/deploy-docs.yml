@@ -10,7 +10,7 @@ on:
       - 'icons.json'
       - 'icons-manifest.json'
   workflow_run:
-    workflows: ['Publish to NPM', 'Sync Icons from Figma']
+    workflows: ['Publish to NPM', 'Sync Icons from Figma', 'Build Icons']
     types:
       - completed
     branches: [main]
