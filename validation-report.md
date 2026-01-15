@@ -1,21 +1,35 @@
 # Icon Validation Report
 
-Generated at: 2026-01-13T17:49:39.847Z
+Generated at: 2026-01-15T06:31:31.229Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
 | Total Icons | 3 |
-| Valid Icons | 3 |
-| Invalid Icons | 0 |
-| Total Errors | 0 |
-| Total Warnings | 0 |
+| Valid Icons | 0 |
+| Invalid Icons | 3 |
+| Total Errors | 3 |
+| Total Warnings | 3 |
 
-✅ **All icons passed validation**
+⚠️ **3 icon(s) failed validation**
 
-## Valid Icons
+## Errors
 
-- ✅ arrow-right
-- ✅ check
-- ✅ close-circle
+### size (3 errors)
+
+| Icon | Message |
+|------|---------|
+| 企业版 | Icon size 48x48 not in allowed sizes: 16, 20, 24, 32 |
+| 系统配置 | Icon size 48x48 not in allowed sizes: 16, 20, 24, 32 |
+| 运营管理 | Icon size 48x48 not in allowed sizes: 16, 20, 24, 32 |
+
+## Warnings
+
+### naming (3 warnings)
+
+| Icon | Message |
+|------|---------|
+| 企业版 | Icon name "企业版" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 系统配置 | Icon name "系统配置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 运营管理 | Icon name "运营管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
