@@ -1,0 +1,124 @@
+name: Build Icons
+
+on:
+  # 插件触发构建
+  repository_dispatch:
+    types: [icon_build]
+
+  # 当 svg 目录有变更时触发
+  push:
+    branches:
+      - main
+      - 'icon-sync-*'
+    paths:
+      - 'svg/**'
+
+  # PR 合并到 main 时触发
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+  # 手动触发
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number (e.g., 1.0.0)'
+        required: false
+        default: ''
+      message:
+        description: 'Update message'
+        required: false
+        default: 'Icon update'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # 只在 PR 合并时运行，或者是 push/手动触发/repository_dispatch
+    if: |
+      github.event_name == 'push' || 
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'repository_dispatch' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # 如果是 repository_dispatch，检出对应的分支
+          ref: ${{ github.event.client_payload.branch || github.ref }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate icons
+        run: npm run validate-icons
+
+      - name: Transform SVGs
+        run: npm run transform-svg
+
+      - name: Generate React components
+        run: npm run generate-components
+
+      - name: Generate sprite and metadata
+        run: npm run generate-outputs
+
+      - name: Get version and message
+        id: version
+        run: |
+          if [ -n "${{ github.event.client_payload.version }}" ]; then
+            echo "version=${{ github.event.client_payload.version }}" >> $GITHUB_OUTPUT
+            echo "message=${{ github.event.client_payload.message }}" >> $GITHUB_OUTPUT
+          elif [ -n "${{ github.event.inputs.version }}" ]; then
+            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+            echo "message=${{ github.event.inputs.message }}" >> $GITHUB_OUTPUT
+          else
+            VERSION=$(node -p "require('./package.json').version")
+            # 自动增加 patch 版本
+            NEW_VERSION=$(echo $VERSION | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')
+            echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+            echo "message=Icon update from Figma" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update changelog
+        run: npm run generate-changelog
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          MESSAGE: ${{ steps.version.outputs.message }}
+
+      - name: Update version
+        run: npm version ${{ steps.version.outputs.version }} --no-git-tag-version --allow-same-version
+
+      - name: Build packages
+        run: npm run build
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git diff --staged --quiet || git commit -m "build: generate icon components v${{ steps.version.outputs.version }}"
+          git push
+
+      - name: Comment on PR
+        if: github.event.client_payload.pr_number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ github.event.client_payload.pr_number }},
+              body: `✅ 构建完成！\n\n- 版本: **${{ steps.version.outputs.version }}**\n- 已生成 React 组件\n- 已更新 changelog\n\n可以合并此 PR 了。`
+            })

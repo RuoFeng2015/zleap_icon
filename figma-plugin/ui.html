@@ -707,39 +707,55 @@
         }
 
         // 3. 上传每个 SVG 文件
+        let uploadedCount = 0;
         for (const icon of syncRequest.icons) {
           const fileName = sanitizeFilename(icon.name) + '.svg';
           const filePath = `svg/${fileName}`;
           const content = btoa(unescape(encodeURIComponent(icon.svg)));
 
-          // 检查文件是否存在
-          let existingSha = null;
-          try {
-            const fileResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branchName}`, { headers });
-            if (fileResponse.ok) {
-              const fileData = await fileResponse.json();
-              existingSha = fileData.sha;
-            }
-          } catch (e) {
-            // 文件不存在，继续
-          }
+          // 新文件直接创建，不需要检查是否存在
+          // 因为是新分支，文件要么从 base 继承，要么不存在
+          const updateBody = {
+            message: `Add/Update ${fileName}`,
+            content: content,
+            branch: branchName
+          };
 
-          // 创建或更新文件
-          const updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+          // 先尝试直接创建（假设文件不存在）
+          let updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
             method: 'PUT',
             headers,
-            body: JSON.stringify({
-              message: `Update ${fileName}`,
-              content: content,
-              branch: branchName,
-              ...(existingSha ? { sha: existingSha } : {})
-            })
+            body: JSON.stringify(updateBody)
           });
 
-          if (!updateResponse.ok) {
-            const error = await updateResponse.json();
-            console.error(`上传 ${fileName} 失败:`, error);
+          // 如果返回 422（文件已存在需要 sha），则获取 sha 后重试
+          if (updateResponse.status === 422) {
+            const fileCheckResponse = await fetch(
+              `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branchName}`,
+              { headers }
+            );
+            if (fileCheckResponse.status === 200) {
+              const fileData = await fileCheckResponse.json();
+              updateBody.sha = fileData.sha;
+
+              updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+                method: 'PUT',
+                headers,
+                body: JSON.stringify(updateBody)
+              });
+            }
           }
+
+          if (updateResponse.ok || updateResponse.status === 201) {
+            uploadedCount++;
+          } else {
+            const error = await updateResponse.json().catch(() => ({}));
+            console.warn(`上传 ${fileName} 失败:`, error.message || updateResponse.status);
+          }
+        }
+
+        if (uploadedCount === 0) {
+          throw new Error('没有成功上传任何文件');
         }
 
         // 4. 创建 Pull Request
@@ -761,6 +777,26 @@
 
         const prData = await prResponse.json();
 
+        // 5. 触发构建工作流
+        const dispatchResponse = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({
+            event_type: 'icon_build',
+            client_payload: {
+              version: syncRequest.version,
+              message: syncRequest.message,
+              pr_number: prData.number,
+              branch: branchName
+            }
+          })
+        });
+
+        // dispatch 返回 204 表示成功
+        if (dispatchResponse.status !== 204) {
+          console.warn('触发构建工作流失败，但 PR 已创建');
+        }
+
         return {
           success: true,
           prUrl: prData.html_url
@@ -776,13 +812,23 @@
 
     /**
      * 将文件名转换为安全的格式
+     * 支持中文和其他 Unicode 字符
      */
     function sanitizeFilename(name) {
-      return name
-        .toLowerCase()
-        .replace(/[^a-z0-9-]/g, '-')
-        .replace(/-+/g, '-')
-        .replace(/^-|-$/g, '');
+      // 保留中文、字母、数字、连字符
+      let result = name
+        .replace(/\s+/g, '-')           // 空格转连字符
+        .replace(/[\/\\:*?"<>|]/g, '-') // 移除文件系统不允许的字符
+        .replace(/-+/g, '-')            // 多个连字符合并
+        .replace(/^-|-$/g, '')          // 移除首尾连字符
+        .trim();
+
+      // 如果结果为空，使用原始名称的 hash
+      if (!result) {
+        result = 'icon-' + Math.random().toString(36).substring(2, 8);
+      }
+
+      return result;
     }
 
     // ============================================

@@ -217,16 +217,18 @@ function exportIconsToSvg(icons) {
                     i = 0;
                     _a.label = 1;
                 case 1:
-                    if (!(i < icons.length)) return [3 /*break*/, 6];
+                    if (!(i < icons.length)) return [3 /*break*/, 7];
                     icon = icons[i];
-                    node = figma.getNodeById(icon.id);
+                    return [4 /*yield*/, figma.getNodeByIdAsync(icon.id)];
+                case 2:
+                    node = (_a.sent());
                     if (!node) {
                         console.warn("\u8282\u70B9 ".concat(icon.id, " \u4E0D\u5B58\u5728\uFF0C\u8DF3\u8FC7"));
-                        return [3 /*break*/, 5];
+                        return [3 /*break*/, 6];
                     }
-                    _a.label = 2;
-                case 2:
-                    _a.trys.push([2, 4, , 5]);
+                    _a.label = 3;
+                case 3:
+                    _a.trys.push([3, 5, , 6]);
                     return [4 /*yield*/, node.exportAsync({
                             format: 'SVG',
                             svgSimplifyStroke: true,
@@ -234,7 +236,7 @@ function exportIconsToSvg(icons) {
                         })
                         // 将 Uint8Array 转换为字符串
                     ];
-                case 3:
+                case 4:
                     svgData = _a.sent();
                     svgString = String.fromCharCode.apply(null, Array.from(svgData));
                     results.push(__assign(__assign({}, icon), { svg: svgString }));
@@ -247,15 +249,15 @@ function exportIconsToSvg(icons) {
                             currentName: icon.name,
                         },
                     });
-                    return [3 /*break*/, 5];
-                case 4:
+                    return [3 /*break*/, 6];
+                case 5:
                     error_1 = _a.sent();
                     console.error("\u5BFC\u51FA\u56FE\u6807 ".concat(icon.name, " \u5931\u8D25:"), error_1);
-                    return [3 /*break*/, 5];
-                case 5:
+                    return [3 /*break*/, 6];
+                case 6:
                     i++;
                     return [3 /*break*/, 1];
-                case 6: return [2 /*return*/, results];
+                case 7: return [2 /*return*/, results];
             }
         });
     });

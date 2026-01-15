@@ -210,7 +210,8 @@ async function exportIconsToSvg(icons: IconInfo[]): Promise<IconWithSvg[]> {
 
   for (let i = 0; i < icons.length; i++) {
     const icon = icons[i]
-    const node = figma.getNodeById(icon.id) as SceneNode
+    // 使用异步版本获取节点
+    const node = (await figma.getNodeByIdAsync(icon.id)) as SceneNode
 
     if (!node) {
       console.warn(`节点 ${icon.id} 不存在，跳过`)
