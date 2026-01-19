@@ -6,6 +6,7 @@
  */
 
 import { IconBangZhuShuoMing } from './icons/IconBangZhuShuoMing';
+import { IconBaoGaoZhuShou } from './icons/IconBaoGaoZhuShou';
 import { IconChengYuanGuanLi } from './icons/IconChengYuanGuanLi';
 import { IconChongXinFaSong } from './icons/IconChongXinFaSong';
 import { IconCuoWu } from './icons/IconCuoWu';
@@ -36,6 +37,7 @@ import { IconWenJian } from './icons/IconWenJian';
 import { IconXiaoXi } from './icons/IconXiaoXi';
 import { IconXiaZai } from './icons/IconXiaZai';
 import { IconXiaZaiZhuShou } from './icons/IconXiaZaiZhuShou';
+import { IconXinXiGuanLi } from './icons/IconXinXiGuanLi';
 import { IconXinZeng } from './icons/IconXinZeng';
 import { IconXiTongPeiZhi } from './icons/IconXiTongPeiZhi';
 import { IconYanZhengMa } from './icons/IconYanZhengMa';
@@ -45,6 +47,7 @@ import { IconZhanKai } from './icons/IconZhanKai';
 import { IconZhengQue } from './icons/IconZhengQue';
 
 export { IconBangZhuShuoMing, type IconBangZhuShuoMingProps } from './icons/IconBangZhuShuoMing';
+export { IconBaoGaoZhuShou, type IconBaoGaoZhuShouProps } from './icons/IconBaoGaoZhuShou';
 export { IconChengYuanGuanLi, type IconChengYuanGuanLiProps } from './icons/IconChengYuanGuanLi';
 export { IconChongXinFaSong, type IconChongXinFaSongProps } from './icons/IconChongXinFaSong';
 export { IconCuoWu, type IconCuoWuProps } from './icons/IconCuoWu';
@@ -75,6 +78,7 @@ export { IconWenJian, type IconWenJianProps } from './icons/IconWenJian';
 export { IconXiaoXi, type IconXiaoXiProps } from './icons/IconXiaoXi';
 export { IconXiaZai, type IconXiaZaiProps } from './icons/IconXiaZai';
 export { IconXiaZaiZhuShou, type IconXiaZaiZhuShouProps } from './icons/IconXiaZaiZhuShou';
+export { IconXinXiGuanLi, type IconXinXiGuanLiProps } from './icons/IconXinXiGuanLi';
 export { IconXinZeng, type IconXinZengProps } from './icons/IconXinZeng';
 export { IconXiTongPeiZhi, type IconXiTongPeiZhiProps } from './icons/IconXiTongPeiZhi';
 export { IconYanZhengMa, type IconYanZhengMaProps } from './icons/IconYanZhengMa';
@@ -88,6 +92,7 @@ export { IconZhengQue, type IconZhengQueProps } from './icons/IconZhengQue';
  */
 export const allIcons = {
   IconBangZhuShuoMing,
+  IconBaoGaoZhuShou,
   IconChengYuanGuanLi,
   IconChongXinFaSong,
   IconCuoWu,
@@ -118,6 +123,7 @@ export const allIcons = {
   IconXiaoXi,
   IconXiaZai,
   IconXiaZaiZhuShou,
+  IconXinXiGuanLi,
   IconXinZeng,
   IconXiTongPeiZhi,
   IconYanZhengMa,
