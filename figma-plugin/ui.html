@@ -731,37 +731,50 @@
             };
 
             try {
-              // 先尝试直接创建
-              let updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
-                method: 'PUT',
-                headers,
-                body: JSON.stringify(updateBody)
-              });
-
-              // 如果返回 422（文件已存在需要 sha），则获取 sha 后重试
-              if (updateResponse.status === 422) {
+              // 先检查文件是否存在于新分支
+              let fileSha = null;
+              try {
                 const fileCheckResponse = await fetch(
                   `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branchName}`,
                   { headers }
                 );
                 if (fileCheckResponse.status === 200) {
                   const fileData = await fileCheckResponse.json();
-                  updateBody.sha = fileData.sha;
-
-                  updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
-                    method: 'PUT',
-                    headers,
-                    body: JSON.stringify(updateBody)
-                  });
+                  fileSha = fileData.sha;
                 }
+              } catch (e) {
+                // 文件不存在，继续创建
               }
+
+              // 如果文件存在，添加 sha
+              if (fileSha) {
+                updateBody.sha = fileSha;
+              }
+
+              // 上传文件
+              const updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+                method: 'PUT',
+                headers,
+                body: JSON.stringify(updateBody)
+              });
 
               if (updateResponse.ok || updateResponse.status === 201) {
                 return { success: true, fileName };
               } else {
                 const error = await updateResponse.json().catch(() => ({}));
-                console.warn(`上传 ${fileName} 失败:`, error.message || updateResponse.status);
-                return { success: false, fileName, error: error.message };
+                console.error(`上传 ${fileName} 失败:`, {
+                  status: updateResponse.status,
+                  statusText: updateResponse.statusText,
+                  error: error,
+                  filePath: filePath,
+                  branch: branchName,
+                  hasSha: !!fileSha
+                });
+                return {
+                  success: false,
+                  fileName,
+                  error: error.message || `HTTP ${updateResponse.status}: ${error.message || updateResponse.statusText}`
+                };
               }
             } catch (error) {
               console.error(`上传 ${fileName} 异常:`, error);
