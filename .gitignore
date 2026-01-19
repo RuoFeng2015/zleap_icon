@@ -36,3 +36,5 @@ src/icons/
 svg/
 sprite/
 icons.json
+docs/public/
+docs/dist/

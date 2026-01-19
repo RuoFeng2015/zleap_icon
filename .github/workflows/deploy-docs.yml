@@ -66,18 +66,6 @@ jobs:
             npm run generate-outputs
           fi
 
-      - name: Copy icons to docs before build
-        run: |
-          echo "Copying icons.json..."
-          cp icons.json docs/ || echo "icons.json not found"
-          echo "Copying SVG files..."
-          mkdir -p docs/svg
-          cp -r svg/*.svg docs/svg/ 2>/dev/null || echo "No SVG files to copy"
-          echo "Files in docs/:"
-          ls -la docs/ | grep -E "(icons.json|svg)"
-          echo "Files in docs/svg/:"
-          ls -la docs/svg/ 2>/dev/null || echo "No svg directory"
-
       - name: Build preview site
         run: npm run build:docs
 
@@ -89,6 +77,10 @@ jobs:
           ls -la docs/dist/icons.json || echo "icons.json missing in dist"
           echo "Checking for svg directory..."
           ls -la docs/dist/svg/ || echo "svg directory missing in dist"
+          if [ -d "docs/dist/svg" ]; then
+            echo "SVG files in dist:"
+            ls -la docs/dist/svg/ | head -20
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

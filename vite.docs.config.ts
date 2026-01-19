@@ -2,52 +2,44 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import { copyFileSync, mkdirSync, readdirSync, existsSync } from 'fs'
 
-// 复制文件到 dist 目录的插件
-function copyAssetsPlugin() {
+// 在构建前准备静态资源
+function prepareStaticAssets() {
   return {
-    name: 'copy-assets',
-    closeBundle() {
+    name: 'prepare-static-assets',
+    buildStart() {
       const rootDir = resolve(__dirname)
       const docsDir = resolve(__dirname, 'docs')
-      const distDir = resolve(__dirname, 'docs/dist')
+      const publicDir = resolve(docsDir, 'public')
 
-      console.log('📦 Copying assets to dist...')
+      console.log('📦 Preparing static assets...')
 
-      // 优先从 docs/ 目录复制 icons.json
-      const iconsJsonDocs = resolve(docsDir, 'icons.json')
+      // 创建 public 目录
+      mkdirSync(publicDir, { recursive: true })
+
+      // 复制 icons.json 到 public
       const iconsJsonRoot = resolve(rootDir, 'icons.json')
-      const iconsJsonSrc = existsSync(iconsJsonDocs)
-        ? iconsJsonDocs
-        : iconsJsonRoot
-
-      if (existsSync(iconsJsonSrc)) {
-        copyFileSync(iconsJsonSrc, resolve(distDir, 'icons.json'))
-        console.log(
-          `✅ Copied icons.json from ${existsSync(iconsJsonDocs) ? 'docs/' : 'root'}`,
-        )
+      if (existsSync(iconsJsonRoot)) {
+        copyFileSync(iconsJsonRoot, resolve(publicDir, 'icons.json'))
+        console.log('✅ Copied icons.json to public/')
       } else {
-        console.warn('⚠️  icons.json not found')
+        console.warn('⚠️  icons.json not found in root')
       }
 
-      // 优先从 docs/svg 复制 SVG 文件
-      const svgDocsDir = resolve(docsDir, 'svg')
+      // 复制 SVG 文件到 public/svg
       const svgRootDir = resolve(rootDir, 'svg')
-      const svgSrcDir = existsSync(svgDocsDir) ? svgDocsDir : svgRootDir
-      const svgDistDir = resolve(distDir, 'svg')
+      const svgPublicDir = resolve(publicDir, 'svg')
 
-      if (existsSync(svgSrcDir)) {
-        mkdirSync(svgDistDir, { recursive: true })
-        const svgFiles = readdirSync(svgSrcDir).filter((f) =>
+      if (existsSync(svgRootDir)) {
+        mkdirSync(svgPublicDir, { recursive: true })
+        const svgFiles = readdirSync(svgRootDir).filter((f) =>
           f.endsWith('.svg'),
         )
         for (const file of svgFiles) {
-          copyFileSync(resolve(svgSrcDir, file), resolve(svgDistDir, file))
+          copyFileSync(resolve(svgRootDir, file), resolve(svgPublicDir, file))
         }
-        console.log(
-          `✅ Copied ${svgFiles.length} SVG files from ${existsSync(svgDocsDir) ? 'docs/svg' : 'root/svg'}`,
-        )
+        console.log(`✅ Copied ${svgFiles.length} SVG files to public/svg/`)
       } else {
-        console.warn('⚠️  svg directory not found')
+        console.warn('⚠️  svg directory not found in root')
       }
     },
   }
@@ -56,11 +48,12 @@ function copyAssetsPlugin() {
 export default defineConfig({
   root: 'docs',
   base: './',
+  publicDir: 'public',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
   },
-  plugins: [copyAssetsPlugin()],
+  plugins: [prepareStaticAssets()],
   server: {
     port: 3000,
     open: true,

@@ -73,7 +73,7 @@ export function toSymbolId(name: string): string {
  */
 export function createSpriteSymbol(
   icon: IconMetadata,
-  options: SpriteGeneratorOptions = DEFAULT_SPRITE_OPTIONS
+  options: SpriteGeneratorOptions = DEFAULT_SPRITE_OPTIONS,
 ): SpriteSymbol | null {
   if (!icon.svgContent) {
     return null
@@ -102,7 +102,7 @@ export function createSpriteSymbol(
  */
 export function generateSprite(
   icons: IconMetadata[],
-  options: Partial<SpriteGeneratorOptions> = {}
+  options: Partial<SpriteGeneratorOptions> = {},
 ): SvgSprite {
   const opts = { ...DEFAULT_SPRITE_OPTIONS, ...options }
 
@@ -123,7 +123,7 @@ export function generateSprite(
     .map(
       (s) => `  <symbol id="${s.id}" viewBox="${s.viewBox}">
     ${s.content}
-  </symbol>`
+  </symbol>`,
     )
     .join('\n')
 
@@ -148,7 +148,7 @@ ${symbolsContent}
  */
 export function generateSpriteFromManifest(
   manifest: IconManifest,
-  options: Partial<SpriteGeneratorOptions> = {}
+  options: Partial<SpriteGeneratorOptions> = {},
 ): SvgSprite {
   return generateSprite(manifest.icons, options)
 }
@@ -217,9 +217,10 @@ const DEFAULT_JSON_OPTIONS: JsonMetadataOptions = {
  */
 export function createIconJsonEntry(
   icon: IconMetadata,
-  options: JsonMetadataOptions = DEFAULT_JSON_OPTIONS
+  options: JsonMetadataOptions = DEFAULT_JSON_OPTIONS,
 ): IconJsonEntry {
-  const svgFileName = toSymbolId(icon.normalizedName) + '.svg'
+  // Use originalName for SVG file (preserves Chinese characters)
+  const svgFileName = icon.originalName + '.svg'
   const componentFileName = icon.normalizedName + '.tsx'
 
   return {
@@ -247,7 +248,7 @@ export function createIconJsonEntry(
 export function generateJsonMetadata(
   icons: IconMetadata[],
   version: string,
-  options: Partial<JsonMetadataOptions> = {}
+  options: Partial<JsonMetadataOptions> = {},
 ): IconsJsonMetadata {
   const opts = { ...DEFAULT_JSON_OPTIONS, ...options }
 
@@ -275,7 +276,7 @@ export function generateJsonMetadata(
  */
 export function generateJsonMetadataFromManifest(
   manifest: IconManifest,
-  options: Partial<JsonMetadataOptions> = {}
+  options: Partial<JsonMetadataOptions> = {},
 ): IconsJsonMetadata {
   return generateJsonMetadata(manifest.icons, manifest.version, options)
 }
@@ -289,7 +290,7 @@ export function generateJsonMetadataFromManifest(
  */
 export function serializeJsonMetadata(
   metadata: IconsJsonMetadata,
-  pretty: boolean = true
+  pretty: boolean = true,
 ): string {
   return JSON.stringify(metadata, null, pretty ? 2 : undefined)
 }
@@ -307,7 +308,7 @@ export function serializeJsonMetadata(
  */
 export function validateSpriteCompleteness(
   sprite: SvgSprite,
-  expectedIconNames: string[]
+  expectedIconNames: string[],
 ): string[] {
   const symbolIds = new Set(sprite.symbols.map((s) => s.id))
   const missing: string[] = []
@@ -331,7 +332,7 @@ export function validateSpriteCompleteness(
  */
 export function validateJsonMetadataCompleteness(
   metadata: IconsJsonMetadata,
-  expectedIconNames: string[]
+  expectedIconNames: string[],
 ): string[] {
   const metadataNames = new Set(metadata.icons.map((i) => i.name))
   const missing: string[] = []
