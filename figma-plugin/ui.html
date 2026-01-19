@@ -706,56 +706,86 @@
           throw new Error(`创建分支失败: ${error.message || createBranchResponse.status}`);
         }
 
-        // 3. 上传每个 SVG 文件
+        // 3. 上传每个 SVG 文件（批量处理，避免速率限制）
         let uploadedCount = 0;
-        for (const icon of syncRequest.icons) {
-          const fileName = sanitizeFilename(icon.name) + '.svg';
-          const filePath = `svg/${fileName}`;
-          const content = btoa(unescape(encodeURIComponent(icon.svg)));
+        const batchSize = 3; // 每批上传 3 个文件
 
-          // 新文件直接创建，不需要检查是否存在
-          // 因为是新分支，文件要么从 base 继承，要么不存在
-          const updateBody = {
-            message: `Add/Update ${fileName}`,
-            content: content,
-            branch: branchName
-          };
+        for (let i = 0; i < syncRequest.icons.length; i += batchSize) {
+          const batch = syncRequest.icons.slice(i, i + batchSize);
 
-          // 先尝试直接创建（假设文件不存在）
-          let updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
-            method: 'PUT',
-            headers,
-            body: JSON.stringify(updateBody)
-          });
+          // 并行上传当前批次
+          const uploadPromises = batch.map(async (icon) => {
+            const fileName = sanitizeFilename(icon.name) + '.svg';
+            const filePath = `svg/${fileName}`;
+            const content = btoa(unescape(encodeURIComponent(icon.svg)));
 
-          // 如果返回 422（文件已存在需要 sha），则获取 sha 后重试
-          if (updateResponse.status === 422) {
-            const fileCheckResponse = await fetch(
-              `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branchName}`,
-              { headers }
-            );
-            if (fileCheckResponse.status === 200) {
-              const fileData = await fileCheckResponse.json();
-              updateBody.sha = fileData.sha;
+            const updateBody = {
+              message: `Add/Update ${fileName}`,
+              content: content,
+              branch: branchName
+            };
 
-              updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+            try {
+              // 先尝试直接创建
+              let updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
                 method: 'PUT',
                 headers,
                 body: JSON.stringify(updateBody)
               });
-            }
-          }
 
-          if (updateResponse.ok || updateResponse.status === 201) {
-            uploadedCount++;
-          } else {
-            const error = await updateResponse.json().catch(() => ({}));
-            console.warn(`上传 ${fileName} 失败:`, error.message || updateResponse.status);
+              // 如果返回 422（文件已存在需要 sha），则获取 sha 后重试
+              if (updateResponse.status === 422) {
+                const fileCheckResponse = await fetch(
+                  `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branchName}`,
+                  { headers }
+                );
+                if (fileCheckResponse.status === 200) {
+                  const fileData = await fileCheckResponse.json();
+                  updateBody.sha = fileData.sha;
+
+                  updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+                    method: 'PUT',
+                    headers,
+                    body: JSON.stringify(updateBody)
+                  });
+                }
+              }
+
+              if (updateResponse.ok || updateResponse.status === 201) {
+                return { success: true, fileName };
+              } else {
+                const error = await updateResponse.json().catch(() => ({}));
+                console.warn(`上传 ${fileName} 失败:`, error.message || updateResponse.status);
+                return { success: false, fileName, error: error.message };
+              }
+            } catch (error) {
+              console.error(`上传 ${fileName} 异常:`, error);
+              return { success: false, fileName, error: error.message };
+            }
+          });
+
+          // 等待当前批次完成
+          const results = await Promise.all(uploadPromises);
+          uploadedCount += results.filter(r => r.success).length;
+
+          // 更新进度
+          const progress = Math.round(((i + batch.length) / syncRequest.icons.length) * 100);
+          document.getElementById('progress-fill').style.width = `${progress}%`;
+          document.getElementById('progress-text').textContent =
+            `上传中: ${Math.min(i + batch.length, syncRequest.icons.length)}/${syncRequest.icons.length}`;
+
+          // 批次之间稍微延迟，避免速率限制
+          if (i + batchSize < syncRequest.icons.length) {
+            await new Promise(resolve => setTimeout(resolve, 500));
           }
         }
 
         if (uploadedCount === 0) {
           throw new Error('没有成功上传任何文件');
+        }
+
+        if (uploadedCount < syncRequest.icons.length) {
+          console.warn(`部分文件上传失败: ${uploadedCount}/${syncRequest.icons.length}`);
         }
 
         // 4. 创建 Pull Request
