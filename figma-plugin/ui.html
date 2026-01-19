@@ -717,7 +717,12 @@
           const uploadPromises = batch.map(async (icon) => {
             const fileName = sanitizeFilename(icon.name) + '.svg';
             const filePath = `svg/${fileName}`;
-            const content = btoa(unescape(encodeURIComponent(icon.svg)));
+
+            // 使用更可靠的 base64 编码方法
+            // 将字符串转换为 UTF-8 字节数组，然后编码为 base64
+            const utf8Bytes = new TextEncoder().encode(icon.svg);
+            const binaryString = Array.from(utf8Bytes, byte => String.fromCharCode(byte)).join('');
+            const content = btoa(binaryString);
 
             const updateBody = {
               message: `Add/Update ${fileName}`,
