@@ -8,6 +8,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.1] - 2026-01-19
 
+3333
+
+### Added
+- IconArrowRight
+- IconCheck
+- IconCloseCircle
+
+### Modified
+- None
+
+### Removed
+- None
+## [1.1.1] - 2026-01-19
+
 33333
 
 ### Added
