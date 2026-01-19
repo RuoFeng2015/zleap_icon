@@ -54,7 +54,61 @@ jobs:
       - name: Generate icons if needed
         run: |
           SVG_COUNT=$(find svg -name "*.svg" 2>/dev/null | wc -l)
-          if [ ! -f "icons.json" ]; then
+
+          # Check if icons.json was updated in the last commit (from Figma plugin)
+          ICONS_JSON_UPDATED=$(git log -1 --name-only --pretty=format: | grep -c "^icons.json$" || echo "0")
+
+          if [ "$ICONS_JSON_UPDATED" -gt 0 ]; then
+            echo "✅ icons.json was updated in the last commit (from Figma plugin)"
+            
+            # Check if this is a full replacement sync by comparing icon counts
+            ICONS_JSON_COUNT=$(node -p "JSON.parse(require('fs').readFileSync('icons.json', 'utf-8')).totalCount || 0")
+            echo "icons.json reports $ICONS_JSON_COUNT icons"
+            echo "svg directory has $SVG_COUNT SVG files"
+            
+            # If icons.json has fewer icons than svg directory, clean up extra files
+            if [ "$ICONS_JSON_COUNT" -lt "$SVG_COUNT" ]; then
+              echo "⚠️ Mismatch detected: icons.json has $ICONS_JSON_COUNT icons but svg has $SVG_COUNT files"
+              echo "This indicates a full replacement sync. Cleaning up extra SVG files..."
+              
+              # Get list of valid SVG files from icons.json
+              node -e "
+                const fs = require('fs');
+                const iconsData = JSON.parse(fs.readFileSync('icons.json', 'utf-8'));
+                const validFiles = iconsData.icons.map(icon => icon.svgPath.replace('svg/', ''));
+                console.log(validFiles.join('\n'));
+              " > /tmp/valid-icons.txt
+              
+              # Remove SVG files not listed in icons.json
+              cd svg
+              REMOVED_COUNT=0
+              for file in *.svg; do
+                if ! grep -Fxq "$file" /tmp/valid-icons.txt; then
+                  echo "  Removing: $file"
+                  rm -f "$file"
+                  REMOVED_COUNT=$((REMOVED_COUNT + 1))
+                fi
+              done
+              cd ..
+              
+              echo "✅ Removed $REMOVED_COUNT extra SVG files"
+              
+              # Commit the deletions
+              git config --local user.email "github-actions[bot]@users.noreply.github.com"
+              git config --local user.name "github-actions[bot]"
+              git add svg/
+              if ! git diff --staged --quiet; then
+                git commit -m "chore: clean up extra SVG files after full replacement sync"
+                git push
+                echo "✅ Committed SVG cleanup"
+              fi
+            else
+              echo "✅ Icon counts match, no cleanup needed"
+            fi
+            
+            # Do NOT regenerate icons.json - use the one from Figma plugin
+            echo "Using icons.json from Figma plugin (not regenerating)"
+          elif [ ! -f "icons.json" ]; then
             echo "icons.json not found, generating all outputs..."
             npm run transform-svg
             npm run generate-components

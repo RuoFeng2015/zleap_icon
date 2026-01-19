@@ -363,4 +363,66 @@ console.error('❌ ${fileName} 上传失败:', {
 ---
 
 **更新日期：** 2026-01-19
-**版本：** 2.2.0
+**版本：** 2.3.0
+
+## 最新更新 (2026-01-19 v2.3.0)
+
+### 修复：GitHub Actions 重新生成 icons.json 问题
+
+**问题**：全量覆盖后，文档网站仍显示所有旧图标
+
+**根本原因**：
+
+1. Figma 插件正确删除了旧 SVG 文件 ✅
+2. Figma 插件正确上传了新 SVG 文件 ✅
+3. Figma 插件正确生成并上传了 `icons.json` ✅
+4. **问题**：GitHub Actions 工作流检测到 SVG 文件存在，自动运行 `npm run generate-outputs` 重新生成 `icons.json`
+5. 重新生成的 `icons.json` 从 main 分支的 `svg` 目录读取，包含了所有文件（包括旧文件）
+
+**为什么会这样**：
+
+- PR 合并到 main 时，Git 只合并变更的文件
+- 如果 PR 中删除了文件 A，但 main 分支上文件 A 仍然存在（因为是在不同的提交中添加的）
+- 合并后，main 分支上文件 A 仍然存在
+- GitHub Actions 从 main 分支读取所有 SVG 文件，生成包含所有图标的 `icons.json`
+
+**解决方案**：
+
+修改 `.github/workflows/deploy-docs.yml`，添加检测逻辑：
+
+```yaml
+- name: Generate icons if needed
+  run: |
+    # 检查 icons.json 是否在最近的提交中被更新（来自 Figma 插件）
+    ICONS_JSON_UPDATED=$(git log -1 --name-only --pretty=format: | grep -c "^icons.json$" || echo "0")
+
+    if [ "$ICONS_JSON_UPDATED" -gt 0 ]; then
+      echo "✅ icons.json 由 Figma 插件更新，直接使用"
+      # 不重新生成，使用插件上传的版本
+    else
+      echo "重新生成 icons.json..."
+      npm run generate-outputs
+    fi
+```
+
+**关键改进**：
+
+1. **检测提交历史**：查看 `icons.json` 是否在最近的提交中被修改
+2. **优先使用插件版本**：如果插件上传了 `icons.json`，直接使用，不重新生成
+3. **保持向后兼容**：如果 `icons.json` 不存在或过时，仍然自动生成
+
+**验证方法**：
+
+1. 使用全量覆盖模式上传 5 个新图标
+2. 等待 PR 合并
+3. 检查 GitHub Actions 日志，应该看到：
+   ```
+   ✅ icons.json 由 Figma 插件更新，直接使用
+   ```
+4. 访问文档网站
+5. 确认只显示 5 个新图标，不显示旧图标
+
+---
+
+**更新日期：** 2026-01-19
+**版本：** 2.3.0
