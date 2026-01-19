@@ -44,6 +44,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check if icons exist
+        run: |
+          echo "Checking for icons..."
+          ls -la svg/ || echo "No svg directory"
+          ls -la icons.json || echo "No icons.json"
+
+      - name: Generate icons if needed
+        run: |
+          if [ ! -f "icons.json" ] || [ $(find svg -name "*.svg" | wc -l) -eq 0 ]; then
+            echo "Icons not found, generating..."
+            npm run transform-svg || echo "Transform failed"
+            npm run generate-components || echo "Generate components failed"
+            npm run generate-outputs || echo "Generate outputs failed"
+          else
+            echo "Icons already exist"
+          fi
+
       - name: Build preview site
         run: npm run build:docs
 
