@@ -220,11 +220,12 @@ async function exportIconsToSvg(icons: IconInfo[]): Promise<IconWithSvg[]> {
 
     try {
       // 使用 Figma 内置的 exportAsync 导出 SVG
-      // 不使用 svgSimplifyStroke，保留原始颜色信息
+      // 使用 SVG_STRING 格式可能会保留更多颜色信息
       const svgData = await (node as FrameNode).exportAsync({
         format: 'SVG',
         svgIdAttribute: false,
-        // 移除 svgSimplifyStroke 以保留更多原始信息
+        // 不使用任何简化选项，保留所有原始信息
+        contentsOnly: false, // 包含容器
       })
 
       // 将 Uint8Array 转换为字符串
