@@ -49,10 +49,11 @@ jobs:
           echo "Checking for icons..."
           ls -la svg/ || echo "No svg directory"
           ls -la icons.json || echo "No icons.json"
+          echo "SVG count: $(find svg -name "*.svg" 2>/dev/null | wc -l)"
 
       - name: Generate icons if needed
         run: |
-          if [ ! -f "icons.json" ] || [ $(find svg -name "*.svg" | wc -l) -eq 0 ]; then
+          if [ ! -f "icons.json" ] || [ $(find svg -name "*.svg" 2>/dev/null | wc -l) -eq 0 ]; then
             echo "Icons not found, generating..."
             npm run transform-svg || echo "Transform failed"
             npm run generate-components || echo "Generate components failed"
@@ -61,16 +62,29 @@ jobs:
             echo "Icons already exist"
           fi
 
+      - name: Copy icons to docs before build
+        run: |
+          echo "Copying icons.json..."
+          cp icons.json docs/ || echo "icons.json not found"
+          echo "Copying SVG files..."
+          mkdir -p docs/svg
+          cp -r svg/*.svg docs/svg/ 2>/dev/null || echo "No SVG files to copy"
+          echo "Files in docs/:"
+          ls -la docs/ | grep -E "(icons.json|svg)"
+          echo "Files in docs/svg/:"
+          ls -la docs/svg/ 2>/dev/null || echo "No svg directory"
+
       - name: Build preview site
         run: npm run build:docs
 
-      - name: Copy icons data to dist
+      - name: Verify dist directory
         run: |
-          cp icons.json docs/dist/ || echo "icons.json not found"
-          mkdir -p docs/dist/svg
-          cp svg/*.svg docs/dist/svg/ || echo "No SVG files found"
+          echo "Checking docs/dist/..."
           ls -la docs/dist/
-          ls -la docs/dist/svg/ || echo "SVG dir empty"
+          echo "Checking for icons.json..."
+          ls -la docs/dist/icons.json || echo "icons.json missing in dist"
+          echo "Checking for svg directory..."
+          ls -la docs/dist/svg/ || echo "svg directory missing in dist"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
