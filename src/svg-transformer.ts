@@ -11,33 +11,24 @@ import type { TransformOptions, TransformResult } from './types'
 /**
  * Default SVGO configuration for icon optimization
  * - Removes dimensions (width/height)
- * - Replaces colors with currentColor
+ * - Preserves original colors (不替换为 currentColor)
  * - Removes unnecessary metadata
  */
 export const defaultSvgoConfig: SvgoConfig = {
   plugins: [
-    'preset-default',
+    {
+      name: 'preset-default',
+      params: {
+        overrides: {
+          // 禁用颜色转换，保留原始颜色
+          convertColors: false,
+          // 禁用移除 viewBox
+          removeViewBox: false,
+        },
+      },
+    },
     'removeDimensions',
     'removeXMLNS',
-    {
-      name: 'convertColors',
-      params: {
-        currentColor: true,
-      },
-    },
-    {
-      name: 'removeAttrs',
-      params: {
-        attrs: ['fill', 'stroke'],
-        preserveCurrentColor: true,
-      },
-    },
-    {
-      name: 'addAttributesToSVGElement',
-      params: {
-        attributes: [{ fill: 'currentColor' }],
-      },
-    },
   ],
 }
 
@@ -62,7 +53,7 @@ export const defaultTransformOptions: TransformOptions = {
  */
 export function optimizeSvg(
   svgContent: string,
-  config: SvgoConfig = defaultSvgoConfig
+  config: SvgoConfig = defaultSvgoConfig,
 ): string {
   const result = optimize(svgContent, config)
   return result.data
@@ -147,7 +138,7 @@ export function convertToJsx(svgContent: string): string {
     (_, attrName) => {
       const jsxAttrName = kebabToCamelCase(attrName.toLowerCase())
       return ` ${jsxAttrName}=`
-    }
+    },
   )
 }
 
@@ -164,7 +155,7 @@ export function convertToJsx(svgContent: string): string {
 export function transformSvg(
   svgContent: string,
   _options: TransformOptions = defaultTransformOptions,
-  svgoConfig: SvgoConfig = defaultSvgoConfig
+  svgoConfig: SvgoConfig = defaultSvgoConfig,
 ): TransformResult {
   const originalSize = svgContent.length
 

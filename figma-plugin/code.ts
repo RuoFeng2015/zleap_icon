@@ -118,7 +118,7 @@ function updateIconsFromSelection(): void {
  * 在指定节点中查找图标
  */
 function findIconsInNodes(
-  nodes: readonly SceneNode[] | readonly PageNode[]
+  nodes: readonly SceneNode[] | readonly PageNode[],
 ): IconInfo[] {
   const icons: IconInfo[] = []
 
@@ -187,7 +187,7 @@ function isIconNode(node: SceneNode | PageNode): boolean {
         child.type === 'RECTANGLE' ||
         child.type === 'POLYGON' ||
         child.type === 'STAR' ||
-        child.type === 'GROUP'
+        child.type === 'GROUP',
     )
     if (!hasVectorContent) {
       return false
@@ -220,10 +220,11 @@ async function exportIconsToSvg(icons: IconInfo[]): Promise<IconWithSvg[]> {
 
     try {
       // 使用 Figma 内置的 exportAsync 导出 SVG
+      // 不使用 svgSimplifyStroke，保留原始颜色信息
       const svgData = await (node as FrameNode).exportAsync({
         format: 'SVG',
-        svgSimplifyStroke: true,
         svgIdAttribute: false,
+        // 移除 svgSimplifyStroke 以保留更多原始信息
       })
 
       // 将 Uint8Array 转换为字符串
@@ -271,7 +272,7 @@ figma.ui.onmessage = async (msg: MessageFromUI) => {
         break
       case 'trigger-sync':
         await handleTriggerSync(
-          msg.payload as { version: string; message: string }
+          msg.payload as { version: string; message: string },
         )
         break
       default:
@@ -323,7 +324,7 @@ async function handleSaveConfig(config: PluginConfig): Promise<void> {
   // 从完整 URL 提取 org/repo
   let repoPath = config.githubRepo.trim()
   const urlMatch = repoPath.match(
-    /github\.com[\/:]([^\/]+\/[^\/]+?)(?:\.git)?(?:\/.*)?$/
+    /github\.com[\/:]([^\/]+\/[^\/]+?)(?:\.git)?(?:\/.*)?$/,
   )
   if (urlMatch) {
     repoPath = urlMatch[1]
@@ -332,7 +333,7 @@ async function handleSaveConfig(config: PluginConfig): Promise<void> {
 
   if (!/^[\w.-]+\/[\w.-]+$/.test(repoPath)) {
     throw new Error(
-      '仓库地址格式错误，请使用 "用户名/仓库名" 格式或完整的 GitHub URL'
+      '仓库地址格式错误，请使用 "用户名/仓库名" 格式或完整的 GitHub URL',
     )
   }
 

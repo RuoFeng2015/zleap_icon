@@ -231,8 +231,8 @@ function exportIconsToSvg(icons) {
                     _a.trys.push([3, 5, , 6]);
                     return [4 /*yield*/, node.exportAsync({
                             format: 'SVG',
-                            svgSimplifyStroke: true,
                             svgIdAttribute: false,
+                            // 移除 svgSimplifyStroke 以保留更多原始信息
                         })
                         // 将 Uint8Array 转换为字符串
                     ];
