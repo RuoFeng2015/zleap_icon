@@ -23,6 +23,7 @@
   ],
   "scripts": {
     "fetch-icons": "tsx scripts/fetch-icons.ts",
+    "fetch-icons-cli": "tsx scripts/fetch-icons-cli.ts",
     "validate-icons": "tsx scripts/validate-icons.ts",
     "transform-svg": "tsx scripts/transform-svg.ts",
     "generate-components": "tsx scripts/generate-components.ts",
@@ -44,6 +45,11 @@
     "react": ">=16.8.0"
   },
   "devDependencies": {
+    "@figma-export/cli": "^6.3.0",
+    "@figma-export/output-components-as-svg": "^6.2.4",
+    "@figma-export/transform-svg-with-svgo": "^6.2.4",
+    "@iconify/tools": "^5.0.2",
+    "@iconify/utils": "^3.1.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.3.7",
