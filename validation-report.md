@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-01-19T07:15:32.507Z
+Generated at: 2026-01-19T08:24:59.241Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 37 |
+| Total Icons | 38 |
 | Valid Icons | 0 |
-| Invalid Icons | 37 |
-| Total Errors | 37 |
-| Total Warnings | 39 |
+| Invalid Icons | 38 |
+| Total Errors | 38 |
+| Total Warnings | 40 |
 
-⚠️ **37 icon(s) failed validation**
+⚠️ **38 icon(s) failed validation**
 
 ## Errors
 
-### size (37 errors)
+### size (38 errors)
 
 | Icon | Message |
 |------|---------|
@@ -52,6 +52,7 @@ Generated at: 2026-01-19T07:15:32.507Z
 | 运营管理 | Icon size 120x120 not in allowed sizes:  |
 | 返回 | Icon size 24x24 not in allowed sizes:  |
 | 退出 | Icon size 24x24 not in allowed sizes:  |
+| 重新发送 | Icon size 24x24 not in allowed sizes:  |
 | 钉钉 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
 | 错误 | Icon size 24x24 not in allowed sizes:  |
@@ -68,7 +69,7 @@ Generated at: 2026-01-19T07:15:32.507Z
 | 搜索助手 | Icon is not square: 120x119 |
 | 未标题-1_画板-1-1 | Icon is not square: 16x22 |
 
-### naming (36 warnings)
+### naming (37 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -103,6 +104,7 @@ Generated at: 2026-01-19T07:15:32.507Z
 | 运营管理 | Icon name "运营管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 返回 | Icon name "返回" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 退出 | Icon name "退出" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 重新发送 | Icon name "重新发送" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 钉钉 | Icon name "钉钉" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 错误 | Icon name "错误" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
