@@ -10,6 +10,8 @@
  */
 
 const { resolve } = require('path');
+const outputComponentsAsSvg = require('@figma-export/output-components-as-svg').default;
+const transformSvgWithSvgo = require('@figma-export/transform-svg-with-svgo').default;
 
 module.exports = {
   commands: [
@@ -21,7 +23,7 @@ module.exports = {
         onlyFromPages: process.env.PAGE_NAME ? [process.env.PAGE_NAME] : undefined,
         // 输出目录
         outputters: [
-          require('@figma-export/output-components-as-svg')({
+          outputComponentsAsSvg({
             output: resolve(__dirname, 'svg'),
             // 使用 SVGO 优化
             svgo: {
@@ -45,7 +47,7 @@ module.exports = {
         ],
         // 转换器（可选）
         transformers: [
-          require('@figma-export/transform-svg-with-svgo')({
+          transformSvgWithSvgo({
             plugins: [
               {
                 name: 'preset-default',
