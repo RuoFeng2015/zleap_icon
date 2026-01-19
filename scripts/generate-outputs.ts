@@ -21,6 +21,7 @@
 
 import * as fs from 'fs/promises'
 import * as path from 'path'
+import { pinyin } from 'pinyin-pro'
 import {
   generateSprite,
   generateJsonMetadata,
@@ -28,6 +29,34 @@ import {
 } from '../src/multi-format-output'
 import { toPascalCase } from '../src/component-generator'
 import type { IconMetadata, IconManifest } from '../src/types'
+
+/**
+ * 将中文转换为拼音
+ */
+function chineseToPinyin(text: string): string {
+  return pinyin(text, {
+    toneType: 'none',
+    type: 'array',
+  }).join('-')
+}
+
+/**
+ * 从文件名提取图标名称（支持中文转拼音）
+ */
+function getIconNameFromFile(fileName: string): string {
+  const nameWithoutExt = fileName.replace(/\.svg$/i, '')
+
+  // 检测是否包含中文字符
+  const hasChinese = /[\u4e00-\u9fa5]/.test(nameWithoutExt)
+
+  if (hasChinese) {
+    // 转换中文为拼音
+    const pinyinName = chineseToPinyin(nameWithoutExt)
+    return pinyinName.toLowerCase().replace(/[^a-z0-9-]/g, '-')
+  }
+
+  return nameWithoutExt
+}
 
 /**
  * Script configuration from environment variables
@@ -85,7 +114,7 @@ async function getSvgFiles(dir: string): Promise<string[]> {
  * Loads an existing manifest file if available
  */
 async function loadManifest(
-  manifestPath: string
+  manifestPath: string,
 ): Promise<IconManifest | null> {
   try {
     const content = await fs.readFile(manifestPath, 'utf-8')
@@ -99,18 +128,19 @@ async function loadManifest(
  * Creates IconMetadata from an SVG file
  */
 async function createMetadataFromFile(
-  svgPath: string
+  svgPath: string,
 ): Promise<IconMetadata | null> {
   try {
     const fileName = path.basename(svgPath)
-    const name = fileName.replace(/\.svg$/i, '')
+    const originalName = fileName.replace(/\.svg$/i, '')
+    const name = getIconNameFromFile(fileName) // 使用拼音转换
     const svgContent = await fs.readFile(svgPath, 'utf-8')
 
     // Try to extract dimensions from SVG
     const widthMatch = svgContent.match(/width=["'](\d+)["']/)
     const heightMatch = svgContent.match(/height=["'](\d+)["']/)
     const viewBoxMatch = svgContent.match(
-      /viewBox=["'][\d\s]+\s+[\d\s]+\s+(\d+)\s+(\d+)["']/
+      /viewBox=["'][\d\s]+\s+[\d\s]+\s+(\d+)\s+(\d+)["']/,
     )
 
     let width = 24
@@ -127,7 +157,7 @@ async function createMetadataFromFile(
     return {
       id: name,
       name,
-      originalName: name,
+      originalName, // 保留原始中文名称
       normalizedName: `Icon${toPascalCase(name)}`,
       width,
       height,
@@ -136,7 +166,7 @@ async function createMetadataFromFile(
   } catch (error) {
     console.error(
       `   ❌ Error reading ${path.basename(svgPath)}:`,
-      error instanceof Error ? error.message : error
+      error instanceof Error ? error.message : error,
     )
     return null
   }
