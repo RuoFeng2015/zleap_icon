@@ -61,13 +61,38 @@ export function toPascalCase(str: string): string {
  */
 export function generateComponentName(
   iconName: string,
-  prefix: string = 'Icon'
+  prefix: string = 'Icon',
 ): string {
   const pascalName = toPascalCase(iconName)
   if (!pascalName) {
     return prefix
   }
   return `${prefix}${pascalName}`
+}
+
+/**
+ * Check if SVG content contains multiple colors (multicolor icon)
+ * @param svgContent - SVG content to check
+ * @returns True if the SVG has multiple colors
+ */
+function isMulticolorSvg(svgContent: string): boolean {
+  // Check for multiple fill colors (excluding none and currentColor)
+  const fillMatches =
+    svgContent.match(/fill="(?!none|currentColor)[^"]+"/g) || []
+  const uniqueFills = new Set(fillMatches)
+
+  // Check for multiple stroke colors
+  const strokeMatches =
+    svgContent.match(/stroke="(?!none|currentColor)[^"]+"/g) || []
+  const uniqueStrokes = new Set(strokeMatches)
+
+  // Check for gradients or patterns
+  const hasGradient =
+    svgContent.includes('<linearGradient') ||
+    svgContent.includes('<radialGradient') ||
+    svgContent.includes('<pattern')
+
+  return uniqueFills.size > 1 || uniqueStrokes.size > 1 || hasGradient
 }
 
 /**
@@ -81,7 +106,7 @@ export function generateComponentName(
  */
 export function generateComponent(
   icon: IconMetadata,
-  jsxContent: string
+  jsxContent: string,
 ): ComponentTemplate {
   const componentName = generateComponentName(icon.name)
   const propsName = `${componentName}Props`
@@ -90,18 +115,28 @@ export function generateComponent(
   const innerContent = extractSvgInnerContent(jsxContent)
   const viewBox = extractViewBox(jsxContent) || '0 0 24 24'
 
+  // Check if this is a multicolor icon
+  const isMulticolor = isMulticolorSvg(jsxContent)
+
+  // For multicolor icons, don't apply fill prop to svg element
+  // For single-color icons, apply fill prop
+  const fillProp = isMulticolor ? '' : '\n        fill={color}'
+  const colorComment = isMulticolor
+    ? '/** Icon color (not applicable for multicolor icons) */'
+    : '/** Icon color */'
+
   const content = `import React, { forwardRef } from 'react';
 import type { SVGProps } from 'react';
 
 export interface ${propsName} extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color */
+  ${colorComment}
   color?: string;
 }
 
 /**
- * ${componentName} icon component
+ * ${componentName} icon component${isMulticolor ? ' (multicolor)' : ''}
  *
  * @param props - Component props including size, color, and SVG attributes
  * @param ref - Forwarded ref to the SVG element
@@ -114,8 +149,7 @@ export const ${componentName} = forwardRef<SVGSVGElement, ${propsName}>(
         xmlns="http://www.w3.org/2000/svg"
         width={size}
         height={size}
-        viewBox="${viewBox}"
-        fill={color}
+        viewBox="${viewBox}"${fillProp}
         className={className}
         style={style}
         {...props}
@@ -150,10 +184,10 @@ export default ${componentName};
  * Requirements: 4.1, 4.2, 4.6
  */
 export function generateComponents(
-  icons: Array<{ metadata: IconMetadata; jsxContent: string }>
+  icons: Array<{ metadata: IconMetadata; jsxContent: string }>,
 ): ComponentTemplate[] {
   return icons.map(({ metadata, jsxContent }) =>
-    generateComponent(metadata, jsxContent)
+    generateComponent(metadata, jsxContent),
   )
 }
 
@@ -180,11 +214,11 @@ export interface IndexFileResult {
  * Requirements: 4.5
  */
 export function generateIndexFile(
-  components: ComponentTemplate[]
+  components: ComponentTemplate[],
 ): IndexFileResult {
   // Sort components alphabetically for consistent output
   const sortedComponents = [...components].sort((a, b) =>
-    a.componentName.localeCompare(b.componentName)
+    a.componentName.localeCompare(b.componentName),
   )
 
   const componentNames = sortedComponents.map((c) => c.componentName)
@@ -192,7 +226,7 @@ export function generateIndexFile(
   // Generate imports for allIcons object
   const imports = sortedComponents
     .map(
-      (c) => `import { ${c.componentName} } from './icons/${c.componentName}';`
+      (c) => `import { ${c.componentName} } from './icons/${c.componentName}';`,
     )
     .join('\n')
 
@@ -200,7 +234,7 @@ export function generateIndexFile(
   const reExports = sortedComponents
     .map(
       (c) =>
-        `export { ${c.componentName}, type ${c.componentName}Props } from './icons/${c.componentName}';`
+        `export { ${c.componentName}, type ${c.componentName}Props } from './icons/${c.componentName}';`,
     )
     .join('\n')
 
@@ -262,7 +296,7 @@ export function generateMinimalIndexFile(componentNames: string[]): string {
   // Generate re-exports with types
   const reExports = sortedNames
     .map(
-      (name) => `export { ${name}, type ${name}Props } from './icons/${name}';`
+      (name) => `export { ${name}, type ${name}Props } from './icons/${name}';`,
     )
     .join('\n')
 

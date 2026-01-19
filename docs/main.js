@@ -77,10 +77,32 @@ async function loadSvgContent(svgPath) {
 }
 
 /**
+ * Check if SVG is multicolor (has multiple fill/stroke colors)
+ * @param {string} svgContent - Raw SVG content
+ * @returns {boolean} True if multicolor
+ */
+function isMulticolorSvg(svgContent) {
+  // 检查是否有多个不同的 fill 颜色（排除 none 和 currentColor）
+  const fillMatches = svgContent.match(/fill="(?!none|currentColor)[^"]+"/g) || [];
+  const uniqueFills = new Set(fillMatches);
+
+  // 检查是否有多个不同的 stroke 颜色
+  const strokeMatches = svgContent.match(/stroke="(?!none|currentColor)[^"]+"/g) || [];
+  const uniqueStrokes = new Set(strokeMatches);
+
+  // 如果有多个不同的颜色，或者有渐变/图案定义，则认为是多色图标
+  const hasGradient = svgContent.includes('<linearGradient') ||
+    svgContent.includes('<radialGradient') ||
+    svgContent.includes('<pattern');
+
+  return uniqueFills.size > 1 || uniqueStrokes.size > 1 || hasGradient;
+}
+
+/**
  * Create SVG element with current size and color
  * @param {string} svgContent - Raw SVG content
  * @param {number} size - Icon size
- * @param {string} color - Icon color
+ * @param {string} color - Icon color (only applied to single-color icons)
  * @returns {string} Modified SVG string
  */
 function createSvgWithStyles(svgContent, size, color) {
@@ -100,8 +122,9 @@ function createSvgWithStyles(svgContent, size, color) {
     svg = svg.replace('<svg', `<svg height="${size}"`);
   }
 
-  // Update color
-  if (color !== 'currentColor') {
+  // 只对单色图标应用颜色配置
+  // 多色图标保留原始颜色
+  if (color !== 'currentColor' && !isMulticolorSvg(svgContent)) {
     svg = svg.replace(/fill="currentColor"/g, `fill="${color}"`);
     svg = svg.replace(/stroke="currentColor"/g, `stroke="${color}"`);
   }
