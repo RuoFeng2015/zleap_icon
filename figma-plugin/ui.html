@@ -789,6 +789,36 @@
 
               console.log(`✅ 已删除 ${svgFiles.length} 个旧图标`);
             }
+
+            // 删除旧的 icons.json 文件
+            try {
+              const iconsJsonResponse = await fetch(
+                `https://api.github.com/repos/${repo}/contents/docs/public/icons.json?ref=${branchName}`,
+                { headers }
+              );
+
+              if (iconsJsonResponse.status === 200) {
+                const iconsJsonData = await iconsJsonResponse.json();
+                const deleteJsonResponse = await fetch(
+                  `https://api.github.com/repos/${repo}/contents/docs/public/icons.json`,
+                  {
+                    method: 'DELETE',
+                    headers,
+                    body: JSON.stringify({
+                      message: 'Delete old icons.json',
+                      sha: iconsJsonData.sha,
+                      branch: branchName
+                    })
+                  }
+                );
+
+                if (deleteJsonResponse.ok) {
+                  console.log('✅ 已删除旧的 icons.json');
+                }
+              }
+            } catch (error) {
+              console.warn('删除 icons.json 时出错:', error);
+            }
           } catch (error) {
             console.warn('删除旧文件时出错:', error);
             // 继续执行，不中断流程
@@ -867,32 +897,42 @@
                 body: JSON.stringify(updateBody)
               });
 
-              // 策略 3: 如果仍然是 409，尝试强制获取最新 SHA 并重试
+              // 策略 3: 如果仍然是 409，尝试多次获取最新 SHA 并重试
               if (updateResponse.status === 409) {
                 console.warn(`文件 ${fileName} 冲突，尝试获取最新 SHA...`);
 
-                // 等待一下，让 GitHub API 同步
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                // 最多重试 3 次
+                for (let retryCount = 0; retryCount < 3; retryCount++) {
+                  // 等待一下，让 GitHub API 同步
+                  await new Promise(resolve => setTimeout(resolve, 1500));
 
-                // 再次尝试获取 SHA
-                try {
-                  const retryCheck = await fetch(
-                    `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branchName}`,
-                    { headers }
-                  );
-                  if (retryCheck.status === 200) {
-                    const fileData = await retryCheck.json();
-                    updateBody.sha = fileData.sha;
+                  // 再次尝试获取 SHA
+                  try {
+                    const retryCheck = await fetch(
+                      `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branchName}`,
+                      { headers }
+                    );
+                    if (retryCheck.status === 200) {
+                      const fileData = await retryCheck.json();
+                      updateBody.sha = fileData.sha;
 
-                    // 重试上传
-                    updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
-                      method: 'PUT',
-                      headers,
-                      body: JSON.stringify(updateBody)
-                    });
+                      console.log(`重试 ${retryCount + 1}: 获取到新 SHA: ${fileData.sha.substring(0, 8)}...`);
+
+                      // 重试上传
+                      updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+                        method: 'PUT',
+                        headers,
+                        body: JSON.stringify(updateBody)
+                      });
+
+                      // 如果成功或不再是 409，跳出循环
+                      if (updateResponse.ok || updateResponse.status !== 409) {
+                        break;
+                      }
+                    }
+                  } catch (retryError) {
+                    console.error(`重试 ${retryCount + 1} 获取 SHA 失败:`, retryError);
                   }
-                } catch (retryError) {
-                  console.error(`重试获取 SHA 失败:`, retryError);
                 }
               }
 
@@ -987,7 +1027,77 @@
           }
         }
 
-        // 5. 创建 Pull Request
+        // 5. 生成并上传 icons.json 文件
+        document.getElementById('progress-text').textContent = '正在生成 icons.json...';
+
+        try {
+          // 生成 icons.json 内容
+          const iconsJsonContent = {
+            version: syncRequest.version,
+            generatedAt: new Date().toISOString(),
+            totalCount: uploadedCount,
+            icons: syncRequest.icons.map(icon => ({
+              name: generateComponentName(icon.name),
+              originalName: icon.name,
+              svgPath: `svg/${sanitizeFilename(icon.name)}.svg`,
+              componentPath: `src/icons/${generateComponentName(icon.name)}.tsx`,
+              size: {
+                width: icon.width || 24,
+                height: icon.height || 24
+              }
+            }))
+          };
+
+          // 将 JSON 转换为 base64
+          const jsonString = JSON.stringify(iconsJsonContent, null, 2);
+          const jsonBase64 = btoa(unescape(encodeURIComponent(jsonString)));
+
+          // 检查 icons.json 是否已存在（获取 SHA）
+          let iconsJsonSha = null;
+          try {
+            const checkResponse = await fetch(
+              `https://api.github.com/repos/${repo}/contents/docs/public/icons.json?ref=${branchName}`,
+              { headers }
+            );
+            if (checkResponse.status === 200) {
+              const fileData = await checkResponse.json();
+              iconsJsonSha = fileData.sha;
+            }
+          } catch (e) {
+            // 文件不存在，这是正常的
+          }
+
+          // 上传 icons.json
+          const uploadJsonBody = {
+            message: `Update icons.json for v${syncRequest.version}`,
+            content: jsonBase64,
+            branch: branchName
+          };
+
+          if (iconsJsonSha) {
+            uploadJsonBody.sha = iconsJsonSha;
+          }
+
+          const uploadJsonResponse = await fetch(
+            `https://api.github.com/repos/${repo}/contents/docs/public/icons.json`,
+            {
+              method: 'PUT',
+              headers,
+              body: JSON.stringify(uploadJsonBody)
+            }
+          );
+
+          if (uploadJsonResponse.ok) {
+            console.log('✅ icons.json 上传成功');
+          } else {
+            console.warn('⚠️ icons.json 上传失败，但继续创建 PR');
+          }
+        } catch (error) {
+          console.error('生成或上传 icons.json 时出错:', error);
+          // 继续执行，不中断流程
+        }
+
+        // 6. 创建 Pull Request
         const prTitle = syncRequest.syncMode === 'replace'
           ? `🔄 全量更新图标: v${syncRequest.version}`
           : `🎨 图标更新: v${syncRequest.version}`;
@@ -1088,6 +1198,40 @@
       }
 
       return result;
+    }
+
+    /**
+     * 将字符串转换为 PascalCase
+     */
+    function toPascalCase(str) {
+      if (!str || str.trim().length === 0) {
+        return '';
+      }
+
+      const words = str
+        .replace(/([a-z])([A-Z])/g, '$1 $2')
+        .replace(/[-_\s]+/g, ' ')
+        .trim()
+        .split(/\s+/)
+        .filter((word) => word.length > 0);
+
+      return words
+        .map((word) => {
+          if (word.length === 0) return '';
+          return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        })
+        .join('');
+    }
+
+    /**
+     * 生成 React 组件名称
+     */
+    function generateComponentName(iconName, prefix = 'Icon') {
+      const pascalName = toPascalCase(iconName);
+      if (!pascalName) {
+        return prefix;
+      }
+      return `${prefix}${pascalName}`;
     }
 
     // ============================================
