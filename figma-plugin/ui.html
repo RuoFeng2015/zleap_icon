@@ -81,17 +81,20 @@
 
     input[type="text"],
     input[type="password"],
-    textarea {
+    textarea,
+    select {
       width: 100%;
       padding: 8px 10px;
       border: 1px solid #e5e5e5;
       border-radius: 4px;
       font-size: 12px;
       transition: border-color 0.2s;
+      background: white;
     }
 
     input:focus,
-    textarea:focus {
+    textarea:focus,
+    select:focus {
       outline: none;
       border-color: #18a0fb;
     }
@@ -312,6 +315,14 @@
 
         <div id="selection-hint" class="status status-info" style="margin-bottom: 12px;">
           💡 提示：选中一个 Frame 可以只同步该区域内的图标
+        </div>
+
+        <div class="form-group">
+          <label>同步模式</label>
+          <select id="sync-mode">
+            <option value="incremental">增量更新（保留现有图标，只添加/更新选中的图标）</option>
+            <option value="replace">全量覆盖（删除所有旧图标，只保留本次上传的图标）</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -570,6 +581,7 @@
 
       const version = document.getElementById('version').value.trim();
       const message = document.getElementById('message').value.trim();
+      const syncMode = document.getElementById('sync-mode').value;
 
       if (!version) {
         showStatus('sync-status', '请输入版本号', 'error');
@@ -586,6 +598,22 @@
         return;
       }
 
+      // 如果是全量覆盖模式，显示警告
+      if (syncMode === 'replace') {
+        const confirmed = confirm(
+          '⚠️ 警告：全量覆盖模式\n\n' +
+          '此操作将：\n' +
+          '1. 删除 svg 目录下的所有旧图标\n' +
+          '2. 只保留本次上传的图标\n\n' +
+          '这是一个不可逆的操作！\n\n' +
+          '确定要继续吗？'
+        );
+
+        if (!confirmed) {
+          return;
+        }
+      }
+
       isSyncing = true;
       updateSyncButton(true);
       document.getElementById('progress-container').classList.remove('hidden');
@@ -593,7 +621,7 @@
       document.getElementById('progress-text').textContent = '准备导出 SVG...';
       document.getElementById('sync-status').classList.add('hidden');
 
-      postMessage('trigger-sync', { version, message });
+      postMessage('trigger-sync', { version, message, syncMode });
     }
 
     async function handleSyncResult(data) {
@@ -706,7 +734,69 @@
           throw new Error(`创建分支失败: ${error.message || createBranchResponse.status}`);
         }
 
-        // 3. 上传每个 SVG 文件（批量处理，避免速率限制）
+        // 3. 如果是全量覆盖模式，删除 svg 目录下的所有旧文件
+        if (syncRequest.syncMode === 'replace') {
+          document.getElementById('progress-text').textContent = '正在删除旧图标...';
+
+          try {
+            // 获取 svg 目录下的所有文件
+            const svgDirResponse = await fetch(
+              `https://api.github.com/repos/${repo}/contents/svg?ref=${branchName}`,
+              { headers }
+            );
+
+            if (svgDirResponse.status === 200) {
+              const files = await svgDirResponse.json();
+              const svgFiles = files.filter(f => f.name.endsWith('.svg'));
+
+              console.log(`找到 ${svgFiles.length} 个旧图标文件，准备删除...`);
+
+              // 批量删除旧文件
+              const deleteBatchSize = 5;
+              for (let i = 0; i < svgFiles.length; i += deleteBatchSize) {
+                const deleteBatch = svgFiles.slice(i, i + deleteBatchSize);
+
+                await Promise.all(deleteBatch.map(async (file) => {
+                  try {
+                    const deleteResponse = await fetch(
+                      `https://api.github.com/repos/${repo}/contents/${file.path}`,
+                      {
+                        method: 'DELETE',
+                        headers,
+                        body: JSON.stringify({
+                          message: `Delete old icon: ${file.name}`,
+                          sha: file.sha,
+                          branch: branchName
+                        })
+                      }
+                    );
+
+                    if (deleteResponse.ok) {
+                      console.log(`✅ 已删除: ${file.name}`);
+                    } else {
+                      console.warn(`⚠️ 删除失败: ${file.name}`);
+                    }
+                  } catch (error) {
+                    console.error(`删除 ${file.name} 时出错:`, error);
+                  }
+                }));
+
+                // 批次间延迟
+                if (i + deleteBatchSize < svgFiles.length) {
+                  await new Promise(resolve => setTimeout(resolve, 1000));
+                }
+              }
+
+              console.log(`✅ 已删除 ${svgFiles.length} 个旧图标`);
+            }
+          } catch (error) {
+            console.warn('删除旧文件时出错:', error);
+            // 继续执行，不中断流程
+          }
+        }
+
+        // 4. 上传每个 SVG 文件（批量处理，避免速率限制）
+        document.getElementById('progress-text').textContent = '正在上传新图标...';
         let uploadedCount = 0;
         const failedFiles = [];
         const batchSize = 3; // 每批上传 3 个文件
@@ -897,13 +987,43 @@
           }
         }
 
-        // 4. 创建 Pull Request
+        // 5. 创建 Pull Request
+        const prTitle = syncRequest.syncMode === 'replace'
+          ? `🔄 全量更新图标: v${syncRequest.version}`
+          : `🎨 图标更新: v${syncRequest.version}`;
+
+        const prBody = syncRequest.syncMode === 'replace'
+          ? `## 全量更新图标
+
+**版本:** ${syncRequest.version}
+**说明:** ${syncRequest.message}
+**模式:** 全量覆盖
+
+此 PR 由 Figma 插件自动生成。
+
+### 变更内容
+- ⚠️ 删除了所有旧图标
+- ✅ 上传了 ${uploadedCount} 个新图标
+
+### 注意
+这是一个全量覆盖更新，旧的图标已被删除。`
+          : `## 图标更新
+
+**版本:** ${syncRequest.version}
+**说明:** ${syncRequest.message}
+**模式:** 增量更新
+
+此 PR 由 Figma 插件自动生成。
+
+### 变更内容
+- ✅ 上传/更新了 ${uploadedCount} 个图标`;
+
         const prResponse = await fetch(`https://api.github.com/repos/${repo}/pulls`, {
           method: 'POST',
           headers,
           body: JSON.stringify({
-            title: `🎨 图标更新 v${syncRequest.version}`,
-            body: `## 图标同步\n\n${syncRequest.message}\n\n### 更新内容\n- 版本: ${syncRequest.version}\n- 图标数量: ${syncRequest.icons.length}\n- 同步时间: ${syncRequest.timestamp}\n\n---\n*由 zleap-icon Figma 插件自动创建*`,
+            title: prTitle,
+            body: prBody,
             head: branchName,
             base: defaultBranch
           })
