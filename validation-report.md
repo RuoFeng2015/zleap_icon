@@ -1,6 +1,6 @@
 # Icon Validation Report
 
-Generated at: 2026-01-19T09:48:00.232Z
+Generated at: 2026-01-19T10:02:24.880Z
 
 ## Summary
 
@@ -20,13 +20,13 @@ Generated at: 2026-01-19T09:48:00.232Z
 
 | Icon | Message |
 |------|---------|
-| Frame-1261156242 | Icon size 23x4 not in allowed sizes:  |
+| Frame-1261156242 | Icon size 58x63 not in allowed sizes:  |
 | Frame | Icon size 24x24 not in allowed sizes:  |
 | RSS | Icon size 24x24 not in allowed sizes:  |
 | edit-03 | Icon size 24x24 not in allowed sizes:  |
 | 下载 | Icon size 24x24 not in allowed sizes:  |
 | 下载助手 | Icon size 120x120 not in allowed sizes:  |
-| 企业版 | Icon size 48x48 not in allowed sizes:  |
+| 企业版 | Icon size 120x120 not in allowed sizes:  |
 | 企微机器人 | Icon size 24x24 not in allowed sizes:  |
 | 信息管理 | Icon size 120x120 not in allowed sizes:  |
 | 增加 | Icon size 953x913 not in allowed sizes:  |
@@ -67,7 +67,7 @@ Generated at: 2026-01-19T09:48:00.232Z
 
 | Icon | Message |
 |------|---------|
-| Frame-1261156242 | Icon is not square: 23x4 |
+| Frame-1261156242 | Icon is not square: 58x63 |
 | 增加 | Icon is not square: 953x913 |
 | 搜索助手 | Icon is not square: 120x119 |
 | 未标题-1_画板-1-1 | Icon is not square: 16x22 |
