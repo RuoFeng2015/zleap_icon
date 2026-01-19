@@ -708,6 +708,7 @@
 
         // 3. 上传每个 SVG 文件（批量处理，避免速率限制）
         let uploadedCount = 0;
+        const failedFiles = [];
         const batchSize = 3; // 每批上传 3 个文件
 
         for (let i = 0; i < syncRequest.icons.length; i += batchSize) {
@@ -719,50 +720,98 @@
             const filePath = `svg/${fileName}`;
 
             // 使用更可靠的 base64 编码方法
-            // 将字符串转换为 UTF-8 字节数组，然后编码为 base64
             const utf8Bytes = new TextEncoder().encode(icon.svg);
             const binaryString = Array.from(utf8Bytes, byte => String.fromCharCode(byte)).join('');
             const content = btoa(binaryString);
 
-            const updateBody = {
-              message: `Add/Update ${fileName}`,
-              content: content,
-              branch: branchName
-            };
-
             try {
-              // 先检查文件是否存在于新分支
+              // 策略 1: 先尝试从新分支获取文件 SHA
               let fileSha = null;
               try {
-                const fileCheckResponse = await fetch(
+                const branchFileCheck = await fetch(
                   `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branchName}`,
                   { headers }
                 );
-                if (fileCheckResponse.status === 200) {
-                  const fileData = await fileCheckResponse.json();
+                if (branchFileCheck.status === 200) {
+                  const fileData = await branchFileCheck.json();
                   fileSha = fileData.sha;
+                  console.log(`文件 ${fileName} 在分支 ${branchName} 上已存在，SHA: ${fileSha}`);
                 }
               } catch (e) {
-                // 文件不存在，继续创建
+                // 文件在新分支上不存在
               }
 
-              // 如果文件存在，添加 sha
+              // 策略 2: 如果新分支上没有，尝试从 main 分支获取
+              if (!fileSha) {
+                try {
+                  const mainFileCheck = await fetch(
+                    `https://api.github.com/repos/${repo}/contents/${filePath}?ref=main`,
+                    { headers }
+                  );
+                  if (mainFileCheck.status === 200) {
+                    const fileData = await mainFileCheck.json();
+                    fileSha = fileData.sha;
+                    console.log(`文件 ${fileName} 在 main 分支上存在，SHA: ${fileSha}`);
+                  }
+                } catch (e) {
+                  // 文件在 main 分支上也不存在，这是新文件
+                  console.log(`文件 ${fileName} 是新文件`);
+                }
+              }
+
+              const updateBody = {
+                message: `Add/Update ${fileName}`,
+                content: content,
+                branch: branchName
+              };
+
+              // 如果找到了 SHA，添加到请求中
               if (fileSha) {
                 updateBody.sha = fileSha;
               }
 
               // 上传文件
-              const updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+              let updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
                 method: 'PUT',
                 headers,
                 body: JSON.stringify(updateBody)
               });
 
+              // 策略 3: 如果仍然是 409，尝试强制获取最新 SHA 并重试
+              if (updateResponse.status === 409) {
+                console.warn(`文件 ${fileName} 冲突，尝试获取最新 SHA...`);
+
+                // 等待一下，让 GitHub API 同步
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                // 再次尝试获取 SHA
+                try {
+                  const retryCheck = await fetch(
+                    `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branchName}`,
+                    { headers }
+                  );
+                  if (retryCheck.status === 200) {
+                    const fileData = await retryCheck.json();
+                    updateBody.sha = fileData.sha;
+
+                    // 重试上传
+                    updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+                      method: 'PUT',
+                      headers,
+                      body: JSON.stringify(updateBody)
+                    });
+                  }
+                } catch (retryError) {
+                  console.error(`重试获取 SHA 失败:`, retryError);
+                }
+              }
+
               if (updateResponse.ok || updateResponse.status === 201) {
+                console.log(`✅ ${fileName} 上传成功`);
                 return { success: true, fileName };
               } else {
                 const error = await updateResponse.json().catch(() => ({}));
-                console.error(`上传 ${fileName} 失败:`, {
+                console.error(`❌ ${fileName} 上传失败:`, {
                   status: updateResponse.status,
                   statusText: updateResponse.statusText,
                   error: error,
@@ -773,37 +822,79 @@
                 return {
                   success: false,
                   fileName,
-                  error: error.message || `HTTP ${updateResponse.status}: ${error.message || updateResponse.statusText}`
+                  status: updateResponse.status,
+                  error: error.message || `HTTP ${updateResponse.status}: ${updateResponse.statusText}`
                 };
               }
             } catch (error) {
-              console.error(`上传 ${fileName} 异常:`, error);
+              console.error(`❌ ${fileName} 上传异常:`, error);
               return { success: false, fileName, error: error.message };
             }
           });
 
           // 等待当前批次完成
           const results = await Promise.all(uploadPromises);
-          uploadedCount += results.filter(r => r.success).length;
+          const successCount = results.filter(r => r.success).length;
+          uploadedCount += successCount;
+
+          // 记录失败的文件
+          results.filter(r => !r.success).forEach(r => {
+            failedFiles.push(r);
+          });
 
           // 更新进度
           const progress = Math.round(((i + batch.length) / syncRequest.icons.length) * 100);
           document.getElementById('progress-fill').style.width = `${progress}%`;
           document.getElementById('progress-text').textContent =
-            `上传中: ${Math.min(i + batch.length, syncRequest.icons.length)}/${syncRequest.icons.length}`;
+            `上传中: ${Math.min(i + batch.length, syncRequest.icons.length)}/${syncRequest.icons.length} (成功: ${uploadedCount}, 失败: ${failedFiles.length})`;
 
           // 批次之间稍微延迟，避免速率限制
           if (i + batchSize < syncRequest.icons.length) {
-            await new Promise(resolve => setTimeout(resolve, 500));
+            await new Promise(resolve => setTimeout(resolve, 1000)); // 增加到 1 秒
           }
         }
 
+        // 显示上传结果摘要
+        console.log(`\n上传完成: 成功 ${uploadedCount}/${syncRequest.icons.length}`);
+        if (failedFiles.length > 0) {
+          console.warn(`失败的文件 (${failedFiles.length}):`, failedFiles.map(f => f.fileName));
+        }
+
+        // 显示上传结果摘要
+        console.log(`\n上传完成: 成功 ${uploadedCount}/${syncRequest.icons.length}`);
+        if (failedFiles.length > 0) {
+          console.warn(`失败的文件 (${failedFiles.length}):`, failedFiles.map(f => f.fileName));
+        }
+
         if (uploadedCount === 0) {
-          throw new Error('没有成功上传任何文件');
+          throw new Error('没有成功上传任何文件。请检查控制台查看详细错误信息。');
         }
 
         if (uploadedCount < syncRequest.icons.length) {
-          console.warn(`部分文件上传失败: ${uploadedCount}/${syncRequest.icons.length}`);
+          const failedCount = syncRequest.icons.length - uploadedCount;
+          console.warn(`⚠️ 部分文件上传失败: ${uploadedCount}/${syncRequest.icons.length} 成功`);
+
+          // 显示失败文件列表
+          if (failedFiles.length > 0) {
+            console.group('失败的文件详情:');
+            failedFiles.forEach(f => {
+              console.error(`- ${f.fileName}: ${f.error} (状态: ${f.status || 'N/A'})`);
+            });
+            console.groupEnd();
+          }
+
+          // 询问用户是否继续
+          const continueAnyway = confirm(
+            `⚠️ 警告：${failedCount} 个文件上传失败\n\n` +
+            `成功: ${uploadedCount}\n` +
+            `失败: ${failedCount}\n\n` +
+            `是否继续创建 PR？\n\n` +
+            `（失败的文件不会包含在 PR 中，你可以稍后重新上传）`
+          );
+
+          if (!continueAnyway) {
+            throw new Error('用户取消操作');
+          }
         }
 
         // 4. 创建 Pull Request
