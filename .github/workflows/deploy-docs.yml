@@ -53,13 +53,17 @@ jobs:
 
       - name: Generate icons if needed
         run: |
-          if [ ! -f "icons.json" ] || [ $(find svg -name "*.svg" 2>/dev/null | wc -l) -eq 0 ]; then
-            echo "Icons not found, generating..."
-            npm run transform-svg || echo "Transform failed"
-            npm run generate-components || echo "Generate components failed"
-            npm run generate-outputs || echo "Generate outputs failed"
+          SVG_COUNT=$(find svg -name "*.svg" 2>/dev/null | wc -l)
+          if [ ! -f "icons.json" ]; then
+            echo "icons.json not found, generating all outputs..."
+            npm run transform-svg
+            npm run generate-components
+            npm run generate-outputs
+          elif [ "$SVG_COUNT" -eq 0 ]; then
+            echo "No SVG files found, skipping..."
           else
-            echo "Icons already exist"
+            echo "Icons already exist, regenerating outputs..."
+            npm run generate-outputs
           fi
 
       - name: Copy icons to docs before build
