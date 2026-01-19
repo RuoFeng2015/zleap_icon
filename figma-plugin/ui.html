@@ -790,8 +790,9 @@
               console.log(`✅ 已删除 ${svgFiles.length} 个旧图标`);
             }
 
-            // 删除旧的 icons.json 文件
+            // 删除旧的 icons.json 和 icons-manifest.json 文件
             try {
+              // 删除 docs/public/icons.json
               const iconsJsonResponse = await fetch(
                 `https://api.github.com/repos/${repo}/contents/docs/public/icons.json?ref=${branchName}`,
                 { headers }
@@ -813,11 +814,71 @@
                 );
 
                 if (deleteJsonResponse.ok) {
+                  console.log('✅ 已删除旧的 docs/public/icons.json');
+                }
+              }
+            } catch (error) {
+              console.warn('删除 docs/public/icons.json 时出错:', error);
+            }
+
+            // 删除根目录的 icons.json
+            try {
+              const rootIconsJsonResponse = await fetch(
+                `https://api.github.com/repos/${repo}/contents/icons.json?ref=${branchName}`,
+                { headers }
+              );
+
+              if (rootIconsJsonResponse.status === 200) {
+                const rootIconsJsonData = await rootIconsJsonResponse.json();
+                const deleteRootJsonResponse = await fetch(
+                  `https://api.github.com/repos/${repo}/contents/icons.json`,
+                  {
+                    method: 'DELETE',
+                    headers,
+                    body: JSON.stringify({
+                      message: 'Delete old icons.json',
+                      sha: rootIconsJsonData.sha,
+                      branch: branchName
+                    })
+                  }
+                );
+
+                if (deleteRootJsonResponse.ok) {
                   console.log('✅ 已删除旧的 icons.json');
                 }
               }
             } catch (error) {
               console.warn('删除 icons.json 时出错:', error);
+            }
+
+            // 删除 icons-manifest.json
+            try {
+              const manifestResponse = await fetch(
+                `https://api.github.com/repos/${repo}/contents/icons-manifest.json?ref=${branchName}`,
+                { headers }
+              );
+
+              if (manifestResponse.status === 200) {
+                const manifestData = await manifestResponse.json();
+                const deleteManifestResponse = await fetch(
+                  `https://api.github.com/repos/${repo}/contents/icons-manifest.json`,
+                  {
+                    method: 'DELETE',
+                    headers,
+                    body: JSON.stringify({
+                      message: 'Delete old icons-manifest.json',
+                      sha: manifestData.sha,
+                      branch: branchName
+                    })
+                  }
+                );
+
+                if (deleteManifestResponse.ok) {
+                  console.log('✅ 已删除旧的 icons-manifest.json');
+                }
+              }
+            } catch (error) {
+              console.warn('删除 icons-manifest.json 时出错:', error);
             }
           } catch (error) {
             console.warn('删除旧文件时出错:', error);
@@ -1054,6 +1115,8 @@
 
           // 检查 icons.json 是否已存在（获取 SHA）
           let iconsJsonSha = null;
+          let rootIconsJsonSha = null;
+
           try {
             const checkResponse = await fetch(
               `https://api.github.com/repos/${repo}/contents/docs/public/icons.json?ref=${branchName}`,
@@ -1067,7 +1130,21 @@
             // 文件不存在，这是正常的
           }
 
-          // 上传 icons.json
+          // 检查根目录的 icons.json
+          try {
+            const rootCheckResponse = await fetch(
+              `https://api.github.com/repos/${repo}/contents/icons.json?ref=${branchName}`,
+              { headers }
+            );
+            if (rootCheckResponse.status === 200) {
+              const fileData = await rootCheckResponse.json();
+              rootIconsJsonSha = fileData.sha;
+            }
+          } catch (e) {
+            // 文件不存在，这是正常的
+          }
+
+          // 上传 icons.json 到 docs/public/
           const uploadJsonBody = {
             message: `Update icons.json for v${syncRequest.version}`,
             content: jsonBase64,
@@ -1088,6 +1165,32 @@
           );
 
           if (uploadJsonResponse.ok) {
+            console.log('✅ docs/public/icons.json 上传成功');
+          } else {
+            console.warn('⚠️ docs/public/icons.json 上传失败');
+          }
+
+          // 上传 icons.json 到根目录（GitHub Actions 需要）
+          const rootUploadJsonBody = {
+            message: `Update icons.json for v${syncRequest.version}`,
+            content: jsonBase64,
+            branch: branchName
+          };
+
+          if (rootIconsJsonSha) {
+            rootUploadJsonBody.sha = rootIconsJsonSha;
+          }
+
+          const rootUploadJsonResponse = await fetch(
+            `https://api.github.com/repos/${repo}/contents/icons.json`,
+            {
+              method: 'PUT',
+              headers,
+              body: JSON.stringify(rootUploadJsonBody)
+            }
+          );
+
+          if (rootUploadJsonResponse.ok) {
             console.log('✅ icons.json 上传成功');
           } else {
             console.warn('⚠️ icons.json 上传失败，但继续创建 PR');
