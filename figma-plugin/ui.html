@@ -739,9 +739,9 @@
           document.getElementById('progress-text').textContent = '正在删除旧图标...';
 
           try {
-            // 获取 svg 目录下的所有文件
+            // 获取 svg 目录下的所有文件（从 main 分支获取，确保获取到所有旧文件）
             const svgDirResponse = await fetch(
-              `https://api.github.com/repos/${repo}/contents/svg?ref=${branchName}`,
+              `https://api.github.com/repos/${repo}/contents/svg?ref=${defaultBranch}`,
               { headers }
             );
 
@@ -749,45 +749,61 @@
               const files = await svgDirResponse.json();
               const svgFiles = files.filter(f => f.name.endsWith('.svg'));
 
-              console.log(`找到 ${svgFiles.length} 个旧图标文件，准备删除...`);
+              // 创建本次上传的文件名集合（用于对比）
+              const uploadingFileNames = new Set(
+                syncRequest.icons.map(icon => sanitizeFilename(icon.name) + '.svg')
+              );
 
-              // 批量删除旧文件
-              const deleteBatchSize = 5;
-              for (let i = 0; i < svgFiles.length; i += deleteBatchSize) {
-                const deleteBatch = svgFiles.slice(i, i + deleteBatchSize);
+              // 找出需要删除的文件（不在本次上传列表中的文件）
+              const filesToDelete = svgFiles.filter(f => !uploadingFileNames.has(f.name));
 
-                await Promise.all(deleteBatch.map(async (file) => {
-                  try {
-                    const deleteResponse = await fetch(
-                      `https://api.github.com/repos/${repo}/contents/${file.path}`,
-                      {
-                        method: 'DELETE',
-                        headers,
-                        body: JSON.stringify({
-                          message: `Delete old icon: ${file.name}`,
-                          sha: file.sha,
-                          branch: branchName
-                        })
+              console.log(`找到 ${svgFiles.length} 个现有文件，本次上传 ${uploadingFileNames.size} 个文件`);
+              console.log(`需要删除 ${filesToDelete.length} 个旧文件`);
+
+              if (filesToDelete.length > 0) {
+                // 批量删除旧文件
+                const deleteBatchSize = 5;
+                let deletedCount = 0;
+
+                for (let i = 0; i < filesToDelete.length; i += deleteBatchSize) {
+                  const deleteBatch = filesToDelete.slice(i, i + deleteBatchSize);
+
+                  await Promise.all(deleteBatch.map(async (file) => {
+                    try {
+                      const deleteResponse = await fetch(
+                        `https://api.github.com/repos/${repo}/contents/${file.path}`,
+                        {
+                          method: 'DELETE',
+                          headers,
+                          body: JSON.stringify({
+                            message: `Delete old icon: ${file.name}`,
+                            sha: file.sha,
+                            branch: branchName
+                          })
+                        }
+                      );
+
+                      if (deleteResponse.ok) {
+                        deletedCount++;
+                        console.log(`✅ 已删除: ${file.name}`);
+                      } else {
+                        console.warn(`⚠️ 删除失败: ${file.name}`);
                       }
-                    );
-
-                    if (deleteResponse.ok) {
-                      console.log(`✅ 已删除: ${file.name}`);
-                    } else {
-                      console.warn(`⚠️ 删除失败: ${file.name}`);
+                    } catch (error) {
+                      console.error(`删除 ${file.name} 时出错:`, error);
                     }
-                  } catch (error) {
-                    console.error(`删除 ${file.name} 时出错:`, error);
+                  }));
+
+                  // 批次间延迟
+                  if (i + deleteBatchSize < filesToDelete.length) {
+                    await new Promise(resolve => setTimeout(resolve, 1000));
                   }
-                }));
-
-                // 批次间延迟
-                if (i + deleteBatchSize < svgFiles.length) {
-                  await new Promise(resolve => setTimeout(resolve, 1000));
                 }
-              }
 
-              console.log(`✅ 已删除 ${svgFiles.length} 个旧图标`);
+                console.log(`✅ 已删除 ${deletedCount}/${filesToDelete.length} 个旧图标`);
+              } else {
+                console.log('✅ 没有需要删除的旧文件');
+              }
             }
 
             // 删除旧的 icons.json 和 icons-manifest.json 文件
