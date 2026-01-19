@@ -7,6 +7,7 @@
 
 import { IconBangZhuShuoMing } from './icons/IconBangZhuShuoMing';
 import { IconChengYuanGuanLi } from './icons/IconChengYuanGuanLi';
+import { IconChongXinFaSong } from './icons/IconChongXinFaSong';
 import { IconCuoWu } from './icons/IconCuoWu';
 import { IconDingDing } from './icons/IconDingDing';
 import { IconEdit03 } from './icons/IconEdit03';
@@ -45,6 +46,7 @@ import { IconZhengQue } from './icons/IconZhengQue';
 
 export { IconBangZhuShuoMing, type IconBangZhuShuoMingProps } from './icons/IconBangZhuShuoMing';
 export { IconChengYuanGuanLi, type IconChengYuanGuanLiProps } from './icons/IconChengYuanGuanLi';
+export { IconChongXinFaSong, type IconChongXinFaSongProps } from './icons/IconChongXinFaSong';
 export { IconCuoWu, type IconCuoWuProps } from './icons/IconCuoWu';
 export { IconDingDing, type IconDingDingProps } from './icons/IconDingDing';
 export { IconEdit03, type IconEdit03Props } from './icons/IconEdit03';
@@ -87,6 +89,7 @@ export { IconZhengQue, type IconZhengQueProps } from './icons/IconZhengQue';
 export const allIcons = {
   IconBangZhuShuoMing,
   IconChengYuanGuanLi,
+  IconChongXinFaSong,
   IconCuoWu,
   IconDingDing,
   IconEdit03,
