@@ -12,13 +12,28 @@
 
 ### 2. 获取 Figma File ID
 
-从你的 Figma 文件 URL 中提取：
+**从 URL 中提取 FILE_ID：**
 
 ```
 https://www.figma.com/file/abc123def456/My-Icons
                               ^^^^^^^^^^^
-                              这就是 File ID
+                              这就是 FILE_ID
 ```
+
+**或者：**
+
+```
+https://www.figma.com/design/abc123def456/My-Icons
+                               ^^^^^^^^^^^
+                               这就是 FILE_ID
+```
+
+**示例：**
+
+- URL: `https://www.figma.com/design/RuoFeng2015abc/zleap-icon`
+- FILE_ID: `RuoFeng2015abc`
+
+📖 **详细教程**：[如何获取 FILE_ID](docs/HOW-TO-GET-FILE-ID.md)
 
 ### 3. 配置 GitHub Secrets
 
