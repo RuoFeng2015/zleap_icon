@@ -1,6 +1,6 @@
 # Icon Validation Report
 
-Generated at: 2026-01-15T06:41:25.436Z
+Generated at: 2026-01-19T03:34:46.698Z
 
 ## Summary
 
@@ -20,10 +20,10 @@ Generated at: 2026-01-15T06:41:25.436Z
 
 | Icon | Message |
 |------|---------|
-| 下载助手 | Icon size 48x48 not in allowed sizes: 16, 20, 24, 32 |
-| 企业版 | Icon size 48x48 not in allowed sizes: 16, 20, 24, 32 |
-| 系统配置 | Icon size 48x48 not in allowed sizes: 16, 20, 24, 32 |
-| 运营管理 | Icon size 48x48 not in allowed sizes: 16, 20, 24, 32 |
+| 下载助手 | Icon size 48x48 not in allowed sizes:  |
+| 企业版 | Icon size 48x48 not in allowed sizes:  |
+| 系统配置 | Icon size 48x48 not in allowed sizes:  |
+| 运营管理 | Icon size 48x48 not in allowed sizes:  |
 
 ## Warnings
 
