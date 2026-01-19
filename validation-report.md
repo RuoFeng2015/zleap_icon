@@ -1,6 +1,6 @@
 # Icon Validation Report
 
-Generated at: 2026-01-19T06:01:28.947Z
+Generated at: 2026-01-19T06:12:26.633Z
 
 ## Summary
 
@@ -20,7 +20,7 @@ Generated at: 2026-01-19T06:01:28.947Z
 
 | Icon | Message |
 |------|---------|
-| Frame-1261156242 | Icon size 58x63 not in allowed sizes:  |
+| Frame-1261156242 | Icon size 23x4 not in allowed sizes:  |
 | 下载助手 | Icon size 120x120 not in allowed sizes:  |
 | 企业版 | Icon size 48x48 not in allowed sizes:  |
 | 成员管理 | Icon size 120x120 not in allowed sizes:  |
@@ -35,7 +35,7 @@ Generated at: 2026-01-19T06:01:28.947Z
 
 | Icon | Message |
 |------|---------|
-| Frame-1261156242 | Icon is not square: 58x63 |
+| Frame-1261156242 | Icon is not square: 23x4 |
 | 搜索助手 | Icon is not square: 120x119 |
 
 ### naming (8 warnings)
