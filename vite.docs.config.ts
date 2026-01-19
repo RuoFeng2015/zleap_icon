@@ -8,22 +8,33 @@ function copyAssetsPlugin() {
     name: 'copy-assets',
     closeBundle() {
       const rootDir = resolve(__dirname)
+      const docsDir = resolve(__dirname, 'docs')
       const distDir = resolve(__dirname, 'docs/dist')
 
       console.log('📦 Copying assets to dist...')
 
-      // 复制 icons.json（从根目录）
-      const iconsJsonSrc = resolve(rootDir, 'icons.json')
+      // 优先从 docs/ 目录复制 icons.json
+      const iconsJsonDocs = resolve(docsDir, 'icons.json')
+      const iconsJsonRoot = resolve(rootDir, 'icons.json')
+      const iconsJsonSrc = existsSync(iconsJsonDocs)
+        ? iconsJsonDocs
+        : iconsJsonRoot
+
       if (existsSync(iconsJsonSrc)) {
         copyFileSync(iconsJsonSrc, resolve(distDir, 'icons.json'))
-        console.log('✅ Copied icons.json from root')
+        console.log(
+          `✅ Copied icons.json from ${existsSync(iconsJsonDocs) ? 'docs/' : 'root'}`,
+        )
       } else {
-        console.warn('⚠️  icons.json not found in root')
+        console.warn('⚠️  icons.json not found')
       }
 
-      // 复制 svg 目录（从根目录）
-      const svgSrcDir = resolve(rootDir, 'svg')
+      // 优先从 docs/svg 复制 SVG 文件
+      const svgDocsDir = resolve(docsDir, 'svg')
+      const svgRootDir = resolve(rootDir, 'svg')
+      const svgSrcDir = existsSync(svgDocsDir) ? svgDocsDir : svgRootDir
       const svgDistDir = resolve(distDir, 'svg')
+
       if (existsSync(svgSrcDir)) {
         mkdirSync(svgDistDir, { recursive: true })
         const svgFiles = readdirSync(svgSrcDir).filter((f) =>
@@ -32,9 +43,11 @@ function copyAssetsPlugin() {
         for (const file of svgFiles) {
           copyFileSync(resolve(svgSrcDir, file), resolve(svgDistDir, file))
         }
-        console.log(`✅ Copied ${svgFiles.length} SVG files from root/svg`)
+        console.log(
+          `✅ Copied ${svgFiles.length} SVG files from ${existsSync(svgDocsDir) ? 'docs/svg' : 'root/svg'}`,
+        )
       } else {
-        console.warn('⚠️  svg directory not found in root')
+        console.warn('⚠️  svg directory not found')
       }
     },
   }
