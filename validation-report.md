@@ -1,6 +1,6 @@
 # Icon Validation Report
 
-Generated at: 2026-01-19T08:51:43.546Z
+Generated at: 2026-01-19T09:48:00.232Z
 
 ## Summary
 
@@ -58,7 +58,7 @@ Generated at: 2026-01-19T08:51:43.546Z
 | 钉钉 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
 | 错误 | Icon size 24x24 not in allowed sizes:  |
-| 问答助手 | Icon size 24x24 not in allowed sizes:  |
+| 问答助手 | Icon size 120x120 not in allowed sizes:  |
 | 验证码 | Icon size 24x24 not in allowed sizes:  |
 
 ## Warnings
