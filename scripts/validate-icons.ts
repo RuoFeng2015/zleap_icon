@@ -47,10 +47,11 @@ interface ScriptConfig {
  * Loads configuration from environment variables
  */
 function loadConfig(): ScriptConfig {
-  const allowedSizesStr = process.env.ALLOWED_SIZES || '16,20,24,32'
+  // 不限制尺寸，设置为空数组
+  const allowedSizesStr = process.env.ALLOWED_SIZES || ''
   const allowedSizes = allowedSizesStr
-    .split(',')
-    .map((s) => parseInt(s.trim(), 10))
+    ? allowedSizesStr.split(',').map((s) => parseInt(s.trim(), 10))
+    : []
 
   return {
     svgDir: process.env.SVG_DIR || './svg',
@@ -80,7 +81,7 @@ async function getSvgFiles(dir: string): Promise<string[]> {
  * Loads an existing manifest file if available
  */
 async function loadManifest(
-  manifestPath: string
+  manifestPath: string,
 ): Promise<IconManifest | null> {
   try {
     const content = await fs.readFile(manifestPath, 'utf-8')
@@ -94,7 +95,7 @@ async function loadManifest(
  * Creates IconMetadata from an SVG file
  */
 async function createMetadataFromFile(
-  svgPath: string
+  svgPath: string,
 ): Promise<IconMetadata | null> {
   try {
     const fileName = path.basename(svgPath)
@@ -105,7 +106,7 @@ async function createMetadataFromFile(
     const widthMatch = svgContent.match(/width=["'](\d+)["']/)
     const heightMatch = svgContent.match(/height=["'](\d+)["']/)
     const viewBoxMatch = svgContent.match(
-      /viewBox=["'][\d\s.]+\s+[\d\s.]+\s+([\d.]+)\s+([\d.]+)["']/
+      /viewBox=["'][\d\s.]+\s+[\d\s.]+\s+([\d.]+)\s+([\d.]+)["']/,
     )
 
     let width = 24
@@ -131,7 +132,7 @@ async function createMetadataFromFile(
   } catch (error) {
     console.error(
       `   ❌ Error reading ${path.basename(svgPath)}:`,
-      error instanceof Error ? error.message : error
+      error instanceof Error ? error.message : error,
     )
     return null
   }
