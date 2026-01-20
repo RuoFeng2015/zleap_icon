@@ -1,7 +1,7 @@
 {
-  "version": "1.5.3",
-  "syncMode": "replace",
-  "generatedAt": "2026-01-20T08:47:27.277Z",
+  "version": "1.9.2",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-20T08:51:22.417Z",
   "totalCount": 2,
   "icons": [
     {
