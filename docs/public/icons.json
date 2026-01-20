@@ -59,31 +59,56 @@
       "svgPath": "svg/企业版.svg",
       "componentPath": "src/icons/IconQiYeBan.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     },
     {
+<<<<<<< HEAD
       "name": "IconShouQi",
       "originalName": "收起",
       "svgPath": "svg/收起.svg",
       "componentPath": "src/icons/IconShouQi.tsx",
+=======
+      "name": "Icon文档",
+      "originalName": "文档",
+      "svgPath": "svg/文档.svg",
+      "componentPath": "src/icons/Icon文档.tsx",
+>>>>>>> 712c4809b04017d793f901a843917ac0c5c239df
       "size": {
         "width": 24,
         "height": 24
       }
     },
     {
+<<<<<<< HEAD
       "name": "IconSouSuoZhuShou",
       "originalName": "搜索助手",
       "svgPath": "svg/搜索助手.svg",
       "componentPath": "src/icons/IconSouSuoZhuShou.tsx",
+=======
+      "name": "Icon文档",
+      "originalName": "文档",
+      "svgPath": "svg/文档.svg",
+      "componentPath": "src/icons/Icon文档.tsx",
       "size": {
-        "width": 120,
-        "height": 119
+        "width": 24,
+        "height": 24
       }
     },
     {
+      "name": "Icon新增",
+      "originalName": "新增",
+      "svgPath": "svg/新增.svg",
+      "componentPath": "src/icons/Icon新增.tsx",
+>>>>>>> 712c4809b04017d793f901a843917ac0c5c239df
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+<<<<<<< HEAD
       "name": "IconWangLuoJianSuo",
       "originalName": "网络检索",
       "svgPath": "svg/网络检索.svg",
@@ -118,9 +143,25 @@
       "originalName": "问答助手",
       "svgPath": "svg/问答助手.svg",
       "componentPath": "src/icons/IconWenDaZhuShou.tsx",
+=======
+      "name": "Icon网页下载",
+      "originalName": "网页下载",
+      "svgPath": "svg/网页下载.svg",
+      "componentPath": "src/icons/Icon网页下载.tsx",
+>>>>>>> 712c4809b04017d793f901a843917ac0c5c239df
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "Icon验证码",
+      "originalName": "验证码",
+      "svgPath": "svg/验证码.svg",
+      "componentPath": "src/icons/Icon验证码.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
       }
     },
     {
