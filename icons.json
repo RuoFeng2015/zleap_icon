@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-20T08:10:50.101Z",
-  "totalCount": 4,
+  "generatedAt": "2026-01-20T08:18:50.191Z",
+  "totalCount": 3,
   "icons": [
     {
       "name": "IconBaoGaoZhuShou",
@@ -18,16 +18,6 @@
       "originalName": "Frame-1261156242",
       "svgPath": "svg/Frame-1261156242.svg",
       "componentPath": "src/icons/IconFrame1261156242.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
-      }
-    },
-    {
-      "name": "IconWenDaZhuShou",
-      "originalName": "问答助手",
-      "svgPath": "svg/问答助手.svg",
-      "componentPath": "src/icons/IconWenDaZhuShou.tsx",
       "size": {
         "width": 120,
         "height": 120

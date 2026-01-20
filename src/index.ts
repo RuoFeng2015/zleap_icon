@@ -7,12 +7,10 @@
 
 import { IconBaoGaoZhuShou } from './icons/IconBaoGaoZhuShou';
 import { IconFrame1261156242 } from './icons/IconFrame1261156242';
-import { IconWenDaZhuShou } from './icons/IconWenDaZhuShou';
 import { IconXinXiGuanLi } from './icons/IconXinXiGuanLi';
 
 export { IconBaoGaoZhuShou, type IconBaoGaoZhuShouProps } from './icons/IconBaoGaoZhuShou';
 export { IconFrame1261156242, type IconFrame1261156242Props } from './icons/IconFrame1261156242';
-export { IconWenDaZhuShou, type IconWenDaZhuShouProps } from './icons/IconWenDaZhuShou';
 export { IconXinXiGuanLi, type IconXinXiGuanLiProps } from './icons/IconXinXiGuanLi';
 
 /**
@@ -21,7 +19,6 @@ export { IconXinXiGuanLi, type IconXinXiGuanLiProps } from './icons/IconXinXiGua
 export const allIcons = {
   IconBaoGaoZhuShou,
   IconFrame1261156242,
-  IconWenDaZhuShou,
   IconXinXiGuanLi
 } as const;
 
