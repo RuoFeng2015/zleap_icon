@@ -7,19 +7,16 @@
 
 import { IconBaoGaoZhuShou } from './icons/IconBaoGaoZhuShou';
 import { IconFrame1261156242 } from './icons/IconFrame1261156242';
-import { IconSouSuoZhuShou } from './icons/IconSouSuoZhuShou';
 
 export { IconBaoGaoZhuShou, type IconBaoGaoZhuShouProps } from './icons/IconBaoGaoZhuShou';
 export { IconFrame1261156242, type IconFrame1261156242Props } from './icons/IconFrame1261156242';
-export { IconSouSuoZhuShou, type IconSouSuoZhuShouProps } from './icons/IconSouSuoZhuShou';
 
 /**
  * Object containing all icon components
  */
 export const allIcons = {
   IconBaoGaoZhuShou,
-  IconFrame1261156242,
-  IconSouSuoZhuShou
+  IconFrame1261156242
 } as const;
 
 /**
