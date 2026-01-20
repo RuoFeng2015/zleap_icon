@@ -62,6 +62,51 @@ const UI_WIDTH = 400
 const UI_HEIGHT = 550
 
 // ============================================
+// SVG Cleanup Utilities
+// ============================================
+
+/**
+ * 清理 Figma 导出的 SVG 中的问题元素
+ * - 移除超大背景路径（设计稿背景泄漏）
+ * - 移除空的 clipPath 定义
+ * - 移除不必要的白色/灰色背景矩形
+ */
+function cleanSvgContent(svgString: string): string {
+  let svg = svgString
+
+  // 移除超大尺寸的背景路径 (如 d="M0 0h120v120H0z" 且 fill="#F5F5F5")
+  // 这些通常是 Figma 画板的背景
+  svg = svg.replace(
+    /<path\s+fill="(#F5F5F5|#f5f5f5|white|#fff|#ffffff)"\s+d="M0\s+0h\d+v\d+H0z"\s*\/>/gi,
+    ''
+  )
+
+  // 移除超大负偏移的背景路径 (如 d="M-878-463H562V561H-878z")
+  svg = svg.replace(
+    /<path\s+fill="(white|#fff|#ffffff)"\s+d="M-?\d+-?\d+H-?\d+V-?\d+H-?\d+z"\s*\/>/gi,
+    ''
+  )
+
+  // 移除空的 clipPath 定义
+  svg = svg.replace(/<clipPath\s+id="[^"]*"\s*\/>/gi, '')
+  svg = svg.replace(/<clipPath\s+id="[^"]*"\s*><\/clipPath>/gi, '')
+
+  // 移除引用空 clipPath 的 g 元素的 clipPath 属性
+  // 但保留 g 元素本身和其内容
+  svg = svg.replace(/\s+clipPath="url\(#[^)]*\)"/gi, (match) => {
+    // 检查该 clipPath 是否为空（已被上面的规则移除）
+    // 简单起见，移除所有对空 clipPath 的引用
+    return ''
+  })
+
+  // 清理多余的空白
+  svg = svg.replace(/>\s+</g, '><')
+  svg = svg.replace(/\s{2,}/g, ' ')
+
+  return svg.trim()
+}
+
+// ============================================
 // State
 // ============================================
 
@@ -221,16 +266,18 @@ async function exportIconsToSvg(icons: IconInfo[]): Promise<IconWithSvg[]> {
 
     try {
       // 使用 Figma 内置的 exportAsync 导出 SVG
-      // 使用 SVG_STRING 格式可能会保留更多颜色信息
       const svgData = await (node as FrameNode).exportAsync({
         format: 'SVG',
         svgIdAttribute: false,
-        // 不使用任何简化选项，保留所有原始信息
-        contentsOnly: false, // 包含容器
+        // 只导出内容，不包含容器背景
+        contentsOnly: true,
       })
 
       // 将 Uint8Array 转换为字符串
-      const svgString = String.fromCharCode.apply(null, Array.from(svgData))
+      let svgString = String.fromCharCode.apply(null, Array.from(svgData))
+      
+      // 清理 SVG 中的问题元素
+      svgString = cleanSvgContent(svgString)
 
       results.push({
         ...icon,
