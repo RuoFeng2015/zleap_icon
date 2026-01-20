@@ -79,6 +79,47 @@ jobs:
       - name: Generate React components
         run: npm run generate-components
 
+      - name: Sync SVG directory with icons.json
+        run: |
+          # 如果 icons.json 存在（来自 Figma 插件），根据它清理 svg 目录
+          if [ -f "icons.json" ]; then
+            ICONS_JSON_COUNT=$(node -p "JSON.parse(require('fs').readFileSync('icons.json', 'utf-8')).totalCount || 0")
+            SVG_COUNT=$(find svg -name "*.svg" 2>/dev/null | wc -l | tr -d ' ')
+            
+            echo "icons.json 中有 $ICONS_JSON_COUNT 个图标"
+            echo "svg 目录中有 $SVG_COUNT 个 SVG 文件"
+            
+            if [ "$ICONS_JSON_COUNT" -lt "$SVG_COUNT" ]; then
+              echo "⚠️ 检测到全量覆盖模式，清理多余的 SVG 文件..."
+              
+              # 从 icons.json 获取有效的 SVG 文件列表
+              node -e "
+                const fs = require('fs');
+                const iconsData = JSON.parse(fs.readFileSync('icons.json', 'utf-8'));
+                const validFiles = iconsData.icons.map(icon => icon.svgPath.replace('svg/', ''));
+                console.log(validFiles.join('\n'));
+              " > /tmp/valid-icons.txt
+              
+              # 删除不在列表中的 SVG 文件
+              cd svg
+              REMOVED_COUNT=0
+              for file in *.svg; do
+                if [ -f "$file" ] && ! grep -Fxq "$file" /tmp/valid-icons.txt; then
+                  echo "  删除: $file"
+                  rm -f "$file"
+                  REMOVED_COUNT=$((REMOVED_COUNT + 1))
+                fi
+              done
+              cd ..
+              
+              echo "✅ 已删除 $REMOVED_COUNT 个多余的 SVG 文件"
+            else
+              echo "✅ SVG 文件与 icons.json 一致"
+            fi
+          else
+            echo "⚠️ icons.json 不存在，跳过清理"
+          fi
+
       - name: Generate sprite and metadata
         run: npm run generate-outputs
 
