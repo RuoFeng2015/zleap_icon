@@ -5,14 +5,84 @@
  * Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6
  */
 
-import { optimize, type Config as SvgoConfig } from 'svgo'
+import { optimize, type Config as SvgoConfig, type CustomPlugin } from 'svgo'
 import type { TransformOptions, TransformResult } from './types'
+
+/**
+ * 自定义 SVGO 插件：清理 Figma 导出的 SVG 问题元素
+ * - 移除超大背景路径（设计稿背景泄漏）
+ * - 移除 clipPath 内的填充路径
+ * - 移除不需要的白色/透明填充背景
+ */
+const cleanFigmaExport: CustomPlugin = {
+  name: 'cleanFigmaExport',
+  fn: () => {
+    return {
+      element: {
+        enter: (node, parentNode) => {
+          // 移除超大尺寸的背景路径（如 d="M0 0h1440v1024H0z"）
+          if (node.name === 'path' && node.attributes.d) {
+            const d = node.attributes.d
+            // 检测矩形路径，尺寸超过 500 的视为设计稿背景
+            const rectMatch = d.match(/M[0\s-]*[0\s-]*[hH](\d+)[vV](\d+)/)
+            if (rectMatch) {
+              const width = parseInt(rectMatch[1], 10)
+              const height = parseInt(rectMatch[2], 10)
+              if (width > 500 || height > 500) {
+                // 从父节点移除此元素
+                if (parentNode.type === 'element' && parentNode.children) {
+                  const index = parentNode.children.indexOf(node)
+                  if (index > -1) {
+                    parentNode.children.splice(index, 1)
+                  }
+                }
+                return
+              }
+            }
+          }
+
+          // 移除 clipPath 定义中的纯白色填充路径
+          if (node.name === 'clipPath') {
+            if (node.children) {
+              node.children = node.children.filter((child: any) => {
+                if (child.type === 'element' && child.name === 'path') {
+                  const fill = child.attributes?.fill
+                  // 保留非白色填充的元素
+                  return fill !== 'white' && fill !== '#fff' && fill !== '#ffffff'
+                }
+                return true
+              })
+            }
+          }
+
+          // 移除带有 transform="translate(负值)" 的大背景
+          if (node.name === 'path' && node.attributes.transform) {
+            const transform = node.attributes.transform
+            if (transform.includes('translate(-') && node.attributes.d) {
+              const d = node.attributes.d
+              // 如果是大矩形路径，移除
+              if (d.match(/[hH]\d{3,}[vV]\d{3,}/)) {
+                if (parentNode.type === 'element' && parentNode.children) {
+                  const index = parentNode.children.indexOf(node)
+                  if (index > -1) {
+                    parentNode.children.splice(index, 1)
+                  }
+                }
+              }
+            }
+          }
+        },
+      },
+    }
+  },
+}
 
 /**
  * Default SVGO configuration for icon optimization
  * - Removes dimensions (width/height)
  * - Preserves original colors (不替换为 currentColor)
  * - Removes unnecessary metadata
+ * - Cleans up Figma export artifacts
  */
 export const defaultSvgoConfig: SvgoConfig = {
   plugins: [
@@ -24,11 +94,15 @@ export const defaultSvgoConfig: SvgoConfig = {
           convertColors: false,
           // 禁用移除 viewBox
           removeViewBox: false,
+          // 禁用移除未使用的 defs（保留渐变定义）
+          removeUselessDefs: false,
         },
       },
     },
     'removeDimensions',
     'removeXMLNS',
+    // 添加自定义清理插件
+    cleanFigmaExport,
   ],
 }
 

@@ -22,8 +22,8 @@ import * as path from 'path'
 import {
   transformSvg,
   defaultTransformOptions,
-  type TransformResult,
 } from '../src/svg-transformer'
+import type { TransformResult } from '../src/types'
 
 /**
  * Script configuration from environment variables
