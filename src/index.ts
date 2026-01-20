@@ -6,26 +6,14 @@
  */
 
 import { IconChengYuanGuanLi } from './icons/IconChengYuanGuanLi';
-import { IconQiYeBan } from './icons/IconQiYeBan';
-import { IconXiaZaiZhuShou } from './icons/IconXiaZaiZhuShou';
-import { IconXiTongPeiZhi } from './icons/IconXiTongPeiZhi';
-import { IconYunYingGuanLi } from './icons/IconYunYingGuanLi';
 
 export { IconChengYuanGuanLi, type IconChengYuanGuanLiProps } from './icons/IconChengYuanGuanLi';
-export { IconQiYeBan, type IconQiYeBanProps } from './icons/IconQiYeBan';
-export { IconXiaZaiZhuShou, type IconXiaZaiZhuShouProps } from './icons/IconXiaZaiZhuShou';
-export { IconXiTongPeiZhi, type IconXiTongPeiZhiProps } from './icons/IconXiTongPeiZhi';
-export { IconYunYingGuanLi, type IconYunYingGuanLiProps } from './icons/IconYunYingGuanLi';
 
 /**
  * Object containing all icon components
  */
 export const allIcons = {
-  IconChengYuanGuanLi,
-  IconQiYeBan,
-  IconXiaZaiZhuShou,
-  IconXiTongPeiZhi,
-  IconYunYingGuanLi
+  IconChengYuanGuanLi
 } as const;
 
 /**
