@@ -34,6 +34,7 @@ interface SyncRequest {
   message: string
   timestamp: string
   icons: IconWithSvg[] // 包含 SVG 内容的图标列表
+  syncMode?: string // 同步模式：'incremental' 或 'replace'
 }
 
 interface MessageToUI {
@@ -387,6 +388,7 @@ async function handleGetIcons(): Promise<void> {
 async function handleTriggerSync(params: {
   version: string
   message: string
+  syncMode?: string
 }): Promise<void> {
   const savedConfig = await figma.clientStorage.getAsync(CONFIG_KEY)
 
@@ -419,6 +421,7 @@ async function handleTriggerSync(params: {
     message: params.message,
     timestamp: new Date().toISOString(),
     icons: iconsWithSvg,
+    syncMode: params.syncMode || 'incremental',
   }
 
   sendToUI({

@@ -307,6 +307,24 @@ git push
 
 ## 常见问题
 
+### Q: 全量覆盖后，文档网站还显示旧图标？
+
+A: 这个问题已在最新版本修复。`deploy-docs.yml` 工作流现在会自动检测并清理多余的 SVG 文件。
+
+如果仍然遇到问题：
+
+1. 检查 GitHub Actions 日志，确认清理步骤是否执行
+2. 手动触发 `deploy-docs` 工作流
+3. 清除浏览器缓存后重新访问文档网站
+
+工作流会：
+
+- 检测 `icons.json` 是否被 Figma 插件更新
+- 比较 `icons.json` 中的图标数量和 `svg/` 目录中的文件数量
+- 如果发现不匹配，自动删除多余的 SVG 文件
+- 提交删除操作到 main 分支
+- 使用 Figma 插件生成的 `icons.json`（不重新生成）
+
 ### Q: 什么时候应该使用全量覆盖？
 
 A: 只在以下情况使用：
@@ -349,6 +367,27 @@ A: 不能通过插件实现。如果需要删除特定图标：
 3. 或使用 Git 命令删除
 
 ## 技术细节
+
+### GitHub Actions 自动清理
+
+当使用全量覆盖模式时，`deploy-docs.yml` 工作流会自动检测并清理多余的 SVG 文件：
+
+```yaml
+# 1. 检测 icons.json 是否被更新（来自 Figma 插件）
+ICONS_JSON_UPDATED=$(git log -1 --name-only --pretty=format: | grep -c "^icons.json$")
+
+# 2. 比较图标数量
+ICONS_JSON_COUNT=$(node -p "JSON.parse(...).totalCount")
+SVG_COUNT=$(find svg -name "*.svg" | wc -l)
+
+# 3. 如果 icons.json 的数量少于 svg 目录，说明是全量覆盖
+if [ "$ICONS_JSON_COUNT" -lt "$SVG_COUNT" ]; then
+  # 4. 删除不在 icons.json 列表中的 SVG 文件
+  # 5. 提交删除操作到 main 分支
+fi
+```
+
+这确保了全量覆盖模式下，文档网站只显示新上传的图标。
 
 ### 删除逻辑
 

@@ -459,6 +459,7 @@ function handleTriggerSync(params) {
                         message: params.message,
                         timestamp: new Date().toISOString(),
                         icons: iconsWithSvg,
+                        syncMode: params.syncMode || 'incremental',
                     };
                     sendToUI({
                         type: 'sync-result',

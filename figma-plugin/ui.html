@@ -1111,6 +1111,7 @@
           // 生成 icons.json 内容
           const iconsJsonContent = {
             version: syncRequest.version,
+            syncMode: syncRequest.syncMode || 'incremental',  // 记录同步模式
             generatedAt: new Date().toISOString(),
             totalCount: uploadedCount,
             icons: syncRequest.icons.map(icon => ({

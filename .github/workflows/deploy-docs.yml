@@ -51,27 +51,25 @@ jobs:
           ls -la icons.json || echo "No icons.json"
           echo "SVG count: $(find svg -name "*.svg" 2>/dev/null | wc -l)"
 
-      - name: Generate icons if needed
+      - name: Sync SVG directory with icons.json
         run: |
           SVG_COUNT=$(find svg -name "*.svg" 2>/dev/null | wc -l)
 
-          # Check if icons.json was updated in the last commit (from Figma plugin)
-          ICONS_JSON_UPDATED=$(git log -1 --name-only --pretty=format: | grep -c "^icons.json$" || echo "0")
-
-          if [ "$ICONS_JSON_UPDATED" -gt 0 ]; then
-            echo "✅ icons.json was updated in the last commit (from Figma plugin)"
+          # 始终根据 icons.json 同步 svg 目录
+          # 这确保全量覆盖模式下旧 SVG 文件会被正确清理
+          if [ -f "icons.json" ]; then
+            echo "✅ Found icons.json, checking svg directory sync..."
             
-            # Check if this is a full replacement sync by comparing icon counts
             ICONS_JSON_COUNT=$(node -p "JSON.parse(require('fs').readFileSync('icons.json', 'utf-8')).totalCount || 0")
             echo "icons.json reports $ICONS_JSON_COUNT icons"
             echo "svg directory has $SVG_COUNT SVG files"
             
-            # If icons.json has fewer icons than svg directory, clean up extra files
+            # 如果 icons.json 中的图标数少于 svg 目录中的文件数，清理多余文件
             if [ "$ICONS_JSON_COUNT" -lt "$SVG_COUNT" ]; then
               echo "⚠️ Mismatch detected: icons.json has $ICONS_JSON_COUNT icons but svg has $SVG_COUNT files"
-              echo "This indicates a full replacement sync. Cleaning up extra SVG files..."
+              echo "Cleaning up extra SVG files..."
               
-              # Get list of valid SVG files from icons.json
+              # 从 icons.json 获取有效的 SVG 文件列表
               node -e "
                 const fs = require('fs');
                 const iconsData = JSON.parse(fs.readFileSync('icons.json', 'utf-8'));
@@ -79,7 +77,7 @@ jobs:
                 console.log(validFiles.join('\n'));
               " > /tmp/valid-icons.txt
               
-              # Remove SVG files not listed in icons.json
+              # 删除不在 icons.json 列表中的 SVG 文件
               cd svg
               REMOVED_COUNT=0
               for file in *.svg; do
@@ -93,21 +91,21 @@ jobs:
               
               echo "✅ Removed $REMOVED_COUNT extra SVG files"
               
-              # Commit the deletions
+              # 提交删除操作
               git config --local user.email "github-actions[bot]@users.noreply.github.com"
               git config --local user.name "github-actions[bot]"
               git add svg/
               if ! git diff --staged --quiet; then
-                git commit -m "chore: clean up extra SVG files after full replacement sync"
+                git commit -m "chore: clean up extra SVG files to sync with icons.json"
                 git push
                 echo "✅ Committed SVG cleanup"
               fi
             else
-              echo "✅ Icon counts match, no cleanup needed"
+              echo "✅ SVG files and icons.json are in sync"
             fi
             
-            # Do NOT regenerate icons.json - use the one from Figma plugin
-            echo "Using icons.json from Figma plugin (not regenerating)"
+            # 使用 Figma 插件生成的 icons.json，不重新生成
+            echo "Using icons.json as source of truth"
           elif [ ! -f "icons.json" ]; then
             echo "icons.json not found, generating all outputs..."
             npm run transform-svg
