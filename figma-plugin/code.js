@@ -72,24 +72,28 @@ var UI_HEIGHT = 550;
  * - 移除超大背景路径（设计稿背景泄漏）
  * - 移除空的 clipPath 定义
  * - 移除不必要的白色/灰色背景矩形
+ * - 保留渐变定义和多色效果
  */
 function cleanSvgContent(svgString) {
     var svg = svgString;
-    // 移除超大尺寸的背景路径 (如 d="M0 0h120v120H0z" 且 fill="#F5F5F5")
-    // 这些通常是 Figma 画板的背景
-    svg = svg.replace(/<path\s+fill="(#F5F5F5|#f5f5f5|white|#fff|#ffffff)"\s+d="M0\s+0h\d+v\d+H0z"\s*\/>/gi, '');
-    // 移除超大负偏移的背景路径 (如 d="M-878-463H562V561H-878z")
-    svg = svg.replace(/<path\s+fill="(white|#fff|#ffffff)"\s+d="M-?\d+-?\d+H-?\d+V-?\d+H-?\d+z"\s*\/>/gi, '');
+    // 移除 Figma 画板背景（紧跟在 <svg> 后的第一个全尺寸矩形路径）
+    // 匹配 fill="#F5F5F5" 或类似颜色的背景
+    svg = svg.replace(/<path\s+[^>]*fill="(#F5F5F5|#f5f5f5|#E5E5E5|#e5e5e5)"[^>]*d="M0\s*0h\d+v\d+H0z?"[^>]*\/>/gi, '');
+    // 也处理属性顺序相反的情况
+    svg = svg.replace(/<path\s+[^>]*d="M0\s*0h\d+v\d+H0z?"[^>]*fill="(#F5F5F5|#f5f5f5|#E5E5E5|#e5e5e5)"[^>]*\/>/gi, '');
+    // 移除超大负偏移的白色背景路径 (如 d="M-878-463H562V561H-878z")
+    svg = svg.replace(/<path\s+[^>]*fill="(white|#fff|#ffffff)"[^>]*d="M-?\d+-?\d+H-?\d+V-?\d+H-?\d+z"[^>]*\/>/gi, '');
+    // 移除 g 元素内的白色大背景（通常在 clipPath 包裹的 g 内）
+    svg = svg.replace(/<path\s+fill="white"\s+d="M-?\d+-?\d+H\d+V\d+H-?\d+z"\s*\/>/gi, '');
     // 移除空的 clipPath 定义
     svg = svg.replace(/<clipPath\s+id="[^"]*"\s*\/>/gi, '');
     svg = svg.replace(/<clipPath\s+id="[^"]*"\s*><\/clipPath>/gi, '');
-    // 移除引用空 clipPath 的 g 元素的 clipPath 属性
-    // 但保留 g 元素本身和其内容
-    svg = svg.replace(/\s+clipPath="url\(#[^)]*\)"/gi, function (match) {
-        // 检查该 clipPath 是否为空（已被上面的规则移除）
-        // 简单起见，移除所有对空 clipPath 的引用
-        return '';
-    });
+    // 移除只包含白色路径的 clipPath（保留 clipPath 结构但移除白色背景内容）
+    svg = svg.replace(/<clipPath\s+id="([^"]*)">\s*<path\s+fill="white"[^>]*\/>\s*<\/clipPath>/gi, '<clipPath id="$1"/>');
+    // 移除引用不存在 clipPath 的属性
+    svg = svg.replace(/\s+clipPath="url\(#[^)]*\)"/gi, '');
+    // 清理空的 g 元素
+    svg = svg.replace(/<g[^>]*>\s*<\/g>/gi, '');
     // 清理多余的空白
     svg = svg.replace(/>\s+</g, '><');
     svg = svg.replace(/\s{2,}/g, ' ');
@@ -263,8 +267,7 @@ function exportIconsToSvg(icons) {
                     return [4 /*yield*/, node.exportAsync({
                             format: 'SVG',
                             svgIdAttribute: false,
-                            // 只导出内容，不包含容器背景
-                            contentsOnly: true,
+                            contentsOnly: false, // 保留渐变定义
                         })
                         // 将 Uint8Array 转换为字符串
                     ];
