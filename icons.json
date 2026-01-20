@@ -1,13 +1,14 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-20T09:05:33.752Z",
+  "version": "1.5.2",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-20T09:49:47.139Z",
   "totalCount": 1,
   "icons": [
     {
-      "name": "IconBaoGaoZhuShou",
-      "originalName": "报告助手",
-      "svgPath": "svg/报告助手.svg",
-      "componentPath": "src/icons/IconBaoGaoZhuShou.tsx",
+      "name": "Icon成员管理",
+      "originalName": "成员管理",
+      "svgPath": "svg/成员管理.svg",
+      "componentPath": "src/icons/Icon成员管理.tsx",
       "size": {
         "width": 120,
         "height": 120
