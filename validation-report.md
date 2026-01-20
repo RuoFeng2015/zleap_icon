@@ -1,6 +1,6 @@
 # Icon Validation Report
 
-Generated at: 2026-01-20T10:11:29.676Z
+Generated at: 2026-01-20T10:32:30.763Z
 
 ## Summary
 
@@ -20,7 +20,7 @@ Generated at: 2026-01-20T10:11:29.676Z
 
 | Icon | Message |
 |------|---------|
-| 成员管理 | Icon size 120x120 not in allowed sizes:  |
+| 报告助手 | Icon size 120x120 not in allowed sizes:  |
 
 ## Warnings
 
@@ -28,4 +28,4 @@ Generated at: 2026-01-20T10:11:29.676Z
 
 | Icon | Message |
 |------|---------|
-| 成员管理 | Icon name "成员管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 报告助手 | Icon name "报告助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
