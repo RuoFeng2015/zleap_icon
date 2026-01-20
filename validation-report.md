@@ -1,41 +1,39 @@
 # Icon Validation Report
 
-Generated at: 2026-01-20T07:13:01.045Z
+Generated at: 2026-01-20T07:36:24.832Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 8 |
+| Total Icons | 7 |
 | Valid Icons | 0 |
-| Invalid Icons | 8 |
-| Total Errors | 8 |
-| Total Warnings | 9 |
+| Invalid Icons | 7 |
+| Total Errors | 7 |
+| Total Warnings | 8 |
 
-⚠️ **8 icon(s) failed validation**
+⚠️ **7 icon(s) failed validation**
 
 ## Errors
 
-### size (8 errors)
+### size (7 errors)
 
 | Icon | Message |
 |------|---------|
-| Frame-1261156242 | Icon size 120x120 not in allowed sizes:  |
-| 下载助手 | Icon size 48x48 not in allowed sizes:  |
-| 企业版 | Icon size 48x48 not in allowed sizes:  |
+| 下载助手 | Icon size 120x120 not in allowed sizes:  |
+| 企业版 | Icon size 120x120 not in allowed sizes:  |
 | 信息管理 | Icon size 120x120 not in allowed sizes:  |
 | 搜索助手 | Icon size 120x119 not in allowed sizes:  |
-| 系统配置 | Icon size 48x48 not in allowed sizes:  |
-| 运营管理 | Icon size 48x48 not in allowed sizes:  |
+| 系统配置 | Icon size 120x120 not in allowed sizes:  |
+| 运营管理 | Icon size 120x120 not in allowed sizes:  |
 | 问答助手 | Icon size 120x120 not in allowed sizes:  |
 
 ## Warnings
 
-### naming (8 warnings)
+### naming (7 warnings)
 
 | Icon | Message |
 |------|---------|
-| Frame-1261156242 | Icon name "Frame-1261156242" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下载助手 | Icon name "下载助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 企业版 | Icon name "企业版" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 信息管理 | Icon name "信息管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
