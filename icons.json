@@ -1,64 +1,53 @@
 {
-  "version": "1.2.3",
-  "syncMode": "replace",
-  "generatedAt": "2026-01-20T07:55:08.545Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-20T07:55:27.381Z",
   "totalCount": 5,
   "icons": [
     {
+      "name": "IconBaoGaoZhuShou",
+      "originalName": "报告助手",
+      "svgPath": "svg/报告助手.svg",
+      "componentPath": "src/icons/IconBaoGaoZhuShou.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
       "name": "IconFrame1261156242",
-      "originalName": "Frame 1261156242",
+      "originalName": "Frame-1261156242",
       "svgPath": "svg/Frame-1261156242.svg",
       "componentPath": "src/icons/IconFrame1261156242.tsx",
       "size": {
-        "width": 53,
-        "height": 62
-      }
-    },
-    {
-      "name": "Icon信息管理",
-      "originalName": "信息管理",
-      "svgPath": "svg/信息管理.svg",
-      "componentPath": "src/icons/Icon信息管理.tsx",
-      "size": {
         "width": 120,
         "height": 120
       }
     },
     {
-      "name": "Icon成员管理",
-      "originalName": "成员管理",
-      "svgPath": "svg/成员管理.svg",
-      "componentPath": "src/icons/Icon成员管理.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
-      }
-    },
-    {
-      "name": "Icon报告助手",
-      "originalName": "报告助手",
-      "svgPath": "svg/报告助手.svg",
-      "componentPath": "src/icons/Icon报告助手.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
-      }
-    },
-    {
-      "name": "Icon搜索助手",
+      "name": "IconSouSuoZhuShou",
       "originalName": "搜索助手",
       "svgPath": "svg/搜索助手.svg",
-      "componentPath": "src/icons/Icon搜索助手.tsx",
+      "componentPath": "src/icons/IconSouSuoZhuShou.tsx",
       "size": {
         "width": 120,
         "height": 119
       }
     },
     {
-      "name": "Icon问答助手",
+      "name": "IconWenDaZhuShou",
       "originalName": "问答助手",
       "svgPath": "svg/问答助手.svg",
-      "componentPath": "src/icons/Icon问答助手.tsx",
+      "componentPath": "src/icons/IconWenDaZhuShou.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
+      "name": "IconXinXiGuanLi",
+      "originalName": "信息管理",
+      "svgPath": "svg/信息管理.svg",
+      "componentPath": "src/icons/IconXinXiGuanLi.tsx",
       "size": {
         "width": 120,
         "height": 120
