@@ -10,16 +10,12 @@ import { IconFrame1261156242 } from './icons/IconFrame1261156242';
 import { IconSouSuoZhuShou } from './icons/IconSouSuoZhuShou';
 import { IconWenDaZhuShou } from './icons/IconWenDaZhuShou';
 import { IconXinXiGuanLi } from './icons/IconXinXiGuanLi';
-import { IconXiTongPeiZhi } from './icons/IconXiTongPeiZhi';
-import { IconYunYingGuanLi } from './icons/IconYunYingGuanLi';
 
 export { IconBaoGaoZhuShou, type IconBaoGaoZhuShouProps } from './icons/IconBaoGaoZhuShou';
 export { IconFrame1261156242, type IconFrame1261156242Props } from './icons/IconFrame1261156242';
 export { IconSouSuoZhuShou, type IconSouSuoZhuShouProps } from './icons/IconSouSuoZhuShou';
 export { IconWenDaZhuShou, type IconWenDaZhuShouProps } from './icons/IconWenDaZhuShou';
 export { IconXinXiGuanLi, type IconXinXiGuanLiProps } from './icons/IconXinXiGuanLi';
-export { IconXiTongPeiZhi, type IconXiTongPeiZhiProps } from './icons/IconXiTongPeiZhi';
-export { IconYunYingGuanLi, type IconYunYingGuanLiProps } from './icons/IconYunYingGuanLi';
 
 /**
  * Object containing all icon components
@@ -29,9 +25,7 @@ export const allIcons = {
   IconFrame1261156242,
   IconSouSuoZhuShou,
   IconWenDaZhuShou,
-  IconXinXiGuanLi,
-  IconXiTongPeiZhi,
-  IconYunYingGuanLi
+  IconXinXiGuanLi
 } as const;
 
 /**
