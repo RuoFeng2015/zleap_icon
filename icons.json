@@ -1,46 +1,46 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-20T06:24:29.764Z",
+  "generatedAt": "2026-01-20T06:34:02.058Z",
   "totalCount": 4,
   "icons": [
     {
-      "name": "IconBaoGaoZhuShou",
-      "originalName": "报告助手",
-      "svgPath": "svg/报告助手.svg",
-      "componentPath": "src/icons/IconBaoGaoZhuShou.tsx",
+      "name": "IconWenDang",
+      "originalName": "文档",
+      "svgPath": "svg/文档.svg",
+      "componentPath": "src/icons/IconWenDang.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     },
     {
-      "name": "IconFrame1261156242",
-      "originalName": "Frame-1261156242",
-      "svgPath": "svg/Frame-1261156242.svg",
-      "componentPath": "src/icons/IconFrame1261156242.tsx",
+      "name": "IconXinZeng",
+      "originalName": "新增",
+      "svgPath": "svg/新增.svg",
+      "componentPath": "src/icons/IconXinZeng.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     },
     {
-      "name": "IconWenDaZhuShou",
-      "originalName": "问答助手",
-      "svgPath": "svg/问答助手.svg",
-      "componentPath": "src/icons/IconWenDaZhuShou.tsx",
+      "name": "IconYanZhengMa",
+      "originalName": "验证码",
+      "svgPath": "svg/验证码.svg",
+      "componentPath": "src/icons/IconYanZhengMa.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     },
     {
-      "name": "IconXinXiGuanLi",
-      "originalName": "信息管理",
-      "svgPath": "svg/信息管理.svg",
-      "componentPath": "src/icons/IconXinXiGuanLi.tsx",
+      "name": "IconZhanKai",
+      "originalName": "展开",
+      "svgPath": "svg/展开.svg",
+      "componentPath": "src/icons/IconZhanKai.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     }
   ]
