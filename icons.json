@@ -1,0 +1,18 @@
+{
+  "version": "1.3.2",
+  "syncMode": "replace",
+  "generatedAt": "2026-01-20T10:40:33.687Z",
+  "totalCount": 1,
+  "icons": [
+    {
+      "name": "Icon搜索助手",
+      "originalName": "搜索助手",
+      "svgPath": "svg/搜索助手.svg",
+      "componentPath": "src/icons/Icon搜索助手.tsx",
+      "size": {
+        "width": 120,
+        "height": 119
+      }
+    }
+  ]
+}
