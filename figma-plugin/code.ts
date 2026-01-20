@@ -138,7 +138,53 @@ function cleanSvgContent(svgString: string): string {
     (match, id) => usedGradientIds.has(id) ? match : ''
   )
 
-  // 8. 清理多余的空白
+  // 8. 将驼峰命名的 SVG 属性转换回标准的连字符命名
+  // Figma exportAsync 返回的 SVG 使用 JSX 风格的驼峰命名（如 stopColor）
+  // 需要转换为标准 SVG 的连字符命名（如 stop-color）
+  const jsxToSvgAttributes: Record<string, string> = {
+    'stopColor': 'stop-color',
+    'stopOpacity': 'stop-opacity',
+    'strokeWidth': 'stroke-width',
+    'strokeLinecap': 'stroke-linecap',
+    'strokeLinejoin': 'stroke-linejoin',
+    'strokeDasharray': 'stroke-dasharray',
+    'strokeDashoffset': 'stroke-dashoffset',
+    'strokeMiterlimit': 'stroke-miterlimit',
+    'strokeOpacity': 'stroke-opacity',
+    'fillRule': 'fill-rule',
+    'fillOpacity': 'fill-opacity',
+    'clipRule': 'clip-rule',
+    'clipPath': 'clip-path',
+    'fontFamily': 'font-family',
+    'fontSize': 'font-size',
+    'fontStyle': 'font-style',
+    'fontWeight': 'font-weight',
+    'textAnchor': 'text-anchor',
+    'textDecoration': 'text-decoration',
+    'dominantBaseline': 'dominant-baseline',
+    'alignmentBaseline': 'alignment-baseline',
+    'baselineShift': 'baseline-shift',
+    'colorInterpolation': 'color-interpolation',
+    'colorInterpolationFilters': 'color-interpolation-filters',
+    'floodColor': 'flood-color',
+    'floodOpacity': 'flood-opacity',
+    'lightingColor': 'lighting-color',
+    'markerStart': 'marker-start',
+    'markerMid': 'marker-mid',
+    'markerEnd': 'marker-end',
+    'paintOrder': 'paint-order',
+    'shapeRendering': 'shape-rendering',
+    'vectorEffect': 'vector-effect',
+    'pointerEvents': 'pointer-events',
+  }
+
+  for (const [jsxAttr, svgAttr] of Object.entries(jsxToSvgAttributes)) {
+    // 使用全局替换，匹配属性名后跟 = 的情况
+    const regex = new RegExp(`\\b${jsxAttr}=`, 'g')
+    svg = svg.replace(regex, `${svgAttr}=`)
+  }
+
+  // 9. 清理多余的空白
   svg = svg.replace(/>\s+</g, '><')
   svg = svg.replace(/\s{2,}/g, ' ')
 

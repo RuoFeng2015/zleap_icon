@@ -58,6 +58,22 @@ var __values = (this && this.__values) || function(o) {
     };
     throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 };
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
 // ============================================
 // Constants
 // ============================================
@@ -75,7 +91,7 @@ var UI_HEIGHT = 550;
  * - 保留渐变定义和多色效果
  */
 function cleanSvgContent(svgString) {
-    var e_1, _a;
+    var e_1, _a, e_2, _b;
     var svg = svgString;
     var originalLength = svg.length;
     // 打印原始 SVG 片段用于调试
@@ -138,7 +154,61 @@ function cleanSvgContent(svgString) {
         finally { if (e_1) throw e_1.error; }
     }
     svg = svg.replace(/<linearGradient\s+id="([^"]+)"[^>]*>[\s\S]*?<\/linearGradient>/g, function (match, id) { return usedGradientIds.has(id) ? match : ''; });
-    // 8. 清理多余的空白
+    // 8. 将驼峰命名的 SVG 属性转换回标准的连字符命名
+    // Figma exportAsync 返回的 SVG 使用 JSX 风格的驼峰命名（如 stopColor）
+    // 需要转换为标准 SVG 的连字符命名（如 stop-color）
+    var jsxToSvgAttributes = {
+        'stopColor': 'stop-color',
+        'stopOpacity': 'stop-opacity',
+        'strokeWidth': 'stroke-width',
+        'strokeLinecap': 'stroke-linecap',
+        'strokeLinejoin': 'stroke-linejoin',
+        'strokeDasharray': 'stroke-dasharray',
+        'strokeDashoffset': 'stroke-dashoffset',
+        'strokeMiterlimit': 'stroke-miterlimit',
+        'strokeOpacity': 'stroke-opacity',
+        'fillRule': 'fill-rule',
+        'fillOpacity': 'fill-opacity',
+        'clipRule': 'clip-rule',
+        'clipPath': 'clip-path',
+        'fontFamily': 'font-family',
+        'fontSize': 'font-size',
+        'fontStyle': 'font-style',
+        'fontWeight': 'font-weight',
+        'textAnchor': 'text-anchor',
+        'textDecoration': 'text-decoration',
+        'dominantBaseline': 'dominant-baseline',
+        'alignmentBaseline': 'alignment-baseline',
+        'baselineShift': 'baseline-shift',
+        'colorInterpolation': 'color-interpolation',
+        'colorInterpolationFilters': 'color-interpolation-filters',
+        'floodColor': 'flood-color',
+        'floodOpacity': 'flood-opacity',
+        'lightingColor': 'lighting-color',
+        'markerStart': 'marker-start',
+        'markerMid': 'marker-mid',
+        'markerEnd': 'marker-end',
+        'paintOrder': 'paint-order',
+        'shapeRendering': 'shape-rendering',
+        'vectorEffect': 'vector-effect',
+        'pointerEvents': 'pointer-events',
+    };
+    try {
+        for (var _c = __values(Object.entries(jsxToSvgAttributes)), _d = _c.next(); !_d.done; _d = _c.next()) {
+            var _e = __read(_d.value, 2), jsxAttr = _e[0], svgAttr = _e[1];
+            // 使用全局替换，匹配属性名后跟 = 的情况
+            var regex = new RegExp("\\b".concat(jsxAttr, "="), 'g');
+            svg = svg.replace(regex, "".concat(svgAttr, "="));
+        }
+    }
+    catch (e_2_1) { e_2 = { error: e_2_1 }; }
+    finally {
+        try {
+            if (_d && !_d.done && (_b = _c.return)) _b.call(_c);
+        }
+        finally { if (e_2) throw e_2.error; }
+    }
+    // 9. 清理多余的空白
     svg = svg.replace(/>\s+</g, '><');
     svg = svg.replace(/\s{2,}/g, ' ');
     console.log("[cleanSvgContent] \u603B\u8BA1: ".concat(originalLength, " -> ").concat(svg.length, ", \u5220\u9664 ").concat(originalLength - svg.length, " \u5B57\u7B26"));
@@ -194,7 +264,7 @@ function updateIconsFromSelection() {
  * 在指定节点中查找图标
  */
 function findIconsInNodes(nodes) {
-    var e_2, _a;
+    var e_3, _a;
     var icons = [];
     try {
         for (var nodes_1 = __values(nodes), nodes_1_1 = nodes_1.next(); !nodes_1_1.done; nodes_1_1 = nodes_1.next()) {
@@ -202,12 +272,12 @@ function findIconsInNodes(nodes) {
             traverseNode(node, icons);
         }
     }
-    catch (e_2_1) { e_2 = { error: e_2_1 }; }
+    catch (e_3_1) { e_3 = { error: e_3_1 }; }
     finally {
         try {
             if (nodes_1_1 && !nodes_1_1.done && (_a = nodes_1.return)) _a.call(nodes_1);
         }
-        finally { if (e_2) throw e_2.error; }
+        finally { if (e_3) throw e_3.error; }
     }
     // 按名称排序
     icons.sort(function (a, b) { return a.name.localeCompare(b.name); });
@@ -218,7 +288,7 @@ function findIconsInNodes(nodes) {
  * 注意：当一个节点被识别为图标后，不再递归其子节点
  */
 function traverseNode(node, icons) {
-    var e_3, _a;
+    var e_4, _a;
     // 检查是否是图标（COMPONENT 或 FRAME 类型，合适的尺寸）
     if (isIconNode(node)) {
         icons.push({
@@ -238,12 +308,12 @@ function traverseNode(node, icons) {
                 traverseNode(child, icons);
             }
         }
-        catch (e_3_1) { e_3 = { error: e_3_1 }; }
+        catch (e_4_1) { e_4 = { error: e_4_1 }; }
         finally {
             try {
                 if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
             }
-            finally { if (e_3) throw e_3.error; }
+            finally { if (e_4) throw e_4.error; }
         }
     }
 }
