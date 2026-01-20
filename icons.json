@@ -1,14 +1,13 @@
 {
-  "version": "1.5.2",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-20T09:53:48.507Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-20T09:54:09.808Z",
   "totalCount": 1,
   "icons": [
     {
-      "name": "Icon系统配置",
+      "name": "IconXiTongPeiZhi",
       "originalName": "系统配置",
       "svgPath": "svg/系统配置.svg",
-      "componentPath": "src/icons/Icon系统配置.tsx",
+      "componentPath": "src/icons/IconXiTongPeiZhi.tsx",
       "size": {
         "width": 120,
         "height": 120

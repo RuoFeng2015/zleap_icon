@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.5.2] - 2026-01-20
 
+1111
+
+### Added
+- IconXiTongPeiZhi
+
+### Modified
+- None
+
+### Removed
+- None
+## [1.5.2] - 2026-01-20
+
 333
 
 ### Added
