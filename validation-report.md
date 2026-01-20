@@ -1,42 +1,39 @@
 # Icon Validation Report
 
-Generated at: 2026-01-20T08:47:47.123Z
+Generated at: 2026-01-20T08:51:44.675Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 3 |
+| Total Icons | 2 |
 | Valid Icons | 0 |
-| Invalid Icons | 3 |
-| Total Errors | 3 |
-| Total Warnings | 5 |
+| Invalid Icons | 2 |
+| Total Errors | 2 |
+| Total Warnings | 3 |
 
-⚠️ **3 icon(s) failed validation**
+⚠️ **2 icon(s) failed validation**
 
 ## Errors
 
-### size (3 errors)
+### size (2 errors)
 
 | Icon | Message |
 |------|---------|
 | Frame-1261156242 | Icon size 58x63 not in allowed sizes:  |
 | 报告助手 | Icon size 120x120 not in allowed sizes:  |
-| 搜索助手 | Icon size 120x119 not in allowed sizes:  |
 
 ## Warnings
 
-### size (2 warnings)
+### size (1 warning)
 
 | Icon | Message |
 |------|---------|
 | Frame-1261156242 | Icon is not square: 58x63 |
-| 搜索助手 | Icon is not square: 120x119 |
 
-### naming (3 warnings)
+### naming (2 warnings)
 
 | Icon | Message |
 |------|---------|
 | Frame-1261156242 | Icon name "Frame-1261156242" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 报告助手 | Icon name "报告助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 搜索助手 | Icon name "搜索助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
