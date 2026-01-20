@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-20T08:18:50.191Z",
-  "totalCount": 3,
+  "generatedAt": "2026-01-20T08:34:38.495Z",
+  "totalCount": 4,
   "icons": [
     {
       "name": "IconBaoGaoZhuShou",
@@ -21,6 +21,16 @@
       "size": {
         "width": 120,
         "height": 120
+      }
+    },
+    {
+      "name": "IconSouSuoZhuShou",
+      "originalName": "搜索助手",
+      "svgPath": "svg/搜索助手.svg",
+      "componentPath": "src/icons/IconSouSuoZhuShou.tsx",
+      "size": {
+        "width": 120,
+        "height": 119
       }
     },
     {
