@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
-import { copyFileSync, mkdirSync, readdirSync, existsSync } from 'fs'
+import { copyFileSync, mkdirSync, readdirSync, existsSync, readFileSync } from 'fs'
 
 // 在构建前准备静态资源
 function prepareStaticAssets() {
@@ -25,19 +25,46 @@ function prepareStaticAssets() {
         console.warn('⚠️  icons.json not found in root')
       }
 
-      // 复制 SVG 文件到 public/svg
+      // 从 icons.json 获取有效的 SVG 文件列表
+      let validSvgFiles: Set<string> | null = null
+      if (existsSync(iconsJsonRoot)) {
+        try {
+          const iconsData = JSON.parse(readFileSync(iconsJsonRoot, 'utf-8'))
+          validSvgFiles = new Set(
+            iconsData.icons.map((icon: { svgPath: string }) => 
+              icon.svgPath.replace('svg/', '')
+            )
+          )
+          console.log(`📋 icons.json 中列出了 ${validSvgFiles.size} 个图标`)
+        } catch (e) {
+          console.warn('⚠️  Failed to parse icons.json, copying all SVG files')
+        }
+      }
+
+      // 只复制 icons.json 中列出的 SVG 文件
       const svgRootDir = resolve(rootDir, 'svg')
       const svgPublicDir = resolve(publicDir, 'svg')
 
       if (existsSync(svgRootDir)) {
         mkdirSync(svgPublicDir, { recursive: true })
-        const svgFiles = readdirSync(svgRootDir).filter((f) =>
+        const allSvgFiles = readdirSync(svgRootDir).filter((f) =>
           f.endsWith('.svg'),
         )
-        for (const file of svgFiles) {
+        
+        // 如果有有效列表，只复制列表中的文件；否则复制全部
+        const filesToCopy = validSvgFiles 
+          ? allSvgFiles.filter(f => validSvgFiles!.has(f))
+          : allSvgFiles
+        
+        for (const file of filesToCopy) {
           copyFileSync(resolve(svgRootDir, file), resolve(svgPublicDir, file))
         }
-        console.log(`✅ Copied ${svgFiles.length} SVG files to public/svg/`)
+        
+        if (validSvgFiles && filesToCopy.length < allSvgFiles.length) {
+          console.log(`✅ Copied ${filesToCopy.length}/${allSvgFiles.length} SVG files to public/svg/ (filtered by icons.json)`)
+        } else {
+          console.log(`✅ Copied ${filesToCopy.length} SVG files to public/svg/`)
+        }
       } else {
         console.warn('⚠️  svg directory not found in root')
       }
