@@ -1,14 +1,13 @@
 {
-  "version": "1.1.1",
-  "syncMode": "replace",
-  "generatedAt": "2026-01-20T10:20:40.598Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-20T10:21:01.428Z",
   "totalCount": 1,
   "icons": [
     {
-      "name": "Icon报告助手",
+      "name": "IconBaoGaoZhuShou",
       "originalName": "报告助手",
       "svgPath": "svg/报告助手.svg",
-      "componentPath": "src/icons/Icon报告助手.tsx",
+      "componentPath": "src/icons/IconBaoGaoZhuShou.tsx",
       "size": {
         "width": 120,
         "height": 120
