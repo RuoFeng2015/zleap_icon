@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-20T09:05:33.752Z",
+  "generatedAt": "2026-01-20T09:50:11.702Z",
   "totalCount": 1,
   "icons": [
     {
-      "name": "IconBaoGaoZhuShou",
-      "originalName": "报告助手",
-      "svgPath": "svg/报告助手.svg",
-      "componentPath": "src/icons/IconBaoGaoZhuShou.tsx",
+      "name": "IconChengYuanGuanLi",
+      "originalName": "成员管理",
+      "svgPath": "svg/成员管理.svg",
+      "componentPath": "src/icons/IconChengYuanGuanLi.tsx",
       "size": {
         "width": 120,
         "height": 120
