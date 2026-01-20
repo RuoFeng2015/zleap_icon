@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-20T03:43:14.295Z",
-  "totalCount": 29,
+  "generatedAt": "2026-01-20T05:54:47.651Z",
+  "totalCount": 19,
   "icons": [
     {
       "name": "IconBaoGaoZhuShou",
@@ -21,26 +21,6 @@
       "size": {
         "width": 120,
         "height": 120
-      }
-    },
-    {
-      "name": "IconCuoWu",
-      "originalName": "错误",
-      "svgPath": "svg/错误.svg",
-      "componentPath": "src/icons/IconCuoWu.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      }
-    },
-    {
-      "name": "IconEdit03",
-      "originalName": "edit-03",
-      "svgPath": "svg/edit-03.svg",
-      "componentPath": "src/icons/IconEdit03.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
       }
     },
     {
@@ -74,16 +54,6 @@
       }
     },
     {
-      "name": "IconQiWeiJiQiRen",
-      "originalName": "企微机器人",
-      "svgPath": "svg/企微机器人.svg",
-      "componentPath": "src/icons/IconQiWeiJiQiRen.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      }
-    },
-    {
       "name": "IconQiYeBan",
       "originalName": "企业版",
       "svgPath": "svg/企业版.svg",
@@ -91,26 +61,6 @@
       "size": {
         "width": 120,
         "height": 120
-      }
-    },
-    {
-      "name": "IconShengCheng",
-      "originalName": "生成",
-      "svgPath": "svg/生成.svg",
-      "componentPath": "src/icons/IconShengCheng.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      }
-    },
-    {
-      "name": "IconSheZhi",
-      "originalName": "设置",
-      "svgPath": "svg/设置.svg",
-      "componentPath": "src/icons/IconSheZhi.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
       }
     },
     {
@@ -131,36 +81,6 @@
       "size": {
         "width": 120,
         "height": 119
-      }
-    },
-    {
-      "name": "IconSuoXiao",
-      "originalName": "缩小",
-      "svgPath": "svg/缩小.svg",
-      "componentPath": "src/icons/IconSuoXiao.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      }
-    },
-    {
-      "name": "IconTianJia",
-      "originalName": "添加",
-      "svgPath": "svg/添加.svg",
-      "componentPath": "src/icons/IconTianJia.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      }
-    },
-    {
-      "name": "IconTuiChu",
-      "originalName": "退出",
-      "svgPath": "svg/退出.svg",
-      "componentPath": "src/icons/IconTuiChu.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
       }
     },
     {
@@ -191,16 +111,6 @@
       "size": {
         "width": 16,
         "height": 22
-      }
-    },
-    {
-      "name": "IconWenDang",
-      "originalName": "文档",
-      "svgPath": "svg/文档.svg",
-      "componentPath": "src/icons/IconWenDang.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
       }
     },
     {
@@ -261,16 +171,6 @@
       "size": {
         "width": 120,
         "height": 120
-      }
-    },
-    {
-      "name": "IconZengJia",
-      "originalName": "增加",
-      "svgPath": "svg/增加.svg",
-      "componentPath": "src/icons/IconZengJia.tsx",
-      "size": {
-        "width": 953,
-        "height": 913
       }
     },
     {

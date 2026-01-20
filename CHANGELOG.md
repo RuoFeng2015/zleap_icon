@@ -6,6 +6,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.1.2] - 2026-01-20
+
+3333
+
+### Added
+- IconBaoGaoZhuShou
+- IconChengYuanGuanLi
+- IconFangDa
+- IconFrame
+- IconFrame1261156242
+- IconQiYeBan
+- IconShouQi
+- IconSouSuoZhuShou
+- IconWangLuoJianSuo
+- IconWangYeXiaZai
+- IconWeiBiaoTi1HuaBan11
+- IconWenDaZhuShou
+- IconXiaZai
+- IconXiaZaiZhuShou
+- IconXinXiGuanLi
+- IconXiTongPeiZhi
+- IconYunYingGuanLi
+- IconZhanKai
+- IconZhengQue
+
+### Modified
+- None
+
+### Removed
+- None
 ## [1.1.1] - 2026-01-20
 
 333
