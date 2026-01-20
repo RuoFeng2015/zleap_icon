@@ -1,6 +1,6 @@
 # Icon Validation Report
 
-Generated at: 2026-01-20T10:32:30.763Z
+Generated at: 2026-01-20T10:40:49.331Z
 
 ## Summary
 
@@ -10,7 +10,7 @@ Generated at: 2026-01-20T10:32:30.763Z
 | Valid Icons | 0 |
 | Invalid Icons | 1 |
 | Total Errors | 1 |
-| Total Warnings | 1 |
+| Total Warnings | 2 |
 
 ⚠️ **1 icon(s) failed validation**
 
@@ -20,12 +20,18 @@ Generated at: 2026-01-20T10:32:30.763Z
 
 | Icon | Message |
 |------|---------|
-| 报告助手 | Icon size 120x120 not in allowed sizes:  |
+| 搜索助手 | Icon size 120x119 not in allowed sizes:  |
 
 ## Warnings
+
+### size (1 warning)
+
+| Icon | Message |
+|------|---------|
+| 搜索助手 | Icon is not square: 120x119 |
 
 ### naming (1 warning)
 
 | Icon | Message |
 |------|---------|
-| 报告助手 | Icon name "报告助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 搜索助手 | Icon name "搜索助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
