@@ -6,14 +6,17 @@
  */
 
 import { IconBaoGaoZhuShou } from './icons/IconBaoGaoZhuShou';
+import { IconChengYuanGuanLi } from './icons/IconChengYuanGuanLi';
 
 export { IconBaoGaoZhuShou, type IconBaoGaoZhuShouProps } from './icons/IconBaoGaoZhuShou';
+export { IconChengYuanGuanLi, type IconChengYuanGuanLiProps } from './icons/IconChengYuanGuanLi';
 
 /**
  * Object containing all icon components
  */
 export const allIcons = {
-  IconBaoGaoZhuShou
+  IconBaoGaoZhuShou,
+  IconChengYuanGuanLi
 } as const;
 
 /**
