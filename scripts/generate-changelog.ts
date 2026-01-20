@@ -53,7 +53,7 @@ function loadConfig(): ScriptConfig {
 
   return {
     currentManifestPath:
-      process.env.CURRENT_MANIFEST || './icons-manifest.json',
+      process.env.CURRENT_MANIFEST || './icons.json', // 优先使用 icons.json
     previousManifestPath: process.env.PREVIOUS_MANIFEST,
     changelogPath: process.env.CHANGELOG_PATH || './CHANGELOG.md',
     version,
@@ -62,14 +62,33 @@ function loadConfig(): ScriptConfig {
 }
 
 /**
- * Loads a manifest file
+ * Loads a manifest file and normalizes it to IconManifest type
  */
 async function loadManifest(
   manifestPath: string
 ): Promise<IconManifest | null> {
   try {
     const content = await fs.readFile(manifestPath, 'utf-8')
-    return JSON.parse(content) as IconManifest
+    const data = JSON.parse(content)
+    
+    // 如果是 icons.json 格式 (包含 componentPath)，转换为 IconManifest 格式
+    if (data.icons && data.icons.length > 0 && data.icons[0].componentPath) {
+      return {
+        version: data.version,
+        generatedAt: data.generatedAt,
+        totalCount: data.totalCount,
+        icons: data.icons.map((icon: any) => ({
+          id: icon.originalName, // 使用原始名称作为 ID
+          name: icon.originalName,
+          originalName: icon.originalName,
+          normalizedName: icon.name,
+          width: icon.size?.width || 24,
+          height: icon.size?.height || 24
+        }))
+      }
+    }
+    
+    return data as IconManifest
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === 'ENOENT') {
       return null
