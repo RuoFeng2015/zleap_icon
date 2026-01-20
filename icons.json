@@ -1,16 +1,16 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-20T10:32:33.135Z",
+  "generatedAt": "2026-01-20T10:40:51.504Z",
   "totalCount": 1,
   "icons": [
     {
-      "name": "IconBaoGaoZhuShou",
-      "originalName": "报告助手",
-      "svgPath": "svg/报告助手.svg",
-      "componentPath": "src/icons/IconBaoGaoZhuShou.tsx",
+      "name": "IconSouSuoZhuShou",
+      "originalName": "搜索助手",
+      "svgPath": "svg/搜索助手.svg",
+      "componentPath": "src/icons/IconSouSuoZhuShou.tsx",
       "size": {
         "width": 120,
-        "height": 120
+        "height": 119
       }
     }
   ]
