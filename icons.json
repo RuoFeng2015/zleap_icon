@@ -1,0 +1,18 @@
+{
+  "version": "1.2.33",
+  "syncMode": "replace",
+  "generatedAt": "2026-01-20T10:11:12.815Z",
+  "totalCount": 1,
+  "icons": [
+    {
+      "name": "Icon成员管理",
+      "originalName": "成员管理",
+      "svgPath": "svg/成员管理.svg",
+      "componentPath": "src/icons/Icon成员管理.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    }
+  ]
+}
