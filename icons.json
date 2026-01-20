@@ -1,13 +1,14 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-20T09:50:11.702Z",
+  "version": "1.5.2",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-20T09:53:48.507Z",
   "totalCount": 1,
   "icons": [
     {
-      "name": "IconChengYuanGuanLi",
-      "originalName": "成员管理",
-      "svgPath": "svg/成员管理.svg",
-      "componentPath": "src/icons/IconChengYuanGuanLi.tsx",
+      "name": "Icon系统配置",
+      "originalName": "系统配置",
+      "svgPath": "svg/系统配置.svg",
+      "componentPath": "src/icons/Icon系统配置.tsx",
       "size": {
         "width": 120,
         "height": 120
