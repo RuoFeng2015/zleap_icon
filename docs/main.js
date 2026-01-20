@@ -77,25 +77,29 @@ async function loadSvgContent(svgPath) {
 }
 
 /**
- * Check if SVG is multicolor (has multiple fill/stroke colors)
+ * Check if SVG is multicolor (has multiple fill/stroke colors or gradients)
  * @param {string} svgContent - Raw SVG content
  * @returns {boolean} True if multicolor
  */
 function isMulticolorSvg(svgContent) {
-  // 检查是否有多个不同的 fill 颜色（排除 none 和 currentColor）
-  const fillMatches = svgContent.match(/fill="(?!none|currentColor)[^"]+"/g) || [];
-  const uniqueFills = new Set(fillMatches);
+  // 检查是否使用了渐变或图案（通过 url() 引用）
+  const hasUrlFill = /fill="url\(#[^)]+\)"/.test(svgContent);
+  const hasUrlStroke = /stroke="url\(#[^)]+\)"/.test(svgContent);
 
-  // 检查是否有多个不同的 stroke 颜色
-  const strokeMatches = svgContent.match(/stroke="(?!none|currentColor)[^"]+"/g) || [];
-  const uniqueStrokes = new Set(strokeMatches);
-
-  // 如果有多个不同的颜色，或者有渐变/图案定义，则认为是多色图标
+  // 检查是否有渐变/图案定义
   const hasGradient = svgContent.includes('<linearGradient') ||
     svgContent.includes('<radialGradient') ||
     svgContent.includes('<pattern');
 
-  return uniqueFills.size > 1 || uniqueStrokes.size > 1 || hasGradient;
+  // 检查是否有多个不同的 fill 颜色（排除 none, currentColor, url()）
+  const fillMatches = svgContent.match(/fill="(?!none|currentColor|url\()[^"]+"/g) || [];
+  const uniqueFills = new Set(fillMatches);
+
+  // 检查是否有多个不同的 stroke 颜色
+  const strokeMatches = svgContent.match(/stroke="(?!none|currentColor|url\()[^"]+"/g) || [];
+  const uniqueStrokes = new Set(strokeMatches);
+
+  return hasUrlFill || hasUrlStroke || hasGradient || uniqueFills.size > 1 || uniqueStrokes.size > 1;
 }
 
 /**
@@ -149,10 +153,20 @@ async function renderIcons() {
     card.dataset.iconName = icon.name;
 
     const svgContent = await loadSvgContent(icon.svgPath);
-    const styledSvg = createSvgWithStyles(svgContent, currentSize, currentColor);
+    const isMulticolor = isMulticolorSvg(svgContent);
+
+    // 多色图标不应用颜色配置，保留原色
+    const styledSvg = createSvgWithStyles(
+      svgContent,
+      currentSize,
+      isMulticolor ? 'currentColor' : currentColor
+    );
+
+    // 多色图标添加特殊标记
+    const multicolorBadge = isMulticolor ? '<span class="multicolor-badge" title="多色图标">🎨</span>' : '';
 
     card.innerHTML = `
-      <div class="icon-preview">${styledSvg}</div>
+      <div class="icon-preview">${styledSvg}${multicolorBadge}</div>
       <span class="icon-name">${icon.originalName}</span>
     `;
 
@@ -168,9 +182,10 @@ async function renderIcons() {
  */
 function openModal(icon, svgContent) {
   selectedIcon = { ...icon, svgContent };
+  const isMulticolor = isMulticolorSvg(svgContent);
 
-  // Update modal content
-  const styledSvg = createSvgWithStyles(svgContent, 48, currentColor);
+  // Update modal content - 多色图标不应用颜色
+  const styledSvg = createSvgWithStyles(svgContent, 64, isMulticolor ? 'currentColor' : currentColor);
   modalIconPreview.innerHTML = styledSvg;
   modalIconName.textContent = icon.name;
 
