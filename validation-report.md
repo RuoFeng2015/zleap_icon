@@ -1,39 +1,31 @@
 # Icon Validation Report
 
-Generated at: 2026-01-20T08:51:44.675Z
+Generated at: 2026-01-20T09:05:31.542Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 2 |
+| Total Icons | 1 |
 | Valid Icons | 0 |
-| Invalid Icons | 2 |
-| Total Errors | 2 |
-| Total Warnings | 3 |
+| Invalid Icons | 1 |
+| Total Errors | 1 |
+| Total Warnings | 1 |
 
-⚠️ **2 icon(s) failed validation**
+⚠️ **1 icon(s) failed validation**
 
 ## Errors
 
-### size (2 errors)
+### size (1 error)
 
 | Icon | Message |
 |------|---------|
-| Frame-1261156242 | Icon size 58x63 not in allowed sizes:  |
 | 报告助手 | Icon size 120x120 not in allowed sizes:  |
 
 ## Warnings
 
-### size (1 warning)
+### naming (1 warning)
 
 | Icon | Message |
 |------|---------|
-| Frame-1261156242 | Icon is not square: 58x63 |
-
-### naming (2 warnings)
-
-| Icon | Message |
-|------|---------|
-| Frame-1261156242 | Icon name "Frame-1261156242" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 报告助手 | Icon name "报告助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

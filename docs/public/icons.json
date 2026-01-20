@@ -1,19 +1,9 @@
 {
-  "version": "1.9.2",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-20T08:51:22.417Z",
-  "totalCount": 2,
+  "version": "1.3.222",
+  "syncMode": "replace",
+  "generatedAt": "2026-01-20T09:05:12.503Z",
+  "totalCount": 1,
   "icons": [
-    {
-      "name": "IconFrame1261156242",
-      "originalName": "Frame 1261156242",
-      "svgPath": "svg/Frame-1261156242.svg",
-      "componentPath": "src/icons/IconFrame1261156242.tsx",
-      "size": {
-        "width": 53,
-        "height": 62
-      }
-    },
     {
       "name": "Icon报告助手",
       "originalName": "报告助手",
