@@ -69,34 +69,80 @@ var UI_HEIGHT = 550;
 // ============================================
 /**
  * 清理 Figma 导出的 SVG 中的问题元素
- * - 移除超大背景路径（设计稿背景泄漏）
- * - 移除空的 clipPath 定义
- * - 移除不必要的白色/灰色背景矩形
+ * - 移除画板背景（#F5F5F5 填充的全尺寸矩形）
+ * - 移除超大白色背景路径
+ * - 移除空的 clipPath 和引用
  * - 保留渐变定义和多色效果
  */
 function cleanSvgContent(svgString) {
+    var e_1, _a;
     var svg = svgString;
-    // 移除 Figma 画板背景（紧跟在 <svg> 后的第一个全尺寸矩形路径）
-    // 匹配 fill="#F5F5F5" 或类似颜色的背景
-    svg = svg.replace(/<path\s+[^>]*fill="(#F5F5F5|#f5f5f5|#E5E5E5|#e5e5e5)"[^>]*d="M0\s*0h\d+v\d+H0z?"[^>]*\/>/gi, '');
-    // 也处理属性顺序相反的情况
-    svg = svg.replace(/<path\s+[^>]*d="M0\s*0h\d+v\d+H0z?"[^>]*fill="(#F5F5F5|#f5f5f5|#E5E5E5|#e5e5e5)"[^>]*\/>/gi, '');
-    // 移除超大负偏移的白色背景路径 (如 d="M-878-463H562V561H-878z")
-    svg = svg.replace(/<path\s+[^>]*fill="(white|#fff|#ffffff)"[^>]*d="M-?\d+-?\d+H-?\d+V-?\d+H-?\d+z"[^>]*\/>/gi, '');
-    // 移除 g 元素内的白色大背景（通常在 clipPath 包裹的 g 内）
-    svg = svg.replace(/<path\s+fill="white"\s+d="M-?\d+-?\d+H\d+V\d+H-?\d+z"\s*\/>/gi, '');
-    // 移除空的 clipPath 定义
+    var originalLength = svg.length;
+    // 打印原始 SVG 片段用于调试
+    console.log("[cleanSvgContent] \u539F\u59CB SVG \u524D 200 \u5B57\u7B26: ".concat(svg.substring(0, 200)));
+    // 1. 移除 #F5F5F5 背景 - 处理 rect 和 path 元素
+    // 使用正则匹配包含 fill="#F5F5F5" 的 rect 或 path（紧跟在 svg 标签后的第一个元素）
+    var before1 = svg.length;
+    // 移除 fill="#F5F5F5" 的 rect 背景（整个画板背景）
+    svg = svg.replace(/<rect[^>]*fill="#F5F5F5"[^>]*\/>/gi, '');
+    svg = svg.replace(/<rect[^>]*fill="#F5F5F5"[^>]*>[^<]*<\/rect>/gi, '');
+    // 移除 fill="#F5F5F5" 的 path 背景
+    svg = svg.replace(/<path[^>]*fill="#F5F5F5"[^>]*\/>/gi, '');
+    console.log("[cleanSvgContent] Step 1: \u79FB\u9664 #F5F5F5 \u80CC\u666F, \u5220\u9664 ".concat(before1 - svg.length, " \u5B57\u7B26"));
+    // 2. 移除超大尺寸的 rect 背景（如 width="1440"）
+    var before2 = svg.length;
+    // 匹配 width 超过 500 的 rect 元素
+    svg = svg.replace(/<rect[^>]*width="(\d+)"[^>]*>/gi, function (match, width) {
+        var w = parseInt(width, 10);
+        if (w > 500) {
+            console.log("[cleanSvgContent] \u5220\u9664\u5927\u5C3A\u5BF8 rect: ".concat(match.substring(0, 80), "..."));
+            return '';
+        }
+        return match;
+    });
+    console.log("[cleanSvgContent] Step 2: \u79FB\u9664\u5927\u5C3A\u5BF8 rect, \u5220\u9664 ".concat(before2 - svg.length, " \u5B57\u7B26"));
+    // 3. 移除 white 背景 path（带有负坐标或 M0 开头）
+    var before3 = svg.length;
+    svg = svg.replace(/<path[^>]*fill="white"[^>]*\/>/gi, function (match) {
+        // 检查是否是大背景路径（d 包含负数坐标或 M0）
+        if (match.includes('d="M-') || match.includes('d="M0')) {
+            console.log("[cleanSvgContent] \u5220\u9664\u767D\u8272\u80CC\u666F: ".concat(match.substring(0, 80), "..."));
+            return '';
+        }
+        return match;
+    });
+    console.log("[cleanSvgContent] Step 3: \u79FB\u9664 white \u80CC\u666F, \u5220\u9664 ".concat(before3 - svg.length, " \u5B57\u7B26"));
+    // 4. 移除空的 clipPath 定义和 clip-path 属性
     svg = svg.replace(/<clipPath\s+id="[^"]*"\s*\/>/gi, '');
     svg = svg.replace(/<clipPath\s+id="[^"]*"\s*><\/clipPath>/gi, '');
-    // 移除只包含白色路径的 clipPath（保留 clipPath 结构但移除白色背景内容）
-    svg = svg.replace(/<clipPath\s+id="([^"]*)">\s*<path\s+fill="white"[^>]*\/>\s*<\/clipPath>/gi, '<clipPath id="$1"/>');
-    // 移除引用不存在 clipPath 的属性
-    svg = svg.replace(/\s+clipPath="url\(#[^)]*\)"/gi, '');
-    // 清理空的 g 元素
-    svg = svg.replace(/<g[^>]*>\s*<\/g>/gi, '');
-    // 清理多余的空白
+    svg = svg.replace(/\s+clip-path="url\([^)]*\)"/gi, ''); // 注意：属性名是 clip-path 不是 clipPath
+    svg = svg.replace(/\s+clipPath="url\([^)]*\)"/gi, '');
+    // 5. 简化空的 g 标签
+    svg = svg.replace(/<g\s*>\s*<\/g>/gi, '');
+    // 6. 解包只有单个属性的 g 标签
+    svg = svg.replace(/<g\s*>([^]*?)<\/g>/g, '$1');
+    // 7. 移除未使用的渐变定义
+    var usedGradientIds = new Set();
+    var gradientRefs = svg.matchAll(/(?:fill|stroke)="url\(#([^)]+)\)"/g);
+    try {
+        for (var gradientRefs_1 = __values(gradientRefs), gradientRefs_1_1 = gradientRefs_1.next(); !gradientRefs_1_1.done; gradientRefs_1_1 = gradientRefs_1.next()) {
+            var match = gradientRefs_1_1.value;
+            usedGradientIds.add(match[1]);
+        }
+    }
+    catch (e_1_1) { e_1 = { error: e_1_1 }; }
+    finally {
+        try {
+            if (gradientRefs_1_1 && !gradientRefs_1_1.done && (_a = gradientRefs_1.return)) _a.call(gradientRefs_1);
+        }
+        finally { if (e_1) throw e_1.error; }
+    }
+    svg = svg.replace(/<linearGradient\s+id="([^"]+)"[^>]*>[\s\S]*?<\/linearGradient>/g, function (match, id) { return usedGradientIds.has(id) ? match : ''; });
+    // 8. 清理多余的空白
     svg = svg.replace(/>\s+</g, '><');
     svg = svg.replace(/\s{2,}/g, ' ');
+    console.log("[cleanSvgContent] \u603B\u8BA1: ".concat(originalLength, " -> ").concat(svg.length, ", \u5220\u9664 ").concat(originalLength - svg.length, " \u5B57\u7B26"));
+    console.log("[cleanSvgContent] \u6E05\u7406\u540E SVG \u524D 200 \u5B57\u7B26: ".concat(svg.substring(0, 200)));
     return svg.trim();
 }
 // ============================================
@@ -148,7 +194,7 @@ function updateIconsFromSelection() {
  * 在指定节点中查找图标
  */
 function findIconsInNodes(nodes) {
-    var e_1, _a;
+    var e_2, _a;
     var icons = [];
     try {
         for (var nodes_1 = __values(nodes), nodes_1_1 = nodes_1.next(); !nodes_1_1.done; nodes_1_1 = nodes_1.next()) {
@@ -156,12 +202,12 @@ function findIconsInNodes(nodes) {
             traverseNode(node, icons);
         }
     }
-    catch (e_1_1) { e_1 = { error: e_1_1 }; }
+    catch (e_2_1) { e_2 = { error: e_2_1 }; }
     finally {
         try {
             if (nodes_1_1 && !nodes_1_1.done && (_a = nodes_1.return)) _a.call(nodes_1);
         }
-        finally { if (e_1) throw e_1.error; }
+        finally { if (e_2) throw e_2.error; }
     }
     // 按名称排序
     icons.sort(function (a, b) { return a.name.localeCompare(b.name); });
@@ -169,9 +215,10 @@ function findIconsInNodes(nodes) {
 }
 /**
  * 递归遍历节点查找图标
+ * 注意：当一个节点被识别为图标后，不再递归其子节点
  */
 function traverseNode(node, icons) {
-    var e_2, _a;
+    var e_3, _a;
     // 检查是否是图标（COMPONENT 或 FRAME 类型，合适的尺寸）
     if (isIconNode(node)) {
         icons.push({
@@ -180,8 +227,10 @@ function traverseNode(node, icons) {
             width: Math.round(node.width),
             height: Math.round(node.height),
         });
+        // 已识别为图标，不再递归子节点（避免将子 Frame 也识别为独立图标）
+        return;
     }
-    // 递归处理子节点
+    // 只有非图标节点才递归处理子节点
     if ('children' in node) {
         try {
             for (var _b = __values(node.children), _c = _b.next(); !_c.done; _c = _b.next()) {
@@ -189,12 +238,12 @@ function traverseNode(node, icons) {
                 traverseNode(child, icons);
             }
         }
-        catch (e_2_1) { e_2 = { error: e_2_1 }; }
+        catch (e_3_1) { e_3 = { error: e_3_1 }; }
         finally {
             try {
                 if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
             }
-            finally { if (e_2) throw e_2.error; }
+            finally { if (e_3) throw e_3.error; }
         }
     }
 }

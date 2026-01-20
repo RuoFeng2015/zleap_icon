@@ -151,12 +151,16 @@ body {
   width: 100%;
   min-height: 48px;
   overflow: hidden; /* 防止 SVG 溢出 */
+  /* 重要：设置透明色，避免 currentColor 被继承为黑色 */
+  color: transparent;
 }
 
 .icon-card .icon-preview svg {
   transition: transform 0.2s;
   max-width: 100%;
   max-height: 64px;
+  /* 确保 SVG 不继承父容器的 color 属性 */
+  color: inherit;
 }
 
 .icon-card:hover .icon-preview svg {

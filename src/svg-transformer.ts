@@ -96,6 +96,14 @@ export const defaultSvgoConfig: SvgoConfig = {
           removeViewBox: false,
           // 禁用移除未使用的 defs（保留渐变定义）
           removeUselessDefs: false,
+          // 禁用移除未知属性（保留 stop-color 等属性）
+          removeUnknownsAndDefaults: false,
+          // 禁用合并路径（可能影响渐变引用）
+          mergePaths: false,
+          // 禁用路径转换（保留原始路径数据）
+          convertPathData: {
+            floatPrecision: 3,
+          },
         },
       },
     },

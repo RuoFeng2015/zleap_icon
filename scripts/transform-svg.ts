@@ -105,8 +105,9 @@ async function transformFile(
       defaultTransformOptions
     )
 
-    // Write output file (use jsxContent for JSX-compatible output)
-    await fs.writeFile(outputPath, result.jsxContent, 'utf-8')
+    // Write output file (use svgContent to preserve original attribute names for pure SVG)
+    // Note: jsxContent is only for React components, not for pure SVG files
+    await fs.writeFile(outputPath, result.svgContent, 'utf-8')
 
     const savings = result.originalSize - result.optimizedSize
     const savingsPercent =

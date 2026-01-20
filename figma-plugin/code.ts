@@ -67,58 +67,83 @@ const UI_HEIGHT = 550
 
 /**
  * 清理 Figma 导出的 SVG 中的问题元素
- * - 移除超大背景路径（设计稿背景泄漏）
- * - 移除空的 clipPath 定义
- * - 移除不必要的白色/灰色背景矩形
+ * - 移除画板背景（#F5F5F5 填充的全尺寸矩形）
+ * - 移除超大白色背景路径
+ * - 移除空的 clipPath 和引用
  * - 保留渐变定义和多色效果
  */
 function cleanSvgContent(svgString: string): string {
   let svg = svgString
+  const originalLength = svg.length
 
-  // 移除 Figma 画板背景（紧跟在 <svg> 后的第一个全尺寸矩形路径）
-  // 匹配 fill="#F5F5F5" 或类似颜色的背景
-  svg = svg.replace(
-    /<path\s+[^>]*fill="(#F5F5F5|#f5f5f5|#E5E5E5|#e5e5e5)"[^>]*d="M0\s*0h\d+v\d+H0z?"[^>]*\/>/gi,
-    ''
-  )
-  // 也处理属性顺序相反的情况
-  svg = svg.replace(
-    /<path\s+[^>]*d="M0\s*0h\d+v\d+H0z?"[^>]*fill="(#F5F5F5|#f5f5f5|#E5E5E5|#e5e5e5)"[^>]*\/>/gi,
-    ''
-  )
+  // 打印原始 SVG 片段用于调试
+  console.log(`[cleanSvgContent] 原始 SVG 前 200 字符: ${svg.substring(0, 200)}`)
 
-  // 移除超大负偏移的白色背景路径 (如 d="M-878-463H562V561H-878z")
-  svg = svg.replace(
-    /<path\s+[^>]*fill="(white|#fff|#ffffff)"[^>]*d="M-?\d+-?\d+H-?\d+V-?\d+H-?\d+z"[^>]*\/>/gi,
-    ''
-  )
+  // 1. 移除 #F5F5F5 背景 - 处理 rect 和 path 元素
+  // 使用正则匹配包含 fill="#F5F5F5" 的 rect 或 path（紧跟在 svg 标签后的第一个元素）
+  const before1 = svg.length
+  // 移除 fill="#F5F5F5" 的 rect 背景（整个画板背景）
+  svg = svg.replace(/<rect[^>]*fill="#F5F5F5"[^>]*\/>/gi, '')
+  svg = svg.replace(/<rect[^>]*fill="#F5F5F5"[^>]*>[^<]*<\/rect>/gi, '')
+  // 移除 fill="#F5F5F5" 的 path 背景
+  svg = svg.replace(/<path[^>]*fill="#F5F5F5"[^>]*\/>/gi, '')
+  console.log(`[cleanSvgContent] Step 1: 移除 #F5F5F5 背景, 删除 ${before1 - svg.length} 字符`)
 
-  // 移除 g 元素内的白色大背景（通常在 clipPath 包裹的 g 内）
-  svg = svg.replace(
-    /<path\s+fill="white"\s+d="M-?\d+-?\d+H\d+V\d+H-?\d+z"\s*\/>/gi,
-    ''
-  )
+  // 2. 移除超大尺寸的 rect 背景（如 width="1440"）
+  const before2 = svg.length
+  // 匹配 width 超过 500 的 rect 元素
+  svg = svg.replace(/<rect[^>]*width="(\d+)"[^>]*>/gi, (match, width) => {
+    const w = parseInt(width, 10)
+    if (w > 500) {
+      console.log(`[cleanSvgContent] 删除大尺寸 rect: ${match.substring(0, 80)}...`)
+      return ''
+    }
+    return match
+  })
+  console.log(`[cleanSvgContent] Step 2: 移除大尺寸 rect, 删除 ${before2 - svg.length} 字符`)
 
-  // 移除空的 clipPath 定义
+  // 3. 移除 white 背景 path（带有负坐标或 M0 开头）
+  const before3 = svg.length
+  svg = svg.replace(/<path[^>]*fill="white"[^>]*\/>/gi, (match) => {
+    // 检查是否是大背景路径（d 包含负数坐标或 M0）
+    if (match.includes('d="M-') || match.includes('d="M0')) {
+      console.log(`[cleanSvgContent] 删除白色背景: ${match.substring(0, 80)}...`)
+      return ''
+    }
+    return match
+  })
+  console.log(`[cleanSvgContent] Step 3: 移除 white 背景, 删除 ${before3 - svg.length} 字符`)
+
+  // 4. 移除空的 clipPath 定义和 clip-path 属性
   svg = svg.replace(/<clipPath\s+id="[^"]*"\s*\/>/gi, '')
   svg = svg.replace(/<clipPath\s+id="[^"]*"\s*><\/clipPath>/gi, '')
+  svg = svg.replace(/\s+clip-path="url\([^)]*\)"/gi, '') // 注意：属性名是 clip-path 不是 clipPath
+  svg = svg.replace(/\s+clipPath="url\([^)]*\)"/gi, '')
 
-  // 移除只包含白色路径的 clipPath（保留 clipPath 结构但移除白色背景内容）
+  // 5. 简化空的 g 标签
+  svg = svg.replace(/<g\s*>\s*<\/g>/gi, '')
+  
+  // 6. 解包只有单个属性的 g 标签
+  svg = svg.replace(/<g\s*>([^]*?)<\/g>/g, '$1')
+
+  // 7. 移除未使用的渐变定义
+  const usedGradientIds = new Set<string>()
+  const gradientRefs = svg.matchAll(/(?:fill|stroke)="url\(#([^)]+)\)"/g)
+  for (const match of gradientRefs) {
+    usedGradientIds.add(match[1])
+  }
+  
   svg = svg.replace(
-    /<clipPath\s+id="([^"]*)">\s*<path\s+fill="white"[^>]*\/>\s*<\/clipPath>/gi,
-    '<clipPath id="$1"/>'
+    /<linearGradient\s+id="([^"]+)"[^>]*>[\s\S]*?<\/linearGradient>/g,
+    (match, id) => usedGradientIds.has(id) ? match : ''
   )
 
-  // 移除引用不存在 clipPath 的属性
-  svg = svg.replace(/\s+clipPath="url\(#[^)]*\)"/gi, '')
-
-  // 清理空的 g 元素
-  svg = svg.replace(/<g[^>]*>\s*<\/g>/gi, '')
-
-  // 清理多余的空白
+  // 8. 清理多余的空白
   svg = svg.replace(/>\s+</g, '><')
   svg = svg.replace(/\s{2,}/g, ' ')
 
+  console.log(`[cleanSvgContent] 总计: ${originalLength} -> ${svg.length}, 删除 ${originalLength - svg.length} 字符`)
+  console.log(`[cleanSvgContent] 清理后 SVG 前 200 字符: ${svg.substring(0, 200)}`)
   return svg.trim()
 }
 
@@ -195,6 +220,7 @@ function findIconsInNodes(
 
 /**
  * 递归遍历节点查找图标
+ * 注意：当一个节点被识别为图标后，不再递归其子节点
  */
 function traverseNode(node: SceneNode | PageNode, icons: IconInfo[]): void {
   // 检查是否是图标（COMPONENT 或 FRAME 类型，合适的尺寸）
@@ -205,9 +231,11 @@ function traverseNode(node: SceneNode | PageNode, icons: IconInfo[]): void {
       width: Math.round((node as FrameNode).width),
       height: Math.round((node as FrameNode).height),
     })
+    // 已识别为图标，不再递归子节点（避免将子 Frame 也识别为独立图标）
+    return
   }
 
-  // 递归处理子节点
+  // 只有非图标节点才递归处理子节点
   if ('children' in node) {
     for (const child of node.children) {
       traverseNode(child as SceneNode, icons)
