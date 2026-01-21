@@ -1,42 +1,8 @@
 {
-  "version": "1.5.16",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-21T15:38:51.228Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-21T15:39:26.947Z",
   "totalCount": 44,
   "icons": [
-    {
-      "name": "Icon展开3",
-      "originalName": "展开3",
-      "svgPath": "svg/展开3.svg",
-      "componentPath": "src/icons/Icon展开3.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-21T15:38:51.228Z"
-    },
-    {
-      "name": "Icon文件1",
-      "originalName": "文件1",
-      "svgPath": "svg/文件1.svg",
-      "componentPath": "src/icons/Icon文件1.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-21T15:38:51.228Z"
-    },
-    {
-      "name": "Icon文档",
-      "originalName": "文档",
-      "svgPath": "svg/文档.svg",
-      "componentPath": "src/icons/Icon文档.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-21T15:38:51.228Z"
-    },
     {
       "name": "IconBangZhuShuoMing",
       "originalName": "帮助说明",
@@ -248,6 +214,16 @@
       }
     },
     {
+      "name": "IconWenDang",
+      "originalName": "文档",
+      "svgPath": "svg/文档.svg",
+      "componentPath": "src/icons/IconWenDang.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
       "name": "IconWenDaZhuShou",
       "originalName": "问答助手",
       "svgPath": "svg/问答助手.svg",
@@ -262,6 +238,16 @@
       "originalName": "文件",
       "svgPath": "svg/文件.svg",
       "componentPath": "src/icons/IconWenJian.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "IconWenJian1",
+      "originalName": "文件1",
+      "svgPath": "svg/文件1.svg",
+      "componentPath": "src/icons/IconWenJian1.tsx",
       "size": {
         "width": 24,
         "height": 24
@@ -422,6 +408,16 @@
       "originalName": "展开2",
       "svgPath": "svg/展开2.svg",
       "componentPath": "src/icons/IconZhanKai2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "IconZhanKai3",
+      "originalName": "展开3",
+      "svgPath": "svg/展开3.svg",
+      "componentPath": "src/icons/IconZhanKai3.tsx",
       "size": {
         "width": 24,
         "height": 24
