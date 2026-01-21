@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "version": "1.0.0",
   "generatedAt": "2026-01-20T10:32:33.135Z",
   "totalCount": 1,
@@ -8,6 +9,58 @@
       "originalName": "报告助手",
       "svgPath": "svg/报告助手.svg",
       "componentPath": "src/icons/IconBaoGaoZhuShou.tsx",
+=======
+  "version": "1.2.33",
+  "syncMode": "replace",
+  "generatedAt": "2026-01-20T10:42:41.046Z",
+  "totalCount": 3,
+  "icons": [
+    {
+      "name": "Icon信息管理",
+      "originalName": "信息管理",
+      "svgPath": "svg/信息管理.svg",
+      "componentPath": "src/icons/Icon信息管理.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
+      "name": "Icon成员管理",
+      "originalName": "成员管理",
+      "svgPath": "svg/成员管理.svg",
+      "componentPath": "src/icons/Icon成员管理.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
+      "name": "Icon报告助手",
+      "originalName": "报告助手",
+      "svgPath": "svg/报告助手.svg",
+      "componentPath": "src/icons/Icon报告助手.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
+      "name": "Icon搜索助手",
+      "originalName": "搜索助手",
+      "svgPath": "svg/搜索助手.svg",
+      "componentPath": "src/icons/Icon搜索助手.tsx",
+      "size": {
+        "width": 120,
+        "height": 119
+      }
+    },
+    {
+      "name": "Icon问答助手",
+      "originalName": "问答助手",
+      "svgPath": "svg/问答助手.svg",
+      "componentPath": "src/icons/Icon问答助手.tsx",
+>>>>>>> 84eed7780ca37d2912c1d23a158bc94f9abe6584
       "size": {
         "width": 120,
         "height": 120

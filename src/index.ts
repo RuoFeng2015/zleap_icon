@@ -6,14 +6,20 @@
  */
 
 import { IconBaoGaoZhuShou } from './icons/IconBaoGaoZhuShou';
+import { IconChengYuanGuanLi } from './icons/IconChengYuanGuanLi';
+import { IconSouSuoZhuShou } from './icons/IconSouSuoZhuShou';
 
 export { IconBaoGaoZhuShou, type IconBaoGaoZhuShouProps } from './icons/IconBaoGaoZhuShou';
+export { IconChengYuanGuanLi, type IconChengYuanGuanLiProps } from './icons/IconChengYuanGuanLi';
+export { IconSouSuoZhuShou, type IconSouSuoZhuShouProps } from './icons/IconSouSuoZhuShou';
 
 /**
  * Object containing all icon components
  */
 export const allIcons = {
-  IconBaoGaoZhuShou
+  IconBaoGaoZhuShou,
+  IconChengYuanGuanLi,
+  IconSouSuoZhuShou
 } as const;
 
 /**
