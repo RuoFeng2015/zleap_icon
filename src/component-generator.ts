@@ -124,7 +124,15 @@ export function generateComponent(
     (innerContent.includes('linearGradient') || innerContent.includes('radialGradient'))
 
   // For gradients, use raw SVG content (not JSX converted) for dangerouslySetInnerHTML
-  const rawInnerContent = rawSvgContent ? extractSvgInnerContent(rawSvgContent) : innerContent
+  let rawInnerContent = rawSvgContent ? extractSvgInnerContent(rawSvgContent) : innerContent
+
+  // Move <defs> to the beginning of SVG content (gradients must be defined before use)
+  if (hasGradients) {
+    const defsMatch = rawInnerContent.match(/<defs>[\s\S]*?<\/defs>/)
+    if (defsMatch) {
+      rawInnerContent = defsMatch[0] + rawInnerContent.replace(/<defs>[\s\S]*?<\/defs>/, '')
+    }
+  }
 
   // For multicolor icons, don't apply fill prop to svg element
   // For single-color icons, apply fill prop
