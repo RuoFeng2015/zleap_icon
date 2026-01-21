@@ -11,9 +11,9 @@ import { describe, it, expect } from 'vitest'
 import * as fc from 'fast-check'
 import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
-import { IconArrowRight } from '../../src/icons/IconArrowRight'
-import { IconCheck } from '../../src/icons/IconCheck'
-import { IconCloseCircle } from '../../src/icons/IconCloseCircle'
+import { IconArrowRight } from '../../src/icons/IconArrowRight.tsx'
+import { IconCheck } from '../../src/icons/IconCheck.tsx'
+import { IconCloseCircle } from '../../src/icons/IconCloseCircle.tsx'
 
 // Available icon components for testing
 const iconComponents = [
