@@ -163,8 +163,8 @@ async function generateComponentFromFile(
     // Create metadata
     const metadata = createMetadataFromFile(fileName, svgContent)
 
-    // Generate component
-    const template = generateComponent(metadata, transformed.jsxContent)
+    // Generate component - pass raw SVG content for gradient icons
+    const template = generateComponent(metadata, transformed.jsxContent, transformed.svgContent)
 
     return { template, metadata }
   } catch (error) {

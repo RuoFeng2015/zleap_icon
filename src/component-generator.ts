@@ -107,6 +107,7 @@ function isMulticolorSvg(svgContent: string): boolean {
 export function generateComponent(
   icon: IconMetadata,
   jsxContent: string,
+  rawSvgContent?: string,
 ): ComponentTemplate {
   const componentName = generateComponentName(icon.name)
   const propsName = `${componentName}Props`
@@ -121,6 +122,9 @@ export function generateComponent(
   // Check if content has gradient/defs that need unique IDs
   const hasGradients = innerContent.includes('<defs>') && 
     (innerContent.includes('linearGradient') || innerContent.includes('radialGradient'))
+
+  // For gradients, use raw SVG content (not JSX converted) for dangerouslySetInnerHTML
+  const rawInnerContent = rawSvgContent ? extractSvgInnerContent(rawSvgContent) : innerContent
 
   // For multicolor icons, don't apply fill prop to svg element
   // For single-color icons, apply fill prop
@@ -153,8 +157,8 @@ export const ${componentName} = forwardRef<SVGSVGElement, ${propsName}>(
   ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
     const uniqueId = useId();
     
-    // Replace gradient IDs with unique ones
-    const svgContent = \`${innerContent.replace(/id="([^"]+)"/g, 'id="${uniqueId}$1"').replace(/url\(#([^)]+)\)/g, 'url(#${uniqueId}$1)')}\`;
+     // Replace gradient IDs with unique ones
+    const svgContent = \`${rawInnerContent.replace(/id="([^"]+)"/g, 'id="${uniqueId}$1"').replace(/url\(#([^)]+)\)/g, 'url(#${uniqueId}$1)')}\`;
     
     return (
       <svg
