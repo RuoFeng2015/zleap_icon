@@ -23,6 +23,7 @@ export const IconFrame = forwardRef<SVGSVGElement, IconFrameProps>(
         width={size}
         height={size}
         viewBox="0 0 24 24"
+        fill="none"
         className={className}
         style={style}
         {...props}

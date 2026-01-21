@@ -137,10 +137,15 @@ export function generateComponent(
   // Extract the root fill attribute from original SVG (important for icons with stroke paths)
   const rootFill = rawSvgContent ? extractSvgRootFill(rawSvgContent) : null
 
-  // For multicolor icons, preserve original root fill (e.g., "none") or don't apply fill prop
-  // For single-color icons, apply fill prop
+  // Determine fill prop based on SVG type and original fill attribute
+  // - If original has fill="none", preserve it (stroke-based icons)
+  // - For multicolor/gradient icons without explicit fill, don't apply fill prop
+  // - For single-color icons, apply fill={color}
   let fillProp: string
-  if (hasGradients && rootFill) {
+  if (rootFill === 'none') {
+    // Stroke-based icons: preserve fill="none" to prevent default black fill
+    fillProp = '\n        fill="none"'
+  } else if (hasGradients && rootFill) {
     fillProp = `\n        fill="${rootFill}"`
   } else if (isMulticolor) {
     fillProp = ''

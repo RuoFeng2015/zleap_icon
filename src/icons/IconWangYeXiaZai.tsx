@@ -23,7 +23,7 @@ export const IconWangYeXiaZai = forwardRef<SVGSVGElement, IconWangYeXiaZaiProps>
         width={size}
         height={size}
         viewBox="0 0 24 24"
-        fill={color}
+        fill="none"
         className={className}
         style={style}
         {...props}
