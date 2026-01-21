@@ -1,0 +1,38 @@
+import React, { forwardRef } from 'react';
+import type { SVGProps } from 'react';
+
+export interface IconRssProps extends SVGProps<SVGSVGElement> {
+  /** Icon size (width and height) */
+  size?: number | string;
+  /** Icon color (not applicable for multicolor icons) */
+  color?: string;
+}
+
+/**
+ * IconRss icon component (multicolor)
+ *
+ * @param props - Component props including size, color, and SVG attributes
+ * @param ref - Forwarded ref to the SVG element
+ */
+export const IconRss = forwardRef<SVGSVGElement, IconRssProps>(
+  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        className={className}
+        style={style}
+        {...props}
+      >
+        <path fill="#F5F5F5" d="M0 0h24v24H0z"/><path fill="white" d="M-418.404-49.5h793v822h-793z"/><path fill="#A3A3A3" d="M7.8 3.248c3.522.756 6.548 2.248 9.007 4.883 2 2.14 3.285 4.657 3.931 7.498.275 1.092.366 4.227.366 4.227 0 .45-.15 1.1-.815 1.128a.8.8 0 0 1-.606-.27c-.216-.251-.28-.58-.27-.96.075-2.558-.368-5.014-1.584-7.284-2.264-4.21-5.734-6.777-10.454-7.568-.986-.167-2.016-.168-3.028-.198-.364-.009-.675-.076-.918-.279a.8.8 0 0 1-.269-.605.82.82 0 0 1 .816-.817s2.192-.106 3.825.245"/><path fill="#A3A3A3" d="M15.79 21.012a.66.66 0 0 1-.343-.131c-.297-.229-.423-.652-.41-1.09.067-2.2-.35-4.29-1.566-6.158-2.01-3.093-4.916-4.683-8.714-4.72-.21 0-.421 0-.628.013-.62.03-1.345-.18-1.22-1.053.09-.526.94-.712 1.637-.705 2.173.02 3.808.317 5.744 1.348 3.453 1.836 5.56 4.684 6.235 8.543.162.921.323 1.748.2 2.815-.053.466-.139.81-.495 1.03a.7.7 0 0 1-.431.106z"/><path fill="#A3A3A3" d="M10.55 20.468a1.6 1.6 0 0 1-.112-.713c.044-1.068-.024-2.12-.545-3.092-.987-1.847-2.507-2.867-4.61-2.967a9 9 0 0 0-.938 0c-.544.03-1.066-.038-1.231-.682a.6.6 0 0 1-.013-.15v-.016a.4.4 0 0 1 .013-.124c.148-.54.659-.719 1.215-.735 1.473-.03 2.896.15 4.192.905 2.222 1.294 3.408 3.237 3.593 5.805q.064.56.022 1.122a3 3 0 0 1-.102.606c-.233.693-1.183.713-1.485.041m-5.425.387c1.011 0 1.83-.821 1.83-1.835s-.819-1.835-1.83-1.835c-1.01 0-1.83.821-1.83 1.835s.82 1.835 1.83 1.835"/>
+      </svg>
+    );
+  }
+);
+
+IconRss.displayName = 'IconRss';
+
+export default IconRss;

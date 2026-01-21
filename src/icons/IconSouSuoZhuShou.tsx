@@ -1,0 +1,39 @@
+import React, { forwardRef } from 'react';
+import type { SVGProps } from 'react';
+
+export interface IconSouSuoZhuShouProps extends SVGProps<SVGSVGElement> {
+  /** Icon size (width and height) */
+  size?: number | string;
+  /** Icon color */
+  color?: string;
+}
+
+/**
+ * IconSouSuoZhuShou icon component
+ *
+ * @param props - Component props including size, color, and SVG attributes
+ * @param ref - Forwarded ref to the SVG element
+ */
+export const IconSouSuoZhuShou = forwardRef<SVGSVGElement, IconSouSuoZhuShouProps>(
+  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 120 119"
+        fill={color}
+        className={className}
+        style={style}
+        {...props}
+      >
+        <rect width="120" height="119" rx="30"/><path stroke="currentColor" d="M98.098 61.477c0 3.164-.883 6.228-2.787 8.786-2.29 3.065-5.821 5.197-9.5 6.129-1.934.486-3.829.446-5.802.446-1.022 0-1.696-1.031-1.33-1.983 2.113-5.603 1.469-12.386-1.913-17.404-7.022-11.662-25.567-11.642-32.589 0-3.381 4.998-4.016 11.81-1.914 17.404.357.962-.307 1.983-1.329 1.983h-3.907c-15.588.16-19.336-21.016-6.329-26.845 1.305-.584 2.206-1.864 2.448-3.274 1.044-6.094 7.42-10.294 13.503-9.223 1.494.264 3.104-.228 4.073-1.396 9.446-11.375 30.668-6.697 33.886 7.903a3.93 3.93 0 0 0 2.638 2.873c6.301 1.993 10.852 7.777 10.852 14.601Z"/><path d="m80.908 84.15-6.847-6.942a16.1 16.1 0 0 0 2.644-8.863c0-8.96-7.279-16.222-16.26-16.222s-16.26 7.262-16.26 16.222 7.279 16.223 16.26 16.223c3.11 0 6.016-.875 8.49-2.384l6.874 6.968a3.56 3.56 0 0 0 2.553 1.065c.93 0 1.813-.34 2.507-1.025a3.563 3.563 0 0 0 .039-5.049zm-20.463-3.684c-6.696 0-12.143-5.433-12.143-12.114s5.447-12.115 12.143-12.115 12.143 5.434 12.143 12.115c0 6.68-5.446 12.114-12.143 12.114" opacity=".8"/><path d="M50.477 68.543c0-5.494 4.18-10.18 9.603-10.18.915 0 1.656.735 1.656 1.642s-.741 1.642-1.656 1.642c-3.35 0-6.291 2.963-6.291 6.896a1.65 1.65 0 0 1-1.656 1.642 1.65 1.65 0 0 1-1.656-1.642" opacity=".8"/>
+      </svg>
+    );
+  }
+);
+
+IconSouSuoZhuShou.displayName = 'IconSouSuoZhuShou';
+
+export default IconSouSuoZhuShou;

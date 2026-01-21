@@ -1,0 +1,39 @@
+import React, { forwardRef } from 'react';
+import type { SVGProps } from 'react';
+
+export interface IconQiYeBanProps extends SVGProps<SVGSVGElement> {
+  /** Icon size (width and height) */
+  size?: number | string;
+  /** Icon color */
+  color?: string;
+}
+
+/**
+ * IconQiYeBan icon component
+ *
+ * @param props - Component props including size, color, and SVG attributes
+ * @param ref - Forwarded ref to the SVG element
+ */
+export const IconQiYeBan = forwardRef<SVGSVGElement, IconQiYeBanProps>(
+  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 48 48"
+        fill={color}
+        className={className}
+        style={style}
+        {...props}
+      >
+        <path d="M0 10C0 4.477 4.477 0 10 0h28c5.523 0 10 4.477 10 10v28c0 5.523-4.477 10-10 10H10C4.477 48 0 43.523 0 38z"/><path stroke="currentColor" d="M24.641 11.8c3.17 0 5.744 1.877 6.163 4.242l.03.165h5.714l.21.011a2.054 2.054 0 0 1 1.842 2.045v13.481a2.054 2.054 0 0 1-2.052 2.056H12.651c-1.133 0-2.05-.92-2.05-2.055V18.263c0-1.136.917-2.055 2.05-2.056h5.798l.03-.165c.418-2.362 2.993-4.242 6.162-4.242Zm-10.743 6.137c-.839 0-1.521.682-1.521 1.523v11.633c0 .841.68 1.524 1.521 1.524H35.31c.84 0 1.52-.682 1.52-1.524V19.46a1.52 1.52 0 0 0-1.52-1.523zm2.424 2.7H32.82a.88.88 0 0 1 .879.88v7.302a.88.88 0 0 1-.88.882H16.323a.88.88 0 0 1-.882-.882v-7.301c0-.487.397-.882.882-.882ZM28.88 21.69a3.313 3.313 0 0 0-3.31 3.315l.005.171a3.314 3.314 0 0 0 3.305 3.145 3.313 3.313 0 0 0 3.307-3.316c0-1.83-1.48-3.315-3.308-3.315Zm-4.24-8.148c-2.02 0-3.828 1.004-4.346 2.394l-.101.27h8.895l-.101-.27c-.519-1.39-2.327-2.394-4.347-2.394Z"/>
+      </svg>
+    );
+  }
+);
+
+IconQiYeBan.displayName = 'IconQiYeBan';
+
+export default IconQiYeBan;

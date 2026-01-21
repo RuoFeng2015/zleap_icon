@@ -1,0 +1,38 @@
+import React, { forwardRef } from 'react';
+import type { SVGProps } from 'react';
+
+export interface IconDingDingProps extends SVGProps<SVGSVGElement> {
+  /** Icon size (width and height) */
+  size?: number | string;
+  /** Icon color (not applicable for multicolor icons) */
+  color?: string;
+}
+
+/**
+ * IconDingDing icon component (multicolor)
+ *
+ * @param props - Component props including size, color, and SVG attributes
+ * @param ref - Forwarded ref to the SVG element
+ */
+export const IconDingDing = forwardRef<SVGSVGElement, IconDingDingProps>(
+  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        className={className}
+        style={style}
+        {...props}
+      >
+        <path fill="#F5F5F5" d="M0 0h24v24H0z"/><path fill="white" d="M-466.404-49.5h793v822h-793z"/><path stroke="#A3A3A3" d="M14.192 8.723c.168.157.333.317.508.47.293.27.59.518.886.778.534.475 1.08.934 1.63 1.39.29.21.502.524.598.885.062.28.058.571-.013.848-.07.278-.205.532-.391.74-.212.27-.45.501-.677.751l-.059.076-1.404 1.482c-.028.03-.066.06-.043.106s.069.043.112.046h1.234c.068 0 .168-.04.195.057.029.098-.073.117-.127.157l-6.585 5.157a1 1 0 0 1-.148.098c-.081.038-.14-.017-.117-.112a.7.7 0 0 1 .071-.154l2.035-3.616c.023-.043.074-.086.044-.143s-.097-.044-.148-.044h-1.379c-.173 0-.19-.032-.106-.187l.979-1.791a.3.3 0 0 0 .018-.046.8.8 0 0 1 .081-.242c.046-.073.023-.106-.056-.106-.155 0-.308 0-.463-.024a3.75 3.75 0 0 1-2.337-1.007 3.74 3.74 0 0 1-1.038-1.487 1.3 1.3 0 0 1-.072-.272.29.29 0 0 1 .066-.282.24.24 0 0 1 .268-.057q.166.049.328.12a10.6 10.6 0 0 0 2.035.556q.674.127 1.358.136c-.318-.05-.666-.1-1.017-.174a9.4 9.4 0 0 1-1.735-.521 4 4 0 0 1-1.552-1.216 4.7 4.7 0 0 1-.78-1.414q-.109-.372-.176-.755a4.6 4.6 0 0 1-.036-1.148.33.33 0 0 1 .045-.173.3.3 0 0 1 .126-.12.28.28 0 0 1 .32.046q.233.163.445.356a23 23 0 0 0 4.945 2.918 36 36 0 0 1-1.51-.836 17 17 0 0 1-2.219-1.55 2.8 2.8 0 0 1-.437-.415.4.4 0 0 0-.12-.125l-.023-.03a4.1 4.1 0 0 1-.763-1.07 4.92 4.92 0 0 1-.193-4.253.4.4 0 0 1 .097-.182.35.35 0 0 1 .173-.1.34.34 0 0 1 .197.012.36.36 0 0 1 .161.122c.214.198.422.401.636.6l.193.176c.303.282.603.583.913.87q1.782 1.675 3.562 3.342c.47.459.959.917 1.465 1.357"/>
+      </svg>
+    );
+  }
+);
+
+IconDingDing.displayName = 'IconDingDing';
+
+export default IconDingDing;
