@@ -190,9 +190,9 @@ async function renderIcons() {
   iconGrid.innerHTML = '';
 
   for (const icon of filteredIcons) {
-    const card = document.createElement('div');
-    card.className = 'icon-card';
-    card.dataset.iconName = icon.name;
+    const outer = document.createElement('div');
+    outer.className = 'outer';
+    outer.dataset.iconName = icon.name;
 
     const svgContent = await loadSvgContent(icon.svgPath);
     const isMulticolor = isMulticolorSvg(svgContent);
@@ -207,12 +207,21 @@ async function renderIcons() {
     // Copy icon SVG
     const copyIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
 
-    card.innerHTML = `
-      <div class="card-copy-btn" title="Copy Component Code">
-        ${copyIconSvg}
+    outer.innerHTML = `
+      <div class="dot"></div>
+      <div class="card">
+        <div class="ray"></div>
+        <div class="line topl"></div>
+        <div class="line leftl"></div>
+        <div class="line bottoml"></div>
+        <div class="line rightl"></div>
+        
+        <div class="card-copy-btn" title="Copy Component Code">
+          ${copyIconSvg}
+        </div>
+        <div class="icon-preview">${styledSvg}</div>
+        <span class="icon-name">${icon.originalName}</span>
       </div>
-      <div class="icon-preview">${styledSvg}</div>
-      <span class="icon-name">${icon.originalName}</span>
     `;
 
     // Card click opens modal
