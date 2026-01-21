@@ -107,24 +107,38 @@ function isMulticolorSvg(svgContent) {
  * @param {string} svgContent - Raw SVG content
  * @param {number} size - Icon size
  * @param {string} color - Icon color (only applied to single-color icons)
+ * @param {string} uniqueId - Optional unique ID to prevent gradient ID collisions
  * @returns {string} Modified SVG string
  */
-function createSvgWithStyles(svgContent, size, color) {
-  // Parse and modify SVG
+function createSvgWithStyles(svgContent, size, color, uniqueId = null) {
   let svg = svgContent;
 
-  // 只修改 <svg> 标签本身的 width 和 height，不影响内部元素
-  // 使用正则匹配 <svg ... > 标签并替换其中的 width/height
-  svg = svg.replace(/^(<svg\s[^>]*?)(?:\s*width="[^"]*")?([^>]*?)(?:\s*height="[^"]*")?([^>]*>)/i,
-    (match, before, middle, after) => {
-      // 移除现有的 width 和 height 属性（如果有的话）
-      let cleanedBefore = before.replace(/\s*width="[^"]*"/gi, '').replace(/\s*height="[^"]*"/gi, '');
-      let cleanedMiddle = middle.replace(/\s*width="[^"]*"/gi, '').replace(/\s*height="[^"]*"/gi, '');
-      let cleanedAfter = after.replace(/\s*width="[^"]*"/gi, '').replace(/\s*height="[^"]*"/gi, '');
-      // 添加新的 width 和 height
-      return `${cleanedBefore} width="${size}" height="${size}"${cleanedMiddle}${cleanedAfter}`;
-    }
-  );
+  // 生成唯一前缀，避免多个 SVG 使用相同的渐变 ID 导致冲突
+  const prefix = uniqueId || `svg-${Math.random().toString(36).substr(2, 9)}`;
+
+  // 替换所有 id="xxx" 为 id="prefix-xxx"
+  // 同时替换引用 url(#xxx) 为 url(#prefix-xxx)
+  svg = svg.replace(/\bid="([^"]+)"/g, `id="${prefix}-$1"`);
+  svg = svg.replace(/url\(#([^)]+)\)/g, `url(#${prefix}-$1)`);
+
+  // 找到 <svg 开标签的结束位置
+  const svgTagEnd = svg.indexOf('>');
+  if (svgTagEnd === -1) return svg;
+
+  // 提取 <svg ...> 开标签
+  let svgOpenTag = svg.substring(0, svgTagEnd + 1);
+  const restOfSvg = svg.substring(svgTagEnd + 1);
+
+  // 只在 <svg> 开标签中修改 width 和 height
+  // 先移除现有的 width 和 height（如果有）
+  svgOpenTag = svgOpenTag.replace(/\s+width="[^"]*"/gi, '');
+  svgOpenTag = svgOpenTag.replace(/\s+height="[^"]*"/gi, '');
+
+  // 在 <svg 后插入新的 width 和 height
+  svgOpenTag = svgOpenTag.replace('<svg', `<svg width="${size}" height="${size}"`);
+
+  // 重新组合 SVG
+  svg = svgOpenTag + restOfSvg;
 
   // 只对单色图标应用颜色配置
   // 多色图标保留原始颜色
