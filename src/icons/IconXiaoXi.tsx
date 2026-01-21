@@ -4,12 +4,12 @@ import type { SVGProps } from 'react';
 export interface IconXiaoXiProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (not applicable for multicolor icons) */
+  /** Icon color */
   color?: string;
 }
 
 /**
- * IconXiaoXi icon component (multicolor)
+ * IconXiaoXi icon component
  *
  * @param props - Component props including size, color, and SVG attributes
  * @param ref - Forwarded ref to the SVG element
@@ -23,11 +23,12 @@ export const IconXiaoXi = forwardRef<SVGSVGElement, IconXiaoXiProps>(
         width={size}
         height={size}
         viewBox="0 0 24 24"
+        fill={color}
         className={className}
         style={style}
         {...props}
       >
-        <path fill="#F5F5F5" d="M0 0h24v24H0z"/><path fill="white" d="M-200.111-337.125h793v822h-793z"/><path stroke="#0D131A" d="M2 3h20v15h-7.5L12 20.5 9.5 18H2zm9.5 7.5h1.001m3.999 0h1m-11 0h1"/>
+        <path stroke="#0D131A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M2 3h20v15h-7.5L12 20.5 9.5 18H2z"/><path stroke="#0D131A" strokeLinecap="round" strokeWidth="1.5" d="M11.5 10.5h1.001"/><path stroke="#0D131A" strokeLinecap="round" strokeWidth="1.5" d="M16.5 10.5h1"/><path stroke="#0D131A" strokeLinecap="round" strokeWidth="1.5" d="M6.5 10.5h1"/>
       </svg>
     );
   }

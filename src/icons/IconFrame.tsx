@@ -27,7 +27,7 @@ export const IconFrame = forwardRef<SVGSVGElement, IconFrameProps>(
         style={style}
         {...props}
       >
-        <path fill="#F5F5F5" d="M0 0h24v24H0z"/><path fill="white" d="M-102.055-663h793v822h-793z"/><path stroke="#0D131A" d="M3 4.5A1.5 1.5 0 0 1 4.5 3h15A1.5 1.5 0 0 1 21 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19.5z"/><path stroke="#0D131A" d="M16 3v18M8 10l2 2-2 2m5-11h6m-6 18h6"/>
+        <path fill="#4A4A4A" fillRule="evenodd" stroke="#4A4A4A" strokeLinejoin="round" strokeWidth="1.5" d="m12 2.5-11 19h22z" clipRule="evenodd"/><path stroke="white" strokeLinecap="round" strokeWidth="1.5" d="M12 17.5v.5"/><path stroke="white" strokeLinecap="round" strokeWidth="1.5" d="m12 9.5.004 5"/>
       </svg>
     );
   }

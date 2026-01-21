@@ -4,12 +4,12 @@ import type { SVGProps } from 'react';
 export interface IconZhengQueProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (not applicable for multicolor icons) */
+  /** Icon color */
   color?: string;
 }
 
 /**
- * IconZhengQue icon component (multicolor)
+ * IconZhengQue icon component
  *
  * @param props - Component props including size, color, and SVG attributes
  * @param ref - Forwarded ref to the SVG element
@@ -23,11 +23,12 @@ export const IconZhengQue = forwardRef<SVGSVGElement, IconZhengQueProps>(
         width={size}
         height={size}
         viewBox="0 0 24 24"
+        fill={color}
         className={className}
         style={style}
         {...props}
       >
-        <path fill="#F5F5F5" d="M0 0h24v24H0z"/><path fill="white" d="M-288.667-337.125h793v822h-793z"/><path stroke="#4A4A4A" d="m5 12 5 5L20 7"/>
+        <path stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m5 12 5 5L20 7"/>
       </svg>
     );
   }
