@@ -113,18 +113,18 @@ function createSvgWithStyles(svgContent, size, color) {
   // Parse and modify SVG
   let svg = svgContent;
 
-  // Add or update width and height
-  if (svg.includes('width=')) {
-    svg = svg.replace(/width="[^"]*"/, `width="${size}"`);
-  } else {
-    svg = svg.replace('<svg', `<svg width="${size}"`);
-  }
-
-  if (svg.includes('height=')) {
-    svg = svg.replace(/height="[^"]*"/, `height="${size}"`);
-  } else {
-    svg = svg.replace('<svg', `<svg height="${size}"`);
-  }
+  // 只修改 <svg> 标签本身的 width 和 height，不影响内部元素
+  // 使用正则匹配 <svg ... > 标签并替换其中的 width/height
+  svg = svg.replace(/^(<svg\s[^>]*?)(?:\s*width="[^"]*")?([^>]*?)(?:\s*height="[^"]*")?([^>]*>)/i,
+    (match, before, middle, after) => {
+      // 移除现有的 width 和 height 属性（如果有的话）
+      let cleanedBefore = before.replace(/\s*width="[^"]*"/gi, '').replace(/\s*height="[^"]*"/gi, '');
+      let cleanedMiddle = middle.replace(/\s*width="[^"]*"/gi, '').replace(/\s*height="[^"]*"/gi, '');
+      let cleanedAfter = after.replace(/\s*width="[^"]*"/gi, '').replace(/\s*height="[^"]*"/gi, '');
+      // 添加新的 width 和 height
+      return `${cleanedBefore} width="${size}" height="${size}"${cleanedMiddle}${cleanedAfter}`;
+    }
+  );
 
   // 只对单色图标应用颜色配置
   // 多色图标保留原始颜色
