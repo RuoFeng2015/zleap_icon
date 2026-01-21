@@ -249,32 +249,69 @@ async function renderIcons() {
 
 /**
  * Simple syntax highlighter for JSX/import statements
+ * Uses placeholders to avoid highlighting generated HTML tags
  */
 function highlightJsx(code) {
-  return code
-    .replace(/(&lt;|<)(\/?[\w]+)/g, '<span class="tag">&lt;$2</span>')
-    .replace(/(\/?>|&gt;)/g, '<span class="tag">$1</span>')
-    .replace(/(\w+)=/g, '<span class="attr-name">$1</span>=')
-    .replace(/=(".*?")/g, '=<span class="attr-value">$1</span>')
-    .replace(/({[^}]+})/g, '<span class="attr-value">$1</span>')
-    .replace(/(import|from|export|const|let|var)/g, '<span class="keyword">$1</span>')
-    .replace(/('[^']*')/g, '<span class="string">$1</span>');
+  // 1. Escape HTML first
+  let out = code
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+
+  // 2. Apply placeholders
+  out = out
+    // Keywords
+    .replace(/\b(import|from|export|const|let|var)\b/g, '___KEY___$1___END___')
+    // JSX Attributes (word followed by =) - require leading space to avoid matching inside strings/text
+    .replace(/(\s)(\w+)=/g, '$1___ATTR___$2___END___=')
+    // String Values (in attributes)
+    .replace(/=(".*?")/g, '=___VAL___$1___END___')
+    // Expression Values
+    .replace(/({[^}]+})/g, '___VAL___$1___END___')
+    // Strings (single quotes for imports)
+    .replace(/('[^']*')/g, '___STR___$1___END___')
+    // Tags (start with &lt;)
+    .replace(/(&lt;\/?)([\w]+)/g, '$1___TAG___$2___END___')
+  // Tag End (&gt; or /&gt;) - Just color the bracket? Original code colored the bracket.
+  // Original: .replace(/(\/?>|&gt;)/g, '<span class="tag">$1</span>')
+  // We will leave brackets plain or color them as tag?
+  // Let's color the whole tag structure if possible, but simplest is to just restore placeholders.
+
+  // 3. Replace placeholders with real HTML
+  return out
+    .replace(/___KEY___/g, '<span class="keyword">')
+    .replace(/___ATTR___/g, '<span class="attr-name">')
+    .replace(/___VAL___/g, '<span class="attr-value">')
+    .replace(/___STR___/g, '<span class="string">')
+    .replace(/___TAG___/g, '<span class="tag">')
+    .replace(/___END___/g, '</span>');
 }
 
 /**
  * Simple syntax highlighter for SVG
  */
 function highlightSvg(code) {
-  // Escape HTML first
-  let escaped = code
+  // 1. Escape HTML first
+  let out = code
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
 
-  return escaped
-    .replace(/&lt;(\/?[\w:-]+)/g, '&lt;<span class="tag">$1</span>')
-    .replace(/(\w+)=/g, '<span class="attr-name">$1</span>=')
-    .replace(/="([^"]*)"/g, '="<span class="attr-value">$1</span>"');
+  // 2. Apply placeholders
+  out = out
+    // Tags: &lt;tagname or &lt;/tagname
+    .replace(/(&lt;\/?[\w:-]+)/g, '___TAG___$1___END___')
+    // Attributes: word=
+    .replace(/(\s)([\w:-]+)=/g, '$1___ATTR___$2___END___=')
+    // Values: "..."
+    .replace(/="([^"]*)"/g, '=___VAL___"$1"___END___');
+
+  // 3. Replace placeholders
+  return out
+    .replace(/___TAG___/g, '<span class="tag">')
+    .replace(/___ATTR___/g, '<span class="attr-name">')
+    .replace(/___VAL___/g, '<span class="attr-value">')
+    .replace(/___END___/g, '</span>');
 }
 
 /**
