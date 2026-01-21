@@ -7,27 +7,21 @@
 
 import { IconBaoGaoZhuShou } from './icons/IconBaoGaoZhuShou';
 import { IconChengYuanGuanLi } from './icons/IconChengYuanGuanLi';
-import { IconSuoXiao } from './icons/IconSuoXiao';
+import { IconSheZhi } from './icons/IconSheZhi';
 import { IconWenDaZhuShou } from './icons/IconWenDaZhuShou';
-import { IconXiaoXi } from './icons/IconXiaoXi';
 import { IconXiaZaiZhuShou } from './icons/IconXiaZaiZhuShou';
 import { IconXinXiGuanLi } from './icons/IconXinXiGuanLi';
 import { IconXiTongPeiZhi } from './icons/IconXiTongPeiZhi';
 import { IconYunYingGuanLi } from './icons/IconYunYingGuanLi';
-import { IconZhanKai } from './icons/IconZhanKai';
-import { IconZhengQue } from './icons/IconZhengQue';
 
 export { IconBaoGaoZhuShou, type IconBaoGaoZhuShouProps } from './icons/IconBaoGaoZhuShou';
 export { IconChengYuanGuanLi, type IconChengYuanGuanLiProps } from './icons/IconChengYuanGuanLi';
-export { IconSuoXiao, type IconSuoXiaoProps } from './icons/IconSuoXiao';
+export { IconSheZhi, type IconSheZhiProps } from './icons/IconSheZhi';
 export { IconWenDaZhuShou, type IconWenDaZhuShouProps } from './icons/IconWenDaZhuShou';
-export { IconXiaoXi, type IconXiaoXiProps } from './icons/IconXiaoXi';
 export { IconXiaZaiZhuShou, type IconXiaZaiZhuShouProps } from './icons/IconXiaZaiZhuShou';
 export { IconXinXiGuanLi, type IconXinXiGuanLiProps } from './icons/IconXinXiGuanLi';
 export { IconXiTongPeiZhi, type IconXiTongPeiZhiProps } from './icons/IconXiTongPeiZhi';
 export { IconYunYingGuanLi, type IconYunYingGuanLiProps } from './icons/IconYunYingGuanLi';
-export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
-export { IconZhengQue, type IconZhengQueProps } from './icons/IconZhengQue';
 
 /**
  * Object containing all icon components
@@ -35,15 +29,12 @@ export { IconZhengQue, type IconZhengQueProps } from './icons/IconZhengQue';
 export const allIcons = {
   IconBaoGaoZhuShou,
   IconChengYuanGuanLi,
-  IconSuoXiao,
+  IconSheZhi,
   IconWenDaZhuShou,
-  IconXiaoXi,
   IconXiaZaiZhuShou,
   IconXinXiGuanLi,
   IconXiTongPeiZhi,
-  IconYunYingGuanLi,
-  IconZhanKai,
-  IconZhengQue
+  IconYunYingGuanLi
 } as const;
 
 /**

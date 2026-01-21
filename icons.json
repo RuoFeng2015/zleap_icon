@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-21T05:36:50.540Z",
-  "totalCount": 7,
+  "generatedAt": "2026-01-21T05:44:55.634Z",
+  "totalCount": 8,
   "icons": [
     {
       "name": "IconBaoGaoZhuShou",
@@ -21,6 +21,16 @@
       "size": {
         "width": 120,
         "height": 120
+      }
+    },
+    {
+      "name": "IconSheZhi",
+      "originalName": "设置",
+      "svgPath": "svg/设置.svg",
+      "componentPath": "src/icons/IconSheZhi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
       }
     },
     {
