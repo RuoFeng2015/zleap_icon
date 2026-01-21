@@ -163,6 +163,24 @@ function createSvgWithStyles(svgContent, size, color, uniqueId = null) {
 /**
  * Render icons to the grid
  */
+// Toast Notification
+const toast = document.getElementById('toast');
+let toastTimeout;
+
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.remove('hidden');
+
+  if (toastTimeout) clearTimeout(toastTimeout);
+
+  toastTimeout = setTimeout(() => {
+    toast.classList.add('hidden');
+  }, 2000);
+}
+
+/**
+ * Render icons to the grid
+ */
 async function renderIcons() {
   if (filteredIcons.length === 0) {
     iconGrid.innerHTML = '<div class="no-results">No icons found matching your search.</div>';
@@ -186,13 +204,45 @@ async function renderIcons() {
       isMulticolor ? 'currentColor' : currentColor
     );
 
+    // Copy icon SVG
+    const copyIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
 
     card.innerHTML = `
+      <div class="card-copy-btn" title="Copy Component Code">
+        ${copyIconSvg}
+      </div>
       <div class="icon-preview">${styledSvg}</div>
       <span class="icon-name">${icon.originalName}</span>
     `;
 
-    card.addEventListener('click', () => openModal(icon, svgContent));
+    // Card click opens modal
+    card.addEventListener('click', (e) => {
+      // Ignore if copy button was clicked
+      if (e.target.closest('.card-copy-btn')) return;
+      openModal(icon, svgContent);
+    });
+
+    // Copy button click
+    const copyBtn = card.querySelector('.card-copy-btn');
+    copyBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const componentCode = `<${icon.name} />`;
+      try {
+        await navigator.clipboard.writeText(componentCode);
+        showToast(`Copied ${componentCode}`);
+
+        // Button feedback
+        copyBtn.style.backgroundColor = 'var(--color-primary)';
+        copyBtn.style.color = 'white';
+        setTimeout(() => {
+          copyBtn.style.backgroundColor = '';
+          copyBtn.style.color = '';
+        }, 500);
+      } catch (err) {
+        console.error('Failed to copy', err);
+      }
+    });
+
     iconGrid.appendChild(card);
   }
 }
@@ -245,12 +295,16 @@ async function copyToClipboard(text, button) {
     // Show feedback
     const originalText = button.textContent;
     button.textContent = 'Copied!';
-    button.classList.add('copied');
+    button.style.backgroundColor = 'var(--color-primary)';
+    button.style.color = 'white';
 
     setTimeout(() => {
       button.textContent = originalText;
-      button.classList.remove('copied');
+      button.style.backgroundColor = '';
+      button.style.color = '';
     }, 2000);
+
+    showToast('Copied to clipboard!');
   } catch (error) {
     console.error('Failed to copy:', error);
   }
