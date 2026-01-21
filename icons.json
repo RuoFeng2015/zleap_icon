@@ -1,8 +1,42 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-21T14:18:47.677Z",
-  "totalCount": 41,
+  "version": "1.5.16",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-21T15:38:51.228Z",
+  "totalCount": 44,
   "icons": [
+    {
+      "name": "Icon展开3",
+      "originalName": "展开3",
+      "svgPath": "svg/展开3.svg",
+      "componentPath": "src/icons/Icon展开3.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T15:38:51.228Z"
+    },
+    {
+      "name": "Icon文件1",
+      "originalName": "文件1",
+      "svgPath": "svg/文件1.svg",
+      "componentPath": "src/icons/Icon文件1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T15:38:51.228Z"
+    },
+    {
+      "name": "Icon文档",
+      "originalName": "文档",
+      "svgPath": "svg/文档.svg",
+      "componentPath": "src/icons/Icon文档.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T15:38:51.228Z"
+    },
     {
       "name": "IconBangZhuShuoMing",
       "originalName": "帮助说明",
