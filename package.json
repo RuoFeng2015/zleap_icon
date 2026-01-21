@@ -1,5 +1,5 @@
 {
-  "name": "@zleap/icons",
+  "name": "@zleap-web/icons",
   "version": "1.5.7",
   "description": "Icon library auto-generated from Figma",
   "main": "dist/cjs/index.js",
