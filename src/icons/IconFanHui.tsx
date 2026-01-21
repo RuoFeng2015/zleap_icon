@@ -4,12 +4,12 @@ import type { SVGProps } from 'react';
 export interface IconFanHuiProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (not applicable for multicolor icons) */
+  /** Icon color */
   color?: string;
 }
 
 /**
- * IconFanHui icon component (multicolor)
+ * IconFanHui icon component
  *
  * @param props - Component props including size, color, and SVG attributes
  * @param ref - Forwarded ref to the SVG element
@@ -23,11 +23,12 @@ export const IconFanHui = forwardRef<SVGSVGElement, IconFanHuiProps>(
         width={size}
         height={size}
         viewBox="0 0 24 24"
+        fill="none"
         className={className}
-        style={style}
+        style={{ color, ...style }}
         {...props}
       >
-        <path fill="#F5F5F5" d="M0 0h24v24H0z"/><path fill="white" d="M-465.778-236.75h793v822h-793z"/><path stroke="#4A4A4A" d="m15.5 18-6-6 6-6"/>
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m15.5 18-6-6 6-6"/>
       </svg>
     );
   }
