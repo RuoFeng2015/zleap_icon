@@ -225,14 +225,14 @@ async function renderIcons() {
     `;
 
     // Card click opens modal
-    card.addEventListener('click', (e) => {
+    outer.addEventListener('click', (e) => {
       // Ignore if copy button was clicked
       if (e.target.closest('.card-copy-btn')) return;
       openModal(icon, svgContent);
     });
 
     // Copy button click
-    const copyBtn = card.querySelector('.card-copy-btn');
+    const copyBtn = outer.querySelector('.card-copy-btn');
     copyBtn.addEventListener('click', async (e) => {
       e.stopPropagation();
       const componentCode = `<${icon.name} />`;
@@ -252,7 +252,7 @@ async function renderIcons() {
       }
     });
 
-    iconGrid.appendChild(card);
+    iconGrid.appendChild(outer);
   }
 }
 

@@ -6,9 +6,9 @@
 }
 
 :root {
-  --color-bg: #000000;
-  --color-surface: #0c0d0d;
-  --color-border: #202222;
+  --color-bg: #0f1115;
+  --color-surface: #1a1d24;
+  --color-border: #2a2e38;
   --color-text: #ffffff;
   --color-text-secondary: #a0a0a0;
   --color-primary: #3b82f6;
@@ -46,6 +46,7 @@ body {
   font-weight: 800;
   margin-bottom: 0.75rem;
   background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.025em;
