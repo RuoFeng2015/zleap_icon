@@ -2,6 +2,10 @@
   "name": "@zleap-web/icons",
   "version": "1.5.7",
   "description": "Icon library auto-generated from Figma",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RuoFeng2015/zleap_icon"
+  },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
