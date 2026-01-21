@@ -1,44 +1,33 @@
 {
-  "version": "1.2.2",
-  "syncMode": "replace",
-  "generatedAt": "2026-01-21T05:48:59.647Z",
-  "totalCount": 4,
+  "version": "1.0.0",
+  "generatedAt": "2026-01-21T05:49:21.263Z",
+  "totalCount": 3,
   "icons": [
     {
-      "name": "Icon文档",
-      "originalName": "文档",
-      "svgPath": "svg/文档.svg",
-      "componentPath": "src/icons/Icon文档.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      }
-    },
-    {
-      "name": "Icon新增",
-      "originalName": "新增",
-      "svgPath": "svg/新增.svg",
-      "componentPath": "src/icons/Icon新增.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      }
-    },
-    {
-      "name": "Icon网页下载",
+      "name": "IconWangYeXiaZai",
       "originalName": "网页下载",
       "svgPath": "svg/网页下载.svg",
-      "componentPath": "src/icons/Icon网页下载.tsx",
+      "componentPath": "src/icons/IconWangYeXiaZai.tsx",
       "size": {
         "width": 24,
         "height": 24
       }
     },
     {
-      "name": "Icon验证码",
+      "name": "IconXinZeng",
+      "originalName": "新增",
+      "svgPath": "svg/新增.svg",
+      "componentPath": "src/icons/IconXinZeng.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "IconYanZhengMa",
       "originalName": "验证码",
       "svgPath": "svg/验证码.svg",
-      "componentPath": "src/icons/Icon验证码.tsx",
+      "componentPath": "src/icons/IconYanZhengMa.tsx",
       "size": {
         "width": 24,
         "height": 24
