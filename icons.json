@@ -1,13 +1,63 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-21T05:49:21.263Z",
-  "totalCount": 3,
+  "generatedAt": "2026-01-21T06:18:08.399Z",
+  "totalCount": 10,
   "icons": [
+    {
+      "name": "IconBangZhuShuoMing",
+      "originalName": "帮助说明",
+      "svgPath": "svg/帮助说明.svg",
+      "componentPath": "src/icons/IconBangZhuShuoMing.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "IconFangDa",
+      "originalName": "放大",
+      "svgPath": "svg/放大.svg",
+      "componentPath": "src/icons/IconFangDa.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "IconFrame",
+      "originalName": "Frame",
+      "svgPath": "svg/Frame.svg",
+      "componentPath": "src/icons/IconFrame.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "IconSuoXiao",
+      "originalName": "缩小",
+      "svgPath": "svg/缩小.svg",
+      "componentPath": "src/icons/IconSuoXiao.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
     {
       "name": "IconWangYeXiaZai",
       "originalName": "网页下载",
       "svgPath": "svg/网页下载.svg",
       "componentPath": "src/icons/IconWangYeXiaZai.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "IconXiaoXi",
+      "originalName": "消息",
+      "svgPath": "svg/消息.svg",
+      "componentPath": "src/icons/IconXiaoXi.tsx",
       "size": {
         "width": 24,
         "height": 24
@@ -28,6 +78,26 @@
       "originalName": "验证码",
       "svgPath": "svg/验证码.svg",
       "componentPath": "src/icons/IconYanZhengMa.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "IconZhanKai",
+      "originalName": "展开",
+      "svgPath": "svg/展开.svg",
+      "componentPath": "src/icons/IconZhanKai.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "IconZhengQue",
+      "originalName": "正确",
+      "svgPath": "svg/正确.svg",
+      "componentPath": "src/icons/IconZhengQue.tsx",
       "size": {
         "width": 24,
         "height": 24
