@@ -25,10 +25,10 @@ export const IconYanZhengMa = forwardRef<SVGSVGElement, IconYanZhengMaProps>(
         viewBox="0 0 24 24"
         fill="none"
         className={className}
-        style={style}
+        style={{ color, ...style }}
         {...props}
       >
-        <path stroke="#333333" strokeLinejoin="round" strokeWidth="2" d="M3 4.628 12.004 2 21 4.628v5.389A13.16 13.16 0 0 1 12.001 22.5 13.16 13.16 0 0 1 3 10.014z"/><path stroke="#333333" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7.5 11.5 11 15l6-6"/>
+        <path stroke="currentColor" strokeLinejoin="round" strokeWidth="2" d="M3 4.628 12.004 2 21 4.628v5.389A13.16 13.16 0 0 1 12.001 22.5 13.16 13.16 0 0 1 3 10.014z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7.5 11.5 11 15l6-6"/>
       </svg>
     );
   }

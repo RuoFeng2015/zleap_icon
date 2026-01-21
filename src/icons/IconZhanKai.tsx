@@ -25,10 +25,10 @@ export const IconZhanKai = forwardRef<SVGSVGElement, IconZhanKaiProps>(
         viewBox="0 0 24 24"
         fill="none"
         className={className}
-        style={style}
+        style={{ color, ...style }}
         {...props}
       >
-        <path stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 5.25h16"/><path stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 9.75h8"/><path stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 14.25h8"/><path stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 18.75h16"/><path fill="#4A4A4A" stroke="#4A4A4A" strokeLinejoin="round" strokeWidth="1.5" d="M8 9.5 4 12l4 2.5z"/>
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 5.25h16"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 9.75h8"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 14.25h8"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 18.75h16"/><path fill="currentColor" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M8 9.5 4 12l4 2.5z"/>
       </svg>
     );
   }

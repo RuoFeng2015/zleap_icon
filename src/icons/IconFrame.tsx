@@ -25,7 +25,7 @@ export const IconFrame = forwardRef<SVGSVGElement, IconFrameProps>(
         viewBox="0 0 24 24"
         fill="none"
         className={className}
-        style={style}
+        style={{ color, ...style }}
         {...props}
       >
         <path fill="#4A4A4A" fillRule="evenodd" stroke="#4A4A4A" strokeLinejoin="round" strokeWidth="1.5" d="m12 2.5-11 19h22z" clipRule="evenodd"/><path stroke="white" strokeLinecap="round" strokeWidth="1.5" d="M12 17.5v.5"/><path stroke="white" strokeLinecap="round" strokeWidth="1.5" d="m12 9.5.004 5"/>

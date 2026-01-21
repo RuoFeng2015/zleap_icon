@@ -25,10 +25,10 @@ export const IconZhengQue = forwardRef<SVGSVGElement, IconZhengQueProps>(
         viewBox="0 0 24 24"
         fill="none"
         className={className}
-        style={style}
+        style={{ color, ...style }}
         {...props}
       >
-        <path stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m5 12 5 5L20 7"/>
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m5 12 5 5L20 7"/>
       </svg>
     );
   }

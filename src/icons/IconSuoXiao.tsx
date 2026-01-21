@@ -25,10 +25,10 @@ export const IconSuoXiao = forwardRef<SVGSVGElement, IconSuoXiaoProps>(
         viewBox="0 0 24 24"
         fill="none"
         className={className}
-        style={style}
+        style={{ color, ...style }}
         {...props}
       >
-        <path stroke="#0D131A" strokeLinejoin="round" strokeWidth="1.5" d="M10.5 19a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z"/><path stroke="#0D131A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7.5 10.5h6"/><path stroke="#0D131A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m16.61 16.61 4.244 4.244"/>
+        <path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M10.5 19a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7.5 10.5h6"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m16.61 16.61 4.244 4.244"/>
       </svg>
     );
   }

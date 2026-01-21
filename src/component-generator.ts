@@ -205,6 +205,23 @@ export default ${componentName};
 `
   } else {
     // For icons without gradients, use the original approach
+    // For stroke-based icons (fill="none"), replace hardcoded colors with currentColor
+    // and apply color via style prop
+    const isStrokeIcon = rootFill === 'none'
+    let processedContent = innerContent
+    
+    if (isStrokeIcon && !isMulticolor) {
+      // Replace hardcoded stroke/fill colors with currentColor for single-color stroke icons
+      processedContent = innerContent
+        .replace(/stroke="#[0-9A-Fa-f]{3,6}"/g, 'stroke="currentColor"')
+        .replace(/fill="#[0-9A-Fa-f]{3,6}"/g, 'fill="currentColor"')
+    }
+    
+    // For stroke icons, use style={{ color }} to apply the color prop
+    const styleProp = isStrokeIcon 
+      ? '\n        style={{ color, ...style }}'
+      : '\n        style={style}'
+    
     content = `import React, { forwardRef } from 'react';
 import type { SVGProps } from 'react';
 
@@ -230,11 +247,10 @@ export const ${componentName} = forwardRef<SVGSVGElement, ${propsName}>(
         width={size}
         height={size}
         viewBox="${viewBox}"${fillProp}
-        className={className}
-        style={style}
+        className={className}${styleProp}
         {...props}
       >
-        ${innerContent}
+        ${processedContent}
       </svg>
     );
   }
