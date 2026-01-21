@@ -1,86 +1,36 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-21T05:44:55.634Z",
-  "totalCount": 8,
+  "generatedAt": "2026-01-21T05:49:21.263Z",
+  "totalCount": 3,
   "icons": [
     {
-      "name": "IconBaoGaoZhuShou",
-      "originalName": "报告助手",
-      "svgPath": "svg/报告助手.svg",
-      "componentPath": "src/icons/IconBaoGaoZhuShou.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
-      }
-    },
-    {
-      "name": "IconChengYuanGuanLi",
-      "originalName": "成员管理",
-      "svgPath": "svg/成员管理.svg",
-      "componentPath": "src/icons/IconChengYuanGuanLi.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
-      }
-    },
-    {
-      "name": "IconSheZhi",
-      "originalName": "设置",
-      "svgPath": "svg/设置.svg",
-      "componentPath": "src/icons/IconSheZhi.tsx",
+      "name": "IconWangYeXiaZai",
+      "originalName": "网页下载",
+      "svgPath": "svg/网页下载.svg",
+      "componentPath": "src/icons/IconWangYeXiaZai.tsx",
       "size": {
         "width": 24,
         "height": 24
       }
     },
     {
-      "name": "IconWenDaZhuShou",
-      "originalName": "问答助手",
-      "svgPath": "svg/问答助手.svg",
-      "componentPath": "src/icons/IconWenDaZhuShou.tsx",
+      "name": "IconXinZeng",
+      "originalName": "新增",
+      "svgPath": "svg/新增.svg",
+      "componentPath": "src/icons/IconXinZeng.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     },
     {
-      "name": "IconXiaZaiZhuShou",
-      "originalName": "下载助手",
-      "svgPath": "svg/下载助手.svg",
-      "componentPath": "src/icons/IconXiaZaiZhuShou.tsx",
+      "name": "IconYanZhengMa",
+      "originalName": "验证码",
+      "svgPath": "svg/验证码.svg",
+      "componentPath": "src/icons/IconYanZhengMa.tsx",
       "size": {
-        "width": 120,
-        "height": 120
-      }
-    },
-    {
-      "name": "IconXinXiGuanLi",
-      "originalName": "信息管理",
-      "svgPath": "svg/信息管理.svg",
-      "componentPath": "src/icons/IconXinXiGuanLi.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
-      }
-    },
-    {
-      "name": "IconXiTongPeiZhi",
-      "originalName": "系统配置",
-      "svgPath": "svg/系统配置.svg",
-      "componentPath": "src/icons/IconXiTongPeiZhi.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
-      }
-    },
-    {
-      "name": "IconYunYingGuanLi",
-      "originalName": "运营管理",
-      "svgPath": "svg/运营管理.svg",
-      "componentPath": "src/icons/IconYunYingGuanLi.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     }
   ]
