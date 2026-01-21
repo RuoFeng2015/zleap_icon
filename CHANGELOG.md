@@ -8,6 +8,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.2.3] - 2026-01-21
 
+3333
+
+### Added
+- IconBangZhuShuoMing
+- IconBaoGaoZhuShou
+- IconChengYuanGuanLi
+- IconFangDa
+- IconFrame
+- IconQiYeBan
+- IconSouSuoZhuShou
+- IconSuoXiao
+- IconWangYeXiaZai
+- IconWenDaZhuShou
+- IconXiaoXi
+- IconXiaZaiZhuShou
+- IconXinXiGuanLi
+- IconXinZeng
+- IconXiTongPeiZhi
+- IconYanZhengMa
+- IconYunYingGuanLi
+- IconZhanKai
+- IconZhengQue
+
+### Modified
+- None
+
+### Removed
+- None
+## [1.2.3] - 2026-01-21
+
 333
 
 ### Added
