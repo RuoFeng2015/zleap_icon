@@ -20,7 +20,6 @@ import { IconXiaZaiZhuShou } from './icons/IconXiaZaiZhuShou';
 import { IconXinXiGuanLi } from './icons/IconXinXiGuanLi';
 import { IconXinZeng } from './icons/IconXinZeng';
 import { IconXiTongPeiZhi } from './icons/IconXiTongPeiZhi';
-import { IconXiTongPeiZhi1 } from './icons/IconXiTongPeiZhi1';
 import { IconYanZhengMa } from './icons/IconYanZhengMa';
 import { IconYunYingGuanLi } from './icons/IconYunYingGuanLi';
 import { IconZhanKai } from './icons/IconZhanKai';
@@ -41,7 +40,6 @@ export { IconXiaZaiZhuShou, type IconXiaZaiZhuShouProps } from './icons/IconXiaZ
 export { IconXinXiGuanLi, type IconXinXiGuanLiProps } from './icons/IconXinXiGuanLi';
 export { IconXinZeng, type IconXinZengProps } from './icons/IconXinZeng';
 export { IconXiTongPeiZhi, type IconXiTongPeiZhiProps } from './icons/IconXiTongPeiZhi';
-export { IconXiTongPeiZhi1, type IconXiTongPeiZhi1Props } from './icons/IconXiTongPeiZhi1';
 export { IconYanZhengMa, type IconYanZhengMaProps } from './icons/IconYanZhengMa';
 export { IconYunYingGuanLi, type IconYunYingGuanLiProps } from './icons/IconYunYingGuanLi';
 export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
@@ -66,7 +64,6 @@ export const allIcons = {
   IconXinXiGuanLi,
   IconXinZeng,
   IconXiTongPeiZhi,
-  IconXiTongPeiZhi1,
   IconYanZhengMa,
   IconYunYingGuanLi,
   IconZhanKai,
