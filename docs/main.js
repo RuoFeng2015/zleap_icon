@@ -3,7 +3,7 @@
 // State
 let icons = [];
 let filteredIcons = [];
-let currentSize = 48;
+let currentSize = 32;
 let currentColor = 'currentColor';
 let selectedIcon = null;
 

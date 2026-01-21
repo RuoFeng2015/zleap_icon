@@ -23,27 +23,9 @@ body {
   color: var(--color-text);
   line-height: 1.5;
   min-height: 100vh;
-  /* Deep & Rich Liquid Glass Gradient - Darker/Softer */
-  background-color: #e6e9f0;
-  background-image: 
-    radial-gradient(at 0% 0%, hsla(253,16%,7%,0) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, hsla(225,39%,30%,0) 0, transparent 50%), 
-    radial-gradient(at 100% 0%, hsla(339,49%,30%,0) 0, transparent 50%);
-  background: 
-    radial-gradient(at 0% 0%, rgba(180, 200, 240, 0.4) 0%, transparent 60%),
-    radial-gradient(at 100% 0%, rgba(240, 180, 190, 0.3) 0%, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(190, 240, 210, 0.3) 0%, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(210, 190, 240, 0.4) 0%, transparent 50%),
-    linear-gradient(135deg, #eef1f5 0%, #c3cfe2 100%);
+  /* Simple, Clean Background */
+  background: linear-gradient(180deg, #f5f7fa 0%, #e8ecf1 100%);
   background-attachment: fixed;
-  background-size: 200% 200%;
-  animation: gradientFlow 20s ease infinite;
-}
-
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 #app {
@@ -165,33 +147,29 @@ body {
 /* Icon Grid */
 .icon-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); /* Smaller cards */
+  gap: 1rem; /* Tighter gap */
   padding: 0.5rem 0;
   animation: fadeInUp 0.6s ease-out 0.2s backwards;
 }
 
-/* Refined Cards - Stronger Liquid Glass */
+/* Refined Cards - Smaller & Cleaner */
 .icon-card {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 1rem;
+  padding: 1rem 0.75rem; /* Smaller padding */
   
-  /* Enhanced Glass Material */
-  background: rgba(255, 255, 255, 0.65); /* Slightly less opaque to show blur */
-  backdrop-filter: blur(20px) saturate(150%); /* Stronger blur & saturation */
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-top: 1px solid rgba(255, 255, 255, 0.9); /* Highlight top edge */
-  border-left: 1px solid rgba(255, 255, 255, 0.9); /* Highlight left edge */
-  box-shadow: 
-    0 4px 10px rgba(0, 0, 0, 0.03),
-    inset 0 0 0 1px rgba(255,255,255, 0.3); /* Subtle inner edge */
+  /* Glass Material */
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(15px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   
-  border-radius: 20px;
+  border-radius: 16px; /* Smaller radius */
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
@@ -212,9 +190,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
-  width: 64px;
-  height: 64px;
+  margin-bottom: 0.5rem; /* Smaller margin */
+  width: 40px; /* Smaller icon container */
+  height: 40px;
   transition: transform 0.3s ease;
 }
 
