@@ -1,96 +1,67 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-21T03:44:32.833Z",
-  "totalCount": 9,
+  "version": "1.3.3",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-21T03:47:34.054Z",
+  "totalCount": 4,
   "icons": [
     {
-      "name": "IconBaoGaoZhuShou",
-      "originalName": "报告助手",
-      "svgPath": "svg/报告助手.svg",
-      "componentPath": "src/icons/IconBaoGaoZhuShou.tsx",
+      "name": "IconFrame",
+      "originalName": "Frame",
+      "svgPath": "svg/Frame.svg",
+      "componentPath": "src/icons/IconFrame.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     },
     {
-      "name": "IconChengYuanGuanLi",
-      "originalName": "成员管理",
-      "svgPath": "svg/成员管理.svg",
-      "componentPath": "src/icons/IconChengYuanGuanLi.tsx",
+      "name": "Icon展开",
+      "originalName": "展开",
+      "svgPath": "svg/展开.svg",
+      "componentPath": "src/icons/Icon展开.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     },
     {
-      "name": "IconQiYeBan",
-      "originalName": "企业版",
-      "svgPath": "svg/企业版.svg",
-      "componentPath": "src/icons/IconQiYeBan.tsx",
+      "name": "Icon放大",
+      "originalName": "放大",
+      "svgPath": "svg/放大.svg",
+      "componentPath": "src/icons/Icon放大.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     },
     {
-      "name": "IconSouSuoZhuShou",
-      "originalName": "搜索助手",
-      "svgPath": "svg/搜索助手.svg",
-      "componentPath": "src/icons/IconSouSuoZhuShou.tsx",
+      "name": "Icon正确",
+      "originalName": "正确",
+      "svgPath": "svg/正确.svg",
+      "componentPath": "src/icons/Icon正确.tsx",
       "size": {
-        "width": 120,
-        "height": 119
+        "width": 24,
+        "height": 24
       }
     },
     {
-      "name": "IconWenDaZhuShou",
-      "originalName": "问答助手",
-      "svgPath": "svg/问答助手.svg",
-      "componentPath": "src/icons/IconWenDaZhuShou.tsx",
+      "name": "Icon消息",
+      "originalName": "消息",
+      "svgPath": "svg/消息.svg",
+      "componentPath": "src/icons/Icon消息.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     },
     {
-      "name": "IconXiaZaiZhuShou",
-      "originalName": "下载助手",
-      "svgPath": "svg/下载助手.svg",
-      "componentPath": "src/icons/IconXiaZaiZhuShou.tsx",
+      "name": "Icon缩小",
+      "originalName": "缩小",
+      "svgPath": "svg/缩小.svg",
+      "componentPath": "src/icons/Icon缩小.tsx",
       "size": {
-        "width": 120,
-        "height": 120
-      }
-    },
-    {
-      "name": "IconXinXiGuanLi",
-      "originalName": "信息管理",
-      "svgPath": "svg/信息管理.svg",
-      "componentPath": "src/icons/IconXinXiGuanLi.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
-      }
-    },
-    {
-      "name": "IconXiTongPeiZhi",
-      "originalName": "系统配置",
-      "svgPath": "svg/系统配置.svg",
-      "componentPath": "src/icons/IconXiTongPeiZhi.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
-      }
-    },
-    {
-      "name": "IconYunYingGuanLi",
-      "originalName": "运营管理",
-      "svgPath": "svg/运营管理.svg",
-      "componentPath": "src/icons/IconYunYingGuanLi.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       }
     }
   ]
