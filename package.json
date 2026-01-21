@@ -1,6 +1,6 @@
 {
   "name": "@zleap/icons",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "Icon library auto-generated from Figma",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
