@@ -23,11 +23,12 @@ export const IconWenJian = forwardRef<SVGSVGElement, IconWenJianProps>(
         width={size}
         height={size}
         viewBox="0 0 24 24"
+        fill="none"
         className={className}
-        style={style}
+        style={{ color, ...style }}
         {...props}
       >
-        <path fill="#F5F5F5" d="M0 0h24v24H0z"/><path fill="white" d="M-642.889-136.375h793v822h-793z"/><path stroke="#0D131A" d="M20 11.5V7l-4.5-5H5a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1h6m5.5-7.5v7M13 18h7"/><path stroke="#0D131A" d="M15 2v5h5"/>
+        <path fill="#4A4A4A" stroke="#4A4A4A" strokeLinejoin="round" strokeWidth="1.5" d="M2.5 4a1 1 0 0 1 1-1h6L12 6h8.5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1z"/><path stroke="white" strokeLinejoin="round" strokeWidth="1.5" d="M21.5 11h-19"/><path stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M2.5 8v6"/><path stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21.5 8v6"/>
       </svg>
     );
   }
