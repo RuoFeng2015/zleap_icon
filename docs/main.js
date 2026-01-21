@@ -143,8 +143,18 @@ function createSvgWithStyles(svgContent, size, color, uniqueId = null) {
   // 只对单色图标应用颜色配置
   // 多色图标保留原始颜色
   if (color !== 'currentColor' && !isMulticolorSvg(svgContent)) {
+    // 替换 currentColor
     svg = svg.replace(/fill="currentColor"/g, `fill="${color}"`);
     svg = svg.replace(/stroke="currentColor"/g, `stroke="${color}"`);
+
+    // 替换其他颜色值（但不替换 none 和 url() 引用）
+    // 替换常见的黑色值
+    svg = svg.replace(/fill="(#000000|#000|black)"/gi, `fill="${color}"`);
+    svg = svg.replace(/stroke="(#000000|#000|black)"/gi, `stroke="${color}"`);
+
+    // 替换其他具体颜色值（排除 none, url(), white, transparent）
+    svg = svg.replace(/fill="(?!none|url\(|white|#fff|#ffffff|transparent)[^"]+"/gi, `fill="${color}"`);
+    svg = svg.replace(/stroke="(?!none|url\(|white|#fff|#ffffff|transparent)[^"]+"/gi, `stroke="${color}"`);
   }
 
   return svg;
@@ -176,11 +186,9 @@ async function renderIcons() {
       isMulticolor ? 'currentColor' : currentColor
     );
 
-    // 多色图标添加特殊标记
-    const multicolorBadge = isMulticolor ? '<span class="multicolor-badge" title="多色图标">🎨</span>' : '';
 
     card.innerHTML = `
-      <div class="icon-preview">${styledSvg}${multicolorBadge}</div>
+      <div class="icon-preview">${styledSvg}</div>
       <span class="icon-name">${icon.originalName}</span>
     `;
 
