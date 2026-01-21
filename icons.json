@@ -1,46 +1,107 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-21T03:47:55.417Z",
-  "totalCount": 4,
+  "version": "1.3.2",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-21T05:36:32.378Z",
+  "totalCount": 8,
   "icons": [
     {
-      "name": "IconSuoXiao",
-      "originalName": "缩小",
-      "svgPath": "svg/缩小.svg",
-      "componentPath": "src/icons/IconSuoXiao.tsx",
+      "name": "Icon下载助手",
+      "originalName": "下载助手",
+      "svgPath": "svg/下载助手.svg",
+      "componentPath": "src/icons/Icon下载助手.tsx",
       "size": {
-        "width": 24,
-        "height": 24
+        "width": 120,
+        "height": 120
       }
     },
     {
-      "name": "IconXiaoXi",
-      "originalName": "消息",
-      "svgPath": "svg/消息.svg",
-      "componentPath": "src/icons/IconXiaoXi.tsx",
+      "name": "Icon企业版",
+      "originalName": "企业版",
+      "svgPath": "svg/企业版.svg",
+      "componentPath": "src/icons/Icon企业版.tsx",
       "size": {
-        "width": 24,
-        "height": 24
+        "width": 120,
+        "height": 120
       }
     },
     {
-      "name": "IconZhanKai",
-      "originalName": "展开",
-      "svgPath": "svg/展开.svg",
-      "componentPath": "src/icons/IconZhanKai.tsx",
+      "name": "Icon信息管理",
+      "originalName": "信息管理",
+      "svgPath": "svg/信息管理.svg",
+      "componentPath": "src/icons/Icon信息管理.tsx",
       "size": {
-        "width": 24,
-        "height": 24
+        "width": 120,
+        "height": 120
       }
     },
     {
-      "name": "IconZhengQue",
-      "originalName": "正确",
-      "svgPath": "svg/正确.svg",
-      "componentPath": "src/icons/IconZhengQue.tsx",
+      "name": "Icon成员管理",
+      "originalName": "成员管理",
+      "svgPath": "svg/成员管理.svg",
+      "componentPath": "src/icons/Icon成员管理.tsx",
       "size": {
-        "width": 24,
-        "height": 24
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
+      "name": "Icon报告助手",
+      "originalName": "报告助手",
+      "svgPath": "svg/报告助手.svg",
+      "componentPath": "src/icons/Icon报告助手.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
+      "name": "Icon搜索助手",
+      "originalName": "搜索助手",
+      "svgPath": "svg/搜索助手.svg",
+      "componentPath": "src/icons/Icon搜索助手.tsx",
+      "size": {
+        "width": 120,
+        "height": 119
+      }
+    },
+    {
+      "name": "Icon系统配置",
+      "originalName": "系统配置",
+      "svgPath": "svg/系统配置.svg",
+      "componentPath": "src/icons/Icon系统配置.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
+      "name": "Icon系统配置",
+      "originalName": "系统配置",
+      "svgPath": "svg/系统配置.svg",
+      "componentPath": "src/icons/Icon系统配置.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
+      "name": "Icon运营管理",
+      "originalName": "运营管理",
+      "svgPath": "svg/运营管理.svg",
+      "componentPath": "src/icons/Icon运营管理.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
+      "name": "Icon问答助手",
+      "originalName": "问答助手",
+      "svgPath": "svg/问答助手.svg",
+      "componentPath": "src/icons/Icon问答助手.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
       }
     }
   ]
