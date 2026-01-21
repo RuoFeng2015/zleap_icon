@@ -160,8 +160,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem 1rem; /* Balanced padding */
-  aspect-ratio: 1 / 1; /* Force square cards */
+  padding: 1.5rem 1rem; /* More vertical padding */
+  aspect-ratio: 4 / 5; /* Taller cards */
   
   /* Glass Material */
   background: rgba(255, 255, 255, 0.75);
@@ -191,9 +191,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1; /* Take remaining space */
+  flex: 1;
   width: 100%;
   max-height: 48px;
+  margin-bottom: 0.75rem; /* Larger gap between icon and text */
   transition: transform 0.3s ease;
 }
 
