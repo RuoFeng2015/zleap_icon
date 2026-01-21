@@ -162,11 +162,13 @@ describe('Property 3: SVG Optimization Invariants', () => {
     )
   })
 
-  it('optimized SVG should use currentColor for fill', () => {
+  it('optimized SVG should preserve fill attribute', () => {
+    // Note: SVG transformer preserves original colors; the component layer handles currentColor
     fc.assert(
       fc.property(svgArbitrary, (svg) => {
         const result = transformSvg(svg)
-        expect(usesCurrentColor(result.svgContent)).toBe(true)
+        // SVG should have a fill attribute (original color preserved)
+        expect(result.svgContent).toMatch(/fill="[^"]+"/i)
       }),
       { numRuns: 100 }
     )

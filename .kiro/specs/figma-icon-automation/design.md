@@ -785,7 +785,7 @@ jobs:
 
 ```json
 {
-  "name": "@your-org/icons",
+  "name": "@zleap/icons",
   "version": "1.0.0",
   "description": "Icon library auto-generated from Figma",
   "main": "dist/cjs/index.js",
