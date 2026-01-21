@@ -428,16 +428,32 @@ body {
 
 .code-block {
   padding: 1rem;
-  background-color: #f5f5f7;
-  color: #1d1d1f;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
   border-radius: 12px;
-  font-family: "SF Mono", "Menlo", monospace;
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-family: "SF Mono", "Menlo", "Fira Code", monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
   white-space: pre-wrap;
   word-break: break-all;
-  border: 1px solid rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.1);
+  overflow-x: auto;
 }
+
+/* SVG Source - scrollable */
+.svg-code {
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+/* Syntax Highlighting */
+.code-block .tag { color: #569cd6; }
+.code-block .attr-name { color: #9cdcfe; }
+.code-block .attr-value { color: #ce9178; }
+.code-block .punctuation { color: #808080; }
+.code-block .keyword { color: #c586c0; }
+.code-block .string { color: #ce9178; }
+.code-block .comment { color: #6a9955; }
 
 /* Animations */
 @keyframes fadeInDown {

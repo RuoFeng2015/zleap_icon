@@ -248,6 +248,36 @@ async function renderIcons() {
 }
 
 /**
+ * Simple syntax highlighter for JSX/import statements
+ */
+function highlightJsx(code) {
+  return code
+    .replace(/(&lt;|<)(\/?[\w]+)/g, '<span class="tag">&lt;$2</span>')
+    .replace(/(\/?>|&gt;)/g, '<span class="tag">$1</span>')
+    .replace(/(\w+)=/g, '<span class="attr-name">$1</span>=')
+    .replace(/=(".*?")/g, '=<span class="attr-value">$1</span>')
+    .replace(/({[^}]+})/g, '<span class="attr-value">$1</span>')
+    .replace(/(import|from|export|const|let|var)/g, '<span class="keyword">$1</span>')
+    .replace(/('[^']*')/g, '<span class="string">$1</span>');
+}
+
+/**
+ * Simple syntax highlighter for SVG
+ */
+function highlightSvg(code) {
+  // Escape HTML first
+  let escaped = code
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+
+  return escaped
+    .replace(/&lt;(\/?[\w:-]+)/g, '&lt;<span class="tag">$1</span>')
+    .replace(/(\w+)=/g, '<span class="attr-name">$1</span>=')
+    .replace(/="([^"]*)"/g, '="<span class="attr-value">$1</span>"');
+}
+
+/**
  * Open modal with icon details
  * @param {Object} icon - Icon object
  * @param {string} svgContent - SVG content
@@ -265,9 +295,10 @@ function openModal(icon, svgContent) {
   const importStatement = `import { ${icon.name} } from '@your-org/icons';`;
   const usageExample = `<${icon.name} size={${currentSize}} color="${currentColor}" />`;
 
-  importCode.textContent = importStatement;
-  usageCode.textContent = usageExample;
-  svgCode.textContent = svgContent;
+  // Apply syntax highlighting
+  importCode.innerHTML = highlightJsx(importStatement);
+  usageCode.innerHTML = highlightJsx(usageExample);
+  svgCode.innerHTML = highlightSvg(svgContent);
 
   // Show modal
   modal.classList.remove('hidden');
