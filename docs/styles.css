@@ -161,7 +161,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1.5rem 1rem; /* More vertical padding */
-  aspect-ratio: 4 / 5; /* Taller cards */
+  aspect-ratio: 3 / 3.2; /* Taller cards */
   
   /* Glass Material */
   background: rgba(255, 255, 255, 0.75);
