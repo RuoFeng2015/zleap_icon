@@ -1,19 +1,19 @@
 {
-  "version": "1.3.3",
+  "version": "1.2.3",
   "syncMode": "incremental",
-  "generatedAt": "2026-01-21T06:37:13.897Z",
+  "generatedAt": "2026-01-21T06:39:48.076Z",
   "totalCount": 20,
   "icons": [
     {
-      "name": "Icon成员管理",
-      "originalName": "成员管理",
-      "svgPath": "svg/成员管理.svg",
-      "componentPath": "src/icons/Icon成员管理.tsx",
+      "name": "Icon系统配置",
+      "originalName": "系统配置",
+      "svgPath": "svg/系统配置.svg",
+      "componentPath": "src/icons/Icon系统配置.tsx",
       "size": {
         "width": 120,
         "height": 120
       },
-      "uploadedAt": "2026-01-21T06:37:13.897Z"
+      "uploadedAt": "2026-01-21T06:39:48.076Z"
     },
     {
       "name": "IconBangZhuShuoMing",
