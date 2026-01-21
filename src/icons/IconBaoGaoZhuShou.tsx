@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useId } from 'react';
 import type { SVGProps } from 'react';
 
 export interface IconBaoGaoZhuShouProps extends SVGProps<SVGSVGElement> {
@@ -16,6 +16,11 @@ export interface IconBaoGaoZhuShouProps extends SVGProps<SVGSVGElement> {
  */
 export const IconBaoGaoZhuShou = forwardRef<SVGSVGElement, IconBaoGaoZhuShouProps>(
   ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+    const uniqueId = useId();
+    
+    // Replace gradient IDs with unique ones
+    const svgContent = `<rect width="120" height="120" fill="url(#${uniqueId}a)" rx="30"/><path fill="url(#${uniqueId}b)" fillOpacity=".6" d="M38.18 29h40.64c3.41 0 6.18 2.764 6.18 6.167v49.666C85 88.236 82.23 91 78.82 91H38.18C34.77 91 32 88.236 32 84.833V35.167C32 31.764 34.77 29 38.18 29" opacity=".7"/><path fill="url(#${uniqueId}c)" stroke="url(#${uniqueId}d)" d="M83.636 38H48.364C45.404 38 43 40.363 43 43.272v42.456C43 88.638 45.404 91 48.364 91h35.272C86.596 91 89 88.637 89 85.728V43.272C89 40.362 86.596 38 83.636 38Z"/><rect width="23" height="4" x="53" y="47" fill="#61BDFA" rx="2"/><rect width="20" height="4" x="53" y="55" fill="#61BDFA" rx="2"/><rect width="15" height="4" x="53" y="63" fill="#61BDFA" rx="2"/><defs><linearGradient id="${uniqueId}a" x1="60" x2="60" y1="0" y2="120" gradientUnits="userSpaceOnUse"><stop stopColor="#1D6FF2"/><stop offset="1" stopColor="#1AC8FC"/></linearGradient><linearGradient id="${uniqueId}b" x1="58.5" x2="58.5" y1="29" y2="91" gradientUnits="userSpaceOnUse"><stop stopColor="#EBF9FF"/><stop offset="1" stopColor="#91E0FF"/></linearGradient><linearGradient id="${uniqueId}c" x1="67.289" x2="67.289" y1="38" y2="91" gradientUnits="userSpaceOnUse"><stop stopColor="#D2F2FF"/><stop offset="1" stopColor="#95D1FF"/></linearGradient><linearGradient id="${uniqueId}d" x1="67.289" x2="67.289" y1="38" y2="91" gradientUnits="userSpaceOnUse"><stop stopColor="white"/><stop offset="1" stopColor="#7FD6FF"/></linearGradient></defs>`;
+    
     return (
       <svg
         ref={ref}
@@ -26,9 +31,8 @@ export const IconBaoGaoZhuShou = forwardRef<SVGSVGElement, IconBaoGaoZhuShouProp
         className={className}
         style={style}
         {...props}
-      >
-        <rect width="120" height="120" fill="url(#a)" rx="30"/><path fill="url(#b)" fillOpacity=".6" d="M38.18 29h40.64c3.41 0 6.18 2.764 6.18 6.167v49.666C85 88.236 82.23 91 78.82 91H38.18C34.77 91 32 88.236 32 84.833V35.167C32 31.764 34.77 29 38.18 29" opacity=".7"/><path fill="url(#c)" stroke="url(#d)" d="M83.636 38H48.364C45.404 38 43 40.363 43 43.272v42.456C43 88.638 45.404 91 48.364 91h35.272C86.596 91 89 88.637 89 85.728V43.272C89 40.362 86.596 38 83.636 38Z"/><rect width="23" height="4" x="53" y="47" fill="#61BDFA" rx="2"/><rect width="20" height="4" x="53" y="55" fill="#61BDFA" rx="2"/><rect width="15" height="4" x="53" y="63" fill="#61BDFA" rx="2"/><defs><linearGradient id="a" x1="60" x2="60" y1="0" y2="120" gradientUnits="userSpaceOnUse"><stop stopColor="#1D6FF2"/><stop offset="1" stopColor="#1AC8FC"/></linearGradient><linearGradient id="b" x1="58.5" x2="58.5" y1="29" y2="91" gradientUnits="userSpaceOnUse"><stop stopColor="#EBF9FF"/><stop offset="1" stopColor="#91E0FF"/></linearGradient><linearGradient id="c" x1="67.289" x2="67.289" y1="38" y2="91" gradientUnits="userSpaceOnUse"><stop stopColor="#D2F2FF"/><stop offset="1" stopColor="#95D1FF"/></linearGradient><linearGradient id="d" x1="67.289" x2="67.289" y1="38" y2="91" gradientUnits="userSpaceOnUse"><stop stopColor="white"/><stop offset="1" stopColor="#7FD6FF"/></linearGradient></defs>
-      </svg>
+        dangerouslySetInnerHTML={{ __html: svgContent }}
+      />
     );
   }
 );

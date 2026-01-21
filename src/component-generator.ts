@@ -118,6 +118,10 @@ export function generateComponent(
   // Check if this is a multicolor icon
   const isMulticolor = isMulticolorSvg(jsxContent)
 
+  // Check if content has gradient/defs that need unique IDs
+  const hasGradients = innerContent.includes('<defs>') && 
+    (innerContent.includes('linearGradient') || innerContent.includes('radialGradient'))
+
   // For multicolor icons, don't apply fill prop to svg element
   // For single-color icons, apply fill prop
   const fillProp = isMulticolor ? '' : '\n        fill={color}'
@@ -125,7 +129,56 @@ export function generateComponent(
     ? '/** Icon color (not applicable for multicolor icons) */'
     : '/** Icon color */'
 
-  const content = `import React, { forwardRef } from 'react';
+  let content: string
+
+  if (hasGradients) {
+    // For icons with gradients, use useId to generate unique IDs
+    content = `import React, { forwardRef, useId } from 'react';
+import type { SVGProps } from 'react';
+
+export interface ${propsName} extends SVGProps<SVGSVGElement> {
+  /** Icon size (width and height) */
+  size?: number | string;
+  ${colorComment}
+  color?: string;
+}
+
+/**
+ * ${componentName} icon component${isMulticolor ? ' (multicolor)' : ''}
+ *
+ * @param props - Component props including size, color, and SVG attributes
+ * @param ref - Forwarded ref to the SVG element
+ */
+export const ${componentName} = forwardRef<SVGSVGElement, ${propsName}>(
+  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+    const uniqueId = useId();
+    
+    // Replace gradient IDs with unique ones
+    const svgContent = \`${innerContent.replace(/id="([^"]+)"/g, 'id="${uniqueId}$1"').replace(/url\(#([^)]+)\)/g, 'url(#${uniqueId}$1)')}\`;
+    
+    return (
+      <svg
+        ref={ref}
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="${viewBox}"${fillProp}
+        className={className}
+        style={style}
+        {...props}
+        dangerouslySetInnerHTML={{ __html: svgContent }}
+      />
+    );
+  }
+);
+
+${componentName}.displayName = '${componentName}';
+
+export default ${componentName};
+`
+  } else {
+    // For icons without gradients, use the original approach
+    content = `import React, { forwardRef } from 'react';
 import type { SVGProps } from 'react';
 
 export interface ${propsName} extends SVGProps<SVGSVGElement> {
@@ -164,6 +217,7 @@ ${componentName}.displayName = '${componentName}';
 
 export default ${componentName};
 `
+  }
 
   const types = `export { ${componentName}, type ${propsName} } from './${componentName}';`
 
