@@ -1,19 +1,239 @@
 {
-  "version": "1.5.6",
+  "version": "1.5.15",
   "syncMode": "incremental",
-  "generatedAt": "2026-01-21T06:57:32.833Z",
-  "totalCount": 20,
+  "generatedAt": "2026-01-21T14:18:25.235Z",
+  "totalCount": 41,
   "icons": [
     {
-      "name": "Icon系统配置1",
-      "originalName": "系统配置1",
-      "svgPath": "svg/系统配置1.svg",
-      "componentPath": "src/icons/Icon系统配置1.tsx",
+      "name": "IconFrame1",
+      "originalName": "Frame1",
+      "svgPath": "svg/Frame1.svg",
+      "componentPath": "src/icons/IconFrame1.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       },
-      "uploadedAt": "2026-01-21T06:57:32.833Z"
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "IconEdit03",
+      "originalName": "edit-03",
+      "svgPath": "svg/edit-03.svg",
+      "componentPath": "src/icons/IconEdit03.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon上传",
+      "originalName": "上传",
+      "svgPath": "svg/上传.svg",
+      "componentPath": "src/icons/Icon上传.tsx",
+      "size": {
+        "width": 25,
+        "height": 26
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon下载",
+      "originalName": "下载",
+      "svgPath": "svg/下载.svg",
+      "componentPath": "src/icons/Icon下载.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon增加",
+      "originalName": "增加",
+      "svgPath": "svg/增加.svg",
+      "componentPath": "src/icons/Icon增加.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon增加1",
+      "originalName": "增加1",
+      "svgPath": "svg/增加1.svg",
+      "componentPath": "src/icons/Icon增加1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon失败",
+      "originalName": "失败",
+      "svgPath": "svg/失败.svg",
+      "componentPath": "src/icons/Icon失败.tsx",
+      "size": {
+        "width": 16,
+        "height": 16
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon完成",
+      "originalName": "完成",
+      "svgPath": "svg/完成.svg",
+      "componentPath": "src/icons/Icon完成.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon展开1",
+      "originalName": "展开1",
+      "svgPath": "svg/展开1.svg",
+      "componentPath": "src/icons/Icon展开1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon展开2",
+      "originalName": "展开2",
+      "svgPath": "svg/展开2.svg",
+      "componentPath": "src/icons/Icon展开2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon帮助说明1",
+      "originalName": "帮助说明1",
+      "svgPath": "svg/帮助说明1.svg",
+      "componentPath": "src/icons/Icon帮助说明1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon收起",
+      "originalName": "收起",
+      "svgPath": "svg/收起.svg",
+      "componentPath": "src/icons/Icon收起.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon放大1",
+      "originalName": "放大1",
+      "svgPath": "svg/放大1.svg",
+      "componentPath": "src/icons/Icon放大1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon文件",
+      "originalName": "文件",
+      "svgPath": "svg/文件.svg",
+      "componentPath": "src/icons/Icon文件.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon新增1",
+      "originalName": "新增1",
+      "svgPath": "svg/新增1.svg",
+      "componentPath": "src/icons/Icon新增1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon正确1",
+      "originalName": "正确1",
+      "svgPath": "svg/正确1.svg",
+      "componentPath": "src/icons/Icon正确1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon消息1",
+      "originalName": "消息1",
+      "svgPath": "svg/消息1.svg",
+      "componentPath": "src/icons/Icon消息1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon缩小1",
+      "originalName": "缩小1",
+      "svgPath": "svg/缩小1.svg",
+      "componentPath": "src/icons/Icon缩小1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon返回",
+      "originalName": "返回",
+      "svgPath": "svg/返回.svg",
+      "componentPath": "src/icons/Icon返回.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon链接",
+      "originalName": "链接",
+      "svgPath": "svg/链接.svg",
+      "componentPath": "src/icons/Icon链接.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.234Z"
+    },
+    {
+      "name": "Icon错误",
+      "originalName": "错误",
+      "svgPath": "svg/错误.svg",
+      "componentPath": "src/icons/Icon错误.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-21T14:18:25.235Z"
     },
     {
       "name": "IconBangZhuShuoMing",
@@ -160,6 +380,16 @@
       "originalName": "系统配置",
       "svgPath": "svg/系统配置.svg",
       "componentPath": "src/icons/IconXiTongPeiZhi.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
+      "name": "IconXiTongPeiZhi1",
+      "originalName": "系统配置1",
+      "svgPath": "svg/系统配置1.svg",
+      "componentPath": "src/icons/IconXiTongPeiZhi1.tsx",
       "size": {
         "width": 120,
         "height": 120
