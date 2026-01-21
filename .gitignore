@@ -32,6 +32,7 @@ temp/
 .temp/
 
 # Generated files (can be regenerated)
+src/icons/
 svg/
 sprite/
 icons.json
