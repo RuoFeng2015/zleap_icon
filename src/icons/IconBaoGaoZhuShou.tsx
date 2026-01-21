@@ -28,6 +28,7 @@ export const IconBaoGaoZhuShou = forwardRef<SVGSVGElement, IconBaoGaoZhuShouProp
         width={size}
         height={size}
         viewBox="0 0 120 120"
+        fill="none"
         className={className}
         style={style}
         {...props}

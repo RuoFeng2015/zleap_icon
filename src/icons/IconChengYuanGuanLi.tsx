@@ -28,6 +28,7 @@ export const IconChengYuanGuanLi = forwardRef<SVGSVGElement, IconChengYuanGuanLi
         width={size}
         height={size}
         viewBox="0 0 120 120"
+        fill="none"
         className={className}
         style={style}
         {...props}

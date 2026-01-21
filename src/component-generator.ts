@@ -6,7 +6,7 @@
  */
 
 import type { IconMetadata, ComponentTemplate } from './types'
-import { extractSvgInnerContent, extractViewBox } from './svg-transformer'
+import { extractSvgInnerContent, extractViewBox, extractSvgRootFill } from './svg-transformer'
 
 /**
  * Converts a string to PascalCase format
@@ -134,9 +134,19 @@ export function generateComponent(
     }
   }
 
-  // For multicolor icons, don't apply fill prop to svg element
+  // Extract the root fill attribute from original SVG (important for icons with stroke paths)
+  const rootFill = rawSvgContent ? extractSvgRootFill(rawSvgContent) : null
+
+  // For multicolor icons, preserve original root fill (e.g., "none") or don't apply fill prop
   // For single-color icons, apply fill prop
-  const fillProp = isMulticolor ? '' : '\n        fill={color}'
+  let fillProp: string
+  if (hasGradients && rootFill) {
+    fillProp = `\n        fill="${rootFill}"`
+  } else if (isMulticolor) {
+    fillProp = ''
+  } else {
+    fillProp = '\n        fill={color}'
+  }
   const colorComment = isMulticolor
     ? '/** Icon color (not applicable for multicolor icons) */'
     : '/** Icon color */'

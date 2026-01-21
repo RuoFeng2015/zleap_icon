@@ -280,6 +280,17 @@ export function extractViewBox(svgContent: string): string | null {
 }
 
 /**
+ * Extracts the fill attribute from the root SVG element
+ *
+ * @param svgContent - SVG string
+ * @returns fill value or null if not found
+ */
+export function extractSvgRootFill(svgContent: string): string | null {
+  const match = svgContent.match(/<svg[^>]*\sfill=["']([^"']+)["']/i)
+  return match ? match[1] : null
+}
+
+/**
  * Checks if SVG content contains width/height attributes
  *
  * @param svgContent - SVG string

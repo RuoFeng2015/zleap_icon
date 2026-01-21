@@ -28,6 +28,7 @@ export const IconXiTongPeiZhi = forwardRef<SVGSVGElement, IconXiTongPeiZhiProps>
         width={size}
         height={size}
         viewBox="0 0 120 120"
+        fill="none"
         className={className}
         style={style}
         {...props}
