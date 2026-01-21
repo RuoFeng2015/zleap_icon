@@ -1,20 +1,8 @@
 {
-  "version": "1.5.6",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-21T06:57:32.833Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-21T06:57:56.113Z",
   "totalCount": 20,
   "icons": [
-    {
-      "name": "Icon系统配置1",
-      "originalName": "系统配置1",
-      "svgPath": "svg/系统配置1.svg",
-      "componentPath": "src/icons/Icon系统配置1.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
-      },
-      "uploadedAt": "2026-01-21T06:57:32.833Z"
-    },
     {
       "name": "IconBangZhuShuoMing",
       "originalName": "帮助说明",
@@ -160,6 +148,16 @@
       "originalName": "系统配置",
       "svgPath": "svg/系统配置.svg",
       "componentPath": "src/icons/IconXiTongPeiZhi.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      }
+    },
+    {
+      "name": "IconXiTongPeiZhi1",
+      "originalName": "系统配置1",
+      "svgPath": "svg/系统配置1.svg",
+      "componentPath": "src/icons/IconXiTongPeiZhi1.tsx",
       "size": {
         "width": 120,
         "height": 120
