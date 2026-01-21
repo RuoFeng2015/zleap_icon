@@ -902,11 +902,72 @@
           }
         }
 
+        // 3.5 增量模式下检测重名并重命名图标
+        if (syncRequest.syncMode !== 'replace') {
+          document.getElementById('progress-text').textContent = '正在检测重名图标...';
+
+          try {
+            // 获取现有的 icons.json
+            const existingJsonResponse = await fetch(
+              `https://api.github.com/repos/${repo}/contents/icons.json?ref=${defaultBranch}`,
+              { headers }
+            );
+
+            if (existingJsonResponse.status === 200) {
+              const fileData = await existingJsonResponse.json();
+              // 使用正确的 UTF-8 解码方法（atob 不能正确处理中文）
+              const binaryString = atob(fileData.content);
+              const bytes = new Uint8Array(binaryString.length);
+              for (let i = 0; i < binaryString.length; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+              }
+              const content = new TextDecoder('utf-8').decode(bytes);
+              const existingJson = JSON.parse(content);
+              const existingIcons = existingJson.icons || [];
+              const existingOriginalNames = new Set(existingIcons.map(i => i.originalName));
+
+              // 检测并重命名重名图标
+              const usedNames = new Set(existingOriginalNames);
+
+              console.log(`📋 现有图标名称: ${[...existingOriginalNames].join(', ')}`);
+              console.log(`📋 新上传图标名称: ${syncRequest.icons.map(i => i.name).join(', ')}`);
+
+              syncRequest.icons = syncRequest.icons.map(icon => {
+                let finalName = icon.name;
+                let suffix = 1;
+
+                // 检查是否重名
+                while (usedNames.has(finalName)) {
+                  finalName = `${icon.name}${suffix}`;
+                  suffix++;
+                }
+
+                // 如果重命名了，输出日志
+                if (suffix > 1) {
+                  console.log(`🔄 检测到重名图标：${icon.name} → ${finalName}`);
+                }
+
+                // 将新名称加入已用名称集合（避免本次上传内部重名）
+                usedNames.add(finalName);
+
+                return {
+                  ...icon,
+                  name: finalName
+                };
+              });
+
+              console.log(`📋 重名检测完成，共 ${syncRequest.icons.length} 个图标`);
+            }
+          } catch (e) {
+            console.log('📋 首次上传，无需检测重名');
+          }
+        }
+
         // 4. 上传每个 SVG 文件（批量处理，避免速率限制）
         document.getElementById('progress-text').textContent = '正在上传新图标...';
         let uploadedCount = 0;
         const failedFiles = [];
-        const batchSize = 3; // 每批上传 3 个文件
+        const batchSize = 2; // 每批上传 2 个文件（降低并发度避免冲突）
 
         for (let i = 0; i < syncRequest.icons.length; i += batchSize) {
           const batch = syncRequest.icons.slice(i, i + batchSize);
@@ -974,16 +1035,20 @@
                 body: JSON.stringify(updateBody)
               });
 
-              // 策略 3: 如果仍然是 409，尝试多次获取最新 SHA 并重试
-              if (updateResponse.status === 409) {
-                console.warn(`文件 ${fileName} 冲突，尝试获取最新 SHA...`);
+              // 策略 3: 如果是 409（冲突）或 422（缺少SHA），尝试获取最新 SHA 并重试
+              if (updateResponse.status === 409 || updateResponse.status === 422) {
+                const errorType = updateResponse.status === 409 ? '冲突' : '缺少SHA';
+                console.warn(`文件 ${fileName} ${errorType}（${updateResponse.status}），尝试获取最新 SHA...`);
 
-                // 最多重试 3 次
-                for (let retryCount = 0; retryCount < 3; retryCount++) {
-                  // 等待一下，让 GitHub API 同步
-                  await new Promise(resolve => setTimeout(resolve, 1500));
+                // 最多重试 5 次
+                for (let retryCount = 0; retryCount < 5; retryCount++) {
+                  // 等待时间逐渐增加（2秒、3秒、4秒...）
+                  const waitTime = (retryCount + 2) * 1000;
+                  console.log(`等待 ${waitTime / 1000} 秒后重试...`);
+                  await new Promise(resolve => setTimeout(resolve, waitTime));
 
-                  // 再次尝试获取 SHA
+                  // 尝试从新分支获取 SHA
+                  let foundSha = false;
                   try {
                     const retryCheck = await fetch(
                       `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${branchName}`,
@@ -992,23 +1057,50 @@
                     if (retryCheck.status === 200) {
                       const fileData = await retryCheck.json();
                       updateBody.sha = fileData.sha;
-
-                      console.log(`重试 ${retryCount + 1}: 获取到新 SHA: ${fileData.sha.substring(0, 8)}...`);
-
-                      // 重试上传
-                      updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
-                        method: 'PUT',
-                        headers,
-                        body: JSON.stringify(updateBody)
-                      });
-
-                      // 如果成功或不再是 409，跳出循环
-                      if (updateResponse.ok || updateResponse.status !== 409) {
-                        break;
-                      }
+                      foundSha = true;
+                      console.log(`重试 ${retryCount + 1}: 从新分支获取到 SHA: ${fileData.sha.substring(0, 8)}...`);
                     }
-                  } catch (retryError) {
-                    console.error(`重试 ${retryCount + 1} 获取 SHA 失败:`, retryError);
+                  } catch (e) {
+                    console.log(`重试 ${retryCount + 1}: 无法从新分支获取 SHA`);
+                  }
+
+                  // 如果新分支没找到，尝试从 main 分支获取
+                  if (!foundSha) {
+                    try {
+                      const mainCheck = await fetch(
+                        `https://api.github.com/repos/${repo}/contents/${filePath}?ref=${defaultBranch}`,
+                        { headers }
+                      );
+                      if (mainCheck.status === 200) {
+                        const fileData = await mainCheck.json();
+                        updateBody.sha = fileData.sha;
+                        foundSha = true;
+                        console.log(`重试 ${retryCount + 1}: 从 ${defaultBranch} 分支获取到 SHA: ${fileData.sha.substring(0, 8)}...`);
+                      }
+                    } catch (e) {
+                      console.log(`重试 ${retryCount + 1}: 无法从 ${defaultBranch} 分支获取 SHA`);
+                    }
+                  }
+
+                  // 如果仍然没找到 SHA，说明是新文件
+                  if (!foundSha) {
+                    delete updateBody.sha;
+                    console.log(`重试 ${retryCount + 1}: 文件在两个分支都不存在，作为新文件上传`);
+                  }
+
+                  // 重试上传
+                  updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
+                    method: 'PUT',
+                    headers,
+                    body: JSON.stringify(updateBody)
+                  });
+
+                  // 如果成功或不再是 409/422，跳出循环
+                  if (updateResponse.ok || (updateResponse.status !== 409 && updateResponse.status !== 422)) {
+                    if (updateResponse.ok) {
+                      console.log(`重试 ${retryCount + 1}: 上传成功！`);
+                    }
+                    break;
                   }
                 }
               }
@@ -1057,7 +1149,7 @@
 
           // 批次之间稍微延迟，避免速率限制
           if (i + batchSize < syncRequest.icons.length) {
-            await new Promise(resolve => setTimeout(resolve, 1000)); // 增加到 1 秒
+            await new Promise(resolve => setTimeout(resolve, 2000)); // 增加到 2 秒
           }
         }
 
@@ -1108,22 +1200,102 @@
         document.getElementById('progress-text').textContent = '正在生成 icons.json...';
 
         try {
+          // 获取同步模式
+          const isIncrementalMode = (syncRequest.syncMode || 'incremental') === 'incremental';
+          let existingIcons = [];
+
+          // 增量模式下，先获取现有的 icons.json
+          if (isIncrementalMode) {
+            try {
+              const existingJsonResponse = await fetch(
+                `https://api.github.com/repos/${repo}/contents/icons.json?ref=${branchName}`,
+                { headers }
+              );
+              if (existingJsonResponse.status === 200) {
+                const fileData = await existingJsonResponse.json();
+                // 使用正确的 UTF-8 解码方法（atob 不能正确处理中文）
+                const binaryString = atob(fileData.content);
+                const bytes = new Uint8Array(binaryString.length);
+                for (let i = 0; i < binaryString.length; i++) {
+                  bytes[i] = binaryString.charCodeAt(i);
+                }
+                const content = new TextDecoder('utf-8').decode(bytes);
+                const existingJson = JSON.parse(content);
+                existingIcons = existingJson.icons || [];
+                console.log(`📋 增量模式：已加载 ${existingIcons.length} 个现有图标`);
+              }
+            } catch (e) {
+              console.log('📋 首次上传，无现有图标');
+            }
+          }
+
+          // 生成新图标列表（先暂时不处理重名，稍后在合并时处理）
+          const rawNewIcons = syncRequest.icons.map(icon => ({
+            name: generateComponentName(icon.name),
+            originalName: icon.name,
+            svgPath: `svg/${sanitizeFilename(icon.name)}.svg`,
+            componentPath: `src/icons/${generateComponentName(icon.name)}.tsx`,
+            size: {
+              width: icon.width || 24,
+              height: icon.height || 24
+            },
+            uploadedAt: new Date().toISOString()  // 添加上传时间用于排序
+          }));
+
+          // 合并图标列表（处理重名）
+          let mergedIcons;
+          if (isIncrementalMode && existingIcons.length > 0) {
+            // 增量模式：需要处理重名
+            const existingNames = new Set(existingIcons.map(i => i.name));
+            const existingOriginalNames = new Set(existingIcons.map(i => i.originalName));
+
+            // 处理重名图标
+            const newIcons = rawNewIcons.map(icon => {
+              let finalName = icon.name;
+              let finalOriginalName = icon.originalName;
+              let finalSvgPath = icon.svgPath;
+              let finalComponentPath = icon.componentPath;
+              let suffix = 1;
+
+              // 检查是否重名（基于 originalName）
+              while (existingOriginalNames.has(finalOriginalName)) {
+                finalOriginalName = `${icon.originalName}${suffix}`;
+                finalName = generateComponentName(finalOriginalName);
+                finalSvgPath = `svg/${sanitizeFilename(finalOriginalName)}.svg`;
+                finalComponentPath = `src/icons/${finalName}.tsx`;
+                suffix++;
+              }
+
+              // 如果重命名了，输出日志
+              if (suffix > 1) {
+                console.log(`🔄 图标重名：${icon.originalName} → ${finalOriginalName}`);
+              }
+
+              return {
+                ...icon,
+                name: finalName,
+                originalName: finalOriginalName,
+                svgPath: finalSvgPath,
+                componentPath: finalComponentPath
+              };
+            });
+
+            // 新图标排在前面，现有图标排在后面
+            mergedIcons = [...newIcons, ...existingIcons];
+            console.log(`📋 合并结果：${newIcons.length} 个新图标（排在前面）+ ${existingIcons.length} 个现有图标 = ${mergedIcons.length} 个总计`);
+          } else {
+            // 全量模式：只保留新图标
+            mergedIcons = rawNewIcons;
+            console.log(`📋 全量模式：${rawNewIcons.length} 个图标`);
+          }
+
           // 生成 icons.json 内容
           const iconsJsonContent = {
             version: syncRequest.version,
             syncMode: syncRequest.syncMode || 'incremental',  // 记录同步模式
             generatedAt: new Date().toISOString(),
-            totalCount: uploadedCount,
-            icons: syncRequest.icons.map(icon => ({
-              name: generateComponentName(icon.name),
-              originalName: icon.name,
-              svgPath: `svg/${sanitizeFilename(icon.name)}.svg`,
-              componentPath: `src/icons/${generateComponentName(icon.name)}.tsx`,
-              size: {
-                width: icon.width || 24,
-                height: icon.height || 24
-              }
-            }))
+            totalCount: mergedIcons.length,
+            icons: mergedIcons
           };
 
           // 将 JSON 转换为 base64
