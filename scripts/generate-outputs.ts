@@ -187,8 +187,26 @@ async function main(): Promise<void> {
   console.log(`🏷️  Version: ${config.version}`)
   console.log('')
 
-  // Try to load existing manifest
+  // Try to load existing icons.json to preserve order
   let icons: IconMetadata[] = []
+  let existingIconsMap = new Map<string, IconMetadata>()
+
+  // 首先尝试读取现有的 icons.json 以保留顺序
+  try {
+    const existingJsonContent = await fs.readFile(config.jsonPath, 'utf-8')
+    const existingJson = JSON.parse(existingJsonContent)
+    if (existingJson.icons && Array.isArray(existingJson.icons)) {
+      console.log(`📋 Loading existing icons.json to preserve order...`)
+      console.log(`   Found ${existingJson.icons.length} icons in existing icons.json`)
+      
+      // 创建映射以便快速查找
+      for (const icon of existingJson.icons) {
+        existingIconsMap.set(icon.originalName, icon)
+      }
+    }
+  } catch (e) {
+    console.log('📋 No existing icons.json found, will create new one')
+  }
 
   if (config.manifestPath) {
     console.log(`📋 Loading manifest from ${config.manifestPath}...`)
@@ -201,7 +219,7 @@ async function main(): Promise<void> {
     }
   }
 
-  // If no manifest or empty, read SVG files directly
+  // If no manifest or empty, read SVG files and combine with existing order
   if (icons.length === 0) {
     console.log('📁 Reading SVG files...')
     const svgFiles = await getSvgFiles(config.svgDir)
@@ -213,15 +231,49 @@ async function main(): Promise<void> {
 
     console.log(`   Found ${svgFiles.length} SVG file(s)\n`)
 
+    // 读取所有 SVG 文件的元数据
+    const allSvgIcons: IconMetadata[] = []
     for (const file of svgFiles) {
       const svgPath = path.join(config.svgDir, file)
       const metadata = await createMetadataFromFile(svgPath)
       if (metadata) {
-        icons.push(metadata)
+        allSvgIcons.push(metadata)
       }
     }
 
-    console.log(`   ✅ Loaded ${icons.length} icons\n`)
+    // 如果有现有的 icons.json，按其顺序排列，新图标放在最前面
+    if (existingIconsMap.size > 0) {
+      const existingOriginalNames = new Set(existingIconsMap.keys())
+      const newIcons: IconMetadata[] = []
+      const orderedExistingIcons: IconMetadata[] = []
+
+      // 分离新图标和现有图标
+      for (const icon of allSvgIcons) {
+        if (existingOriginalNames.has(icon.originalName)) {
+          // 现有图标：使用 SVG 文件的最新元数据
+          orderedExistingIcons.push(icon)
+        } else {
+          // 新图标
+          newIcons.push(icon)
+        }
+      }
+
+      // 按 icons.json 中的顺序排列现有图标
+      const orderedByJson: IconMetadata[] = []
+      for (const [originalName] of existingIconsMap) {
+        const found = orderedExistingIcons.find(i => i.originalName === originalName)
+        if (found) {
+          orderedByJson.push(found)
+        }
+      }
+
+      // 新图标放在最前面
+      icons = [...newIcons, ...orderedByJson]
+      console.log(`   ✅ Ordered: ${newIcons.length} new icons (first) + ${orderedByJson.length} existing icons\n`)
+    } else {
+      icons = allSvgIcons
+      console.log(`   ✅ Loaded ${icons.length} icons\n`)
+    }
   }
 
   if (icons.length === 0) {
