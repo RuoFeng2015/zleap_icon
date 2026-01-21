@@ -1,0 +1,48 @@
+{
+  "version": "1.2.2",
+  "syncMode": "replace",
+  "generatedAt": "2026-01-21T05:48:59.647Z",
+  "totalCount": 4,
+  "icons": [
+    {
+      "name": "Icon文档",
+      "originalName": "文档",
+      "svgPath": "svg/文档.svg",
+      "componentPath": "src/icons/Icon文档.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "Icon新增",
+      "originalName": "新增",
+      "svgPath": "svg/新增.svg",
+      "componentPath": "src/icons/Icon新增.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "Icon网页下载",
+      "originalName": "网页下载",
+      "svgPath": "svg/网页下载.svg",
+      "componentPath": "src/icons/Icon网页下载.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    },
+    {
+      "name": "Icon验证码",
+      "originalName": "验证码",
+      "svgPath": "svg/验证码.svg",
+      "componentPath": "src/icons/Icon验证码.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      }
+    }
+  ]
+}
