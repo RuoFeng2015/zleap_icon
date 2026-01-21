@@ -183,7 +183,17 @@ function showToast(message) {
  */
 async function renderIcons() {
   if (filteredIcons.length === 0) {
-    iconGrid.innerHTML = '<div class="no-results">No icons found matching your search.</div>';
+    iconGrid.innerHTML = `
+      <div class="no-results">
+        <div class="no-results-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#86868b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="no-results-text">未找到相关图标</div>
+        <div class="no-results-subtext">建议缩短关键词或尝试其他搜索词</div>
+      </div>
+    `;
     return;
   }
 
