@@ -1,41 +1,40 @@
 {
-  "version": "0.0.9",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-26T12:17:26.752Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-26T12:17:49.424Z",
   "totalCount": 95,
   "icons": [
     {
-      "name": "Icon增加4",
-      "originalName": "增加4",
-      "svgPath": "svg/增加4.svg",
-      "componentPath": "src/icons/Icon增加4.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-26T12:17:26.752Z"
-    },
-    {
-      "name": "Icon点",
-      "originalName": "点",
-      "svgPath": "svg/点.svg",
-      "componentPath": "src/icons/Icon点.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-26T12:17:26.752Z"
-    },
-    {
-      "name": "Icon重新发送",
+      "name": "IconChongXinFaSong",
       "originalName": "重新发送",
       "svgPath": "svg/重新发送.svg",
-      "componentPath": "src/icons/Icon重新发送.tsx",
+      "componentPath": "src/icons/IconChongXinFaSong.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-01-26T12:17:26.752Z"
+      "createdAt": "2026-01-26T12:17:49.408Z"
+    },
+    {
+      "name": "IconDian",
+      "originalName": "点",
+      "svgPath": "svg/点.svg",
+      "componentPath": "src/icons/IconDian.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:17:49.401Z"
+    },
+    {
+      "name": "IconZengJia4",
+      "originalName": "增加4",
+      "svgPath": "svg/增加4.svg",
+      "componentPath": "src/icons/IconZengJia4.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:17:49.394Z"
     },
     {
       "name": "IconWenDaZhuShou4",
