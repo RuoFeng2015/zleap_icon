@@ -8,6 +8,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.5] - 2026-01-26
 
+同步 10 个图标：下载助手, 企业版, 信息管理, 成员管理, 报告助手
+
+### Added
+- IconWenDaZhuShou1
+- IconWenDaZhuShou
+- IconXiTongPeiZhi2
+- IconYunYingGuanLi1
+- IconSheZhi
+- IconYunYingGuanLi
+- IconWangLuoJianSuo
+- IconSouSuoZhuShou1
+- IconXiTongPeiZhi1
+- IconTianJia
+- IconXiTongPeiZhi
+- IconChengYuanGuanLi1
+- IconBaoGaoZhuShou1
+- IconBaoGaoZhuShou
+- IconSouSuoZhuShou
+- IconXinXiGuanLi1
+- IconChengYuanGuanLi
+- IconXinXiGuanLi
+- IconXiaZaiZhuShou1
+- IconQiYeBan1
+- IconQiYeBan
+- IconXiaZaiZhuShou
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.5] - 2026-01-26
+
 更新/新增 3 个图标：添加, 网络检索, 设置 图标
 
 ### Added
