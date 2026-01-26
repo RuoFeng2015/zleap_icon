@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-01-26T10:05:38.552Z
+Generated at: 2026-01-26T10:22:26.017Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 34 |
+| Total Icons | 36 |
 | Valid Icons | 0 |
-| Invalid Icons | 34 |
-| Total Errors | 34 |
-| Total Warnings | 35 |
+| Invalid Icons | 36 |
+| Total Errors | 36 |
+| Total Warnings | 37 |
 
-⚠️ **34 icon(s) failed validation**
+⚠️ **36 icon(s) failed validation**
 
 ## Errors
 
-### size (34 errors)
+### size (36 errors)
 
 | Icon | Message |
 |------|---------|
@@ -30,6 +30,8 @@ Generated at: 2026-01-26T10:05:38.552Z
 | 企业版1 | Icon size 120x120 not in allowed sizes:  |
 | 信息管理 | Icon size 120x120 not in allowed sizes:  |
 | 信息管理1 | Icon size 120x120 not in allowed sizes:  |
+| 增加 | Icon size 24x24 not in allowed sizes:  |
+| 增加1 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 成员管理 | Icon size 120x120 not in allowed sizes:  |
 | 成员管理1 | Icon size 120x120 not in allowed sizes:  |
@@ -57,7 +59,7 @@ Generated at: 2026-01-26T10:05:38.552Z
 
 ## Warnings
 
-### naming (33 warnings)
+### naming (35 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -70,6 +72,8 @@ Generated at: 2026-01-26T10:05:38.552Z
 | 企业版1 | Icon name "企业版1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 信息管理 | Icon name "信息管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 信息管理1 | Icon name "信息管理1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 增加 | Icon name "增加" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 增加1 | Icon name "增加1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 成员管理 | Icon name "成员管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 成员管理1 | Icon name "成员管理1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
