@@ -4,12 +4,12 @@ import type { SVGProps } from 'react';
 export interface IconFrameProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (not applicable for multicolor icons) */
+  /** Icon color */
   color?: string;
 }
 
 /**
- * IconFrame icon component (multicolor)
+ * IconFrame icon component
  *
  * @param props - Component props including size, color, and SVG attributes
  * @param ref - Forwarded ref to the SVG element
@@ -28,7 +28,7 @@ export const IconFrame = forwardRef<SVGSVGElement, IconFrameProps>(
         style={{ color, ...style }}
         {...props}
       >
-        <path fill="#4A4A4A" fillRule="evenodd" stroke="#4A4A4A" strokeLinejoin="round" strokeWidth="1.5" d="m12 2.5-11 19h22z" clipRule="evenodd"/><path stroke="white" strokeLinecap="round" strokeWidth="1.5" d="M12 17.5v.5"/><path stroke="white" strokeLinecap="round" strokeWidth="1.5" d="m12 9.5.004 5"/>
+        <path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M3 4.5A1.5 1.5 0 0 1 4.5 3h15A1.5 1.5 0 0 1 21 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19.5z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16 3v18"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m8 10 2 2-2 2"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 3h6"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 21h6"/>
       </svg>
     );
   }
