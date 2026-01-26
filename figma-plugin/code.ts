@@ -468,7 +468,14 @@ async function handleLoadConfig(): Promise<void> {
 }
 
 async function handleSaveConfig(config: PluginConfig): Promise<void> {
+  console.log('[DEBUG] handleSaveConfig() called with:', {
+    githubRepo: config.githubRepo,
+    githubToken: config.githubToken ? '***已填写***' : '(空)',
+    defaultBranch: config.defaultBranch
+  })
+  
   if (!config.githubRepo || !config.githubToken) {
+    console.log('[DEBUG] Validation failed: missing required fields')
     throw new Error('请填写 GitHub 仓库地址和 Token')
   }
 
@@ -479,10 +486,12 @@ async function handleSaveConfig(config: PluginConfig): Promise<void> {
   )
   if (urlMatch) {
     repoPath = urlMatch[1]
+    console.log('[DEBUG] Extracted repo from URL:', repoPath)
   }
   repoPath = repoPath.replace(/\/+$/, '')
 
   if (!/^[\w.-]+\/[\w.-]+$/.test(repoPath)) {
+    console.log('[DEBUG] Repo format validation failed:', repoPath)
     throw new Error(
       '仓库地址格式错误，请使用 "用户名/仓库名" 格式或完整的 GitHub URL',
     )
@@ -497,8 +506,16 @@ async function handleSaveConfig(config: PluginConfig): Promise<void> {
     figmaFileKey: config.figmaFileKey || getFileKey(),
   }
 
-  await figma.clientStorage.setAsync(CONFIG_KEY, configToStore)
+  console.log('[DEBUG] Saving config to Figma clientStorage...')
+  try {
+    await figma.clientStorage.setAsync(CONFIG_KEY, configToStore)
+    console.log('[DEBUG] Config saved successfully!')
+  } catch (storageError) {
+    console.error('[DEBUG] Failed to save config:', storageError)
+    throw new Error('保存配置失败，请检查 Figma 权限: ' + (storageError instanceof Error ? storageError.message : String(storageError)))
+  }
 
+  console.log('[DEBUG] Sending config-loaded response to UI...')
   sendToUI({
     type: 'config-loaded',
     payload: {

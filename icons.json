@@ -1,37 +1,51 @@
 {
   "version": "1.0.0",
-<<<<<<< HEAD
-  "generatedAt": "2026-01-26T09:35:35.712Z",
-  "totalCount": 48,
-=======
-  "generatedAt": "2026-01-26T09:32:16.567Z",
-  "totalCount": 12,
->>>>>>> 004c2bab81f51592247c1dd06e8381ebb4d386d6
+  "generatedAt": "2026-01-26T10:11:33.956Z",
+  "totalCount": 15,
   "icons": [
+    {
+      "name": "IconCheck",
+      "originalName": "check",
+      "svgPath": "svg/check.svg",
+      "componentPath": "src/icons/IconCheck.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:11:33.945Z"
+    },
+    {
+      "name": "IconCloseCircle",
+      "originalName": "close-circle",
+      "svgPath": "svg/close-circle.svg",
+      "componentPath": "src/icons/IconCloseCircle.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:11:33.945Z"
+    },
+    {
+      "name": "IconArrowRight",
+      "originalName": "arrow-right",
+      "svgPath": "svg/arrow-right.svg",
+      "componentPath": "src/icons/IconArrowRight.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:11:33.944Z"
+    },
     {
       "name": "IconSheZhi",
       "originalName": "设置",
       "svgPath": "svg/设置.svg",
       "componentPath": "src/icons/IconSheZhi.tsx",
-<<<<<<< HEAD
       "size": {
         "width": 24,
         "height": 24
       },
       "createdAt": "2026-01-26T09:35:35.703Z"
-    },
-    {
-      "name": "IconYanZhengMa",
-      "originalName": "验证码",
-      "svgPath": "svg/验证码.svg",
-      "componentPath": "src/icons/IconYanZhengMa.tsx",
-=======
->>>>>>> 004c2bab81f51592247c1dd06e8381ebb4d386d6
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-01-26T09:32:16.558Z"
     },
     {
       "name": "IconYunYingGuanLi",

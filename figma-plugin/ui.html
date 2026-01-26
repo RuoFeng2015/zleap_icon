@@ -575,6 +575,13 @@
       </button>
 
       <div id="config-status" class="hidden"></div>
+
+      <!-- Debug Log Container -->
+      <div id="debug-log"
+        style="margin-top: 12px; padding: 10px; background: #f8f8f8; border-radius: 8px; font-size: 11px; font-family: monospace; max-height: 150px; overflow-y: auto; display: none;">
+        <div style="font-weight: bold; margin-bottom: 6px; color: #666;">🔧 调试日志</div>
+        <div id="debug-log-content" style="color: #333; line-height: 1.6;"></div>
+      </div>
     </div>
   </div>
 
@@ -666,6 +673,9 @@
           await handleSyncResult(msg.payload);
           break;
         case 'error':
+          if (typeof debugLog === 'function') {
+            debugLog('收到错误: ' + msg.payload.message, 'error');
+          }
           showError(msg.payload.message);
           break;
       }
@@ -677,6 +687,12 @@
 
     function handleConfigLoaded(config) {
       currentConfig = config;
+
+      // Debug: show that we received a response from plugin
+      if (typeof debugLog === 'function') {
+        debugLog('收到插件响应: config-loaded', 'success');
+        debugLog(`配置状态: repo=${config.githubRepo ? '已设置' : '空'}, token=${config.githubToken ? '已设置' : '空'}`);
+      }
 
       // Update form fields
       document.getElementById('github-repo').value = config.githubRepo || '';
@@ -706,6 +722,9 @@
 
         // Show success message and switch to sync tab if we just saved
         if (document.querySelector('[data-tab="config"]').classList.contains('active')) {
+          if (typeof debugLog === 'function') {
+            debugLog('配置保存成功！即将跳转到同步页面', 'success');
+          }
           showStatus('config-status', '设置保存成功！现在可以同步图标了。', 'success');
           // Auto switch to sync tab after a short delay
           setTimeout(() => switchTab('sync'), 1000);
@@ -713,24 +732,79 @@
       }
     }
 
+    // ============================================
+    // Debug Logging (visible in UI)
+    // ============================================
+
+    function debugLog(message, type = 'info') {
+      const container = document.getElementById('debug-log');
+      const content = document.getElementById('debug-log-content');
+
+      // Show the debug container
+      container.style.display = 'block';
+
+      // Get timestamp
+      const now = new Date();
+      const time = now.toLocaleTimeString('zh-CN', { hour12: false });
+
+      // Color based on type
+      let color = '#333';
+      let prefix = '📝';
+      if (type === 'success') { color = '#34C759'; prefix = '✅'; }
+      if (type === 'error') { color = '#FF3B30'; prefix = '❌'; }
+      if (type === 'warn') { color = '#FF9500'; prefix = '⚠️'; }
+
+      // Add log line
+      const line = document.createElement('div');
+      line.style.color = color;
+      line.innerHTML = `<span style="color: #999;">[${time}]</span> ${prefix} ${message}`;
+      content.appendChild(line);
+
+      // Auto scroll to bottom
+      container.scrollTop = container.scrollHeight;
+
+      // Also log to console
+      console.log(`[DEBUG] ${message}`);
+    }
+
+    function clearDebugLog() {
+      const content = document.getElementById('debug-log-content');
+      content.innerHTML = '';
+    }
+
     function saveConfig() {
+      clearDebugLog();
+      debugLog('saveConfig() 被调用');
+
       const config = {
         githubRepo: document.getElementById('github-repo').value.trim(),
         githubToken: document.getElementById('github-token').value.trim(),
         defaultBranch: document.getElementById('default-branch').value.trim() || 'main'
       };
 
+      debugLog(`配置信息: repo=${config.githubRepo}, token=${config.githubToken ? '已填写' : '空'}, branch=${config.defaultBranch}`);
+
       if (!config.githubRepo) {
+        debugLog('验证失败: 未填写仓库地址', 'error');
         showStatus('config-status', '请输入 GitHub 仓库地址', 'error');
         return;
       }
 
       if (!config.githubToken) {
+        debugLog('验证失败: 未填写 Token', 'error');
         showStatus('config-status', '请输入 GitHub Token', 'error');
         return;
       }
 
-      postMessage('save-config', config);
+      debugLog('验证通过，发送消息到插件主线程...');
+      showStatus('config-status', '正在保存...', 'info');
+
+      try {
+        postMessage('save-config', config);
+        debugLog('消息已发送，等待插件响应...', 'success');
+      } catch (err) {
+        debugLog('发送消息失败: ' + err.message, 'error');
+      }
     }
 
     // ============================================
@@ -1115,96 +1189,13 @@
               }
             }
 
-            // 删除旧的 icons.json 和 icons-manifest.json 文件
-            try {
-              // 删除 docs/public/icons.json
-              const iconsJsonResponse = await fetch(
-                `https://api.github.com/repos/${repo}/contents/docs/public/icons.json?ref=${branchName}`,
-                { headers }
-              );
+            // 注意：我们不要删除 icons.json，以便构建脚本可以读取旧的 createdAt 时间戳
+            // 构建脚本会自动根据存在的 SVG 文件更新 icons.json，移除不存在的图标
+            console.log('保留远程 icons.json 以继承时间戳信息');
 
-              if (iconsJsonResponse.status === 200) {
-                const iconsJsonData = await iconsJsonResponse.json();
-                const deleteJsonResponse = await fetch(
-                  `https://api.github.com/repos/${repo}/contents/docs/public/icons.json`,
-                  {
-                    method: 'DELETE',
-                    headers,
-                    body: JSON.stringify({
-                      message: 'Delete old icons.json',
-                      sha: iconsJsonData.sha,
-                      branch: branchName
-                    })
-                  }
-                );
+            // 旧代码逻辑：曾在这里删除 icons.json 和 icons-manifest.json
+            // 现在已移除该逻辑，以支持增量时间戳更新
 
-                if (deleteJsonResponse.ok) {
-                  console.log('✅ 已删除旧的 docs/public/icons.json');
-                }
-              }
-            } catch (error) {
-              console.warn('删除 docs/public/icons.json 时出错:', error);
-            }
-
-            // 删除根目录的 icons.json
-            try {
-              const rootIconsJsonResponse = await fetch(
-                `https://api.github.com/repos/${repo}/contents/icons.json?ref=${branchName}`,
-                { headers }
-              );
-
-              if (rootIconsJsonResponse.status === 200) {
-                const rootIconsJsonData = await rootIconsJsonResponse.json();
-                const deleteRootJsonResponse = await fetch(
-                  `https://api.github.com/repos/${repo}/contents/icons.json`,
-                  {
-                    method: 'DELETE',
-                    headers,
-                    body: JSON.stringify({
-                      message: 'Delete old icons.json',
-                      sha: rootIconsJsonData.sha,
-                      branch: branchName
-                    })
-                  }
-                );
-
-                if (deleteRootJsonResponse.ok) {
-                  console.log('✅ 已删除旧的 icons.json');
-                }
-              }
-            } catch (error) {
-              console.warn('删除 icons.json 时出错:', error);
-            }
-
-            // 删除 icons-manifest.json
-            try {
-              const manifestResponse = await fetch(
-                `https://api.github.com/repos/${repo}/contents/icons-manifest.json?ref=${branchName}`,
-                { headers }
-              );
-
-              if (manifestResponse.status === 200) {
-                const manifestData = await manifestResponse.json();
-                const deleteManifestResponse = await fetch(
-                  `https://api.github.com/repos/${repo}/contents/icons-manifest.json`,
-                  {
-                    method: 'DELETE',
-                    headers,
-                    body: JSON.stringify({
-                      message: 'Delete old icons-manifest.json',
-                      sha: manifestData.sha,
-                      branch: branchName
-                    })
-                  }
-                );
-
-                if (deleteManifestResponse.ok) {
-                  console.log('✅ 已删除旧的 icons-manifest.json');
-                }
-              }
-            } catch (error) {
-              console.warn('删除 icons-manifest.json 时出错:', error);
-            }
           } catch (error) {
             console.warn('删除旧文件时出错:', error);
             // 继续执行，不中断流程

@@ -517,20 +517,28 @@ function handleLoadConfig() {
 }
 function handleSaveConfig(config) {
     return __awaiter(this, void 0, void 0, function () {
-        var repoPath, urlMatch, configToStore;
+        var repoPath, urlMatch, configToStore, storageError_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    console.log('[DEBUG] handleSaveConfig() called with:', {
+                        githubRepo: config.githubRepo,
+                        githubToken: config.githubToken ? '***已填写***' : '(空)',
+                        defaultBranch: config.defaultBranch
+                    });
                     if (!config.githubRepo || !config.githubToken) {
+                        console.log('[DEBUG] Validation failed: missing required fields');
                         throw new Error('请填写 GitHub 仓库地址和 Token');
                     }
                     repoPath = config.githubRepo.trim();
                     urlMatch = repoPath.match(/github\.com[\/:]([^\/]+\/[^\/]+?)(?:\.git)?(?:\/.*)?$/);
                     if (urlMatch) {
                         repoPath = urlMatch[1];
+                        console.log('[DEBUG] Extracted repo from URL:', repoPath);
                     }
                     repoPath = repoPath.replace(/\/+$/, '');
                     if (!/^[\w.-]+\/[\w.-]+$/.test(repoPath)) {
+                        console.log('[DEBUG] Repo format validation failed:', repoPath);
                         throw new Error('仓库地址格式错误，请使用 "用户名/仓库名" 格式或完整的 GitHub URL');
                     }
                     config.githubRepo = repoPath;
@@ -540,9 +548,21 @@ function handleSaveConfig(config) {
                         defaultBranch: config.defaultBranch || 'main',
                         figmaFileKey: config.figmaFileKey || getFileKey(),
                     };
-                    return [4 /*yield*/, figma.clientStorage.setAsync(CONFIG_KEY, configToStore)];
+                    console.log('[DEBUG] Saving config to Figma clientStorage...');
+                    _a.label = 1;
                 case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, figma.clientStorage.setAsync(CONFIG_KEY, configToStore)];
+                case 2:
                     _a.sent();
+                    console.log('[DEBUG] Config saved successfully!');
+                    return [3 /*break*/, 4];
+                case 3:
+                    storageError_1 = _a.sent();
+                    console.error('[DEBUG] Failed to save config:', storageError_1);
+                    throw new Error('保存配置失败，请检查 Figma 权限: ' + (storageError_1 instanceof Error ? storageError_1.message : String(storageError_1)));
+                case 4:
+                    console.log('[DEBUG] Sending config-loaded response to UI...');
                     sendToUI({
                         type: 'config-loaded',
                         payload: {
