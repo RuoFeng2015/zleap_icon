@@ -12,6 +12,17 @@ import { IconChengYuanGuanLi1 } from './icons/IconChengYuanGuanLi1';
 import { IconEdit03 } from './icons/IconEdit03';
 import { IconFrame } from './icons/IconFrame';
 import { IconFrame1 } from './icons/IconFrame1';
+import { IconFrame1261155979 } from './icons/IconFrame1261155979';
+import { IconFrame1261155980 } from './icons/IconFrame1261155980';
+import { IconFrame1261156452 } from './icons/IconFrame1261156452';
+import { IconFrame1261156453 } from './icons/IconFrame1261156453';
+import { IconFrame1261156454 } from './icons/IconFrame1261156454';
+import { IconFrame1261156455 } from './icons/IconFrame1261156455';
+import { IconFrame1261156456 } from './icons/IconFrame1261156456';
+import { IconFrame1261156457 } from './icons/IconFrame1261156457';
+import { IconFrame1261156458 } from './icons/IconFrame1261156458';
+import { IconFrame1261156459 } from './icons/IconFrame1261156459';
+import { IconFrame1261156460 } from './icons/IconFrame1261156460';
 import { IconQiYeBan } from './icons/IconQiYeBan';
 import { IconQiYeBan1 } from './icons/IconQiYeBan1';
 import { IconShangChuan } from './icons/IconShangChuan';
@@ -52,6 +63,17 @@ export { IconChengYuanGuanLi1, type IconChengYuanGuanLi1Props } from './icons/Ic
 export { IconEdit03, type IconEdit03Props } from './icons/IconEdit03';
 export { IconFrame, type IconFrameProps } from './icons/IconFrame';
 export { IconFrame1, type IconFrame1Props } from './icons/IconFrame1';
+export { IconFrame1261155979, type IconFrame1261155979Props } from './icons/IconFrame1261155979';
+export { IconFrame1261155980, type IconFrame1261155980Props } from './icons/IconFrame1261155980';
+export { IconFrame1261156452, type IconFrame1261156452Props } from './icons/IconFrame1261156452';
+export { IconFrame1261156453, type IconFrame1261156453Props } from './icons/IconFrame1261156453';
+export { IconFrame1261156454, type IconFrame1261156454Props } from './icons/IconFrame1261156454';
+export { IconFrame1261156455, type IconFrame1261156455Props } from './icons/IconFrame1261156455';
+export { IconFrame1261156456, type IconFrame1261156456Props } from './icons/IconFrame1261156456';
+export { IconFrame1261156457, type IconFrame1261156457Props } from './icons/IconFrame1261156457';
+export { IconFrame1261156458, type IconFrame1261156458Props } from './icons/IconFrame1261156458';
+export { IconFrame1261156459, type IconFrame1261156459Props } from './icons/IconFrame1261156459';
+export { IconFrame1261156460, type IconFrame1261156460Props } from './icons/IconFrame1261156460';
 export { IconQiYeBan, type IconQiYeBanProps } from './icons/IconQiYeBan';
 export { IconQiYeBan1, type IconQiYeBan1Props } from './icons/IconQiYeBan1';
 export { IconShangChuan, type IconShangChuanProps } from './icons/IconShangChuan';
@@ -96,6 +118,17 @@ export const allIcons = {
   IconEdit03,
   IconFrame,
   IconFrame1,
+  IconFrame1261155979,
+  IconFrame1261155980,
+  IconFrame1261156452,
+  IconFrame1261156453,
+  IconFrame1261156454,
+  IconFrame1261156455,
+  IconFrame1261156456,
+  IconFrame1261156457,
+  IconFrame1261156458,
+  IconFrame1261156459,
+  IconFrame1261156460,
   IconQiYeBan,
   IconQiYeBan1,
   IconShangChuan,

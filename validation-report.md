@@ -1,25 +1,36 @@
 # Icon Validation Report
 
-Generated at: 2026-01-26T10:25:24.970Z
+Generated at: 2026-01-26T10:31:24.309Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 39 |
+| Total Icons | 50 |
 | Valid Icons | 0 |
-| Invalid Icons | 39 |
-| Total Errors | 39 |
-| Total Warnings | 41 |
+| Invalid Icons | 50 |
+| Total Errors | 50 |
+| Total Warnings | 63 |
 
-⚠️ **39 icon(s) failed validation**
+⚠️ **50 icon(s) failed validation**
 
 ## Errors
 
-### size (39 errors)
+### size (50 errors)
 
 | Icon | Message |
 |------|---------|
+| Frame-1261155979 | Icon size 49x74 not in allowed sizes:  |
+| Frame-1261155980 | Icon size 49x74 not in allowed sizes:  |
+| Frame-1261156452 | Icon size 49x74 not in allowed sizes:  |
+| Frame-1261156453 | Icon size 49x75 not in allowed sizes:  |
+| Frame-1261156454 | Icon size 49x74 not in allowed sizes:  |
+| Frame-1261156455 | Icon size 49x75 not in allowed sizes:  |
+| Frame-1261156456 | Icon size 49x74 not in allowed sizes:  |
+| Frame-1261156457 | Icon size 49x74 not in allowed sizes:  |
+| Frame-1261156458 | Icon size 49x74 not in allowed sizes:  |
+| Frame-1261156459 | Icon size 49x74 not in allowed sizes:  |
+| Frame-1261156460 | Icon size 49x71 not in allowed sizes:  |
 | Frame | Icon size 24x24 not in allowed sizes:  |
 | Frame1 | Icon size 24x24 not in allowed sizes:  |
 | edit-03 | Icon size 24x24 not in allowed sizes:  |
@@ -62,10 +73,40 @@ Generated at: 2026-01-26T10:25:24.970Z
 
 ## Warnings
 
-### naming (38 warnings)
+### size (14 warnings)
 
 | Icon | Message |
 |------|---------|
+| Frame-1261155979 | Icon is not square: 49x74 |
+| Frame-1261155980 | Icon is not square: 49x74 |
+| Frame-1261156452 | Icon is not square: 49x74 |
+| Frame-1261156453 | Icon is not square: 49x75 |
+| Frame-1261156454 | Icon is not square: 49x74 |
+| Frame-1261156455 | Icon is not square: 49x75 |
+| Frame-1261156456 | Icon is not square: 49x74 |
+| Frame-1261156457 | Icon is not square: 49x74 |
+| Frame-1261156458 | Icon is not square: 49x74 |
+| Frame-1261156459 | Icon is not square: 49x74 |
+| Frame-1261156460 | Icon is not square: 49x71 |
+| 上传 | Icon is not square: 25x26 |
+| 搜索助手 | Icon is not square: 120x119 |
+| 搜索助手1 | Icon is not square: 120x119 |
+
+### naming (49 warnings)
+
+| Icon | Message |
+|------|---------|
+| Frame-1261155979 | Icon name "Frame-1261155979" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame-1261155980 | Icon name "Frame-1261155980" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame-1261156452 | Icon name "Frame-1261156452" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame-1261156453 | Icon name "Frame-1261156453" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame-1261156454 | Icon name "Frame-1261156454" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame-1261156455 | Icon name "Frame-1261156455" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame-1261156456 | Icon name "Frame-1261156456" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame-1261156457 | Icon name "Frame-1261156457" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame-1261156458 | Icon name "Frame-1261156458" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame-1261156459 | Icon name "Frame-1261156459" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame-1261156460 | Icon name "Frame-1261156460" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame | Icon name "Frame" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame1 | Icon name "Frame1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 上传 | Icon name "上传" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -104,11 +145,3 @@ Generated at: 2026-01-26T10:25:24.970Z
 | 问答助手 | Icon name "问答助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 问答助手1 | Icon name "问答助手1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 问答助手2 | Icon name "问答助手2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-
-### size (3 warnings)
-
-| Icon | Message |
-|------|---------|
-| 上传 | Icon is not square: 25x26 |
-| 搜索助手 | Icon is not square: 120x119 |
-| 搜索助手1 | Icon is not square: 120x119 |
