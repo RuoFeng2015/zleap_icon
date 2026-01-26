@@ -4,12 +4,12 @@ import type { SVGProps } from 'react';
 export interface IconSheZhiProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (not applicable for multicolor icons) */
+  /** Icon color */
   color?: string;
 }
 
 /**
- * IconSheZhi icon component (multicolor)
+ * IconSheZhi icon component
  *
  * @param props - Component props including size, color, and SVG attributes
  * @param ref - Forwarded ref to the SVG element
@@ -23,11 +23,12 @@ export const IconSheZhi = forwardRef<SVGSVGElement, IconSheZhiProps>(
         width={size}
         height={size}
         viewBox="0 0 24 24"
+        fill="none"
         className={className}
-        style={style}
+        style={{ color, ...style }}
         {...props}
       >
-        <path fill="#F5F5F5" d="M0 0h24v24H0z"/><path fill="white" d="M-111.556-437.5h793v822h-793z"/><path stroke="#0D131A" d="M20.75 5h-3m-4-2v4m0-2h-11m4 7h-4m8-2v4m11-2h-11m10 7h-3m-4-2v4m0-2h-11"/>
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5.5 8v13"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 14.5V21"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 9.5V3"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18.5 3v13"/><path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M5.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M18.5 21a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
       </svg>
     );
   }

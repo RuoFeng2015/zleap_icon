@@ -19,6 +19,7 @@ import { IconFrame1 } from './icons/IconFrame1';
 import { IconLianJie } from './icons/IconLianJie';
 import { IconQiYeBan } from './icons/IconQiYeBan';
 import { IconShangChuan } from './icons/IconShangChuan';
+import { IconSheZhi } from './icons/IconSheZhi';
 import { IconShiBai } from './icons/IconShiBai';
 import { IconShouQi } from './icons/IconShouQi';
 import { IconSouSuoZhuShou } from './icons/IconSouSuoZhuShou';
@@ -64,6 +65,7 @@ export { IconFrame1, type IconFrame1Props } from './icons/IconFrame1';
 export { IconLianJie, type IconLianJieProps } from './icons/IconLianJie';
 export { IconQiYeBan, type IconQiYeBanProps } from './icons/IconQiYeBan';
 export { IconShangChuan, type IconShangChuanProps } from './icons/IconShangChuan';
+export { IconSheZhi, type IconSheZhiProps } from './icons/IconSheZhi';
 export { IconShiBai, type IconShiBaiProps } from './icons/IconShiBai';
 export { IconShouQi, type IconShouQiProps } from './icons/IconShouQi';
 export { IconSouSuoZhuShou, type IconSouSuoZhuShouProps } from './icons/IconSouSuoZhuShou';
@@ -113,6 +115,7 @@ export const allIcons = {
   IconLianJie,
   IconQiYeBan,
   IconShangChuan,
+  IconSheZhi,
   IconShiBai,
   IconShouQi,
   IconSouSuoZhuShou,

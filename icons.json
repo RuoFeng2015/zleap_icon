@@ -1,20 +1,8 @@
 {
-  "version": "0.0.2",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-26T08:50:44.895Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-26T08:51:05.115Z",
   "totalCount": 45,
   "icons": [
-    {
-      "name": "Icon设置",
-      "originalName": "设置",
-      "svgPath": "svg/设置.svg",
-      "componentPath": "src/icons/Icon设置.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-26T08:50:44.895Z"
-    },
     {
       "name": "IconBangZhuShuoMing",
       "originalName": "帮助说明",
@@ -153,6 +141,16 @@
       "size": {
         "width": 25,
         "height": 26
+      }
+    },
+    {
+      "name": "IconSheZhi",
+      "originalName": "设置",
+      "svgPath": "svg/设置.svg",
+      "componentPath": "src/icons/IconSheZhi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
       }
     },
     {
