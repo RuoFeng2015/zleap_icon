@@ -4,12 +4,12 @@ import type { SVGProps } from 'react';
 export interface IconTianJiaProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (not applicable for multicolor icons) */
+  /** Icon color */
   color?: string;
 }
 
 /**
- * IconTianJia icon component (multicolor)
+ * IconTianJia icon component
  *
  * @param props - Component props including size, color, and SVG attributes
  * @param ref - Forwarded ref to the SVG element
@@ -23,11 +23,12 @@ export const IconTianJia = forwardRef<SVGSVGElement, IconTianJiaProps>(
         width={size}
         height={size}
         viewBox="0 0 24 24"
+        fill="none"
         className={className}
-        style={style}
+        style={{ color, ...style }}
         {...props}
       >
-        <path fill="#F5F5F5" d="M0 0h24v24H0z"/><path fill="white" d="M-554.333-638.25h793v822h-793z"/><path stroke="#0D131A" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Zm0-14v8m-4-4h8"/>
+        <path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v8"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 12h8"/>
       </svg>
     );
   }
