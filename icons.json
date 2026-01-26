@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-26T10:50:14.007Z",
-  "totalCount": 78,
+  "version": "0.0.10",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-26T11:14:03.122Z",
+  "totalCount": 80,
   "icons": [
+    {
+      "name": "Icon系统配置3",
+      "originalName": "系统配置3",
+      "svgPath": "svg/系统配置3.svg",
+      "componentPath": "src/icons/Icon系统配置3.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "uploadedAt": "2026-01-26T11:14:03.121Z"
+    },
+    {
+      "name": "Icon系统配置4",
+      "originalName": "系统配置4",
+      "svgPath": "svg/系统配置4.svg",
+      "componentPath": "src/icons/Icon系统配置4.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "uploadedAt": "2026-01-26T11:14:03.121Z"
+    },
     {
       "name": "IconWenDaZhuShou3",
       "originalName": "问答助手3",
