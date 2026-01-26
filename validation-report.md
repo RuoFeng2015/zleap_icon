@@ -1,6 +1,6 @@
 # Icon Validation Report
 
-Generated at: 2026-01-26T12:15:20.165Z
+Generated at: 2026-01-26T12:17:13.097Z
 
 ## Summary
 
@@ -20,8 +20,8 @@ Generated at: 2026-01-26T12:15:20.165Z
 
 | Icon | Message |
 |------|---------|
-| Frame-1261155979 | Icon size 49x71 not in allowed sizes:  |
-| Frame-1261155980 | Icon size 48x71 not in allowed sizes:  |
+| Frame-1261155979 | Icon size 49x74 not in allowed sizes:  |
+| Frame-1261155980 | Icon size 49x74 not in allowed sizes:  |
 | Frame-1261156450 | Icon size 49x73 not in allowed sizes:  |
 | Frame-1261156451 | Icon size 48x75 not in allowed sizes:  |
 | Frame-1261156452 | Icon size 49x74 not in allowed sizes:  |
@@ -119,8 +119,8 @@ Generated at: 2026-01-26T12:15:20.165Z
 
 | Icon | Message |
 |------|---------|
-| Frame-1261155979 | Icon is not square: 49x71 |
-| Frame-1261155980 | Icon is not square: 48x71 |
+| Frame-1261155979 | Icon is not square: 49x74 |
+| Frame-1261155980 | Icon is not square: 49x74 |
 | Frame-1261156450 | Icon is not square: 49x73 |
 | Frame-1261156451 | Icon is not square: 48x75 |
 | Frame-1261156452 | Icon is not square: 49x74 |
