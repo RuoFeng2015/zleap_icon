@@ -6,6 +6,53 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.7] - 2026-01-26
+
+更新/新增 2 个图标：增加, 增加 图标
+
+### Added
+- IconWenDaZhuShou2
+- IconZengJia1
+- IconZengJia
+- IconWenDaZhuShou1
+- IconWenDaZhuShou
+- IconSheZhi2
+- IconTuiChu
+- IconYunYingGuanLi1
+- IconYunYingGuanLi
+- IconSheZhi
+- IconWangLuoJianSuo1
+- IconSheZhi1
+- IconWangLuoJianSuo
+- IconTianJia1
+- IconXiTongPeiZhi2
+- IconXiTongPeiZhi1
+- IconXiTongPeiZhi
+- IconShouQi
+- IconSouSuoZhuShou1
+- IconTianJia
+- IconSouSuoZhuShou
+- IconChengYuanGuanLi1
+- IconBaoGaoZhuShou1
+- IconBaoGaoZhuShou
+- IconZhanKai
+- IconXinXiGuanLi1
+- IconChengYuanGuanLi
+- IconXinXiGuanLi
+- IconQiYeBan1
+- IconQiYeBan
+- IconXiaZaiZhuShou1
+- IconXiaZaiZhuShou
+- IconXiaZai
+- IconFrame1
+- IconEdit03
+- IconFrame
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.6] - 2026-01-26
 
 更新/新增 12 个图标：Frame, Frame, edit-03, 下载, 展开
