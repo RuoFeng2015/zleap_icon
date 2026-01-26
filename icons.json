@@ -1,19 +1,18 @@
 {
-  "version": "0.0.11",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-26T12:10:51.995Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-26T12:11:15.422Z",
   "totalCount": 83,
   "icons": [
     {
-      "name": "Icon报告助手3",
+      "name": "IconBaoGaoZhuShou3",
       "originalName": "报告助手3",
       "svgPath": "svg/报告助手3.svg",
-      "componentPath": "src/icons/Icon报告助手3.tsx",
+      "componentPath": "src/icons/IconBaoGaoZhuShou3.tsx",
       "size": {
         "width": 110,
         "height": 110
       },
-      "uploadedAt": "2026-01-26T12:10:51.994Z"
+      "createdAt": "2026-01-26T12:11:15.402Z"
     },
     {
       "name": "IconZhiShiKu",
