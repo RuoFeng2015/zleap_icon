@@ -174,6 +174,8 @@ export interface IconJsonEntry {
     width: number
     height: number
   }
+  /** Creation timestamp */
+  createdAt?: string
 }
 
 /**
@@ -232,6 +234,7 @@ export function createIconJsonEntry(
       width: icon.width,
       height: icon.height,
     },
+    createdAt: icon.createdAt,
   }
 }
 
@@ -255,7 +258,8 @@ export function generateJsonMetadata(
   const iconEntries = icons.map((icon) => createIconJsonEntry(icon, opts))
 
   // Sort entries alphabetically by name for consistent output
-  iconEntries.sort((a, b) => a.name.localeCompare(b.name))
+  // Removed internal sorting to respect the order passed from generate-outputs.ts (which sorts by date)
+  // iconEntries.sort((a, b) => a.name.localeCompare(b.name))
 
   return {
     version,

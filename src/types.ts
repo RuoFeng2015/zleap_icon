@@ -22,6 +22,8 @@ export interface IconMetadata {
   height: number
   /** SVG content string */
   svgContent?: string
+  /** Creation timestamp (ISO string) */
+  createdAt?: string
 }
 
 /**

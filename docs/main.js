@@ -181,30 +181,32 @@ function showToast(message) {
 /**
  * Render icons to the grid
  */
-async function renderIcons() {
-  if (filteredIcons.length === 0) {
-    iconGrid.innerHTML = `
-      <div class="no-results">
-        <div class="no-results-icon">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#86868b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="no-results-text">未找到相关图标</div>
-        <div class="no-results-subtext">建议缩短关键词或尝试其他搜索词</div>
-      </div>
-    `;
-    return;
-  }
+const observerOptions = {
+  root: null,
+  rootMargin: '100px', // Preload 100px before appearing
+  threshold: 0.1
+};
 
-  iconGrid.innerHTML = '';
+const iconObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const card = entry.target;
+      const iconName = card.dataset.iconName;
+      const svgPath = card.dataset.svgPath;
+      const originalName = card.dataset.originalName;
 
-  for (const icon of filteredIcons) {
-    const card = document.createElement('div');
-    card.className = 'icon-card';
-    card.dataset.iconName = icon.name;
+      // Load and render SVG
+      loadAndRenderIcon(card, iconName, svgPath, originalName);
 
-    const svgContent = await loadSvgContent(icon.svgPath);
+      // Stop observing once loaded
+      observer.unobserve(card);
+    }
+  });
+}, observerOptions);
+
+async function loadAndRenderIcon(card, iconName, svgPath, originalName) {
+  try {
+    const svgContent = await loadSvgContent(svgPath);
     const isMulticolor = isMulticolorSvg(svgContent);
 
     // 多色图标不应用颜色配置，保留原色
@@ -222,39 +224,92 @@ async function renderIcons() {
         ${copyIconSvg}
       </div>
       <div class="icon-preview">${styledSvg}</div>
-      <span class="icon-name">${icon.originalName}</span>
+      <span class="icon-name">${originalName}</span>
     `;
 
+    // Re-attach event listeners since we replaced innerHTML
     // Card click opens modal
     card.addEventListener('click', (e) => {
       // Ignore if copy button was clicked
       if (e.target.closest('.card-copy-btn')) return;
-      openModal(icon, svgContent);
+      openModal({ name: iconName, originalName, svgPath }, svgContent);
     });
 
     // Copy button click
     const copyBtn = card.querySelector('.card-copy-btn');
-    copyBtn.addEventListener('click', async (e) => {
-      e.stopPropagation();
-      const componentCode = `<${icon.name} />`;
-      try {
-        await navigator.clipboard.writeText(componentCode);
-        showToast(`Copied ${componentCode}`);
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const componentCode = `<${iconName} />`;
+        try {
+          await navigator.clipboard.writeText(componentCode);
+          showToast(`Copied ${componentCode}`);
 
-        // Button feedback
-        copyBtn.style.backgroundColor = 'var(--color-primary)';
-        copyBtn.style.color = 'white';
-        setTimeout(() => {
-          copyBtn.style.backgroundColor = '';
-          copyBtn.style.color = '';
-        }, 500);
-      } catch (err) {
-        console.error('Failed to copy', err);
-      }
-    });
+          // Button feedback
+          copyBtn.style.backgroundColor = 'var(--color-primary)';
+          copyBtn.style.color = 'white';
+          setTimeout(() => {
+            copyBtn.style.backgroundColor = '';
+            copyBtn.style.color = '';
+          }, 500);
+        } catch (err) {
+          console.error('Failed to copy', err);
+        }
+      });
+    }
 
-    iconGrid.appendChild(card);
+    // Mark as loaded
+    card.classList.add('loaded');
+  } catch (error) {
+    console.error(`Failed to load icon ${iconName}:`, error);
+    card.innerHTML = '<div class="error">!</div>';
   }
+}
+
+/**
+ * Render icons to the grid
+ */
+async function renderIcons() {
+  // Clear previous observer and grid
+  iconObserver.disconnect();
+  iconGrid.innerHTML = '';
+
+  if (filteredIcons.length === 0) {
+    iconGrid.innerHTML = `
+      <div class="no-results">
+        <div class="no-results-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#86868b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="no-results-text">未找到相关图标</div>
+        <div class="no-results-subtext">建议缩短关键词或尝试其他搜索词</div>
+      </div>
+    `;
+    return;
+  }
+
+  // Create placeholders for all icons at once
+  const fragment = document.createDocumentFragment();
+
+  for (const icon of filteredIcons) {
+    const card = document.createElement('div');
+    card.className = 'icon-card loading'; // Add loading class for skeleton style?
+    // Store data needed for loading
+    card.dataset.iconName = icon.name;
+    card.dataset.originalName = icon.originalName;
+    card.dataset.svgPath = icon.svgPath;
+
+    // Optional: Add a simple loading spinner or skeleton
+    card.innerHTML = `<div class="loading-placeholder" style="width: ${currentSize}px; height: ${currentSize}px;"></div>`;
+
+    fragment.appendChild(card);
+
+    // Start observing immediately
+    iconObserver.observe(card);
+  }
+
+  iconGrid.appendChild(fragment);
 }
 
 /**

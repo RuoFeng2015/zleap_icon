@@ -162,6 +162,7 @@ async function createMetadataFromFile(
       width,
       height,
       svgContent,
+      createdAt: new Date().toISOString(),
     }
   } catch (error) {
     console.error(
@@ -263,13 +264,33 @@ async function main(): Promise<void> {
       for (const [originalName] of existingIconsMap) {
         const found = orderedExistingIcons.find(i => i.originalName === originalName)
         if (found) {
+          // 保留原有的 createdAt
+          if (found.createdAt) {
+             found.createdAt = found.createdAt; 
+          }
           orderedByJson.push(found)
         }
       }
 
-      // 新图标放在最前面
-      icons = [...newIcons, ...orderedByJson]
-      console.log(`   ✅ Ordered: ${newIcons.length} new icons (first) + ${orderedByJson.length} existing icons\n`)
+      // 为新图标添加 createdAt (如果在 createMetadataFromFile 中未添加，这里确保有)
+      const now = new Date().toISOString()
+      newIcons.forEach(icon => {
+        if (!icon.createdAt) {
+          icon.createdAt = now
+        }
+      })
+      
+      // 合并所有图标
+      const allIcons = [...newIcons, ...orderedByJson]
+      
+      // 按 createdAt 倒序排序 (最新的在最前)
+      icons = allIcons.sort((a, b) => {
+        const timeA = a.createdAt ? new Date(a.createdAt).getTime() : 0
+        const timeB = b.createdAt ? new Date(b.createdAt).getTime() : 0
+        return timeB - timeA
+      })
+
+      console.log(`   ✅ Sorted ${icons.length} icons by createdAt (newest first)\n`)
     } else {
       icons = allSvgIcons
       console.log(`   ✅ Loaded ${icons.length} icons\n`)
