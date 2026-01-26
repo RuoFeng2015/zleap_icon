@@ -1,8 +1,41 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-26T12:42:03.959Z",
-  "totalCount": 113,
+  "generatedAt": "2026-01-26T12:51:19.102Z",
+  "totalCount": 116,
   "icons": [
+    {
+      "name": "IconWenJian1",
+      "originalName": "文件1",
+      "svgPath": "svg/文件1.svg",
+      "componentPath": "src/icons/IconWenJian1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:51:19.080Z"
+    },
+    {
+      "name": "IconXinZeng2",
+      "originalName": "新增2",
+      "svgPath": "svg/新增2.svg",
+      "componentPath": "src/icons/IconXinZeng2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:51:19.080Z"
+    },
+    {
+      "name": "IconShangChuan2",
+      "originalName": "上传2",
+      "svgPath": "svg/上传2.svg",
+      "componentPath": "src/icons/IconShangChuan2.tsx",
+      "size": {
+        "width": 25,
+        "height": 26
+      },
+      "createdAt": "2026-01-26T12:51:19.068Z"
+    },
     {
       "name": "IconFanHui1",
       "originalName": "返回1",

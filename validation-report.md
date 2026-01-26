@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-01-26T12:42:01.379Z
+Generated at: 2026-01-26T12:51:16.265Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 113 |
+| Total Icons | 116 |
 | Valid Icons | 0 |
-| Invalid Icons | 113 |
-| Total Errors | 113 |
-| Total Warnings | 128 |
+| Invalid Icons | 116 |
+| Total Errors | 116 |
+| Total Warnings | 132 |
 
-⚠️ **113 icon(s) failed validation**
+⚠️ **116 icon(s) failed validation**
 
 ## Errors
 
-### size (113 errors)
+### size (116 errors)
 
 | Icon | Message |
 |------|---------|
@@ -44,6 +44,7 @@ Generated at: 2026-01-26T12:42:01.379Z
 | edit-032 | Icon size 24x24 not in allowed sizes:  |
 | 上传 | Icon size 25x26 not in allowed sizes:  |
 | 上传1 | Icon size 25x26 not in allowed sizes:  |
+| 上传2 | Icon size 25x26 not in allowed sizes:  |
 | 下载 | Icon size 24x24 not in allowed sizes:  |
 | 下载1 | Icon size 24x24 not in allowed sizes:  |
 | 下载助手 | Icon size 120x120 not in allowed sizes:  |
@@ -89,8 +90,10 @@ Generated at: 2026-01-26T12:42:01.379Z
 | 收起3 | Icon size 24x24 not in allowed sizes:  |
 | 放大 | Icon size 24x24 not in allowed sizes:  |
 | 文件 | Icon size 24x24 not in allowed sizes:  |
+| 文件1 | Icon size 24x24 not in allowed sizes:  |
 | 新增 | Icon size 24x24 not in allowed sizes:  |
 | 新增1 | Icon size 24x24 not in allowed sizes:  |
+| 新增2 | Icon size 24x24 not in allowed sizes:  |
 | 正确 | Icon size 24x24 not in allowed sizes:  |
 | 正确1 | Icon size 24x24 not in allowed sizes:  |
 | 消息 | Icon size 24x24 not in allowed sizes:  |
@@ -136,7 +139,7 @@ Generated at: 2026-01-26T12:42:01.379Z
 
 ## Warnings
 
-### size (18 warnings)
+### size (19 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -155,11 +158,12 @@ Generated at: 2026-01-26T12:42:01.379Z
 | Frame-1261156460 | Icon is not square: 49x71 |
 | 上传 | Icon is not square: 25x26 |
 | 上传1 | Icon is not square: 25x26 |
+| 上传2 | Icon is not square: 25x26 |
 | 搜索助手 | Icon is not square: 120x119 |
 | 搜索助手1 | Icon is not square: 120x119 |
 | 问答助手4 | Icon is not square: 48x49 |
 
-### naming (110 warnings)
+### naming (113 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -184,6 +188,7 @@ Generated at: 2026-01-26T12:42:01.379Z
 | Frame5 | Icon name "Frame5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 上传 | Icon name "上传" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 上传1 | Icon name "上传1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 上传2 | Icon name "上传2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下载 | Icon name "下载" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下载1 | Icon name "下载1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下载助手 | Icon name "下载助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -229,8 +234,10 @@ Generated at: 2026-01-26T12:42:01.379Z
 | 收起3 | Icon name "收起3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 放大 | Icon name "放大" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件 | Icon name "文件" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 文件1 | Icon name "文件1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 新增 | Icon name "新增" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 新增1 | Icon name "新增1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 新增2 | Icon name "新增2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 正确 | Icon name "正确" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 正确1 | Icon name "正确1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 消息 | Icon name "消息" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
