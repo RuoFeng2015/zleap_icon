@@ -1,30 +1,29 @@
 {
-  "version": "0.0.10",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-26T11:14:03.122Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-26T11:14:23.529Z",
   "totalCount": 80,
   "icons": [
     {
-      "name": "Icon系统配置3",
+      "name": "IconXiTongPeiZhi3",
       "originalName": "系统配置3",
       "svgPath": "svg/系统配置3.svg",
-      "componentPath": "src/icons/Icon系统配置3.tsx",
+      "componentPath": "src/icons/IconXiTongPeiZhi3.tsx",
       "size": {
         "width": 120,
         "height": 120
       },
-      "uploadedAt": "2026-01-26T11:14:03.121Z"
+      "createdAt": "2026-01-26T11:14:23.511Z"
     },
     {
-      "name": "Icon系统配置4",
+      "name": "IconXiTongPeiZhi4",
       "originalName": "系统配置4",
       "svgPath": "svg/系统配置4.svg",
-      "componentPath": "src/icons/Icon系统配置4.tsx",
+      "componentPath": "src/icons/IconXiTongPeiZhi4.tsx",
       "size": {
         "width": 120,
         "height": 120
       },
-      "uploadedAt": "2026-01-26T11:14:03.121Z"
+      "createdAt": "2026-01-26T11:14:23.511Z"
     },
     {
       "name": "IconWenDaZhuShou3",
