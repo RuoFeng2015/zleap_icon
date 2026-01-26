@@ -1,41 +1,40 @@
 {
-  "version": "0.0.11",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-26T12:15:38.260Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-26T12:16:00.328Z",
   "totalCount": 86,
   "icons": [
     {
-      "name": "Icon添加3",
-      "originalName": "添加3",
-      "svgPath": "svg/添加3.svg",
-      "componentPath": "src/icons/Icon添加3.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-26T12:15:38.260Z"
-    },
-    {
-      "name": "Icon网络检索3",
-      "originalName": "网络检索3",
-      "svgPath": "svg/网络检索3.svg",
-      "componentPath": "src/icons/Icon网络检索3.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-26T12:15:38.260Z"
-    },
-    {
-      "name": "Icon设置6",
+      "name": "IconSheZhi6",
       "originalName": "设置6",
       "svgPath": "svg/设置6.svg",
-      "componentPath": "src/icons/Icon设置6.tsx",
+      "componentPath": "src/icons/IconSheZhi6.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-01-26T12:15:38.260Z"
+      "createdAt": "2026-01-26T12:16:00.315Z"
+    },
+    {
+      "name": "IconWangLuoJianSuo3",
+      "originalName": "网络检索3",
+      "svgPath": "svg/网络检索3.svg",
+      "componentPath": "src/icons/IconWangLuoJianSuo3.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:16:00.314Z"
+    },
+    {
+      "name": "IconTianJia3",
+      "originalName": "添加3",
+      "svgPath": "svg/添加3.svg",
+      "componentPath": "src/icons/IconTianJia3.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:16:00.311Z"
     },
     {
       "name": "IconBaoGaoZhuShou3",
