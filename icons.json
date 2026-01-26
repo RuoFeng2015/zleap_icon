@@ -1,8 +1,42 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-26T12:27:25.466Z",
-  "totalCount": 107,
+  "version": "0.0.15",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-26T12:37:30.651Z",
+  "totalCount": 110,
   "icons": [
+    {
+      "name": "Icon增加6",
+      "originalName": "增加6",
+      "svgPath": "svg/增加6.svg",
+      "componentPath": "src/icons/Icon增加6.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:37:30.649Z"
+    },
+    {
+      "name": "Icon增加7",
+      "originalName": "增加7",
+      "svgPath": "svg/增加7.svg",
+      "componentPath": "src/icons/Icon增加7.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:37:30.649Z"
+    },
+    {
+      "name": "Icon添加4",
+      "originalName": "添加4",
+      "svgPath": "svg/添加4.svg",
+      "componentPath": "src/icons/Icon添加4.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:37:30.649Z"
+    },
     {
       "name": "IconFanHui",
       "originalName": "返回",
