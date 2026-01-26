@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-01-21T15:39:24.450Z
+Generated at: 2026-01-26T08:51:02.623Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 44 |
+| Total Icons | 45 |
 | Valid Icons | 0 |
-| Invalid Icons | 44 |
-| Total Errors | 44 |
-| Total Warnings | 45 |
+| Invalid Icons | 45 |
+| Total Errors | 45 |
+| Total Warnings | 46 |
 
-⚠️ **44 icon(s) failed validation**
+⚠️ **45 icon(s) failed validation**
 
 ## Errors
 
-### size (44 errors)
+### size (45 errors)
 
 | Icon | Message |
 |------|---------|
@@ -58,6 +58,7 @@ Generated at: 2026-01-21T15:39:24.450Z
 | 缩小 | Icon size 24x24 not in allowed sizes:  |
 | 缩小1 | Icon size 24x24 not in allowed sizes:  |
 | 网页下载 | Icon size 24x24 not in allowed sizes:  |
+| 设置 | Icon size 24x24 not in allowed sizes:  |
 | 运营管理 | Icon size 120x120 not in allowed sizes:  |
 | 返回 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
@@ -67,7 +68,7 @@ Generated at: 2026-01-21T15:39:24.450Z
 
 ## Warnings
 
-### naming (43 warnings)
+### naming (44 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -108,6 +109,7 @@ Generated at: 2026-01-21T15:39:24.450Z
 | 缩小 | Icon name "缩小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 缩小1 | Icon name "缩小1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 网页下载 | Icon name "网页下载" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 设置 | Icon name "设置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 运营管理 | Icon name "运营管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 返回 | Icon name "返回" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
