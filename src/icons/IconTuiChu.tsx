@@ -4,12 +4,12 @@ import type { SVGProps } from 'react';
 export interface IconTuiChuProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (not applicable for multicolor icons) */
+  /** Icon color */
   color?: string;
 }
 
 /**
- * IconTuiChu icon component (multicolor)
+ * IconTuiChu icon component
  *
  * @param props - Component props including size, color, and SVG attributes
  * @param ref - Forwarded ref to the SVG element
@@ -23,11 +23,12 @@ export const IconTuiChu = forwardRef<SVGSVGElement, IconTuiChuProps>(
         width={size}
         height={size}
         viewBox="0 0 24 24"
+        fill="none"
         className={className}
-        style={style}
+        style={{ color, ...style }}
         {...props}
       >
-        <path fill="#F5F5F5" d="M0 0h24v24H0z"/><path fill="white" d="M-111.556-738.625h793v822h-793z"/><path stroke="#0D131A" d="M11.996 3H3v18h9m4.5-4.5L21 12l-4.5-4.5M8 11.996h13"/>
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M11.996 3H3v18h9"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16.5 16.5 21 12l-4.5-4.5"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 11.996h13"/>
       </svg>
     );
   }
