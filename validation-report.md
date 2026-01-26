@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-01-26T12:27:22.634Z
+Generated at: 2026-01-26T12:37:49.894Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 107 |
+| Total Icons | 110 |
 | Valid Icons | 0 |
-| Invalid Icons | 107 |
-| Total Errors | 107 |
-| Total Warnings | 122 |
+| Invalid Icons | 110 |
+| Total Errors | 110 |
+| Total Warnings | 125 |
 
-⚠️ **107 icon(s) failed validation**
+⚠️ **110 icon(s) failed validation**
 
 ## Errors
 
-### size (107 errors)
+### size (110 errors)
 
 | Icon | Message |
 |------|---------|
@@ -60,6 +60,8 @@ Generated at: 2026-01-26T12:27:22.634Z
 | 增加3 | Icon size 24x24 not in allowed sizes:  |
 | 增加4 | Icon size 24x24 not in allowed sizes:  |
 | 增加5 | Icon size 24x24 not in allowed sizes:  |
+| 增加6 | Icon size 24x24 not in allowed sizes:  |
+| 增加7 | Icon size 24x24 not in allowed sizes:  |
 | 失败 | Icon size 16x16 not in allowed sizes:  |
 | 失败1 | Icon size 16x16 not in allowed sizes:  |
 | 完成 | Icon size 24x24 not in allowed sizes:  |
@@ -94,6 +96,7 @@ Generated at: 2026-01-26T12:27:22.634Z
 | 添加1 | Icon size 24x24 not in allowed sizes:  |
 | 添加2 | Icon size 24x24 not in allowed sizes:  |
 | 添加3 | Icon size 24x24 not in allowed sizes:  |
+| 添加4 | Icon size 24x24 not in allowed sizes:  |
 | 知识库 | Icon size 22x22 not in allowed sizes:  |
 | 系统配置 | Icon size 120x120 not in allowed sizes:  |
 | 系统配置1 | Icon size 120x120 not in allowed sizes:  |
@@ -153,7 +156,7 @@ Generated at: 2026-01-26T12:27:22.634Z
 | 搜索助手1 | Icon is not square: 120x119 |
 | 问答助手4 | Icon is not square: 48x49 |
 
-### naming (104 warnings)
+### naming (107 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -194,6 +197,8 @@ Generated at: 2026-01-26T12:27:22.634Z
 | 增加3 | Icon name "增加3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加4 | Icon name "增加4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加5 | Icon name "增加5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 增加6 | Icon name "增加6" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 增加7 | Icon name "增加7" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 失败 | Icon name "失败" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 失败1 | Icon name "失败1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 完成 | Icon name "完成" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -228,6 +233,7 @@ Generated at: 2026-01-26T12:27:22.634Z
 | 添加1 | Icon name "添加1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 添加2 | Icon name "添加2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 添加3 | Icon name "添加3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 添加4 | Icon name "添加4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 系统配置 | Icon name "系统配置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 系统配置1 | Icon name "系统配置1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

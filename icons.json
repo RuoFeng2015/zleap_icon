@@ -1,8 +1,41 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-26T12:27:25.466Z",
-  "totalCount": 107,
+  "generatedAt": "2026-01-26T12:37:52.484Z",
+  "totalCount": 110,
   "icons": [
+    {
+      "name": "IconTianJia4",
+      "originalName": "添加4",
+      "svgPath": "svg/添加4.svg",
+      "componentPath": "src/icons/IconTianJia4.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:37:52.468Z"
+    },
+    {
+      "name": "IconZengJia6",
+      "originalName": "增加6",
+      "svgPath": "svg/增加6.svg",
+      "componentPath": "src/icons/IconZengJia6.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:37:52.462Z"
+    },
+    {
+      "name": "IconZengJia7",
+      "originalName": "增加7",
+      "svgPath": "svg/增加7.svg",
+      "componentPath": "src/icons/IconZengJia7.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:37:52.462Z"
+    },
     {
       "name": "IconFanHui",
       "originalName": "返回",
