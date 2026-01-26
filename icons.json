@@ -1,8 +1,42 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-26T12:37:52.484Z",
-  "totalCount": 110,
+  "version": "0.0.16",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-26T12:41:39.594Z",
+  "totalCount": 113,
   "icons": [
+    {
+      "name": "Icon失败2",
+      "originalName": "失败2",
+      "svgPath": "svg/失败2.svg",
+      "componentPath": "src/icons/Icon失败2.tsx",
+      "size": {
+        "width": 16,
+        "height": 16
+      },
+      "uploadedAt": "2026-01-26T12:41:39.594Z"
+    },
+    {
+      "name": "Icon完成1",
+      "originalName": "完成1",
+      "svgPath": "svg/完成1.svg",
+      "componentPath": "src/icons/Icon完成1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:41:39.594Z"
+    },
+    {
+      "name": "Icon返回1",
+      "originalName": "返回1",
+      "svgPath": "svg/返回1.svg",
+      "componentPath": "src/icons/Icon返回1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:41:39.594Z"
+    },
     {
       "name": "IconTianJia4",
       "originalName": "添加4",
