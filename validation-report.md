@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-01-26T12:37:49.894Z
+Generated at: 2026-01-26T12:42:01.379Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 110 |
+| Total Icons | 113 |
 | Valid Icons | 0 |
-| Invalid Icons | 110 |
-| Total Errors | 110 |
-| Total Warnings | 125 |
+| Invalid Icons | 113 |
+| Total Errors | 113 |
+| Total Warnings | 128 |
 
-⚠️ **110 icon(s) failed validation**
+⚠️ **113 icon(s) failed validation**
 
 ## Errors
 
-### size (110 errors)
+### size (113 errors)
 
 | Icon | Message |
 |------|---------|
@@ -64,7 +64,9 @@ Generated at: 2026-01-26T12:37:49.894Z
 | 增加7 | Icon size 24x24 not in allowed sizes:  |
 | 失败 | Icon size 16x16 not in allowed sizes:  |
 | 失败1 | Icon size 16x16 not in allowed sizes:  |
+| 失败2 | Icon size 16x16 not in allowed sizes:  |
 | 完成 | Icon size 24x24 not in allowed sizes:  |
+| 完成1 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 展开1 | Icon size 24x24 not in allowed sizes:  |
 | 展开2 | Icon size 24x24 not in allowed sizes:  |
@@ -122,6 +124,7 @@ Generated at: 2026-01-26T12:37:49.894Z
 | 运营管理1 | Icon size 120x120 not in allowed sizes:  |
 | 运营管理2 | Icon size 48x48 not in allowed sizes:  |
 | 返回 | Icon size 24x24 not in allowed sizes:  |
+| 返回1 | Icon size 24x24 not in allowed sizes:  |
 | 退出 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
 | 错误 | Icon size 24x24 not in allowed sizes:  |
@@ -156,7 +159,7 @@ Generated at: 2026-01-26T12:37:49.894Z
 | 搜索助手1 | Icon is not square: 120x119 |
 | 问答助手4 | Icon is not square: 48x49 |
 
-### naming (107 warnings)
+### naming (110 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -201,7 +204,9 @@ Generated at: 2026-01-26T12:37:49.894Z
 | 增加7 | Icon name "增加7" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 失败 | Icon name "失败" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 失败1 | Icon name "失败1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 失败2 | Icon name "失败2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 完成 | Icon name "完成" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 完成1 | Icon name "完成1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开1 | Icon name "展开1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开2 | Icon name "展开2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -259,6 +264,7 @@ Generated at: 2026-01-26T12:37:49.894Z
 | 运营管理1 | Icon name "运营管理1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 运营管理2 | Icon name "运营管理2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 返回 | Icon name "返回" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 返回1 | Icon name "返回1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 退出 | Icon name "退出" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 错误 | Icon name "错误" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
