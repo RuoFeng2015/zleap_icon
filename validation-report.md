@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-01-26T12:51:16.265Z
+Generated at: 2026-01-26T12:55:46.118Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 116 |
+| Total Icons | 118 |
 | Valid Icons | 0 |
-| Invalid Icons | 116 |
-| Total Errors | 116 |
-| Total Warnings | 132 |
+| Invalid Icons | 118 |
+| Total Errors | 118 |
+| Total Warnings | 134 |
 
-⚠️ **116 icon(s) failed validation**
+⚠️ **118 icon(s) failed validation**
 
 ## Errors
 
-### size (116 errors)
+### size (118 errors)
 
 | Icon | Message |
 |------|---------|
@@ -63,6 +63,8 @@ Generated at: 2026-01-26T12:51:16.265Z
 | 增加5 | Icon size 24x24 not in allowed sizes:  |
 | 增加6 | Icon size 24x24 not in allowed sizes:  |
 | 增加7 | Icon size 24x24 not in allowed sizes:  |
+| 增加8 | Icon size 24x24 not in allowed sizes:  |
+| 增加9 | Icon size 24x24 not in allowed sizes:  |
 | 失败 | Icon size 16x16 not in allowed sizes:  |
 | 失败1 | Icon size 16x16 not in allowed sizes:  |
 | 失败2 | Icon size 16x16 not in allowed sizes:  |
@@ -163,7 +165,7 @@ Generated at: 2026-01-26T12:51:16.265Z
 | 搜索助手1 | Icon is not square: 120x119 |
 | 问答助手4 | Icon is not square: 48x49 |
 
-### naming (113 warnings)
+### naming (115 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -207,6 +209,8 @@ Generated at: 2026-01-26T12:51:16.265Z
 | 增加5 | Icon name "增加5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加6 | Icon name "增加6" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加7 | Icon name "增加7" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 增加8 | Icon name "增加8" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 增加9 | Icon name "增加9" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 失败 | Icon name "失败" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 失败1 | Icon name "失败1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 失败2 | Icon name "失败2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

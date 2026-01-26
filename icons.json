@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-26T12:51:19.102Z",
-  "totalCount": 116,
+  "generatedAt": "2026-01-26T12:55:48.950Z",
+  "totalCount": 118,
   "icons": [
+    {
+      "name": "IconZengJia8",
+      "originalName": "增加8",
+      "svgPath": "svg/增加8.svg",
+      "componentPath": "src/icons/IconZengJia8.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:55:48.924Z"
+    },
+    {
+      "name": "IconZengJia9",
+      "originalName": "增加9",
+      "svgPath": "svg/增加9.svg",
+      "componentPath": "src/icons/IconZengJia9.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:55:48.924Z"
+    },
     {
       "name": "IconWenJian1",
       "originalName": "文件1",
