@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-26T11:14:23.529Z",
-  "totalCount": 80,
+  "generatedAt": "2026-01-26T11:15:24.894Z",
+  "totalCount": 81,
   "icons": [
+    {
+      "name": "IconBaoGaoZhuShou2",
+      "originalName": "报告助手2",
+      "svgPath": "svg/报告助手2.svg",
+      "componentPath": "src/icons/IconBaoGaoZhuShou2.tsx",
+      "size": {
+        "width": 110,
+        "height": 110
+      },
+      "createdAt": "2026-01-26T11:15:24.874Z"
+    },
     {
       "name": "IconXiTongPeiZhi3",
       "originalName": "系统配置3",
