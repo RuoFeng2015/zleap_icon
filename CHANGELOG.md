@@ -6,6 +6,84 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.6] - 2026-01-26
+
+更新/新增 12 个图标：Frame, Frame, edit-03, 下载, 展开
+
+### Added
+- IconWenDaZhuShou2
+- IconWenDaZhuShou1
+- IconWenDaZhuShou
+- IconSheZhi2
+- IconTuiChu
+- IconYunYingGuanLi1
+- IconYunYingGuanLi
+- IconWangLuoJianSuo1
+- IconSheZhi1
+- IconSheZhi
+- IconWangLuoJianSuo
+- IconTianJia1
+- IconXiTongPeiZhi2
+- IconXiTongPeiZhi1
+- IconXiTongPeiZhi
+- IconShouQi
+- IconSouSuoZhuShou1
+- IconTianJia
+- IconSouSuoZhuShou
+- IconChengYuanGuanLi1
+- IconBaoGaoZhuShou1
+- IconBaoGaoZhuShou
+- IconZhanKai
+- IconXinXiGuanLi1
+- IconChengYuanGuanLi
+- IconXinXiGuanLi
+- IconQiYeBan1
+- IconQiYeBan
+- IconXiaZaiZhuShou1
+- IconXiaZaiZhuShou
+- IconXiaZai
+- IconFrame1
+- IconEdit03
+- IconFrame
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.5] - 2026-01-26
+
+同步 10 个图标：下载助手, 企业版, 信息管理, 成员管理, 报告助手
+
+### Added
+- IconWenDaZhuShou1
+- IconWenDaZhuShou
+- IconXiTongPeiZhi2
+- IconYunYingGuanLi1
+- IconSheZhi
+- IconYunYingGuanLi
+- IconWangLuoJianSuo
+- IconSouSuoZhuShou1
+- IconXiTongPeiZhi1
+- IconTianJia
+- IconXiTongPeiZhi
+- IconChengYuanGuanLi1
+- IconBaoGaoZhuShou1
+- IconBaoGaoZhuShou
+- IconSouSuoZhuShou
+- IconXinXiGuanLi1
+- IconChengYuanGuanLi
+- IconXinXiGuanLi
+- IconXiaZaiZhuShou1
+- IconQiYeBan1
+- IconQiYeBan
+- IconXiaZaiZhuShou
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.5] - 2026-01-26
 
 更新/新增 3 个图标：添加, 网络检索, 设置 图标
