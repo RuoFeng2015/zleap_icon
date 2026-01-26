@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-26T10:11:33.956Z",
-  "totalCount": 15,
+  "version": "0.0.7",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-26T10:22:06.730Z",
+  "totalCount": 39,
   "icons": [
+    {
+      "name": "Icon增加",
+      "originalName": "增加",
+      "svgPath": "svg/增加.svg",
+      "componentPath": "src/icons/Icon增加.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T10:22:06.729Z"
+    },
+    {
+      "name": "Icon增加1",
+      "originalName": "增加1",
+      "svgPath": "svg/增加1.svg",
+      "componentPath": "src/icons/Icon增加1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T10:22:06.729Z"
+    },
     {
       "name": "IconCheck",
       "originalName": "check",
