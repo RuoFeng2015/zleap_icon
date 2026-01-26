@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-01-26T12:55:46.118Z
+Generated at: 2026-01-26T13:00:37.285Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 118 |
+| Total Icons | 120 |
 | Valid Icons | 0 |
-| Invalid Icons | 118 |
-| Total Errors | 118 |
-| Total Warnings | 134 |
+| Invalid Icons | 120 |
+| Total Errors | 120 |
+| Total Warnings | 136 |
 
-⚠️ **118 icon(s) failed validation**
+⚠️ **120 icon(s) failed validation**
 
 ## Errors
 
-### size (118 errors)
+### size (120 errors)
 
 | Icon | Message |
 |------|---------|
@@ -55,6 +55,7 @@ Generated at: 2026-01-26T12:55:46.118Z
 | 企业版2 | Icon size 48x48 not in allowed sizes:  |
 | 信息管理 | Icon size 120x120 not in allowed sizes:  |
 | 信息管理1 | Icon size 120x120 not in allowed sizes:  |
+| 信息管理2 | Icon size 120x120 not in allowed sizes:  |
 | 增加 | Icon size 24x24 not in allowed sizes:  |
 | 增加1 | Icon size 24x24 not in allowed sizes:  |
 | 增加2 | Icon size 24x24 not in allowed sizes:  |
@@ -84,6 +85,7 @@ Generated at: 2026-01-26T12:55:46.118Z
 | 报告助手2 | Icon size 110x110 not in allowed sizes:  |
 | 报告助手3 | Icon size 110x110 not in allowed sizes:  |
 | 报告助手4 | Icon size 48x48 not in allowed sizes:  |
+| 报告助手5 | Icon size 120x120 not in allowed sizes:  |
 | 搜索助手 | Icon size 120x119 not in allowed sizes:  |
 | 搜索助手1 | Icon size 120x119 not in allowed sizes:  |
 | 收起 | Icon size 24x24 not in allowed sizes:  |
@@ -165,7 +167,7 @@ Generated at: 2026-01-26T12:55:46.118Z
 | 搜索助手1 | Icon is not square: 120x119 |
 | 问答助手4 | Icon is not square: 48x49 |
 
-### naming (115 warnings)
+### naming (117 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -201,6 +203,7 @@ Generated at: 2026-01-26T12:55:46.118Z
 | 企业版2 | Icon name "企业版2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 信息管理 | Icon name "信息管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 信息管理1 | Icon name "信息管理1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 信息管理2 | Icon name "信息管理2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加 | Icon name "增加" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加1 | Icon name "增加1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加2 | Icon name "增加2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -230,6 +233,7 @@ Generated at: 2026-01-26T12:55:46.118Z
 | 报告助手2 | Icon name "报告助手2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 报告助手3 | Icon name "报告助手3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 报告助手4 | Icon name "报告助手4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 报告助手5 | Icon name "报告助手5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索助手 | Icon name "搜索助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索助手1 | Icon name "搜索助手1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 收起 | Icon name "收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
