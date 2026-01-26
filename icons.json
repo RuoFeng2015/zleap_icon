@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-26T12:42:03.959Z",
-  "totalCount": 113,
+  "version": "0.0.17",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-26T12:51:24.842Z",
+  "totalCount": 115,
   "icons": [
+    {
+      "name": "Icon增加8",
+      "originalName": "增加8",
+      "svgPath": "svg/增加8.svg",
+      "componentPath": "src/icons/Icon增加8.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:51:24.841Z"
+    },
+    {
+      "name": "Icon增加9",
+      "originalName": "增加9",
+      "svgPath": "svg/增加9.svg",
+      "componentPath": "src/icons/Icon增加9.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:51:24.841Z"
+    },
     {
       "name": "IconFanHui1",
       "originalName": "返回1",
