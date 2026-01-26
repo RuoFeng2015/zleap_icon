@@ -1,28 +1,29 @@
 # Icon Validation Report
 
-Generated at: 2026-01-26T10:22:26.017Z
+Generated at: 2026-01-26T10:25:24.970Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 36 |
+| Total Icons | 39 |
 | Valid Icons | 0 |
-| Invalid Icons | 36 |
-| Total Errors | 36 |
-| Total Warnings | 37 |
+| Invalid Icons | 39 |
+| Total Errors | 39 |
+| Total Warnings | 41 |
 
-⚠️ **36 icon(s) failed validation**
+⚠️ **39 icon(s) failed validation**
 
 ## Errors
 
-### size (36 errors)
+### size (39 errors)
 
 | Icon | Message |
 |------|---------|
 | Frame | Icon size 24x24 not in allowed sizes:  |
 | Frame1 | Icon size 24x24 not in allowed sizes:  |
 | edit-03 | Icon size 24x24 not in allowed sizes:  |
+| 上传 | Icon size 25x26 not in allowed sizes:  |
 | 下载 | Icon size 24x24 not in allowed sizes:  |
 | 下载助手 | Icon size 120x120 not in allowed sizes:  |
 | 下载助手1 | Icon size 120x120 not in allowed sizes:  |
@@ -40,6 +41,8 @@ Generated at: 2026-01-26T10:22:26.017Z
 | 搜索助手 | Icon size 120x119 not in allowed sizes:  |
 | 搜索助手1 | Icon size 120x119 not in allowed sizes:  |
 | 收起 | Icon size 24x24 not in allowed sizes:  |
+| 收起1 | Icon size 24x24 not in allowed sizes:  |
+| 新增 | Icon size 24x24 not in allowed sizes:  |
 | 添加 | Icon size 24x24 not in allowed sizes:  |
 | 添加1 | Icon size 24x24 not in allowed sizes:  |
 | 系统配置 | Icon size 120x120 not in allowed sizes:  |
@@ -59,12 +62,13 @@ Generated at: 2026-01-26T10:22:26.017Z
 
 ## Warnings
 
-### naming (35 warnings)
+### naming (38 warnings)
 
 | Icon | Message |
 |------|---------|
 | Frame | Icon name "Frame" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame1 | Icon name "Frame1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 上传 | Icon name "上传" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下载 | Icon name "下载" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下载助手 | Icon name "下载助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下载助手1 | Icon name "下载助手1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -82,6 +86,8 @@ Generated at: 2026-01-26T10:22:26.017Z
 | 搜索助手 | Icon name "搜索助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索助手1 | Icon name "搜索助手1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 收起 | Icon name "收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 收起1 | Icon name "收起1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 新增 | Icon name "新增" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 添加 | Icon name "添加" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 添加1 | Icon name "添加1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 系统配置 | Icon name "系统配置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -99,9 +105,10 @@ Generated at: 2026-01-26T10:22:26.017Z
 | 问答助手1 | Icon name "问答助手1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 问答助手2 | Icon name "问答助手2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
-### size (2 warnings)
+### size (3 warnings)
 
 | Icon | Message |
 |------|---------|
+| 上传 | Icon is not square: 25x26 |
 | 搜索助手 | Icon is not square: 120x119 |
 | 搜索助手1 | Icon is not square: 120x119 |
