@@ -1,41 +1,63 @@
 {
-  "version": "0.0.16",
+  "version": "0.0.17",
   "syncMode": "incremental",
-  "generatedAt": "2026-01-26T12:41:39.594Z",
-  "totalCount": 113,
+  "generatedAt": "2026-01-26T12:51:24.842Z",
+  "totalCount": 115,
   "icons": [
     {
-      "name": "Icon失败2",
+      "name": "Icon增加8",
+      "originalName": "增加8",
+      "svgPath": "svg/增加8.svg",
+      "componentPath": "src/icons/Icon增加8.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:51:24.841Z"
+    },
+    {
+      "name": "Icon增加9",
+      "originalName": "增加9",
+      "svgPath": "svg/增加9.svg",
+      "componentPath": "src/icons/Icon增加9.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:51:24.841Z"
+    },
+    {
+      "name": "IconFanHui1",
+      "originalName": "返回1",
+      "svgPath": "svg/返回1.svg",
+      "componentPath": "src/icons/IconFanHui1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:42:03.946Z"
+    },
+    {
+      "name": "IconWanCheng1",
+      "originalName": "完成1",
+      "svgPath": "svg/完成1.svg",
+      "componentPath": "src/icons/IconWanCheng1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:42:03.936Z"
+    },
+    {
+      "name": "IconShiBai2",
       "originalName": "失败2",
       "svgPath": "svg/失败2.svg",
-      "componentPath": "src/icons/Icon失败2.tsx",
+      "componentPath": "src/icons/IconShiBai2.tsx",
       "size": {
         "width": 16,
         "height": 16
       },
-      "uploadedAt": "2026-01-26T12:41:39.594Z"
-    },
-    {
-      "name": "Icon完成1",
-      "originalName": "完成1",
-      "svgPath": "svg/完成1.svg",
-      "componentPath": "src/icons/Icon完成1.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-26T12:41:39.594Z"
-    },
-    {
-      "name": "Icon返回1",
-      "originalName": "返回1",
-      "svgPath": "svg/返回1.svg",
-      "componentPath": "src/icons/Icon返回1.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-26T12:41:39.594Z"
+      "createdAt": "2026-01-26T12:42:03.935Z"
     },
     {
       "name": "IconTianJia4",
