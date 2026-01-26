@@ -86,6 +86,7 @@ import { IconZhanKai } from './icons/IconZhanKai';
 import { IconZhanKai1 } from './icons/IconZhanKai1';
 import { IconZhanKai2 } from './icons/IconZhanKai2';
 import { IconZhengQue } from './icons/IconZhengQue';
+import { IconZhiShiKu } from './icons/IconZhiShiKu';
 
 export { IconBangZhuShuoMing, type IconBangZhuShuoMingProps } from './icons/IconBangZhuShuoMing';
 export { IconBaoGaoZhuShou, type IconBaoGaoZhuShouProps } from './icons/IconBaoGaoZhuShou';
@@ -168,6 +169,7 @@ export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
 export { IconZhanKai1, type IconZhanKai1Props } from './icons/IconZhanKai1';
 export { IconZhanKai2, type IconZhanKai2Props } from './icons/IconZhanKai2';
 export { IconZhengQue, type IconZhengQueProps } from './icons/IconZhengQue';
+export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
 
 /**
  * Object containing all icon components
@@ -253,7 +255,8 @@ export const allIcons = {
   IconZhanKai,
   IconZhanKai1,
   IconZhanKai2,
-  IconZhengQue
+  IconZhengQue,
+  IconZhiShiKu
 } as const;
 
 /**

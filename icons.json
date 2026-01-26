@@ -1,19 +1,18 @@
 {
-  "version": "0.0.10",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-26T11:19:54.834Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-26T11:20:16.881Z",
   "totalCount": 82,
   "icons": [
     {
-      "name": "Icon知识库",
+      "name": "IconZhiShiKu",
       "originalName": "知识库",
       "svgPath": "svg/知识库.svg",
-      "componentPath": "src/icons/Icon知识库.tsx",
+      "componentPath": "src/icons/IconZhiShiKu.tsx",
       "size": {
         "width": 22,
         "height": 22
       },
-      "uploadedAt": "2026-01-26T11:19:54.834Z"
+      "createdAt": "2026-01-26T11:20:16.866Z"
     },
     {
       "name": "IconBaoGaoZhuShou2",
