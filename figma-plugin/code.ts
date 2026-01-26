@@ -349,55 +349,81 @@ function isIconNode(node: SceneNode | PageNode): boolean {
 // ============================================
 
 /**
- * 导出图标为 SVG
+ * 导出图标为 SVG (并行优化版)
  */
 async function exportIconsToSvg(icons: IconInfo[]): Promise<IconWithSvg[]> {
   const results: IconWithSvg[] = []
   const total = icons.length
+  const BATCH_SIZE = 5 // 并行批次大小，避免同时请求过多
 
-  for (let i = 0; i < icons.length; i++) {
-    const icon = icons[i]
-    // 使用异步版本获取节点
-    const node = (await figma.getNodeByIdAsync(icon.id)) as SceneNode
+  // 发送初始进度
+  sendToUI({
+    type: 'export-progress',
+    payload: {
+      current: 0,
+      total: total,
+      currentName: '开始导出...',
+    },
+  })
 
-    if (!node) {
-      console.warn(`节点 ${icon.id} 不存在，跳过`)
-      continue
+  // 分批并行处理
+  for (let batchStart = 0; batchStart < icons.length; batchStart += BATCH_SIZE) {
+    const batch = icons.slice(batchStart, batchStart + BATCH_SIZE)
+    
+    const batchResults = await Promise.all(
+      batch.map(async (icon, batchIndex) => {
+        const globalIndex = batchStart + batchIndex
+        
+        try {
+          // 使用异步版本获取节点
+          const node = (await figma.getNodeByIdAsync(icon.id)) as SceneNode
+
+          if (!node) {
+            console.warn(`节点 ${icon.id} 不存在，跳过`)
+            return null
+          }
+
+          // 使用 Figma 内置的 exportAsync 导出 SVG
+          const svgData = await (node as FrameNode).exportAsync({
+            format: 'SVG',
+            svgIdAttribute: false,
+            contentsOnly: false, // 保留渐变定义
+          })
+
+          // 将 Uint8Array 转换为字符串
+          let svgString = String.fromCharCode.apply(null, Array.from(svgData))
+          
+          // 清理 SVG 中的问题元素
+          svgString = cleanSvgContent(svgString)
+
+          return {
+            ...icon,
+            svg: svgString,
+          } as IconWithSvg
+        } catch (error) {
+          console.error(`导出图标 ${icon.name} 失败:`, error)
+          return null
+        }
+      })
+    )
+
+    // 收集有效结果
+    for (const result of batchResults) {
+      if (result) {
+        results.push(result)
+      }
     }
 
-    try {
-      // 使用 Figma 内置的 exportAsync 导出 SVG
-      // 注意：contentsOnly: false 保留 <defs> 中的渐变定义
-      // 背景元素会通过 cleanSvgContent 函数移除
-      const svgData = await (node as FrameNode).exportAsync({
-        format: 'SVG',
-        svgIdAttribute: false,
-        contentsOnly: false, // 保留渐变定义
-      })
-
-      // 将 Uint8Array 转换为字符串
-      let svgString = String.fromCharCode.apply(null, Array.from(svgData))
-      
-      // 清理 SVG 中的问题元素
-      svgString = cleanSvgContent(svgString)
-
-      results.push({
-        ...icon,
-        svg: svgString,
-      })
-
-      // 发送进度更新
-      sendToUI({
-        type: 'export-progress',
-        payload: {
-          current: i + 1,
-          total: total,
-          currentName: icon.name,
-        },
-      })
-    } catch (error) {
-      console.error(`导出图标 ${icon.name} 失败:`, error)
-    }
+    // 发送批次进度更新
+    const currentProgress = Math.min(batchStart + BATCH_SIZE, total)
+    sendToUI({
+      type: 'export-progress',
+      payload: {
+        current: currentProgress,
+        total: total,
+        currentName: batch[batch.length - 1]?.name || '',
+      },
+    })
   }
 
   return results

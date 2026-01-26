@@ -367,62 +367,118 @@ function isIconNode(node) {
 // SVG Export
 // ============================================
 /**
- * 导出图标为 SVG
+ * 导出图标为 SVG (并行优化版)
  */
 function exportIconsToSvg(icons) {
     return __awaiter(this, void 0, void 0, function () {
-        var results, total, i, icon, node, svgData, svgString, error_1;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        var results, total, BATCH_SIZE, _loop_1, batchStart;
+        var _this = this;
+        var _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
                 case 0:
                     results = [];
                     total = icons.length;
-                    i = 0;
-                    _a.label = 1;
-                case 1:
-                    if (!(i < icons.length)) return [3 /*break*/, 7];
-                    icon = icons[i];
-                    return [4 /*yield*/, figma.getNodeByIdAsync(icon.id)];
-                case 2:
-                    node = (_a.sent());
-                    if (!node) {
-                        console.warn("\u8282\u70B9 ".concat(icon.id, " \u4E0D\u5B58\u5728\uFF0C\u8DF3\u8FC7"));
-                        return [3 /*break*/, 6];
-                    }
-                    _a.label = 3;
-                case 3:
-                    _a.trys.push([3, 5, , 6]);
-                    return [4 /*yield*/, node.exportAsync({
-                            format: 'SVG',
-                            svgIdAttribute: false,
-                            contentsOnly: false, // 保留渐变定义
-                        })
-                        // 将 Uint8Array 转换为字符串
-                    ];
-                case 4:
-                    svgData = _a.sent();
-                    svgString = String.fromCharCode.apply(null, Array.from(svgData));
-                    // 清理 SVG 中的问题元素
-                    svgString = cleanSvgContent(svgString);
-                    results.push(__assign(__assign({}, icon), { svg: svgString }));
-                    // 发送进度更新
+                    BATCH_SIZE = 5 // 并行批次大小，避免同时请求过多
+                    ;
+                    // 发送初始进度
                     sendToUI({
                         type: 'export-progress',
                         payload: {
-                            current: i + 1,
+                            current: 0,
                             total: total,
-                            currentName: icon.name,
+                            currentName: '开始导出...',
                         },
                     });
-                    return [3 /*break*/, 6];
-                case 5:
-                    error_1 = _a.sent();
-                    console.error("\u5BFC\u51FA\u56FE\u6807 ".concat(icon.name, " \u5931\u8D25:"), error_1);
-                    return [3 /*break*/, 6];
-                case 6:
-                    i++;
+                    _loop_1 = function (batchStart) {
+                        var batch, batchResults, batchResults_1, batchResults_1_1, result, currentProgress;
+                        var e_5, _c;
+                        return __generator(this, function (_d) {
+                            switch (_d.label) {
+                                case 0:
+                                    batch = icons.slice(batchStart, batchStart + BATCH_SIZE);
+                                    return [4 /*yield*/, Promise.all(batch.map(function (icon, batchIndex) { return __awaiter(_this, void 0, void 0, function () {
+                                            var globalIndex, node, svgData, svgString, error_1;
+                                            return __generator(this, function (_a) {
+                                                switch (_a.label) {
+                                                    case 0:
+                                                        globalIndex = batchStart + batchIndex;
+                                                        _a.label = 1;
+                                                    case 1:
+                                                        _a.trys.push([1, 4, , 5]);
+                                                        return [4 /*yield*/, figma.getNodeByIdAsync(icon.id)];
+                                                    case 2:
+                                                        node = (_a.sent());
+                                                        if (!node) {
+                                                            console.warn("\u8282\u70B9 ".concat(icon.id, " \u4E0D\u5B58\u5728\uFF0C\u8DF3\u8FC7"));
+                                                            return [2 /*return*/, null];
+                                                        }
+                                                        return [4 /*yield*/, node.exportAsync({
+                                                                format: 'SVG',
+                                                                svgIdAttribute: false,
+                                                                contentsOnly: false, // 保留渐变定义
+                                                            })
+                                                            // 将 Uint8Array 转换为字符串
+                                                        ];
+                                                    case 3:
+                                                        svgData = _a.sent();
+                                                        svgString = String.fromCharCode.apply(null, Array.from(svgData));
+                                                        // 清理 SVG 中的问题元素
+                                                        svgString = cleanSvgContent(svgString);
+                                                        return [2 /*return*/, __assign(__assign({}, icon), { svg: svgString })];
+                                                    case 4:
+                                                        error_1 = _a.sent();
+                                                        console.error("\u5BFC\u51FA\u56FE\u6807 ".concat(icon.name, " \u5931\u8D25:"), error_1);
+                                                        return [2 /*return*/, null];
+                                                    case 5: return [2 /*return*/];
+                                                }
+                                            });
+                                        }); }))
+                                        // 收集有效结果
+                                    ];
+                                case 1:
+                                    batchResults = _d.sent();
+                                    try {
+                                        // 收集有效结果
+                                        for (batchResults_1 = (e_5 = void 0, __values(batchResults)), batchResults_1_1 = batchResults_1.next(); !batchResults_1_1.done; batchResults_1_1 = batchResults_1.next()) {
+                                            result = batchResults_1_1.value;
+                                            if (result) {
+                                                results.push(result);
+                                            }
+                                        }
+                                    }
+                                    catch (e_5_1) { e_5 = { error: e_5_1 }; }
+                                    finally {
+                                        try {
+                                            if (batchResults_1_1 && !batchResults_1_1.done && (_c = batchResults_1.return)) _c.call(batchResults_1);
+                                        }
+                                        finally { if (e_5) throw e_5.error; }
+                                    }
+                                    currentProgress = Math.min(batchStart + BATCH_SIZE, total);
+                                    sendToUI({
+                                        type: 'export-progress',
+                                        payload: {
+                                            current: currentProgress,
+                                            total: total,
+                                            currentName: ((_a = batch[batch.length - 1]) === null || _a === void 0 ? void 0 : _a.name) || '',
+                                        },
+                                    });
+                                    return [2 /*return*/];
+                            }
+                        });
+                    };
+                    batchStart = 0;
+                    _b.label = 1;
+                case 1:
+                    if (!(batchStart < icons.length)) return [3 /*break*/, 4];
+                    return [5 /*yield**/, _loop_1(batchStart)];
+                case 2:
+                    _b.sent();
+                    _b.label = 3;
+                case 3:
+                    batchStart += BATCH_SIZE;
                     return [3 /*break*/, 1];
-                case 7: return [2 /*return*/, results];
+                case 4: return [2 /*return*/, results];
             }
         });
     });
