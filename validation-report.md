@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-01-26T10:50:11.236Z
+Generated at: 2026-01-26T11:14:20.779Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 78 |
+| Total Icons | 80 |
 | Valid Icons | 0 |
-| Invalid Icons | 78 |
-| Total Errors | 78 |
-| Total Warnings | 91 |
+| Invalid Icons | 80 |
+| Total Errors | 80 |
+| Total Warnings | 93 |
 
-⚠️ **78 icon(s) failed validation**
+⚠️ **80 icon(s) failed validation**
 
 ## Errors
 
-### size (78 errors)
+### size (80 errors)
 
 | Icon | Message |
 |------|---------|
@@ -79,6 +79,8 @@ Generated at: 2026-01-26T10:50:11.236Z
 | 系统配置 | Icon size 120x120 not in allowed sizes:  |
 | 系统配置1 | Icon size 120x120 not in allowed sizes:  |
 | 系统配置2 | Icon size 120x120 not in allowed sizes:  |
+| 系统配置3 | Icon size 120x120 not in allowed sizes:  |
+| 系统配置4 | Icon size 120x120 not in allowed sizes:  |
 | 缩小 | Icon size 24x24 not in allowed sizes:  |
 | 网络检索 | Icon size 24x24 not in allowed sizes:  |
 | 网络检索1 | Icon size 24x24 not in allowed sizes:  |
@@ -121,7 +123,7 @@ Generated at: 2026-01-26T10:50:11.236Z
 | 搜索助手 | Icon is not square: 120x119 |
 | 搜索助手1 | Icon is not square: 120x119 |
 
-### naming (76 warnings)
+### naming (78 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -182,6 +184,8 @@ Generated at: 2026-01-26T10:50:11.236Z
 | 系统配置 | Icon name "系统配置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 系统配置1 | Icon name "系统配置1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 系统配置2 | Icon name "系统配置2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 系统配置3 | Icon name "系统配置3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 系统配置4 | Icon name "系统配置4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 缩小 | Icon name "缩小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 网络检索 | Icon name "网络检索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 网络检索1 | Icon name "网络检索1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
