@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-26T12:55:48.950Z",
-  "totalCount": 118,
+  "version": "0.0.19",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-26T13:00:18.810Z",
+  "totalCount": 120,
   "icons": [
+    {
+      "name": "Icon信息管理2",
+      "originalName": "信息管理2",
+      "svgPath": "svg/信息管理2.svg",
+      "componentPath": "src/icons/Icon信息管理2.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "uploadedAt": "2026-01-26T13:00:18.808Z"
+    },
+    {
+      "name": "Icon报告助手5",
+      "originalName": "报告助手5",
+      "svgPath": "svg/报告助手5.svg",
+      "componentPath": "src/icons/Icon报告助手5.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "uploadedAt": "2026-01-26T13:00:18.808Z"
+    },
     {
       "name": "IconZengJia8",
       "originalName": "增加8",
