@@ -28,7 +28,7 @@ export const IconSheZhi = forwardRef<SVGSVGElement, IconSheZhiProps>(
         style={{ color, ...style }}
         {...props}
       >
-        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5.5 8v13"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 14.5V21"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 9.5V3"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18.5 3v13"/><path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M5.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M18.5 21a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+        <path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M9.142 21.586a10 10 0 0 1-4.348-2.652 3 3 0 0 0-2.59-4.919A10.04 10.04 0 0 1 2.457 9H2.5a3 3 0 0 0 2.692-4.325 10 10 0 0 1 4.134-2.313 3 3 0 0 0 5.348 0 10 10 0 0 1 4.134 2.313A3 3 0 0 0 21.542 9a10.04 10.04 0 0 1 .255 5.015 3 3 0 0 0-2.59 4.919 10 10 0 0 1-4.349 2.652 3.001 3.001 0 0 0-5.716 0Z"/><path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/>
       </svg>
     );
   }
