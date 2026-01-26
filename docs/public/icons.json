@@ -1,41 +1,63 @@
 {
-  "version": "0.0.17",
+  "version": "0.0.18",
   "syncMode": "incremental",
-  "generatedAt": "2026-01-26T12:50:52.651Z",
-  "totalCount": 116,
+  "generatedAt": "2026-01-26T12:55:25.281Z",
+  "totalCount": 118,
   "icons": [
     {
-      "name": "Icon上传2",
+      "name": "Icon增加8",
+      "originalName": "增加8",
+      "svgPath": "svg/增加8.svg",
+      "componentPath": "src/icons/Icon增加8.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:55:25.281Z"
+    },
+    {
+      "name": "Icon增加9",
+      "originalName": "增加9",
+      "svgPath": "svg/增加9.svg",
+      "componentPath": "src/icons/Icon增加9.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:55:25.281Z"
+    },
+    {
+      "name": "IconWenJian1",
+      "originalName": "文件1",
+      "svgPath": "svg/文件1.svg",
+      "componentPath": "src/icons/IconWenJian1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:51:19.080Z"
+    },
+    {
+      "name": "IconXinZeng2",
+      "originalName": "新增2",
+      "svgPath": "svg/新增2.svg",
+      "componentPath": "src/icons/IconXinZeng2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T12:51:19.080Z"
+    },
+    {
+      "name": "IconShangChuan2",
       "originalName": "上传2",
       "svgPath": "svg/上传2.svg",
-      "componentPath": "src/icons/Icon上传2.tsx",
+      "componentPath": "src/icons/IconShangChuan2.tsx",
       "size": {
         "width": 25,
         "height": 26
       },
-      "uploadedAt": "2026-01-26T12:50:52.650Z"
-    },
-    {
-      "name": "Icon文件1",
-      "originalName": "文件1",
-      "svgPath": "svg/文件1.svg",
-      "componentPath": "src/icons/Icon文件1.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-26T12:50:52.650Z"
-    },
-    {
-      "name": "Icon新增2",
-      "originalName": "新增2",
-      "svgPath": "svg/新增2.svg",
-      "componentPath": "src/icons/Icon新增2.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-26T12:50:52.650Z"
+      "createdAt": "2026-01-26T12:51:19.068Z"
     },
     {
       "name": "IconFanHui1",
