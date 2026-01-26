@@ -1,8 +1,316 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-26T10:31:26.998Z",
-  "totalCount": 50,
+  "generatedAt": "2026-01-26T10:50:14.007Z",
+  "totalCount": 78,
   "icons": [
+    {
+      "name": "IconWenDaZhuShou3",
+      "originalName": "问答助手3",
+      "svgPath": "svg/问答助手3.svg",
+      "componentPath": "src/icons/IconWenDaZhuShou3.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.996Z"
+    },
+    {
+      "name": "IconLianJie",
+      "originalName": "链接",
+      "svgPath": "svg/链接.svg",
+      "componentPath": "src/icons/IconLianJie.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.995Z"
+    },
+    {
+      "name": "IconCuoWu",
+      "originalName": "错误",
+      "svgPath": "svg/错误.svg",
+      "componentPath": "src/icons/IconCuoWu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.995Z"
+    },
+    {
+      "name": "IconSheZhi4",
+      "originalName": "设置4",
+      "svgPath": "svg/设置4.svg",
+      "componentPath": "src/icons/IconSheZhi4.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.994Z"
+    },
+    {
+      "name": "IconSheZhi5",
+      "originalName": "设置5",
+      "svgPath": "svg/设置5.svg",
+      "componentPath": "src/icons/IconSheZhi5.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.994Z"
+    },
+    {
+      "name": "IconWangLuoJianSuo2",
+      "originalName": "网络检索2",
+      "svgPath": "svg/网络检索2.svg",
+      "componentPath": "src/icons/IconWangLuoJianSuo2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.993Z"
+    },
+    {
+      "name": "IconSheZhi3",
+      "originalName": "设置3",
+      "svgPath": "svg/设置3.svg",
+      "componentPath": "src/icons/IconSheZhi3.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.993Z"
+    },
+    {
+      "name": "IconSuoXiao",
+      "originalName": "缩小",
+      "svgPath": "svg/缩小.svg",
+      "componentPath": "src/icons/IconSuoXiao.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.992Z"
+    },
+    {
+      "name": "IconTianJia2",
+      "originalName": "添加2",
+      "svgPath": "svg/添加2.svg",
+      "componentPath": "src/icons/IconTianJia2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.991Z"
+    },
+    {
+      "name": "IconXinZeng1",
+      "originalName": "新增1",
+      "svgPath": "svg/新增1.svg",
+      "componentPath": "src/icons/IconXinZeng1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.990Z"
+    },
+    {
+      "name": "IconZhengQue",
+      "originalName": "正确",
+      "svgPath": "svg/正确.svg",
+      "componentPath": "src/icons/IconZhengQue.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.990Z"
+    },
+    {
+      "name": "IconXiaoXi",
+      "originalName": "消息",
+      "svgPath": "svg/消息.svg",
+      "componentPath": "src/icons/IconXiaoXi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.990Z"
+    },
+    {
+      "name": "IconShouQi2",
+      "originalName": "收起2",
+      "svgPath": "svg/收起2.svg",
+      "componentPath": "src/icons/IconShouQi2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.989Z"
+    },
+    {
+      "name": "IconShouQi3",
+      "originalName": "收起3",
+      "svgPath": "svg/收起3.svg",
+      "componentPath": "src/icons/IconShouQi3.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.989Z"
+    },
+    {
+      "name": "IconFangDa",
+      "originalName": "放大",
+      "svgPath": "svg/放大.svg",
+      "componentPath": "src/icons/IconFangDa.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.989Z"
+    },
+    {
+      "name": "IconWenJian",
+      "originalName": "文件",
+      "svgPath": "svg/文件.svg",
+      "componentPath": "src/icons/IconWenJian.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.989Z"
+    },
+    {
+      "name": "IconBangZhuShuoMing",
+      "originalName": "帮助说明",
+      "svgPath": "svg/帮助说明.svg",
+      "componentPath": "src/icons/IconBangZhuShuoMing.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.987Z"
+    },
+    {
+      "name": "IconShiBai",
+      "originalName": "失败",
+      "svgPath": "svg/失败.svg",
+      "componentPath": "src/icons/IconShiBai.tsx",
+      "size": {
+        "width": 16,
+        "height": 16
+      },
+      "createdAt": "2026-01-26T10:50:13.986Z"
+    },
+    {
+      "name": "IconZhanKai1",
+      "originalName": "展开1",
+      "svgPath": "svg/展开1.svg",
+      "componentPath": "src/icons/IconZhanKai1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.986Z"
+    },
+    {
+      "name": "IconZhanKai2",
+      "originalName": "展开2",
+      "svgPath": "svg/展开2.svg",
+      "componentPath": "src/icons/IconZhanKai2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.986Z"
+    },
+    {
+      "name": "IconZengJia2",
+      "originalName": "增加2",
+      "svgPath": "svg/增加2.svg",
+      "componentPath": "src/icons/IconZengJia2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.985Z"
+    },
+    {
+      "name": "IconZengJia3",
+      "originalName": "增加3",
+      "svgPath": "svg/增加3.svg",
+      "componentPath": "src/icons/IconZengJia3.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.985Z"
+    },
+    {
+      "name": "IconShangChuan1",
+      "originalName": "上传1",
+      "svgPath": "svg/上传1.svg",
+      "componentPath": "src/icons/IconShangChuan1.tsx",
+      "size": {
+        "width": 25,
+        "height": 26
+      },
+      "createdAt": "2026-01-26T10:50:13.982Z"
+    },
+    {
+      "name": "IconXiaZai1",
+      "originalName": "下载1",
+      "svgPath": "svg/下载1.svg",
+      "componentPath": "src/icons/IconXiaZai1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.982Z"
+    },
+    {
+      "name": "IconFrame3",
+      "originalName": "Frame3",
+      "svgPath": "svg/Frame3.svg",
+      "componentPath": "src/icons/IconFrame3.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.980Z"
+    },
+    {
+      "name": "IconFrame4",
+      "originalName": "Frame4",
+      "svgPath": "svg/Frame4.svg",
+      "componentPath": "src/icons/IconFrame4.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.980Z"
+    },
+    {
+      "name": "IconEdit031",
+      "originalName": "edit-031",
+      "svgPath": "svg/edit-031.svg",
+      "componentPath": "src/icons/IconEdit031.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.980Z"
+    },
+    {
+      "name": "IconFrame2",
+      "originalName": "Frame2",
+      "svgPath": "svg/Frame2.svg",
+      "componentPath": "src/icons/IconFrame2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T10:50:13.979Z"
+    },
     {
       "name": "IconFrame1261156457",
       "originalName": "Frame-1261156457",
