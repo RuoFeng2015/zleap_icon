@@ -1,8 +1,130 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-26T12:11:15.422Z",
-  "totalCount": 83,
+  "version": "0.0.12",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-26T12:15:01.858Z",
+  "totalCount": 94,
   "icons": [
+    {
+      "name": "IconFrame1261155979",
+      "originalName": "Frame 1261155979",
+      "svgPath": "svg/Frame-1261155979.svg",
+      "componentPath": "src/icons/IconFrame1261155979.tsx",
+      "size": {
+        "width": 48,
+        "height": 71
+      },
+      "uploadedAt": "2026-01-26T12:15:01.858Z"
+    },
+    {
+      "name": "IconFrame1261155980",
+      "originalName": "Frame 1261155980",
+      "svgPath": "svg/Frame-1261155980.svg",
+      "componentPath": "src/icons/IconFrame1261155980.tsx",
+      "size": {
+        "width": 48,
+        "height": 71
+      },
+      "uploadedAt": "2026-01-26T12:15:01.858Z"
+    },
+    {
+      "name": "IconFrame1261156450",
+      "originalName": "Frame 1261156450",
+      "svgPath": "svg/Frame-1261156450.svg",
+      "componentPath": "src/icons/IconFrame1261156450.tsx",
+      "size": {
+        "width": 49,
+        "height": 73
+      },
+      "uploadedAt": "2026-01-26T12:15:01.858Z"
+    },
+    {
+      "name": "IconFrame1261156451",
+      "originalName": "Frame 1261156451",
+      "svgPath": "svg/Frame-1261156451.svg",
+      "componentPath": "src/icons/IconFrame1261156451.tsx",
+      "size": {
+        "width": 48,
+        "height": 75
+      },
+      "uploadedAt": "2026-01-26T12:15:01.858Z"
+    },
+    {
+      "name": "Icon下载助手2",
+      "originalName": "下载助手2",
+      "svgPath": "svg/下载助手2.svg",
+      "componentPath": "src/icons/Icon下载助手2.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "uploadedAt": "2026-01-26T12:15:01.858Z"
+    },
+    {
+      "name": "Icon企业版2",
+      "originalName": "企业版2",
+      "svgPath": "svg/企业版2.svg",
+      "componentPath": "src/icons/Icon企业版2.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "uploadedAt": "2026-01-26T12:15:01.858Z"
+    },
+    {
+      "name": "Icon报告助手4",
+      "originalName": "报告助手4",
+      "svgPath": "svg/报告助手4.svg",
+      "componentPath": "src/icons/Icon报告助手4.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "uploadedAt": "2026-01-26T12:15:01.858Z"
+    },
+    {
+      "name": "Icon系统配置5",
+      "originalName": "系统配置5",
+      "svgPath": "svg/系统配置5.svg",
+      "componentPath": "src/icons/Icon系统配置5.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "uploadedAt": "2026-01-26T12:15:01.858Z"
+    },
+    {
+      "name": "Icon系统配置6",
+      "originalName": "系统配置6",
+      "svgPath": "svg/系统配置6.svg",
+      "componentPath": "src/icons/Icon系统配置6.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "uploadedAt": "2026-01-26T12:15:01.858Z"
+    },
+    {
+      "name": "Icon运营管理2",
+      "originalName": "运营管理2",
+      "svgPath": "svg/运营管理2.svg",
+      "componentPath": "src/icons/Icon运营管理2.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "uploadedAt": "2026-01-26T12:15:01.858Z"
+    },
+    {
+      "name": "Icon问答助手4",
+      "originalName": "问答助手4",
+      "svgPath": "svg/问答助手4.svg",
+      "componentPath": "src/icons/Icon问答助手4.tsx",
+      "size": {
+        "width": 48,
+        "height": 49
+      },
+      "uploadedAt": "2026-01-26T12:15:01.858Z"
+    },
     {
       "name": "IconBaoGaoZhuShou3",
       "originalName": "报告助手3",
