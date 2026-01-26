@@ -752,27 +752,46 @@
       generateDefaultChangelog(icons, data.hasSelection);
 
       // 更新选区显示
-      document.getElementById('display-selection').textContent = data.selectionName || '整个页面';
+      document.getElementById('display-selection').textContent = data.selectionName || '未选择';
 
-      // 显示/隐藏选区提示
+      // 显示/隐藏选区提示 + 处理 needsSelection
       const hintEl = document.getElementById('selection-hint');
-      if (data.hasSelection) {
+      const syncBtn = document.getElementById('sync-btn');
+
+      if (data.needsSelection) {
+        // 需要用户先选择区域
+        hintEl.innerHTML = '⚠️ 请先在画布中选择要同步的图标区域（Frame 或 Component）';
+        hintEl.className = 'status status-info';
+        hintEl.style.marginBottom = '12px';
+        // 禁用同步按钮
+        syncBtn.disabled = true;
+        syncBtn.style.opacity = '0.5';
+        syncBtn.style.cursor = 'not-allowed';
+      } else if (data.hasSelection) {
         hintEl.innerHTML = `✓ 已选中 <strong>${data.selectionName}</strong>，将只同步该区域内的图标`;
         hintEl.className = 'status status-success';
         hintEl.style.marginBottom = '12px';
+        // 启用同步按钮
+        syncBtn.disabled = false;
+        syncBtn.style.opacity = '1';
+        syncBtn.style.cursor = 'pointer';
       } else {
         hintEl.innerHTML = '💡 提示：选中一个 Frame 可以只同步该区域内的图标';
         hintEl.className = 'status status-info';
         hintEl.style.marginBottom = '12px';
+        // 保持按钮状态（无选区但也没有 needsSelection 时，仍可同步整个页面）
+        // 实际上我们移除了整页扫描，所以这种情况不会发生
       }
     }
 
     function updateIconDisplay(data) {
-      document.getElementById('display-icon-count').textContent = data.totalCount;
+      document.getElementById('display-icon-count').textContent = data.needsSelection ? '-' : data.totalCount;
 
       const listEl = document.getElementById('icon-list');
-      if (icons.length === 0) {
-        listEl.innerHTML = '<div class="icon-item"><span class="icon-name">未找到图标</span></div>';
+      if (data.needsSelection) {
+        listEl.innerHTML = '<div class="icon-item"><span class="icon-name" style="color: #86868b;">请选择一个区域后查看图标</span></div>';
+      } else if (icons.length === 0) {
+        listEl.innerHTML = '<div class="icon-item"><span class="icon-name">选中区域内未找到图标</span></div>';
       } else {
         listEl.innerHTML = icons.map(icon => `
           <div class="icon-item">

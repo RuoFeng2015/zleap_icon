@@ -261,12 +261,13 @@ async function main(): Promise<void> {
 
       // 按 icons.json 中的顺序排列现有图标
       const orderedByJson: IconMetadata[] = []
-      for (const [originalName] of existingIconsMap) {
+      for (const [originalName, existingIcon] of existingIconsMap) {
         const found = orderedExistingIcons.find(i => i.originalName === originalName)
         if (found) {
-          // 保留原有的 createdAt
-          if (found.createdAt) {
-             found.createdAt = found.createdAt; 
+          // 从现有 icons.json 数据中继承 createdAt
+          // existingIcon 包含了原有的 createdAt
+          if (existingIcon.createdAt) {
+            found.createdAt = existingIcon.createdAt
           }
           orderedByJson.push(found)
         }

@@ -239,24 +239,33 @@ figma.on('selectionchange', function () {
 function updateIconsFromSelection() {
     var selection = figma.currentPage.selection;
     if (selection.length === 0) {
-        // 没有选中任何内容，显示当前页面所有图标
-        currentIcons = findIconsInNodes([figma.currentPage]);
+        // 没有选中任何内容，不扫描整个页面（避免卡死）
+        // 发送空列表，提示用户选择区域
+        currentIcons = [];
+        sendToUI({
+            type: 'selection-changed',
+            payload: {
+                icons: [],
+                totalCount: 0,
+                hasSelection: false,
+                needsSelection: true, // 新增标志，提示 UI 需要用户选择
+                selectionName: '未选择',
+            },
+        });
+        return;
     }
-    else {
-        // 在选中的节点中查找图标
-        currentIcons = findIconsInNodes(selection);
-    }
+    // 在选中的节点中查找图标
+    currentIcons = findIconsInNodes(selection);
     sendToUI({
         type: 'selection-changed',
         payload: {
             icons: currentIcons,
             totalCount: currentIcons.length,
-            hasSelection: selection.length > 0,
+            hasSelection: true,
+            needsSelection: false,
             selectionName: selection.length === 1
                 ? selection[0].name
-                : selection.length > 1
-                    ? "".concat(selection.length, " \u4E2A\u9009\u4E2D\u9879")
-                    : '整个页面',
+                : "".concat(selection.length, " \u4E2A\u9009\u4E2D\u9879"),
         },
     });
 }

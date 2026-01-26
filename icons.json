@@ -1,8 +1,19 @@
 {
-  "version": "0.0.3",
-  "generatedAt": "2026-01-26T09:15:35.781Z",
-  "totalCount": 47,
+  "version": "1.0.0",
+  "generatedAt": "2026-01-26T09:35:35.712Z",
+  "totalCount": 48,
   "icons": [
+    {
+      "name": "IconSheZhi",
+      "originalName": "设置",
+      "svgPath": "svg/设置.svg",
+      "componentPath": "src/icons/IconSheZhi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-26T09:35:35.703Z"
+    },
     {
       "name": "IconYanZhengMa",
       "originalName": "验证码",
