@@ -1,8 +1,20 @@
 {
-  "version": "0.0.1",
-  "generatedAt": "2026-01-21T15:39:26.947Z",
-  "totalCount": 44,
+  "version": "0.0.2",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-26T08:50:44.895Z",
+  "totalCount": 45,
   "icons": [
+    {
+      "name": "Icon设置",
+      "originalName": "设置",
+      "svgPath": "svg/设置.svg",
+      "componentPath": "src/icons/Icon设置.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T08:50:44.895Z"
+    },
     {
       "name": "IconBangZhuShuoMing",
       "originalName": "帮助说明",
