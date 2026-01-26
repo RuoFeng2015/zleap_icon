@@ -6,6 +6,49 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.5] - 2026-01-26
+
+更新/新增 3 个图标：添加, 网络检索, 设置 图标
+
+### Added
+- IconSheZhi
+- IconYunYingGuanLi
+- IconWenDaZhuShou
+- IconTianJia
+- IconWangLuoJianSuo
+- IconXiTongPeiZhi
+- IconChengYuanGuanLi
+- IconBaoGaoZhuShou
+- IconSouSuoZhuShou
+- IconXinXiGuanLi
+- IconQiYeBan
+- IconXiaZaiZhuShou
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.4] - 2026-01-26
+
+更新/新增 10 个图标：下载助手, 企业版, 信息管理, 成员管理, 报告助手
+
+### Added
+- IconXiTongPeiZhi
+- IconYunYingGuanLi
+- IconWenDaZhuShou
+- IconXinXiGuanLi
+- IconChengYuanGuanLi
+- IconBaoGaoZhuShou
+- IconSouSuoZhuShou
+- IconXiaZaiZhuShou
+- IconQiYeBan
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.2] - 2026-01-26
 
 更新/新增 1 个图标：设置 图标

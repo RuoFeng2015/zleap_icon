@@ -4,12 +4,12 @@ import type { SVGProps } from 'react';
 export interface IconWangLuoJianSuoProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (not applicable for multicolor icons) */
+  /** Icon color */
   color?: string;
 }
 
 /**
- * IconWangLuoJianSuo icon component (multicolor)
+ * IconWangLuoJianSuo icon component
  *
  * @param props - Component props including size, color, and SVG attributes
  * @param ref - Forwarded ref to the SVG element
@@ -23,11 +23,12 @@ export const IconWangLuoJianSuo = forwardRef<SVGSVGElement, IconWangLuoJianSuoPr
         width={size}
         height={size}
         viewBox="0 0 24 24"
+        fill="none"
         className={className}
-        style={style}
+        style={{ color, ...style }}
         {...props}
       >
-        <path fill="#F5F5F5" d="M0 0h24v24H0z"/><path fill="white" d="M-465.778-638.25h793v822h-793z"/><path stroke="#0D131A" d="M6 17H2v4h4zM20 3H4v6h16zm-8 14V9"/><path stroke="#0D131A" d="M4 17v-4h16v4m2 0h-4v4h4zm-8 0h-4v4h4zM7 6h1"/>
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 17H2v4h4z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 3H4v6h16z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 17V9"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 17v-4h16v4"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M22 17h-4v4h4z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M14 17h-4v4h4z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 6h1"/>
       </svg>
     );
   }
