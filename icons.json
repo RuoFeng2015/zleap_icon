@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-26T12:55:48.950Z",
-  "totalCount": 118,
+  "generatedAt": "2026-01-26T13:00:40.142Z",
+  "totalCount": 120,
   "icons": [
+    {
+      "name": "IconBaoGaoZhuShou5",
+      "originalName": "报告助手5",
+      "svgPath": "svg/报告助手5.svg",
+      "componentPath": "src/icons/IconBaoGaoZhuShou5.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-01-26T13:00:40.116Z"
+    },
+    {
+      "name": "IconXinXiGuanLi2",
+      "originalName": "信息管理2",
+      "svgPath": "svg/信息管理2.svg",
+      "componentPath": "src/icons/IconXinXiGuanLi2.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-01-26T13:00:40.109Z"
+    },
     {
       "name": "IconZengJia8",
       "originalName": "增加8",
