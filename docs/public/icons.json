@@ -1,19 +1,52 @@
 {
   "version": "0.0.11",
   "syncMode": "incremental",
-  "generatedAt": "2026-01-26T12:10:51.995Z",
-  "totalCount": 83,
+  "generatedAt": "2026-01-26T12:15:38.260Z",
+  "totalCount": 86,
   "icons": [
     {
-      "name": "Icon报告助手3",
+      "name": "Icon添加3",
+      "originalName": "添加3",
+      "svgPath": "svg/添加3.svg",
+      "componentPath": "src/icons/Icon添加3.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:15:38.260Z"
+    },
+    {
+      "name": "Icon网络检索3",
+      "originalName": "网络检索3",
+      "svgPath": "svg/网络检索3.svg",
+      "componentPath": "src/icons/Icon网络检索3.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:15:38.260Z"
+    },
+    {
+      "name": "Icon设置6",
+      "originalName": "设置6",
+      "svgPath": "svg/设置6.svg",
+      "componentPath": "src/icons/Icon设置6.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-26T12:15:38.260Z"
+    },
+    {
+      "name": "IconBaoGaoZhuShou3",
       "originalName": "报告助手3",
       "svgPath": "svg/报告助手3.svg",
-      "componentPath": "src/icons/Icon报告助手3.tsx",
+      "componentPath": "src/icons/IconBaoGaoZhuShou3.tsx",
       "size": {
         "width": 110,
         "height": 110
       },
-      "uploadedAt": "2026-01-26T12:10:51.994Z"
+      "createdAt": "2026-01-26T12:11:15.402Z"
     },
     {
       "name": "IconZhiShiKu",
