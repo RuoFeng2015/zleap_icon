@@ -1,19 +1,30 @@
 {
-  "version": "0.0.11",
+  "version": "0.0.10",
   "syncMode": "incremental",
-  "generatedAt": "2026-01-26T11:14:58.954Z",
-  "totalCount": 81,
+  "generatedAt": "2026-01-26T11:19:54.834Z",
+  "totalCount": 82,
   "icons": [
     {
-      "name": "Icon报告助手2",
+      "name": "Icon知识库",
+      "originalName": "知识库",
+      "svgPath": "svg/知识库.svg",
+      "componentPath": "src/icons/Icon知识库.tsx",
+      "size": {
+        "width": 22,
+        "height": 22
+      },
+      "uploadedAt": "2026-01-26T11:19:54.834Z"
+    },
+    {
+      "name": "IconBaoGaoZhuShou2",
       "originalName": "报告助手2",
       "svgPath": "svg/报告助手2.svg",
-      "componentPath": "src/icons/Icon报告助手2.tsx",
+      "componentPath": "src/icons/IconBaoGaoZhuShou2.tsx",
       "size": {
         "width": 110,
         "height": 110
       },
-      "uploadedAt": "2026-01-26T11:14:58.954Z"
+      "createdAt": "2026-01-26T11:15:24.874Z"
     },
     {
       "name": "IconXiTongPeiZhi3",

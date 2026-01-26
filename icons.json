@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-26T11:15:24.894Z",
-  "totalCount": 81,
+  "generatedAt": "2026-01-26T11:20:16.881Z",
+  "totalCount": 82,
   "icons": [
+    {
+      "name": "IconZhiShiKu",
+      "originalName": "知识库",
+      "svgPath": "svg/知识库.svg",
+      "componentPath": "src/icons/IconZhiShiKu.tsx",
+      "size": {
+        "width": 22,
+        "height": 22
+      },
+      "createdAt": "2026-01-26T11:20:16.866Z"
+    },
     {
       "name": "IconBaoGaoZhuShou2",
       "originalName": "报告助手2",
