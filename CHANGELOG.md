@@ -6,6 +6,109 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.12] - 2026-01-26
+
+更新/新增 11 个图标：Frame 1261155979, Frame 1261155980, Frame 1261156450, Frame 1261156451, 下载助手
+
+### Added
+- IconWenDaZhuShou4
+- IconYunYingGuanLi2
+- IconXiTongPeiZhi5
+- IconXiTongPeiZhi6
+- IconBaoGaoZhuShou4
+- IconQiYeBan2
+- IconXiaZaiZhuShou2
+- IconFrame1261156450
+- IconFrame1261156451
+- IconBaoGaoZhuShou3
+- IconZhiShiKu
+- IconBaoGaoZhuShou2
+- IconXiTongPeiZhi3
+- IconXiTongPeiZhi4
+- IconWenDaZhuShou3
+- IconLianJie
+- IconCuoWu
+- IconSheZhi4
+- IconSheZhi5
+- IconWangLuoJianSuo2
+- IconSheZhi3
+- IconSuoXiao
+- IconTianJia2
+- IconXinZeng1
+- IconZhengQue
+- IconXiaoXi
+- IconShouQi2
+- IconShouQi3
+- IconFangDa
+- IconWenJian
+- IconBangZhuShuoMing
+- IconShiBai
+- IconZhanKai1
+- IconZhanKai2
+- IconZengJia2
+- IconZengJia3
+- IconShangChuan1
+- IconXiaZai1
+- IconFrame3
+- IconFrame4
+- IconEdit031
+- IconFrame2
+- IconFrame1261156457
+- IconFrame1261156458
+- IconFrame1261156459
+- IconFrame1261156460
+- IconFrame1261156453
+- IconFrame1261156454
+- IconFrame1261156455
+- IconFrame1261156456
+- IconFrame1261155979
+- IconFrame1261155980
+- IconFrame1261156452
+- IconShouQi1
+- IconXinZeng
+- IconShangChuan
+- IconWenDaZhuShou2
+- IconZengJia1
+- IconZengJia
+- IconWenDaZhuShou1
+- IconWenDaZhuShou
+- IconSheZhi2
+- IconTuiChu
+- IconYunYingGuanLi1
+- IconYunYingGuanLi
+- IconSheZhi
+- IconWangLuoJianSuo1
+- IconSheZhi1
+- IconWangLuoJianSuo
+- IconTianJia1
+- IconXiTongPeiZhi2
+- IconXiTongPeiZhi1
+- IconXiTongPeiZhi
+- IconShouQi
+- IconSouSuoZhuShou1
+- IconTianJia
+- IconSouSuoZhuShou
+- IconChengYuanGuanLi1
+- IconBaoGaoZhuShou1
+- IconBaoGaoZhuShou
+- IconZhanKai
+- IconXinXiGuanLi1
+- IconChengYuanGuanLi
+- IconXinXiGuanLi
+- IconQiYeBan1
+- IconQiYeBan
+- IconXiaZaiZhuShou1
+- IconXiaZaiZhuShou
+- IconXiaZai
+- IconFrame1
+- IconEdit03
+- IconFrame
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.11] - 2026-01-26
 
 更新/新增 1 个图标：报告助手 图标
