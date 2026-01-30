@@ -1,8 +1,42 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-30T07:52:58.237Z",
-  "totalCount": 10,
+  "version": "0.0.9",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-30T08:11:05.024Z",
+  "totalCount": 13,
   "icons": [
+    {
+      "name": "IconBack1",
+      "originalName": "back1",
+      "svgPath": "svg/back1.svg",
+      "componentPath": "src/icons/IconBack1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T08:11:05.023Z"
+    },
+    {
+      "name": "IconSearch1",
+      "originalName": "search1",
+      "svgPath": "svg/search1.svg",
+      "componentPath": "src/icons/IconSearch1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T08:11:05.023Z"
+    },
+    {
+      "name": "Icon展开1",
+      "originalName": "展开1",
+      "svgPath": "svg/展开1.svg",
+      "componentPath": "src/icons/Icon展开1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T08:11:05.023Z"
+    },
     {
       "name": "IconZhiShiKu",
       "originalName": "知识库",
