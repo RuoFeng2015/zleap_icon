@@ -1799,8 +1799,29 @@
         }
 
         const prData = await prResponse.json();
+        console.log(`✅ PR 创建成功: #${prData.number}`);
 
-        // 5. 触发构建工作流
+        // 5. 自动合并 PR
+        console.log(`🔄 正在自动合并 PR #${prData.number}...`);
+        const mergeResponse = await fetch(`https://api.github.com/repos/${repo}/pulls/${prData.number}/merge`, {
+          method: 'PUT',
+          headers,
+          body: JSON.stringify({
+            commit_title: `🎨 ${prTitle}`,
+            commit_message: `自动合并图标更新\n\n版本: ${syncRequest.version}\n${syncRequest.message}`,
+            merge_method: 'squash'  // 使用 squash 合并保持提交历史整洁
+          })
+        });
+
+        if (!mergeResponse.ok) {
+          const mergeError = await mergeResponse.json();
+          console.warn(`⚠️ 自动合并失败: ${mergeError.message || mergeResponse.status}`);
+          // 合并失败不影响整体流程，PR 已创建，用户可以手动合并
+        } else {
+          console.log(`✅ PR #${prData.number} 已自动合并到 ${defaultBranch}`);
+        }
+
+        // 6. 触发构建工作流
         const dispatchResponse = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
           method: 'POST',
           headers,
@@ -1822,7 +1843,8 @@
 
         return {
           success: true,
-          prUrl: prData.html_url
+          prUrl: prData.html_url,
+          merged: mergeResponse.ok
         };
 
       } catch (error) {

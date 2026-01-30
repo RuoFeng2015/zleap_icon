@@ -1,6 +1,6 @@
 {
   "name": "figma-icon-sync-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Figma plugin to sync icons to GitHub and trigger NPM publishing",
   "main": "code.js",
   "scripts": {
