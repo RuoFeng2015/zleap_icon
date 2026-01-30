@@ -6,38 +6,14 @@
  */
 
 import { IconBack } from './icons/IconBack';
-import { IconBack1 } from './icons/IconBack1';
-import { IconGuanBi } from './icons/IconGuanBi';
-import { IconSearch } from './icons/IconSearch';
-import { IconSearch1 } from './icons/IconSearch1';
-import { IconTongZhi } from './icons/IconTongZhi';
-import { IconZhanKai } from './icons/IconZhanKai';
-import { IconZhanKai1 } from './icons/IconZhanKai1';
-import { IconZhiShiKu } from './icons/IconZhiShiKu';
 
 export { IconBack, type IconBackProps } from './icons/IconBack';
-export { IconBack1, type IconBack1Props } from './icons/IconBack1';
-export { IconGuanBi, type IconGuanBiProps } from './icons/IconGuanBi';
-export { IconSearch, type IconSearchProps } from './icons/IconSearch';
-export { IconSearch1, type IconSearch1Props } from './icons/IconSearch1';
-export { IconTongZhi, type IconTongZhiProps } from './icons/IconTongZhi';
-export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
-export { IconZhanKai1, type IconZhanKai1Props } from './icons/IconZhanKai1';
-export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
 
 /**
  * Object containing all icon components
  */
 export const allIcons = {
-  IconBack,
-  IconBack1,
-  IconGuanBi,
-  IconSearch,
-  IconSearch1,
-  IconTongZhi,
-  IconZhanKai,
-  IconZhanKai1,
-  IconZhiShiKu
+  IconBack
 } as const;
 
 /**
