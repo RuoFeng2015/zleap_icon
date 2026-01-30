@@ -1,7 +1,6 @@
 {
-  "version": "0.0.11",
-  "syncMode": "replace",
-  "generatedAt": "2026-01-30T08:24:57.535Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-30T08:25:19.727Z",
   "totalCount": 1,
   "icons": [
     {
@@ -13,7 +12,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-01-30T08:24:57.534Z"
+      "createdAt": "2026-01-30T08:25:19.725Z"
     }
   ]
 }
