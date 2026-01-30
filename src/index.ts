@@ -6,25 +6,31 @@
  */
 
 import { IconBack } from './icons/IconBack';
+import { IconBack1 } from './icons/IconBack1';
 import { IconCheck } from './icons/IconCheck';
 import { IconGuanBi } from './icons/IconGuanBi';
 import { IconGuanBiXiao } from './icons/IconGuanBiXiao';
 import { IconLianJie } from './icons/IconLianJie';
 import { IconSearch } from './icons/IconSearch';
+import { IconSearch1 } from './icons/IconSearch1';
 import { IconTongZhi } from './icons/IconTongZhi';
 import { IconWenDang } from './icons/IconWenDang';
 import { IconZhanKai } from './icons/IconZhanKai';
+import { IconZhanKai1 } from './icons/IconZhanKai1';
 import { IconZhiShiKu } from './icons/IconZhiShiKu';
 
 export { IconBack, type IconBackProps } from './icons/IconBack';
+export { IconBack1, type IconBack1Props } from './icons/IconBack1';
 export { IconCheck, type IconCheckProps } from './icons/IconCheck';
 export { IconGuanBi, type IconGuanBiProps } from './icons/IconGuanBi';
 export { IconGuanBiXiao, type IconGuanBiXiaoProps } from './icons/IconGuanBiXiao';
 export { IconLianJie, type IconLianJieProps } from './icons/IconLianJie';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
+export { IconSearch1, type IconSearch1Props } from './icons/IconSearch1';
 export { IconTongZhi, type IconTongZhiProps } from './icons/IconTongZhi';
 export { IconWenDang, type IconWenDangProps } from './icons/IconWenDang';
 export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
+export { IconZhanKai1, type IconZhanKai1Props } from './icons/IconZhanKai1';
 export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
 
 /**
@@ -32,14 +38,17 @@ export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
  */
 export const allIcons = {
   IconBack,
+  IconBack1,
   IconCheck,
   IconGuanBi,
   IconGuanBiXiao,
   IconLianJie,
   IconSearch,
+  IconSearch1,
   IconTongZhi,
   IconWenDang,
   IconZhanKai,
+  IconZhanKai1,
   IconZhiShiKu
 } as const;
 
