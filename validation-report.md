@@ -1,31 +1,34 @@
 # Icon Validation Report
 
-Generated at: 2026-01-30T07:52:55.955Z
+Generated at: 2026-01-30T08:11:21.379Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 10 |
+| Total Icons | 13 |
 | Valid Icons | 0 |
-| Invalid Icons | 10 |
-| Total Errors | 10 |
-| Total Warnings | 7 |
+| Invalid Icons | 13 |
+| Total Errors | 13 |
+| Total Warnings | 8 |
 
-⚠️ **10 icon(s) failed validation**
+⚠️ **13 icon(s) failed validation**
 
 ## Errors
 
-### size (10 errors)
+### size (13 errors)
 
 | Icon | Message |
 |------|---------|
 | back | Icon size 24x24 not in allowed sizes:  |
+| back1 | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | search | Icon size 24x24 not in allowed sizes:  |
+| search1 | Icon size 24x24 not in allowed sizes:  |
 | 关闭-小 | Icon size 24x24 not in allowed sizes:  |
 | 关闭 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
+| 展开1 | Icon size 24x24 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
 | 通知 | Icon size 24x24 not in allowed sizes:  |
@@ -33,13 +36,14 @@ Generated at: 2026-01-30T07:52:55.955Z
 
 ## Warnings
 
-### naming (7 warnings)
+### naming (8 warnings)
 
 | Icon | Message |
 |------|---------|
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 展开1 | Icon name "展开1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知 | Icon name "通知" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
