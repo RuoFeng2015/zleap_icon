@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-30T09:30:31.437Z",
-  "totalCount": 12,
+  "version": "0.0.20",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-30T09:34:58.684Z",
+  "totalCount": 14,
   "icons": [
+    {
+      "name": "Icon下载",
+      "originalName": "下载",
+      "svgPath": "svg/下载.svg",
+      "componentPath": "src/icons/Icon下载.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T09:34:58.684Z"
+    },
+    {
+      "name": "Icon设置",
+      "originalName": "设置",
+      "svgPath": "svg/设置.svg",
+      "componentPath": "src/icons/Icon设置.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T09:34:58.684Z"
+    },
     {
       "name": "IconChengYuanGuanLi",
       "originalName": "成员管理",
