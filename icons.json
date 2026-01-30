@@ -1,8 +1,63 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-30T06:43:46.690Z",
-  "totalCount": 10,
+  "generatedAt": "2026-01-30T06:58:56.279Z",
+  "totalCount": 15,
   "icons": [
+    {
+      "name": "IconWangYeXiaZai",
+      "originalName": "网页下载",
+      "svgPath": "svg/网页下载.svg",
+      "componentPath": "src/icons/IconWangYeXiaZai.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T06:58:56.269Z"
+    },
+    {
+      "name": "IconWenDang1",
+      "originalName": "文档1",
+      "svgPath": "svg/文档1.svg",
+      "componentPath": "src/icons/IconWenDang1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T06:58:56.268Z"
+    },
+    {
+      "name": "IconWenDang2",
+      "originalName": "文档2",
+      "svgPath": "svg/文档2.svg",
+      "componentPath": "src/icons/IconWenDang2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T06:58:56.268Z"
+    },
+    {
+      "name": "IconZhanKai1",
+      "originalName": "展开1",
+      "svgPath": "svg/展开1.svg",
+      "componentPath": "src/icons/IconZhanKai1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T06:58:56.267Z"
+    },
+    {
+      "name": "IconWenJian",
+      "originalName": "文件",
+      "svgPath": "svg/文件.svg",
+      "componentPath": "src/icons/IconWenJian.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T06:58:56.267Z"
+    },
     {
       "name": "IconZhiShiKu",
       "originalName": "知识库",
