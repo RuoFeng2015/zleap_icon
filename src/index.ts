@@ -6,23 +6,38 @@
  */
 
 import { IconBack } from './icons/IconBack';
+import { IconQiYeBan } from './icons/IconQiYeBan';
 import { IconSheZhi } from './icons/IconSheZhi';
 import { IconTianJia } from './icons/IconTianJia';
 import { IconWangLuoJianSuo } from './icons/IconWangLuoJianSuo';
+import { IconXiaZaiZhuShou } from './icons/IconXiaZaiZhuShou';
+import { IconXiTongPeiZhi } from './icons/IconXiTongPeiZhi';
+import { IconXiTongPeiZhi1 } from './icons/IconXiTongPeiZhi1';
+import { IconYunYingGuanLi } from './icons/IconYunYingGuanLi';
 
 export { IconBack, type IconBackProps } from './icons/IconBack';
+export { IconQiYeBan, type IconQiYeBanProps } from './icons/IconQiYeBan';
 export { IconSheZhi, type IconSheZhiProps } from './icons/IconSheZhi';
 export { IconTianJia, type IconTianJiaProps } from './icons/IconTianJia';
 export { IconWangLuoJianSuo, type IconWangLuoJianSuoProps } from './icons/IconWangLuoJianSuo';
+export { IconXiaZaiZhuShou, type IconXiaZaiZhuShouProps } from './icons/IconXiaZaiZhuShou';
+export { IconXiTongPeiZhi, type IconXiTongPeiZhiProps } from './icons/IconXiTongPeiZhi';
+export { IconXiTongPeiZhi1, type IconXiTongPeiZhi1Props } from './icons/IconXiTongPeiZhi1';
+export { IconYunYingGuanLi, type IconYunYingGuanLiProps } from './icons/IconYunYingGuanLi';
 
 /**
  * Object containing all icon components
  */
 export const allIcons = {
   IconBack,
+  IconQiYeBan,
   IconSheZhi,
   IconTianJia,
-  IconWangLuoJianSuo
+  IconWangLuoJianSuo,
+  IconXiaZaiZhuShou,
+  IconXiTongPeiZhi,
+  IconXiTongPeiZhi1,
+  IconYunYingGuanLi
 } as const;
 
 /**
