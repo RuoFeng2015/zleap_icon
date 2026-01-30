@@ -1,8 +1,107 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-30T07:14:16.295Z",
-  "totalCount": 1,
+  "generatedAt": "2026-01-30T07:52:58.237Z",
+  "totalCount": 10,
   "icons": [
+    {
+      "name": "IconZhiShiKu",
+      "originalName": "知识库",
+      "svgPath": "svg/知识库.svg",
+      "componentPath": "src/icons/IconZhiShiKu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T07:52:58.228Z"
+    },
+    {
+      "name": "IconTongZhi",
+      "originalName": "通知",
+      "svgPath": "svg/通知.svg",
+      "componentPath": "src/icons/IconTongZhi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T07:52:58.228Z"
+    },
+    {
+      "name": "IconLianJie",
+      "originalName": "链接",
+      "svgPath": "svg/链接.svg",
+      "componentPath": "src/icons/IconLianJie.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T07:52:58.228Z"
+    },
+    {
+      "name": "IconGuanBi",
+      "originalName": "关闭",
+      "svgPath": "svg/关闭.svg",
+      "componentPath": "src/icons/IconGuanBi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T07:52:58.227Z"
+    },
+    {
+      "name": "IconZhanKai",
+      "originalName": "展开",
+      "svgPath": "svg/展开.svg",
+      "componentPath": "src/icons/IconZhanKai.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T07:52:58.227Z"
+    },
+    {
+      "name": "IconWenDang",
+      "originalName": "文档",
+      "svgPath": "svg/文档.svg",
+      "componentPath": "src/icons/IconWenDang.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T07:52:58.227Z"
+    },
+    {
+      "name": "IconGuanBiXiao",
+      "originalName": "关闭-小",
+      "svgPath": "svg/关闭-小.svg",
+      "componentPath": "src/icons/IconGuanBiXiao.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T07:52:58.226Z"
+    },
+    {
+      "name": "IconCheck",
+      "originalName": "check",
+      "svgPath": "svg/check.svg",
+      "componentPath": "src/icons/IconCheck.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T07:52:58.225Z"
+    },
+    {
+      "name": "IconSearch",
+      "originalName": "search",
+      "svgPath": "svg/search.svg",
+      "componentPath": "src/icons/IconSearch.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T07:52:58.225Z"
+    },
     {
       "name": "IconBack",
       "originalName": "back",
@@ -12,7 +111,7 @@
         "width": 24,
         "height": 24
       },
-      "createdAt": "2026-01-30T07:14:16.293Z"
+      "createdAt": "2026-01-30T07:52:58.224Z"
     }
   ]
 }
