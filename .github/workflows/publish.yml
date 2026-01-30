@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'src/**'
+      - 'svg/**'
+      - 'icons.json'
       - 'package.json'
 
 jobs:
