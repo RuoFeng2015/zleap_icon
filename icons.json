@@ -1,19 +1,18 @@
 {
-  "version": "0.0.19",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-30T09:30:04.807Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-30T09:30:31.437Z",
   "totalCount": 12,
   "icons": [
     {
-      "name": "Icon成员管理",
+      "name": "IconChengYuanGuanLi",
       "originalName": "成员管理",
       "svgPath": "svg/成员管理.svg",
-      "componentPath": "src/icons/Icon成员管理.tsx",
+      "componentPath": "src/icons/IconChengYuanGuanLi.tsx",
       "size": {
         "width": 120,
         "height": 120
       },
-      "uploadedAt": "2026-01-30T09:30:04.807Z"
+      "createdAt": "2026-01-30T09:30:31.427Z"
     },
     {
       "name": "IconShangChuan",
