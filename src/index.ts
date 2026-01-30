@@ -7,6 +7,7 @@
 
 import { IconBack } from './icons/IconBack';
 import { IconCheck } from './icons/IconCheck';
+import { IconChengYuanGuanLi } from './icons/IconChengYuanGuanLi';
 import { IconGuanBi } from './icons/IconGuanBi';
 import { IconGuanBiXiao } from './icons/IconGuanBiXiao';
 import { IconLianJie } from './icons/IconLianJie';
@@ -19,6 +20,7 @@ import { IconZhiShiKu } from './icons/IconZhiShiKu';
 
 export { IconBack, type IconBackProps } from './icons/IconBack';
 export { IconCheck, type IconCheckProps } from './icons/IconCheck';
+export { IconChengYuanGuanLi, type IconChengYuanGuanLiProps } from './icons/IconChengYuanGuanLi';
 export { IconGuanBi, type IconGuanBiProps } from './icons/IconGuanBi';
 export { IconGuanBiXiao, type IconGuanBiXiaoProps } from './icons/IconGuanBiXiao';
 export { IconLianJie, type IconLianJieProps } from './icons/IconLianJie';
@@ -35,6 +37,7 @@ export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
 export const allIcons = {
   IconBack,
   IconCheck,
+  IconChengYuanGuanLi,
   IconGuanBi,
   IconGuanBiXiao,
   IconLianJie,
