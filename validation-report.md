@@ -1,43 +1,52 @@
 # Icon Validation Report
 
-Generated at: 2026-01-30T10:50:58.981Z
+Generated at: 2026-01-30T10:59:02.858Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 7 |
+| Total Icons | 13 |
 | Valid Icons | 0 |
-| Invalid Icons | 7 |
-| Total Errors | 7 |
-| Total Warnings | 7 |
+| Invalid Icons | 13 |
+| Total Errors | 13 |
+| Total Warnings | 10 |
 
-⚠️ **7 icon(s) failed validation**
+⚠️ **13 icon(s) failed validation**
 
 ## Errors
 
-### size (7 errors)
+### size (13 errors)
 
 | Icon | Message |
 |------|---------|
-| 文件 | Icon size 24x24 not in allowed sizes:  |
+| back | Icon size 24x24 not in allowed sizes:  |
+| check | Icon size 24x24 not in allowed sizes:  |
+| search | Icon size 24x24 not in allowed sizes:  |
+| 关闭-小 | Icon size 24x24 not in allowed sizes:  |
+| 关闭 | Icon size 24x24 not in allowed sizes:  |
+| 完成 | Icon size 24x24 not in allowed sizes:  |
+| 展开 | Icon size 24x24 not in allowed sizes:  |
+| 成员管理 | Icon size 120x120 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
 | 系统配置 | Icon size 120x120 not in allowed sizes:  |
 | 通知 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
-| 错误 | Icon size 24x24 not in allowed sizes:  |
 
 ## Warnings
 
-### naming (7 warnings)
+### naming (10 warnings)
 
 | Icon | Message |
 |------|---------|
-| 文件 | Icon name "文件" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 完成 | Icon name "完成" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 成员管理 | Icon name "成员管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 系统配置 | Icon name "系统配置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知 | Icon name "通知" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 错误 | Icon name "错误" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
