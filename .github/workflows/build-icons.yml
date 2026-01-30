@@ -5,19 +5,6 @@ on:
   repository_dispatch:
     types: [icon_build]
 
-  # 当 svg 目录有变更时触发（只在 main 分支）
-  push:
-    branches:
-      - main
-    paths:
-      - 'svg/**'
-
-  # PR 合并到 main 时触发
-  pull_request:
-    types: [closed]
-    branches:
-      - main
-
   # 手动触发
   workflow_dispatch:
     inputs:
@@ -33,12 +20,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # 只在 PR 合并时运行，或者是 push/手动触发/repository_dispatch
+    # 只在手动触发或 repository_dispatch 时运行
     if: |
-      github.event_name == 'push' || 
       github.event_name == 'workflow_dispatch' ||
-      github.event_name == 'repository_dispatch' ||
-      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+      github.event_name == 'repository_dispatch'
 
     permissions:
       contents: write
@@ -168,70 +153,3 @@ jobs:
             git commit -m "build: generate icon components v${{ steps.version.outputs.version }}"
             git push origin HEAD:${{ steps.branch.outputs.name }}
           fi
-
-      - name: Comment on PR
-        if: github.event.client_payload.pr_number
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: ${{ github.event.client_payload.pr_number }},
-              body: `✅ 构建完成！\n\n- 版本: **${{ steps.version.outputs.version }}**\n- 已生成 React 组件\n- 已更新 changelog\n\n正在自动合并...`
-            })
-
-      - name: Auto-merge PR
-        if: github.event.client_payload.pr_number
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const prNumber = ${{ github.event.client_payload.pr_number }};
-
-            try {
-              // 获取 PR 信息
-              const { data: pr } = await github.rest.pulls.get({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: prNumber
-              });
-              
-              console.log(`PR #${prNumber} 状态: ${pr.state}, 可合并: ${pr.mergeable}`);
-              
-              // 等待一下确保所有检查完成
-              await new Promise(resolve => setTimeout(resolve, 5000));
-              
-              // 合并 PR
-              const { data: merge } = await github.rest.pulls.merge({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                pull_number: prNumber,
-                merge_method: 'squash',
-                commit_title: `build: 图标更新 v${{ steps.version.outputs.version }}`,
-                commit_message: `${{ steps.version.outputs.message }}\n\n自动合并来自 Figma 插件的图标更新`
-              });
-              
-              console.log('PR 合并成功:', merge);
-              
-              // 添加成功评论
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: prNumber,
-                body: `🎉 已自动合并到 main 分支！\n\n部署将自动开始...`
-              });
-              
-            } catch (error) {
-              console.error('合并失败:', error);
-              
-              // 添加失败评论
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: prNumber,
-                body: `❌ 自动合并失败: ${error.message}\n\n请手动合并此 PR。`
-              });
-              
-              throw error;
-            }
