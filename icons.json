@@ -1,30 +1,62 @@
 {
-  "version": "0.0.20",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-30T09:34:58.684Z",
-  "totalCount": 14,
+  "version": "1.0.0",
+  "generatedAt": "2026-01-30T09:42:37.619Z",
+  "totalCount": 17,
   "icons": [
     {
-      "name": "Icon下载",
-      "originalName": "下载",
-      "svgPath": "svg/下载.svg",
-      "componentPath": "src/icons/Icon下载.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-30T09:34:58.684Z"
-    },
-    {
-      "name": "Icon设置",
+      "name": "IconSheZhi",
       "originalName": "设置",
       "svgPath": "svg/设置.svg",
-      "componentPath": "src/icons/Icon设置.tsx",
+      "componentPath": "src/icons/IconSheZhi.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-01-30T09:34:58.684Z"
+      "createdAt": "2026-01-30T09:42:37.609Z"
+    },
+    {
+      "name": "IconBangZhuShuoMing",
+      "originalName": "帮助说明",
+      "svgPath": "svg/帮助说明.svg",
+      "componentPath": "src/icons/IconBangZhuShuoMing.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T09:42:37.608Z"
+    },
+    {
+      "name": "IconShiBai",
+      "originalName": "失败",
+      "svgPath": "svg/失败.svg",
+      "componentPath": "src/icons/IconShiBai.tsx",
+      "size": {
+        "width": 16,
+        "height": 16
+      },
+      "createdAt": "2026-01-30T09:42:37.607Z"
+    },
+    {
+      "name": "IconXiaZai",
+      "originalName": "下载",
+      "svgPath": "svg/下载.svg",
+      "componentPath": "src/icons/IconXiaZai.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T09:42:37.607Z"
+    },
+    {
+      "name": "IconFrame",
+      "originalName": "Frame",
+      "svgPath": "svg/Frame.svg",
+      "componentPath": "src/icons/IconFrame.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T09:42:37.604Z"
     },
     {
       "name": "IconChengYuanGuanLi",
