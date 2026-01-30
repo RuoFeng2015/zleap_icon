@@ -1,19 +1,18 @@
 {
-  "version": "0.0.18",
-  "syncMode": "incremental",
-  "generatedAt": "2026-01-30T09:16:12.978Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-01-30T09:16:38.041Z",
   "totalCount": 11,
   "icons": [
     {
-      "name": "Icon上传",
+      "name": "IconShangChuan",
       "originalName": "上传",
       "svgPath": "svg/上传.svg",
-      "componentPath": "src/icons/Icon上传.tsx",
+      "componentPath": "src/icons/IconShangChuan.tsx",
       "size": {
         "width": 25,
         "height": 26
       },
-      "uploadedAt": "2026-01-30T09:16:12.978Z"
+      "createdAt": "2026-01-30T09:16:38.030Z"
     },
     {
       "name": "IconZhiShiKu",

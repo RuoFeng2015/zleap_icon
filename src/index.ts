@@ -11,6 +11,7 @@ import { IconGuanBi } from './icons/IconGuanBi';
 import { IconGuanBiXiao } from './icons/IconGuanBiXiao';
 import { IconLianJie } from './icons/IconLianJie';
 import { IconSearch } from './icons/IconSearch';
+import { IconShangChuan } from './icons/IconShangChuan';
 import { IconTongZhi } from './icons/IconTongZhi';
 import { IconWenDang } from './icons/IconWenDang';
 import { IconZhanKai } from './icons/IconZhanKai';
@@ -22,6 +23,7 @@ export { IconGuanBi, type IconGuanBiProps } from './icons/IconGuanBi';
 export { IconGuanBiXiao, type IconGuanBiXiaoProps } from './icons/IconGuanBiXiao';
 export { IconLianJie, type IconLianJieProps } from './icons/IconLianJie';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
+export { IconShangChuan, type IconShangChuanProps } from './icons/IconShangChuan';
 export { IconTongZhi, type IconTongZhiProps } from './icons/IconTongZhi';
 export { IconWenDang, type IconWenDangProps } from './icons/IconWenDang';
 export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
@@ -37,6 +39,7 @@ export const allIcons = {
   IconGuanBiXiao,
   IconLianJie,
   IconSearch,
+  IconShangChuan,
   IconTongZhi,
   IconWenDang,
   IconZhanKai,
