@@ -6,14 +6,23 @@
  */
 
 import { IconBack } from './icons/IconBack';
+import { IconSheZhi } from './icons/IconSheZhi';
+import { IconTianJia } from './icons/IconTianJia';
+import { IconWangLuoJianSuo } from './icons/IconWangLuoJianSuo';
 
 export { IconBack, type IconBackProps } from './icons/IconBack';
+export { IconSheZhi, type IconSheZhiProps } from './icons/IconSheZhi';
+export { IconTianJia, type IconTianJiaProps } from './icons/IconTianJia';
+export { IconWangLuoJianSuo, type IconWangLuoJianSuoProps } from './icons/IconWangLuoJianSuo';
 
 /**
  * Object containing all icon components
  */
 export const allIcons = {
-  IconBack
+  IconBack,
+  IconSheZhi,
+  IconTianJia,
+  IconWangLuoJianSuo
 } as const;
 
 /**

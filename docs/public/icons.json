@@ -1,9 +1,42 @@
 {
-  "version": "0.0.11",
-  "syncMode": "replace",
-  "generatedAt": "2026-01-30T08:24:57.535Z",
-  "totalCount": 1,
+  "version": "0.0.12",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-30T08:27:19.064Z",
+  "totalCount": 4,
   "icons": [
+    {
+      "name": "Icon添加",
+      "originalName": "添加",
+      "svgPath": "svg/添加.svg",
+      "componentPath": "src/icons/Icon添加.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T08:27:19.064Z"
+    },
+    {
+      "name": "Icon网络检索",
+      "originalName": "网络检索",
+      "svgPath": "svg/网络检索.svg",
+      "componentPath": "src/icons/Icon网络检索.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T08:27:19.064Z"
+    },
+    {
+      "name": "Icon设置",
+      "originalName": "设置",
+      "svgPath": "svg/设置.svg",
+      "componentPath": "src/icons/Icon设置.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T08:27:19.064Z"
+    },
     {
       "name": "IconBack",
       "originalName": "back",
@@ -13,7 +46,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-01-30T08:24:57.534Z"
+      "createdAt": "2026-01-30T08:25:19.725Z"
     }
   ]
 }
