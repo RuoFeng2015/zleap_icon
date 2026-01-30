@@ -11,15 +11,11 @@ import { IconGuanBi } from './icons/IconGuanBi';
 import { IconGuanBiXiao } from './icons/IconGuanBiXiao';
 import { IconLianJie } from './icons/IconLianJie';
 import { IconSearch } from './icons/IconSearch';
-import { IconTongZhi } from './icons/IconTongZhi';
 import { IconWangYeXiaZai } from './icons/IconWangYeXiaZai';
 import { IconWenDang } from './icons/IconWenDang';
 import { IconWenDang1 } from './icons/IconWenDang1';
-import { IconWenDang2 } from './icons/IconWenDang2';
 import { IconWenJian } from './icons/IconWenJian';
-import { IconZhanKai } from './icons/IconZhanKai';
 import { IconZhanKai1 } from './icons/IconZhanKai1';
-import { IconZhiShiKu } from './icons/IconZhiShiKu';
 
 export { IconBack, type IconBackProps } from './icons/IconBack';
 export { IconCheck, type IconCheckProps } from './icons/IconCheck';
@@ -27,15 +23,11 @@ export { IconGuanBi, type IconGuanBiProps } from './icons/IconGuanBi';
 export { IconGuanBiXiao, type IconGuanBiXiaoProps } from './icons/IconGuanBiXiao';
 export { IconLianJie, type IconLianJieProps } from './icons/IconLianJie';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
-export { IconTongZhi, type IconTongZhiProps } from './icons/IconTongZhi';
 export { IconWangYeXiaZai, type IconWangYeXiaZaiProps } from './icons/IconWangYeXiaZai';
 export { IconWenDang, type IconWenDangProps } from './icons/IconWenDang';
 export { IconWenDang1, type IconWenDang1Props } from './icons/IconWenDang1';
-export { IconWenDang2, type IconWenDang2Props } from './icons/IconWenDang2';
 export { IconWenJian, type IconWenJianProps } from './icons/IconWenJian';
-export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
 export { IconZhanKai1, type IconZhanKai1Props } from './icons/IconZhanKai1';
-export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
 
 /**
  * Object containing all icon components
@@ -47,15 +39,11 @@ export const allIcons = {
   IconGuanBiXiao,
   IconLianJie,
   IconSearch,
-  IconTongZhi,
   IconWangYeXiaZai,
   IconWenDang,
   IconWenDang1,
-  IconWenDang2,
   IconWenJian,
-  IconZhanKai,
-  IconZhanKai1,
-  IconZhiShiKu
+  IconZhanKai1
 } as const;
 
 /**
