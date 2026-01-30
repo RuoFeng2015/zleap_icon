@@ -89,6 +89,20 @@ function hasAttribute(html: string, attr: string, value: string): boolean {
   return html.includes(`${attr}="${value}"`)
 }
 
+/**
+ * Helper to check if HTML contains a style with specific color
+ * Icons may pass color via:
+ * 1. fill={color} attribute (for fill-based icons)
+ * 2. style={{ color }} (for stroke-based icons using currentColor)
+ */
+function hasColor(html: string, color: string): boolean {
+  // Check for fill attribute with color value
+  const hasFillAttr = html.includes(`fill="${color}"`)
+  // Check for color in style attribute (React inline style format)
+  const hasStyleColor = html.includes(`color:${color}`) || html.includes(`color: ${color}`)
+  return hasFillAttr || hasStyleColor
+}
+
 describe('Property 8: Icon Component Props Behavior', () => {
   /**
    * Feature: figma-icon-automation, Property 8: Icon Component Props Behavior
@@ -139,7 +153,7 @@ describe('Property 8: Icon Component Props Behavior', () => {
   })
 
   describe('Color prop behavior (Requirement 7.3)', () => {
-    it('setting color prop should update the fill color of the SVG', () => {
+    it('setting color prop should update the style color of the SVG', () => {
       fc.assert(
         fc.property(
           fc.constantFrom(...iconComponents),
@@ -148,8 +162,8 @@ describe('Property 8: Icon Component Props Behavior', () => {
             const element = React.createElement(Component, { color })
             const html = renderToStaticMarkup(element)
 
-            // Fill should match color
-            expect(hasAttribute(html, 'fill', color)).toBe(true)
+            // Color should be in style attribute (our icons use style={{ color }})
+            expect(hasColor(html, color)).toBe(true)
           }
         ),
         { numRuns: 100 }
@@ -162,8 +176,8 @@ describe('Property 8: Icon Component Props Behavior', () => {
           const element = React.createElement(Component, {})
           const html = renderToStaticMarkup(element)
 
-          // Default fill should be currentColor
-          expect(hasAttribute(html, 'fill', 'currentColor')).toBe(true)
+          // Default color in style should be currentColor
+          expect(hasColor(html, 'currentColor')).toBe(true)
         }),
         { numRuns: 100 }
       )
@@ -310,7 +324,7 @@ describe('Property 8: Icon Component Props Behavior', () => {
             // All props should be applied
             expect(hasAttribute(html, 'width', expectedSize)).toBe(true)
             expect(hasAttribute(html, 'height', expectedSize)).toBe(true)
-            expect(hasAttribute(html, 'fill', color)).toBe(true)
+            expect(hasColor(html, color)).toBe(true)
             expect(hasAttribute(html, 'class', className)).toBe(true)
           }
         ),
