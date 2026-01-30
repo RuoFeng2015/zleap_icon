@@ -6,6 +6,214 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.13] - 2026-01-30
+
+同步 5 个图标：下载助手, 企业版, 系统配置, 系统配置, 运营管理 图标
+
+### Added
+- IconYunYingGuanLi
+- IconXiTongPeiZhi
+- IconXiTongPeiZhi1
+- IconXiaZaiZhuShou
+- IconQiYeBan
+- IconSheZhi
+- IconTianJia
+- IconWangLuoJianSuo
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.12] - 2026-01-30
+
+更新/新增 3 个图标：添加, 网络检索, 设置 图标
+
+### Added
+- IconSheZhi
+- IconTianJia
+- IconWangLuoJianSuo
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.11] - 2026-01-30
+
+更新/新增 1 个图标：back 图标
+
+### Added
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.10] - 2026-01-30
+
+更新/新增 1 个图标：back 图标
+
+### Added
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.9] - 2026-01-30
+
+更新/新增 3 个图标：back, search, 展开 图标
+
+### Added
+- IconZhanKai1
+- IconSearch1
+- IconBack1
+- IconZhiShiKu
+- IconTongZhi
+- IconLianJie
+- IconGuanBi
+- IconZhanKai
+- IconWenDang
+- IconGuanBiXiao
+- IconCheck
+- IconSearch
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.8] - 2026-01-30
+
+同步 10 个图标：back, check, search, 关闭, 关闭-小
+
+### Added
+- IconZhiShiKu
+- IconTongZhi
+- IconLianJie
+- IconGuanBi
+- IconZhanKai
+- IconWenDang
+- IconGuanBiXiao
+- IconCheck
+- IconSearch
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.7] - 2026-01-30
+
+同步 1 个图标：back 图标
+
+### Added
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.6] - 2026-01-30
+
+同步 5 个图标：展开, 文件, 文档, 文档, 网页下载 图标
+
+### Added
+- IconWangYeXiaZai
+- IconWenDang1
+- IconWenDang2
+- IconZhanKai1
+- IconWenJian
+- IconZhiShiKu
+- IconTongZhi
+- IconLianJie
+- IconGuanBi
+- IconZhanKai
+- IconWenDang
+- IconGuanBiXiao
+- IconCheck
+- IconSearch
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.5] - 2026-01-30
+
+同步 10 个图标：back, check, search, 关闭, 关闭-小
+
+### Added
+- IconZhiShiKu
+- IconTongZhi
+- IconLianJie
+- IconGuanBi
+- IconZhanKai
+- IconWenDang
+- IconGuanBiXiao
+- IconCheck
+- IconSearch
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.4] - 2026-01-30
+
+更新/新增 3 个图标：添加, 网络检索, 设置 图标
+
+### Added
+- IconWangLuoJianSuo
+- IconSheZhi
+- IconTianJia
+- IconZhiShiKu
+- IconFanHui
+- IconTongZhi
+- IconLianJie
+- IconZhanKai
+- IconWenDang
+- IconChaZhao
+- IconGuanBi
+- IconGuanBiXiao
+- IconCheck
+
+### Modified
+- None
+
+### Removed
+- None
+## [0.0.3] - 2026-01-30
+
+同步 10 个图标：check, 关闭, 关闭-小, 展开, 文档
+
+### Added
+- IconZhiShiKu
+- IconFanHui
+- IconTongZhi
+- IconLianJie
+- IconZhanKai
+- IconWenDang
+- IconChaZhao
+- IconGuanBi
+- IconGuanBiXiao
+- IconCheck
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.19] - 2026-01-26
 
 更新/新增 2 个图标：信息管理, 报告助手 图标
