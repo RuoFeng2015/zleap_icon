@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.24] - 2026-01-30
+
+更新/新增 4 个图标：文档, 知识库, 通知, 链接 图标
+
+### Added
+- IconTongZhi
+- IconLianJie
+- IconWenDang
+- IconZhiShiKu
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.23] - 2026-01-30
 
 同步 6 个图标：成员管理, 文件, 新增, 系统配置, 链接

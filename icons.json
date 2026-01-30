@@ -1,51 +1,18 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-30T10:47:17.464Z",
-  "totalCount": 6,
+  "generatedAt": "2026-01-30T10:51:01.342Z",
+  "totalCount": 4,
   "icons": [
     {
-      "name": "IconCuoWu",
-      "originalName": "错误",
-      "svgPath": "svg/错误.svg",
-      "componentPath": "src/icons/IconCuoWu.tsx",
+      "name": "IconTongZhi",
+      "originalName": "通知",
+      "svgPath": "svg/通知.svg",
+      "componentPath": "src/icons/IconTongZhi.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "createdAt": "2026-01-30T10:47:17.455Z"
-    },
-    {
-      "name": "IconWenJian",
-      "originalName": "文件",
-      "svgPath": "svg/文件.svg",
-      "componentPath": "src/icons/IconWenJian.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-01-30T10:47:17.454Z"
-    },
-    {
-      "name": "IconXinZeng",
-      "originalName": "新增",
-      "svgPath": "svg/新增.svg",
-      "componentPath": "src/icons/IconXinZeng.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-01-30T10:47:17.454Z"
-    },
-    {
-      "name": "IconXiTongPeiZhi",
-      "originalName": "系统配置",
-      "svgPath": "svg/系统配置.svg",
-      "componentPath": "src/icons/IconXiTongPeiZhi.tsx",
-      "size": {
-        "width": 120,
-        "height": 120
-      },
-      "createdAt": "2026-01-30T10:47:17.454Z"
+      "createdAt": "2026-01-30T10:51:01.333Z"
     },
     {
       "name": "IconLianJie",
@@ -56,18 +23,29 @@
         "width": 24,
         "height": 24
       },
-      "createdAt": "2026-01-30T10:47:17.454Z"
+      "createdAt": "2026-01-30T10:51:01.333Z"
     },
     {
-      "name": "IconChengYuanGuanLi",
-      "originalName": "成员管理",
-      "svgPath": "svg/成员管理.svg",
-      "componentPath": "src/icons/IconChengYuanGuanLi.tsx",
+      "name": "IconWenDang",
+      "originalName": "文档",
+      "svgPath": "svg/文档.svg",
+      "componentPath": "src/icons/IconWenDang.tsx",
       "size": {
-        "width": 120,
-        "height": 120
+        "width": 24,
+        "height": 24
       },
-      "createdAt": "2026-01-30T10:47:17.453Z"
+      "createdAt": "2026-01-30T10:51:01.332Z"
+    },
+    {
+      "name": "IconZhiShiKu",
+      "originalName": "知识库",
+      "svgPath": "svg/知识库.svg",
+      "componentPath": "src/icons/IconZhiShiKu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T10:51:01.332Z"
     }
   ]
 }
