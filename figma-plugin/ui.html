@@ -579,7 +579,8 @@
       <!-- Debug Log Container -->
       <div id="debug-log"
         style="margin-top: 12px; padding: 10px; background: #f8f8f8; border-radius: 8px; font-size: 11px; font-family: monospace; max-height: 150px; overflow-y: auto; display: none;">
-        <div style="font-weight: bold; margin-bottom: 6px; color: #666;">🔧 调试日志</div>
+        <div style="font-weight: bold; margin-bottom: 6px; color: #666;">🔧 调试日志 <span id="debug-version"
+            style="font-weight: normal; font-size: 10px; color: #999;"></span></div>
         <div id="debug-log-content" style="color: #333; line-height: 1.6;"></div>
       </div>
     </div>
@@ -603,6 +604,11 @@
 
   <!-- Script starts here -->
   <script>
+    // ============================================
+    // Plugin Version
+    // ============================================
+    const PLUGIN_VERSION = '0.0.1';
+
     // ============================================
     // State
     // ============================================
@@ -740,8 +746,12 @@
       const container = document.getElementById('debug-log');
       const content = document.getElementById('debug-log-content');
 
-      // Show the debug container
+      // Show the debug container and set version
       container.style.display = 'block';
+      const versionSpan = document.getElementById('debug-version');
+      if (versionSpan && !versionSpan.textContent) {
+        versionSpan.textContent = `v${PLUGIN_VERSION}`;
+      }
 
       // Get timestamp
       const now = new Date();
