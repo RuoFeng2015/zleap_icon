@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-01-30T10:59:02.858Z
+Generated at: 2026-01-30T11:02:55.857Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 13 |
+| Total Icons | 12 |
 | Valid Icons | 0 |
-| Invalid Icons | 13 |
-| Total Errors | 13 |
-| Total Warnings | 10 |
+| Invalid Icons | 12 |
+| Total Errors | 12 |
+| Total Warnings | 9 |
 
-⚠️ **13 icon(s) failed validation**
+⚠️ **12 icon(s) failed validation**
 
 ## Errors
 
-### size (13 errors)
+### size (12 errors)
 
 | Icon | Message |
 |------|---------|
@@ -30,13 +30,12 @@ Generated at: 2026-01-30T10:59:02.858Z
 | 成员管理 | Icon size 120x120 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
-| 系统配置 | Icon size 120x120 not in allowed sizes:  |
 | 通知 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
 
 ## Warnings
 
-### naming (10 warnings)
+### naming (9 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -47,6 +46,5 @@ Generated at: 2026-01-30T10:59:02.858Z
 | 成员管理 | Icon name "成员管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 系统配置 | Icon name "系统配置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知 | Icon name "通知" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
