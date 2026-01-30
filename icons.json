@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-30T09:42:37.619Z",
-  "totalCount": 17,
+  "version": "0.0.21",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-30T09:54:01.566Z",
+  "totalCount": 19,
   "icons": [
+    {
+      "name": "Icon文档1",
+      "originalName": "文档1",
+      "svgPath": "svg/文档1.svg",
+      "componentPath": "src/icons/Icon文档1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T09:54:01.566Z"
+    },
+    {
+      "name": "Icon网页下载",
+      "originalName": "网页下载",
+      "svgPath": "svg/网页下载.svg",
+      "componentPath": "src/icons/Icon网页下载.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T09:54:01.566Z"
+    },
     {
       "name": "IconSheZhi",
       "originalName": "设置",
