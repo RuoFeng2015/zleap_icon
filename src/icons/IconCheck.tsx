@@ -28,7 +28,7 @@ export const IconCheck = forwardRef<SVGSVGElement, IconCheckProps>(
         style={{ color, ...style }}
         {...props}
       >
-        <path fill="#1E1E1E" d="M0 0h24v24H0z"/><path fill="white" d="M-476.854-79.92h1269.19v1186.9h-1269.19z"/><path stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m20 6.5-11 11-5-5"/>
+        <path fill="#1E1E1E" d="M0 0h24v24H0z"/><path fill="white" d="M-476.854-79.92h1269.19V211h-1269.19z"/><path stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m20 6.5-11 11-5-5"/>
       </svg>
     );
   }

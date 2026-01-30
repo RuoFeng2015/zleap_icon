@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-01-30T07:14:13.991Z
+Generated at: 2026-01-30T07:52:55.955Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 11 |
+| Total Icons | 10 |
 | Valid Icons | 0 |
-| Invalid Icons | 11 |
-| Total Errors | 11 |
-| Total Warnings | 8 |
+| Invalid Icons | 10 |
+| Total Errors | 10 |
+| Total Warnings | 7 |
 
-⚠️ **11 icon(s) failed validation**
+⚠️ **10 icon(s) failed validation**
 
 ## Errors
 
-### size (11 errors)
+### size (10 errors)
 
 | Icon | Message |
 |------|---------|
@@ -25,24 +25,22 @@ Generated at: 2026-01-30T07:14:13.991Z
 | search | Icon size 24x24 not in allowed sizes:  |
 | 关闭-小 | Icon size 24x24 not in allowed sizes:  |
 | 关闭 | Icon size 24x24 not in allowed sizes:  |
-| 展开1 | Icon size 24x24 not in allowed sizes:  |
-| 文件 | Icon size 24x24 not in allowed sizes:  |
+| 展开 | Icon size 24x24 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
-| 文档1 | Icon size 24x24 not in allowed sizes:  |
-| 网页下载 | Icon size 24x24 not in allowed sizes:  |
+| 知识库 | Icon size 24x24 not in allowed sizes:  |
+| 通知 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
 
 ## Warnings
 
-### naming (8 warnings)
+### naming (7 warnings)
 
 | Icon | Message |
 |------|---------|
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 展开1 | Icon name "展开1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 文件 | Icon name "文件" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 文档1 | Icon name "文档1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 网页下载 | Icon name "网页下载" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 通知 | Icon name "通知" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
