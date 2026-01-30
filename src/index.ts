@@ -15,7 +15,6 @@ import { IconSearch } from './icons/IconSearch';
 import { IconTongZhi } from './icons/IconTongZhi';
 import { IconWanCheng } from './icons/IconWanCheng';
 import { IconWenDang } from './icons/IconWenDang';
-import { IconXiTongPeiZhi } from './icons/IconXiTongPeiZhi';
 import { IconZhanKai } from './icons/IconZhanKai';
 import { IconZhiShiKu } from './icons/IconZhiShiKu';
 
@@ -29,7 +28,6 @@ export { IconSearch, type IconSearchProps } from './icons/IconSearch';
 export { IconTongZhi, type IconTongZhiProps } from './icons/IconTongZhi';
 export { IconWanCheng, type IconWanChengProps } from './icons/IconWanCheng';
 export { IconWenDang, type IconWenDangProps } from './icons/IconWenDang';
-export { IconXiTongPeiZhi, type IconXiTongPeiZhiProps } from './icons/IconXiTongPeiZhi';
 export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
 export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
 
@@ -47,7 +45,6 @@ export const allIcons = {
   IconTongZhi,
   IconWanCheng,
   IconWenDang,
-  IconXiTongPeiZhi,
   IconZhanKai,
   IconZhiShiKu
 } as const;
