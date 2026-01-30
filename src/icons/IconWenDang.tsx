@@ -28,7 +28,7 @@ export const IconWenDang = forwardRef<SVGSVGElement, IconWenDangProps>(
         style={{ color, ...style }}
         {...props}
       >
-        <path fill="#1E1E1E" d="M0 0h24v24H0z"/><path fill="white" d="M-162.854-161.92h1269.19V129h-1269.19z"/><path fill="#4A4A4A" stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 2H5a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1"/><path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8.5 15h7"/><path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8.5 18H12"/><path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.5 8.5h5"/><path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 11V6"/>
+        <path fill="#4A4A4A" stroke="#4A4A4A" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 2H5a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1"/><path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8.5 15h7"/><path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8.5 18H12"/><path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.5 8.5h5"/><path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 11V6"/>
       </svg>
     );
   }
