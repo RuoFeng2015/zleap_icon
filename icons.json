@@ -1,9 +1,42 @@
 {
   "version": "0.0.20",
   "syncMode": "incremental",
-  "generatedAt": "2026-01-30T09:34:58.684Z",
-  "totalCount": 14,
+  "generatedAt": "2026-01-30T09:42:12.676Z",
+  "totalCount": 17,
   "icons": [
+    {
+      "name": "IconFrame",
+      "originalName": "Frame",
+      "svgPath": "svg/Frame.svg",
+      "componentPath": "src/icons/IconFrame.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T09:42:12.676Z"
+    },
+    {
+      "name": "Icon失败",
+      "originalName": "失败",
+      "svgPath": "svg/失败.svg",
+      "componentPath": "src/icons/Icon失败.tsx",
+      "size": {
+        "width": 16,
+        "height": 16
+      },
+      "uploadedAt": "2026-01-30T09:42:12.676Z"
+    },
+    {
+      "name": "Icon帮助说明",
+      "originalName": "帮助说明",
+      "svgPath": "svg/帮助说明.svg",
+      "componentPath": "src/icons/Icon帮助说明.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T09:42:12.676Z"
+    },
     {
       "name": "Icon下载",
       "originalName": "下载",
