@@ -1,8 +1,41 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-30T06:32:10.010Z",
-  "totalCount": 10,
+  "generatedAt": "2026-01-30T06:37:24.696Z",
+  "totalCount": 13,
   "icons": [
+    {
+      "name": "IconWangLuoJianSuo",
+      "originalName": "网络检索",
+      "svgPath": "svg/网络检索.svg",
+      "componentPath": "src/icons/IconWangLuoJianSuo.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T06:37:24.686Z"
+    },
+    {
+      "name": "IconSheZhi",
+      "originalName": "设置",
+      "svgPath": "svg/设置.svg",
+      "componentPath": "src/icons/IconSheZhi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T06:37:24.686Z"
+    },
+    {
+      "name": "IconTianJia",
+      "originalName": "添加",
+      "svgPath": "svg/添加.svg",
+      "componentPath": "src/icons/IconTianJia.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T06:37:24.685Z"
+    },
     {
       "name": "IconZhiShiKu",
       "originalName": "知识库",
