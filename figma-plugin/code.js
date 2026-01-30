@@ -85,59 +85,114 @@ var UI_HEIGHT = 550;
 // ============================================
 /**
  * 清理 Figma 导出的 SVG 中的问题元素
- * - 移除画板背景（#F5F5F5 填充的全尺寸矩形）
+ * - 移除画板背景（#F5F5F5、#1E1E1E 等常见背景色填充的全尺寸矩形）
  * - 移除超大白色背景路径
+ * - 移除覆盖整个 viewBox 的纯色背景路径
  * - 移除空的 clipPath 和引用
  * - 保留渐变定义和多色效果
  */
 function cleanSvgContent(svgString) {
-    var e_1, _a, e_2, _b;
+    var e_1, _a, e_2, _b, e_3, _c;
     var svg = svgString;
     var originalLength = svg.length;
     // 打印原始 SVG 片段用于调试
     console.log("[cleanSvgContent] \u539F\u59CB SVG \u524D 200 \u5B57\u7B26: ".concat(svg.substring(0, 200)));
-    // 1. 移除 #F5F5F5 背景 - 处理 rect 和 path 元素
-    // 使用正则匹配包含 fill="#F5F5F5" 的 rect 或 path（紧跟在 svg 标签后的第一个元素）
+    // 0. 先提取 viewBox 尺寸，用于后续判断背景路径
+    var viewBoxMatch = svg.match(/viewBox="0 0 (\d+) (\d+)"/);
+    var vbWidth = viewBoxMatch ? parseInt(viewBoxMatch[1], 10) : 0;
+    var vbHeight = viewBoxMatch ? parseInt(viewBoxMatch[2], 10) : 0;
+    console.log("[cleanSvgContent] ViewBox \u5C3A\u5BF8: ".concat(vbWidth, " x ").concat(vbHeight));
+    // 1. 移除常见背景色填充的 rect 和 path 元素
+    // 包括 #F5F5F5（浅灰）、#1E1E1E（Figma 深色主题背景）、#FFFFFF（白色）
     var before1 = svg.length;
-    // 移除 fill="#F5F5F5" 的 rect 背景（整个画板背景）
-    svg = svg.replace(/<rect[^>]*fill="#F5F5F5"[^>]*\/>/gi, '');
-    svg = svg.replace(/<rect[^>]*fill="#F5F5F5"[^>]*>[^<]*<\/rect>/gi, '');
-    // 移除 fill="#F5F5F5" 的 path 背景
-    svg = svg.replace(/<path[^>]*fill="#F5F5F5"[^>]*\/>/gi, '');
-    console.log("[cleanSvgContent] Step 1: \u79FB\u9664 #F5F5F5 \u80CC\u666F, \u5220\u9664 ".concat(before1 - svg.length, " \u5B57\u7B26"));
-    // 2. 移除超大尺寸的 rect 背景（如 width="1440"）
+    var bgColors = ['#F5F5F5', '#1E1E1E', '#FFFFFF', '#ffffff', '#1e1e1e', '#f5f5f5'];
+    try {
+        for (var bgColors_1 = __values(bgColors), bgColors_1_1 = bgColors_1.next(); !bgColors_1_1.done; bgColors_1_1 = bgColors_1.next()) {
+            var color = bgColors_1_1.value;
+            svg = svg.replace(new RegExp("<rect[^>]*fill=\"".concat(color, "\"[^>]*\\/>"), 'gi'), '');
+            svg = svg.replace(new RegExp("<rect[^>]*fill=\"".concat(color, "\"[^>]*>[^<]*<\\/rect>"), 'gi'), '');
+            svg = svg.replace(new RegExp("<path[^>]*fill=\"".concat(color, "\"[^>]*\\/>"), 'gi'), '');
+        }
+    }
+    catch (e_1_1) { e_1 = { error: e_1_1 }; }
+    finally {
+        try {
+            if (bgColors_1_1 && !bgColors_1_1.done && (_a = bgColors_1.return)) _a.call(bgColors_1);
+        }
+        finally { if (e_1) throw e_1.error; }
+    }
+    console.log("[cleanSvgContent] Step 1: \u79FB\u9664\u5E38\u89C1\u80CC\u666F\u8272, \u5220\u9664 ".concat(before1 - svg.length, " \u5B57\u7B26"));
+    // 2. 移除覆盖整个 viewBox 的背景路径（格式如 M0 0h24v24H0z）
+    // 这种路径会创建一个与图标大小完全相同的背景矩形
     var before2 = svg.length;
-    // 匹配 width 超过 500 的 rect 元素
-    svg = svg.replace(/<rect[^>]*width="(\d+)"[^>]*>/gi, function (match, width) {
-        var w = parseInt(width, 10);
-        if (w > 500) {
+    if (vbWidth > 0 && vbHeight > 0) {
+        // 匹配 d="M0 0h{width}v{height}H0z" 或类似变体
+        var bgPathPattern = new RegExp("<path[^>]*d=\"M0\\s*0\\s*[hH]".concat(vbWidth, "\\s*[vV]").concat(vbHeight, "\\s*[hH]0\\s*[zZ]?\"[^>]*\\/>"), 'gi');
+        svg = svg.replace(bgPathPattern, function (match) {
+            console.log("[cleanSvgContent] \u5220\u9664 viewBox \u80CC\u666F\u8DEF\u5F84: ".concat(match.substring(0, 80), "..."));
+            return '';
+        });
+        // 也处理 d 在其他位置的情况
+        svg = svg.replace(new RegExp("<path[^>]*d=\"M0\\s*0\\s*h".concat(vbWidth, "v").concat(vbHeight, "H0z?\"[^>]*\\/>"), 'gi'), '');
+    }
+    console.log("[cleanSvgContent] Step 2: \u79FB\u9664 viewBox \u80CC\u666F\u8DEF\u5F84, \u5220\u9664 ".concat(before2 - svg.length, " \u5B57\u7B26"));
+    // 3. 移除超大尺寸的 rect 背景或白色背景 rect
+    var before3 = svg.length;
+    // 匹配所有 rect 元素（包括自闭合 /> 和非自闭合 >）
+    svg = svg.replace(/<rect[^>]*(?:\/>|>[^<]*<\/rect>)/gi, function (match) {
+        // 检查是否是白色填充
+        var isWhiteFill = /fill=["']white["']/i.test(match);
+        // 检查是否有超大尺寸
+        var widthMatch = match.match(/width=["']([^"']+)["']/);
+        var width = widthMatch ? parseFloat(widthMatch[1]) : 0;
+        // 检查是否有负坐标（页面级背景特征）
+        var hasNegativeCoord = /[xy]=["']-/.test(match);
+        // 移除条件: 白色填充 + (超大尺寸 或 负坐标)
+        if (isWhiteFill && (width > 100 || hasNegativeCoord)) {
+            console.log("[cleanSvgContent] \u5220\u9664\u767D\u8272\u80CC\u666F rect: ".concat(match.substring(0, 100), "..."));
+            return '';
+        }
+        // 移除条件: 任何填充 + 超大尺寸 (> 500)
+        if (width > 500) {
             console.log("[cleanSvgContent] \u5220\u9664\u5927\u5C3A\u5BF8 rect: ".concat(match.substring(0, 80), "..."));
             return '';
         }
         return match;
     });
-    console.log("[cleanSvgContent] Step 2: \u79FB\u9664\u5927\u5C3A\u5BF8 rect, \u5220\u9664 ".concat(before2 - svg.length, " \u5B57\u7B26"));
-    // 3. 移除 white 背景 path（带有负坐标或 M0 开头）
-    var before3 = svg.length;
-    svg = svg.replace(/<path[^>]*fill="white"[^>]*\/>/gi, function (match) {
-        // 检查是否是大背景路径（d 包含负数坐标或 M0）
-        if (match.includes('d="M-') || match.includes('d="M0')) {
-            console.log("[cleanSvgContent] \u5220\u9664\u767D\u8272\u80CC\u666F: ".concat(match.substring(0, 80), "..."));
+    console.log("[cleanSvgContent] Step 3: \u79FB\u9664\u5927\u5C3A\u5BF8/\u767D\u8272\u80CC\u666F rect, \u5220\u9664 ".concat(before3 - svg.length, " \u5B57\u7B26"));
+    // 4. 移除 white 背景 path（带有负坐标、M0 开头、或超大尺寸）
+    var before4 = svg.length;
+    svg = svg.replace(/<path[^>]*fill=["']white["'][^>]*\/>/gi, function (match) {
+        // 提取 d 属性的值
+        var dMatch = match.match(/d=["']([^"']+)["']/);
+        var dValue = dMatch ? dMatch[1] : '';
+        // 检查是否是大背景路径
+        var isBackground = 
+        // d 包含负数坐标（M后跟负数，如 M-162.854 或 M -100）
+        /M\s*-?\d/.test(dValue) && dValue.includes('-') ||
+            // d 以 M0 开头（全覆盖背景）
+            /^M\s*0/.test(dValue) ||
+            // 路径尺寸超大（h/v 命令后跟 3 位数以上的数字）
+            /[hHvV]-?\d{3,}/.test(dValue) ||
+            // 路径包含负数坐标
+            /[Mm]\s*-\d/.test(dValue);
+        if (isBackground) {
+            console.log("[cleanSvgContent] \u5220\u9664\u767D\u8272\u80CC\u666F: ".concat(match.substring(0, 100), "..."));
             return '';
         }
         return match;
     });
-    console.log("[cleanSvgContent] Step 3: \u79FB\u9664 white \u80CC\u666F, \u5220\u9664 ".concat(before3 - svg.length, " \u5B57\u7B26"));
-    // 4. 移除空的 clipPath 定义和 clip-path 属性
+    console.log("[cleanSvgContent] Step 4: \u79FB\u9664 white \u80CC\u666F, \u5220\u9664 ".concat(before4 - svg.length, " \u5B57\u7B26"));
+    // 5. 移除空的 clipPath 定义和 clip-path 属性
     svg = svg.replace(/<clipPath\s+id="[^"]*"\s*\/>/gi, '');
     svg = svg.replace(/<clipPath\s+id="[^"]*"\s*><\/clipPath>/gi, '');
     svg = svg.replace(/\s+clip-path="url\([^)]*\)"/gi, ''); // 注意：属性名是 clip-path 不是 clipPath
     svg = svg.replace(/\s+clipPath="url\([^)]*\)"/gi, '');
-    // 5. 简化空的 g 标签
+    // 6. 简化空的 g 标签
     svg = svg.replace(/<g\s*>\s*<\/g>/gi, '');
-    // 6. 解包只有单个属性的 g 标签
+    // 7. 解包只有单个属性的 g 标签
     svg = svg.replace(/<g\s*>([^]*?)<\/g>/g, '$1');
-    // 7. 移除未使用的渐变定义
+    // 8. 移除未使用的渐变定义
     var usedGradientIds = new Set();
     var gradientRefs = svg.matchAll(/(?:fill|stroke)="url\(#([^)]+)\)"/g);
     try {
@@ -146,15 +201,15 @@ function cleanSvgContent(svgString) {
             usedGradientIds.add(match[1]);
         }
     }
-    catch (e_1_1) { e_1 = { error: e_1_1 }; }
+    catch (e_2_1) { e_2 = { error: e_2_1 }; }
     finally {
         try {
-            if (gradientRefs_1_1 && !gradientRefs_1_1.done && (_a = gradientRefs_1.return)) _a.call(gradientRefs_1);
+            if (gradientRefs_1_1 && !gradientRefs_1_1.done && (_b = gradientRefs_1.return)) _b.call(gradientRefs_1);
         }
-        finally { if (e_1) throw e_1.error; }
+        finally { if (e_2) throw e_2.error; }
     }
     svg = svg.replace(/<linearGradient\s+id="([^"]+)"[^>]*>[\s\S]*?<\/linearGradient>/g, function (match, id) { return usedGradientIds.has(id) ? match : ''; });
-    // 8. 将驼峰命名的 SVG 属性转换回标准的连字符命名
+    // 9. 将驼峰命名的 SVG 属性转换回标准的连字符命名
     // Figma exportAsync 返回的 SVG 使用 JSX 风格的驼峰命名（如 stopColor）
     // 需要转换为标准 SVG 的连字符命名（如 stop-color）
     var jsxToSvgAttributes = {
@@ -194,19 +249,19 @@ function cleanSvgContent(svgString) {
         'pointerEvents': 'pointer-events',
     };
     try {
-        for (var _c = __values(Object.entries(jsxToSvgAttributes)), _d = _c.next(); !_d.done; _d = _c.next()) {
-            var _e = __read(_d.value, 2), jsxAttr = _e[0], svgAttr = _e[1];
+        for (var _d = __values(Object.entries(jsxToSvgAttributes)), _e = _d.next(); !_e.done; _e = _d.next()) {
+            var _f = __read(_e.value, 2), jsxAttr = _f[0], svgAttr = _f[1];
             // 使用全局替换，匹配属性名后跟 = 的情况
             var regex = new RegExp("\\b".concat(jsxAttr, "="), 'g');
             svg = svg.replace(regex, "".concat(svgAttr, "="));
         }
     }
-    catch (e_2_1) { e_2 = { error: e_2_1 }; }
+    catch (e_3_1) { e_3 = { error: e_3_1 }; }
     finally {
         try {
-            if (_d && !_d.done && (_b = _c.return)) _b.call(_c);
+            if (_e && !_e.done && (_c = _d.return)) _c.call(_d);
         }
-        finally { if (e_2) throw e_2.error; }
+        finally { if (e_3) throw e_3.error; }
     }
     // 9. 清理多余的空白
     svg = svg.replace(/>\s+</g, '><');
@@ -273,7 +328,7 @@ function updateIconsFromSelection() {
  * 在指定节点中查找图标
  */
 function findIconsInNodes(nodes) {
-    var e_3, _a;
+    var e_4, _a;
     var icons = [];
     try {
         for (var nodes_1 = __values(nodes), nodes_1_1 = nodes_1.next(); !nodes_1_1.done; nodes_1_1 = nodes_1.next()) {
@@ -281,12 +336,12 @@ function findIconsInNodes(nodes) {
             traverseNode(node, icons);
         }
     }
-    catch (e_3_1) { e_3 = { error: e_3_1 }; }
+    catch (e_4_1) { e_4 = { error: e_4_1 }; }
     finally {
         try {
             if (nodes_1_1 && !nodes_1_1.done && (_a = nodes_1.return)) _a.call(nodes_1);
         }
-        finally { if (e_3) throw e_3.error; }
+        finally { if (e_4) throw e_4.error; }
     }
     // 按名称排序
     icons.sort(function (a, b) { return a.name.localeCompare(b.name); });
@@ -297,7 +352,7 @@ function findIconsInNodes(nodes) {
  * 注意：当一个节点被识别为图标后，不再递归其子节点
  */
 function traverseNode(node, icons) {
-    var e_4, _a;
+    var e_5, _a;
     // 检查是否是图标（COMPONENT 或 FRAME 类型，合适的尺寸）
     if (isIconNode(node)) {
         icons.push({
@@ -317,12 +372,12 @@ function traverseNode(node, icons) {
                 traverseNode(child, icons);
             }
         }
-        catch (e_4_1) { e_4 = { error: e_4_1 }; }
+        catch (e_5_1) { e_5 = { error: e_5_1 }; }
         finally {
             try {
                 if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
             }
-            finally { if (e_4) throw e_4.error; }
+            finally { if (e_5) throw e_5.error; }
         }
     }
 }
@@ -392,7 +447,7 @@ function exportIconsToSvg(icons) {
                     });
                     _loop_1 = function (batchStart) {
                         var batch, batchResults, batchResults_1, batchResults_1_1, result, currentProgress;
-                        var e_5, _c;
+                        var e_6, _c;
                         return __generator(this, function (_d) {
                             switch (_d.label) {
                                 case 0:
@@ -440,19 +495,19 @@ function exportIconsToSvg(icons) {
                                     batchResults = _d.sent();
                                     try {
                                         // 收集有效结果
-                                        for (batchResults_1 = (e_5 = void 0, __values(batchResults)), batchResults_1_1 = batchResults_1.next(); !batchResults_1_1.done; batchResults_1_1 = batchResults_1.next()) {
+                                        for (batchResults_1 = (e_6 = void 0, __values(batchResults)), batchResults_1_1 = batchResults_1.next(); !batchResults_1_1.done; batchResults_1_1 = batchResults_1.next()) {
                                             result = batchResults_1_1.value;
                                             if (result) {
                                                 results.push(result);
                                             }
                                         }
                                     }
-                                    catch (e_5_1) { e_5 = { error: e_5_1 }; }
+                                    catch (e_6_1) { e_6 = { error: e_6_1 }; }
                                     finally {
                                         try {
                                             if (batchResults_1_1 && !batchResults_1_1.done && (_c = batchResults_1.return)) _c.call(batchResults_1);
                                         }
-                                        finally { if (e_5) throw e_5.error; }
+                                        finally { if (e_6) throw e_6.error; }
                                     }
                                     currentProgress = Math.min(batchStart + BATCH_SIZE, total);
                                     sendToUI({

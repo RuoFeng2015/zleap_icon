@@ -67,8 +67,9 @@ const UI_HEIGHT = 550
 
 /**
  * 清理 Figma 导出的 SVG 中的问题元素
- * - 移除画板背景（#F5F5F5 填充的全尺寸矩形）
+ * - 移除画板背景（#F5F5F5、#1E1E1E 等常见背景色填充的全尺寸矩形）
  * - 移除超大白色背景路径
+ * - 移除覆盖整个 viewBox 的纯色背景路径
  * - 移除空的 clipPath 和引用
  * - 保留渐变定义和多色效果
  */
@@ -79,54 +80,109 @@ function cleanSvgContent(svgString: string): string {
   // 打印原始 SVG 片段用于调试
   console.log(`[cleanSvgContent] 原始 SVG 前 200 字符: ${svg.substring(0, 200)}`)
 
-  // 1. 移除 #F5F5F5 背景 - 处理 rect 和 path 元素
-  // 使用正则匹配包含 fill="#F5F5F5" 的 rect 或 path（紧跟在 svg 标签后的第一个元素）
-  const before1 = svg.length
-  // 移除 fill="#F5F5F5" 的 rect 背景（整个画板背景）
-  svg = svg.replace(/<rect[^>]*fill="#F5F5F5"[^>]*\/>/gi, '')
-  svg = svg.replace(/<rect[^>]*fill="#F5F5F5"[^>]*>[^<]*<\/rect>/gi, '')
-  // 移除 fill="#F5F5F5" 的 path 背景
-  svg = svg.replace(/<path[^>]*fill="#F5F5F5"[^>]*\/>/gi, '')
-  console.log(`[cleanSvgContent] Step 1: 移除 #F5F5F5 背景, 删除 ${before1 - svg.length} 字符`)
+  // 0. 先提取 viewBox 尺寸，用于后续判断背景路径
+  const viewBoxMatch = svg.match(/viewBox="0 0 (\d+) (\d+)"/)
+  const vbWidth = viewBoxMatch ? parseInt(viewBoxMatch[1], 10) : 0
+  const vbHeight = viewBoxMatch ? parseInt(viewBoxMatch[2], 10) : 0
+  console.log(`[cleanSvgContent] ViewBox 尺寸: ${vbWidth} x ${vbHeight}`)
 
-  // 2. 移除超大尺寸的 rect 背景（如 width="1440"）
+  // 1. 移除常见背景色填充的 rect 和 path 元素
+  // 包括 #F5F5F5（浅灰）、#1E1E1E（Figma 深色主题背景）、#FFFFFF（白色）
+  const before1 = svg.length
+  const bgColors = ['#F5F5F5', '#1E1E1E', '#FFFFFF', '#ffffff', '#1e1e1e', '#f5f5f5']
+  for (const color of bgColors) {
+    svg = svg.replace(new RegExp(`<rect[^>]*fill="${color}"[^>]*\\/>`, 'gi'), '')
+    svg = svg.replace(new RegExp(`<rect[^>]*fill="${color}"[^>]*>[^<]*<\\/rect>`, 'gi'), '')
+    svg = svg.replace(new RegExp(`<path[^>]*fill="${color}"[^>]*\\/>`, 'gi'), '')
+  }
+  console.log(`[cleanSvgContent] Step 1: 移除常见背景色, 删除 ${before1 - svg.length} 字符`)
+
+  // 2. 移除覆盖整个 viewBox 的背景路径（格式如 M0 0h24v24H0z）
+  // 这种路径会创建一个与图标大小完全相同的背景矩形
   const before2 = svg.length
-  // 匹配 width 超过 500 的 rect 元素
-  svg = svg.replace(/<rect[^>]*width="(\d+)"[^>]*>/gi, (match, width) => {
-    const w = parseInt(width, 10)
-    if (w > 500) {
+  if (vbWidth > 0 && vbHeight > 0) {
+    // 匹配 d="M0 0h{width}v{height}H0z" 或类似变体
+    const bgPathPattern = new RegExp(
+      `<path[^>]*d="M0\\s*0\\s*[hH]${vbWidth}\\s*[vV]${vbHeight}\\s*[hH]0\\s*[zZ]?"[^>]*\\/>`,
+      'gi'
+    )
+    svg = svg.replace(bgPathPattern, (match) => {
+      console.log(`[cleanSvgContent] 删除 viewBox 背景路径: ${match.substring(0, 80)}...`)
+      return ''
+    })
+    // 也处理 d 在其他位置的情况
+    svg = svg.replace(
+      new RegExp(`<path[^>]*d="M0\\s*0\\s*h${vbWidth}v${vbHeight}H0z?"[^>]*\\/>`, 'gi'),
+      ''
+    )
+  }
+  console.log(`[cleanSvgContent] Step 2: 移除 viewBox 背景路径, 删除 ${before2 - svg.length} 字符`)
+
+  // 3. 移除超大尺寸的 rect 背景或白色背景 rect
+  const before3 = svg.length
+  // 匹配所有 rect 元素（包括自闭合 /> 和非自闭合 >）
+  svg = svg.replace(/<rect[^>]*(?:\/>|>[^<]*<\/rect>)/gi, (match) => {
+    // 检查是否是白色填充
+    const isWhiteFill = /fill=["']white["']/i.test(match)
+    // 检查是否有超大尺寸
+    const widthMatch = match.match(/width=["']([^"']+)["']/)
+    const width = widthMatch ? parseFloat(widthMatch[1]) : 0
+    // 检查是否有负坐标（页面级背景特征）
+    const hasNegativeCoord = /[xy]=["']-/.test(match)
+    
+    // 移除条件: 白色填充 + (超大尺寸 或 负坐标)
+    if (isWhiteFill && (width > 100 || hasNegativeCoord)) {
+      console.log(`[cleanSvgContent] 删除白色背景 rect: ${match.substring(0, 100)}...`)
+      return ''
+    }
+    // 移除条件: 任何填充 + 超大尺寸 (> 500)
+    if (width > 500) {
       console.log(`[cleanSvgContent] 删除大尺寸 rect: ${match.substring(0, 80)}...`)
       return ''
     }
     return match
   })
-  console.log(`[cleanSvgContent] Step 2: 移除大尺寸 rect, 删除 ${before2 - svg.length} 字符`)
+  console.log(`[cleanSvgContent] Step 3: 移除大尺寸/白色背景 rect, 删除 ${before3 - svg.length} 字符`)
 
-  // 3. 移除 white 背景 path（带有负坐标或 M0 开头）
-  const before3 = svg.length
-  svg = svg.replace(/<path[^>]*fill="white"[^>]*\/>/gi, (match) => {
-    // 检查是否是大背景路径（d 包含负数坐标或 M0）
-    if (match.includes('d="M-') || match.includes('d="M0')) {
-      console.log(`[cleanSvgContent] 删除白色背景: ${match.substring(0, 80)}...`)
+  // 4. 移除 white 背景 path（带有负坐标、M0 开头、或超大尺寸）
+  const before4 = svg.length
+  svg = svg.replace(/<path[^>]*fill=["']white["'][^>]*\/>/gi, (match) => {
+    // 提取 d 属性的值
+    const dMatch = match.match(/d=["']([^"']+)["']/)
+    const dValue = dMatch ? dMatch[1] : ''
+    
+    // 检查是否是大背景路径
+    const isBackground = 
+      // d 包含负数坐标（M后跟负数，如 M-162.854 或 M -100）
+      /M\s*-?\d/.test(dValue) && dValue.includes('-') ||
+      // d 以 M0 开头（全覆盖背景）
+      /^M\s*0/.test(dValue) ||
+      // 路径尺寸超大（h/v 命令后跟 3 位数以上的数字）
+      /[hHvV]-?\d{3,}/.test(dValue) ||
+      // 路径包含负数坐标
+      /[Mm]\s*-\d/.test(dValue)
+    
+    if (isBackground) {
+      console.log(`[cleanSvgContent] 删除白色背景: ${match.substring(0, 100)}...`)
       return ''
     }
     return match
   })
-  console.log(`[cleanSvgContent] Step 3: 移除 white 背景, 删除 ${before3 - svg.length} 字符`)
+  console.log(`[cleanSvgContent] Step 4: 移除 white 背景, 删除 ${before4 - svg.length} 字符`)
 
-  // 4. 移除空的 clipPath 定义和 clip-path 属性
+  // 5. 移除空的 clipPath 定义和 clip-path 属性
   svg = svg.replace(/<clipPath\s+id="[^"]*"\s*\/>/gi, '')
   svg = svg.replace(/<clipPath\s+id="[^"]*"\s*><\/clipPath>/gi, '')
   svg = svg.replace(/\s+clip-path="url\([^)]*\)"/gi, '') // 注意：属性名是 clip-path 不是 clipPath
   svg = svg.replace(/\s+clipPath="url\([^)]*\)"/gi, '')
 
-  // 5. 简化空的 g 标签
+  // 6. 简化空的 g 标签
   svg = svg.replace(/<g\s*>\s*<\/g>/gi, '')
   
-  // 6. 解包只有单个属性的 g 标签
+  // 7. 解包只有单个属性的 g 标签
   svg = svg.replace(/<g\s*>([^]*?)<\/g>/g, '$1')
 
-  // 7. 移除未使用的渐变定义
+  // 8. 移除未使用的渐变定义
   const usedGradientIds = new Set<string>()
   const gradientRefs = svg.matchAll(/(?:fill|stroke)="url\(#([^)]+)\)"/g)
   for (const match of gradientRefs) {
@@ -138,7 +194,7 @@ function cleanSvgContent(svgString: string): string {
     (match, id) => usedGradientIds.has(id) ? match : ''
   )
 
-  // 8. 将驼峰命名的 SVG 属性转换回标准的连字符命名
+  // 9. 将驼峰命名的 SVG 属性转换回标准的连字符命名
   // Figma exportAsync 返回的 SVG 使用 JSX 风格的驼峰命名（如 stopColor）
   // 需要转换为标准 SVG 的连字符命名（如 stop-color）
   const jsxToSvgAttributes: Record<string, string> = {
