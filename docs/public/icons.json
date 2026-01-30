@@ -1,9 +1,75 @@
 {
-  "version": "0.0.20",
+  "version": "0.0.21",
   "syncMode": "incremental",
-  "generatedAt": "2026-01-30T09:42:12.676Z",
-  "totalCount": 17,
+  "generatedAt": "2026-01-30T09:54:01.566Z",
+  "totalCount": 19,
   "icons": [
+    {
+      "name": "Icon文档1",
+      "originalName": "文档1",
+      "svgPath": "svg/文档1.svg",
+      "componentPath": "src/icons/Icon文档1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T09:54:01.566Z"
+    },
+    {
+      "name": "Icon网页下载",
+      "originalName": "网页下载",
+      "svgPath": "svg/网页下载.svg",
+      "componentPath": "src/icons/Icon网页下载.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T09:54:01.566Z"
+    },
+    {
+      "name": "IconSheZhi",
+      "originalName": "设置",
+      "svgPath": "svg/设置.svg",
+      "componentPath": "src/icons/IconSheZhi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T09:42:37.609Z"
+    },
+    {
+      "name": "IconBangZhuShuoMing",
+      "originalName": "帮助说明",
+      "svgPath": "svg/帮助说明.svg",
+      "componentPath": "src/icons/IconBangZhuShuoMing.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T09:42:37.608Z"
+    },
+    {
+      "name": "IconShiBai",
+      "originalName": "失败",
+      "svgPath": "svg/失败.svg",
+      "componentPath": "src/icons/IconShiBai.tsx",
+      "size": {
+        "width": 16,
+        "height": 16
+      },
+      "createdAt": "2026-01-30T09:42:37.607Z"
+    },
+    {
+      "name": "IconXiaZai",
+      "originalName": "下载",
+      "svgPath": "svg/下载.svg",
+      "componentPath": "src/icons/IconXiaZai.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-01-30T09:42:37.607Z"
+    },
     {
       "name": "IconFrame",
       "originalName": "Frame",
@@ -13,51 +79,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-01-30T09:42:12.676Z"
-    },
-    {
-      "name": "Icon失败",
-      "originalName": "失败",
-      "svgPath": "svg/失败.svg",
-      "componentPath": "src/icons/Icon失败.tsx",
-      "size": {
-        "width": 16,
-        "height": 16
-      },
-      "uploadedAt": "2026-01-30T09:42:12.676Z"
-    },
-    {
-      "name": "Icon帮助说明",
-      "originalName": "帮助说明",
-      "svgPath": "svg/帮助说明.svg",
-      "componentPath": "src/icons/Icon帮助说明.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-30T09:42:12.676Z"
-    },
-    {
-      "name": "Icon下载",
-      "originalName": "下载",
-      "svgPath": "svg/下载.svg",
-      "componentPath": "src/icons/Icon下载.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-30T09:34:58.684Z"
-    },
-    {
-      "name": "Icon设置",
-      "originalName": "设置",
-      "svgPath": "svg/设置.svg",
-      "componentPath": "src/icons/Icon设置.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-01-30T09:34:58.684Z"
+      "createdAt": "2026-01-30T09:42:37.604Z"
     },
     {
       "name": "IconChengYuanGuanLi",
