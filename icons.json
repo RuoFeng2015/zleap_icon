@@ -1,8 +1,64 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-30T08:27:41.047Z",
-  "totalCount": 4,
+  "version": "0.0.13",
+  "syncMode": "incremental",
+  "generatedAt": "2026-01-30T08:33:28.563Z",
+  "totalCount": 9,
   "icons": [
+    {
+      "name": "Icon下载助手",
+      "originalName": "下载助手",
+      "svgPath": "svg/下载助手.svg",
+      "componentPath": "src/icons/Icon下载助手.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "uploadedAt": "2026-01-30T08:33:28.563Z"
+    },
+    {
+      "name": "Icon企业版",
+      "originalName": "企业版",
+      "svgPath": "svg/企业版.svg",
+      "componentPath": "src/icons/Icon企业版.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "uploadedAt": "2026-01-30T08:33:28.563Z"
+    },
+    {
+      "name": "Icon系统配置",
+      "originalName": "系统配置",
+      "svgPath": "svg/系统配置.svg",
+      "componentPath": "src/icons/Icon系统配置.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "uploadedAt": "2026-01-30T08:33:28.563Z"
+    },
+    {
+      "name": "Icon系统配置1",
+      "originalName": "系统配置1",
+      "svgPath": "svg/系统配置1.svg",
+      "componentPath": "src/icons/Icon系统配置1.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "uploadedAt": "2026-01-30T08:33:28.563Z"
+    },
+    {
+      "name": "Icon运营管理",
+      "originalName": "运营管理",
+      "svgPath": "svg/运营管理.svg",
+      "componentPath": "src/icons/Icon运营管理.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "uploadedAt": "2026-01-30T08:33:28.563Z"
+    },
     {
       "name": "IconSheZhi",
       "originalName": "设置",
