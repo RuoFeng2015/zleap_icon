@@ -15,7 +15,7 @@ export interface IconCheckProps extends SVGProps<SVGSVGElement> {
  * @param ref - Forwarded ref to the SVG element
  */
 export const IconCheck = forwardRef<SVGSVGElement, IconCheckProps>(
-  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+  ({ size = 24, color, className, style, ...props }, ref) => {
     return (
       <svg
         ref={ref}
@@ -25,7 +25,7 @@ export const IconCheck = forwardRef<SVGSVGElement, IconCheckProps>(
         viewBox="0 0 24 24"
         fill="none"
         className={className}
-        style={{ color, ...style }}
+        style={{ ...(color ? { color } : {}), ...style }}
         {...props}
       >
         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m20 6.5-11 11-5-5"/>

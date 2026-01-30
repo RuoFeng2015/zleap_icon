@@ -15,7 +15,7 @@ export interface IconCloseCircleProps extends SVGProps<SVGSVGElement> {
  * @param ref - Forwarded ref to the SVG element
  */
 export const IconCloseCircle = forwardRef<SVGSVGElement, IconCloseCircleProps>(
-  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+  ({ size = 24, color, className, style, ...props }, ref) => {
     return (
       <svg
         ref={ref}
@@ -23,7 +23,7 @@ export const IconCloseCircle = forwardRef<SVGSVGElement, IconCloseCircleProps>(
         width={size}
         height={size}
         viewBox="0 0 24 24"
-        fill={color}
+        fill={color || "currentColor"}
         className={className}
         style={style}
         {...props}

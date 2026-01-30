@@ -96,6 +96,98 @@ function isMulticolorSvg(svgContent: string): boolean {
 }
 
 /**
+ * 保留颜色列表：这些颜色不会被替换为 currentColor
+ * 主要是浅色/白色，用作图标的装饰或镂空效果
+ */
+const PRESERVED_COLORS = [
+  'white',
+  '#fff',
+  '#ffffff',
+  '#FFF',
+  '#FFFFFF',
+  'rgb(255, 255, 255)',
+  'rgb(255,255,255)',
+  // 也可以保留一些特殊颜色，如需要
+]
+
+/**
+ * 判断颜色是否应该被保留（不替换为 currentColor）
+ * @param color - 颜色值
+ * @returns true 如果颜色应该被保留
+ */
+function shouldPreserveColor(color: string): boolean {
+  const normalizedColor = color.toLowerCase().replace(/\s/g, '')
+  
+  // 检查是否在保留列表中
+  for (const preserved of PRESERVED_COLORS) {
+    if (normalizedColor === preserved.toLowerCase().replace(/\s/g, '')) {
+      return true
+    }
+  }
+  
+  // 检查是否是接近白色的颜色 (#fff, #ffffff 或 rgb 接近 255,255,255)
+  const hexMatch = color.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i)
+  if (hexMatch) {
+    const hex = hexMatch[1]
+    let r, g, b
+    if (hex.length === 3) {
+      r = parseInt(hex[0] + hex[0], 16)
+      g = parseInt(hex[1] + hex[1], 16)
+      b = parseInt(hex[2] + hex[2], 16)
+    } else {
+      r = parseInt(hex.substring(0, 2), 16)
+      g = parseInt(hex.substring(2, 4), 16)
+      b = parseInt(hex.substring(4, 6), 16)
+    }
+    // 如果颜色非常接近白色（所有通道 > 240），保留它
+    if (r > 240 && g > 240 && b > 240) {
+      return true
+    }
+  }
+  
+  return false
+}
+
+/**
+ * 替换 SVG 内容中的主体颜色为 currentColor，保留装饰颜色
+ * 适用于多色图标，使其可以通过 color prop 控制主体颜色
+ * 
+ * @param content - SVG 内部内容
+ * @returns 处理后的内容
+ */
+function replaceMainColors(content: string): string {
+  // 替换 fill 属性中的主体颜色
+  let result = content.replace(
+    /fill="(#[0-9A-Fa-f]{3,6}|rgb\([^)]+\)|[a-z]+)"/gi,
+    (match, color) => {
+      if (color === 'none' || color === 'currentColor') {
+        return match
+      }
+      if (shouldPreserveColor(color)) {
+        return match
+      }
+      return 'fill="currentColor"'
+    }
+  )
+  
+  // 替换 stroke 属性中的主体颜色
+  result = result.replace(
+    /stroke="(#[0-9A-Fa-f]{3,6}|rgb\([^)]+\)|[a-z]+)"/gi,
+    (match, color) => {
+      if (color === 'none' || color === 'currentColor') {
+        return match
+      }
+      if (shouldPreserveColor(color)) {
+        return match
+      }
+      return 'stroke="currentColor"'
+    }
+  )
+  
+  return result
+}
+
+/**
  * Generates a React component template from icon metadata and JSX content
  *
  * @param icon - Icon metadata
@@ -139,7 +231,8 @@ export function generateComponent(
 
   // Determine fill prop based on SVG type and original fill attribute
   // - If original has fill="none", preserve it (stroke-based icons)
-  // - For multicolor/gradient icons without explicit fill, don't apply fill prop
+  // - For gradient icons with explicit fill, preserve the fill
+  // - For multicolor icons, we'll replace main colors with currentColor
   // - For single-color icons, apply fill={color}
   let fillProp: string
   if (rootFill === 'none') {
@@ -148,12 +241,15 @@ export function generateComponent(
   } else if (hasGradients && rootFill) {
     fillProp = `\n        fill="${rootFill}"`
   } else if (isMulticolor) {
-    fillProp = ''
+    // 多色图标：不在 SVG 根元素设置 fill，使用 currentColor 继承
+    fillProp = '\n        fill="none"'
   } else {
-    fillProp = '\n        fill={color}'
+    // fill 类型图标：使用 color 或默认 currentColor
+    fillProp = '\n        fill={color || \"currentColor\"}'
   }
+  // 更新注释：多色图标现在支持通过 color 修改主体颜色
   const colorComment = isMulticolor
-    ? '/** Icon color (not applicable for multicolor icons) */'
+    ? '/** Icon color (controls the main color, preserves white/light decorations) */'
     : '/** Icon color */'
 
   let content: string
@@ -177,7 +273,7 @@ export interface ${propsName} extends SVGProps<SVGSVGElement> {
  * @param ref - Forwarded ref to the SVG element
  */
 export const ${componentName} = forwardRef<SVGSVGElement, ${propsName}>(
-  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+  ({ size = 24, color, className, style, ...props }, ref) => {
     const uniqueId = useId();
     
      // Replace gradient IDs with unique ones
@@ -210,16 +306,21 @@ export default ${componentName};
     const isStrokeIcon = rootFill === 'none'
     let processedContent = innerContent
     
-    if (isStrokeIcon && !isMulticolor) {
+    if (isMulticolor) {
+      // 多色图标：替换主体颜色为 currentColor，保留装饰颜色（白色等）
+      processedContent = replaceMainColors(innerContent)
+    } else if (isStrokeIcon) {
       // Replace hardcoded stroke/fill colors with currentColor for single-color stroke icons
       processedContent = innerContent
         .replace(/stroke="#[0-9A-Fa-f]{3,6}"/g, 'stroke="currentColor"')
         .replace(/fill="#[0-9A-Fa-f]{3,6}"/g, 'fill="currentColor"')
     }
     
-    // For stroke icons, use style={{ color }} to apply the color prop
-    const styleProp = isStrokeIcon 
-      ? '\n        style={{ color, ...style }}'
+    // 对于 stroke 图标和多色图标，使用条件性 style 来应用颜色
+    // 只有当用户传入 color prop 时才设置内联样式，否则让 Tailwind 类名生效
+    const needsColorStyle = isStrokeIcon || isMulticolor
+    const styleProp = needsColorStyle
+      ? '\n        style={{ ...(color ? { color } : {}), ...style }}'
       : '\n        style={style}'
     
     content = `import React, { forwardRef } from 'react';
@@ -239,7 +340,7 @@ export interface ${propsName} extends SVGProps<SVGSVGElement> {
  * @param ref - Forwarded ref to the SVG element
  */
 export const ${componentName} = forwardRef<SVGSVGElement, ${propsName}>(
-  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+  ({ size = 24, color, className, style, ...props }, ref) => {
     return (
       <svg
         ref={ref}

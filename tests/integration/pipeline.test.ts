@@ -240,7 +240,8 @@ describe('End-to-End Integration: Icon Sync Pipeline', () => {
       expect(component.fileName).toBe('IconArrowRight.tsx')
       expect(component.content).toContain('forwardRef')
       expect(component.content).toContain('size = 24')
-      expect(component.content).toContain("color = 'currentColor'")
+      // color 现在没有默认值，但 currentColor 作为回退或在内部使用
+      expect(component.content).toContain('currentColor')
       expect(component.content).toContain('className')
       expect(component.content).toContain('...props')
       expect(component.content).toContain('IconArrowRightProps')
