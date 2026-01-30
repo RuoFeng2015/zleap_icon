@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.3] - 2026-01-30
+
+同步 10 个图标：check, 关闭, 关闭-小, 展开, 文档
+
+### Added
+- IconZhiShiKu
+- IconFanHui
+- IconTongZhi
+- IconLianJie
+- IconZhanKai
+- IconWenDang
+- IconChaZhao
+- IconGuanBi
+- IconGuanBiXiao
+- IconCheck
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.19] - 2026-01-26
 
 更新/新增 2 个图标：信息管理, 报告助手 图标
