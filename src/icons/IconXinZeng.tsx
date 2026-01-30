@@ -15,7 +15,7 @@ export interface IconXinZengProps extends SVGProps<SVGSVGElement> {
  * @param ref - Forwarded ref to the SVG element
  */
 export const IconXinZeng = forwardRef<SVGSVGElement, IconXinZengProps>(
-  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+  ({ size = 24, color, className, style, ...props }, ref) => {
     return (
       <svg
         ref={ref}
@@ -25,10 +25,10 @@ export const IconXinZeng = forwardRef<SVGSVGElement, IconXinZengProps>(
         viewBox="0 0 24 24"
         fill="none"
         className={className}
-        style={{ color, ...style }}
+        style={{ ...(color ? { color } : {}), ...style }}
         {...props}
       >
-        <path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v8"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 12h8"/>
+        <path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v8"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 12h8"/><path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v8"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 12h8"/><path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v8"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 12h8"/>
       </svg>
     );
   }

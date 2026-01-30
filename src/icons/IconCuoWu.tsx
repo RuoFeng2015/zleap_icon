@@ -15,7 +15,7 @@ export interface IconCuoWuProps extends SVGProps<SVGSVGElement> {
  * @param ref - Forwarded ref to the SVG element
  */
 export const IconCuoWu = forwardRef<SVGSVGElement, IconCuoWuProps>(
-  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+  ({ size = 24, color, className, style, ...props }, ref) => {
     return (
       <svg
         ref={ref}
@@ -25,10 +25,10 @@ export const IconCuoWu = forwardRef<SVGSVGElement, IconCuoWuProps>(
         viewBox="0 0 24 24"
         fill="none"
         className={className}
-        style={{ color, ...style }}
+        style={{ ...(color ? { color } : {}), ...style }}
         {...props}
       >
-        <path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="m12 2.5-11 19h22z" clipRule="evenodd"/><path stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" d="M12 17.5v.5"/><path stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" d="m12 9.5.004 5"/>
+        <path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="m12 2.5-11 19h22z" clipRule="evenodd"/><path stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" d="M12 17.5v.5"/><path stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" d="m12 9.5.004 5"/><path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="m12 2.5-11 19h22z" clipRule="evenodd"/><path stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" d="M12 17.5v.5"/><path stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" d="m12 9.5.004 5"/><path stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" d="m12 2.5-11 19h22z" clipRule="evenodd"/><path stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" d="M12 17.5v.5"/><path stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" d="m12 9.5.004 5"/>
       </svg>
     );
   }
