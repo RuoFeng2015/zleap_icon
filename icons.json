@@ -1,7 +1,8 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-01-30T07:14:16.295Z",
-  "totalCount": 1,
+  "version": "0.0.8",
+  "syncMode": "replace",
+  "generatedAt": "2026-01-30T07:52:36.554Z",
+  "totalCount": 10,
   "icons": [
     {
       "name": "IconBack",
@@ -12,7 +13,106 @@
         "width": 24,
         "height": 24
       },
-      "createdAt": "2026-01-30T07:14:16.293Z"
+      "uploadedAt": "2026-01-30T07:52:36.554Z"
+    },
+    {
+      "name": "IconCheck",
+      "originalName": "check",
+      "svgPath": "svg/check.svg",
+      "componentPath": "src/icons/IconCheck.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T07:52:36.554Z"
+    },
+    {
+      "name": "IconSearch",
+      "originalName": "search",
+      "svgPath": "svg/search.svg",
+      "componentPath": "src/icons/IconSearch.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T07:52:36.554Z"
+    },
+    {
+      "name": "Icon关闭",
+      "originalName": "关闭",
+      "svgPath": "svg/关闭.svg",
+      "componentPath": "src/icons/Icon关闭.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T07:52:36.554Z"
+    },
+    {
+      "name": "Icon关闭小",
+      "originalName": "关闭-小",
+      "svgPath": "svg/关闭-小.svg",
+      "componentPath": "src/icons/Icon关闭小.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T07:52:36.554Z"
+    },
+    {
+      "name": "Icon展开",
+      "originalName": "展开",
+      "svgPath": "svg/展开.svg",
+      "componentPath": "src/icons/Icon展开.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T07:52:36.554Z"
+    },
+    {
+      "name": "Icon文档",
+      "originalName": "文档",
+      "svgPath": "svg/文档.svg",
+      "componentPath": "src/icons/Icon文档.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T07:52:36.554Z"
+    },
+    {
+      "name": "Icon知识库",
+      "originalName": "知识库",
+      "svgPath": "svg/知识库.svg",
+      "componentPath": "src/icons/Icon知识库.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T07:52:36.554Z"
+    },
+    {
+      "name": "Icon通知",
+      "originalName": "通知",
+      "svgPath": "svg/通知.svg",
+      "componentPath": "src/icons/Icon通知.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T07:52:36.554Z"
+    },
+    {
+      "name": "Icon链接",
+      "originalName": "链接",
+      "svgPath": "svg/链接.svg",
+      "componentPath": "src/icons/Icon链接.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-01-30T07:52:36.554Z"
     }
   ]
 }
