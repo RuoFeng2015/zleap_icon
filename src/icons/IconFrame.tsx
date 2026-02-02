@@ -4,31 +4,31 @@ import type { SVGProps } from 'react';
 export interface IconFrameProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (not applicable for multicolor icons) */
+  /** Icon color */
   color?: string;
 }
 
 /**
- * IconFrame icon component (multicolor)
+ * IconFrame icon component
  *
  * @param props - Component props including size, color, and SVG attributes
  * @param ref - Forwarded ref to the SVG element
  */
 export const IconFrame = forwardRef<SVGSVGElement, IconFrameProps>(
-  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+  ({ size = 24, color, className, style, ...props }, ref) => {
     return (
       <svg
         ref={ref}
         xmlns="http://www.w3.org/2000/svg"
         width={size}
         height={size}
-        viewBox="0 0 24 24"
+        viewBox="0 0 40 40"
         fill="none"
         className={className}
-        style={{ color, ...style }}
+        style={{ ...(color ? { color } : {}), ...style }}
         {...props}
       >
-        <path fill="#4A4A4A" fillRule="evenodd" stroke="#4A4A4A" strokeLinejoin="round" strokeWidth="1.5" d="m12 2.5-11 19h22z" clipRule="evenodd"/><path stroke="white" strokeLinecap="round" strokeWidth="1.5" d="M12 17.5v.5"/><path stroke="white" strokeLinecap="round" strokeWidth="1.5" d="m12 9.5.004 5"/>
+        <path stroke="currentColor" strokeWidth="2.473" d="M27.504 14.84H12.069c-2.27 0-4.65 1.476-4.65 4.648v10.489c0 3.128 1.65 4.649 4.65 4.649h15.435c3.087 0 4.649-2.31 4.649-4.65V19.489c0-3-1.934-4.648-4.65-4.648Z"/><path fill="currentColor" d="M14.016 26.084a1.649 1.649 0 1 0 0-3.298 1.649 1.649 0 0 0 0 3.298"/><path fill="currentColor" d="M25.557 26.084a1.649 1.649 0 1 0 0-3.298 1.649 1.649 0 0 0 0 3.298"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.473" d="M19.786 8.244v6.596"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.473" d="M3.298 21.435v6.595"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.473" d="M36.275 21.435v6.595"/><path stroke="currentColor" strokeWidth="2.473" d="M19.786 8.244a1.649 1.649 0 1 0 0-3.297 1.649 1.649 0 0 0 0 3.297Z"/>
       </svg>
     );
   }

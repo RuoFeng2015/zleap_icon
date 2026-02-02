@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-01-30T11:02:58.253Z",
-  "totalCount": 10,
+  "generatedAt": "2026-02-02T06:49:48.925Z",
+  "totalCount": 11,
   "icons": [
+    {
+      "name": "IconFrame",
+      "originalName": "Frame",
+      "svgPath": "svg/Frame.svg",
+      "componentPath": "src/icons/IconFrame.tsx",
+      "size": {
+        "width": 40,
+        "height": 40
+      },
+      "createdAt": "2026-02-02T06:49:48.912Z"
+    },
     {
       "name": "IconLianJie",
       "originalName": "链接",
