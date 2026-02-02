@@ -1,7 +1,6 @@
 {
-  "version": "0.0.27",
-  "syncMode": "incremental",
-  "generatedAt": "2026-02-02T06:49:25.655Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-02-02T06:49:48.925Z",
   "totalCount": 11,
   "icons": [
     {
@@ -13,7 +12,7 @@
         "width": 40,
         "height": 40
       },
-      "uploadedAt": "2026-02-02T06:49:25.655Z"
+      "createdAt": "2026-02-02T06:49:48.912Z"
     },
     {
       "name": "IconLianJie",
