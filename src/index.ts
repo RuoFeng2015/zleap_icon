@@ -10,15 +10,11 @@ import { IconBack1 } from './icons/IconBack1';
 import { IconCheck } from './icons/IconCheck';
 import { IconCheck1 } from './icons/IconCheck1';
 import { IconGuanBi } from './icons/IconGuanBi';
-import { IconGuanBi1 } from './icons/IconGuanBi1';
 import { IconGuanBiXiao } from './icons/IconGuanBiXiao';
-import { IconGuanBiXiao1 } from './icons/IconGuanBiXiao1';
 import { IconLianJie } from './icons/IconLianJie';
-import { IconLianJie1 } from './icons/IconLianJie1';
 import { IconSearch } from './icons/IconSearch';
 import { IconSearch1 } from './icons/IconSearch1';
 import { IconTongZhi } from './icons/IconTongZhi';
-import { IconTongZhi1 } from './icons/IconTongZhi1';
 import { IconWenDang } from './icons/IconWenDang';
 import { IconWenDang1 } from './icons/IconWenDang1';
 import { IconZhanKai } from './icons/IconZhanKai';
@@ -31,15 +27,11 @@ export { IconBack1, type IconBack1Props } from './icons/IconBack1';
 export { IconCheck, type IconCheckProps } from './icons/IconCheck';
 export { IconCheck1, type IconCheck1Props } from './icons/IconCheck1';
 export { IconGuanBi, type IconGuanBiProps } from './icons/IconGuanBi';
-export { IconGuanBi1, type IconGuanBi1Props } from './icons/IconGuanBi1';
 export { IconGuanBiXiao, type IconGuanBiXiaoProps } from './icons/IconGuanBiXiao';
-export { IconGuanBiXiao1, type IconGuanBiXiao1Props } from './icons/IconGuanBiXiao1';
 export { IconLianJie, type IconLianJieProps } from './icons/IconLianJie';
-export { IconLianJie1, type IconLianJie1Props } from './icons/IconLianJie1';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
 export { IconSearch1, type IconSearch1Props } from './icons/IconSearch1';
 export { IconTongZhi, type IconTongZhiProps } from './icons/IconTongZhi';
-export { IconTongZhi1, type IconTongZhi1Props } from './icons/IconTongZhi1';
 export { IconWenDang, type IconWenDangProps } from './icons/IconWenDang';
 export { IconWenDang1, type IconWenDang1Props } from './icons/IconWenDang1';
 export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
@@ -56,15 +48,11 @@ export const allIcons = {
   IconCheck,
   IconCheck1,
   IconGuanBi,
-  IconGuanBi1,
   IconGuanBiXiao,
-  IconGuanBiXiao1,
   IconLianJie,
-  IconLianJie1,
   IconSearch,
   IconSearch1,
   IconTongZhi,
-  IconTongZhi1,
   IconWenDang,
   IconWenDang1,
   IconZhanKai,
