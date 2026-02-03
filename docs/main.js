@@ -394,7 +394,7 @@ function openModal(icon, svgContent) {
   modalIconName.textContent = icon.name;
 
   // Generate code snippets
-  const importStatement = `import { ${icon.name} } from '@zleap-web/icons';`;
+  const importStatement = `import { ${icon.name} } from '@zleap-ai/icons';`;
   const usageExample = `<${icon.name} size={${currentSize}} color="${currentColor}" />`;
 
   // Apply syntax highlighting

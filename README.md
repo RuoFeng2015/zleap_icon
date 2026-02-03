@@ -17,11 +17,11 @@
 ### 安装
 
 ```bash
-npm install @zleap-web/icons
+npm install @zleap-ai/icons
 # 或
-yarn add @zleap-web/icons
+yarn add @zleap-ai/icons
 # 或
-pnpm add @zleap-web/icons
+pnpm add @zleap-ai/icons
 ```
 
 ### 使用方式
@@ -29,7 +29,7 @@ pnpm add @zleap-web/icons
 #### 1. 导入单个图标（推荐，支持 Tree Shaking）
 
 ```tsx
-import { IconArrowRight, IconCheck } from '@zleap-web/icons'
+import { IconArrowRight, IconCheck } from '@zleap-ai/icons'
 
 function App() {
   return (
@@ -68,7 +68,7 @@ function App() {
 ```html
 <!-- 引入 sprite 文件 -->
 <script>
-  fetch('node_modules/@zleap-web/icons/sprite/icons.svg')
+  fetch('node_modules/@zleap-ai/icons/sprite/icons.svg')
     .then((r) => r.text())
     .then((svg) => document.body.insertAdjacentHTML('afterbegin', svg))
 </script>
@@ -82,16 +82,16 @@ function App() {
 #### 4. 使用原始 SVG 文件
 
 ```tsx
-import arrowRightSvg from '@zleap-web/icons/svg/arrow-right.svg'
+import arrowRightSvg from '@zleap-ai/icons/svg/arrow-right.svg'
 
 // 或直接引用路径
-;<img src='node_modules/@zleap-web/icons/svg/arrow-right.svg' alt='arrow' />
+;<img src='node_modules/@zleap-ai/icons/svg/arrow-right.svg' alt='arrow' />
 ```
 
 #### 5. 获取图标元数据
 
 ```tsx
-import iconsData from '@zleap-web/icons/icons.json'
+import iconsData from '@zleap-ai/icons/icons.json'
 
 console.log(iconsData.icons) // 所有图标信息
 console.log(iconsData.version) // 当前版本
