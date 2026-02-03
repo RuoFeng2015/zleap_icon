@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-03T05:45:07.475Z",
-  "totalCount": 10,
+  "generatedAt": "2026-02-03T07:47:14.468Z",
+  "totalCount": 12,
   "icons": [
+    {
+      "name": "IconZhengQue",
+      "originalName": "正确",
+      "svgPath": "svg/正确.svg",
+      "componentPath": "src/icons/IconZhengQue.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-03T07:47:14.458Z"
+    },
+    {
+      "name": "IconShanChuDELETE",
+      "originalName": "删除delete",
+      "svgPath": "svg/删除delete.svg",
+      "componentPath": "src/icons/IconShanChuDELETE.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-03T07:47:14.457Z"
+    },
     {
       "name": "IconZhiShiKu",
       "originalName": "知识库",
