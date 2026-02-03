@@ -1,9 +1,20 @@
 {
-  "version": "0.0.32",
+  "version": "0.0.33",
   "syncMode": "replace",
-  "generatedAt": "2026-02-03T08:21:34.475Z",
-  "totalCount": 10,
+  "generatedAt": "2026-02-03T08:45:48.267Z",
+  "totalCount": 12,
   "icons": [
+    {
+      "name": "IconBack",
+      "originalName": "back",
+      "svgPath": "svg/back.svg",
+      "componentPath": "src/icons/IconBack.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-03T08:45:48.266Z"
+    },
     {
       "name": "IconCheck",
       "originalName": "check",
@@ -13,7 +24,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-03T08:21:34.475Z"
+      "uploadedAt": "2026-02-03T08:45:48.267Z"
     },
     {
       "name": "IconSearch",
@@ -24,7 +35,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-03T08:21:34.475Z"
+      "uploadedAt": "2026-02-03T08:45:48.267Z"
     },
     {
       "name": "Icon关闭",
@@ -35,7 +46,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-03T08:21:34.475Z"
+      "uploadedAt": "2026-02-03T08:45:48.267Z"
     },
     {
       "name": "Icon关闭小",
@@ -46,7 +57,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-03T08:21:34.475Z"
+      "uploadedAt": "2026-02-03T08:45:48.267Z"
     },
     {
       "name": "Icon删除delete",
@@ -57,7 +68,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-03T08:21:34.475Z"
+      "uploadedAt": "2026-02-03T08:45:48.267Z"
     },
     {
       "name": "Icon展开",
@@ -68,7 +79,18 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-03T08:21:34.475Z"
+      "uploadedAt": "2026-02-03T08:45:48.267Z"
+    },
+    {
+      "name": "Icon文档",
+      "originalName": "文档",
+      "svgPath": "svg/文档.svg",
+      "componentPath": "src/icons/Icon文档.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-03T08:45:48.267Z"
     },
     {
       "name": "Icon正确",
@@ -79,7 +101,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-03T08:21:34.475Z"
+      "uploadedAt": "2026-02-03T08:45:48.267Z"
     },
     {
       "name": "Icon知识库",
@@ -90,7 +112,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-03T08:21:34.475Z"
+      "uploadedAt": "2026-02-03T08:45:48.267Z"
     },
     {
       "name": "Icon通知",
@@ -101,7 +123,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-03T08:21:34.475Z"
+      "uploadedAt": "2026-02-03T08:45:48.267Z"
     },
     {
       "name": "Icon链接",
@@ -112,7 +134,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-03T08:21:34.475Z"
+      "uploadedAt": "2026-02-03T08:45:48.267Z"
     }
   ]
 }
