@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.32] - 2026-02-03
+
+更新/新增 10 个图标：check, search, 关闭, 关闭-小, 删除delete
+
+### Added
+- IconZhiShiKu
+- IconTongZhi
+- IconLianJie
+- IconShanChuDELETE
+- IconZhanKai
+- IconZhengQue
+- IconGuanBi
+- IconGuanBiXiao
+- IconSearch
+- IconCheck
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.31] - 2026-02-03
 
 更新/新增 10 个图标：check, search, 关闭, 关闭-小, 删除delete
