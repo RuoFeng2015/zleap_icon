@@ -1,8 +1,75 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-02-03T08:46:12.882Z",
-  "totalCount": 12,
+  "version": "0.0.34",
+  "syncMode": "incremental",
+  "generatedAt": "2026-02-04T10:11:04.872Z",
+  "totalCount": 18,
   "icons": [
+    {
+      "name": "IconLike",
+      "originalName": "like",
+      "svgPath": "svg/like.svg",
+      "componentPath": "src/icons/IconLike.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-04T10:11:04.872Z"
+    },
+    {
+      "name": "Icon刷新",
+      "originalName": "刷新",
+      "svgPath": "svg/刷新.svg",
+      "componentPath": "src/icons/Icon刷新.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-04T10:11:04.872Z"
+    },
+    {
+      "name": "Icon助手管理",
+      "originalName": "助手管理",
+      "svgPath": "svg/助手管理.svg",
+      "componentPath": "src/icons/Icon助手管理.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-04T10:11:04.872Z"
+    },
+    {
+      "name": "Icon探索",
+      "originalName": "探索",
+      "svgPath": "svg/探索.svg",
+      "componentPath": "src/icons/Icon探索.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-04T10:11:04.872Z"
+    },
+    {
+      "name": "Icon更多",
+      "originalName": "更多",
+      "svgPath": "svg/更多.svg",
+      "componentPath": "src/icons/Icon更多.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-04T10:11:04.872Z"
+    },
+    {
+      "name": "Icon首页",
+      "originalName": "首页",
+      "svgPath": "svg/首页.svg",
+      "componentPath": "src/icons/Icon首页.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-04T10:11:04.872Z"
+    },
     {
       "name": "IconZhiShiKu",
       "originalName": "知识库",
