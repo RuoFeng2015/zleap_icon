@@ -1,8 +1,74 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-03T08:46:12.882Z",
-  "totalCount": 12,
+  "generatedAt": "2026-02-04T10:11:25.529Z",
+  "totalCount": 18,
   "icons": [
+    {
+      "name": "IconShouYe",
+      "originalName": "首页",
+      "svgPath": "svg/首页.svg",
+      "componentPath": "src/icons/IconShouYe.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-04T10:11:25.520Z"
+    },
+    {
+      "name": "IconGengDuo",
+      "originalName": "更多",
+      "svgPath": "svg/更多.svg",
+      "componentPath": "src/icons/IconGengDuo.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-04T10:11:25.519Z"
+    },
+    {
+      "name": "IconTanSuo",
+      "originalName": "探索",
+      "svgPath": "svg/探索.svg",
+      "componentPath": "src/icons/IconTanSuo.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-04T10:11:25.518Z"
+    },
+    {
+      "name": "IconShuaXin",
+      "originalName": "刷新",
+      "svgPath": "svg/刷新.svg",
+      "componentPath": "src/icons/IconShuaXin.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-04T10:11:25.517Z"
+    },
+    {
+      "name": "IconZhuShouGuanLi",
+      "originalName": "助手管理",
+      "svgPath": "svg/助手管理.svg",
+      "componentPath": "src/icons/IconZhuShouGuanLi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-04T10:11:25.517Z"
+    },
+    {
+      "name": "IconLike",
+      "originalName": "like",
+      "svgPath": "svg/like.svg",
+      "componentPath": "src/icons/IconLike.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-04T10:11:25.514Z"
+    },
     {
       "name": "IconZhiShiKu",
       "originalName": "知识库",
