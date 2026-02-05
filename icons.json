@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-05T06:54:08.545Z",
-  "totalCount": 19,
+  "generatedAt": "2026-02-05T09:04:41.191Z",
+  "totalCount": 20,
   "icons": [
+    {
+      "name": "IconZhuShou",
+      "originalName": "助手",
+      "svgPath": "svg/助手.svg",
+      "componentPath": "src/icons/IconZhuShou.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-05T09:04:41.180Z"
+    },
     {
       "name": "IconShare",
       "originalName": "share",
