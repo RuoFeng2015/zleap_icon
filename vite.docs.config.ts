@@ -2,6 +2,9 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import { copyFileSync, mkdirSync, readdirSync, existsSync, readFileSync } from 'fs'
 
+// 读取 package.json 版本
+const packageJson = JSON.parse(readFileSync(resolve(__dirname, 'package.json'), 'utf-8'))
+
 // 在构建前准备静态资源
 function prepareStaticAssets() {
   return {
@@ -76,6 +79,9 @@ export default defineConfig({
   root: 'docs',
   base: './',
   publicDir: 'public',
+  define: {
+    __APP_VERSION__: JSON.stringify(packageJson.version),
+  },
   build: {
     outDir: 'dist',
     emptyOutDir: true,

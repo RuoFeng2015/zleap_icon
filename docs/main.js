@@ -510,3 +510,13 @@ document.addEventListener('keydown', (e) => {
 
 // Initialize
 loadIcons();
+
+// Load version from Vite define
+function loadVersion() {
+  const versionBadge = document.getElementById('version-badge');
+  if (versionBadge && typeof __APP_VERSION__ !== 'undefined') {
+    versionBadge.textContent = `v${__APP_VERSION__}`;
+  }
+}
+
+loadVersion();
