@@ -14,6 +14,7 @@ import { IconLianJie } from './icons/IconLianJie';
 import { IconLike } from './icons/IconLike';
 import { IconSearch } from './icons/IconSearch';
 import { IconShanChuDELETE } from './icons/IconShanChuDELETE';
+import { IconShare } from './icons/IconShare';
 import { IconShouYe } from './icons/IconShouYe';
 import { IconShuaXin } from './icons/IconShuaXin';
 import { IconTanSuo } from './icons/IconTanSuo';
@@ -33,6 +34,7 @@ export { IconLianJie, type IconLianJieProps } from './icons/IconLianJie';
 export { IconLike, type IconLikeProps } from './icons/IconLike';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
 export { IconShanChuDELETE, type IconShanChuDELETEProps } from './icons/IconShanChuDELETE';
+export { IconShare, type IconShareProps } from './icons/IconShare';
 export { IconShouYe, type IconShouYeProps } from './icons/IconShouYe';
 export { IconShuaXin, type IconShuaXinProps } from './icons/IconShuaXin';
 export { IconTanSuo, type IconTanSuoProps } from './icons/IconTanSuo';
@@ -56,6 +58,7 @@ export const allIcons = {
   IconLike,
   IconSearch,
   IconShanChuDELETE,
+  IconShare,
   IconShouYe,
   IconShuaXin,
   IconTanSuo,

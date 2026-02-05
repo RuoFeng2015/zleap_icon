@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-04T10:11:25.529Z",
-  "totalCount": 18,
+  "generatedAt": "2026-02-05T06:54:08.545Z",
+  "totalCount": 19,
   "icons": [
+    {
+      "name": "IconShare",
+      "originalName": "share",
+      "svgPath": "svg/share.svg",
+      "componentPath": "src/icons/IconShare.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-05T06:54:08.531Z"
+    },
     {
       "name": "IconShouYe",
       "originalName": "首页",
