@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-02-05T06:54:08.545Z",
-  "totalCount": 19,
+  "version": "0.0.36",
+  "syncMode": "incremental",
+  "generatedAt": "2026-02-05T09:04:18.689Z",
+  "totalCount": 20,
   "icons": [
+    {
+      "name": "Icon助手",
+      "originalName": "助手",
+      "svgPath": "svg/助手.svg",
+      "componentPath": "src/icons/Icon助手.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-05T09:04:18.689Z"
+    },
     {
       "name": "IconShare",
       "originalName": "share",
