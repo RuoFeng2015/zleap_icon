@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-02-04T10:11:23.211Z
+Generated at: 2026-02-05T06:54:06.074Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 18 |
+| Total Icons | 19 |
 | Valid Icons | 0 |
-| Invalid Icons | 18 |
-| Total Errors | 18 |
+| Invalid Icons | 19 |
+| Total Errors | 19 |
 | Total Warnings | 14 |
 
-⚠️ **18 icon(s) failed validation**
+⚠️ **19 icon(s) failed validation**
 
 ## Errors
 
-### size (18 errors)
+### size (19 errors)
 
 | Icon | Message |
 |------|---------|
@@ -24,6 +24,7 @@ Generated at: 2026-02-04T10:11:23.211Z
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
 | search | Icon size 24x24 not in allowed sizes:  |
+| share | Icon size 24x24 not in allowed sizes:  |
 | 关闭-小 | Icon size 24x24 not in allowed sizes:  |
 | 关闭 | Icon size 24x24 not in allowed sizes:  |
 | 删除delete | Icon size 24x24 not in allowed sizes:  |
