@@ -1,30 +1,29 @@
 {
-  "version": "0.0.38",
-  "syncMode": "incremental",
-  "generatedAt": "2026-02-06T06:33:12.757Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-02-06T06:33:35.867Z",
   "totalCount": 24,
   "icons": [
     {
-      "name": "Icon右1",
-      "originalName": "右1",
-      "svgPath": "svg/右1.svg",
-      "componentPath": "src/icons/Icon右1.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-02-06T06:33:12.757Z"
-    },
-    {
-      "name": "Icon左1",
+      "name": "IconZuo1",
       "originalName": "左1",
       "svgPath": "svg/左1.svg",
-      "componentPath": "src/icons/Icon左1.tsx",
+      "componentPath": "src/icons/IconZuo1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-06T06:33:12.757Z"
+      "createdAt": "2026-02-06T06:33:35.855Z"
+    },
+    {
+      "name": "IconYou1",
+      "originalName": "右1",
+      "svgPath": "svg/右1.svg",
+      "componentPath": "src/icons/IconYou1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-06T06:33:35.854Z"
     },
     {
       "name": "IconZuo",
