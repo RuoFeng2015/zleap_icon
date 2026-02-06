@@ -6,6 +6,39 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.37] - 2026-02-06
+
+同步 2 个图标：右, 左 图标
+
+### Added
+- IconZuo
+- IconYou
+- IconZhuShou
+- IconShare
+- IconShouYe
+- IconGengDuo
+- IconTanSuo
+- IconShuaXin
+- IconZhuShouGuanLi
+- IconLike
+- IconZhiShiKu
+- IconTongZhi
+- IconLianJie
+- IconWenDang
+- IconZhengQue
+- IconGuanBi
+- IconGuanBiXiao
+- IconShanChuDELETE
+- IconZhanKai
+- IconCheck
+- IconSearch
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.36] - 2026-02-05
 
 同步 1 个图标：助手 图标
