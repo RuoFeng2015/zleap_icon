@@ -1,19 +1,41 @@
 {
-  "version": "0.0.36",
+  "version": "0.0.37",
   "syncMode": "incremental",
-  "generatedAt": "2026-02-05T09:04:18.689Z",
-  "totalCount": 20,
+  "generatedAt": "2026-02-06T06:31:23.233Z",
+  "totalCount": 22,
   "icons": [
     {
-      "name": "Icon助手",
-      "originalName": "助手",
-      "svgPath": "svg/助手.svg",
-      "componentPath": "src/icons/Icon助手.tsx",
+      "name": "Icon右",
+      "originalName": "右",
+      "svgPath": "svg/右.svg",
+      "componentPath": "src/icons/Icon右.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-05T09:04:18.689Z"
+      "uploadedAt": "2026-02-06T06:31:23.232Z"
+    },
+    {
+      "name": "Icon左",
+      "originalName": "左",
+      "svgPath": "svg/左.svg",
+      "componentPath": "src/icons/Icon左.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-06T06:31:23.232Z"
+    },
+    {
+      "name": "IconZhuShou",
+      "originalName": "助手",
+      "svgPath": "svg/助手.svg",
+      "componentPath": "src/icons/IconZhuShou.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-05T09:04:41.180Z"
     },
     {
       "name": "IconShare",
