@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-02-06T06:31:39.957Z
+Generated at: 2026-02-06T06:33:33.473Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 22 |
+| Total Icons | 24 |
 | Valid Icons | 0 |
-| Invalid Icons | 22 |
-| Total Errors | 22 |
-| Total Warnings | 17 |
+| Invalid Icons | 24 |
+| Total Errors | 24 |
+| Total Warnings | 19 |
 
-⚠️ **22 icon(s) failed validation**
+⚠️ **24 icon(s) failed validation**
 
 ## Errors
 
-### size (22 errors)
+### size (24 errors)
 
 | Icon | Message |
 |------|---------|
@@ -32,8 +32,10 @@ Generated at: 2026-02-06T06:31:39.957Z
 | 助手 | Icon size 24x24 not in allowed sizes:  |
 | 助手管理 | Icon size 24x24 not in allowed sizes:  |
 | 右 | Icon size 24x24 not in allowed sizes:  |
+| 右1 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 左 | Icon size 24x24 not in allowed sizes:  |
+| 左1 | Icon size 24x24 not in allowed sizes:  |
 | 探索 | Icon size 24x24 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
 | 更多 | Icon size 24x24 not in allowed sizes:  |
@@ -45,7 +47,7 @@ Generated at: 2026-02-06T06:31:39.957Z
 
 ## Warnings
 
-### naming (17 warnings)
+### naming (19 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -56,8 +58,10 @@ Generated at: 2026-02-06T06:31:39.957Z
 | 助手 | Icon name "助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 助手管理 | Icon name "助手管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 右 | Icon name "右" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 右1 | Icon name "右1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 左 | Icon name "左" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 左1 | Icon name "左1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多 | Icon name "更多" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
