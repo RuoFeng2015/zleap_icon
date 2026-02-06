@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-02-05T09:04:41.191Z",
-  "totalCount": 20,
+  "version": "0.0.37",
+  "syncMode": "incremental",
+  "generatedAt": "2026-02-06T06:31:23.233Z",
+  "totalCount": 22,
   "icons": [
+    {
+      "name": "Icon右",
+      "originalName": "右",
+      "svgPath": "svg/右.svg",
+      "componentPath": "src/icons/Icon右.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-06T06:31:23.232Z"
+    },
+    {
+      "name": "Icon左",
+      "originalName": "左",
+      "svgPath": "svg/左.svg",
+      "componentPath": "src/icons/Icon左.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-06T06:31:23.232Z"
+    },
     {
       "name": "IconZhuShou",
       "originalName": "助手",
