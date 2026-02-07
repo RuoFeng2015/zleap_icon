@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-06T06:33:35.867Z",
-  "totalCount": 24,
+  "generatedAt": "2026-02-07T06:58:36.854Z",
+  "totalCount": 26,
   "icons": [
+    {
+      "name": "IconPingLun",
+      "originalName": "评论",
+      "svgPath": "svg/评论.svg",
+      "componentPath": "src/icons/IconPingLun.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-07T06:58:36.844Z"
+    },
+    {
+      "name": "IconShouCang",
+      "originalName": "收藏",
+      "svgPath": "svg/收藏.svg",
+      "componentPath": "src/icons/IconShouCang.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-07T06:58:36.843Z"
+    },
     {
       "name": "IconZuo1",
       "originalName": "左1",
