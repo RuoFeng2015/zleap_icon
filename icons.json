@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-02-06T06:33:35.867Z",
-  "totalCount": 24,
+  "version": "0.0.39",
+  "syncMode": "incremental",
+  "generatedAt": "2026-02-07T06:58:22.478Z",
+  "totalCount": 26,
   "icons": [
+    {
+      "name": "Icon收藏",
+      "originalName": "收藏",
+      "svgPath": "svg/收藏.svg",
+      "componentPath": "src/icons/Icon收藏.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-07T06:58:22.478Z"
+    },
+    {
+      "name": "Icon评论",
+      "originalName": "评论",
+      "svgPath": "svg/评论.svg",
+      "componentPath": "src/icons/Icon评论.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-07T06:58:22.478Z"
+    },
     {
       "name": "IconZuo1",
       "originalName": "左1",
