@@ -1,30 +1,52 @@
 {
-  "version": "0.0.38",
+  "version": "0.0.39",
   "syncMode": "incremental",
-  "generatedAt": "2026-02-06T06:33:12.757Z",
-  "totalCount": 24,
+  "generatedAt": "2026-02-07T06:58:22.478Z",
+  "totalCount": 26,
   "icons": [
     {
-      "name": "Icon右1",
-      "originalName": "右1",
-      "svgPath": "svg/右1.svg",
-      "componentPath": "src/icons/Icon右1.tsx",
+      "name": "Icon收藏",
+      "originalName": "收藏",
+      "svgPath": "svg/收藏.svg",
+      "componentPath": "src/icons/Icon收藏.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-06T06:33:12.757Z"
+      "uploadedAt": "2026-02-07T06:58:22.478Z"
     },
     {
-      "name": "Icon左1",
-      "originalName": "左1",
-      "svgPath": "svg/左1.svg",
-      "componentPath": "src/icons/Icon左1.tsx",
+      "name": "Icon评论",
+      "originalName": "评论",
+      "svgPath": "svg/评论.svg",
+      "componentPath": "src/icons/Icon评论.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-06T06:33:12.757Z"
+      "uploadedAt": "2026-02-07T06:58:22.478Z"
+    },
+    {
+      "name": "IconZuo1",
+      "originalName": "左1",
+      "svgPath": "svg/左1.svg",
+      "componentPath": "src/icons/IconZuo1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-06T06:33:35.855Z"
+    },
+    {
+      "name": "IconYou1",
+      "originalName": "右1",
+      "svgPath": "svg/右1.svg",
+      "componentPath": "src/icons/IconYou1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-06T06:33:35.854Z"
     },
     {
       "name": "IconZuo",
