@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-02-06T06:33:33.473Z
+Generated at: 2026-02-07T06:58:34.329Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 24 |
+| Total Icons | 26 |
 | Valid Icons | 0 |
-| Invalid Icons | 24 |
-| Total Errors | 24 |
-| Total Warnings | 19 |
+| Invalid Icons | 26 |
+| Total Errors | 26 |
+| Total Warnings | 21 |
 
-⚠️ **24 icon(s) failed validation**
+⚠️ **26 icon(s) failed validation**
 
 ## Errors
 
-### size (24 errors)
+### size (26 errors)
 
 | Icon | Message |
 |------|---------|
@@ -37,17 +37,19 @@ Generated at: 2026-02-06T06:33:33.473Z
 | 左 | Icon size 24x24 not in allowed sizes:  |
 | 左1 | Icon size 24x24 not in allowed sizes:  |
 | 探索 | Icon size 24x24 not in allowed sizes:  |
+| 收藏 | Icon size 24x24 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
 | 更多 | Icon size 24x24 not in allowed sizes:  |
 | 正确 | Icon size 24x24 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
+| 评论 | Icon size 24x24 not in allowed sizes:  |
 | 通知 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
 | 首页 | Icon size 24x24 not in allowed sizes:  |
 
 ## Warnings
 
-### naming (19 warnings)
+### naming (21 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -63,10 +65,12 @@ Generated at: 2026-02-06T06:33:33.473Z
 | 左 | Icon name "左" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 左1 | Icon name "左1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 收藏 | Icon name "收藏" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多 | Icon name "更多" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 正确 | Icon name "正确" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 评论 | Icon name "评论" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知 | Icon name "通知" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
