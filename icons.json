@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-07T06:58:36.854Z",
-  "totalCount": 26,
+  "generatedAt": "2026-02-09T10:22:14.634Z",
+  "totalCount": 28,
   "icons": [
+    {
+      "name": "IconBianJi",
+      "originalName": "编辑",
+      "svgPath": "svg/编辑.svg",
+      "componentPath": "src/icons/IconBianJi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-09T10:22:14.624Z"
+    },
+    {
+      "name": "IconFenXiang",
+      "originalName": "分享",
+      "svgPath": "svg/分享.svg",
+      "componentPath": "src/icons/IconFenXiang.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-09T10:22:14.619Z"
+    },
     {
       "name": "IconPingLun",
       "originalName": "评论",
