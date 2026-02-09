@@ -1,30 +1,29 @@
 {
-  "version": "0.0.40",
-  "syncMode": "incremental",
-  "generatedAt": "2026-02-09T10:22:00.288Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-02-09T10:22:14.634Z",
   "totalCount": 28,
   "icons": [
     {
-      "name": "Icon分享",
-      "originalName": "分享",
-      "svgPath": "svg/分享.svg",
-      "componentPath": "src/icons/Icon分享.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-02-09T10:22:00.287Z"
-    },
-    {
-      "name": "Icon编辑",
+      "name": "IconBianJi",
       "originalName": "编辑",
       "svgPath": "svg/编辑.svg",
-      "componentPath": "src/icons/Icon编辑.tsx",
+      "componentPath": "src/icons/IconBianJi.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-09T10:22:00.288Z"
+      "createdAt": "2026-02-09T10:22:14.624Z"
+    },
+    {
+      "name": "IconFenXiang",
+      "originalName": "分享",
+      "svgPath": "svg/分享.svg",
+      "componentPath": "src/icons/IconFenXiang.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-09T10:22:14.619Z"
     },
     {
       "name": "IconPingLun",
