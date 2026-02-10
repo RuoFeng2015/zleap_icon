@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-02-10T10:43:54.483Z",
-  "totalCount": 30,
+  "version": "0.0.46",
+  "syncMode": "incremental",
+  "generatedAt": "2026-02-10T11:15:21.542Z",
+  "totalCount": 32,
   "icons": [
+    {
+      "name": "Icon复制链接",
+      "originalName": "复制链接",
+      "svgPath": "svg/复制链接.svg",
+      "componentPath": "src/icons/Icon复制链接.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-10T11:15:21.542Z"
+    },
+    {
+      "name": "Icon微信好友",
+      "originalName": "微信好友",
+      "svgPath": "svg/微信好友.svg",
+      "componentPath": "src/icons/Icon微信好友.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-10T11:15:21.542Z"
+    },
     {
       "name": "IconYuLan",
       "originalName": "预览",
