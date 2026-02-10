@@ -1,25 +1,26 @@
 # Icon Validation Report
 
-Generated at: 2026-02-09T10:22:12.379Z
+Generated at: 2026-02-10T06:15:49.306Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 28 |
+| Total Icons | 29 |
 | Valid Icons | 0 |
-| Invalid Icons | 28 |
-| Total Errors | 28 |
-| Total Warnings | 23 |
+| Invalid Icons | 29 |
+| Total Errors | 29 |
+| Total Warnings | 25 |
 
-⚠️ **28 icon(s) failed validation**
+⚠️ **29 icon(s) failed validation**
 
 ## Errors
 
-### size (28 errors)
+### size (29 errors)
 
 | Icon | Message |
 |------|---------|
+| Frame-1261156667 | Icon size 29x19 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
@@ -51,10 +52,17 @@ Generated at: 2026-02-09T10:22:12.379Z
 
 ## Warnings
 
-### naming (23 warnings)
+### size (1 warning)
 
 | Icon | Message |
 |------|---------|
+| Frame-1261156667 | Icon is not square: 29x19 |
+
+### naming (24 warnings)
+
+| Icon | Message |
+|------|---------|
+| Frame-1261156667 | Icon name "Frame-1261156667" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 分享 | Icon name "分享" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
