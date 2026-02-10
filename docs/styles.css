@@ -529,3 +529,312 @@ body {
   font-size: 0.9rem;
   color: var(--color-text-secondary);
 }
+
+
+/* ============================================
+   Admin Mode Styles
+   ============================================ */
+
+/* Admin Login Modal */
+.admin-login-content {
+  max-width: 380px;
+}
+
+.admin-login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 2rem 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.admin-login-icon {
+  margin-bottom: 1rem;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 113, 227, 0.08);
+  border-radius: 16px;
+}
+
+.admin-login-header h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.admin-login-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.admin-login-body {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.admin-form-group {
+  margin-bottom: 1rem;
+}
+
+.admin-form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.admin-form-group input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.8);
+  transition: all 0.2s;
+}
+
+.admin-form-group input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.admin-login-error {
+  padding: 0.6rem 1rem;
+  background: #fef2f2;
+  color: #dc2626;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.admin-login-btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-login-btn:hover {
+  background: #005bb5;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+}
+
+.admin-login-btn:active {
+  transform: translateY(0);
+}
+
+/* Admin Toolbar */
+.admin-toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1500;
+  background: rgba(30, 30, 30, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 0.75rem 1.5rem;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.admin-toolbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-toolbar-label {
+  color: #fbbf24;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.admin-selected-count {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  flex: 1;
+}
+
+.admin-action-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.admin-delete-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.admin-delete-btn:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+.admin-delete-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.admin-exit-btn {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+.admin-exit-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Admin mode card styles */
+.icon-card.admin-mode {
+  cursor: pointer;
+  user-select: none;
+}
+
+.icon-card.admin-mode .admin-checkbox {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.15);
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.icon-card.admin-mode.selected .admin-checkbox {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.icon-card.admin-mode.selected .admin-checkbox::after {
+  content: '';
+  width: 6px;
+  height: 10px;
+  border: 2px solid white;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+.icon-card.admin-mode.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.3);
+}
+
+.icon-card.admin-mode:hover {
+  transform: translateY(-4px);
+}
+
+/* Delete Confirm Modal */
+.delete-confirm-content {
+  max-width: 420px;
+}
+
+.delete-confirm-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem 1rem;
+}
+
+.delete-confirm-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.delete-confirm-header h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.delete-confirm-body {
+  padding: 1rem 2rem 2rem;
+}
+
+.delete-confirm-body p {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.delete-confirm-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.delete-confirm-actions .admin-action-btn {
+  flex: 1;
+  justify-content: center;
+  padding: 0.7rem;
+}
+
+.delete-progress {
+  padding: 1rem 2rem 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.delete-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.delete-progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 3px;
+  transition: width 0.3s;
+  width: 0%;
+}
+
+.delete-progress-text {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Version badge clickable hint in admin */
+.version-badge.admin-hint {
+  cursor: pointer;
+}

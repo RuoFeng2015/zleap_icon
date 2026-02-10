@@ -89,6 +89,84 @@
       </div>
     </div>
     <div id="toast" class="toast hidden">Copied to clipboard!</div>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-login-modal" class="modal hidden">
+      <div class="modal-backdrop" id="admin-login-backdrop"></div>
+      <div class="modal-content admin-login-content">
+        <button class="modal-close" id="admin-login-close">&times;</button>
+        <div class="admin-login-header">
+          <div class="admin-login-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <h2>管理员登录</h2>
+          <p class="admin-login-hint">请输入管理员账号和密码</p>
+        </div>
+        <div class="admin-login-body">
+          <div class="admin-form-group">
+            <label for="admin-username">账号</label>
+            <input type="text" id="admin-username" placeholder="请输入账号" autocomplete="off">
+          </div>
+          <div class="admin-form-group">
+            <label for="admin-password">密码</label>
+            <input type="password" id="admin-password" placeholder="请输入密码" autocomplete="off">
+          </div>
+          <div id="admin-login-error" class="admin-login-error hidden">账号或密码错误</div>
+          <button id="admin-login-btn" class="admin-login-btn">登录</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin Toolbar -->
+    <div id="admin-toolbar" class="admin-toolbar hidden">
+      <div class="admin-toolbar-inner">
+        <span class="admin-toolbar-label">🔧 管理模式</span>
+        <span id="admin-selected-count" class="admin-selected-count">已选择 0 个图标</span>
+        <button id="admin-delete-btn" class="admin-action-btn admin-delete-btn" disabled>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6" />
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+            <line x1="10" y1="11" x2="10" y2="17" />
+            <line x1="14" y1="11" x2="14" y2="17" />
+          </svg>
+          删除选中
+        </button>
+        <button id="admin-exit-btn" class="admin-action-btn admin-exit-btn">退出管理</button>
+      </div>
+    </div>
+
+    <!-- Delete Confirm Modal -->
+    <div id="delete-confirm-modal" class="modal hidden">
+      <div class="modal-backdrop" id="delete-confirm-backdrop"></div>
+      <div class="modal-content delete-confirm-content">
+        <div class="delete-confirm-header">
+          <div class="delete-confirm-icon">⚠️</div>
+          <h2>确认删除</h2>
+        </div>
+        <div class="delete-confirm-body">
+          <p id="delete-confirm-text">确定要删除选中的图标吗？此操作将创建一个 PR 来删除这些图标。</p>
+          <div class="admin-form-group">
+            <label for="delete-pr-message">PR 说明</label>
+            <input type="text" id="delete-pr-message" placeholder="删除图标的原因..." value="删除不需要的图标">
+          </div>
+          <div class="delete-confirm-actions">
+            <button id="delete-cancel-btn" class="admin-action-btn admin-exit-btn">取消</button>
+            <button id="delete-confirm-btn" class="admin-action-btn admin-delete-btn">确认删除</button>
+          </div>
+        </div>
+        <div id="delete-progress" class="delete-progress hidden">
+          <div class="delete-progress-bar">
+            <div id="delete-progress-fill" class="delete-progress-fill"></div>
+          </div>
+          <div id="delete-progress-text" class="delete-progress-text">处理中...</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Liquid Glass Effect -->

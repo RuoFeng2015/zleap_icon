@@ -219,43 +219,58 @@ async function loadAndRenderIcon(card, iconName, svgPath, originalName) {
     // Copy icon SVG
     const copyIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
 
-    card.innerHTML = `
-      <div class="card-copy-btn" title="Copy Component Code">
-        ${copyIconSvg}
-      </div>
-      <div class="icon-preview">${styledSvg}</div>
-      <span class="icon-name">${originalName}</span>
-    `;
+    if (adminMode) {
+      // Admin mode: show checkbox
+      card.classList.add('admin-mode');
+      if (selectedIcons.has(originalName)) {
+        card.classList.add('selected');
+      }
 
-    // Re-attach event listeners since we replaced innerHTML
-    // Card click opens modal
-    card.addEventListener('click', (e) => {
-      // Ignore if copy button was clicked
-      if (e.target.closest('.card-copy-btn')) return;
-      openModal({ name: iconName, originalName, svgPath }, svgContent);
-    });
+      card.innerHTML = `
+        <div class="admin-checkbox"></div>
+        <div class="icon-preview">${styledSvg}</div>
+        <span class="icon-name">${originalName}</span>
+      `;
 
-    // Copy button click
-    const copyBtn = card.querySelector('.card-copy-btn');
-    if (copyBtn) {
-      copyBtn.addEventListener('click', async (e) => {
-        e.stopPropagation();
-        const componentCode = `<${iconName} />`;
-        try {
-          await navigator.clipboard.writeText(componentCode);
-          showToast(`Copied ${componentCode}`);
-
-          // Button feedback
-          copyBtn.style.backgroundColor = 'var(--color-primary)';
-          copyBtn.style.color = 'white';
-          setTimeout(() => {
-            copyBtn.style.backgroundColor = '';
-            copyBtn.style.color = '';
-          }, 500);
-        } catch (err) {
-          console.error('Failed to copy', err);
-        }
+      card.addEventListener('click', (e) => {
+        toggleIconSelection(originalName);
       });
+    } else {
+      card.innerHTML = `
+        <div class="card-copy-btn" title="Copy Component Code">
+          ${copyIconSvg}
+        </div>
+        <div class="icon-preview">${styledSvg}</div>
+        <span class="icon-name">${originalName}</span>
+      `;
+
+      // Card click opens modal
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('.card-copy-btn')) return;
+        openModal({ name: iconName, originalName, svgPath }, svgContent);
+      });
+
+      // Copy button click
+      const copyBtn = card.querySelector('.card-copy-btn');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', async (e) => {
+          e.stopPropagation();
+          const componentCode = `<${iconName} />`;
+          try {
+            await navigator.clipboard.writeText(componentCode);
+            showToast(`Copied ${componentCode}`);
+
+            copyBtn.style.backgroundColor = 'var(--color-primary)';
+            copyBtn.style.color = 'white';
+            setTimeout(() => {
+              copyBtn.style.backgroundColor = '';
+              copyBtn.style.color = '';
+            }, 500);
+          } catch (err) {
+            console.error('Failed to copy', err);
+          }
+        });
+      }
     }
 
     // Mark as loaded
@@ -520,3 +535,390 @@ function loadVersion() {
 }
 
 loadVersion();
+
+// ============================================
+// Admin Mode
+// ============================================
+
+let adminMode = false;
+let adminConfig = null; // { repo, token, branch }
+let selectedIcons = new Set(); // Set of icon originalName
+
+// Hidden entry: triple-click on version badge
+let versionClickCount = 0;
+let versionClickTimer = null;
+
+const versionBadge = document.getElementById('version-badge');
+if (versionBadge) {
+  versionBadge.addEventListener('click', () => {
+    versionClickCount++;
+    if (versionClickTimer) clearTimeout(versionClickTimer);
+
+    if (versionClickCount >= 5) {
+      versionClickCount = 0;
+      openAdminLogin();
+    } else {
+      versionClickTimer = setTimeout(() => {
+        versionClickCount = 0;
+      }, 2000);
+    }
+  });
+}
+
+// Admin Login Modal
+const adminLoginModal = document.getElementById('admin-login-modal');
+const adminLoginClose = document.getElementById('admin-login-close');
+const adminLoginBackdrop = document.getElementById('admin-login-backdrop');
+const adminUsernameInput = document.getElementById('admin-username');
+const adminPasswordInput = document.getElementById('admin-password');
+const adminLoginBtn = document.getElementById('admin-login-btn');
+const adminLoginError = document.getElementById('admin-login-error');
+
+// Admin Toolbar
+const adminToolbar = document.getElementById('admin-toolbar');
+const adminSelectedCount = document.getElementById('admin-selected-count');
+const adminDeleteBtn = document.getElementById('admin-delete-btn');
+const adminExitBtn = document.getElementById('admin-exit-btn');
+
+// Delete Confirm Modal
+const deleteConfirmModal = document.getElementById('delete-confirm-modal');
+const deleteConfirmBackdrop = document.getElementById('delete-confirm-backdrop');
+const deleteConfirmText = document.getElementById('delete-confirm-text');
+const deletePrMessage = document.getElementById('delete-pr-message');
+const deleteCancelBtn = document.getElementById('delete-cancel-btn');
+const deleteConfirmBtn = document.getElementById('delete-confirm-btn');
+const deleteProgress = document.getElementById('delete-progress');
+const deleteProgressFill = document.getElementById('delete-progress-fill');
+const deleteProgressText = document.getElementById('delete-progress-text');
+
+function openAdminLogin() {
+  adminLoginModal.classList.remove('hidden');
+  adminLoginError.classList.add('hidden');
+  adminUsernameInput.value = '';
+  adminPasswordInput.value = '';
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => adminUsernameInput.focus(), 100);
+}
+
+function closeAdminLogin() {
+  adminLoginModal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function validateAdminLogin() {
+  const username = adminUsernameInput.value.trim();
+  const password = adminPasswordInput.value.trim();
+
+  if (!username || !password) {
+    adminLoginError.textContent = '请输入账号和密码';
+    adminLoginError.classList.remove('hidden');
+    return;
+  }
+
+  // The password is the GitHub token, username is the repo owner
+  // Format: username = "owner/repo", password = GitHub token
+  // Validate by making a test API call
+  validateGitHubCredentials(username, password);
+}
+
+async function validateGitHubCredentials(repo, token) {
+  adminLoginBtn.textContent = '验证中...';
+  adminLoginBtn.disabled = true;
+
+  try {
+    const response = await fetch(`https://api.github.com/repos/${repo}`, {
+      headers: {
+        'Accept': 'application/vnd.github.v3+json',
+        'Authorization': `token ${token}`
+      }
+    });
+
+    if (response.ok) {
+      const repoData = await response.json();
+      adminConfig = {
+        repo: repo,
+        token: token,
+        branch: repoData.default_branch || 'main'
+      };
+      closeAdminLogin();
+      enterAdminMode();
+      showToast('✅ 已进入管理模式');
+    } else if (response.status === 401) {
+      adminLoginError.textContent = 'Token 无效或已过期';
+      adminLoginError.classList.remove('hidden');
+    } else if (response.status === 404) {
+      adminLoginError.textContent = '仓库不存在，请检查格式：用户名/仓库名';
+      adminLoginError.classList.remove('hidden');
+    } else {
+      adminLoginError.textContent = `验证失败 (${response.status})`;
+      adminLoginError.classList.remove('hidden');
+    }
+  } catch (error) {
+    adminLoginError.textContent = '网络错误，请检查连接';
+    adminLoginError.classList.remove('hidden');
+  }
+
+  adminLoginBtn.textContent = '登录';
+  adminLoginBtn.disabled = false;
+}
+
+function enterAdminMode() {
+  adminMode = true;
+  selectedIcons.clear();
+  adminToolbar.classList.remove('hidden');
+  updateSelectedCount();
+  renderIcons(); // Re-render with admin mode
+}
+
+function exitAdminMode() {
+  adminMode = false;
+  adminConfig = null;
+  selectedIcons.clear();
+  adminToolbar.classList.add('hidden');
+  renderIcons(); // Re-render without admin mode
+  showToast('已退出管理模式');
+}
+
+function toggleIconSelection(iconOriginalName) {
+  if (selectedIcons.has(iconOriginalName)) {
+    selectedIcons.delete(iconOriginalName);
+  } else {
+    selectedIcons.add(iconOriginalName);
+  }
+  updateSelectedCount();
+  updateCardSelectionUI();
+}
+
+function updateSelectedCount() {
+  adminSelectedCount.textContent = `已选择 ${selectedIcons.size} 个图标`;
+  adminDeleteBtn.disabled = selectedIcons.size === 0;
+}
+
+function updateCardSelectionUI() {
+  document.querySelectorAll('.icon-card.admin-mode').forEach(card => {
+    const originalName = card.dataset.originalName;
+    card.classList.toggle('selected', selectedIcons.has(originalName));
+  });
+}
+
+function openDeleteConfirm() {
+  if (selectedIcons.size === 0) return;
+
+  const names = Array.from(selectedIcons).slice(0, 5).join('、');
+  const more = selectedIcons.size > 5 ? `等 ${selectedIcons.size} 个图标` : '';
+  deleteConfirmText.textContent = `确定要删除 ${names}${more} 吗？此操作将创建一个 PR 来删除这些图标。`;
+
+  deleteConfirmModal.classList.remove('hidden');
+  deleteProgress.classList.add('hidden');
+  deleteConfirmBtn.disabled = false;
+  deleteCancelBtn.disabled = false;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDeleteConfirm() {
+  deleteConfirmModal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+async function executeDelete() {
+  if (!adminConfig || selectedIcons.size === 0) return;
+
+  deleteConfirmBtn.disabled = true;
+  deleteCancelBtn.disabled = true;
+  deleteProgress.classList.remove('hidden');
+  deleteProgressFill.style.width = '0%';
+  deleteProgressText.textContent = '正在创建分支...';
+
+  const { repo, token, branch } = adminConfig;
+  const headers = {
+    'Accept': 'application/vnd.github.v3+json',
+    'Authorization': `token ${token}`,
+    'Content-Type': 'application/json'
+  };
+
+  try {
+    // 1. Get latest commit SHA
+    const refResponse = await fetch(
+      `https://api.github.com/repos/${repo}/git/ref/heads/${branch}`,
+      { headers }
+    );
+    if (!refResponse.ok) throw new Error('获取分支信息失败');
+    const refData = await refResponse.json();
+    const baseSha = refData.object.sha;
+
+    // 2. Create new branch
+    const branchName = `delete-icons-${Date.now()}`;
+    const createBranchResponse = await fetch(
+      `https://api.github.com/repos/${repo}/git/refs`,
+      {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+          ref: `refs/heads/${branchName}`,
+          sha: baseSha
+        })
+      }
+    );
+    if (!createBranchResponse.ok) throw new Error('创建分支失败');
+
+    deleteProgressFill.style.width = '10%';
+    deleteProgressText.textContent = '正在删除图标文件...';
+
+    // 3. Find and delete SVG files
+    const iconsToDelete = Array.from(selectedIcons);
+    let deletedCount = 0;
+
+    // Find matching files in svg directory
+    const svgDirResponse = await fetch(
+      `https://api.github.com/repos/${repo}/contents/svg?ref=${branchName}`,
+      { headers }
+    );
+
+    if (svgDirResponse.ok) {
+      const files = await svgDirResponse.json();
+
+      for (const iconName of iconsToDelete) {
+        // Find matching file (could be Chinese name or sanitized name)
+        const matchingFile = files.find(f =>
+          f.name === iconName + '.svg' ||
+          f.name === iconName
+        );
+
+        if (matchingFile) {
+          try {
+            const deleteResponse = await fetch(
+              `https://api.github.com/repos/${repo}/contents/${matchingFile.path}`,
+              {
+                method: 'DELETE',
+                headers,
+                body: JSON.stringify({
+                  message: `Delete icon: ${matchingFile.name}`,
+                  sha: matchingFile.sha,
+                  branch: branchName
+                })
+              }
+            );
+
+            if (deleteResponse.ok) {
+              deletedCount++;
+            }
+          } catch (e) {
+            console.error(`删除 ${iconName} 失败:`, e);
+          }
+        }
+
+        const progress = 10 + (deletedCount / iconsToDelete.length) * 60;
+        deleteProgressFill.style.width = `${progress}%`;
+        deleteProgressText.textContent = `已删除 ${deletedCount}/${iconsToDelete.length}...`;
+
+        // Small delay between deletes
+        await new Promise(r => setTimeout(r, 300));
+      }
+    }
+
+    deleteProgressFill.style.width = '75%';
+    deleteProgressText.textContent = '正在更新 icons.json...';
+
+    // 4. Update icons.json - remove deleted icons
+    const remainingIcons = icons.filter(icon => !selectedIcons.has(icon.originalName));
+    const updatedIconsJson = {
+      version: new Date().toISOString().slice(0, 10).replace(/-/g, '.'),
+      generatedAt: new Date().toISOString(),
+      totalCount: remainingIcons.length,
+      icons: remainingIcons
+    };
+
+    const jsonBase64 = btoa(unescape(encodeURIComponent(JSON.stringify(updatedIconsJson, null, 2))));
+
+    // Upload to both locations
+    for (const path of ['icons.json', 'docs/public/icons.json']) {
+      try {
+        const checkResponse = await fetch(
+          `https://api.github.com/repos/${repo}/contents/${path}?ref=${branchName}`,
+          { headers }
+        );
+        const uploadBody = {
+          message: `Update ${path} - remove deleted icons`,
+          content: jsonBase64,
+          branch: branchName
+        };
+        if (checkResponse.ok) {
+          const fileData = await checkResponse.json();
+          uploadBody.sha = fileData.sha;
+        }
+        await fetch(
+          `https://api.github.com/repos/${repo}/contents/${path}`,
+          { method: 'PUT', headers, body: JSON.stringify(uploadBody) }
+        );
+      } catch (e) {
+        console.warn(`更新 ${path} 失败:`, e);
+      }
+    }
+
+    deleteProgressFill.style.width = '90%';
+    deleteProgressText.textContent = '正在创建 PR...';
+
+    // 5. Create PR
+    const prMessage = deletePrMessage.value.trim() || '删除不需要的图标';
+    const deletedNames = iconsToDelete.join('、');
+    const prResponse = await fetch(
+      `https://api.github.com/repos/${repo}/pulls`,
+      {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+          title: `🗑️ 删除图标: ${iconsToDelete.length} 个`,
+          body: `## 删除图标\n\n**原因:** ${prMessage}\n\n### 删除的图标\n${iconsToDelete.map(n => `- ${n}`).join('\n')}\n\n此 PR 由文档网站管理功能自动生成。`,
+          head: branchName,
+          base: branch
+        })
+      }
+    );
+
+    deleteProgressFill.style.width = '100%';
+
+    if (prResponse.ok) {
+      const prData = await prResponse.json();
+      deleteProgressText.innerHTML = `✅ PR 已创建！<a href="${prData.html_url}" target="_blank" style="color: var(--color-primary);">查看 PR →</a>`;
+
+      // Remove deleted icons from local state
+      icons = icons.filter(icon => !selectedIcons.has(icon.originalName));
+      filteredIcons = filterIcons(icons, searchInput.value);
+      selectedIcons.clear();
+      updateSelectedCount();
+
+      setTimeout(() => {
+        closeDeleteConfirm();
+        renderIcons();
+        showToast(`✅ 已创建删除 ${deletedCount} 个图标的 PR`);
+      }, 3000);
+    } else {
+      throw new Error('创建 PR 失败');
+    }
+
+  } catch (error) {
+    deleteProgressText.textContent = `❌ 操作失败: ${error.message}`;
+    deleteConfirmBtn.disabled = false;
+    deleteCancelBtn.disabled = false;
+  }
+}
+
+// Admin event listeners
+adminLoginClose.addEventListener('click', closeAdminLogin);
+adminLoginBackdrop.addEventListener('click', closeAdminLogin);
+adminLoginBtn.addEventListener('click', validateAdminLogin);
+adminPasswordInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') validateAdminLogin();
+});
+adminUsernameInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') adminPasswordInput.focus();
+});
+
+adminDeleteBtn.addEventListener('click', openDeleteConfirm);
+adminExitBtn.addEventListener('click', exitAdminMode);
+
+deleteConfirmBackdrop.addEventListener('click', () => {
+  if (!deleteConfirmBtn.disabled) closeDeleteConfirm();
+});
+deleteCancelBtn.addEventListener('click', closeDeleteConfirm);
+deleteConfirmBtn.addEventListener('click', executeDelete);
