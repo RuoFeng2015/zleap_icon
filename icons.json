@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-02-10T06:15:51.633Z",
-  "totalCount": 29,
+  "version": "0.0.42",
+  "syncMode": "incremental",
+  "generatedAt": "2026-02-10T06:46:46.245Z",
+  "totalCount": 31,
   "icons": [
+    {
+      "name": "Icon已收藏",
+      "originalName": "已收藏",
+      "svgPath": "svg/已收藏.svg",
+      "componentPath": "src/icons/Icon已收藏.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-10T06:46:46.245Z"
+    },
+    {
+      "name": "Icon已点赞",
+      "originalName": "已点赞",
+      "svgPath": "svg/已点赞.svg",
+      "componentPath": "src/icons/Icon已点赞.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-10T06:46:46.245Z"
+    },
     {
       "name": "IconFrame1261156667",
       "originalName": "Frame-1261156667",
