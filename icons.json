@@ -1,30 +1,29 @@
 {
-  "version": "0.0.43",
-  "syncMode": "incremental",
-  "generatedAt": "2026-02-10T06:49:58.764Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-02-10T06:50:14.291Z",
   "totalCount": 33,
   "icons": [
     {
-      "name": "Icon已收藏1",
+      "name": "IconYiShouCang1",
       "originalName": "已收藏1",
       "svgPath": "svg/已收藏1.svg",
-      "componentPath": "src/icons/Icon已收藏1.tsx",
+      "componentPath": "src/icons/IconYiShouCang1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-10T06:49:58.764Z"
+      "createdAt": "2026-02-10T06:50:14.279Z"
     },
     {
-      "name": "Icon已点赞1",
+      "name": "IconYiDianZan1",
       "originalName": "已点赞1",
       "svgPath": "svg/已点赞1.svg",
-      "componentPath": "src/icons/Icon已点赞1.tsx",
+      "componentPath": "src/icons/IconYiDianZan1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-10T06:49:58.764Z"
+      "createdAt": "2026-02-10T06:50:14.279Z"
     },
     {
       "name": "IconYiDianZan",
