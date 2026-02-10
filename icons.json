@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-10T10:43:54.483Z",
-  "totalCount": 30,
+  "generatedAt": "2026-02-10T11:15:38.903Z",
+  "totalCount": 32,
   "icons": [
+    {
+      "name": "IconWeiXinHaoYou",
+      "originalName": "微信好友",
+      "svgPath": "svg/微信好友.svg",
+      "componentPath": "src/icons/IconWeiXinHaoYou.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-10T11:15:38.891Z"
+    },
+    {
+      "name": "IconFuZhiLianJie",
+      "originalName": "复制链接",
+      "svgPath": "svg/复制链接.svg",
+      "componentPath": "src/icons/IconFuZhiLianJie.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-10T11:15:38.890Z"
+    },
     {
       "name": "IconYuLan",
       "originalName": "预览",

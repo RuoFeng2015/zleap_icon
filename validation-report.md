@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-02-10T10:43:52.355Z
+Generated at: 2026-02-10T11:15:36.554Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 30 |
+| Total Icons | 32 |
 | Valid Icons | 0 |
-| Invalid Icons | 30 |
-| Total Errors | 30 |
-| Total Warnings | 25 |
+| Invalid Icons | 32 |
+| Total Errors | 32 |
+| Total Warnings | 27 |
 
-⚠️ **30 icon(s) failed validation**
+⚠️ **32 icon(s) failed validation**
 
 ## Errors
 
-### size (30 errors)
+### size (32 errors)
 
 | Icon | Message |
 |------|---------|
@@ -33,10 +33,12 @@ Generated at: 2026-02-10T10:43:52.355Z
 | 助手 | Icon size 24x24 not in allowed sizes:  |
 | 助手管理 | Icon size 24x24 not in allowed sizes:  |
 | 右 | Icon size 24x24 not in allowed sizes:  |
+| 复制链接 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 左 | Icon size 24x24 not in allowed sizes:  |
 | 已收藏1 | Icon size 24x24 not in allowed sizes:  |
 | 已点赞1 | Icon size 24x24 not in allowed sizes:  |
+| 微信好友 | Icon size 24x24 not in allowed sizes:  |
 | 探索 | Icon size 24x24 not in allowed sizes:  |
 | 收藏 | Icon size 24x24 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
@@ -53,7 +55,7 @@ Generated at: 2026-02-10T10:43:52.355Z
 
 ## Warnings
 
-### naming (25 warnings)
+### naming (27 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -65,10 +67,12 @@ Generated at: 2026-02-10T10:43:52.355Z
 | 助手 | Icon name "助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 助手管理 | Icon name "助手管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 右 | Icon name "右" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 复制链接 | Icon name "复制链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 左 | Icon name "左" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已收藏1 | Icon name "已收藏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已点赞1 | Icon name "已点赞1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 微信好友 | Icon name "微信好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 收藏 | Icon name "收藏" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

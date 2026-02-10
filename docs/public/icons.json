@@ -1,30 +1,52 @@
 {
-  "version": "0.0.45",
+  "version": "0.0.46",
   "syncMode": "incremental",
-  "generatedAt": "2026-02-10T10:43:35.441Z",
-  "totalCount": 30,
+  "generatedAt": "2026-02-10T11:15:21.542Z",
+  "totalCount": 32,
   "icons": [
     {
-      "name": "Icon预览",
-      "originalName": "预览",
-      "svgPath": "svg/预览.svg",
-      "componentPath": "src/icons/Icon预览.tsx",
+      "name": "Icon复制链接",
+      "originalName": "复制链接",
+      "svgPath": "svg/复制链接.svg",
+      "componentPath": "src/icons/Icon复制链接.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-10T10:43:35.441Z"
+      "uploadedAt": "2026-02-10T11:15:21.542Z"
     },
     {
-      "name": "Icon预览关闭",
-      "originalName": "预览-关闭",
-      "svgPath": "svg/预览-关闭.svg",
-      "componentPath": "src/icons/Icon预览关闭.tsx",
+      "name": "Icon微信好友",
+      "originalName": "微信好友",
+      "svgPath": "svg/微信好友.svg",
+      "componentPath": "src/icons/Icon微信好友.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-10T10:43:35.441Z"
+      "uploadedAt": "2026-02-10T11:15:21.542Z"
+    },
+    {
+      "name": "IconYuLan",
+      "originalName": "预览",
+      "svgPath": "svg/预览.svg",
+      "componentPath": "src/icons/IconYuLan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-10T10:43:54.474Z"
+    },
+    {
+      "name": "IconYuLanGuanBi",
+      "originalName": "预览-关闭",
+      "svgPath": "svg/预览-关闭.svg",
+      "componentPath": "src/icons/IconYuLanGuanBi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-10T10:43:54.474Z"
     },
     {
       "name": "IconYiShouCang1",
