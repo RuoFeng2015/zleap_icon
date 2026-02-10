@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-02-10T06:46:59.278Z
+Generated at: 2026-02-10T06:50:11.996Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 31 |
+| Total Icons | 33 |
 | Valid Icons | 0 |
-| Invalid Icons | 31 |
-| Total Errors | 31 |
-| Total Warnings | 27 |
+| Invalid Icons | 33 |
+| Total Errors | 33 |
+| Total Warnings | 29 |
 
-⚠️ **31 icon(s) failed validation**
+⚠️ **33 icon(s) failed validation**
 
 ## Errors
 
-### size (31 errors)
+### size (33 errors)
 
 | Icon | Message |
 |------|---------|
@@ -39,7 +39,9 @@ Generated at: 2026-02-10T06:46:59.278Z
 | 左 | Icon size 24x24 not in allowed sizes:  |
 | 左1 | Icon size 24x24 not in allowed sizes:  |
 | 已收藏 | Icon size 24x24 not in allowed sizes:  |
+| 已收藏1 | Icon size 24x24 not in allowed sizes:  |
 | 已点赞 | Icon size 24x24 not in allowed sizes:  |
+| 已点赞1 | Icon size 24x24 not in allowed sizes:  |
 | 探索 | Icon size 24x24 not in allowed sizes:  |
 | 收藏 | Icon size 24x24 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
@@ -60,7 +62,7 @@ Generated at: 2026-02-10T06:46:59.278Z
 |------|---------|
 | Frame-1261156667 | Icon is not square: 29x19 |
 
-### naming (26 warnings)
+### naming (28 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -78,7 +80,9 @@ Generated at: 2026-02-10T06:46:59.278Z
 | 左 | Icon name "左" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 左1 | Icon name "左1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已收藏 | Icon name "已收藏" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 已收藏1 | Icon name "已收藏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已点赞 | Icon name "已点赞" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 已点赞1 | Icon name "已点赞1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 收藏 | Icon name "收藏" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
