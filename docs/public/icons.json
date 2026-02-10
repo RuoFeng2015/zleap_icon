@@ -1,63 +1,29 @@
 {
-  "version": "0.0.43",
-  "syncMode": "incremental",
-  "generatedAt": "2026-02-10T06:49:58.764Z",
-  "totalCount": 33,
+  "version": "2026.02.10",
+  "generatedAt": "2026-02-10T07:26:15.953Z",
+  "totalCount": 28,
   "icons": [
     {
-      "name": "Icon已收藏1",
+      "name": "IconYiShouCang1",
       "originalName": "已收藏1",
       "svgPath": "svg/已收藏1.svg",
-      "componentPath": "src/icons/Icon已收藏1.tsx",
+      "componentPath": "src/icons/IconYiShouCang1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-10T06:49:58.764Z"
+      "createdAt": "2026-02-10T06:50:14.279Z"
     },
     {
-      "name": "Icon已点赞1",
+      "name": "IconYiDianZan1",
       "originalName": "已点赞1",
       "svgPath": "svg/已点赞1.svg",
-      "componentPath": "src/icons/Icon已点赞1.tsx",
+      "componentPath": "src/icons/IconYiDianZan1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-10T06:49:58.764Z"
-    },
-    {
-      "name": "IconYiDianZan",
-      "originalName": "已点赞",
-      "svgPath": "svg/已点赞.svg",
-      "componentPath": "src/icons/IconYiDianZan.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-02-10T06:47:02.002Z"
-    },
-    {
-      "name": "IconYiShouCang",
-      "originalName": "已收藏",
-      "svgPath": "svg/已收藏.svg",
-      "componentPath": "src/icons/IconYiShouCang.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-02-10T06:47:02.001Z"
-    },
-    {
-      "name": "IconFrame1261156667",
-      "originalName": "Frame-1261156667",
-      "svgPath": "svg/Frame-1261156667.svg",
-      "componentPath": "src/icons/IconFrame1261156667.tsx",
-      "size": {
-        "width": 29,
-        "height": 19
-      },
-      "createdAt": "2026-02-10T06:15:51.615Z"
+      "createdAt": "2026-02-10T06:50:14.279Z"
     },
     {
       "name": "IconBianJi",
@@ -102,28 +68,6 @@
         "height": 24
       },
       "createdAt": "2026-02-07T06:58:36.843Z"
-    },
-    {
-      "name": "IconZuo1",
-      "originalName": "左1",
-      "svgPath": "svg/左1.svg",
-      "componentPath": "src/icons/IconZuo1.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-02-06T06:33:35.855Z"
-    },
-    {
-      "name": "IconYou1",
-      "originalName": "右1",
-      "svgPath": "svg/右1.svg",
-      "componentPath": "src/icons/IconYou1.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-02-06T06:33:35.854Z"
     },
     {
       "name": "IconZuo",
