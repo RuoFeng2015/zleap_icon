@@ -27,6 +27,8 @@ import { IconWenDang } from './icons/IconWenDang';
 import { IconYiDianZan1 } from './icons/IconYiDianZan1';
 import { IconYiShouCang1 } from './icons/IconYiShouCang1';
 import { IconYou } from './icons/IconYou';
+import { IconYuLan } from './icons/IconYuLan';
+import { IconYuLanGuanBi } from './icons/IconYuLanGuanBi';
 import { IconZhanKai } from './icons/IconZhanKai';
 import { IconZhengQue } from './icons/IconZhengQue';
 import { IconZhiShiKu } from './icons/IconZhiShiKu';
@@ -56,6 +58,8 @@ export { IconWenDang, type IconWenDangProps } from './icons/IconWenDang';
 export { IconYiDianZan1, type IconYiDianZan1Props } from './icons/IconYiDianZan1';
 export { IconYiShouCang1, type IconYiShouCang1Props } from './icons/IconYiShouCang1';
 export { IconYou, type IconYouProps } from './icons/IconYou';
+export { IconYuLan, type IconYuLanProps } from './icons/IconYuLan';
+export { IconYuLanGuanBi, type IconYuLanGuanBiProps } from './icons/IconYuLanGuanBi';
 export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
 export { IconZhengQue, type IconZhengQueProps } from './icons/IconZhengQue';
 export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
@@ -89,6 +93,8 @@ export const allIcons = {
   IconYiDianZan1,
   IconYiShouCang1,
   IconYou,
+  IconYuLan,
+  IconYuLanGuanBi,
   IconZhanKai,
   IconZhengQue,
   IconZhiShiKu,
