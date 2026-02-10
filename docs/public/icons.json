@@ -1,8 +1,31 @@
 {
-  "version": "2026.02.10",
-  "generatedAt": "2026-02-10T07:26:15.953Z",
-  "totalCount": 28,
+  "version": "0.0.45",
+  "syncMode": "incremental",
+  "generatedAt": "2026-02-10T10:43:35.441Z",
+  "totalCount": 30,
   "icons": [
+    {
+      "name": "Icon预览",
+      "originalName": "预览",
+      "svgPath": "svg/预览.svg",
+      "componentPath": "src/icons/Icon预览.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-10T10:43:35.441Z"
+    },
+    {
+      "name": "Icon预览关闭",
+      "originalName": "预览-关闭",
+      "svgPath": "svg/预览-关闭.svg",
+      "componentPath": "src/icons/Icon预览关闭.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-02-10T10:43:35.441Z"
+    },
     {
       "name": "IconYiShouCang1",
       "originalName": "已收藏1",
