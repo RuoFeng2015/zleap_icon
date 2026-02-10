@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-10T06:15:51.633Z",
-  "totalCount": 29,
+  "generatedAt": "2026-02-10T06:47:02.013Z",
+  "totalCount": 31,
   "icons": [
+    {
+      "name": "IconYiDianZan",
+      "originalName": "已点赞",
+      "svgPath": "svg/已点赞.svg",
+      "componentPath": "src/icons/IconYiDianZan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-10T06:47:02.002Z"
+    },
+    {
+      "name": "IconYiShouCang",
+      "originalName": "已收藏",
+      "svgPath": "svg/已收藏.svg",
+      "componentPath": "src/icons/IconYiShouCang.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-02-10T06:47:02.001Z"
+    },
     {
       "name": "IconFrame1261156667",
       "originalName": "Frame-1261156667",
