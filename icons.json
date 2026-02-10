@@ -1,30 +1,29 @@
 {
-  "version": "0.0.45",
-  "syncMode": "incremental",
-  "generatedAt": "2026-02-10T10:43:35.441Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-02-10T10:43:54.483Z",
   "totalCount": 30,
   "icons": [
     {
-      "name": "Icon预览",
+      "name": "IconYuLan",
       "originalName": "预览",
       "svgPath": "svg/预览.svg",
-      "componentPath": "src/icons/Icon预览.tsx",
+      "componentPath": "src/icons/IconYuLan.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-10T10:43:35.441Z"
+      "createdAt": "2026-02-10T10:43:54.474Z"
     },
     {
-      "name": "Icon预览关闭",
+      "name": "IconYuLanGuanBi",
       "originalName": "预览-关闭",
       "svgPath": "svg/预览-关闭.svg",
-      "componentPath": "src/icons/Icon预览关闭.tsx",
+      "componentPath": "src/icons/IconYuLanGuanBi.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-02-10T10:43:35.441Z"
+      "createdAt": "2026-02-10T10:43:54.474Z"
     },
     {
       "name": "IconYiShouCang1",
