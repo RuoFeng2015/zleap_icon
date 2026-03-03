@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-02-10T11:15:38.903Z",
-  "totalCount": 32,
+  "generatedAt": "2026-03-03T02:35:05.405Z",
+  "totalCount": 34,
   "icons": [
+    {
+      "name": "IconSuoDing",
+      "originalName": "锁定",
+      "svgPath": "svg/锁定.svg",
+      "componentPath": "src/icons/IconSuoDing.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-03T02:35:05.395Z"
+    },
+    {
+      "name": "IconGengDuo1",
+      "originalName": "更多1",
+      "svgPath": "svg/更多1.svg",
+      "componentPath": "src/icons/IconGengDuo1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-03T02:35:05.392Z"
+    },
     {
       "name": "IconWeiXinHaoYou",
       "originalName": "微信好友",
