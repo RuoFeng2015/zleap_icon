@@ -21,6 +21,7 @@ import { IconPingLun } from './icons/IconPingLun';
 import { IconSearch } from './icons/IconSearch';
 import { IconShanChuDELETE } from './icons/IconShanChuDELETE';
 import { IconShare } from './icons/IconShare';
+import { IconSheZhi } from './icons/IconSheZhi';
 import { IconShouCang } from './icons/IconShouCang';
 import { IconShouYe } from './icons/IconShouYe';
 import { IconShuaXin } from './icons/IconShuaXin';
@@ -57,6 +58,7 @@ export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
 export { IconShanChuDELETE, type IconShanChuDELETEProps } from './icons/IconShanChuDELETE';
 export { IconShare, type IconShareProps } from './icons/IconShare';
+export { IconSheZhi, type IconSheZhiProps } from './icons/IconSheZhi';
 export { IconShouCang, type IconShouCangProps } from './icons/IconShouCang';
 export { IconShouYe, type IconShouYeProps } from './icons/IconShouYe';
 export { IconShuaXin, type IconShuaXinProps } from './icons/IconShuaXin';
@@ -97,6 +99,7 @@ export const allIcons = {
   IconSearch,
   IconShanChuDELETE,
   IconShare,
+  IconSheZhi,
   IconShouCang,
   IconShouYe,
   IconShuaXin,
