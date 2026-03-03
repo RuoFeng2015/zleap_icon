@@ -6,6 +6,52 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.48] - 2026-03-03
+
+同步 1 个图标：回顶部 图标
+
+### Added
+- IconHuiDingBu
+- IconSuoDing
+- IconGengDuo1
+- IconWeiXinHaoYou
+- IconFuZhiLianJie
+- IconYuLan
+- IconYuLanGuanBi
+- IconYiShouCang1
+- IconYiDianZan1
+- IconBianJi
+- IconFenXiang
+- IconPingLun
+- IconShouCang
+- IconZuo
+- IconYou
+- IconZhuShou
+- IconShare
+- IconShouYe
+- IconGengDuo
+- IconTanSuo
+- IconShuaXin
+- IconZhuShouGuanLi
+- IconLike
+- IconZhiShiKu
+- IconTongZhi
+- IconLianJie
+- IconWenDang
+- IconZhengQue
+- IconGuanBi
+- IconGuanBiXiao
+- IconShanChuDELETE
+- IconZhanKai
+- IconCheck
+- IconSearch
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.47] - 2026-03-03
 
 同步 2 个图标：更多, 锁定 图标
