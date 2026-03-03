@@ -14,6 +14,7 @@ import { IconGengDuo } from './icons/IconGengDuo';
 import { IconGengDuo1 } from './icons/IconGengDuo1';
 import { IconGuanBi } from './icons/IconGuanBi';
 import { IconGuanBiXiao } from './icons/IconGuanBiXiao';
+import { IconHuiDingBu } from './icons/IconHuiDingBu';
 import { IconLianJie } from './icons/IconLianJie';
 import { IconLike } from './icons/IconLike';
 import { IconPingLun } from './icons/IconPingLun';
@@ -49,6 +50,7 @@ export { IconGengDuo, type IconGengDuoProps } from './icons/IconGengDuo';
 export { IconGengDuo1, type IconGengDuo1Props } from './icons/IconGengDuo1';
 export { IconGuanBi, type IconGuanBiProps } from './icons/IconGuanBi';
 export { IconGuanBiXiao, type IconGuanBiXiaoProps } from './icons/IconGuanBiXiao';
+export { IconHuiDingBu, type IconHuiDingBuProps } from './icons/IconHuiDingBu';
 export { IconLianJie, type IconLianJieProps } from './icons/IconLianJie';
 export { IconLike, type IconLikeProps } from './icons/IconLike';
 export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun';
@@ -88,6 +90,7 @@ export const allIcons = {
   IconGengDuo1,
   IconGuanBi,
   IconGuanBiXiao,
+  IconHuiDingBu,
   IconLianJie,
   IconLike,
   IconPingLun,
