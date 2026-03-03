@@ -1,19 +1,30 @@
 {
-  "version": "0.0.48",
+  "version": "0.0.49",
   "syncMode": "incremental",
-  "generatedAt": "2026-03-03T09:15:17.771Z",
-  "totalCount": 35,
+  "generatedAt": "2026-03-03T12:41:11.098Z",
+  "totalCount": 36,
   "icons": [
     {
-      "name": "Icon回顶部",
-      "originalName": "回顶部",
-      "svgPath": "svg/回顶部.svg",
-      "componentPath": "src/icons/Icon回顶部.tsx",
+      "name": "Icon设置",
+      "originalName": "设置",
+      "svgPath": "svg/设置.svg",
+      "componentPath": "src/icons/Icon设置.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-03-03T09:15:17.771Z"
+      "uploadedAt": "2026-03-03T12:41:11.097Z"
+    },
+    {
+      "name": "IconHuiDingBu",
+      "originalName": "回顶部",
+      "svgPath": "svg/回顶部.svg",
+      "componentPath": "src/icons/IconHuiDingBu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-03T09:15:38.033Z"
     },
     {
       "name": "IconSuoDing",

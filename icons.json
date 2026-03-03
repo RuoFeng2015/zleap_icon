@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-03T09:15:38.054Z",
-  "totalCount": 35,
+  "generatedAt": "2026-03-03T12:41:39.083Z",
+  "totalCount": 36,
   "icons": [
+    {
+      "name": "IconSheZhi",
+      "originalName": "设置",
+      "svgPath": "svg/设置.svg",
+      "componentPath": "src/icons/IconSheZhi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-03T12:41:39.071Z"
+    },
     {
       "name": "IconHuiDingBu",
       "originalName": "回顶部",
