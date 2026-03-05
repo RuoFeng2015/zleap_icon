@@ -1,63 +1,62 @@
 {
-  "version": "0.0.50",
-  "syncMode": "incremental",
-  "generatedAt": "2026-03-05T03:20:06.573Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-03-05T03:20:28.352Z",
   "totalCount": 41,
   "icons": [
     {
-      "name": "Icon关闭预览",
-      "originalName": "关闭预览",
-      "svgPath": "svg/关闭预览.svg",
-      "componentPath": "src/icons/Icon关闭预览.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-03-05T03:20:06.573Z"
-    },
-    {
-      "name": "Icon勾选",
-      "originalName": "勾选",
-      "svgPath": "svg/勾选.svg",
-      "componentPath": "src/icons/Icon勾选.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-03-05T03:20:06.573Z"
-    },
-    {
-      "name": "Icon勾选/已勾选",
-      "originalName": "勾选/已勾选",
-      "svgPath": "svg/勾选-已勾选.svg",
-      "componentPath": "src/icons/Icon勾选/已勾选.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-03-05T03:20:06.573Z"
-    },
-    {
-      "name": "Icon已勾选",
-      "originalName": "已勾选",
-      "svgPath": "svg/已勾选.svg",
-      "componentPath": "src/icons/Icon已勾选.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-03-05T03:20:06.573Z"
-    },
-    {
-      "name": "Icon预览1",
+      "name": "IconYuLan1",
       "originalName": "预览1",
       "svgPath": "svg/预览1.svg",
-      "componentPath": "src/icons/Icon预览1.tsx",
+      "componentPath": "src/icons/IconYuLan1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-03-05T03:20:06.573Z"
+      "createdAt": "2026-03-05T03:20:28.342Z"
+    },
+    {
+      "name": "IconYiGouXuan",
+      "originalName": "已勾选",
+      "svgPath": "svg/已勾选.svg",
+      "componentPath": "src/icons/IconYiGouXuan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-05T03:20:28.337Z"
+    },
+    {
+      "name": "IconGouXuanYiGouXuan",
+      "originalName": "勾选-已勾选",
+      "svgPath": "svg/勾选-已勾选.svg",
+      "componentPath": "src/icons/IconGouXuanYiGouXuan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-05T03:20:28.335Z"
+    },
+    {
+      "name": "IconGouXuan",
+      "originalName": "勾选",
+      "svgPath": "svg/勾选.svg",
+      "componentPath": "src/icons/IconGouXuan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-05T03:20:28.335Z"
+    },
+    {
+      "name": "IconGuanBiYuLan",
+      "originalName": "关闭预览",
+      "svgPath": "svg/关闭预览.svg",
+      "componentPath": "src/icons/IconGuanBiYuLan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-05T03:20:28.333Z"
     },
     {
       "name": "IconSheZhi",

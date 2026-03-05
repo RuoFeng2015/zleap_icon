@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-03-03T12:41:36.583Z
+Generated at: 2026-03-05T03:20:25.966Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 36 |
+| Total Icons | 41 |
 | Valid Icons | 0 |
-| Invalid Icons | 36 |
-| Total Errors | 36 |
-| Total Warnings | 31 |
+| Invalid Icons | 41 |
+| Total Errors | 41 |
+| Total Warnings | 36 |
 
-⚠️ **36 icon(s) failed validation**
+⚠️ **41 icon(s) failed validation**
 
 ## Errors
 
-### size (36 errors)
+### size (41 errors)
 
 | Icon | Message |
 |------|---------|
@@ -27,16 +27,20 @@ Generated at: 2026-03-03T12:41:36.583Z
 | share | Icon size 24x24 not in allowed sizes:  |
 | 关闭-小 | Icon size 24x24 not in allowed sizes:  |
 | 关闭 | Icon size 24x24 not in allowed sizes:  |
+| 关闭预览 | Icon size 24x24 not in allowed sizes:  |
 | 分享 | Icon size 24x24 not in allowed sizes:  |
 | 删除delete | Icon size 24x24 not in allowed sizes:  |
 | 刷新 | Icon size 24x24 not in allowed sizes:  |
 | 助手 | Icon size 24x24 not in allowed sizes:  |
 | 助手管理 | Icon size 24x24 not in allowed sizes:  |
+| 勾选-已勾选 | Icon size 24x24 not in allowed sizes:  |
+| 勾选 | Icon size 24x24 not in allowed sizes:  |
 | 右 | Icon size 24x24 not in allowed sizes:  |
 | 回顶部 | Icon size 24x24 not in allowed sizes:  |
 | 复制链接 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 左 | Icon size 24x24 not in allowed sizes:  |
+| 已勾选 | Icon size 24x24 not in allowed sizes:  |
 | 已收藏1 | Icon size 24x24 not in allowed sizes:  |
 | 已点赞1 | Icon size 24x24 not in allowed sizes:  |
 | 微信好友 | Icon size 24x24 not in allowed sizes:  |
@@ -55,26 +59,31 @@ Generated at: 2026-03-03T12:41:36.583Z
 | 锁定 | Icon size 24x24 not in allowed sizes:  |
 | 预览-关闭 | Icon size 24x24 not in allowed sizes:  |
 | 预览 | Icon size 24x24 not in allowed sizes:  |
+| 预览1 | Icon size 24x24 not in allowed sizes:  |
 | 首页 | Icon size 24x24 not in allowed sizes:  |
 
 ## Warnings
 
-### naming (31 warnings)
+### naming (36 warnings)
 
 | Icon | Message |
 |------|---------|
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 关闭预览 | Icon name "关闭预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 分享 | Icon name "分享" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 删除delete | Icon name "删除delete" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 刷新 | Icon name "刷新" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 助手 | Icon name "助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 助手管理 | Icon name "助手管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 勾选-已勾选 | Icon name "勾选-已勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 勾选 | Icon name "勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 右 | Icon name "右" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 回顶部 | Icon name "回顶部" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 复制链接 | Icon name "复制链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 左 | Icon name "左" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 已勾选 | Icon name "已勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已收藏1 | Icon name "已收藏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已点赞1 | Icon name "已点赞1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 微信好友 | Icon name "微信好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -93,4 +102,5 @@ Generated at: 2026-03-03T12:41:36.583Z
 | 锁定 | Icon name "锁定" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 预览-关闭 | Icon name "预览-关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 预览 | Icon name "预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
