@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-09T10:08:49.253Z",
-  "totalCount": 42,
+  "generatedAt": "2026-03-09T10:10:02.100Z",
+  "totalCount": 44,
   "icons": [
+    {
+      "name": "IconLianXiRen1",
+      "originalName": "联系人1",
+      "svgPath": "svg/联系人1.svg",
+      "componentPath": "src/icons/IconLianXiRen1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-09T10:10:02.087Z"
+    },
+    {
+      "name": "IconLianXiRen2",
+      "originalName": "联系人2",
+      "svgPath": "svg/联系人2.svg",
+      "componentPath": "src/icons/IconLianXiRen2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-09T10:10:02.087Z"
+    },
     {
       "name": "IconLianXiRen",
       "originalName": "联系人",
