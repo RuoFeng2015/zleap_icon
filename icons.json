@@ -1,19 +1,18 @@
 {
-  "version": "0.0.51",
-  "syncMode": "incremental",
-  "generatedAt": "2026-03-09T10:08:26.388Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-03-09T10:08:49.253Z",
   "totalCount": 42,
   "icons": [
     {
-      "name": "Icon联系人",
+      "name": "IconLianXiRen",
       "originalName": "联系人",
       "svgPath": "svg/联系人.svg",
-      "componentPath": "src/icons/Icon联系人.tsx",
+      "componentPath": "src/icons/IconLianXiRen.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-03-09T10:08:26.388Z"
+      "createdAt": "2026-03-09T10:08:49.241Z"
     },
     {
       "name": "IconYuLan1",

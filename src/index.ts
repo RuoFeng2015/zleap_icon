@@ -19,6 +19,7 @@ import { IconGuanBiXiao } from './icons/IconGuanBiXiao';
 import { IconGuanBiYuLan } from './icons/IconGuanBiYuLan';
 import { IconHuiDingBu } from './icons/IconHuiDingBu';
 import { IconLianJie } from './icons/IconLianJie';
+import { IconLianXiRen } from './icons/IconLianXiRen';
 import { IconLike } from './icons/IconLike';
 import { IconPingLun } from './icons/IconPingLun';
 import { IconSearch } from './icons/IconSearch';
@@ -61,6 +62,7 @@ export { IconGuanBiXiao, type IconGuanBiXiaoProps } from './icons/IconGuanBiXiao
 export { IconGuanBiYuLan, type IconGuanBiYuLanProps } from './icons/IconGuanBiYuLan';
 export { IconHuiDingBu, type IconHuiDingBuProps } from './icons/IconHuiDingBu';
 export { IconLianJie, type IconLianJieProps } from './icons/IconLianJie';
+export { IconLianXiRen, type IconLianXiRenProps } from './icons/IconLianXiRen';
 export { IconLike, type IconLikeProps } from './icons/IconLike';
 export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
@@ -107,6 +109,7 @@ export const allIcons = {
   IconGuanBiYuLan,
   IconHuiDingBu,
   IconLianJie,
+  IconLianXiRen,
   IconLike,
   IconPingLun,
   IconSearch,
