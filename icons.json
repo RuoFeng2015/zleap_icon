@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-09T10:10:02.100Z",
-  "totalCount": 44,
+  "generatedAt": "2026-03-10T07:17:31.504Z",
+  "totalCount": 45,
   "icons": [
+    {
+      "name": "IconLianXiRen3",
+      "originalName": "联系人3",
+      "svgPath": "svg/联系人3.svg",
+      "componentPath": "src/icons/IconLianXiRen3.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-03-10T07:17:31.492Z"
+    },
     {
       "name": "IconLianXiRen1",
       "originalName": "联系人1",
