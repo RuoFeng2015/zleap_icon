@@ -6,6 +6,62 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.53] - 2026-03-10
+
+同步 1 个图标：联系人 图标
+
+### Added
+- IconLianXiRen3
+- IconLianXiRen1
+- IconLianXiRen2
+- IconLianXiRen
+- IconYuLan1
+- IconYiGouXuan
+- IconGouXuanYiGouXuan
+- IconGouXuan
+- IconGuanBiYuLan
+- IconSheZhi
+- IconHuiDingBu
+- IconSuoDing
+- IconGengDuo1
+- IconWeiXinHaoYou
+- IconFuZhiLianJie
+- IconYuLan
+- IconYuLanGuanBi
+- IconYiShouCang1
+- IconYiDianZan1
+- IconBianJi
+- IconFenXiang
+- IconPingLun
+- IconShouCang
+- IconZuo
+- IconYou
+- IconZhuShou
+- IconShare
+- IconShouYe
+- IconGengDuo
+- IconTanSuo
+- IconShuaXin
+- IconZhuShouGuanLi
+- IconLike
+- IconZhiShiKu
+- IconTongZhi
+- IconLianJie
+- IconWenDang
+- IconZhengQue
+- IconGuanBi
+- IconGuanBiXiao
+- IconShanChuDELETE
+- IconZhanKai
+- IconCheck
+- IconSearch
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.52] - 2026-03-09
 
 更新/新增 2 个图标：联系人, 联系人 图标

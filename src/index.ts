@@ -22,6 +22,7 @@ import { IconLianJie } from './icons/IconLianJie';
 import { IconLianXiRen } from './icons/IconLianXiRen';
 import { IconLianXiRen1 } from './icons/IconLianXiRen1';
 import { IconLianXiRen2 } from './icons/IconLianXiRen2';
+import { IconLianXiRen3 } from './icons/IconLianXiRen3';
 import { IconLike } from './icons/IconLike';
 import { IconPingLun } from './icons/IconPingLun';
 import { IconSearch } from './icons/IconSearch';
@@ -67,6 +68,7 @@ export { IconLianJie, type IconLianJieProps } from './icons/IconLianJie';
 export { IconLianXiRen, type IconLianXiRenProps } from './icons/IconLianXiRen';
 export { IconLianXiRen1, type IconLianXiRen1Props } from './icons/IconLianXiRen1';
 export { IconLianXiRen2, type IconLianXiRen2Props } from './icons/IconLianXiRen2';
+export { IconLianXiRen3, type IconLianXiRen3Props } from './icons/IconLianXiRen3';
 export { IconLike, type IconLikeProps } from './icons/IconLike';
 export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
@@ -116,6 +118,7 @@ export const allIcons = {
   IconLianXiRen,
   IconLianXiRen1,
   IconLianXiRen2,
+  IconLianXiRen3,
   IconLike,
   IconPingLun,
   IconSearch,
