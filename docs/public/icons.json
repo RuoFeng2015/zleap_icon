@@ -1,30 +1,41 @@
 {
-  "version": "0.0.52",
+  "version": "0.0.53",
   "syncMode": "incremental",
-  "generatedAt": "2026-03-09T10:09:41.952Z",
-  "totalCount": 44,
+  "generatedAt": "2026-03-10T07:17:06.558Z",
+  "totalCount": 45,
   "icons": [
     {
-      "name": "Icon联系人1",
-      "originalName": "联系人1",
-      "svgPath": "svg/联系人1.svg",
-      "componentPath": "src/icons/Icon联系人1.tsx",
+      "name": "Icon联系人3",
+      "originalName": "联系人3",
+      "svgPath": "svg/联系人3.svg",
+      "componentPath": "src/icons/Icon联系人3.tsx",
       "size": {
-        "width": 24,
-        "height": 24
+        "width": 48,
+        "height": 48
       },
-      "uploadedAt": "2026-03-09T10:09:41.952Z"
+      "uploadedAt": "2026-03-10T07:17:06.558Z"
     },
     {
-      "name": "Icon联系人2",
-      "originalName": "联系人2",
-      "svgPath": "svg/联系人2.svg",
-      "componentPath": "src/icons/Icon联系人2.tsx",
+      "name": "IconLianXiRen1",
+      "originalName": "联系人1",
+      "svgPath": "svg/联系人1.svg",
+      "componentPath": "src/icons/IconLianXiRen1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-03-09T10:09:41.952Z"
+      "createdAt": "2026-03-09T10:10:02.087Z"
+    },
+    {
+      "name": "IconLianXiRen2",
+      "originalName": "联系人2",
+      "svgPath": "svg/联系人2.svg",
+      "componentPath": "src/icons/IconLianXiRen2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-09T10:10:02.087Z"
     },
     {
       "name": "IconLianXiRen",
