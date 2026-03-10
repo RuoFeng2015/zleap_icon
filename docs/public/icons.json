@@ -1,19 +1,63 @@
 {
-  "version": "0.0.53",
+  "version": "0.0.54",
   "syncMode": "incremental",
-  "generatedAt": "2026-03-10T07:17:06.558Z",
-  "totalCount": 45,
+  "generatedAt": "2026-03-10T08:26:20.944Z",
+  "totalCount": 49,
   "icons": [
     {
-      "name": "Icon联系人3",
+      "name": "Icon增加",
+      "originalName": "增加",
+      "svgPath": "svg/增加.svg",
+      "componentPath": "src/icons/Icon增加.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-03-10T08:26:20.944Z"
+    },
+    {
+      "name": "Icon搜索",
+      "originalName": "搜索",
+      "svgPath": "svg/搜索.svg",
+      "componentPath": "src/icons/Icon搜索.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-03-10T08:26:20.944Z"
+    },
+    {
+      "name": "Icon消息",
+      "originalName": "消息",
+      "svgPath": "svg/消息.svg",
+      "componentPath": "src/icons/Icon消息.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-03-10T08:26:20.944Z"
+    },
+    {
+      "name": "Icon通知1",
+      "originalName": "通知1",
+      "svgPath": "svg/通知1.svg",
+      "componentPath": "src/icons/Icon通知1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-03-10T08:26:20.944Z"
+    },
+    {
+      "name": "IconLianXiRen3",
       "originalName": "联系人3",
       "svgPath": "svg/联系人3.svg",
-      "componentPath": "src/icons/Icon联系人3.tsx",
+      "componentPath": "src/icons/IconLianXiRen3.tsx",
       "size": {
         "width": 48,
         "height": 48
       },
-      "uploadedAt": "2026-03-10T07:17:06.558Z"
+      "createdAt": "2026-03-10T07:17:31.492Z"
     },
     {
       "name": "IconLianXiRen1",

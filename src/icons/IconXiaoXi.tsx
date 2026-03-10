@@ -15,7 +15,7 @@ export interface IconXiaoXiProps extends SVGProps<SVGSVGElement> {
  * @param ref - Forwarded ref to the SVG element
  */
 export const IconXiaoXi = forwardRef<SVGSVGElement, IconXiaoXiProps>(
-  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+  ({ size = 24, color, className, style, ...props }, ref) => {
     return (
       <svg
         ref={ref}
@@ -25,10 +25,10 @@ export const IconXiaoXi = forwardRef<SVGSVGElement, IconXiaoXiProps>(
         viewBox="0 0 24 24"
         fill="none"
         className={className}
-        style={{ color, ...style }}
+        style={{ ...(color ? { color } : {}), ...style }}
         {...props}
       >
-        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M2 3h20v15h-7.5L12 20.5 9.5 18H2z"/><path stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" d="M11.5 10.5h1.001"/><path stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" d="M16.5 10.5h1"/><path stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" d="M6.5 10.5h1"/>
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.23" d="M20.197 12A8.197 8.197 0 0 1 12 20.198H3.803V12a8.197 8.197 0 0 1 16.394 0"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.23" d="M7.901 9.54h7.378"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.23" d="M7.901 12.82h7.378"/><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.23" d="M7.901 16.099H12"/>
       </svg>
     );
   }
