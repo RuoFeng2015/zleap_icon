@@ -48,6 +48,7 @@ import { IconYuLan } from './icons/IconYuLan';
 import { IconYuLan1 } from './icons/IconYuLan1';
 import { IconYuLanGuanBi } from './icons/IconYuLanGuanBi';
 import { IconZengJia } from './icons/IconZengJia';
+import { IconZengJia1 } from './icons/IconZengJia1';
 import { IconZhanKai } from './icons/IconZhanKai';
 import { IconZhengQue } from './icons/IconZhengQue';
 import { IconZhiShiKu } from './icons/IconZhiShiKu';
@@ -98,6 +99,7 @@ export { IconYuLan, type IconYuLanProps } from './icons/IconYuLan';
 export { IconYuLan1, type IconYuLan1Props } from './icons/IconYuLan1';
 export { IconYuLanGuanBi, type IconYuLanGuanBiProps } from './icons/IconYuLanGuanBi';
 export { IconZengJia, type IconZengJiaProps } from './icons/IconZengJia';
+export { IconZengJia1, type IconZengJia1Props } from './icons/IconZengJia1';
 export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
 export { IconZhengQue, type IconZhengQueProps } from './icons/IconZhengQue';
 export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
@@ -152,6 +154,7 @@ export const allIcons = {
   IconYuLan1,
   IconYuLanGuanBi,
   IconZengJia,
+  IconZengJia1,
   IconZhanKai,
   IconZhengQue,
   IconZhiShiKu,
