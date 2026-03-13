@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-10T08:26:52.280Z",
-  "totalCount": 49,
+  "version": "0.0.55",
+  "syncMode": "incremental",
+  "generatedAt": "2026-03-13T11:46:24.484Z",
+  "totalCount": 50,
   "icons": [
+    {
+      "name": "Icon增加1",
+      "originalName": "增加1",
+      "svgPath": "svg/增加1.svg",
+      "componentPath": "src/icons/Icon增加1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-03-13T11:46:24.484Z"
+    },
     {
       "name": "IconTongZhi1",
       "originalName": "通知1",
