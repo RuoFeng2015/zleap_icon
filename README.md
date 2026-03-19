@@ -131,6 +131,7 @@ icon-library/
 | [部署指南](./docs/DEPLOYMENT.md)       | 完整的部署流程和故障排除                       |
 | [Figma 插件](./figma-plugin/README.md) | 插件安装、配置和使用方法                       |
 | [开发指南](./docs/DEVELOPMENT.md)      | 本地开发、测试和贡献指南                       |
+| [本地联调 Playground](./playground/icon-local-test/README.md) | 图标组件与 Raw SVG 对比调试、样式调参、问题复现 |
 
 ## 工作流程
 

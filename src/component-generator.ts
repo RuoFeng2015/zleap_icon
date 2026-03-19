@@ -95,6 +95,32 @@ function isMulticolorSvg(svgContent: string): boolean {
   return uniqueFills.size > 1 || uniqueStrokes.size > 1 || hasGradient
 }
 
+function shouldPreserveForStrokeIcon(colorValue: string): boolean {
+  const normalized = colorValue.toLowerCase().replace(/\s/g, '')
+  return (
+    normalized === 'none' ||
+    normalized === 'currentcolor' ||
+    normalized === 'white' ||
+    normalized === '#fff' ||
+    normalized === '#ffffff' ||
+    normalized === 'rgb(255,255,255)' ||
+    normalized === 'rgba(255,255,255,1)'
+  )
+}
+
+function replaceStrokeIconColorsToCurrentColor(content: string): string {
+  // Match: fill="..." / stroke="..." (supports named colors, hex, rgb/rgba/hsl/hsla)
+  return content.replace(
+    /(fill|stroke)="([^"]+)"/gi,
+    (_match, attrName: string, colorValue: string) => {
+      if (shouldPreserveForStrokeIcon(colorValue)) {
+        return `${attrName}="${colorValue}"`
+      }
+      return `${attrName}="currentColor"`
+    },
+  )
+}
+
 /**
  * Generates a React component template from icon metadata and JSX content
  *
@@ -214,16 +240,14 @@ export default ${componentName};
     const isStrokeIcon = rootFill === 'none'
     let processedContent = innerContent
     
-    if (isStrokeIcon) {
+    if (isStrokeIcon && !isMulticolor) {
       // Replace hardcoded stroke/fill colors with currentColor for single-color stroke icons
-      processedContent = innerContent
-        .replace(/stroke="#[0-9A-Fa-f]{3,6}"/g, 'stroke="currentColor"')
-        .replace(/fill="#[0-9A-Fa-f]{3,6}"/g, 'fill="currentColor"')
+      processedContent = replaceStrokeIconColorsToCurrentColor(innerContent)
     }
     
     // 对于 stroke 图标，使用条件性 style 来应用颜色
     // 只有当用户传入 color prop 时才设置内联样式，否则让 Tailwind 类名生效
-    const needsColorStyle = isStrokeIcon
+    const needsColorStyle = isStrokeIcon && !isMulticolor
     const styleProp = needsColorStyle
       ? '\n        style={{ ...(color ? { color } : {}), ...style }}'
       : '\n        style={style}'
