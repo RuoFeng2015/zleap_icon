@@ -1,8 +1,42 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-19T08:05:48.008Z",
-  "totalCount": 62,
+  "version": "0.0.66",
+  "syncMode": "incremental",
+  "generatedAt": "2026-03-19T08:17:28.215Z",
+  "totalCount": 65,
   "icons": [
+    {
+      "name": "Icon体育",
+      "originalName": "体育",
+      "svgPath": "svg/体育.svg",
+      "componentPath": "src/icons/Icon体育.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T08:17:28.211Z"
+    },
+    {
+      "name": "Icon教育1",
+      "originalName": "教育1",
+      "svgPath": "svg/教育1.svg",
+      "componentPath": "src/icons/Icon教育1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T08:17:28.211Z"
+    },
+    {
+      "name": "Icon职场1",
+      "originalName": "职场1",
+      "svgPath": "svg/职场1.svg",
+      "componentPath": "src/icons/Icon职场1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T08:17:28.211Z"
+    },
     {
       "name": "IconKeJi1",
       "originalName": "科技1",
