@@ -1,19 +1,18 @@
 {
-  "version": "0.0.61",
-  "syncMode": "incremental",
-  "generatedAt": "2026-03-19T07:46:53.376Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-03-19T07:47:15.695Z",
   "totalCount": 54,
   "icons": [
     {
-      "name": "Icon科技1",
+      "name": "IconKeJi1",
       "originalName": "科技1",
       "svgPath": "svg/科技1.svg",
-      "componentPath": "src/icons/Icon科技1.tsx",
+      "componentPath": "src/icons/IconKeJi1.tsx",
       "size": {
-        "width": 36,
-        "height": 36
+        "width": 132,
+        "height": 87
       },
-      "uploadedAt": "2026-03-19T07:46:53.375Z"
+      "createdAt": "2026-03-19T07:47:15.681Z"
     },
     {
       "name": "IconQiChe1",
