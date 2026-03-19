@@ -1,25 +1,26 @@
 # Icon Validation Report
 
-Generated at: 2026-03-19T07:45:05.378Z
+Generated at: 2026-03-19T07:46:56.120Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 53 |
+| Total Icons | 55 |
 | Valid Icons | 0 |
-| Invalid Icons | 53 |
-| Total Errors | 53 |
-| Total Warnings | 48 |
+| Invalid Icons | 55 |
+| Total Errors | 55 |
+| Total Warnings | 51 |
 
-⚠️ **53 icon(s) failed validation**
+⚠️ **55 icon(s) failed validation**
 
 ## Errors
 
-### size (53 errors)
+### size (55 errors)
 
 | Icon | Message |
 |------|---------|
+| Frame-1261156734 | Icon size 133x88 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
@@ -37,6 +38,7 @@ Generated at: 2026-03-19T07:45:05.378Z
 | 勾选 | Icon size 24x24 not in allowed sizes:  |
 | 右 | Icon size 24x24 not in allowed sizes:  |
 | 商业 | Icon size 36x36 not in allowed sizes:  |
+| 商业1 | Icon size 36x36 not in allowed sizes:  |
 | 回顶部 | Icon size 24x24 not in allowed sizes:  |
 | 增加 | Icon size 24x24 not in allowed sizes:  |
 | 增加1 | Icon size 24x24 not in allowed sizes:  |
@@ -76,10 +78,17 @@ Generated at: 2026-03-19T07:45:05.378Z
 
 ## Warnings
 
-### naming (48 warnings)
+### size (1 warning)
 
 | Icon | Message |
 |------|---------|
+| Frame-1261156734 | Icon is not square: 133x88 |
+
+### naming (50 warnings)
+
+| Icon | Message |
+|------|---------|
+| Frame-1261156734 | Icon name "Frame-1261156734" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭预览 | Icon name "关闭预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -92,6 +101,7 @@ Generated at: 2026-03-19T07:45:05.378Z
 | 勾选 | Icon name "勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 右 | Icon name "右" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 商业 | Icon name "商业" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 商业1 | Icon name "商业1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 回顶部 | Icon name "回顶部" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加 | Icon name "增加" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加1 | Icon name "增加1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

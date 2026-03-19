@@ -9,6 +9,7 @@ import { IconBack } from './icons/IconBack';
 import { IconBianJi } from './icons/IconBianJi';
 import { IconCheck } from './icons/IconCheck';
 import { IconFenXiang } from './icons/IconFenXiang';
+import { IconFrame1261156734 } from './icons/IconFrame1261156734';
 import { IconFuZhiLianJie } from './icons/IconFuZhiLianJie';
 import { IconGengDuo } from './icons/IconGengDuo';
 import { IconGengDuo1 } from './icons/IconGengDuo1';
@@ -30,6 +31,7 @@ import { IconQiChe1 } from './icons/IconQiChe1';
 import { IconSearch } from './icons/IconSearch';
 import { IconShanChuDELETE } from './icons/IconShanChuDELETE';
 import { IconShangYe } from './icons/IconShangYe';
+import { IconShangYe1 } from './icons/IconShangYe1';
 import { IconShare } from './icons/IconShare';
 import { IconSheZhi } from './icons/IconSheZhi';
 import { IconShouCang } from './icons/IconShouCang';
@@ -63,6 +65,7 @@ export { IconBack, type IconBackProps } from './icons/IconBack';
 export { IconBianJi, type IconBianJiProps } from './icons/IconBianJi';
 export { IconCheck, type IconCheckProps } from './icons/IconCheck';
 export { IconFenXiang, type IconFenXiangProps } from './icons/IconFenXiang';
+export { IconFrame1261156734, type IconFrame1261156734Props } from './icons/IconFrame1261156734';
 export { IconFuZhiLianJie, type IconFuZhiLianJieProps } from './icons/IconFuZhiLianJie';
 export { IconGengDuo, type IconGengDuoProps } from './icons/IconGengDuo';
 export { IconGengDuo1, type IconGengDuo1Props } from './icons/IconGengDuo1';
@@ -84,6 +87,7 @@ export { IconQiChe1, type IconQiChe1Props } from './icons/IconQiChe1';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
 export { IconShanChuDELETE, type IconShanChuDELETEProps } from './icons/IconShanChuDELETE';
 export { IconShangYe, type IconShangYeProps } from './icons/IconShangYe';
+export { IconShangYe1, type IconShangYe1Props } from './icons/IconShangYe1';
 export { IconShare, type IconShareProps } from './icons/IconShare';
 export { IconSheZhi, type IconSheZhiProps } from './icons/IconSheZhi';
 export { IconShouCang, type IconShouCangProps } from './icons/IconShouCang';
@@ -121,6 +125,7 @@ export const allIcons = {
   IconBianJi,
   IconCheck,
   IconFenXiang,
+  IconFrame1261156734,
   IconFuZhiLianJie,
   IconGengDuo,
   IconGengDuo1,
@@ -142,6 +147,7 @@ export const allIcons = {
   IconSearch,
   IconShanChuDELETE,
   IconShangYe,
+  IconShangYe1,
   IconShare,
   IconSheZhi,
   IconShouCang,
