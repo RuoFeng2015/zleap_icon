@@ -1,19 +1,30 @@
 {
-  "version": "0.0.57",
+  "version": "0.0.61",
   "syncMode": "incremental",
-  "generatedAt": "2026-03-19T07:44:41.000Z",
-  "totalCount": 53,
+  "generatedAt": "2026-03-19T07:46:53.376Z",
+  "totalCount": 54,
   "icons": [
     {
-      "name": "Icon汽车1",
-      "originalName": "汽车 1",
-      "svgPath": "svg/汽车-1.svg",
-      "componentPath": "src/icons/Icon汽车1.tsx",
+      "name": "Icon科技1",
+      "originalName": "科技1",
+      "svgPath": "svg/科技1.svg",
+      "componentPath": "src/icons/Icon科技1.tsx",
       "size": {
         "width": 36,
         "height": 36
       },
-      "uploadedAt": "2026-03-19T07:44:41.000Z"
+      "uploadedAt": "2026-03-19T07:46:53.375Z"
+    },
+    {
+      "name": "IconQiChe1",
+      "originalName": "汽车-1",
+      "svgPath": "svg/汽车-1.svg",
+      "componentPath": "src/icons/IconQiChe1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "createdAt": "2026-03-19T07:45:07.859Z"
     },
     {
       "name": "IconKeJi",
