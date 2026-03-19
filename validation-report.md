@@ -1,25 +1,26 @@
 # Icon Validation Report
 
-Generated at: 2026-03-19T07:45:05.378Z
+Generated at: 2026-03-19T07:46:28.852Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 53 |
+| Total Icons | 54 |
 | Valid Icons | 0 |
-| Invalid Icons | 53 |
-| Total Errors | 53 |
-| Total Warnings | 48 |
+| Invalid Icons | 54 |
+| Total Errors | 54 |
+| Total Warnings | 49 |
 
-⚠️ **53 icon(s) failed validation**
+⚠️ **54 icon(s) failed validation**
 
 ## Errors
 
-### size (53 errors)
+### size (54 errors)
 
 | Icon | Message |
 |------|---------|
+| AI | Icon size 36x36 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
@@ -76,10 +77,11 @@ Generated at: 2026-03-19T07:45:05.378Z
 
 ## Warnings
 
-### naming (48 warnings)
+### naming (49 warnings)
 
 | Icon | Message |
 |------|---------|
+| AI | Icon name "AI" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭预览 | Icon name "关闭预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

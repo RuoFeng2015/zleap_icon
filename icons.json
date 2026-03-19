@@ -1,7 +1,6 @@
 {
-  "version": "0.0.59",
-  "syncMode": "incremental",
-  "generatedAt": "2026-03-19T07:46:01.435Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-03-19T07:46:31.316Z",
   "totalCount": 54,
   "icons": [
     {
@@ -13,7 +12,7 @@
         "width": 36,
         "height": 36
       },
-      "uploadedAt": "2026-03-19T07:46:01.435Z"
+      "createdAt": "2026-03-19T07:46:31.291Z"
     },
     {
       "name": "IconQiChe1",
