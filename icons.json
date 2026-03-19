@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-19T07:46:31.316Z",
-  "totalCount": 54,
+  "version": "0.0.63",
+  "syncMode": "incremental",
+  "generatedAt": "2026-03-19T07:47:53.478Z",
+  "totalCount": 56,
   "icons": [
+    {
+      "name": "Icon教育",
+      "originalName": "教育",
+      "svgPath": "svg/教育.svg",
+      "componentPath": "src/icons/Icon教育.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T07:47:53.478Z"
+    },
+    {
+      "name": "Icon文化体育1",
+      "originalName": "文化体育 1",
+      "svgPath": "svg/文化体育-1.svg",
+      "componentPath": "src/icons/Icon文化体育1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T07:47:53.478Z"
+    },
     {
       "name": "IconAi",
       "originalName": "AI",
