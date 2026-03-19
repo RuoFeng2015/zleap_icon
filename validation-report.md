@@ -1,6 +1,6 @@
 # Icon Validation Report
 
-Generated at: 2026-03-19T07:48:13.804Z
+Generated at: 2026-03-19T07:55:40.237Z
 
 ## Summary
 
@@ -10,7 +10,7 @@ Generated at: 2026-03-19T07:48:13.804Z
 | Valid Icons | 0 |
 | Invalid Icons | 56 |
 | Total Errors | 56 |
-| Total Warnings | 51 |
+| Total Warnings | 53 |
 
 ⚠️ **56 icon(s) failed validation**
 
@@ -51,8 +51,8 @@ Generated at: 2026-03-19T07:48:13.804Z
 | 探索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索 | Icon size 24x24 not in allowed sizes:  |
 | 收藏 | Icon size 24x24 not in allowed sizes:  |
-| 教育 | Icon size 36x36 not in allowed sizes:  |
-| 文化体育-1 | Icon size 36x36 not in allowed sizes:  |
+| 教育 | Icon size 216x87 not in allowed sizes:  |
+| 文化体育-1 | Icon size 186x87 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
 | 更多 | Icon size 24x24 not in allowed sizes:  |
 | 更多1 | Icon size 24x24 not in allowed sizes:  |
@@ -134,3 +134,10 @@ Generated at: 2026-03-19T07:48:13.804Z
 | 预览 | Icon name "预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+
+### size (2 warnings)
+
+| Icon | Message |
+|------|---------|
+| 教育 | Icon is not square: 216x87 |
+| 文化体育-1 | Icon is not square: 186x87 |
