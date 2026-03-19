@@ -1,63 +1,85 @@
 {
-  "version": "0.0.65",
+  "version": "0.0.66",
   "syncMode": "incremental",
-  "generatedAt": "2026-03-19T08:05:27.174Z",
-  "totalCount": 63,
+  "generatedAt": "2026-03-19T08:17:28.215Z",
+  "totalCount": 65,
   "icons": [
     {
-      "name": "Icon商业1",
-      "originalName": "商业1",
-      "svgPath": "svg/商业1.svg",
-      "componentPath": "src/icons/Icon商业1.tsx",
+      "name": "Icon体育",
+      "originalName": "体育",
+      "svgPath": "svg/体育.svg",
+      "componentPath": "src/icons/Icon体育.tsx",
       "size": {
         "width": 36,
         "height": 36
       },
-      "uploadedAt": "2026-03-19T08:05:27.173Z"
+      "uploadedAt": "2026-03-19T08:17:28.211Z"
     },
     {
-      "name": "Icon教育",
-      "originalName": "教育",
-      "svgPath": "svg/教育.svg",
-      "componentPath": "src/icons/Icon教育.tsx",
+      "name": "Icon教育1",
+      "originalName": "教育1",
+      "svgPath": "svg/教育1.svg",
+      "componentPath": "src/icons/Icon教育1.tsx",
       "size": {
         "width": 36,
         "height": 36
       },
-      "uploadedAt": "2026-03-19T08:05:27.173Z"
+      "uploadedAt": "2026-03-19T08:17:28.211Z"
     },
     {
-      "name": "Icon文化体育1",
-      "originalName": "文化体育 1",
-      "svgPath": "svg/文化体育-1.svg",
-      "componentPath": "src/icons/Icon文化体育1.tsx",
+      "name": "Icon职场1",
+      "originalName": "职场1",
+      "svgPath": "svg/职场1.svg",
+      "componentPath": "src/icons/Icon职场1.tsx",
       "size": {
         "width": 36,
         "height": 36
       },
-      "uploadedAt": "2026-03-19T08:05:27.173Z"
+      "uploadedAt": "2026-03-19T08:17:28.211Z"
     },
     {
-      "name": "Icon科技1",
+      "name": "IconKeJi1",
       "originalName": "科技1",
       "svgPath": "svg/科技1.svg",
-      "componentPath": "src/icons/Icon科技1.tsx",
+      "componentPath": "src/icons/IconKeJi1.tsx",
       "size": {
-        "width": 36,
-        "height": 36
+        "width": 132,
+        "height": 87
       },
-      "uploadedAt": "2026-03-19T08:05:27.173Z"
+      "createdAt": "2026-03-19T08:05:47.995Z"
     },
     {
-      "name": "Icon财经",
-      "originalName": "财经 ",
-      "svgPath": "svg/财经.svg",
-      "componentPath": "src/icons/Icon财经.tsx",
+      "name": "IconWenHuaTiYu1",
+      "originalName": "文化体育-1",
+      "svgPath": "svg/文化体育-1.svg",
+      "componentPath": "src/icons/IconWenHuaTiYu1.tsx",
       "size": {
-        "width": 36,
-        "height": 36
+        "width": 186,
+        "height": 87
       },
-      "uploadedAt": "2026-03-19T08:05:27.173Z"
+      "createdAt": "2026-03-19T08:05:47.992Z"
+    },
+    {
+      "name": "IconJiaoYu",
+      "originalName": "教育",
+      "svgPath": "svg/教育.svg",
+      "componentPath": "src/icons/IconJiaoYu.tsx",
+      "size": {
+        "width": 216,
+        "height": 87
+      },
+      "createdAt": "2026-03-19T08:05:47.992Z"
+    },
+    {
+      "name": "IconShangYe1",
+      "originalName": "商业1",
+      "svgPath": "svg/商业1.svg",
+      "componentPath": "src/icons/IconShangYe1.tsx",
+      "size": {
+        "width": 132,
+        "height": 87
+      },
+      "createdAt": "2026-03-19T08:05:47.989Z"
     },
     {
       "name": "IconAi1",
