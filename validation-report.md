@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-03-19T07:38:26.342Z
+Generated at: 2026-03-19T07:45:42.473Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 52 |
+| Total Icons | 54 |
 | Valid Icons | 0 |
-| Invalid Icons | 52 |
-| Total Errors | 52 |
-| Total Warnings | 47 |
+| Invalid Icons | 54 |
+| Total Errors | 54 |
+| Total Warnings | 49 |
 
-⚠️ **52 icon(s) failed validation**
+⚠️ **54 icon(s) failed validation**
 
 ## Errors
 
-### size (52 errors)
+### size (54 errors)
 
 | Icon | Message |
 |------|---------|
@@ -25,6 +25,7 @@ Generated at: 2026-03-19T07:38:26.342Z
 | like | Icon size 24x24 not in allowed sizes:  |
 | search | Icon size 24x24 not in allowed sizes:  |
 | share | Icon size 24x24 not in allowed sizes:  |
+| 体育 | Icon size 36x36 not in allowed sizes:  |
 | 关闭-小 | Icon size 24x24 not in allowed sizes:  |
 | 关闭 | Icon size 24x24 not in allowed sizes:  |
 | 关闭预览 | Icon size 24x24 not in allowed sizes:  |
@@ -50,6 +51,7 @@ Generated at: 2026-03-19T07:38:26.342Z
 | 探索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索 | Icon size 24x24 not in allowed sizes:  |
 | 收藏 | Icon size 24x24 not in allowed sizes:  |
+| 教育 | Icon size 36x36 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
 | 更多 | Icon size 24x24 not in allowed sizes:  |
 | 更多1 | Icon size 24x24 not in allowed sizes:  |
@@ -75,10 +77,11 @@ Generated at: 2026-03-19T07:38:26.342Z
 
 ## Warnings
 
-### naming (47 warnings)
+### naming (49 warnings)
 
 | Icon | Message |
 |------|---------|
+| 体育 | Icon name "体育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭预览 | Icon name "关闭预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -104,6 +107,7 @@ Generated at: 2026-03-19T07:38:26.342Z
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索 | Icon name "搜索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 收藏 | Icon name "收藏" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 教育 | Icon name "教育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多 | Icon name "更多" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多1 | Icon name "更多1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
