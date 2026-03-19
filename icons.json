@@ -1,8 +1,64 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-19T07:48:47.693Z",
-  "totalCount": 58,
+  "version": "0.0.65",
+  "syncMode": "incremental",
+  "generatedAt": "2026-03-19T08:05:27.174Z",
+  "totalCount": 63,
   "icons": [
+    {
+      "name": "Icon商业1",
+      "originalName": "商业1",
+      "svgPath": "svg/商业1.svg",
+      "componentPath": "src/icons/Icon商业1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T08:05:27.173Z"
+    },
+    {
+      "name": "Icon教育",
+      "originalName": "教育",
+      "svgPath": "svg/教育.svg",
+      "componentPath": "src/icons/Icon教育.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T08:05:27.173Z"
+    },
+    {
+      "name": "Icon文化体育1",
+      "originalName": "文化体育 1",
+      "svgPath": "svg/文化体育-1.svg",
+      "componentPath": "src/icons/Icon文化体育1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T08:05:27.173Z"
+    },
+    {
+      "name": "Icon科技1",
+      "originalName": "科技1",
+      "svgPath": "svg/科技1.svg",
+      "componentPath": "src/icons/Icon科技1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T08:05:27.173Z"
+    },
+    {
+      "name": "Icon财经",
+      "originalName": "财经 ",
+      "svgPath": "svg/财经.svg",
+      "componentPath": "src/icons/Icon财经.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T08:05:27.173Z"
+    },
     {
       "name": "IconAi1",
       "originalName": "AI1",
