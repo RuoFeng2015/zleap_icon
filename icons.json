@@ -1,7 +1,6 @@
 {
-  "version": "0.0.69",
-  "syncMode": "incremental",
-  "generatedAt": "2026-03-19T10:22:49.449Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-03-19T10:23:14.454Z",
   "totalCount": 68,
   "icons": [
     {
@@ -10,10 +9,10 @@
       "svgPath": "svg/Frame.svg",
       "componentPath": "src/icons/IconFrame.tsx",
       "size": {
-        "width": 63,
+        "width": 64,
         "height": 64
       },
-      "uploadedAt": "2026-03-19T10:22:49.448Z"
+      "createdAt": "2026-03-19T10:23:14.425Z"
     },
     {
       "name": "IconHaoYou",
