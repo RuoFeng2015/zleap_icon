@@ -1,19 +1,30 @@
 {
-  "version": "0.0.68",
+  "version": "0.0.69",
   "syncMode": "incremental",
-  "generatedAt": "2026-03-19T09:53:51.374Z",
-  "totalCount": 67,
+  "generatedAt": "2026-03-19T10:22:49.449Z",
+  "totalCount": 68,
   "icons": [
     {
-      "name": "Icon好友",
+      "name": "IconFrame",
+      "originalName": "Frame",
+      "svgPath": "svg/Frame.svg",
+      "componentPath": "src/icons/IconFrame.tsx",
+      "size": {
+        "width": 63,
+        "height": 64
+      },
+      "uploadedAt": "2026-03-19T10:22:49.448Z"
+    },
+    {
+      "name": "IconHaoYou",
       "originalName": "好友",
       "svgPath": "svg/好友.svg",
-      "componentPath": "src/icons/Icon好友.tsx",
+      "componentPath": "src/icons/IconHaoYou.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-03-19T09:53:51.373Z"
+      "createdAt": "2026-03-19T09:54:25.310Z"
     },
     {
       "name": "IconCaiJing1",
