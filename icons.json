@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-19T09:54:25.330Z",
-  "totalCount": 67,
+  "version": "0.0.69",
+  "syncMode": "incremental",
+  "generatedAt": "2026-03-19T10:22:49.449Z",
+  "totalCount": 68,
   "icons": [
+    {
+      "name": "IconFrame",
+      "originalName": "Frame",
+      "svgPath": "svg/Frame.svg",
+      "componentPath": "src/icons/IconFrame.tsx",
+      "size": {
+        "width": 63,
+        "height": 64
+      },
+      "uploadedAt": "2026-03-19T10:22:49.448Z"
+    },
     {
       "name": "IconHaoYou",
       "originalName": "好友",
