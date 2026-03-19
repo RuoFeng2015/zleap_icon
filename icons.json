@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-19T07:45:07.873Z",
-  "totalCount": 53,
+  "version": "0.0.60",
+  "syncMode": "incremental",
+  "generatedAt": "2026-03-19T07:46:32.401Z",
+  "totalCount": 55,
   "icons": [
+    {
+      "name": "IconFrame1261156734",
+      "originalName": "Frame 1261156734",
+      "svgPath": "svg/Frame-1261156734.svg",
+      "componentPath": "src/icons/IconFrame1261156734.tsx",
+      "size": {
+        "width": 133,
+        "height": 88
+      },
+      "uploadedAt": "2026-03-19T07:46:32.401Z"
+    },
+    {
+      "name": "Icon商业1",
+      "originalName": "商业1",
+      "svgPath": "svg/商业1.svg",
+      "componentPath": "src/icons/Icon商业1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T07:46:32.401Z"
+    },
     {
       "name": "IconQiChe1",
       "originalName": "汽车-1",
