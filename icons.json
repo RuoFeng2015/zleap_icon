@@ -1,41 +1,40 @@
 {
-  "version": "0.0.62",
-  "syncMode": "incremental",
-  "generatedAt": "2026-03-19T07:47:29.443Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-03-19T07:47:58.170Z",
   "totalCount": 57,
   "icons": [
     {
-      "name": "Icon汽车",
-      "originalName": "汽车 ",
-      "svgPath": "svg/汽车.svg",
-      "componentPath": "src/icons/Icon汽车.tsx",
+      "name": "IconCaiJing",
+      "originalName": "财经",
+      "svgPath": "svg/财经.svg",
+      "componentPath": "src/icons/IconCaiJing.tsx",
       "size": {
-        "width": 36,
-        "height": 36
+        "width": 129,
+        "height": 87
       },
-      "uploadedAt": "2026-03-19T07:47:29.443Z"
+      "createdAt": "2026-03-19T07:47:58.158Z"
     },
     {
-      "name": "Icon职场",
+      "name": "IconZhiChang",
       "originalName": "职场",
       "svgPath": "svg/职场.svg",
-      "componentPath": "src/icons/Icon职场.tsx",
+      "componentPath": "src/icons/IconZhiChang.tsx",
       "size": {
-        "width": 36,
-        "height": 36
+        "width": 132,
+        "height": 87
       },
-      "uploadedAt": "2026-03-19T07:47:29.443Z"
+      "createdAt": "2026-03-19T07:47:58.156Z"
     },
     {
-      "name": "Icon财经",
-      "originalName": "财经 ",
-      "svgPath": "svg/财经.svg",
-      "componentPath": "src/icons/Icon财经.tsx",
+      "name": "IconQiChe",
+      "originalName": "汽车",
+      "svgPath": "svg/汽车.svg",
+      "componentPath": "src/icons/IconQiChe.tsx",
       "size": {
-        "width": 36,
-        "height": 36
+        "width": 132,
+        "height": 87
       },
-      "uploadedAt": "2026-03-19T07:47:29.443Z"
+      "createdAt": "2026-03-19T07:47:58.155Z"
     },
     {
       "name": "IconAi",

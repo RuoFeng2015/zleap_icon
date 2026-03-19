@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-03-19T07:46:28.852Z
+Generated at: 2026-03-19T07:47:55.725Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 54 |
+| Total Icons | 57 |
 | Valid Icons | 0 |
-| Invalid Icons | 54 |
-| Total Errors | 54 |
-| Total Warnings | 49 |
+| Invalid Icons | 57 |
+| Total Errors | 57 |
+| Total Warnings | 52 |
 
-⚠️ **54 icon(s) failed validation**
+⚠️ **57 icon(s) failed validation**
 
 ## Errors
 
-### size (54 errors)
+### size (57 errors)
 
 | Icon | Message |
 |------|---------|
@@ -56,16 +56,19 @@ Generated at: 2026-03-19T07:46:28.852Z
 | 更多1 | Icon size 24x24 not in allowed sizes:  |
 | 正确 | Icon size 24x24 not in allowed sizes:  |
 | 汽车-1 | Icon size 36x36 not in allowed sizes:  |
+| 汽车 | Icon size 36x36 not in allowed sizes:  |
 | 消息 | Icon size 24x24 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
 | 科技 | Icon size 36x36 not in allowed sizes:  |
 | 编辑 | Icon size 24x24 not in allowed sizes:  |
+| 职场 | Icon size 36x36 not in allowed sizes:  |
 | 联系人 | Icon size 24x24 not in allowed sizes:  |
 | 联系人1 | Icon size 24x24 not in allowed sizes:  |
 | 联系人2 | Icon size 24x24 not in allowed sizes:  |
 | 联系人3 | Icon size 48x48 not in allowed sizes:  |
 | 设置 | Icon size 24x24 not in allowed sizes:  |
 | 评论 | Icon size 24x24 not in allowed sizes:  |
+| 财经 | Icon size 36x36 not in allowed sizes:  |
 | 通知 | Icon size 24x24 not in allowed sizes:  |
 | 通知1 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
@@ -77,7 +80,7 @@ Generated at: 2026-03-19T07:46:28.852Z
 
 ## Warnings
 
-### naming (49 warnings)
+### naming (52 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -112,16 +115,19 @@ Generated at: 2026-03-19T07:46:28.852Z
 | 更多1 | Icon name "更多1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 正确 | Icon name "正确" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 汽车-1 | Icon name "汽车-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 汽车 | Icon name "汽车" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 消息 | Icon name "消息" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技 | Icon name "科技" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 编辑 | Icon name "编辑" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 职场 | Icon name "职场" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人 | Icon name "联系人" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人1 | Icon name "联系人1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人2 | Icon name "联系人2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人3 | Icon name "联系人3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置 | Icon name "设置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 评论 | Icon name "评论" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 财经 | Icon name "财经" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知 | Icon name "通知" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知1 | Icon name "通知1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
