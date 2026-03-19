@@ -1,19 +1,18 @@
 {
-  "version": "0.0.57",
-  "syncMode": "incremental",
-  "generatedAt": "2026-03-19T07:44:41.000Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-03-19T07:45:07.873Z",
   "totalCount": 53,
   "icons": [
     {
-      "name": "Icon汽车1",
-      "originalName": "汽车 1",
+      "name": "IconQiChe1",
+      "originalName": "汽车-1",
       "svgPath": "svg/汽车-1.svg",
-      "componentPath": "src/icons/Icon汽车1.tsx",
+      "componentPath": "src/icons/IconQiChe1.tsx",
       "size": {
         "width": 36,
         "height": 36
       },
-      "uploadedAt": "2026-03-19T07:44:41.000Z"
+      "createdAt": "2026-03-19T07:45:07.859Z"
     },
     {
       "name": "IconKeJi",

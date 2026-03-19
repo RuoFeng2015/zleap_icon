@@ -26,6 +26,7 @@ import { IconLianXiRen2 } from './icons/IconLianXiRen2';
 import { IconLianXiRen3 } from './icons/IconLianXiRen3';
 import { IconLike } from './icons/IconLike';
 import { IconPingLun } from './icons/IconPingLun';
+import { IconQiChe1 } from './icons/IconQiChe1';
 import { IconSearch } from './icons/IconSearch';
 import { IconShanChuDELETE } from './icons/IconShanChuDELETE';
 import { IconShangYe } from './icons/IconShangYe';
@@ -79,6 +80,7 @@ export { IconLianXiRen2, type IconLianXiRen2Props } from './icons/IconLianXiRen2
 export { IconLianXiRen3, type IconLianXiRen3Props } from './icons/IconLianXiRen3';
 export { IconLike, type IconLikeProps } from './icons/IconLike';
 export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun';
+export { IconQiChe1, type IconQiChe1Props } from './icons/IconQiChe1';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
 export { IconShanChuDELETE, type IconShanChuDELETEProps } from './icons/IconShanChuDELETE';
 export { IconShangYe, type IconShangYeProps } from './icons/IconShangYe';
@@ -136,6 +138,7 @@ export const allIcons = {
   IconLianXiRen3,
   IconLike,
   IconPingLun,
+  IconQiChe1,
   IconSearch,
   IconShanChuDELETE,
   IconShangYe,
