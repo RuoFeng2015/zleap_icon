@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-03-19T07:46:28.852Z
+Generated at: 2026-03-19T07:48:13.804Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 54 |
+| Total Icons | 56 |
 | Valid Icons | 0 |
-| Invalid Icons | 54 |
-| Total Errors | 54 |
-| Total Warnings | 49 |
+| Invalid Icons | 56 |
+| Total Errors | 56 |
+| Total Warnings | 51 |
 
-⚠️ **54 icon(s) failed validation**
+⚠️ **56 icon(s) failed validation**
 
 ## Errors
 
-### size (54 errors)
+### size (56 errors)
 
 | Icon | Message |
 |------|---------|
@@ -51,6 +51,8 @@ Generated at: 2026-03-19T07:46:28.852Z
 | 探索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索 | Icon size 24x24 not in allowed sizes:  |
 | 收藏 | Icon size 24x24 not in allowed sizes:  |
+| 教育 | Icon size 36x36 not in allowed sizes:  |
+| 文化体育-1 | Icon size 36x36 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
 | 更多 | Icon size 24x24 not in allowed sizes:  |
 | 更多1 | Icon size 24x24 not in allowed sizes:  |
@@ -77,7 +79,7 @@ Generated at: 2026-03-19T07:46:28.852Z
 
 ## Warnings
 
-### naming (49 warnings)
+### naming (51 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -107,6 +109,8 @@ Generated at: 2026-03-19T07:46:28.852Z
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索 | Icon name "搜索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 收藏 | Icon name "收藏" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 教育 | Icon name "教育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 文化体育-1 | Icon name "文化体育-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多 | Icon name "更多" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多1 | Icon name "更多1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
