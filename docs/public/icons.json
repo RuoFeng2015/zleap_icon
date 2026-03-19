@@ -1,19 +1,30 @@
 {
-  "version": "0.0.67",
+  "version": "0.0.68",
   "syncMode": "incremental",
-  "generatedAt": "2026-03-19T08:31:40.806Z",
-  "totalCount": 66,
+  "generatedAt": "2026-03-19T09:53:51.374Z",
+  "totalCount": 67,
   "icons": [
     {
-      "name": "Icon财经1",
-      "originalName": "财经 1",
+      "name": "Icon好友",
+      "originalName": "好友",
+      "svgPath": "svg/好友.svg",
+      "componentPath": "src/icons/Icon好友.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-03-19T09:53:51.373Z"
+    },
+    {
+      "name": "IconCaiJing1",
+      "originalName": "财经-1",
       "svgPath": "svg/财经-1.svg",
-      "componentPath": "src/icons/Icon财经1.tsx",
+      "componentPath": "src/icons/IconCaiJing1.tsx",
       "size": {
         "width": 36,
         "height": 36
       },
-      "uploadedAt": "2026-03-19T08:31:40.805Z"
+      "createdAt": "2026-03-19T08:31:59.755Z"
     },
     {
       "name": "IconZhiChang1",
