@@ -1,19 +1,41 @@
 {
-  "version": "0.0.57",
+  "version": "0.0.60",
   "syncMode": "incremental",
-  "generatedAt": "2026-03-19T07:44:41.000Z",
-  "totalCount": 53,
+  "generatedAt": "2026-03-19T07:46:32.401Z",
+  "totalCount": 55,
   "icons": [
     {
-      "name": "Icon汽车1",
-      "originalName": "汽车 1",
-      "svgPath": "svg/汽车-1.svg",
-      "componentPath": "src/icons/Icon汽车1.tsx",
+      "name": "IconFrame1261156734",
+      "originalName": "Frame 1261156734",
+      "svgPath": "svg/Frame-1261156734.svg",
+      "componentPath": "src/icons/IconFrame1261156734.tsx",
+      "size": {
+        "width": 133,
+        "height": 88
+      },
+      "uploadedAt": "2026-03-19T07:46:32.401Z"
+    },
+    {
+      "name": "Icon商业1",
+      "originalName": "商业1",
+      "svgPath": "svg/商业1.svg",
+      "componentPath": "src/icons/Icon商业1.tsx",
       "size": {
         "width": 36,
         "height": 36
       },
-      "uploadedAt": "2026-03-19T07:44:41.000Z"
+      "uploadedAt": "2026-03-19T07:46:32.401Z"
+    },
+    {
+      "name": "IconQiChe1",
+      "originalName": "汽车-1",
+      "svgPath": "svg/汽车-1.svg",
+      "componentPath": "src/icons/IconQiChe1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "createdAt": "2026-03-19T07:45:07.859Z"
     },
     {
       "name": "IconKeJi",
