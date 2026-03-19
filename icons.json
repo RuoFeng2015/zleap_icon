@@ -1,41 +1,40 @@
 {
-  "version": "0.0.66",
-  "syncMode": "incremental",
-  "generatedAt": "2026-03-19T08:17:28.215Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-03-19T08:17:52.203Z",
   "totalCount": 65,
   "icons": [
     {
-      "name": "Icon体育",
-      "originalName": "体育",
-      "svgPath": "svg/体育.svg",
-      "componentPath": "src/icons/Icon体育.tsx",
-      "size": {
-        "width": 36,
-        "height": 36
-      },
-      "uploadedAt": "2026-03-19T08:17:28.211Z"
-    },
-    {
-      "name": "Icon教育1",
-      "originalName": "教育1",
-      "svgPath": "svg/教育1.svg",
-      "componentPath": "src/icons/Icon教育1.tsx",
-      "size": {
-        "width": 36,
-        "height": 36
-      },
-      "uploadedAt": "2026-03-19T08:17:28.211Z"
-    },
-    {
-      "name": "Icon职场1",
+      "name": "IconZhiChang1",
       "originalName": "职场1",
       "svgPath": "svg/职场1.svg",
-      "componentPath": "src/icons/Icon职场1.tsx",
+      "componentPath": "src/icons/IconZhiChang1.tsx",
       "size": {
         "width": 36,
         "height": 36
       },
-      "uploadedAt": "2026-03-19T08:17:28.211Z"
+      "createdAt": "2026-03-19T08:17:52.188Z"
+    },
+    {
+      "name": "IconJiaoYu1",
+      "originalName": "教育1",
+      "svgPath": "svg/教育1.svg",
+      "componentPath": "src/icons/IconJiaoYu1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "createdAt": "2026-03-19T08:17:52.184Z"
+    },
+    {
+      "name": "IconTiYu",
+      "originalName": "体育",
+      "svgPath": "svg/体育.svg",
+      "componentPath": "src/icons/IconTiYu.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "createdAt": "2026-03-19T08:17:52.177Z"
     },
     {
       "name": "IconKeJi1",
