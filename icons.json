@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-19T07:47:58.170Z",
-  "totalCount": 57,
+  "version": "0.0.64",
+  "syncMode": "incremental",
+  "generatedAt": "2026-03-19T07:48:22.412Z",
+  "totalCount": 58,
   "icons": [
+    {
+      "name": "IconAi1",
+      "originalName": "AI1",
+      "svgPath": "svg/AI1.svg",
+      "componentPath": "src/icons/IconAi1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T07:48:22.412Z"
+    },
     {
       "name": "IconCaiJing",
       "originalName": "财经",
