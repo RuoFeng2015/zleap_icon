@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-13T11:46:51.178Z",
-  "totalCount": 50,
+  "generatedAt": "2026-03-19T07:38:28.828Z",
+  "totalCount": 52,
   "icons": [
+    {
+      "name": "IconKeJi",
+      "originalName": "科技",
+      "svgPath": "svg/科技.svg",
+      "componentPath": "src/icons/IconKeJi.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "createdAt": "2026-03-19T07:38:28.815Z"
+    },
+    {
+      "name": "IconShangYe",
+      "originalName": "商业",
+      "svgPath": "svg/商业.svg",
+      "componentPath": "src/icons/IconShangYe.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "createdAt": "2026-03-19T07:38:28.809Z"
+    },
     {
       "name": "IconZengJia1",
       "originalName": "增加1",

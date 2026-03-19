@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-03-13T11:46:48.637Z
+Generated at: 2026-03-19T07:38:26.342Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 50 |
+| Total Icons | 52 |
 | Valid Icons | 0 |
-| Invalid Icons | 50 |
-| Total Errors | 50 |
-| Total Warnings | 45 |
+| Invalid Icons | 52 |
+| Total Errors | 52 |
+| Total Warnings | 47 |
 
-⚠️ **50 icon(s) failed validation**
+⚠️ **52 icon(s) failed validation**
 
 ## Errors
 
-### size (50 errors)
+### size (52 errors)
 
 | Icon | Message |
 |------|---------|
@@ -36,6 +36,7 @@ Generated at: 2026-03-13T11:46:48.637Z
 | 勾选-已勾选 | Icon size 24x24 not in allowed sizes:  |
 | 勾选 | Icon size 24x24 not in allowed sizes:  |
 | 右 | Icon size 24x24 not in allowed sizes:  |
+| 商业 | Icon size 36x36 not in allowed sizes:  |
 | 回顶部 | Icon size 24x24 not in allowed sizes:  |
 | 增加 | Icon size 24x24 not in allowed sizes:  |
 | 增加1 | Icon size 24x24 not in allowed sizes:  |
@@ -55,6 +56,7 @@ Generated at: 2026-03-13T11:46:48.637Z
 | 正确 | Icon size 24x24 not in allowed sizes:  |
 | 消息 | Icon size 24x24 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
+| 科技 | Icon size 36x36 not in allowed sizes:  |
 | 编辑 | Icon size 24x24 not in allowed sizes:  |
 | 联系人 | Icon size 24x24 not in allowed sizes:  |
 | 联系人1 | Icon size 24x24 not in allowed sizes:  |
@@ -73,7 +75,7 @@ Generated at: 2026-03-13T11:46:48.637Z
 
 ## Warnings
 
-### naming (45 warnings)
+### naming (47 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -88,6 +90,7 @@ Generated at: 2026-03-13T11:46:48.637Z
 | 勾选-已勾选 | Icon name "勾选-已勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 勾选 | Icon name "勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 右 | Icon name "右" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 商业 | Icon name "商业" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 回顶部 | Icon name "回顶部" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加 | Icon name "增加" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加1 | Icon name "增加1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -107,6 +110,7 @@ Generated at: 2026-03-13T11:46:48.637Z
 | 正确 | Icon name "正确" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 消息 | Icon name "消息" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 科技 | Icon name "科技" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 编辑 | Icon name "编辑" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人 | Icon name "联系人" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人1 | Icon name "联系人1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
