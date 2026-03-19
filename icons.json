@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-19T07:45:07.873Z",
-  "totalCount": 53,
+  "version": "0.0.59",
+  "syncMode": "incremental",
+  "generatedAt": "2026-03-19T07:46:01.435Z",
+  "totalCount": 54,
   "icons": [
+    {
+      "name": "IconAi",
+      "originalName": "AI",
+      "svgPath": "svg/AI.svg",
+      "componentPath": "src/icons/IconAi.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T07:46:01.435Z"
+    },
     {
       "name": "IconQiChe1",
       "originalName": "汽车-1",
