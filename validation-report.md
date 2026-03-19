@@ -1,27 +1,27 @@
 # Icon Validation Report
 
-Generated at: 2026-03-19T07:48:45.221Z
+Generated at: 2026-03-19T08:05:45.615Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 58 |
+| Total Icons | 62 |
 | Valid Icons | 0 |
-| Invalid Icons | 58 |
-| Total Errors | 58 |
-| Total Warnings | 56 |
+| Invalid Icons | 62 |
+| Total Errors | 62 |
+| Total Warnings | 60 |
 
-⚠️ **58 icon(s) failed validation**
+⚠️ **62 icon(s) failed validation**
 
 ## Errors
 
-### size (58 errors)
+### size (62 errors)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon size 36x36 not in allowed sizes:  |
-| AI1 | Icon size 36x36 not in allowed sizes:  |
+| AI1 | Icon size 132x87 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
@@ -39,6 +39,7 @@ Generated at: 2026-03-19T07:48:45.221Z
 | 勾选 | Icon size 24x24 not in allowed sizes:  |
 | 右 | Icon size 24x24 not in allowed sizes:  |
 | 商业 | Icon size 36x36 not in allowed sizes:  |
+| 商业1 | Icon size 36x36 not in allowed sizes:  |
 | 回顶部 | Icon size 24x24 not in allowed sizes:  |
 | 增加 | Icon size 24x24 not in allowed sizes:  |
 | 增加1 | Icon size 24x24 not in allowed sizes:  |
@@ -52,6 +53,8 @@ Generated at: 2026-03-19T07:48:45.221Z
 | 探索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索 | Icon size 24x24 not in allowed sizes:  |
 | 收藏 | Icon size 24x24 not in allowed sizes:  |
+| 教育 | Icon size 36x36 not in allowed sizes:  |
+| 文化体育-1 | Icon size 36x36 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
 | 更多 | Icon size 24x24 not in allowed sizes:  |
 | 更多1 | Icon size 24x24 not in allowed sizes:  |
@@ -61,6 +64,7 @@ Generated at: 2026-03-19T07:48:45.221Z
 | 消息 | Icon size 24x24 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
 | 科技 | Icon size 36x36 not in allowed sizes:  |
+| 科技1 | Icon size 36x36 not in allowed sizes:  |
 | 编辑 | Icon size 24x24 not in allowed sizes:  |
 | 职场 | Icon size 132x87 not in allowed sizes:  |
 | 联系人 | Icon size 24x24 not in allowed sizes:  |
@@ -69,7 +73,7 @@ Generated at: 2026-03-19T07:48:45.221Z
 | 联系人3 | Icon size 48x48 not in allowed sizes:  |
 | 设置 | Icon size 24x24 not in allowed sizes:  |
 | 评论 | Icon size 24x24 not in allowed sizes:  |
-| 财经 | Icon size 129x87 not in allowed sizes:  |
+| 财经 | Icon size 36x36 not in allowed sizes:  |
 | 通知 | Icon size 24x24 not in allowed sizes:  |
 | 通知1 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
@@ -81,7 +85,7 @@ Generated at: 2026-03-19T07:48:45.221Z
 
 ## Warnings
 
-### naming (53 warnings)
+### naming (57 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -99,6 +103,7 @@ Generated at: 2026-03-19T07:48:45.221Z
 | 勾选 | Icon name "勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 右 | Icon name "右" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 商业 | Icon name "商业" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 商业1 | Icon name "商业1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 回顶部 | Icon name "回顶部" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加 | Icon name "增加" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加1 | Icon name "增加1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -112,6 +117,8 @@ Generated at: 2026-03-19T07:48:45.221Z
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索 | Icon name "搜索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 收藏 | Icon name "收藏" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 教育 | Icon name "教育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 文化体育-1 | Icon name "文化体育-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多 | Icon name "更多" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多1 | Icon name "更多1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -121,6 +128,7 @@ Generated at: 2026-03-19T07:48:45.221Z
 | 消息 | Icon name "消息" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技 | Icon name "科技" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 科技1 | Icon name "科技1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 编辑 | Icon name "编辑" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场 | Icon name "职场" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人 | Icon name "联系人" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -143,6 +151,6 @@ Generated at: 2026-03-19T07:48:45.221Z
 
 | Icon | Message |
 |------|---------|
+| AI1 | Icon is not square: 132x87 |
 | 汽车 | Icon is not square: 132x87 |
 | 职场 | Icon is not square: 132x87 |
-| 财经 | Icon is not square: 129x87 |
