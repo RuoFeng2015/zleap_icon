@@ -6,6 +6,7 @@
  */
 
 import { IconAi } from './icons/IconAi';
+import { IconAi1 } from './icons/IconAi1';
 import { IconBack } from './icons/IconBack';
 import { IconBianJi } from './icons/IconBianJi';
 import { IconCaiJing } from './icons/IconCaiJing';
@@ -64,6 +65,7 @@ import { IconZhuShouGuanLi } from './icons/IconZhuShouGuanLi';
 import { IconZuo } from './icons/IconZuo';
 
 export { IconAi, type IconAiProps } from './icons/IconAi';
+export { IconAi1, type IconAi1Props } from './icons/IconAi1';
 export { IconBack, type IconBackProps } from './icons/IconBack';
 export { IconBianJi, type IconBianJiProps } from './icons/IconBianJi';
 export { IconCaiJing, type IconCaiJingProps } from './icons/IconCaiJing';
@@ -126,6 +128,7 @@ export { IconZuo, type IconZuoProps } from './icons/IconZuo';
  */
 export const allIcons = {
   IconAi,
+  IconAi1,
   IconBack,
   IconBianJi,
   IconCaiJing,

@@ -1,26 +1,27 @@
 # Icon Validation Report
 
-Generated at: 2026-03-19T07:47:55.725Z
+Generated at: 2026-03-19T07:48:45.221Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 57 |
+| Total Icons | 58 |
 | Valid Icons | 0 |
-| Invalid Icons | 57 |
-| Total Errors | 57 |
-| Total Warnings | 52 |
+| Invalid Icons | 58 |
+| Total Errors | 58 |
+| Total Warnings | 56 |
 
-⚠️ **57 icon(s) failed validation**
+⚠️ **58 icon(s) failed validation**
 
 ## Errors
 
-### size (57 errors)
+### size (58 errors)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon size 36x36 not in allowed sizes:  |
+| AI1 | Icon size 36x36 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
@@ -56,19 +57,19 @@ Generated at: 2026-03-19T07:47:55.725Z
 | 更多1 | Icon size 24x24 not in allowed sizes:  |
 | 正确 | Icon size 24x24 not in allowed sizes:  |
 | 汽车-1 | Icon size 36x36 not in allowed sizes:  |
-| 汽车 | Icon size 36x36 not in allowed sizes:  |
+| 汽车 | Icon size 132x87 not in allowed sizes:  |
 | 消息 | Icon size 24x24 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
 | 科技 | Icon size 36x36 not in allowed sizes:  |
 | 编辑 | Icon size 24x24 not in allowed sizes:  |
-| 职场 | Icon size 36x36 not in allowed sizes:  |
+| 职场 | Icon size 132x87 not in allowed sizes:  |
 | 联系人 | Icon size 24x24 not in allowed sizes:  |
 | 联系人1 | Icon size 24x24 not in allowed sizes:  |
 | 联系人2 | Icon size 24x24 not in allowed sizes:  |
 | 联系人3 | Icon size 48x48 not in allowed sizes:  |
 | 设置 | Icon size 24x24 not in allowed sizes:  |
 | 评论 | Icon size 24x24 not in allowed sizes:  |
-| 财经 | Icon size 36x36 not in allowed sizes:  |
+| 财经 | Icon size 129x87 not in allowed sizes:  |
 | 通知 | Icon size 24x24 not in allowed sizes:  |
 | 通知1 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
@@ -80,11 +81,12 @@ Generated at: 2026-03-19T07:47:55.725Z
 
 ## Warnings
 
-### naming (52 warnings)
+### naming (53 warnings)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon name "AI" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| AI1 | Icon name "AI1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭预览 | Icon name "关闭预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -136,3 +138,11 @@ Generated at: 2026-03-19T07:47:55.725Z
 | 预览 | Icon name "预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+
+### size (3 warnings)
+
+| Icon | Message |
+|------|---------|
+| 汽车 | Icon is not square: 132x87 |
+| 职场 | Icon is not square: 132x87 |
+| 财经 | Icon is not square: 129x87 |
