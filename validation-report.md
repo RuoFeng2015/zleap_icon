@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-03-19T07:38:26.342Z
+Generated at: 2026-03-19T07:45:05.378Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 52 |
+| Total Icons | 53 |
 | Valid Icons | 0 |
-| Invalid Icons | 52 |
-| Total Errors | 52 |
-| Total Warnings | 47 |
+| Invalid Icons | 53 |
+| Total Errors | 53 |
+| Total Warnings | 48 |
 
-⚠️ **52 icon(s) failed validation**
+⚠️ **53 icon(s) failed validation**
 
 ## Errors
 
-### size (52 errors)
+### size (53 errors)
 
 | Icon | Message |
 |------|---------|
@@ -54,6 +54,7 @@ Generated at: 2026-03-19T07:38:26.342Z
 | 更多 | Icon size 24x24 not in allowed sizes:  |
 | 更多1 | Icon size 24x24 not in allowed sizes:  |
 | 正确 | Icon size 24x24 not in allowed sizes:  |
+| 汽车-1 | Icon size 36x36 not in allowed sizes:  |
 | 消息 | Icon size 24x24 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
 | 科技 | Icon size 36x36 not in allowed sizes:  |
@@ -75,7 +76,7 @@ Generated at: 2026-03-19T07:38:26.342Z
 
 ## Warnings
 
-### naming (47 warnings)
+### naming (48 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -108,6 +109,7 @@ Generated at: 2026-03-19T07:38:26.342Z
 | 更多 | Icon name "更多" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多1 | Icon name "更多1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 正确 | Icon name "正确" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 汽车-1 | Icon name "汽车-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 消息 | Icon name "消息" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技 | Icon name "科技" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
