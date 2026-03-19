@@ -4,7 +4,7 @@ import type { SVGProps } from 'react';
 export interface IconLianJieProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (controls the main color, preserves white/light decorations) */
+  /** Icon color (for multicolor icons, original fills/strokes are preserved) */
   color?: string;
 }
 
