@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-19T07:38:28.828Z",
-  "totalCount": 52,
+  "version": "0.0.57",
+  "syncMode": "incremental",
+  "generatedAt": "2026-03-19T07:44:41.000Z",
+  "totalCount": 53,
   "icons": [
+    {
+      "name": "Icon汽车1",
+      "originalName": "汽车 1",
+      "svgPath": "svg/汽车-1.svg",
+      "componentPath": "src/icons/Icon汽车1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "uploadedAt": "2026-03-19T07:44:41.000Z"
+    },
     {
       "name": "IconKeJi",
       "originalName": "科技",
