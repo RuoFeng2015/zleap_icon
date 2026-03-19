@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-03-19T08:17:49.912Z
+Generated at: 2026-03-19T08:31:57.215Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 65 |
+| Total Icons | 66 |
 | Valid Icons | 0 |
-| Invalid Icons | 65 |
-| Total Errors | 65 |
-| Total Warnings | 68 |
+| Invalid Icons | 66 |
+| Total Errors | 66 |
+| Total Warnings | 69 |
 
-⚠️ **65 icon(s) failed validation**
+⚠️ **66 icon(s) failed validation**
 
 ## Errors
 
-### size (65 errors)
+### size (66 errors)
 
 | Icon | Message |
 |------|---------|
@@ -76,6 +76,7 @@ Generated at: 2026-03-19T08:17:49.912Z
 | 联系人3 | Icon size 48x48 not in allowed sizes:  |
 | 设置 | Icon size 24x24 not in allowed sizes:  |
 | 评论 | Icon size 24x24 not in allowed sizes:  |
+| 财经-1 | Icon size 36x36 not in allowed sizes:  |
 | 财经 | Icon size 129x87 not in allowed sizes:  |
 | 通知 | Icon size 24x24 not in allowed sizes:  |
 | 通知1 | Icon size 24x24 not in allowed sizes:  |
@@ -88,7 +89,7 @@ Generated at: 2026-03-19T08:17:49.912Z
 
 ## Warnings
 
-### naming (60 warnings)
+### naming (61 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -143,6 +144,7 @@ Generated at: 2026-03-19T08:17:49.912Z
 | 联系人3 | Icon name "联系人3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置 | Icon name "设置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 评论 | Icon name "评论" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 财经-1 | Icon name "财经-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 财经 | Icon name "财经" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知 | Icon name "通知" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知1 | Icon name "通知1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
