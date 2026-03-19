@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-19T08:31:59.767Z",
-  "totalCount": 66,
+  "generatedAt": "2026-03-19T09:54:25.330Z",
+  "totalCount": 67,
   "icons": [
+    {
+      "name": "IconHaoYou",
+      "originalName": "好友",
+      "svgPath": "svg/好友.svg",
+      "componentPath": "src/icons/IconHaoYou.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-19T09:54:25.310Z"
+    },
     {
       "name": "IconCaiJing1",
       "originalName": "财经-1",
