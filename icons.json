@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-19T08:17:52.203Z",
-  "totalCount": 65,
+  "generatedAt": "2026-03-19T08:31:59.767Z",
+  "totalCount": 66,
   "icons": [
+    {
+      "name": "IconCaiJing1",
+      "originalName": "财经-1",
+      "svgPath": "svg/财经-1.svg",
+      "componentPath": "src/icons/IconCaiJing1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "createdAt": "2026-03-19T08:31:59.755Z"
+    },
     {
       "name": "IconZhiChang1",
       "originalName": "职场1",

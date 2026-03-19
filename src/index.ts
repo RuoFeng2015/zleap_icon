@@ -10,6 +10,7 @@ import { IconAi1 } from './icons/IconAi1';
 import { IconBack } from './icons/IconBack';
 import { IconBianJi } from './icons/IconBianJi';
 import { IconCaiJing } from './icons/IconCaiJing';
+import { IconCaiJing1 } from './icons/IconCaiJing1';
 import { IconCheck } from './icons/IconCheck';
 import { IconFenXiang } from './icons/IconFenXiang';
 import { IconFuZhiLianJie } from './icons/IconFuZhiLianJie';
@@ -76,6 +77,7 @@ export { IconAi1, type IconAi1Props } from './icons/IconAi1';
 export { IconBack, type IconBackProps } from './icons/IconBack';
 export { IconBianJi, type IconBianJiProps } from './icons/IconBianJi';
 export { IconCaiJing, type IconCaiJingProps } from './icons/IconCaiJing';
+export { IconCaiJing1, type IconCaiJing1Props } from './icons/IconCaiJing1';
 export { IconCheck, type IconCheckProps } from './icons/IconCheck';
 export { IconFenXiang, type IconFenXiangProps } from './icons/IconFenXiang';
 export { IconFuZhiLianJie, type IconFuZhiLianJieProps } from './icons/IconFuZhiLianJie';
@@ -146,6 +148,7 @@ export const allIcons = {
   IconBack,
   IconBianJi,
   IconCaiJing,
+  IconCaiJing1,
   IconCheck,
   IconFenXiang,
   IconFuZhiLianJie,

@@ -6,6 +6,83 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.67] - 2026-03-19
+
+同步 1 个图标：财经 1 图标
+
+### Added
+- IconCaiJing1
+- IconZhiChang1
+- IconJiaoYu1
+- IconTiYu
+- IconKeJi1
+- IconWenHuaTiYu1
+- IconJiaoYu
+- IconShangYe1
+- IconAi1
+- IconCaiJing
+- IconZhiChang
+- IconQiChe
+- IconAi
+- IconQiChe1
+- IconKeJi
+- IconShangYe
+- IconZengJia1
+- IconTongZhi1
+- IconXiaoXi
+- IconSouSuo
+- IconZengJia
+- IconLianXiRen3
+- IconLianXiRen1
+- IconLianXiRen2
+- IconLianXiRen
+- IconYuLan1
+- IconYiGouXuan
+- IconGouXuanYiGouXuan
+- IconGouXuan
+- IconGuanBiYuLan
+- IconSheZhi
+- IconHuiDingBu
+- IconSuoDing
+- IconGengDuo1
+- IconWeiXinHaoYou
+- IconFuZhiLianJie
+- IconYuLan
+- IconYuLanGuanBi
+- IconYiShouCang1
+- IconYiDianZan1
+- IconBianJi
+- IconFenXiang
+- IconPingLun
+- IconShouCang
+- IconZuo
+- IconYou
+- IconZhuShou
+- IconShare
+- IconShouYe
+- IconGengDuo
+- IconTanSuo
+- IconShuaXin
+- IconZhuShouGuanLi
+- IconLike
+- IconZhiShiKu
+- IconTongZhi
+- IconLianJie
+- IconWenDang
+- IconZhengQue
+- IconGuanBi
+- IconGuanBiXiao
+- IconShanChuDELETE
+- IconZhanKai
+- IconCheck
+- IconSearch
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.66] - 2026-03-19
 
 更新/新增 3 个图标：体育, 教育, 职场 图标
