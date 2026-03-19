@@ -1,8 +1,41 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-19T07:46:31.316Z",
-  "totalCount": 54,
+  "generatedAt": "2026-03-19T07:47:58.170Z",
+  "totalCount": 57,
   "icons": [
+    {
+      "name": "IconCaiJing",
+      "originalName": "财经",
+      "svgPath": "svg/财经.svg",
+      "componentPath": "src/icons/IconCaiJing.tsx",
+      "size": {
+        "width": 129,
+        "height": 87
+      },
+      "createdAt": "2026-03-19T07:47:58.158Z"
+    },
+    {
+      "name": "IconZhiChang",
+      "originalName": "职场",
+      "svgPath": "svg/职场.svg",
+      "componentPath": "src/icons/IconZhiChang.tsx",
+      "size": {
+        "width": 132,
+        "height": 87
+      },
+      "createdAt": "2026-03-19T07:47:58.156Z"
+    },
+    {
+      "name": "IconQiChe",
+      "originalName": "汽车",
+      "svgPath": "svg/汽车.svg",
+      "componentPath": "src/icons/IconQiChe.tsx",
+      "size": {
+        "width": 132,
+        "height": 87
+      },
+      "createdAt": "2026-03-19T07:47:58.155Z"
+    },
     {
       "name": "IconAi",
       "originalName": "AI",
