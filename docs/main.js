@@ -618,12 +618,25 @@ function updateModalContent(icon) {
   modalIconPreview.innerHTML = styledSvg;
   modalIconName.textContent = icon.name;
 
-  const webInlineCode = createWebInlineComponentCode(icon.name, icon.svgContent);
-  const rnInlineCode = createRnInlineComponentCode(icon.name, icon.svgContent);
+  const webUsage = `import { ${icon.name} } from '@zleap-ai/icons';
 
-  importCode.innerHTML = highlightJsx(webInlineCode);
-  usageCode.innerHTML = highlightJsx(rnInlineCode);
-  svgCode.innerHTML = highlightSvg(icon.svgContent);
+<${icon.name} size={${currentSize}} color="${currentColor}" />`;
+
+  const rnUsage = `import { ${icon.name} } from '@zleap-ai/icons/react-native';
+
+<${icon.name} size={${currentSize}} color="${currentColor}" />`;
+
+  const quickUsage = `${icon.name}
+
+// Web
+<${icon.name} size={${currentSize}} color="${currentColor}" />
+
+// React Native
+<${icon.name} size={${currentSize}} color="${currentColor}" />`;
+
+  importCode.innerHTML = highlightJsx(webUsage);
+  usageCode.innerHTML = highlightJsx(rnUsage);
+  svgCode.innerHTML = highlightJsx(quickUsage);
 }
 
 /**
