@@ -1,28 +1,27 @@
 # Icon Validation Report
 
-Generated at: 2026-03-19T10:23:11.930Z
+Generated at: 2026-03-20T06:17:29.823Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 68 |
+| Total Icons | 66 |
 | Valid Icons | 0 |
-| Invalid Icons | 68 |
-| Total Errors | 68 |
-| Total Warnings | 71 |
+| Invalid Icons | 66 |
+| Total Errors | 66 |
+| Total Warnings | 69 |
 
-⚠️ **68 icon(s) failed validation**
+⚠️ **66 icon(s) failed validation**
 
 ## Errors
 
-### size (68 errors)
+### size (66 errors)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon size 36x36 not in allowed sizes:  |
 | AI1 | Icon size 132x87 not in allowed sizes:  |
-| Frame | Icon size 64x64 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
@@ -72,7 +71,6 @@ Generated at: 2026-03-19T10:23:11.930Z
 | 编辑 | Icon size 24x24 not in allowed sizes:  |
 | 职场 | Icon size 132x87 not in allowed sizes:  |
 | 职场1 | Icon size 36x36 not in allowed sizes:  |
-| 联系人 | Icon size 24x24 not in allowed sizes:  |
 | 联系人1 | Icon size 24x24 not in allowed sizes:  |
 | 联系人2 | Icon size 24x24 not in allowed sizes:  |
 | 联系人3 | Icon size 48x48 not in allowed sizes:  |
@@ -91,13 +89,12 @@ Generated at: 2026-03-19T10:23:11.930Z
 
 ## Warnings
 
-### naming (63 warnings)
+### naming (61 warnings)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon name "AI" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | AI1 | Icon name "AI1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| Frame | Icon name "Frame" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 体育 | Icon name "体育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -142,7 +139,6 @@ Generated at: 2026-03-19T10:23:11.930Z
 | 编辑 | Icon name "编辑" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场 | Icon name "职场" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场1 | Icon name "职场1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 联系人 | Icon name "联系人" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人1 | Icon name "联系人1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人2 | Icon name "联系人2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人3 | Icon name "联系人3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
