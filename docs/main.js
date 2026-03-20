@@ -6,6 +6,7 @@ let filteredIcons = [];
 let currentSize = 32;
 let currentColor = 'currentColor';
 let selectedIcon = null;
+let hasUserTypedSearch = false;
 
 // DOM Elements
 const searchInput = document.getElementById('search-input');
@@ -29,6 +30,14 @@ const copyAllRnBtn = document.getElementById('copy-all-rn');
 // 防止浏览器自动恢复上次输入导致误过滤
 if (searchInput) {
   searchInput.value = '';
+}
+
+function clearSearchAutofillIfNeeded() {
+  if (!searchInput || hasUserTypedSearch) return;
+  if (searchInput.value && searchInput.value.trim() !== '') {
+    searchInput.value = '';
+    handleSearch();
+  }
 }
 
 function escapeTemplateLiteral(input) {
@@ -709,6 +718,9 @@ function handleColorChange() {
 
 // Event Listeners
 searchInput.addEventListener('input', handleSearch);
+searchInput.addEventListener('input', () => {
+  hasUserTypedSearch = true;
+});
 sizeSelect.addEventListener('change', handleSizeChange);
 colorSelect.addEventListener('change', handleColorChange);
 modalClose.addEventListener('click', closeModal);
@@ -747,6 +759,9 @@ document.addEventListener('keydown', (e) => {
 
 // Initialize
 loadIcons();
+setTimeout(clearSearchAutofillIfNeeded, 0);
+setTimeout(clearSearchAutofillIfNeeded, 300);
+setTimeout(clearSearchAutofillIfNeeded, 1200);
 
 // Load version from Vite define
 function loadVersion() {
