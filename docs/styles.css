@@ -135,6 +135,35 @@ body {
   flex-wrap: wrap;
 }
 
+.bulk-copy-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.bulk-copy-btn {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: rgba(0, 113, 227, 0.1);
+  border: 1px solid rgba(0, 113, 227, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bulk-copy-btn:hover:not(:disabled) {
+  color: #fff;
+  background: var(--color-primary);
+}
+
+.bulk-copy-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .control-group {
   display: flex;
   align-items: center;
@@ -498,6 +527,7 @@ body {
   .controls { flex-direction: column; align-items: stretch; }
   .icon-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
   .preview-controls { justify-content: space-between; }
+  .bulk-copy-actions { justify-content: flex-start; }
 }
 
 /* No Results State */
@@ -614,6 +644,10 @@ body {
   text-align: center;
 }
 
+.admin-login-error.hidden {
+  display: none;
+}
+
 .admin-login-btn {
   width: 100%;
   padding: 0.75rem;
@@ -650,6 +684,10 @@ body {
   border-top: 1px solid rgba(255,255,255,0.1);
   padding: 0.75rem 1.5rem;
   animation: slideUp 0.3s ease-out;
+}
+
+.admin-toolbar.hidden {
+  display: none;
 }
 
 @keyframes slideUp {
@@ -809,6 +847,10 @@ body {
 .delete-progress {
   padding: 1rem 2rem 1.5rem;
   border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.delete-progress.hidden {
+  display: none;
 }
 
 .delete-progress-bar {

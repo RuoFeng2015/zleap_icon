@@ -79,6 +79,9 @@ jobs:
       - name: Generate React components
         run: npm run generate-components
 
+      - name: Generate React Native components
+        run: npm run generate-rn-components
+
       - name: Sync SVG directory with icons.json
         run: |
           # 如果 icons.json 存在（来自 Figma 插件），根据它清理 svg 目录

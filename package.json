@@ -16,11 +16,14 @@
       "require": "./dist/cjs/index.js",
       "types": "./dist/types/index.d.ts"
     },
+    "./react-native": "./react-native/index.ts",
+    "./react-native/*": "./react-native/*",
     "./svg/*": "./svg/*",
     "./sprite": "./sprite/icons.svg"
   },
   "files": [
     "dist",
+    "react-native",
     "svg",
     "sprite",
     "icons.json"
@@ -30,6 +33,7 @@
     "validate-icons": "tsx scripts/validate-icons.ts",
     "transform-svg": "tsx scripts/transform-svg.ts",
     "generate-components": "tsx scripts/generate-components.ts",
+    "generate-rn-components": "tsx scripts/generate-rn-components.ts",
     "generate-outputs": "tsx scripts/generate-outputs.ts",
     "generate-changelog": "tsx scripts/generate-changelog.ts",
     "build": "npm run build:esm && npm run build:cjs && npm run build:types",
@@ -45,7 +49,13 @@
     "test:coverage": "vitest run --coverage"
   },
   "peerDependencies": {
-    "react": ">=16.8.0"
+    "react": ">=16.8.0",
+    "react-native-svg": ">=13.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react-native-svg": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

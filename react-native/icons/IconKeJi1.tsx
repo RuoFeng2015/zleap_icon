@@ -1,0 +1,36 @@
+import React, { forwardRef, useMemo } from 'react'
+import type { ComponentProps } from 'react'
+import { SvgXml } from 'react-native-svg'
+
+export interface IconKeJi1Props extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+  size?: number | string
+  color?: string
+}
+
+export const IconKeJi1 = forwardRef<unknown, IconKeJi1Props>(
+  ({ size = 24, color, ...props }, ref) => {
+    const baseXml = useMemo(
+      () => `<svg fill="none" viewBox="0 0 36 36"><rect width="132" height="87" x="-48" y="-9.5" stroke="#FF8D28" rx="11.5"/><rect width="36" height="36" fill="#B9A5FF" rx="12"/><path fill="#A079FF" fill-opacity=".737" d="M17.863 29.798a.6.6 0 0 1-.419-.166.595.595 0 0 1-.008-.834l2.4-2.45a.595.595 0 0 1 .834-.009c.23.225.234.604.009.834l-2.401 2.45a.6.6 0 0 1-.415.175m9.19-9.38a.6.6 0 0 1-.418-.167.595.595 0 0 1-.008-.834l2.344-2.393a.595.595 0 0 1 .834-.009c.23.226.234.605.009.834l-2.345 2.393c-.093.134-.264.174-.415.175m-6.826-.367a.6.6 0 0 1-.419-.166l-2.584-2.552a.595.595 0 0 1-.009-.834.595.595 0 0 1 .834-.008l2.585 2.551c.23.225.233.604.008.834a.6.6 0 0 1-.415.175m9.38 9.192a.6.6 0 0 1-.418-.167l-2.718-2.663a.595.595 0 0 1-.009-.834.595.595 0 0 1 .834-.009l2.718 2.664c.23.225.234.604.009.834-.132.096-.264.173-.415.175"/><path fill="#7954E2" d="M13.48 40.171c-3.836 0-6.94-3.123-6.94-6.94s3.123-6.942 6.94-6.942 6.941 3.124 6.941 6.941c0 3.818-3.123 6.941-6.94 6.941m1.133-21.225a5.34 5.34 0 0 1-5.334-5.334 5.34 5.34 0 0 1 5.334-5.333 5.34 5.34 0 0 1 5.333 5.334 5.34 5.34 0 0 1-5.333 5.333M32.88 36.317a4.935 4.935 0 0 1-4.932-4.932 4.935 4.935 0 0 1 4.932-4.932 4.935 4.935 0 0 1 4.932 4.932 4.935 4.935 0 0 1-4.932 4.932m-.987-17.334a4.155 4.155 0 0 1-4.146-4.147 4.155 4.155 0 0 1 4.146-4.146 4.155 4.155 0 0 1 4.147 4.146 4.143 4.143 0 0 1-4.147 4.147"/><circle cx="23.386" cy="22.464" r="4.909" fill="#7954E2"/></svg>`,
+      [],
+    )
+
+    const xml = useMemo(() => {
+      return baseXml
+    }, [baseXml, color])
+
+    return (
+      <SvgXml
+        ref={ref as never}
+        xml={xml}
+        width={size}
+        height={size}
+        viewBox="0 0 36 36"
+        {...props}
+      />
+    )
+  },
+)
+
+IconKeJi1.displayName = 'IconKeJi1'
+
+export default IconKeJi1

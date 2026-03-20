@@ -1,0 +1,36 @@
+import React, { forwardRef, useMemo } from 'react'
+import type { ComponentProps } from 'react'
+import { SvgXml } from 'react-native-svg'
+
+export interface IconJiaoYu1Props extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+  size?: number | string
+  color?: string
+}
+
+export const IconJiaoYu1 = forwardRef<unknown, IconJiaoYu1Props>(
+  ({ size = 24, color, ...props }, ref) => {
+    const baseXml = useMemo(
+      () => `<svg fill="none" viewBox="0 0 36 36"><rect width="216.6" height="87.6" x="-90.3" y="-9.8" stroke="#DDDDDD" stroke-width=".4" rx="11.8"/><g opacity=".8"><path fill="#292D32" d="m19.457 8.132 13.788 7.524a.94.94 0 0 1 .48.804.94.94 0 0 1-.48.804l-13.788 7.524c-.444.24-.948.372-1.452.372a3.1 3.1 0 0 1-1.452-.372l-13.8-7.524a.94.94 0 0 1-.48-.804.94.94 0 0 1 .48-.804l13.788-7.524c.444-.24.948-.372 1.452-.372s1.008.132 1.452.372z"/><path fill="#8D8F91" d="M6.455 21.099c.096 0 .204.024.288.072l2.196 1.212v5.556c0 .096.024.192.072.276a.7.7 0 0 0 .192.216c.084.06.168.096.264.108s.192 0 .288-.024l.9-.312c.12-.048.264 0 .348.108l1.38 1.848c.072.108.18.18.3.216s.252.036.372 0a.61.61 0 0 0 .42-.576v-4.896l3.06 1.692a3.07 3.07 0 0 0 2.952 0l9.768-5.424a.53.53 0 0 1 .3-.072c.108 0 .204.036.3.084a.5.5 0 0 1 .216.228.66.66 0 0 1 .084.3v6.288a3.03 3.03 0 0 1-1.584 2.664l-9.12 4.968a3.04 3.04 0 0 1-2.904 0l-9.12-4.968a3.15 3.15 0 0 1-1.164-1.116 3.06 3.06 0 0 1-.42-1.548v-6.288c0-.336.276-.612.612-.612"/><path stroke="#D1D5DA" stroke-width=".24" d="M12 .12h12C30.561.12 35.88 5.44 35.88 12v12c0 6.561-5.319 11.88-11.88 11.88H12C5.439 35.88.12 30.56.12 24V12C.12 5.439 5.44.12 12 .12Z"/></g></svg>`,
+      [],
+    )
+
+    const xml = useMemo(() => {
+      return baseXml
+    }, [baseXml, color])
+
+    return (
+      <SvgXml
+        ref={ref as never}
+        xml={xml}
+        width={size}
+        height={size}
+        viewBox="0 0 36 36"
+        {...props}
+      />
+    )
+  },
+)
+
+IconJiaoYu1.displayName = 'IconJiaoYu1'
+
+export default IconJiaoYu1

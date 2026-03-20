@@ -48,6 +48,11 @@
           </select>
         </div>
       </div>
+
+      <div class="bulk-copy-actions">
+        <button id="copy-all-web" class="bulk-copy-btn">Copy All Web</button>
+        <button id="copy-all-rn" class="bulk-copy-btn">Copy All RN</button>
+      </div>
     </div>
 
     <div id="icon-grid" class="icon-grid">
@@ -66,14 +71,14 @@
         <div class="modal-body">
           <div class="code-section">
             <div class="code-header">
-              <span>Import Statement</span>
+              <span>Web Inline Component (No npm install)</span>
               <button class="copy-btn" id="copy-import">Copy</button>
             </div>
             <pre id="import-code" class="code-block"></pre>
           </div>
           <div class="code-section">
             <div class="code-header">
-              <span>Usage Example</span>
+              <span>React Native Inline Component (No icon package)</span>
               <button class="copy-btn" id="copy-usage">Copy</button>
             </div>
             <pre id="usage-code" class="code-block"></pre>

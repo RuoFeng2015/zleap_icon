@@ -47,6 +47,9 @@ jobs:
       - name: Generate React components
         run: npm run generate-components
 
+      - name: Generate React Native components
+        run: npm run generate-rn-components
+
       - name: Generate sprite and metadata
         run: npm run generate-outputs
 

@@ -23,6 +23,208 @@ const svgCode = document.getElementById('svg-code');
 const copyImportBtn = document.getElementById('copy-import');
 const copyUsageBtn = document.getElementById('copy-usage');
 const copySvgBtn = document.getElementById('copy-svg');
+const copyAllWebBtn = document.getElementById('copy-all-web');
+const copyAllRnBtn = document.getElementById('copy-all-rn');
+
+function escapeTemplateLiteral(input) {
+  return input
+    .replace(/\\/g, '\\\\')
+    .replace(/`/g, '\\`')
+    .replace(/\$\{/g, '\\${');
+}
+
+function createWebInlineComponentCode(iconName, svgContent) {
+  const escapedSvg = escapeTemplateLiteral(svgContent.trim());
+  return `import React, { useMemo } from 'react';
+
+const RAW_SVG = \`${escapedSvg}\`;
+
+export function ${iconName}({ size = ${currentSize}, color = '${currentColor}', className, style, ...props }) {
+  const svgHtml = useMemo(() => {
+    let next = RAW_SVG
+      .replace(/\\swidth="[^"]*"/gi, '')
+      .replace(/\\sheight="[^"]*"/gi, '')
+      .replace(/<svg/i, \`<svg width="\${size}" height="\${size}"\`);
+
+    if (color && color !== 'currentColor') {
+      next = next
+        .replace(/fill="currentColor"/g, \`fill="\${color}"\`)
+        .replace(/stroke="currentColor"/g, \`stroke="\${color}"\`)
+        .replace(/fill="(#000000|#000|black)"/gi, \`fill="\${color}"\`)
+        .replace(/stroke="(#000000|#000|black)"/gi, \`stroke="\${color}"\`);
+    }
+
+    return next;
+  }, [size, color]);
+
+  return (
+    <span
+      className={className}
+      style={{ display: 'inline-flex', lineHeight: 0, ...style }}
+      dangerouslySetInnerHTML={{ __html: svgHtml }}
+      {...props}
+    />
+  );
+}
+
+// Usage:
+// <${iconName} size={${currentSize}} color="${currentColor}" />`;
+}
+
+function createRnInlineComponentCode(iconName, svgContent) {
+  const escapedSvg = escapeTemplateLiteral(svgContent.trim());
+  return `import React, { useMemo } from 'react';
+import { SvgXml } from 'react-native-svg';
+
+const RAW_SVG = \`${escapedSvg}\`;
+
+export function ${iconName}({ size = ${currentSize}, color = '${currentColor}', ...props }) {
+  const xml = useMemo(() => {
+    let next = RAW_SVG
+      .replace(/\\swidth="[^"]*"/gi, '')
+      .replace(/\\sheight="[^"]*"/gi, '')
+      .replace(/<svg/i, \`<svg width="\${size}" height="\${size}"\`);
+
+    if (color && color !== 'currentColor') {
+      next = next
+        .replace(/fill="currentColor"/g, \`fill="\${color}"\`)
+        .replace(/stroke="currentColor"/g, \`stroke="\${color}"\`)
+        .replace(/fill="(#000000|#000|black)"/gi, \`fill="\${color}"\`)
+        .replace(/stroke="(#000000|#000|black)"/gi, \`stroke="\${color}"\`);
+    }
+
+    return next;
+  }, [size, color]);
+
+  return <SvgXml xml={xml} width={size} height={size} {...props} />;
+}
+
+// Usage:
+// <${iconName} size={${currentSize}} color="${currentColor}" />
+// Note: install once in your RN app -> npm i react-native-svg`;
+}
+
+async function createAllIconsBundle(platform = 'web') {
+  const iconEntries = await Promise.all(
+    icons.map(async (icon) => {
+      const svgContent = await loadSvgContent(icon.svgPath);
+      return {
+        name: icon.name,
+        svgContent: svgContent.trim()
+      };
+    })
+  );
+
+  const validEntries = iconEntries.filter((entry) => entry.svgContent);
+
+  const defaultColorLiteral = currentColor === 'currentColor'
+    ? 'currentColor'
+    : currentColor;
+
+  if (platform === 'rn') {
+    const constants = validEntries
+      .map((entry) => `const RAW_${entry.name.toUpperCase()} = \`${escapeTemplateLiteral(entry.svgContent)}\`;`)
+      .join('\n');
+
+    const components = validEntries
+      .map((entry) => `export function ${entry.name}({ size = ${currentSize}, color = '${defaultColorLiteral}', ...props }) {
+  const xml = useMemo(() => buildSvgXml(RAW_${entry.name.toUpperCase()}, size, color), [size, color]);
+  return <SvgXml xml={xml} width={size} height={size} {...props} />;
+}`)
+      .join('\n\n');
+
+    return `import React, { useMemo } from 'react';
+import { SvgXml } from 'react-native-svg';
+
+function buildSvgXml(rawSvg, size, color) {
+  let next = rawSvg
+    .replace(/\\swidth="[^"]*"/gi, '')
+    .replace(/\\sheight="[^"]*"/gi, '')
+    .replace(/<svg/i, \`<svg width="\${size}" height="\${size}"\`);
+
+  if (color && color !== 'currentColor') {
+    next = next
+      .replace(/fill="currentColor"/g, \`fill="\${color}"\`)
+      .replace(/stroke="currentColor"/g, \`stroke="\${color}"\`)
+      .replace(/fill="(#000000|#000|black)"/gi, \`fill="\${color}"\`)
+      .replace(/stroke="(#000000|#000|black)"/gi, \`stroke="\${color}"\`);
+  }
+
+  return next;
+}
+
+${constants}
+
+${components}
+`;
+  }
+
+  const constants = validEntries
+    .map((entry) => `const RAW_${entry.name.toUpperCase()} = \`${escapeTemplateLiteral(entry.svgContent)}\`;`)
+    .join('\n');
+
+  const components = validEntries
+    .map((entry) => `export function ${entry.name}({ size = ${currentSize}, color = '${defaultColorLiteral}', className, style, ...props }) {
+  const svgHtml = useMemo(() => buildSvgHtml(RAW_${entry.name.toUpperCase()}, size, color), [size, color]);
+
+  return (
+    <span
+      className={className}
+      style={{ display: 'inline-flex', lineHeight: 0, ...style }}
+      dangerouslySetInnerHTML={{ __html: svgHtml }}
+      {...props}
+    />
+  );
+}`)
+    .join('\n\n');
+
+  return `import React, { useMemo } from 'react';
+
+function buildSvgHtml(rawSvg, size, color) {
+  let next = rawSvg
+    .replace(/\\swidth="[^"]*"/gi, '')
+    .replace(/\\sheight="[^"]*"/gi, '')
+    .replace(/<svg/i, \`<svg width="\${size}" height="\${size}"\`);
+
+  if (color && color !== 'currentColor') {
+    next = next
+      .replace(/fill="currentColor"/g, \`fill="\${color}"\`)
+      .replace(/stroke="currentColor"/g, \`stroke="\${color}"\`)
+      .replace(/fill="(#000000|#000|black)"/gi, \`fill="\${color}"\`)
+      .replace(/stroke="(#000000|#000|black)"/gi, \`stroke="\${color}"\`);
+  }
+
+  return next;
+}
+
+${constants}
+
+${components}
+`;
+}
+
+async function handleCopyAllIcons(platform, button) {
+  if (!icons.length) {
+    showToast('Icon list not ready yet');
+    return;
+  }
+
+  const originalText = button.textContent;
+  button.disabled = true;
+  button.textContent = 'Generating...';
+
+  try {
+    const code = await createAllIconsBundle(platform);
+    await navigator.clipboard.writeText(code);
+    showToast(`Copied all icons (${platform.toUpperCase()})`);
+  } catch (error) {
+    console.error('Failed to copy all icons:', error);
+    showToast('Failed to copy all icons');
+  } finally {
+    button.disabled = false;
+    button.textContent = originalText;
+  }
+}
 
 /**
  * Filter icons by search query
@@ -237,7 +439,7 @@ async function loadAndRenderIcon(card, iconName, svgPath, originalName) {
       });
     } else {
       card.innerHTML = `
-        <div class="card-copy-btn" title="Copy Component Code">
+        <div class="card-copy-btn" title="Copy Icon Name">
           ${copyIconSvg}
         </div>
         <div class="icon-preview">${styledSvg}</div>
@@ -255,10 +457,10 @@ async function loadAndRenderIcon(card, iconName, svgPath, originalName) {
       if (copyBtn) {
         copyBtn.addEventListener('click', async (e) => {
           e.stopPropagation();
-          const componentCode = `<${iconName} />`;
+          const componentName = iconName;
           try {
-            await navigator.clipboard.writeText(componentCode);
-            showToast(`Copied ${componentCode}`);
+            await navigator.clipboard.writeText(componentName);
+            showToast(`Copied ${componentName}`);
 
             copyBtn.style.backgroundColor = 'var(--color-primary)';
             copyBtn.style.color = 'white';
@@ -401,25 +603,27 @@ function highlightSvg(code) {
  */
 function openModal(icon, svgContent) {
   selectedIcon = { ...icon, svgContent };
-  const isMulticolor = isMulticolorSvg(svgContent);
-
-  // Update modal content - 多色图标不应用颜色
-  const styledSvg = createSvgWithStyles(svgContent, 64, isMulticolor ? 'currentColor' : currentColor);
-  modalIconPreview.innerHTML = styledSvg;
-  modalIconName.textContent = icon.name;
-
-  // Generate code snippets
-  const importStatement = `import { ${icon.name} } from '@zleap-ai/icons';`;
-  const usageExample = `<${icon.name} size={${currentSize}} color="${currentColor}" />`;
-
-  // Apply syntax highlighting
-  importCode.innerHTML = highlightJsx(importStatement);
-  usageCode.innerHTML = highlightJsx(usageExample);
-  svgCode.innerHTML = highlightSvg(svgContent);
+  updateModalContent(selectedIcon);
 
   // Show modal
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
+}
+
+function updateModalContent(icon) {
+  const isMulticolor = isMulticolorSvg(icon.svgContent);
+
+  // Update modal content - 多色图标不应用颜色
+  const styledSvg = createSvgWithStyles(icon.svgContent, 64, isMulticolor ? 'currentColor' : currentColor);
+  modalIconPreview.innerHTML = styledSvg;
+  modalIconName.textContent = icon.name;
+
+  const webInlineCode = createWebInlineComponentCode(icon.name, icon.svgContent);
+  const rnInlineCode = createRnInlineComponentCode(icon.name, icon.svgContent);
+
+  importCode.innerHTML = highlightJsx(webInlineCode);
+  usageCode.innerHTML = highlightJsx(rnInlineCode);
+  svgCode.innerHTML = highlightSvg(icon.svgContent);
 }
 
 /**
@@ -476,9 +680,7 @@ function handleSizeChange() {
 
   // Update modal if open
   if (selectedIcon) {
-    const styledSvg = createSvgWithStyles(selectedIcon.svgContent, 48, currentColor);
-    modalIconPreview.innerHTML = styledSvg;
-    usageCode.textContent = `<${selectedIcon.name} size={${currentSize}} color="${currentColor}" />`;
+    updateModalContent(selectedIcon);
   }
 }
 
@@ -491,9 +693,7 @@ function handleColorChange() {
 
   // Update modal if open
   if (selectedIcon) {
-    const styledSvg = createSvgWithStyles(selectedIcon.svgContent, 48, currentColor);
-    modalIconPreview.innerHTML = styledSvg;
-    usageCode.textContent = `<${selectedIcon.name} size={${currentSize}} color="${currentColor}" />`;
+    updateModalContent(selectedIcon);
   }
 }
 
@@ -515,6 +715,18 @@ copyUsageBtn.addEventListener('click', () => {
 copySvgBtn.addEventListener('click', () => {
   copyToClipboard(svgCode.textContent, copySvgBtn);
 });
+
+if (copyAllWebBtn) {
+  copyAllWebBtn.addEventListener('click', () => {
+    handleCopyAllIcons('web', copyAllWebBtn);
+  });
+}
+
+if (copyAllRnBtn) {
+  copyAllRnBtn.addEventListener('click', () => {
+    handleCopyAllIcons('rn', copyAllRnBtn);
+  });
+}
 
 // Close modal on Escape key
 document.addEventListener('keydown', (e) => {

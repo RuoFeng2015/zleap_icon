@@ -1,0 +1,36 @@
+import React, { forwardRef, useMemo } from 'react'
+import type { ComponentProps } from 'react'
+import { SvgXml } from 'react-native-svg'
+
+export interface IconAiProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+  size?: number | string
+  color?: string
+}
+
+export const IconAi = forwardRef<unknown, IconAiProps>(
+  ({ size = 24, color, ...props }, ref) => {
+    const baseXml = useMemo(
+      () => `<svg fill="none" viewBox="0 0 36 36"><rect width="132.6" height="87.6" x="-48.3" y="-9.8" stroke="#DDDDDD" stroke-width=".4" rx="11.8"/><g opacity=".8"><path fill="#0D131A" d="M36 19.521 32.657 36h-3.882l3.345-16.48z"/><path fill="#0D131A" d="M27.188 36h-3.952l-.233-2.592h-4.934L16.783 36h-4.139l9.073-16.478h3.016zm-4.49-5.716-.514-4.86-2.525 4.86z"/><path fill="#8D8F91" d="M11.346 13.578c.083-.433.71-.433.792 0l.376 1.965a4.01 4.01 0 0 0 3.21 3.178l1.985.371c.438.082.438.702 0 .784l-1.985.372a4.01 4.01 0 0 0-3.21 3.178l-.376 1.965c-.082.433-.709.433-.792 0l-.375-1.965a4.01 4.01 0 0 0-3.21-3.178l-1.986-.372c-.437-.082-.437-.702 0-.784l1.985-.371a4.01 4.01 0 0 0 3.21-3.178z"/><path fill="#8D8F91" d="M22.903 8.392c.06-.309.507-.309.566 0l.268 1.404a2.86 2.86 0 0 0 2.293 2.27l1.418.265c.313.059.313.502 0 .56l-1.418.266a2.86 2.86 0 0 0-2.293 2.27l-.268 1.403c-.06.31-.507.31-.566 0l-.268-1.403a2.86 2.86 0 0 0-2.293-2.27l-1.418-.266c-.313-.058-.313-.501 0-.56l1.418-.265a2.86 2.86 0 0 0 2.293-2.27z"/><rect width="35.6" height="35.6" x=".2" y=".2" stroke="#D1D5DA" stroke-width=".4" rx="11.8"/></g></svg>`,
+      [],
+    )
+
+    const xml = useMemo(() => {
+      return baseXml
+    }, [baseXml, color])
+
+    return (
+      <SvgXml
+        ref={ref as never}
+        xml={xml}
+        width={size}
+        height={size}
+        viewBox="0 0 36 36"
+        {...props}
+      />
+    )
+  },
+)
+
+IconAi.displayName = 'IconAi'
+
+export default IconAi

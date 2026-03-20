@@ -24,6 +24,16 @@ yarn add @zleap-ai/icons
 pnpm add @zleap-ai/icons
 ```
 
+### React Native 安装
+
+```bash
+npm install @zleap-ai/icons react-native-svg
+# 或
+yarn add @zleap-ai/icons react-native-svg
+# 或
+pnpm add @zleap-ai/icons react-native-svg
+```
+
 ### 使用方式
 
 #### 1. 导入单个图标（推荐，支持 Tree Shaking）
@@ -95,6 +105,28 @@ import iconsData from '@zleap-ai/icons/icons.json'
 
 console.log(iconsData.icons) // 所有图标信息
 console.log(iconsData.version) // 当前版本
+```
+
+#### 6. React Native（同源 SVG 生成）
+
+```bash
+# 在仓库根目录执行
+npm run generate-rn-components
+```
+
+生成结果位于：
+
+- `react-native/icons/*.tsx`
+- `react-native/index.ts`
+
+在 RN 项目中使用（需安装 `react-native-svg`）：
+
+```tsx
+import { IconLianXiRen3 } from '@zleap-ai/icons/react-native'
+
+export default function Demo() {
+  return <IconLianXiRen3 size={28} color="#ef4444" />
+}
 ```
 
 ## 项目结构

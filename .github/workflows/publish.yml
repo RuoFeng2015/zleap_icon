@@ -51,6 +51,9 @@ jobs:
       - name: Generate icon components
         run: npm run generate-components
 
+      - name: Generate React Native components
+        run: npm run generate-rn-components
+
       - name: Run tests
         run: npm test
 
