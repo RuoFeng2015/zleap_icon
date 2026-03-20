@@ -26,6 +26,11 @@ const copySvgBtn = document.getElementById('copy-svg');
 const copyAllWebBtn = document.getElementById('copy-all-web');
 const copyAllRnBtn = document.getElementById('copy-all-rn');
 
+// 防止浏览器自动恢复上次输入导致误过滤
+if (searchInput) {
+  searchInput.value = '';
+}
+
 function escapeTemplateLiteral(input) {
   return input
     .replace(/\\/g, '\\\\')
@@ -626,17 +631,9 @@ function updateModalContent(icon) {
 
 <${icon.name} size={${currentSize}} color="${currentColor}" />`;
 
-  const quickUsage = `${icon.name}
-
-// Web
-<${icon.name} size={${currentSize}} color="${currentColor}" />
-
-// React Native
-<${icon.name} size={${currentSize}} color="${currentColor}" />`;
-
   importCode.innerHTML = highlightJsx(webUsage);
   usageCode.innerHTML = highlightJsx(rnUsage);
-  svgCode.innerHTML = highlightJsx(quickUsage);
+  svgCode.innerHTML = highlightSvg(icon.svgContent);
 }
 
 /**
