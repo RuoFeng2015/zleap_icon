@@ -20,7 +20,7 @@
 
     <div class="controls">
       <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search icons..." class="search-input" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <input type="search" id="search-input" name="icon-search" placeholder="Search icons..." class="search-input" autocomplete="off" autocapitalize="off" spellcheck="false">
       </div>
 
       <div class="preview-controls">
@@ -114,11 +114,11 @@
         <div class="admin-login-body">
           <div class="admin-form-group">
             <label for="admin-username">账号</label>
-            <input type="text" id="admin-username" placeholder="请输入账号" autocomplete="off">
+            <input type="text" id="admin-username" name="admin-repo" placeholder="请输入账号" autocomplete="new-password">
           </div>
           <div class="admin-form-group">
             <label for="admin-password">密码</label>
-            <input type="password" id="admin-password" placeholder="请输入密码" autocomplete="off">
+            <input type="password" id="admin-password" name="admin-token" placeholder="请输入密码" autocomplete="new-password">
           </div>
           <div id="admin-login-error" class="admin-login-error hidden">账号或密码错误</div>
           <button id="admin-login-btn" class="admin-login-btn">登录</button>
