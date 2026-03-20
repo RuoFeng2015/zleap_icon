@@ -1,19 +1,8 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-19T10:23:14.454Z",
-  "totalCount": 68,
+  "version": "2026.03.20",
+  "generatedAt": "2026-03-20T06:11:00.507Z",
+  "totalCount": 66,
   "icons": [
-    {
-      "name": "IconFrame",
-      "originalName": "Frame",
-      "svgPath": "svg/Frame.svg",
-      "componentPath": "src/icons/IconFrame.tsx",
-      "size": {
-        "width": 64,
-        "height": 64
-      },
-      "createdAt": "2026-03-19T10:23:14.425Z"
-    },
     {
       "name": "IconHaoYou",
       "originalName": "好友",
@@ -288,17 +277,6 @@
         "height": 24
       },
       "createdAt": "2026-03-09T10:10:02.087Z"
-    },
-    {
-      "name": "IconLianXiRen",
-      "originalName": "联系人",
-      "svgPath": "svg/联系人.svg",
-      "componentPath": "src/icons/IconLianXiRen.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-03-09T10:08:49.241Z"
     },
     {
       "name": "IconYuLan1",
