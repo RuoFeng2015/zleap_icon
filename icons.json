@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-20T06:17:33.214Z",
-  "totalCount": 66,
+  "version": "0.0.71",
+  "syncMode": "incremental",
+  "generatedAt": "2026-03-25T12:27:41.018Z",
+  "totalCount": 68,
   "icons": [
+    {
+      "name": "Icon多选",
+      "originalName": "多选",
+      "svgPath": "svg/多选.svg",
+      "componentPath": "src/icons/Icon多选.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-03-25T12:27:41.017Z"
+    },
+    {
+      "name": "Icon设置1",
+      "originalName": "设置1",
+      "svgPath": "svg/设置1.svg",
+      "componentPath": "src/icons/Icon设置1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-03-25T12:27:41.017Z"
+    },
     {
       "name": "IconHaoYou",
       "originalName": "好友",
