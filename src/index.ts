@@ -12,6 +12,7 @@ import { IconBianJi } from './icons/IconBianJi';
 import { IconCaiJing } from './icons/IconCaiJing';
 import { IconCaiJing1 } from './icons/IconCaiJing1';
 import { IconCheck } from './icons/IconCheck';
+import { IconDuoXuan } from './icons/IconDuoXuan';
 import { IconFenXiang } from './icons/IconFenXiang';
 import { IconFuZhiLianJie } from './icons/IconFuZhiLianJie';
 import { IconGengDuo } from './icons/IconGengDuo';
@@ -41,6 +42,7 @@ import { IconShangYe } from './icons/IconShangYe';
 import { IconShangYe1 } from './icons/IconShangYe1';
 import { IconShare } from './icons/IconShare';
 import { IconSheZhi } from './icons/IconSheZhi';
+import { IconSheZhi1 } from './icons/IconSheZhi1';
 import { IconShouCang } from './icons/IconShouCang';
 import { IconShouYe } from './icons/IconShouYe';
 import { IconShuaXin } from './icons/IconShuaXin';
@@ -79,6 +81,7 @@ export { IconBianJi, type IconBianJiProps } from './icons/IconBianJi';
 export { IconCaiJing, type IconCaiJingProps } from './icons/IconCaiJing';
 export { IconCaiJing1, type IconCaiJing1Props } from './icons/IconCaiJing1';
 export { IconCheck, type IconCheckProps } from './icons/IconCheck';
+export { IconDuoXuan, type IconDuoXuanProps } from './icons/IconDuoXuan';
 export { IconFenXiang, type IconFenXiangProps } from './icons/IconFenXiang';
 export { IconFuZhiLianJie, type IconFuZhiLianJieProps } from './icons/IconFuZhiLianJie';
 export { IconGengDuo, type IconGengDuoProps } from './icons/IconGengDuo';
@@ -108,6 +111,7 @@ export { IconShangYe, type IconShangYeProps } from './icons/IconShangYe';
 export { IconShangYe1, type IconShangYe1Props } from './icons/IconShangYe1';
 export { IconShare, type IconShareProps } from './icons/IconShare';
 export { IconSheZhi, type IconSheZhiProps } from './icons/IconSheZhi';
+export { IconSheZhi1, type IconSheZhi1Props } from './icons/IconSheZhi1';
 export { IconShouCang, type IconShouCangProps } from './icons/IconShouCang';
 export { IconShouYe, type IconShouYeProps } from './icons/IconShouYe';
 export { IconShuaXin, type IconShuaXinProps } from './icons/IconShuaXin';
@@ -150,6 +154,7 @@ export const allIcons = {
   IconCaiJing,
   IconCaiJing1,
   IconCheck,
+  IconDuoXuan,
   IconFenXiang,
   IconFuZhiLianJie,
   IconGengDuo,
@@ -179,6 +184,7 @@ export const allIcons = {
   IconShangYe1,
   IconShare,
   IconSheZhi,
+  IconSheZhi1,
   IconShouCang,
   IconShouYe,
   IconShuaXin,

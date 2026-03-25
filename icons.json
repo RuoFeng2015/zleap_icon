@@ -1,30 +1,29 @@
 {
-  "version": "0.0.71",
-  "syncMode": "incremental",
-  "generatedAt": "2026-03-25T12:27:41.018Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-03-25T12:28:08.465Z",
   "totalCount": 68,
   "icons": [
     {
-      "name": "Icon多选",
-      "originalName": "多选",
-      "svgPath": "svg/多选.svg",
-      "componentPath": "src/icons/Icon多选.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-03-25T12:27:41.017Z"
-    },
-    {
-      "name": "Icon设置1",
+      "name": "IconSheZhi1",
       "originalName": "设置1",
       "svgPath": "svg/设置1.svg",
-      "componentPath": "src/icons/Icon设置1.tsx",
+      "componentPath": "src/icons/IconSheZhi1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-03-25T12:27:41.017Z"
+      "createdAt": "2026-03-25T12:28:08.453Z"
+    },
+    {
+      "name": "IconDuoXuan",
+      "originalName": "多选",
+      "svgPath": "svg/多选.svg",
+      "componentPath": "src/icons/IconDuoXuan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-25T12:28:08.445Z"
     },
     {
       "name": "IconHaoYou",
