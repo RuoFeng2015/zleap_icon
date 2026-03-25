@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-20T06:17:33.214Z",
-  "totalCount": 66,
+  "generatedAt": "2026-03-25T12:28:08.465Z",
+  "totalCount": 68,
   "icons": [
+    {
+      "name": "IconSheZhi1",
+      "originalName": "设置1",
+      "svgPath": "svg/设置1.svg",
+      "componentPath": "src/icons/IconSheZhi1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-25T12:28:08.453Z"
+    },
+    {
+      "name": "IconDuoXuan",
+      "originalName": "多选",
+      "svgPath": "svg/多选.svg",
+      "componentPath": "src/icons/IconDuoXuan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-25T12:28:08.445Z"
+    },
     {
       "name": "IconHaoYou",
       "originalName": "好友",

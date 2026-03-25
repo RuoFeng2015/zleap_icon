@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-03-20T06:17:29.823Z
+Generated at: 2026-03-25T12:28:04.762Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 66 |
+| Total Icons | 68 |
 | Valid Icons | 0 |
-| Invalid Icons | 66 |
-| Total Errors | 66 |
-| Total Warnings | 69 |
+| Invalid Icons | 68 |
+| Total Errors | 68 |
+| Total Warnings | 71 |
 
-⚠️ **66 icon(s) failed validation**
+⚠️ **68 icon(s) failed validation**
 
 ## Errors
 
-### size (66 errors)
+### size (68 errors)
 
 | Icon | Message |
 |------|---------|
@@ -45,6 +45,7 @@ Generated at: 2026-03-20T06:17:29.823Z
 | 增加 | Icon size 24x24 not in allowed sizes:  |
 | 增加1 | Icon size 24x24 not in allowed sizes:  |
 | 复制链接 | Icon size 24x24 not in allowed sizes:  |
+| 多选 | Icon size 24x24 not in allowed sizes:  |
 | 好友 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 左 | Icon size 24x24 not in allowed sizes:  |
@@ -75,6 +76,7 @@ Generated at: 2026-03-20T06:17:29.823Z
 | 联系人2 | Icon size 24x24 not in allowed sizes:  |
 | 联系人3 | Icon size 48x48 not in allowed sizes:  |
 | 设置 | Icon size 24x24 not in allowed sizes:  |
+| 设置1 | Icon size 24x24 not in allowed sizes:  |
 | 评论 | Icon size 24x24 not in allowed sizes:  |
 | 财经-1 | Icon size 36x36 not in allowed sizes:  |
 | 财经 | Icon size 129x87 not in allowed sizes:  |
@@ -89,7 +91,7 @@ Generated at: 2026-03-20T06:17:29.823Z
 
 ## Warnings
 
-### naming (61 warnings)
+### naming (63 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -113,6 +115,7 @@ Generated at: 2026-03-20T06:17:29.823Z
 | 增加 | Icon name "增加" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加1 | Icon name "增加1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 复制链接 | Icon name "复制链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 多选 | Icon name "多选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 好友 | Icon name "好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 左 | Icon name "左" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -143,6 +146,7 @@ Generated at: 2026-03-20T06:17:29.823Z
 | 联系人2 | Icon name "联系人2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人3 | Icon name "联系人3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置 | Icon name "设置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 设置1 | Icon name "设置1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 评论 | Icon name "评论" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 财经-1 | Icon name "财经-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 财经 | Icon name "财经" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
