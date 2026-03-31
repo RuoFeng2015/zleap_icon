@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-25T12:28:08.465Z",
-  "totalCount": 68,
+  "generatedAt": "2026-03-31T10:33:52.310Z",
+  "totalCount": 70,
   "icons": [
+    {
+      "name": "IconTongXunLuXi",
+      "originalName": "通讯录-细",
+      "svgPath": "svg/通讯录-细.svg",
+      "componentPath": "src/icons/IconTongXunLuXi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-31T10:33:52.291Z"
+    },
+    {
+      "name": "IconQingChuYiDu",
+      "originalName": "清除-已读",
+      "svgPath": "svg/清除-已读.svg",
+      "componentPath": "src/icons/IconQingChuYiDu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-31T10:33:52.286Z"
+    },
     {
       "name": "IconSheZhi1",
       "originalName": "设置1",

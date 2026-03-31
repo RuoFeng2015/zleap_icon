@@ -1,30 +1,52 @@
 {
-  "version": "0.0.71",
+  "version": "0.0.72",
   "syncMode": "incremental",
-  "generatedAt": "2026-03-25T12:27:41.018Z",
-  "totalCount": 68,
+  "generatedAt": "2026-03-31T10:33:18.416Z",
+  "totalCount": 70,
   "icons": [
     {
-      "name": "Icon多选",
-      "originalName": "多选",
-      "svgPath": "svg/多选.svg",
-      "componentPath": "src/icons/Icon多选.tsx",
+      "name": "Icon清除/已读",
+      "originalName": "清除/已读",
+      "svgPath": "svg/清除-已读.svg",
+      "componentPath": "src/icons/Icon清除/已读.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-03-25T12:27:41.017Z"
+      "uploadedAt": "2026-03-31T10:33:18.416Z"
     },
     {
-      "name": "Icon设置1",
-      "originalName": "设置1",
-      "svgPath": "svg/设置1.svg",
-      "componentPath": "src/icons/Icon设置1.tsx",
+      "name": "Icon通讯录细",
+      "originalName": "通讯录-细",
+      "svgPath": "svg/通讯录-细.svg",
+      "componentPath": "src/icons/Icon通讯录细.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-03-25T12:27:41.017Z"
+      "uploadedAt": "2026-03-31T10:33:18.416Z"
+    },
+    {
+      "name": "IconSheZhi1",
+      "originalName": "设置1",
+      "svgPath": "svg/设置1.svg",
+      "componentPath": "src/icons/IconSheZhi1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-25T12:28:08.453Z"
+    },
+    {
+      "name": "IconDuoXuan",
+      "originalName": "多选",
+      "svgPath": "svg/多选.svg",
+      "componentPath": "src/icons/IconDuoXuan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-25T12:28:08.445Z"
     },
     {
       "name": "IconHaoYou",
