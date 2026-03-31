@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-25T12:28:08.465Z",
-  "totalCount": 68,
+  "version": "0.0.72",
+  "syncMode": "incremental",
+  "generatedAt": "2026-03-31T10:33:18.416Z",
+  "totalCount": 70,
   "icons": [
+    {
+      "name": "Icon清除/已读",
+      "originalName": "清除/已读",
+      "svgPath": "svg/清除-已读.svg",
+      "componentPath": "src/icons/Icon清除/已读.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-03-31T10:33:18.416Z"
+    },
+    {
+      "name": "Icon通讯录细",
+      "originalName": "通讯录-细",
+      "svgPath": "svg/通讯录-细.svg",
+      "componentPath": "src/icons/Icon通讯录细.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-03-31T10:33:18.416Z"
+    },
     {
       "name": "IconSheZhi1",
       "originalName": "设置1",
