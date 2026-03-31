@@ -6,6 +6,88 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.73] - 2026-03-31
+
+更新/新增 1 个图标：notifications-sharp 图标
+
+### Added
+- IconNotificationsSharp
+- IconTongXunLuXi
+- IconQingChuYiDu
+- IconSheZhi1
+- IconDuoXuan
+- IconHaoYou
+- IconCaiJing1
+- IconZhiChang1
+- IconJiaoYu1
+- IconTiYu
+- IconKeJi1
+- IconWenHuaTiYu1
+- IconJiaoYu
+- IconShangYe1
+- IconAi1
+- IconCaiJing
+- IconZhiChang
+- IconQiChe
+- IconAi
+- IconQiChe1
+- IconKeJi
+- IconShangYe
+- IconZengJia1
+- IconTongZhi1
+- IconXiaoXi
+- IconSouSuo
+- IconZengJia
+- IconLianXiRen3
+- IconLianXiRen1
+- IconLianXiRen2
+- IconYuLan1
+- IconYiGouXuan
+- IconGouXuanYiGouXuan
+- IconGouXuan
+- IconGuanBiYuLan
+- IconSheZhi
+- IconHuiDingBu
+- IconSuoDing
+- IconGengDuo1
+- IconWeiXinHaoYou
+- IconFuZhiLianJie
+- IconYuLan
+- IconYuLanGuanBi
+- IconYiShouCang1
+- IconYiDianZan1
+- IconBianJi
+- IconFenXiang
+- IconPingLun
+- IconShouCang
+- IconZuo
+- IconYou
+- IconZhuShou
+- IconShare
+- IconShouYe
+- IconGengDuo
+- IconTanSuo
+- IconShuaXin
+- IconZhuShouGuanLi
+- IconLike
+- IconZhiShiKu
+- IconTongZhi
+- IconLianJie
+- IconWenDang
+- IconZhengQue
+- IconGuanBi
+- IconGuanBiXiao
+- IconShanChuDELETE
+- IconZhanKai
+- IconCheck
+- IconSearch
+- IconBack
+
+### Modified
+- None
+
+### Removed
+- None
 ## [0.0.72] - 2026-03-31
 
 同步 2 个图标：清除/已读, 通讯录-细 图标

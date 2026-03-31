@@ -30,6 +30,7 @@ import { IconLianXiRen1 } from './icons/IconLianXiRen1'
 import { IconLianXiRen2 } from './icons/IconLianXiRen2'
 import { IconLianXiRen3 } from './icons/IconLianXiRen3'
 import { IconLike } from './icons/IconLike'
+import { IconNotificationsSharp } from './icons/IconNotificationsSharp'
 import { IconPingLun } from './icons/IconPingLun'
 import { IconQiChe } from './icons/IconQiChe'
 import { IconQiChe1 } from './icons/IconQiChe1'
@@ -101,6 +102,7 @@ export { IconLianXiRen1, type IconLianXiRen1Props } from './icons/IconLianXiRen1
 export { IconLianXiRen2, type IconLianXiRen2Props } from './icons/IconLianXiRen2'
 export { IconLianXiRen3, type IconLianXiRen3Props } from './icons/IconLianXiRen3'
 export { IconLike, type IconLikeProps } from './icons/IconLike'
+export { IconNotificationsSharp, type IconNotificationsSharpProps } from './icons/IconNotificationsSharp'
 export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun'
 export { IconQiChe, type IconQiCheProps } from './icons/IconQiChe'
 export { IconQiChe1, type IconQiChe1Props } from './icons/IconQiChe1'
@@ -173,6 +175,7 @@ export const allIcons = {
   IconLianXiRen2,
   IconLianXiRen3,
   IconLike,
+  IconNotificationsSharp,
   IconPingLun,
   IconQiChe,
   IconQiChe1,

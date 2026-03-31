@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-03-31T10:33:52.310Z",
-  "totalCount": 70,
+  "generatedAt": "2026-03-31T15:59:50.780Z",
+  "totalCount": 71,
   "icons": [
+    {
+      "name": "IconNotificationsSharp",
+      "originalName": "notifications-sharp",
+      "svgPath": "svg/notifications-sharp.svg",
+      "componentPath": "src/icons/IconNotificationsSharp.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-31T15:59:50.742Z"
+    },
     {
       "name": "IconTongXunLuXi",
       "originalName": "通讯录-细",
