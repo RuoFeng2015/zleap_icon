@@ -1,30 +1,29 @@
 {
-  "version": "0.0.72",
-  "syncMode": "incremental",
-  "generatedAt": "2026-03-31T10:33:18.416Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-03-31T10:33:52.310Z",
   "totalCount": 70,
   "icons": [
     {
-      "name": "Icon清除/已读",
-      "originalName": "清除/已读",
-      "svgPath": "svg/清除-已读.svg",
-      "componentPath": "src/icons/Icon清除/已读.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-03-31T10:33:18.416Z"
-    },
-    {
-      "name": "Icon通讯录细",
+      "name": "IconTongXunLuXi",
       "originalName": "通讯录-细",
       "svgPath": "svg/通讯录-细.svg",
-      "componentPath": "src/icons/Icon通讯录细.tsx",
+      "componentPath": "src/icons/IconTongXunLuXi.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-03-31T10:33:18.416Z"
+      "createdAt": "2026-03-31T10:33:52.291Z"
+    },
+    {
+      "name": "IconQingChuYiDu",
+      "originalName": "清除-已读",
+      "svgPath": "svg/清除-已读.svg",
+      "componentPath": "src/icons/IconQingChuYiDu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-03-31T10:33:52.286Z"
     },
     {
       "name": "IconSheZhi1",

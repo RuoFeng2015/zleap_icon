@@ -26,6 +26,10 @@ const copyUsageBtn = document.getElementById('copy-usage');
 const copySvgBtn = document.getElementById('copy-svg');
 const copyAllWebBtn = document.getElementById('copy-all-web');
 const copyAllRnBtn = document.getElementById('copy-all-rn');
+const copyAllRnRawBtn = document.getElementById('copy-all-rn-raw');
+
+const LEGACY_ALIAS_CONFIG_PATH = './legacy-icon-alias.zleap-app.json';
+let legacyAliasConfigPromise = null;
 
 // 防止浏览器自动恢复上次输入导致误过滤
 if (searchInput) {
@@ -118,7 +122,270 @@ export function ${iconName}({ size = ${currentSize}, color = '${currentColor}', 
 // Note: install once in your RN app -> npm i react-native-svg`;
 }
 
-async function createAllIconsBundle(platform = 'web') {
+function getRawIconConstName(componentName) {
+  return componentName.replace(/[^a-zA-Z0-9]/g, '_').toUpperCase();
+}
+
+async function loadLegacyAliasConfig() {
+  if (!legacyAliasConfigPromise) {
+    legacyAliasConfigPromise = (async () => {
+      try {
+        const response = await fetch(LEGACY_ALIAS_CONFIG_PATH);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const payload = await response.json();
+        const rawMap = payload && typeof payload.map === 'object' ? payload.map : {};
+        const normalizedMap = {};
+
+        for (const [legacyName, targetName] of Object.entries(rawMap)) {
+          if (typeof targetName === 'string' && targetName.trim()) {
+            normalizedMap[String(legacyName)] = targetName.trim();
+          } else {
+            normalizedMap[String(legacyName)] = null;
+          }
+        }
+
+        const defaultSize = Number(payload?.defaultSize);
+        const strict = Boolean(payload?.strict);
+
+        return {
+          map: normalizedMap,
+          defaultSize: Number.isFinite(defaultSize) ? defaultSize : null,
+          defaultColor:
+            typeof payload?.defaultColor === 'string' && payload.defaultColor.trim()
+              ? payload.defaultColor.trim()
+              : null,
+          useThemeColors: payload?.useThemeColors !== false,
+          themeColorsImport:
+            typeof payload?.themeColorsImport === 'string' && payload.themeColorsImport.trim()
+              ? payload.themeColorsImport.trim()
+              : '@/styles/theme',
+          preserveProjectSvg: Boolean(payload?.preserveProjectSvg),
+          projectIconMapImport:
+            typeof payload?.projectIconMapImport === 'string' && payload.projectIconMapImport.trim()
+              ? payload.projectIconMapImport.trim()
+              : './iconMap',
+          strict,
+        };
+      } catch (error) {
+        console.warn('Failed to load legacy alias config:', error);
+        return {
+          map: {},
+          defaultSize: null,
+          defaultColor: null,
+          useThemeColors: true,
+          themeColorsImport: '@/styles/theme',
+          preserveProjectSvg: false,
+          projectIconMapImport: './iconMap',
+          strict: false,
+        };
+      }
+    })();
+  }
+
+  return legacyAliasConfigPromise;
+}
+
+function createRnLegacyCompatibility(validEntries, aliasConfig, fallbackDefaultColor) {
+  const availableComponents = new Set(validEntries.map((entry) => entry.name));
+  const aliasEntries = Object.entries(aliasConfig?.map || {});
+  const useThemeColors = aliasConfig?.useThemeColors !== false;
+  const themeColorsImport =
+    typeof aliasConfig?.themeColorsImport === 'string' && aliasConfig.themeColorsImport
+      ? aliasConfig.themeColorsImport
+      : '@/styles/theme';
+  const preserveProjectSvg = Boolean(aliasConfig?.preserveProjectSvg);
+  const projectIconMapImport =
+    typeof aliasConfig?.projectIconMapImport === 'string' && aliasConfig.projectIconMapImport
+      ? aliasConfig.projectIconMapImport
+      : './iconMap';
+
+  const registryLines = [];
+  const unresolvedLines = [];
+
+  if (aliasEntries.length === 0) {
+    if (!preserveProjectSvg) {
+      for (const entry of validEntries) {
+        const legacyName = entry.name
+          .replace(/^Icon/, '')
+          .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+          .toLowerCase();
+        registryLines.push(`  ${JSON.stringify(legacyName)}: ${entry.name},`);
+      }
+    }
+  } else {
+    for (const [legacyName, targetComponent] of aliasEntries) {
+      if (typeof targetComponent !== 'string' || !targetComponent.trim()) {
+        if (!preserveProjectSvg) {
+          registryLines.push(`  ${JSON.stringify(legacyName)}: null,`);
+          unresolvedLines.push(`${legacyName} -> null`);
+        }
+        continue;
+      }
+
+      if (!availableComponents.has(targetComponent)) {
+        unresolvedLines.push(`${legacyName} -> ${targetComponent} (missing component)`);
+        if (!preserveProjectSvg) {
+          registryLines.push(`  ${JSON.stringify(legacyName)}: null,`);
+        }
+        continue;
+      }
+
+      registryLines.push(`  ${JSON.stringify(legacyName)}: ${targetComponent},`);
+    }
+  }
+
+  if (aliasConfig?.strict && unresolvedLines.length > 0) {
+    throw new Error(`Legacy alias strict mode failed:\n${unresolvedLines.join('\n')}`);
+  }
+
+  const unresolvedComment =
+    unresolvedLines.length > 0
+      ? unresolvedLines.map((line) => ` * - ${line}`).join('\n')
+      : ' * - none';
+
+  const legacyDefaultSize = Number.isFinite(aliasConfig?.defaultSize)
+    ? Number(aliasConfig.defaultSize)
+    : currentSize;
+  const legacyDefaultColor =
+    typeof aliasConfig?.defaultColor === 'string' && aliasConfig.defaultColor
+      ? aliasConfig.defaultColor
+      : fallbackDefaultColor;
+
+  const importLines = [
+    "import type { ColorValue } from 'react-native';",
+    "import type { SvgProps } from 'react-native-svg';",
+  ];
+
+  if (useThemeColors) {
+    importLines.push(`import { colors } from '${themeColorsImport}';`);
+  }
+
+  if (preserveProjectSvg) {
+    importLines.push(`import type { IconName as ProjectIconName } from '${projectIconMapImport}';`);
+    importLines.push(`import { iconImportMap as projectIconImportMap } from '${projectIconMapImport}';`);
+  }
+
+  const projectFallbackBootstrap = preserveProjectSvg
+    ? ''
+    : `
+type ProjectIconName = never;
+const projectIconImportMap = null;
+`;
+
+  const resolveColorCode = useThemeColors
+    ? `const resolvedColor = useMemo(() => {
+    if (typeof color === 'string' && color in colors) {
+      return colors[color];
+    }
+    return color;
+  }, [color]);`
+    : `const resolvedColor = useMemo(() => color, [color]);`;
+
+  const colorType = useThemeColors
+    ? 'keyof typeof colors | ColorValue'
+    : 'ColorValue';
+
+  return {
+    imports: importLines.join('\n'),
+    code: `
+const EMPTY_SVG = '<svg viewBox="0 0 24 24"></svg>';
+${projectFallbackBootstrap}
+const projectIconCache = {};
+
+export const iconComponentMap = {
+${registryLines.join('\n')}
+};
+
+type MappedIconName = keyof typeof iconComponentMap;
+export type IconName = MappedIconName | ProjectIconName;
+
+export const iconNameList = Array.from(
+  new Set([
+    ...Object.keys(iconComponentMap),
+    ...(projectIconImportMap ? Object.keys(projectIconImportMap) : []),
+  ]),
+);
+const mappedIconRegistry = iconComponentMap as Record<string, React.ComponentType<any>>;
+
+type IconProps = SvgProps & {
+  name: IconName;
+  size?: number;
+  color?: ${colorType};
+};
+
+export function Icon({ name, size = ${legacyDefaultSize}, color = '${legacyDefaultColor}', ...props }: IconProps) {
+  const [, forceUpdate] = useState(0);
+  const iconKey = String(name);
+  ${resolveColorCode}
+  const RenderComponent = mappedIconRegistry[iconKey];
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const load = async () => {
+      if (RenderComponent || projectIconCache[iconKey]) return;
+      if (!projectIconImportMap || !projectIconImportMap[iconKey]) return;
+
+      try {
+        const mod = await projectIconImportMap[iconKey]();
+        if (cancelled) return;
+        projectIconCache[iconKey] = mod?.default || null;
+        forceUpdate((n) => n + 1);
+      } catch (_error) {
+        if (!cancelled) {
+          projectIconCache[iconKey] = null;
+        }
+      }
+    };
+
+    load();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [iconKey, RenderComponent]);
+
+  if (!RenderComponent) {
+    const ProjectIcon = projectIconCache[iconKey];
+    if (ProjectIcon) {
+      return <ProjectIcon width={size} height={size} color={resolvedColor} {...props} />;
+    }
+    return <Svg width={size} height={size} color={resolvedColor} {...props} />;
+  }
+
+  return <RenderComponent size={size} color={resolvedColor} {...props} />;
+}
+
+export const preload = async (names: IconName[] = []) => {
+  if (!Array.isArray(names)) return;
+  if (!projectIconImportMap) return;
+
+  for (const name of names) {
+    const iconKey = String(name);
+    if (mappedIconRegistry[iconKey] || !projectIconImportMap[iconKey] || projectIconCache[iconKey]) continue;
+    try {
+      const mod = await projectIconImportMap[iconKey]();
+      projectIconCache[iconKey] = mod?.default || null;
+    } catch (_error) {
+      projectIconCache[iconKey] = null;
+    }
+  }
+};
+
+export default memo(Icon);
+
+/**
+ * Unresolved legacy aliases:
+${unresolvedComment}
+ */
+`,
+  };
+}
+
+async function createAllIconsBundle(platform = 'web', mode = 'raw') {
   const iconEntries = await Promise.all(
     icons.map(async (icon) => {
       const svgContent = await loadSvgContent(icon.svgPath);
@@ -137,18 +404,31 @@ async function createAllIconsBundle(platform = 'web') {
 
   if (platform === 'rn') {
     const constants = validEntries
-      .map((entry) => `const RAW_${entry.name.toUpperCase()} = \`${escapeTemplateLiteral(entry.svgContent)}\`;`)
+      .map((entry) => `const RAW_${getRawIconConstName(entry.name)} = \`${escapeTemplateLiteral(entry.svgContent)}\`;`)
       .join('\n');
 
     const components = validEntries
       .map((entry) => `export function ${entry.name}({ size = ${currentSize}, color = '${defaultColorLiteral}', ...props }) {
-  const xml = useMemo(() => buildSvgXml(RAW_${entry.name.toUpperCase()}, size, color), [size, color]);
+  const xml = useMemo(() => buildSvgXml(RAW_${getRawIconConstName(entry.name)}, size, color), [size, color]);
   return <SvgXml xml={xml} width={size} height={size} {...props} />;
 }`)
       .join('\n\n');
 
-    return `import React, { useMemo } from 'react';
-import { SvgXml } from 'react-native-svg';
+    let legacyCompatCode = '';
+    let legacyCompatImports = '';
+    if (mode === 'legacy') {
+      const aliasConfig = await loadLegacyAliasConfig();
+      const legacyCompat = createRnLegacyCompatibility(validEntries, aliasConfig, defaultColorLiteral);
+      legacyCompatCode = legacyCompat.code;
+      legacyCompatImports = legacyCompat.imports;
+    }
+
+    const reactImports = mode === 'legacy' ? 'memo, useEffect, useMemo, useState' : 'useMemo';
+    const svgImports = mode === 'legacy' ? 'SvgXml, Svg' : 'SvgXml';
+
+    return `import React, { ${reactImports} } from 'react';
+import { ${svgImports} } from 'react-native-svg';
+${legacyCompatImports}
 
 function buildSvgXml(rawSvg, size, color) {
   let next = rawSvg
@@ -170,16 +450,18 @@ function buildSvgXml(rawSvg, size, color) {
 ${constants}
 
 ${components}
+
+${legacyCompatCode}
 `;
   }
 
   const constants = validEntries
-    .map((entry) => `const RAW_${entry.name.toUpperCase()} = \`${escapeTemplateLiteral(entry.svgContent)}\`;`)
+    .map((entry) => `const RAW_${getRawIconConstName(entry.name)} = \`${escapeTemplateLiteral(entry.svgContent)}\`;`)
     .join('\n');
 
   const components = validEntries
     .map((entry) => `export function ${entry.name}({ size = ${currentSize}, color = '${defaultColorLiteral}', className, style, ...props }) {
-  const svgHtml = useMemo(() => buildSvgHtml(RAW_${entry.name.toUpperCase()}, size, color), [size, color]);
+  const svgHtml = useMemo(() => buildSvgHtml(RAW_${getRawIconConstName(entry.name)}, size, color), [size, color]);
 
   return (
     <span
@@ -217,7 +499,7 @@ ${components}
 `;
 }
 
-async function handleCopyAllIcons(platform, button) {
+async function handleCopyAllIcons(platform, button, mode = 'raw') {
   if (!icons.length) {
     showToast('Icon list not ready yet');
     return;
@@ -228,9 +510,10 @@ async function handleCopyAllIcons(platform, button) {
   button.textContent = 'Generating...';
 
   try {
-    const code = await createAllIconsBundle(platform);
+    const code = await createAllIconsBundle(platform, mode);
     await navigator.clipboard.writeText(code);
-    showToast(`Copied all icons (${platform.toUpperCase()})`);
+    const suffix = mode === 'legacy' ? 'LEGACY' : mode.toUpperCase();
+    showToast(`Copied all icons (${platform.toUpperCase()}-${suffix})`);
   } catch (error) {
     console.error('Failed to copy all icons:', error);
     showToast('Failed to copy all icons');
@@ -746,7 +1029,13 @@ if (copyAllWebBtn) {
 
 if (copyAllRnBtn) {
   copyAllRnBtn.addEventListener('click', () => {
-    handleCopyAllIcons('rn', copyAllRnBtn);
+    handleCopyAllIcons('rn', copyAllRnBtn, 'legacy');
+  });
+}
+
+if (copyAllRnRawBtn) {
+  copyAllRnRawBtn.addEventListener('click', () => {
+    handleCopyAllIcons('rn', copyAllRnRawBtn, 'raw');
   });
 }
 
