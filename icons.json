@@ -1,7 +1,6 @@
 {
-  "version": "0.0.73",
-  "syncMode": "incremental",
-  "generatedAt": "2026-03-31T15:59:24.950Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-03-31T15:59:50.780Z",
   "totalCount": 71,
   "icons": [
     {
@@ -13,7 +12,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-03-31T15:59:24.950Z"
+      "createdAt": "2026-03-31T15:59:50.742Z"
     },
     {
       "name": "IconTongXunLuXi",
