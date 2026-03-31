@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-03-25T12:28:04.762Z
+Generated at: 2026-03-31T10:33:49.058Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 68 |
+| Total Icons | 70 |
 | Valid Icons | 0 |
-| Invalid Icons | 68 |
-| Total Errors | 68 |
-| Total Warnings | 71 |
+| Invalid Icons | 70 |
+| Total Errors | 70 |
+| Total Warnings | 73 |
 
-⚠️ **68 icon(s) failed validation**
+⚠️ **70 icon(s) failed validation**
 
 ## Errors
 
-### size (68 errors)
+### size (70 errors)
 
 | Icon | Message |
 |------|---------|
@@ -66,6 +66,7 @@ Generated at: 2026-03-25T12:28:04.762Z
 | 汽车-1 | Icon size 36x36 not in allowed sizes:  |
 | 汽车 | Icon size 132x87 not in allowed sizes:  |
 | 消息 | Icon size 24x24 not in allowed sizes:  |
+| 清除-已读 | Icon size 24x24 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
 | 科技 | Icon size 36x36 not in allowed sizes:  |
 | 科技1 | Icon size 132x87 not in allowed sizes:  |
@@ -82,6 +83,7 @@ Generated at: 2026-03-25T12:28:04.762Z
 | 财经 | Icon size 129x87 not in allowed sizes:  |
 | 通知 | Icon size 24x24 not in allowed sizes:  |
 | 通知1 | Icon size 24x24 not in allowed sizes:  |
+| 通讯录-细 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
 | 锁定 | Icon size 24x24 not in allowed sizes:  |
 | 预览-关闭 | Icon size 24x24 not in allowed sizes:  |
@@ -91,7 +93,7 @@ Generated at: 2026-03-25T12:28:04.762Z
 
 ## Warnings
 
-### naming (63 warnings)
+### naming (65 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -136,6 +138,7 @@ Generated at: 2026-03-25T12:28:04.762Z
 | 汽车-1 | Icon name "汽车-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 汽车 | Icon name "汽车" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 消息 | Icon name "消息" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 清除-已读 | Icon name "清除-已读" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技 | Icon name "科技" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技1 | Icon name "科技1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -152,6 +155,7 @@ Generated at: 2026-03-25T12:28:04.762Z
 | 财经 | Icon name "财经" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知 | Icon name "通知" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知1 | Icon name "通知1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 通讯录-细 | Icon name "通讯录-细" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 锁定 | Icon name "锁定" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 预览-关闭 | Icon name "预览-关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

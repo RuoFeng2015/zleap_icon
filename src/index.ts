@@ -36,6 +36,7 @@ import { IconLike } from './icons/IconLike';
 import { IconPingLun } from './icons/IconPingLun';
 import { IconQiChe } from './icons/IconQiChe';
 import { IconQiChe1 } from './icons/IconQiChe1';
+import { IconQingChuYiDu } from './icons/IconQingChuYiDu';
 import { IconSearch } from './icons/IconSearch';
 import { IconShanChuDELETE } from './icons/IconShanChuDELETE';
 import { IconShangYe } from './icons/IconShangYe';
@@ -50,6 +51,7 @@ import { IconSouSuo } from './icons/IconSouSuo';
 import { IconSuoDing } from './icons/IconSuoDing';
 import { IconTanSuo } from './icons/IconTanSuo';
 import { IconTiYu } from './icons/IconTiYu';
+import { IconTongXunLuXi } from './icons/IconTongXunLuXi';
 import { IconTongZhi } from './icons/IconTongZhi';
 import { IconTongZhi1 } from './icons/IconTongZhi1';
 import { IconWeiXinHaoYou } from './icons/IconWeiXinHaoYou';
@@ -105,6 +107,7 @@ export { IconLike, type IconLikeProps } from './icons/IconLike';
 export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun';
 export { IconQiChe, type IconQiCheProps } from './icons/IconQiChe';
 export { IconQiChe1, type IconQiChe1Props } from './icons/IconQiChe1';
+export { IconQingChuYiDu, type IconQingChuYiDuProps } from './icons/IconQingChuYiDu';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
 export { IconShanChuDELETE, type IconShanChuDELETEProps } from './icons/IconShanChuDELETE';
 export { IconShangYe, type IconShangYeProps } from './icons/IconShangYe';
@@ -119,6 +122,7 @@ export { IconSouSuo, type IconSouSuoProps } from './icons/IconSouSuo';
 export { IconSuoDing, type IconSuoDingProps } from './icons/IconSuoDing';
 export { IconTanSuo, type IconTanSuoProps } from './icons/IconTanSuo';
 export { IconTiYu, type IconTiYuProps } from './icons/IconTiYu';
+export { IconTongXunLuXi, type IconTongXunLuXiProps } from './icons/IconTongXunLuXi';
 export { IconTongZhi, type IconTongZhiProps } from './icons/IconTongZhi';
 export { IconTongZhi1, type IconTongZhi1Props } from './icons/IconTongZhi1';
 export { IconWeiXinHaoYou, type IconWeiXinHaoYouProps } from './icons/IconWeiXinHaoYou';
@@ -178,6 +182,7 @@ export const allIcons = {
   IconPingLun,
   IconQiChe,
   IconQiChe1,
+  IconQingChuYiDu,
   IconSearch,
   IconShanChuDELETE,
   IconShangYe,
@@ -192,6 +197,7 @@ export const allIcons = {
   IconSuoDing,
   IconTanSuo,
   IconTiYu,
+  IconTongXunLuXi,
   IconTongZhi,
   IconTongZhi1,
   IconWeiXinHaoYou,

@@ -2,15 +2,15 @@ import React, { forwardRef, useMemo } from 'react'
 import type { ComponentProps } from 'react'
 import { SvgXml } from 'react-native-svg'
 
-export interface IconSheZhi1Props extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+export interface IconQingChuYiDuProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
   size?: number | string
   color?: string
 }
 
-export const IconSheZhi1 = forwardRef<unknown, IconSheZhi1Props>(
+export const IconQingChuYiDu = forwardRef<unknown, IconQingChuYiDuProps>(
   ({ size = 24, color, ...props }, ref) => {
     const baseXml = useMemo(
-      () => `<svg fill="none" viewBox="0 0 24 24"><path stroke="#0D131A" stroke-linejoin="round" stroke-width="1.5" d="M9.142 21.586a10 10 0 0 1-4.348-2.652 3 3 0 0 0-2.59-4.919A10.04 10.04 0 0 1 2.457 9H2.5a3 3 0 0 0 2.692-4.325 10 10 0 0 1 4.134-2.313 3 3 0 0 0 5.348 0 10 10 0 0 1 4.134 2.313A3 3 0 0 0 21.542 9a10.04 10.04 0 0 1 .255 5.015 3 3 0 0 0-2.59 4.919 10 10 0 0 1-4.349 2.652 3.001 3.001 0 0 0-5.716 0Z"/><path stroke="#0D131A" stroke-linejoin="round" stroke-width="1.5" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/></svg>`,
+      () => `<svg fill="none" viewBox="0 0 24 24"><path stroke="#0D131A" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 2.957h4v4h7.5v4h-19v-4H10z" clip-rule="evenodd"/><path stroke="#0D131A" stroke-linejoin="round" stroke-width="1.5" d="M4 20h16v-9H4z"/><path stroke="#0D131A" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 19.949v-2.992"/><path stroke="#0D131A" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19.949v-3"/><path stroke="#0D131A" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 19.949v-2.992"/><path stroke="#0D131A" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 20h12"/></svg>`,
       [],
     )
 
@@ -48,6 +48,6 @@ export const IconSheZhi1 = forwardRef<unknown, IconSheZhi1Props>(
   },
 )
 
-IconSheZhi1.displayName = 'IconSheZhi1'
+IconQingChuYiDu.displayName = 'IconQingChuYiDu'
 
-export default IconSheZhi1
+export default IconQingChuYiDu
