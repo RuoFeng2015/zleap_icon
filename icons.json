@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-03-31T15:59:50.780Z",
-  "totalCount": 71,
+  "version": "0.0.74",
+  "syncMode": "incremental",
+  "generatedAt": "2026-04-01T07:34:48.673Z",
+  "totalCount": 72,
   "icons": [
+    {
+      "name": "IconFrame",
+      "originalName": "Frame",
+      "svgPath": "svg/Frame.svg",
+      "componentPath": "src/icons/IconFrame.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-04-01T07:34:48.673Z"
+    },
     {
       "name": "IconNotificationsSharp",
       "originalName": "notifications-sharp",
