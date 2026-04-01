@@ -78,13 +78,17 @@ function escapeRegexLiteral(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
-function parsePathCommands(d: string): Array<{ command: string; values: number[] }> {
+function parsePathCommands(
+  d: string,
+): Array<{ command: string; values: number[] }> {
   const commands: Array<{ command: string; values: number[] }> = []
   const commandRegex = /([a-zA-Z])([^a-zA-Z]*)/g
 
   let match: RegExpExecArray | null
   while ((match = commandRegex.exec(d)) !== null) {
-    const values = (match[2].match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || []).map(Number)
+    const values = (match[2].match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || []).map(
+      Number,
+    )
     commands.push({
       command: match[1],
       values,
@@ -116,11 +120,17 @@ function getSimpleHvRectMetrics(d: string): SimpleRectMetrics | null {
   const startY = commands[0].values[1]
 
   const xAfterH1 =
-    commands[1].command === 'H' ? commands[1].values[0] : startX + commands[1].values[0]
+    commands[1].command === 'H'
+      ? commands[1].values[0]
+      : startX + commands[1].values[0]
   const yAfterV1 =
-    commands[2].command === 'V' ? commands[2].values[0] : startY + commands[2].values[0]
+    commands[2].command === 'V'
+      ? commands[2].values[0]
+      : startY + commands[2].values[0]
   const xAfterH2 =
-    commands[3].command === 'H' ? commands[3].values[0] : xAfterH1 + commands[3].values[0]
+    commands[3].command === 'H'
+      ? commands[3].values[0]
+      : xAfterH1 + commands[3].values[0]
 
   const minX = Math.min(startX, xAfterH1, xAfterH2)
   const maxX = Math.max(startX, xAfterH1, xAfterH2)
@@ -175,7 +185,9 @@ function cleanSvgContent(svgString: string): string {
   const originalLength = svg.length
 
   // 打印原始 SVG 片段用于调试
-  console.log(`[cleanSvgContent] 原始 SVG 前 200 字符: ${svg.substring(0, 200)}`)
+  console.log(
+    `[cleanSvgContent] 原始 SVG 前 200 字符: ${svg.substring(0, 200)}`,
+  )
 
   // 0. 先提取 viewBox 尺寸，用于后续判断背景路径
   const viewBoxMatch = svg.match(/viewBox="([^"]+)"/i)
@@ -209,11 +221,22 @@ function cleanSvgContent(svgString: string): string {
     '#d9d9d9',
   ]
   for (const color of bgColors) {
-    svg = svg.replace(new RegExp(`<rect[^>]*fill="${color}"[^>]*\\/>`, 'gi'), '')
-    svg = svg.replace(new RegExp(`<rect[^>]*fill="${color}"[^>]*>[^<]*<\\/rect>`, 'gi'), '')
-    svg = svg.replace(new RegExp(`<path[^>]*fill="${color}"[^>]*\\/>`, 'gi'), '')
+    svg = svg.replace(
+      new RegExp(`<rect[^>]*fill="${color}"[^>]*\\/>`, 'gi'),
+      '',
+    )
+    svg = svg.replace(
+      new RegExp(`<rect[^>]*fill="${color}"[^>]*>[^<]*<\\/rect>`, 'gi'),
+      '',
+    )
+    svg = svg.replace(
+      new RegExp(`<path[^>]*fill="${color}"[^>]*\\/>`, 'gi'),
+      '',
+    )
   }
-  console.log(`[cleanSvgContent] Step 1: 移除常见背景色, 删除 ${before1 - svg.length} 字符`)
+  console.log(
+    `[cleanSvgContent] Step 1: 移除常见背景色, 删除 ${before1 - svg.length} 字符`,
+  )
 
   // 2. 移除覆盖整个 viewBox 的背景路径（格式如 M0 0h24v24H0z）
   // 这种路径会创建一个与图标大小完全相同的背景矩形
@@ -225,10 +248,12 @@ function cleanSvgContent(svgString: string): string {
     // 匹配 d="M0 0h{width}v{height}H0z" 或类似变体
     const bgPathPattern = new RegExp(
       `<path[^>]*d="M0\\s*0\\s*[hH]${vbWidthLiteral}\\s*[vV]${vbHeightLiteral}\\s*[hH]0\\s*[zZ]?"[^>]*\\/>`,
-      'gi'
+      'gi',
     )
     svg = svg.replace(bgPathPattern, (match) => {
-      console.log(`[cleanSvgContent] 删除 viewBox 背景路径: ${match.substring(0, 80)}...`)
+      console.log(
+        `[cleanSvgContent] 删除 viewBox 背景路径: ${match.substring(0, 80)}...`,
+      )
       return ''
     })
     // 也处理 d 在其他位置的情况
@@ -237,10 +262,12 @@ function cleanSvgContent(svgString: string): string {
         `<path[^>]*d="M0\\s*0\\s*h${vbWidthLiteral}v${vbHeightLiteral}H0z?"[^>]*\\/>`,
         'gi',
       ),
-      ''
+      '',
     )
   }
-  console.log(`[cleanSvgContent] Step 2: 移除 viewBox 背景路径, 删除 ${before2 - svg.length} 字符`)
+  console.log(
+    `[cleanSvgContent] Step 2: 移除 viewBox 背景路径, 删除 ${before2 - svg.length} 字符`,
+  )
 
   // 3. 移除超大尺寸的 rect 背景或白色背景 rect
   const before3 = svg.length
@@ -253,31 +280,44 @@ function cleanSvgContent(svgString: string): string {
     const width = widthMatch ? parseFloat(widthMatch[1]) : 0
     // 检查是否有负坐标（页面级背景特征）
     const hasNegativeCoord = /[xy]=["']-/.test(match)
-    
+
     // 移除条件: 白色填充 + (超大尺寸 或 负坐标)
     if (isWhiteFill && (width > 100 || hasNegativeCoord)) {
-      console.log(`[cleanSvgContent] 删除白色背景 rect: ${match.substring(0, 100)}...`)
+      console.log(
+        `[cleanSvgContent] 删除白色背景 rect: ${match.substring(0, 100)}...`,
+      )
       return ''
     }
     // 移除条件: 任何填充 + 超大尺寸 (> 500)
     if (width > 500) {
-      console.log(`[cleanSvgContent] 删除大尺寸 rect: ${match.substring(0, 80)}...`)
+      console.log(
+        `[cleanSvgContent] 删除大尺寸 rect: ${match.substring(0, 80)}...`,
+      )
       return ''
     }
     return match
   })
-  console.log(`[cleanSvgContent] Step 3: 移除大尺寸/白色背景 rect, 删除 ${before3 - svg.length} 字符`)
+  console.log(
+    `[cleanSvgContent] Step 3: 移除大尺寸/白色背景 rect, 删除 ${before3 - svg.length} 字符`,
+  )
 
   // 4. 移除超大矩形背景 path（支持负坐标、相对命令和灰色背景）
   const before4 = svg.length
-  svg = svg.replace(/<path[^>]*d=["']([^"']+)["'][^>]*(?:\/>|>[^<]*<\/path>)/gi, (match, dValue) => {
-    if (isOversizedBackgroundRectPath(dValue, vbWidth, vbHeight)) {
-      console.log(`[cleanSvgContent] 删除超大背景 path: ${match.substring(0, 100)}...`)
-      return ''
-    }
-    return match
-  })
-  console.log(`[cleanSvgContent] Step 4: 移除超大背景 path, 删除 ${before4 - svg.length} 字符`)
+  svg = svg.replace(
+    /<path[^>]*d=["']([^"']+)["'][^>]*(?:\/>|>[^<]*<\/path>)/gi,
+    (match, dValue) => {
+      if (isOversizedBackgroundRectPath(dValue, vbWidth, vbHeight)) {
+        console.log(
+          `[cleanSvgContent] 删除超大背景 path: ${match.substring(0, 100)}...`,
+        )
+        return ''
+      }
+      return match
+    },
+  )
+  console.log(
+    `[cleanSvgContent] Step 4: 移除超大背景 path, 删除 ${before4 - svg.length} 字符`,
+  )
 
   // 5. 移除空的 clipPath 定义和 clip-path 属性
   svg = svg.replace(/<clipPath\s+id="[^"]*"\s*\/>/gi, '')
@@ -287,7 +327,7 @@ function cleanSvgContent(svgString: string): string {
 
   // 6. 简化空的 g 标签
   svg = svg.replace(/<g\s*>\s*<\/g>/gi, '')
-  
+
   // 7. 解包只有单个属性的 g 标签
   svg = svg.replace(/<g\s*>([^]*?)<\/g>/g, '$1')
 
@@ -297,50 +337,50 @@ function cleanSvgContent(svgString: string): string {
   for (const match of gradientRefs) {
     usedGradientIds.add(match[1])
   }
-  
+
   svg = svg.replace(
     /<linearGradient\s+id="([^"]+)"[^>]*>[\s\S]*?<\/linearGradient>/g,
-    (match, id) => usedGradientIds.has(id) ? match : ''
+    (match, id) => (usedGradientIds.has(id) ? match : ''),
   )
 
   // 9. 将驼峰命名的 SVG 属性转换回标准的连字符命名
   // Figma exportAsync 返回的 SVG 使用 JSX 风格的驼峰命名（如 stopColor）
   // 需要转换为标准 SVG 的连字符命名（如 stop-color）
   const jsxToSvgAttributes: Record<string, string> = {
-    'stopColor': 'stop-color',
-    'stopOpacity': 'stop-opacity',
-    'strokeWidth': 'stroke-width',
-    'strokeLinecap': 'stroke-linecap',
-    'strokeLinejoin': 'stroke-linejoin',
-    'strokeDasharray': 'stroke-dasharray',
-    'strokeDashoffset': 'stroke-dashoffset',
-    'strokeMiterlimit': 'stroke-miterlimit',
-    'strokeOpacity': 'stroke-opacity',
-    'fillRule': 'fill-rule',
-    'fillOpacity': 'fill-opacity',
-    'clipRule': 'clip-rule',
-    'clipPath': 'clip-path',
-    'fontFamily': 'font-family',
-    'fontSize': 'font-size',
-    'fontStyle': 'font-style',
-    'fontWeight': 'font-weight',
-    'textAnchor': 'text-anchor',
-    'textDecoration': 'text-decoration',
-    'dominantBaseline': 'dominant-baseline',
-    'alignmentBaseline': 'alignment-baseline',
-    'baselineShift': 'baseline-shift',
-    'colorInterpolation': 'color-interpolation',
-    'colorInterpolationFilters': 'color-interpolation-filters',
-    'floodColor': 'flood-color',
-    'floodOpacity': 'flood-opacity',
-    'lightingColor': 'lighting-color',
-    'markerStart': 'marker-start',
-    'markerMid': 'marker-mid',
-    'markerEnd': 'marker-end',
-    'paintOrder': 'paint-order',
-    'shapeRendering': 'shape-rendering',
-    'vectorEffect': 'vector-effect',
-    'pointerEvents': 'pointer-events',
+    stopColor: 'stop-color',
+    stopOpacity: 'stop-opacity',
+    strokeWidth: 'stroke-width',
+    strokeLinecap: 'stroke-linecap',
+    strokeLinejoin: 'stroke-linejoin',
+    strokeDasharray: 'stroke-dasharray',
+    strokeDashoffset: 'stroke-dashoffset',
+    strokeMiterlimit: 'stroke-miterlimit',
+    strokeOpacity: 'stroke-opacity',
+    fillRule: 'fill-rule',
+    fillOpacity: 'fill-opacity',
+    clipRule: 'clip-rule',
+    clipPath: 'clip-path',
+    fontFamily: 'font-family',
+    fontSize: 'font-size',
+    fontStyle: 'font-style',
+    fontWeight: 'font-weight',
+    textAnchor: 'text-anchor',
+    textDecoration: 'text-decoration',
+    dominantBaseline: 'dominant-baseline',
+    alignmentBaseline: 'alignment-baseline',
+    baselineShift: 'baseline-shift',
+    colorInterpolation: 'color-interpolation',
+    colorInterpolationFilters: 'color-interpolation-filters',
+    floodColor: 'flood-color',
+    floodOpacity: 'flood-opacity',
+    lightingColor: 'lighting-color',
+    markerStart: 'marker-start',
+    markerMid: 'marker-mid',
+    markerEnd: 'marker-end',
+    paintOrder: 'paint-order',
+    shapeRendering: 'shape-rendering',
+    vectorEffect: 'vector-effect',
+    pointerEvents: 'pointer-events',
   }
 
   for (const [jsxAttr, svgAttr] of Object.entries(jsxToSvgAttributes)) {
@@ -353,8 +393,12 @@ function cleanSvgContent(svgString: string): string {
   svg = svg.replace(/>\s+</g, '><')
   svg = svg.replace(/\s{2,}/g, ' ')
 
-  console.log(`[cleanSvgContent] 总计: ${originalLength} -> ${svg.length}, 删除 ${originalLength - svg.length} 字符`)
-  console.log(`[cleanSvgContent] 清理后 SVG 前 200 字符: ${svg.substring(0, 200)}`)
+  console.log(
+    `[cleanSvgContent] 总计: ${originalLength} -> ${svg.length}, 删除 ${originalLength - svg.length} 字符`,
+  )
+  console.log(
+    `[cleanSvgContent] 清理后 SVG 前 200 字符: ${svg.substring(0, 200)}`,
+  )
   return svg.trim()
 }
 
@@ -532,13 +576,17 @@ async function exportIconsToSvg(icons: IconInfo[]): Promise<IconWithSvg[]> {
   })
 
   // 分批并行处理
-  for (let batchStart = 0; batchStart < icons.length; batchStart += BATCH_SIZE) {
+  for (
+    let batchStart = 0;
+    batchStart < icons.length;
+    batchStart += BATCH_SIZE
+  ) {
     const batch = icons.slice(batchStart, batchStart + BATCH_SIZE)
-    
+
     const batchResults = await Promise.all(
       batch.map(async (icon, batchIndex) => {
         const globalIndex = batchStart + batchIndex
-        
+
         try {
           // 使用异步版本获取节点
           const node = (await figma.getNodeByIdAsync(icon.id)) as SceneNode
@@ -557,7 +605,7 @@ async function exportIconsToSvg(icons: IconInfo[]): Promise<IconWithSvg[]> {
 
           // 将 Uint8Array 转换为字符串
           let svgString = String.fromCharCode.apply(null, Array.from(svgData))
-          
+
           // 清理 SVG 中的问题元素
           svgString = cleanSvgContent(svgString)
 
@@ -569,7 +617,7 @@ async function exportIconsToSvg(icons: IconInfo[]): Promise<IconWithSvg[]> {
           console.error(`导出图标 ${icon.name} 失败:`, error)
           return null
         }
-      })
+      }),
     )
 
     // 收集有效结果
@@ -662,9 +710,9 @@ async function handleSaveConfig(config: PluginConfig): Promise<void> {
   console.log('[DEBUG] handleSaveConfig() called with:', {
     githubRepo: config.githubRepo,
     githubToken: config.githubToken ? '***已填写***' : '(空)',
-    defaultBranch: config.defaultBranch
+    defaultBranch: config.defaultBranch,
   })
-  
+
   if (!config.githubRepo || !config.githubToken) {
     console.log('[DEBUG] Validation failed: missing required fields')
     throw new Error('请填写 GitHub 仓库地址和 Token')
@@ -703,7 +751,12 @@ async function handleSaveConfig(config: PluginConfig): Promise<void> {
     console.log('[DEBUG] Config saved successfully!')
   } catch (storageError) {
     console.error('[DEBUG] Failed to save config:', storageError)
-    throw new Error('保存配置失败，请检查 Figma 权限: ' + (storageError instanceof Error ? storageError.message : String(storageError)))
+    throw new Error(
+      '保存配置失败，请检查 Figma 权限: ' +
+        (storageError instanceof Error
+          ? storageError.message
+          : String(storageError)),
+    )
   }
 
   console.log('[DEBUG] Sending config-loaded response to UI...')

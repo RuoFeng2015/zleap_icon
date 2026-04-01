@@ -60,9 +60,7 @@ function parsePathCommands(d: string): PathCommand[] {
   const matches = Array.from(d.matchAll(/([a-zA-Z])([^a-zA-Z]*)/g))
   return matches.map((match) => ({
     command: match[1],
-    values: (match[2].match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || []).map(
-      Number,
-    ),
+    values: (match[2].match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || []).map(Number),
   }))
 }
 
@@ -98,12 +96,9 @@ function getSimpleHvRectMetrics(d: string): {
   const v1 = commands[2]
   const h2 = commands[3]
 
-  const xAfterH1 =
-    h1.command === 'H' ? h1.values[0] : startX + h1.values[0]
-  const yAfterV1 =
-    v1.command === 'V' ? v1.values[0] : startY + v1.values[0]
-  const xAfterH2 =
-    h2.command === 'H' ? h2.values[0] : xAfterH1 + h2.values[0]
+  const xAfterH1 = h1.command === 'H' ? h1.values[0] : startX + h1.values[0]
+  const yAfterV1 = v1.command === 'V' ? v1.values[0] : startY + v1.values[0]
+  const xAfterH2 = h2.command === 'H' ? h2.values[0] : xAfterH1 + h2.values[0]
 
   const minX = Math.min(startX, xAfterH1, xAfterH2)
   const maxX = Math.max(startX, xAfterH1, xAfterH2)
@@ -168,7 +163,9 @@ const cleanFigmaExport: CustomPlugin = {
 
           // 移除泄漏进图标的设计稿背景矩形（支持负坐标/相对命令）
           if (node.name === 'path' && node.attributes?.d) {
-            if (isOversizedRectBackgroundPath(node.attributes.d, currentViewBox)) {
+            if (
+              isOversizedRectBackgroundPath(node.attributes.d, currentViewBox)
+            ) {
               removeNodeFromParent(node, parentNode)
               return
             }
@@ -181,7 +178,9 @@ const cleanFigmaExport: CustomPlugin = {
                 if (child.type === 'element' && child.name === 'path') {
                   const fill = child.attributes?.fill
                   // 保留非白色填充的元素
-                  return fill !== 'white' && fill !== '#fff' && fill !== '#ffffff'
+                  return (
+                    fill !== 'white' && fill !== '#fff' && fill !== '#ffffff'
+                  )
                 }
                 return true
               })
@@ -189,7 +188,11 @@ const cleanFigmaExport: CustomPlugin = {
           }
 
           // 移除带有 transform="translate(负值)" 的大背景
-          if (node.name === 'path' && node.attributes?.transform && node.attributes?.d) {
+          if (
+            node.name === 'path' &&
+            node.attributes?.transform &&
+            node.attributes?.d
+          ) {
             const transform = node.attributes.transform
             if (
               transform.includes('translate(-') &&

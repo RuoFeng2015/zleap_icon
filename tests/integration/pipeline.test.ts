@@ -49,7 +49,7 @@ const TEST_OUTPUT_DIR = 'tests/integration/.test-output'
  * Creates mock Figma file response with icon components
  */
 function createMockFigmaResponse(
-  icons: Array<{ name: string; width: number; height: number }>
+  icons: Array<{ name: string; width: number; height: number }>,
 ): FigmaFileResponse {
   const components: Record<string, FigmaComponent> = {}
 
@@ -98,7 +98,7 @@ function createMockSvgWithStrokes(name: string, size: number = 24): string {
 function createIconMetadata(
   name: string,
   size: number = 24,
-  svgContent?: string
+  svgContent?: string,
 ): IconMetadata {
   return {
     id: `icon-${name}`,
@@ -238,7 +238,9 @@ describe('End-to-End Integration: Icon Sync Pipeline', () => {
       const result = transformSvg(rawSvg)
 
       // Assert
-      expect(result.svgContent).not.toContain('M-220.438-216H112.5v856.636h-332.938z')
+      expect(result.svgContent).not.toContain(
+        'M-220.438-216H112.5v856.636h-332.938z',
+      )
       expect(result.svgContent).not.toContain('fill="#D9D9D9"')
       expect((result.svgContent.match(/<path/g) || []).length).toBe(3)
     })
@@ -388,7 +390,7 @@ describe('End-to-End Integration: Icon Sync Pipeline', () => {
       // Assert
       expect(result.isValid).toBe(false)
       expect(result.errors.some((e) => e.rule === 'forbidden-elements')).toBe(
-        true
+        true,
       )
     })
   })
@@ -589,7 +591,7 @@ describe('End-to-End Integration: Icon Sync Pipeline', () => {
         // Note: SVG transformer preserves original colors; the component layer handles currentColor
         // Size should be optimized
         expect(transformed.optimizedSize).toBeLessThanOrEqual(
-          transformed.originalSize
+          transformed.originalSize,
         )
         // SVG should have a fill attribute (original color preserved)
         expect(transformed.svgContent).toMatch(/fill="[^"]+"/)
@@ -597,7 +599,7 @@ describe('End-to-End Integration: Icon Sync Pipeline', () => {
 
       // Step 5: Generate React components
       const components = transformedIcons.map(({ metadata, transformed }) =>
-        generateComponent(metadata, transformed.jsxContent)
+        generateComponent(metadata, transformed.jsxContent),
       )
 
       expect(components).toHaveLength(3)
@@ -631,7 +633,7 @@ describe('End-to-End Integration: Icon Sync Pipeline', () => {
 
       // Step 10: Validate all icons
       const validationResults = iconsWithSvg.map((icon) =>
-        validateIcon(icon, defaultValidationRules)
+        validateIcon(icon, defaultValidationRules),
       )
       validationResults.forEach((result) => {
         expect(result.isValid).toBe(true)
@@ -643,7 +645,7 @@ describe('End-to-End Integration: Icon Sync Pipeline', () => {
           name: i.normalizedName,
           originalName: i.originalName,
         })),
-        'arrow'
+        'arrow',
       )
       expect(searchResults).toHaveLength(1)
     })
