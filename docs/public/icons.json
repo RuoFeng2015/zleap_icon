@@ -1,31 +1,8 @@
 {
-  "version": "0.0.77",
-  "syncMode": "incremental",
-  "generatedAt": "2026-04-01T09:19:26.179Z",
-  "totalCount": 74,
+  "version": "2026.04.01",
+  "generatedAt": "2026-04-01T09:22:48.073Z",
+  "totalCount": 72,
   "icons": [
-    {
-      "name": "IconFrame2",
-      "originalName": "Frame2",
-      "svgPath": "svg/Frame2.svg",
-      "componentPath": "src/icons/IconFrame2.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-04-01T09:19:26.178Z"
-    },
-    {
-      "name": "IconFrame1",
-      "originalName": "Frame1",
-      "svgPath": "svg/Frame1.svg",
-      "componentPath": "src/icons/IconFrame1.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-04-01T07:57:52.455Z"
-    },
     {
       "name": "IconFrame",
       "originalName": "Frame",
