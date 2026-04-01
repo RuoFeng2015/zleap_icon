@@ -65,6 +65,103 @@ const UI_HEIGHT = 550
 // SVG Cleanup Utilities
 // ============================================
 
+interface SimpleRectMetrics {
+  minX: number
+  maxX: number
+  minY: number
+  maxY: number
+  width: number
+  height: number
+}
+
+function escapeRegexLiteral(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}
+
+function parsePathCommands(d: string): Array<{ command: string; values: number[] }> {
+  const commands: Array<{ command: string; values: number[] }> = []
+  const commandRegex = /([a-zA-Z])([^a-zA-Z]*)/g
+
+  let match: RegExpExecArray | null
+  while ((match = commandRegex.exec(d)) !== null) {
+    const values = (match[2].match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || []).map(Number)
+    commands.push({
+      command: match[1],
+      values,
+    })
+  }
+
+  return commands
+}
+
+function getSimpleHvRectMetrics(d: string): SimpleRectMetrics | null {
+  const commands = parsePathCommands(d)
+  const commandSeq = commands.map((item) => item.command.toLowerCase()).join('')
+
+  if (commandSeq !== 'mhvh' && commandSeq !== 'mhvhz') {
+    return null
+  }
+
+  if (
+    commands.length < 4 ||
+    commands[0].values.length < 2 ||
+    commands[1].values.length < 1 ||
+    commands[2].values.length < 1 ||
+    commands[3].values.length < 1
+  ) {
+    return null
+  }
+
+  const startX = commands[0].values[0]
+  const startY = commands[0].values[1]
+
+  const xAfterH1 =
+    commands[1].command === 'H' ? commands[1].values[0] : startX + commands[1].values[0]
+  const yAfterV1 =
+    commands[2].command === 'V' ? commands[2].values[0] : startY + commands[2].values[0]
+  const xAfterH2 =
+    commands[3].command === 'H' ? commands[3].values[0] : xAfterH1 + commands[3].values[0]
+
+  const minX = Math.min(startX, xAfterH1, xAfterH2)
+  const maxX = Math.max(startX, xAfterH1, xAfterH2)
+  const minY = Math.min(startY, yAfterV1)
+  const maxY = Math.max(startY, yAfterV1)
+
+  return {
+    minX,
+    maxX,
+    minY,
+    maxY,
+    width: Math.abs(xAfterH1 - startX),
+    height: Math.abs(yAfterV1 - startY),
+  }
+}
+
+function isOversizedBackgroundRectPath(
+  d: string,
+  viewBoxWidth: number,
+  viewBoxHeight: number,
+): boolean {
+  const metrics = getSimpleHvRectMetrics(d)
+  if (!metrics) {
+    return false
+  }
+
+  if (viewBoxWidth <= 0 || viewBoxHeight <= 0) {
+    return metrics.width > 200 || metrics.height > 200
+  }
+
+  const isHuge =
+    metrics.width > viewBoxWidth * 3 || metrics.height > viewBoxHeight * 3
+  const isFarOutside =
+    metrics.minX < -viewBoxWidth ||
+    metrics.maxX > viewBoxWidth * 2 ||
+    metrics.minY < -viewBoxHeight ||
+    metrics.maxY > viewBoxHeight * 2
+
+  return isHuge || isFarOutside
+}
+
 /**
  * 清理 Figma 导出的 SVG 中的问题元素
  * - 移除画板背景（#F5F5F5、#1E1E1E 等常见背景色填充的全尺寸矩形）
@@ -81,15 +178,36 @@ function cleanSvgContent(svgString: string): string {
   console.log(`[cleanSvgContent] 原始 SVG 前 200 字符: ${svg.substring(0, 200)}`)
 
   // 0. 先提取 viewBox 尺寸，用于后续判断背景路径
-  const viewBoxMatch = svg.match(/viewBox="0 0 (\d+) (\d+)"/)
-  const vbWidth = viewBoxMatch ? parseInt(viewBoxMatch[1], 10) : 0
-  const vbHeight = viewBoxMatch ? parseInt(viewBoxMatch[2], 10) : 0
+  const viewBoxMatch = svg.match(/viewBox="([^"]+)"/i)
+  let vbWidth = 0
+  let vbHeight = 0
+
+  if (viewBoxMatch) {
+    const parts = viewBoxMatch[1]
+      .trim()
+      .split(/[\s,]+/)
+      .map((part) => Number(part))
+
+    if (parts.length === 4 && parts.every((value) => Number.isFinite(value))) {
+      vbWidth = Math.abs(parts[2])
+      vbHeight = Math.abs(parts[3])
+    }
+  }
   console.log(`[cleanSvgContent] ViewBox 尺寸: ${vbWidth} x ${vbHeight}`)
 
   // 1. 移除常见背景色填充的 rect 和 path 元素
   // 包括 #F5F5F5（浅灰）、#1E1E1E（Figma 深色主题背景）、#FFFFFF（白色）
   const before1 = svg.length
-  const bgColors = ['#F5F5F5', '#1E1E1E', '#FFFFFF', '#ffffff', '#1e1e1e', '#f5f5f5']
+  const bgColors = [
+    '#F5F5F5',
+    '#1E1E1E',
+    '#FFFFFF',
+    '#ffffff',
+    '#1e1e1e',
+    '#f5f5f5',
+    '#D9D9D9',
+    '#d9d9d9',
+  ]
   for (const color of bgColors) {
     svg = svg.replace(new RegExp(`<rect[^>]*fill="${color}"[^>]*\\/>`, 'gi'), '')
     svg = svg.replace(new RegExp(`<rect[^>]*fill="${color}"[^>]*>[^<]*<\\/rect>`, 'gi'), '')
@@ -101,9 +219,12 @@ function cleanSvgContent(svgString: string): string {
   // 这种路径会创建一个与图标大小完全相同的背景矩形
   const before2 = svg.length
   if (vbWidth > 0 && vbHeight > 0) {
+    const vbWidthLiteral = escapeRegexLiteral(String(vbWidth))
+    const vbHeightLiteral = escapeRegexLiteral(String(vbHeight))
+
     // 匹配 d="M0 0h{width}v{height}H0z" 或类似变体
     const bgPathPattern = new RegExp(
-      `<path[^>]*d="M0\\s*0\\s*[hH]${vbWidth}\\s*[vV]${vbHeight}\\s*[hH]0\\s*[zZ]?"[^>]*\\/>`,
+      `<path[^>]*d="M0\\s*0\\s*[hH]${vbWidthLiteral}\\s*[vV]${vbHeightLiteral}\\s*[hH]0\\s*[zZ]?"[^>]*\\/>`,
       'gi'
     )
     svg = svg.replace(bgPathPattern, (match) => {
@@ -112,7 +233,10 @@ function cleanSvgContent(svgString: string): string {
     })
     // 也处理 d 在其他位置的情况
     svg = svg.replace(
-      new RegExp(`<path[^>]*d="M0\\s*0\\s*h${vbWidth}v${vbHeight}H0z?"[^>]*\\/>`, 'gi'),
+      new RegExp(
+        `<path[^>]*d="M0\\s*0\\s*h${vbWidthLiteral}v${vbHeightLiteral}H0z?"[^>]*\\/>`,
+        'gi',
+      ),
       ''
     )
   }
@@ -144,31 +268,16 @@ function cleanSvgContent(svgString: string): string {
   })
   console.log(`[cleanSvgContent] Step 3: 移除大尺寸/白色背景 rect, 删除 ${before3 - svg.length} 字符`)
 
-  // 4. 移除 white 背景 path（带有负坐标、M0 开头、或超大尺寸）
+  // 4. 移除超大矩形背景 path（支持负坐标、相对命令和灰色背景）
   const before4 = svg.length
-  svg = svg.replace(/<path[^>]*fill=["']white["'][^>]*\/>/gi, (match) => {
-    // 提取 d 属性的值
-    const dMatch = match.match(/d=["']([^"']+)["']/)
-    const dValue = dMatch ? dMatch[1] : ''
-    
-    // 检查是否是大背景路径
-    const isBackground = 
-      // d 包含负数坐标（M后跟负数，如 M-162.854 或 M -100）
-      /M\s*-?\d/.test(dValue) && dValue.includes('-') ||
-      // d 以 M0 开头（全覆盖背景）
-      /^M\s*0/.test(dValue) ||
-      // 路径尺寸超大（h/v 命令后跟 3 位数以上的数字）
-      /[hHvV]-?\d{3,}/.test(dValue) ||
-      // 路径包含负数坐标
-      /[Mm]\s*-\d/.test(dValue)
-    
-    if (isBackground) {
-      console.log(`[cleanSvgContent] 删除白色背景: ${match.substring(0, 100)}...`)
+  svg = svg.replace(/<path[^>]*d=["']([^"']+)["'][^>]*(?:\/>|>[^<]*<\/path>)/gi, (match, dValue) => {
+    if (isOversizedBackgroundRectPath(dValue, vbWidth, vbHeight)) {
+      console.log(`[cleanSvgContent] 删除超大背景 path: ${match.substring(0, 100)}...`)
       return ''
     }
     return match
   })
-  console.log(`[cleanSvgContent] Step 4: 移除 white 背景, 删除 ${before4 - svg.length} 字符`)
+  console.log(`[cleanSvgContent] Step 4: 移除超大背景 path, 删除 ${before4 - svg.length} 字符`)
 
   // 5. 移除空的 clipPath 定义和 clip-path 属性
   svg = svg.replace(/<clipPath\s+id="[^"]*"\s*\/>/gi, '')

@@ -80,9 +80,68 @@ var __read = (this && this.__read) || function (o, n) {
 var CONFIG_KEY = 'icon-sync-config';
 var UI_WIDTH = 400;
 var UI_HEIGHT = 550;
-// ============================================
-// SVG Cleanup Utilities
-// ============================================
+function escapeRegexLiteral(value) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+function parsePathCommands(d) {
+    var commands = [];
+    var commandRegex = /([a-zA-Z])([^a-zA-Z]*)/g;
+    var match;
+    while ((match = commandRegex.exec(d)) !== null) {
+        var values = (match[2].match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || []).map(Number);
+        commands.push({
+            command: match[1],
+            values: values,
+        });
+    }
+    return commands;
+}
+function getSimpleHvRectMetrics(d) {
+    var commands = parsePathCommands(d);
+    var commandSeq = commands.map(function (item) { return item.command.toLowerCase(); }).join('');
+    if (commandSeq !== 'mhvh' && commandSeq !== 'mhvhz') {
+        return null;
+    }
+    if (commands.length < 4 ||
+        commands[0].values.length < 2 ||
+        commands[1].values.length < 1 ||
+        commands[2].values.length < 1 ||
+        commands[3].values.length < 1) {
+        return null;
+    }
+    var startX = commands[0].values[0];
+    var startY = commands[0].values[1];
+    var xAfterH1 = commands[1].command === 'H' ? commands[1].values[0] : startX + commands[1].values[0];
+    var yAfterV1 = commands[2].command === 'V' ? commands[2].values[0] : startY + commands[2].values[0];
+    var xAfterH2 = commands[3].command === 'H' ? commands[3].values[0] : xAfterH1 + commands[3].values[0];
+    var minX = Math.min(startX, xAfterH1, xAfterH2);
+    var maxX = Math.max(startX, xAfterH1, xAfterH2);
+    var minY = Math.min(startY, yAfterV1);
+    var maxY = Math.max(startY, yAfterV1);
+    return {
+        minX: minX,
+        maxX: maxX,
+        minY: minY,
+        maxY: maxY,
+        width: Math.abs(xAfterH1 - startX),
+        height: Math.abs(yAfterV1 - startY),
+    };
+}
+function isOversizedBackgroundRectPath(d, viewBoxWidth, viewBoxHeight) {
+    var metrics = getSimpleHvRectMetrics(d);
+    if (!metrics) {
+        return false;
+    }
+    if (viewBoxWidth <= 0 || viewBoxHeight <= 0) {
+        return metrics.width > 200 || metrics.height > 200;
+    }
+    var isHuge = metrics.width > viewBoxWidth * 3 || metrics.height > viewBoxHeight * 3;
+    var isFarOutside = metrics.minX < -viewBoxWidth ||
+        metrics.maxX > viewBoxWidth * 2 ||
+        metrics.minY < -viewBoxHeight ||
+        metrics.maxY > viewBoxHeight * 2;
+    return isHuge || isFarOutside;
+}
 /**
  * 清理 Figma 导出的 SVG 中的问题元素
  * - 移除画板背景（#F5F5F5、#1E1E1E 等常见背景色填充的全尺寸矩形）
@@ -98,14 +157,33 @@ function cleanSvgContent(svgString) {
     // 打印原始 SVG 片段用于调试
     console.log("[cleanSvgContent] \u539F\u59CB SVG \u524D 200 \u5B57\u7B26: ".concat(svg.substring(0, 200)));
     // 0. 先提取 viewBox 尺寸，用于后续判断背景路径
-    var viewBoxMatch = svg.match(/viewBox="0 0 (\d+) (\d+)"/);
-    var vbWidth = viewBoxMatch ? parseInt(viewBoxMatch[1], 10) : 0;
-    var vbHeight = viewBoxMatch ? parseInt(viewBoxMatch[2], 10) : 0;
+    var viewBoxMatch = svg.match(/viewBox="([^"]+)"/i);
+    var vbWidth = 0;
+    var vbHeight = 0;
+    if (viewBoxMatch) {
+        var parts = viewBoxMatch[1]
+            .trim()
+            .split(/[\s,]+/)
+            .map(function (part) { return Number(part); });
+        if (parts.length === 4 && parts.every(function (value) { return Number.isFinite(value); })) {
+            vbWidth = Math.abs(parts[2]);
+            vbHeight = Math.abs(parts[3]);
+        }
+    }
     console.log("[cleanSvgContent] ViewBox \u5C3A\u5BF8: ".concat(vbWidth, " x ").concat(vbHeight));
     // 1. 移除常见背景色填充的 rect 和 path 元素
     // 包括 #F5F5F5（浅灰）、#1E1E1E（Figma 深色主题背景）、#FFFFFF（白色）
     var before1 = svg.length;
-    var bgColors = ['#F5F5F5', '#1E1E1E', '#FFFFFF', '#ffffff', '#1e1e1e', '#f5f5f5'];
+    var bgColors = [
+        '#F5F5F5',
+        '#1E1E1E',
+        '#FFFFFF',
+        '#ffffff',
+        '#1e1e1e',
+        '#f5f5f5',
+        '#D9D9D9',
+        '#d9d9d9',
+    ];
     try {
         for (var bgColors_1 = __values(bgColors), bgColors_1_1 = bgColors_1.next(); !bgColors_1_1.done; bgColors_1_1 = bgColors_1.next()) {
             var color = bgColors_1_1.value;
@@ -126,14 +204,16 @@ function cleanSvgContent(svgString) {
     // 这种路径会创建一个与图标大小完全相同的背景矩形
     var before2 = svg.length;
     if (vbWidth > 0 && vbHeight > 0) {
+        var vbWidthLiteral = escapeRegexLiteral(String(vbWidth));
+        var vbHeightLiteral = escapeRegexLiteral(String(vbHeight));
         // 匹配 d="M0 0h{width}v{height}H0z" 或类似变体
-        var bgPathPattern = new RegExp("<path[^>]*d=\"M0\\s*0\\s*[hH]".concat(vbWidth, "\\s*[vV]").concat(vbHeight, "\\s*[hH]0\\s*[zZ]?\"[^>]*\\/>"), 'gi');
+        var bgPathPattern = new RegExp("<path[^>]*d=\"M0\\s*0\\s*[hH]".concat(vbWidthLiteral, "\\s*[vV]").concat(vbHeightLiteral, "\\s*[hH]0\\s*[zZ]?\"[^>]*\\/>"), 'gi');
         svg = svg.replace(bgPathPattern, function (match) {
             console.log("[cleanSvgContent] \u5220\u9664 viewBox \u80CC\u666F\u8DEF\u5F84: ".concat(match.substring(0, 80), "..."));
             return '';
         });
         // 也处理 d 在其他位置的情况
-        svg = svg.replace(new RegExp("<path[^>]*d=\"M0\\s*0\\s*h".concat(vbWidth, "v").concat(vbHeight, "H0z?\"[^>]*\\/>"), 'gi'), '');
+        svg = svg.replace(new RegExp("<path[^>]*d=\"M0\\s*0\\s*h".concat(vbWidthLiteral, "v").concat(vbHeightLiteral, "H0z?\"[^>]*\\/>"), 'gi'), '');
     }
     console.log("[cleanSvgContent] Step 2: \u79FB\u9664 viewBox \u80CC\u666F\u8DEF\u5F84, \u5220\u9664 ".concat(before2 - svg.length, " \u5B57\u7B26"));
     // 3. 移除超大尺寸的 rect 背景或白色背景 rect
@@ -160,29 +240,16 @@ function cleanSvgContent(svgString) {
         return match;
     });
     console.log("[cleanSvgContent] Step 3: \u79FB\u9664\u5927\u5C3A\u5BF8/\u767D\u8272\u80CC\u666F rect, \u5220\u9664 ".concat(before3 - svg.length, " \u5B57\u7B26"));
-    // 4. 移除 white 背景 path（带有负坐标、M0 开头、或超大尺寸）
+    // 4. 移除超大矩形背景 path（支持负坐标、相对命令和灰色背景）
     var before4 = svg.length;
-    svg = svg.replace(/<path[^>]*fill=["']white["'][^>]*\/>/gi, function (match) {
-        // 提取 d 属性的值
-        var dMatch = match.match(/d=["']([^"']+)["']/);
-        var dValue = dMatch ? dMatch[1] : '';
-        // 检查是否是大背景路径
-        var isBackground = 
-        // d 包含负数坐标（M后跟负数，如 M-162.854 或 M -100）
-        /M\s*-?\d/.test(dValue) && dValue.includes('-') ||
-            // d 以 M0 开头（全覆盖背景）
-            /^M\s*0/.test(dValue) ||
-            // 路径尺寸超大（h/v 命令后跟 3 位数以上的数字）
-            /[hHvV]-?\d{3,}/.test(dValue) ||
-            // 路径包含负数坐标
-            /[Mm]\s*-\d/.test(dValue);
-        if (isBackground) {
-            console.log("[cleanSvgContent] \u5220\u9664\u767D\u8272\u80CC\u666F: ".concat(match.substring(0, 100), "..."));
+    svg = svg.replace(/<path[^>]*d=["']([^"']+)["'][^>]*(?:\/>|>[^<]*<\/path>)/gi, function (match, dValue) {
+        if (isOversizedBackgroundRectPath(dValue, vbWidth, vbHeight)) {
+            console.log("[cleanSvgContent] \u5220\u9664\u8D85\u5927\u80CC\u666F path: ".concat(match.substring(0, 100), "..."));
             return '';
         }
         return match;
     });
-    console.log("[cleanSvgContent] Step 4: \u79FB\u9664 white \u80CC\u666F, \u5220\u9664 ".concat(before4 - svg.length, " \u5B57\u7B26"));
+    console.log("[cleanSvgContent] Step 4: \u79FB\u9664\u8D85\u5927\u80CC\u666F path, \u5220\u9664 ".concat(before4 - svg.length, " \u5B57\u7B26"));
     // 5. 移除空的 clipPath 定义和 clip-path 属性
     svg = svg.replace(/<clipPath\s+id="[^"]*"\s*\/>/gi, '');
     svg = svg.replace(/<clipPath\s+id="[^"]*"\s*><\/clipPath>/gi, '');
