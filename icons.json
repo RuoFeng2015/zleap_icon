@@ -1,7 +1,6 @@
 {
-  "version": "0.0.77",
-  "syncMode": "incremental",
-  "generatedAt": "2026-04-01T09:19:26.179Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-04-01T09:19:48.928Z",
   "totalCount": 74,
   "icons": [
     {
@@ -13,7 +12,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-04-01T09:19:26.178Z"
+      "createdAt": "2026-04-01T09:19:48.895Z"
     },
     {
       "name": "IconFrame1",
