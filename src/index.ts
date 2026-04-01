@@ -14,6 +14,7 @@ import { IconCaiJing1 } from './icons/IconCaiJing1';
 import { IconCheck } from './icons/IconCheck';
 import { IconDuoXuan } from './icons/IconDuoXuan';
 import { IconFenXiang } from './icons/IconFenXiang';
+import { IconFrame } from './icons/IconFrame';
 import { IconFuZhiLianJie } from './icons/IconFuZhiLianJie';
 import { IconGengDuo } from './icons/IconGengDuo';
 import { IconGengDuo1 } from './icons/IconGengDuo1';
@@ -86,6 +87,7 @@ export { IconCaiJing1, type IconCaiJing1Props } from './icons/IconCaiJing1';
 export { IconCheck, type IconCheckProps } from './icons/IconCheck';
 export { IconDuoXuan, type IconDuoXuanProps } from './icons/IconDuoXuan';
 export { IconFenXiang, type IconFenXiangProps } from './icons/IconFenXiang';
+export { IconFrame, type IconFrameProps } from './icons/IconFrame';
 export { IconFuZhiLianJie, type IconFuZhiLianJieProps } from './icons/IconFuZhiLianJie';
 export { IconGengDuo, type IconGengDuoProps } from './icons/IconGengDuo';
 export { IconGengDuo1, type IconGengDuo1Props } from './icons/IconGengDuo1';
@@ -162,6 +164,7 @@ export const allIcons = {
   IconCheck,
   IconDuoXuan,
   IconFenXiang,
+  IconFrame,
   IconFuZhiLianJie,
   IconGengDuo,
   IconGengDuo1,
