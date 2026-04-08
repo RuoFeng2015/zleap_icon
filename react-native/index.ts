@@ -49,6 +49,7 @@ import { IconShouCang } from './icons/IconShouCang'
 import { IconShouYe } from './icons/IconShouYe'
 import { IconShuaXin } from './icons/IconShuaXin'
 import { IconSouSuo } from './icons/IconSouSuo'
+import { IconSouSuo1 } from './icons/IconSouSuo1'
 import { IconSuoDing } from './icons/IconSuoDing'
 import { IconTanSuo } from './icons/IconTanSuo'
 import { IconTiYu } from './icons/IconTiYu'
@@ -124,6 +125,7 @@ export { IconShouCang, type IconShouCangProps } from './icons/IconShouCang'
 export { IconShouYe, type IconShouYeProps } from './icons/IconShouYe'
 export { IconShuaXin, type IconShuaXinProps } from './icons/IconShuaXin'
 export { IconSouSuo, type IconSouSuoProps } from './icons/IconSouSuo'
+export { IconSouSuo1, type IconSouSuo1Props } from './icons/IconSouSuo1'
 export { IconSuoDing, type IconSuoDingProps } from './icons/IconSuoDing'
 export { IconTanSuo, type IconTanSuoProps } from './icons/IconTanSuo'
 export { IconTiYu, type IconTiYuProps } from './icons/IconTiYu'
@@ -200,6 +202,7 @@ export const allIcons = {
   IconShouYe,
   IconShuaXin,
   IconSouSuo,
+  IconSouSuo1,
   IconSuoDing,
   IconTanSuo,
   IconTiYu,

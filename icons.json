@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-04-01T09:19:48.928Z",
-  "totalCount": 74,
+  "generatedAt": "2026-04-08T09:45:18.209Z",
+  "totalCount": 75,
   "icons": [
+    {
+      "name": "IconSouSuo1",
+      "originalName": "搜索1",
+      "svgPath": "svg/搜索1.svg",
+      "componentPath": "src/icons/IconSouSuo1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-04-08T09:45:18.182Z"
+    },
     {
       "name": "IconFrame2",
       "originalName": "Frame2",
