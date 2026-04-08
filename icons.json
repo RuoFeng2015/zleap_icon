@@ -1,19 +1,18 @@
 {
-  "version": "0.0.78",
-  "syncMode": "incremental",
-  "generatedAt": "2026-04-08T09:44:42.534Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-04-08T09:45:18.209Z",
   "totalCount": 75,
   "icons": [
     {
-      "name": "Icon搜索1",
+      "name": "IconSouSuo1",
       "originalName": "搜索1",
       "svgPath": "svg/搜索1.svg",
-      "componentPath": "src/icons/Icon搜索1.tsx",
+      "componentPath": "src/icons/IconSouSuo1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-04-08T09:44:42.534Z"
+      "createdAt": "2026-04-08T09:45:18.182Z"
     },
     {
       "name": "IconFrame2",
