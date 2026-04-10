@@ -485,11 +485,14 @@ body {
   background-color: #1e1e1e;
   color: #d4d4d4;
   border-radius: 12px;
-  font-family: "SF Mono", "Menlo", "Fira Code", monospace;
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
   font-size: 0.8rem;
   line-height: 1.6;
-  white-space: pre-wrap;
-  word-break: break-all;
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
   border: 1px solid rgba(0,0,0,0.1);
   overflow-x: auto;
 }
