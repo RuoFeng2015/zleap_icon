@@ -265,14 +265,14 @@ function createRnLegacyCompatibility(validEntries, aliasConfig, fallbackDefaultC
 
   if (preserveProjectSvg) {
     importLines.push(`import type { IconName as ProjectIconName } from '${projectIconMapImport}';`);
-    importLines.push(`import { iconImportMap as rawProjectIconImportMap } from '${projectIconMapImport}';`);
+    importLines.push(`import { iconImportMap as projectIconImportMap } from '${projectIconMapImport}';`);
   }
 
   const projectFallbackBootstrap = preserveProjectSvg
     ? ''
     : `
 type ProjectIconName = never;
-const rawProjectIconImportMap = {};
+const projectIconImportMap = null;
 `;
 
   const resolveColorCode = useThemeColors
@@ -293,12 +293,7 @@ const rawProjectIconImportMap = {};
     code: `
 const EMPTY_SVG = '<svg viewBox="0 0 24 24"></svg>';
 ${projectFallbackBootstrap}
-type ProjectIconComponent = React.ComponentType<any>;
-type ProjectIconModule = { default?: ProjectIconComponent | null };
-type ProjectIconLoader = () => Promise<ProjectIconModule>;
-const projectIconImportMap: Record<string, ProjectIconLoader | undefined> =
-  (rawProjectIconImportMap ?? {}) as Record<string, ProjectIconLoader | undefined>;
-const projectIconCache: Record<string, ProjectIconComponent | null | undefined> = {};
+const projectIconCache = {};
 
 export const iconComponentMap = {
 ${registryLines.join('\n')}
@@ -310,7 +305,7 @@ export type IconName = MappedIconName | ProjectIconName;
 export const iconNameList = Array.from(
   new Set([
     ...Object.keys(iconComponentMap),
-    ...Object.keys(projectIconImportMap),
+    ...(projectIconImportMap ? Object.keys(projectIconImportMap) : []),
   ]),
 );
 const mappedIconRegistry = iconComponentMap as Record<string, React.ComponentType<any>>;
@@ -331,11 +326,11 @@ export function Icon({ name, size = ${legacyDefaultSize}, color = '${legacyDefau
     let cancelled = false;
 
     const load = async () => {
-      const loader = projectIconImportMap[iconKey];
-      if (RenderComponent || iconKey in projectIconCache || !loader) return;
+      if (RenderComponent || projectIconCache[iconKey]) return;
+      if (!projectIconImportMap || !projectIconImportMap[iconKey]) return;
 
       try {
-        const mod = await loader();
+        const mod = await projectIconImportMap[iconKey]();
         if (cancelled) return;
         projectIconCache[iconKey] = mod?.default || null;
         forceUpdate((n) => n + 1);
@@ -366,13 +361,13 @@ export function Icon({ name, size = ${legacyDefaultSize}, color = '${legacyDefau
 
 export const preload = async (names: IconName[] = []) => {
   if (!Array.isArray(names)) return;
+  if (!projectIconImportMap) return;
 
   for (const name of names) {
     const iconKey = String(name);
-    const loader = projectIconImportMap[iconKey];
-    if (mappedIconRegistry[iconKey] || iconKey in projectIconCache || !loader) continue;
+    if (mappedIconRegistry[iconKey] || !projectIconImportMap[iconKey] || projectIconCache[iconKey]) continue;
     try {
-      const mod = await loader();
+      const mod = await projectIconImportMap[iconKey]();
       projectIconCache[iconKey] = mod?.default || null;
     } catch (_error) {
       projectIconCache[iconKey] = null;
@@ -436,13 +431,10 @@ import { ${svgImports} } from 'react-native-svg';
 ${legacyCompatImports}
 
 function buildSvgXml(rawSvg, size, color) {
-  // 仅修改根 <svg> 的尺寸属性，避免误改内部图形的 width/height。
-  let next = rawSvg.replace(/<svg\\b([^>]*)>/i, (_match, attrs) => {
-    const cleanedAttrs = attrs
-      .replace(/\\swidth="[^"]*"/gi, '')
-      .replace(/\\sheight="[^"]*"/gi, '');
-    return \`<svg\${cleanedAttrs} width="\${size}" height="\${size}">\`;
-  });
+  let next = rawSvg
+    .replace(/\\swidth="[^"]*"/gi, '')
+    .replace(/\\sheight="[^"]*"/gi, '')
+    .replace(/<svg/i, \`<svg width="\${size}" height="\${size}"\`);
 
   if (color && color !== 'currentColor') {
     next = next
