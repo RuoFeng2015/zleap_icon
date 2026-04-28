@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-04-08T09:45:18.209Z",
-  "totalCount": 75,
+  "version": "0.0.79",
+  "syncMode": "incremental",
+  "generatedAt": "2026-04-28T10:01:00.174Z",
+  "totalCount": 76,
   "icons": [
+    {
+      "name": "Icon申请成功",
+      "originalName": "申请成功",
+      "svgPath": "svg/申请成功.svg",
+      "componentPath": "src/icons/Icon申请成功.tsx",
+      "size": {
+        "width": 70,
+        "height": 70
+      },
+      "uploadedAt": "2026-04-28T10:01:00.174Z"
+    },
     {
       "name": "IconSouSuo1",
       "originalName": "搜索1",
