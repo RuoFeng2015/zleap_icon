@@ -46,6 +46,7 @@ import { IconShanChuDELETE } from './icons/IconShanChuDELETE';
 import { IconShangYe } from './icons/IconShangYe';
 import { IconShangYe1 } from './icons/IconShangYe1';
 import { IconShare } from './icons/IconShare';
+import { IconShenQingChengGong } from './icons/IconShenQingChengGong';
 import { IconSheZhi } from './icons/IconSheZhi';
 import { IconSheZhi1 } from './icons/IconSheZhi1';
 import { IconShouCang } from './icons/IconShouCang';
@@ -122,6 +123,7 @@ export { IconShanChuDELETE, type IconShanChuDELETEProps } from './icons/IconShan
 export { IconShangYe, type IconShangYeProps } from './icons/IconShangYe';
 export { IconShangYe1, type IconShangYe1Props } from './icons/IconShangYe1';
 export { IconShare, type IconShareProps } from './icons/IconShare';
+export { IconShenQingChengGong, type IconShenQingChengGongProps } from './icons/IconShenQingChengGong';
 export { IconSheZhi, type IconSheZhiProps } from './icons/IconSheZhi';
 export { IconSheZhi1, type IconSheZhi1Props } from './icons/IconSheZhi1';
 export { IconShouCang, type IconShouCangProps } from './icons/IconShouCang';
@@ -202,6 +204,7 @@ export const allIcons = {
   IconShangYe,
   IconShangYe1,
   IconShare,
+  IconShenQingChengGong,
   IconSheZhi,
   IconSheZhi1,
   IconShouCang,

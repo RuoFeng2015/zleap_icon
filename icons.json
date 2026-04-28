@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-04-08T09:45:18.209Z",
-  "totalCount": 75,
+  "generatedAt": "2026-04-28T10:01:38.512Z",
+  "totalCount": 76,
   "icons": [
+    {
+      "name": "IconShenQingChengGong",
+      "originalName": "申请成功",
+      "svgPath": "svg/申请成功.svg",
+      "componentPath": "src/icons/IconShenQingChengGong.tsx",
+      "size": {
+        "width": 70,
+        "height": 70
+      },
+      "createdAt": "2026-04-28T10:01:38.497Z"
+    },
     {
       "name": "IconSouSuo1",
       "originalName": "搜索1",

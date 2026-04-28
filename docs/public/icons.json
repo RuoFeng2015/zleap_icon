@@ -1,19 +1,30 @@
 {
-  "version": "0.0.78",
+  "version": "0.0.79",
   "syncMode": "incremental",
-  "generatedAt": "2026-04-08T09:44:42.534Z",
-  "totalCount": 75,
+  "generatedAt": "2026-04-28T10:01:00.174Z",
+  "totalCount": 76,
   "icons": [
     {
-      "name": "Icon搜索1",
+      "name": "Icon申请成功",
+      "originalName": "申请成功",
+      "svgPath": "svg/申请成功.svg",
+      "componentPath": "src/icons/Icon申请成功.tsx",
+      "size": {
+        "width": 70,
+        "height": 70
+      },
+      "uploadedAt": "2026-04-28T10:01:00.174Z"
+    },
+    {
+      "name": "IconSouSuo1",
       "originalName": "搜索1",
       "svgPath": "svg/搜索1.svg",
-      "componentPath": "src/icons/Icon搜索1.tsx",
+      "componentPath": "src/icons/IconSouSuo1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-04-08T09:44:42.534Z"
+      "createdAt": "2026-04-08T09:45:18.182Z"
     },
     {
       "name": "IconFrame2",
