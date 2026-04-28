@@ -1,19 +1,18 @@
 {
-  "version": "0.0.79",
-  "syncMode": "incremental",
-  "generatedAt": "2026-04-28T10:01:00.174Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-04-28T10:01:38.512Z",
   "totalCount": 76,
   "icons": [
     {
-      "name": "Icon申请成功",
+      "name": "IconShenQingChengGong",
       "originalName": "申请成功",
       "svgPath": "svg/申请成功.svg",
-      "componentPath": "src/icons/Icon申请成功.tsx",
+      "componentPath": "src/icons/IconShenQingChengGong.tsx",
       "size": {
         "width": 70,
         "height": 70
       },
-      "uploadedAt": "2026-04-28T10:01:00.174Z"
+      "createdAt": "2026-04-28T10:01:38.497Z"
     },
     {
       "name": "IconSouSuo1",
