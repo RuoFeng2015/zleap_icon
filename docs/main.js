@@ -68,8 +68,8 @@ export function ${iconName}({ size = ${currentSize}, color = '${currentColor}', 
       next = next
         .replace(/fill="currentColor"/g, \`fill="\${color}"\`)
         .replace(/stroke="currentColor"/g, \`stroke="\${color}"\`)
-        .replace(/fill="(#000000|#000|black)"/gi, \`fill="\${color}"\`)
-        .replace(/stroke="(#000000|#000|black)"/gi, \`stroke="\${color}"\`);
+        .replace(/fill="(?!none|currentColor|url\\(|white|#fff|#ffffff|transparent)[^"]+"/gi, \`fill="\${color}"\`)
+        .replace(/stroke="(?!none|currentColor|url\\(|white|#fff|#ffffff|transparent)[^"]+"/gi, \`stroke="\${color}"\`);
     }
 
     return next;
@@ -107,8 +107,8 @@ export function ${iconName}({ size = ${currentSize}, color = '${currentColor}', 
       next = next
         .replace(/fill="currentColor"/g, \`fill="\${color}"\`)
         .replace(/stroke="currentColor"/g, \`stroke="\${color}"\`)
-        .replace(/fill="(#000000|#000|black)"/gi, \`fill="\${color}"\`)
-        .replace(/stroke="(#000000|#000|black)"/gi, \`stroke="\${color}"\`);
+        .replace(/fill="(?!none|currentColor|url\\(|white|#fff|#ffffff|transparent)[^"]+"/gi, \`fill="\${color}"\`)
+        .replace(/stroke="(?!none|currentColor|url\\(|white|#fff|#ffffff|transparent)[^"]+"/gi, \`stroke="\${color}"\`);
     }
 
     return next;
@@ -440,8 +440,8 @@ function buildSvgXml(rawSvg, size, color) {
     next = next
       .replace(/fill="currentColor"/g, \`fill="\${color}"\`)
       .replace(/stroke="currentColor"/g, \`stroke="\${color}"\`)
-      .replace(/fill="(#000000|#000|black)"/gi, \`fill="\${color}"\`)
-      .replace(/stroke="(#000000|#000|black)"/gi, \`stroke="\${color}"\`);
+      .replace(/fill="(?!none|currentColor|url\\(|white|#fff|#ffffff|transparent)[^"]+"/gi, \`fill="\${color}"\`)
+      .replace(/stroke="(?!none|currentColor|url\\(|white|#fff|#ffffff|transparent)[^"]+"/gi, \`stroke="\${color}"\`);
   }
 
   return next;
@@ -486,8 +486,8 @@ function buildSvgHtml(rawSvg, size, color) {
     next = next
       .replace(/fill="currentColor"/g, \`fill="\${color}"\`)
       .replace(/stroke="currentColor"/g, \`stroke="\${color}"\`)
-      .replace(/fill="(#000000|#000|black)"/gi, \`fill="\${color}"\`)
-      .replace(/stroke="(#000000|#000|black)"/gi, \`stroke="\${color}"\`);
+      .replace(/fill="(?!none|currentColor|url\\(|white|#fff|#ffffff|transparent)[^"]+"/gi, \`fill="\${color}"\`)
+      .replace(/stroke="(?!none|currentColor|url\\(|white|#fff|#ffffff|transparent)[^"]+"/gi, \`stroke="\${color}"\`);
   }
 
   return next;
@@ -646,14 +646,9 @@ function createSvgWithStyles(svgContent, size, color, uniqueId = null) {
     svg = svg.replace(/fill="currentColor"/g, `fill="${color}"`);
     svg = svg.replace(/stroke="currentColor"/g, `stroke="${color}"`);
 
-    // 替换其他颜色值（但不替换 none 和 url() 引用）
-    // 替换常见的黑色值
-    svg = svg.replace(/fill="(#000000|#000|black)"/gi, `fill="${color}"`);
-    svg = svg.replace(/stroke="(#000000|#000|black)"/gi, `stroke="${color}"`);
-
     // 替换其他具体颜色值（排除 none, url(), white, transparent）
-    svg = svg.replace(/fill="(?!none|url\(|white|#fff|#ffffff|transparent)[^"]+"/gi, `fill="${color}"`);
-    svg = svg.replace(/stroke="(?!none|url\(|white|#fff|#ffffff|transparent)[^"]+"/gi, `stroke="${color}"`);
+    svg = svg.replace(/fill="(?!none|currentColor|url\(|white|#fff|#ffffff|transparent)[^"]+"/gi, `fill="${color}"`);
+    svg = svg.replace(/stroke="(?!none|currentColor|url\(|white|#fff|#ffffff|transparent)[^"]+"/gi, `stroke="${color}"`);
   }
 
   return svg;
