@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-04-28T10:01:34.951Z
+Generated at: 2026-05-19T03:08:18.966Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 76 |
+| Total Icons | 79 |
 | Valid Icons | 0 |
-| Invalid Icons | 76 |
-| Total Errors | 76 |
-| Total Warnings | 78 |
+| Invalid Icons | 79 |
+| Total Errors | 79 |
+| Total Warnings | 81 |
 
-⚠️ **76 icon(s) failed validation**
+⚠️ **79 icon(s) failed validation**
 
 ## Errors
 
-### size (76 errors)
+### size (79 errors)
 
 | Icon | Message |
 |------|---------|
@@ -56,6 +56,9 @@ Generated at: 2026-04-28T10:01:34.951Z
 | 已勾选 | Icon size 24x24 not in allowed sizes:  |
 | 已收藏1 | Icon size 24x24 not in allowed sizes:  |
 | 已点赞1 | Icon size 24x24 not in allowed sizes:  |
+| 已通过 | Icon size 180x180 not in allowed sizes:  |
+| 已驳回 | Icon size 180x180 not in allowed sizes:  |
+| 待审核 | Icon size 180x180 not in allowed sizes:  |
 | 微信好友 | Icon size 24x24 not in allowed sizes:  |
 | 探索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索 | Icon size 24x24 not in allowed sizes:  |
@@ -99,7 +102,7 @@ Generated at: 2026-04-28T10:01:34.951Z
 
 ## Warnings
 
-### naming (70 warnings)
+### naming (73 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -133,6 +136,9 @@ Generated at: 2026-04-28T10:01:34.951Z
 | 已勾选 | Icon name "已勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已收藏1 | Icon name "已收藏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已点赞1 | Icon name "已点赞1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 已通过 | Icon name "已通过" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 已驳回 | Icon name "已驳回" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 待审核 | Icon name "待审核" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 微信好友 | Icon name "微信好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索 | Icon name "搜索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

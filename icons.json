@@ -1,41 +1,40 @@
 {
-  "version": "0.0.80",
-  "syncMode": "incremental",
-  "generatedAt": "2026-05-19T03:07:41.211Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-05-19T03:08:22.536Z",
   "totalCount": 79,
   "icons": [
     {
-      "name": "Icon已通过",
+      "name": "IconYiTongGuo",
       "originalName": "已通过",
       "svgPath": "svg/已通过.svg",
-      "componentPath": "src/icons/Icon已通过.tsx",
+      "componentPath": "src/icons/IconYiTongGuo.tsx",
       "size": {
         "width": 180,
         "height": 180
       },
-      "uploadedAt": "2026-05-19T03:07:41.211Z"
+      "createdAt": "2026-05-19T03:08:22.514Z"
     },
     {
-      "name": "Icon已驳回",
+      "name": "IconYiBoHui",
       "originalName": "已驳回",
       "svgPath": "svg/已驳回.svg",
-      "componentPath": "src/icons/Icon已驳回.tsx",
+      "componentPath": "src/icons/IconYiBoHui.tsx",
       "size": {
         "width": 180,
         "height": 180
       },
-      "uploadedAt": "2026-05-19T03:07:41.211Z"
+      "createdAt": "2026-05-19T03:08:22.514Z"
     },
     {
-      "name": "Icon待审核",
+      "name": "IconDaiShenHe",
       "originalName": "待审核",
       "svgPath": "svg/待审核.svg",
-      "componentPath": "src/icons/Icon待审核.tsx",
+      "componentPath": "src/icons/IconDaiShenHe.tsx",
       "size": {
         "width": 180,
         "height": 180
       },
-      "uploadedAt": "2026-05-19T03:07:41.211Z"
+      "createdAt": "2026-05-19T03:08:22.514Z"
     },
     {
       "name": "IconShenQingChengGong",
