@@ -1,8 +1,41 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-04-28T10:01:38.512Z",
-  "totalCount": 76,
+  "generatedAt": "2026-05-19T03:08:22.536Z",
+  "totalCount": 79,
   "icons": [
+    {
+      "name": "IconYiTongGuo",
+      "originalName": "已通过",
+      "svgPath": "svg/已通过.svg",
+      "componentPath": "src/icons/IconYiTongGuo.tsx",
+      "size": {
+        "width": 180,
+        "height": 180
+      },
+      "createdAt": "2026-05-19T03:08:22.514Z"
+    },
+    {
+      "name": "IconYiBoHui",
+      "originalName": "已驳回",
+      "svgPath": "svg/已驳回.svg",
+      "componentPath": "src/icons/IconYiBoHui.tsx",
+      "size": {
+        "width": 180,
+        "height": 180
+      },
+      "createdAt": "2026-05-19T03:08:22.514Z"
+    },
+    {
+      "name": "IconDaiShenHe",
+      "originalName": "待审核",
+      "svgPath": "svg/待审核.svg",
+      "componentPath": "src/icons/IconDaiShenHe.tsx",
+      "size": {
+        "width": 180,
+        "height": 180
+      },
+      "createdAt": "2026-05-19T03:08:22.514Z"
+    },
     {
       "name": "IconShenQingChengGong",
       "originalName": "申请成功",

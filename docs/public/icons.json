@@ -1,19 +1,52 @@
 {
-  "version": "0.0.79",
+  "version": "0.0.80",
   "syncMode": "incremental",
-  "generatedAt": "2026-04-28T10:01:00.174Z",
-  "totalCount": 76,
+  "generatedAt": "2026-05-19T03:07:41.211Z",
+  "totalCount": 79,
   "icons": [
     {
-      "name": "Icon申请成功",
+      "name": "Icon已通过",
+      "originalName": "已通过",
+      "svgPath": "svg/已通过.svg",
+      "componentPath": "src/icons/Icon已通过.tsx",
+      "size": {
+        "width": 180,
+        "height": 180
+      },
+      "uploadedAt": "2026-05-19T03:07:41.211Z"
+    },
+    {
+      "name": "Icon已驳回",
+      "originalName": "已驳回",
+      "svgPath": "svg/已驳回.svg",
+      "componentPath": "src/icons/Icon已驳回.tsx",
+      "size": {
+        "width": 180,
+        "height": 180
+      },
+      "uploadedAt": "2026-05-19T03:07:41.211Z"
+    },
+    {
+      "name": "Icon待审核",
+      "originalName": "待审核",
+      "svgPath": "svg/待审核.svg",
+      "componentPath": "src/icons/Icon待审核.tsx",
+      "size": {
+        "width": 180,
+        "height": 180
+      },
+      "uploadedAt": "2026-05-19T03:07:41.211Z"
+    },
+    {
+      "name": "IconShenQingChengGong",
       "originalName": "申请成功",
       "svgPath": "svg/申请成功.svg",
-      "componentPath": "src/icons/Icon申请成功.tsx",
+      "componentPath": "src/icons/IconShenQingChengGong.tsx",
       "size": {
         "width": 70,
         "height": 70
       },
-      "uploadedAt": "2026-04-28T10:01:00.174Z"
+      "createdAt": "2026-04-28T10:01:38.497Z"
     },
     {
       "name": "IconSouSuo1",
