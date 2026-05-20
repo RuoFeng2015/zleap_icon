@@ -6,6 +6,7 @@ import { IconAi } from './icons/IconAi'
 import { IconAi1 } from './icons/IconAi1'
 import { IconBack } from './icons/IconBack'
 import { IconBianJi } from './icons/IconBianJi'
+import { IconBoFang } from './icons/IconBoFang'
 import { IconCaiJing } from './icons/IconCaiJing'
 import { IconCaiJing1 } from './icons/IconCaiJing1'
 import { IconCheck } from './icons/IconCheck'
@@ -37,6 +38,7 @@ import { IconLike } from './icons/IconLike'
 import { IconLuYin } from './icons/IconLuYin'
 import { IconNotificationsSharp } from './icons/IconNotificationsSharp'
 import { IconPingLun } from './icons/IconPingLun'
+import { IconPlay } from './icons/IconPlay'
 import { IconQiChe } from './icons/IconQiChe'
 import { IconQiChe1 } from './icons/IconQiChe1'
 import { IconQingChuYiDu } from './icons/IconQingChuYiDu'
@@ -90,6 +92,7 @@ export { IconAi, type IconAiProps } from './icons/IconAi'
 export { IconAi1, type IconAi1Props } from './icons/IconAi1'
 export { IconBack, type IconBackProps } from './icons/IconBack'
 export { IconBianJi, type IconBianJiProps } from './icons/IconBianJi'
+export { IconBoFang, type IconBoFangProps } from './icons/IconBoFang'
 export { IconCaiJing, type IconCaiJingProps } from './icons/IconCaiJing'
 export { IconCaiJing1, type IconCaiJing1Props } from './icons/IconCaiJing1'
 export { IconCheck, type IconCheckProps } from './icons/IconCheck'
@@ -121,6 +124,7 @@ export { IconLike, type IconLikeProps } from './icons/IconLike'
 export { IconLuYin, type IconLuYinProps } from './icons/IconLuYin'
 export { IconNotificationsSharp, type IconNotificationsSharpProps } from './icons/IconNotificationsSharp'
 export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun'
+export { IconPlay, type IconPlayProps } from './icons/IconPlay'
 export { IconQiChe, type IconQiCheProps } from './icons/IconQiChe'
 export { IconQiChe1, type IconQiChe1Props } from './icons/IconQiChe1'
 export { IconQingChuYiDu, type IconQingChuYiDuProps } from './icons/IconQingChuYiDu'
@@ -175,6 +179,7 @@ export const allIcons = {
   IconAi1,
   IconBack,
   IconBianJi,
+  IconBoFang,
   IconCaiJing,
   IconCaiJing1,
   IconCheck,
@@ -206,6 +211,7 @@ export const allIcons = {
   IconLuYin,
   IconNotificationsSharp,
   IconPingLun,
+  IconPlay,
   IconQiChe,
   IconQiChe1,
   IconQingChuYiDu,

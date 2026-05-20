@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-05-20T07:25:23.144Z",
-  "totalCount": 83,
+  "generatedAt": "2026-05-20T07:28:16.081Z",
+  "totalCount": 85,
   "icons": [
+    {
+      "name": "IconBoFang",
+      "originalName": "播放",
+      "svgPath": "svg/播放.svg",
+      "componentPath": "src/icons/IconBoFang.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:28:16.061Z"
+    },
+    {
+      "name": "IconPlay",
+      "originalName": "play",
+      "svgPath": "svg/play.svg",
+      "componentPath": "src/icons/IconPlay.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:28:16.049Z"
+    },
     {
       "name": "IconYinFu",
       "originalName": "音符",
