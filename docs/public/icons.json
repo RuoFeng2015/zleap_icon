@@ -1,52 +1,96 @@
 {
-  "version": "0.0.81",
+  "version": "0.0.82",
   "syncMode": "incremental",
-  "generatedAt": "2026-05-20T07:20:30.132Z",
-  "totalCount": 83,
+  "generatedAt": "2026-05-20T07:25:06.697Z",
+  "totalCount": 87,
   "icons": [
     {
-      "name": "Icon录音",
-      "originalName": "录音",
-      "svgPath": "svg/录音.svg",
-      "componentPath": "src/icons/Icon录音.tsx",
+      "name": "Icon展开1",
+      "originalName": "展开1",
+      "svgPath": "svg/展开1.svg",
+      "componentPath": "src/icons/Icon展开1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-05-20T07:20:30.131Z"
+      "uploadedAt": "2026-05-20T07:25:06.697Z"
     },
     {
-      "name": "Icon音符",
+      "name": "Icon收起",
+      "originalName": "收起",
+      "svgPath": "svg/收起.svg",
+      "componentPath": "src/icons/Icon收起.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:25:06.697Z"
+    },
+    {
+      "name": "Icon暂停",
+      "originalName": "暂停",
+      "svgPath": "svg/暂停.svg",
+      "componentPath": "src/icons/Icon暂停.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:25:06.697Z"
+    },
+    {
+      "name": "Icon结束",
+      "originalName": "结束",
+      "svgPath": "svg/结束.svg",
+      "componentPath": "src/icons/Icon结束.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:25:06.697Z"
+    },
+    {
+      "name": "IconYinFu",
       "originalName": "音符",
       "svgPath": "svg/音符.svg",
-      "componentPath": "src/icons/Icon音符.tsx",
+      "componentPath": "src/icons/IconYinFu.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-05-20T07:20:30.131Z"
+      "createdAt": "2026-05-20T07:21:09.233Z"
     },
     {
-      "name": "Icon音频",
+      "name": "IconYinPin",
       "originalName": "音频",
       "svgPath": "svg/音频.svg",
-      "componentPath": "src/icons/Icon音频.tsx",
+      "componentPath": "src/icons/IconYinPin.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-05-20T07:20:30.131Z"
+      "createdAt": "2026-05-20T07:21:09.233Z"
     },
     {
-      "name": "Icon音频1",
+      "name": "IconYinPin1",
       "originalName": "音频1",
       "svgPath": "svg/音频1.svg",
-      "componentPath": "src/icons/Icon音频1.tsx",
+      "componentPath": "src/icons/IconYinPin1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-05-20T07:20:30.131Z"
+      "createdAt": "2026-05-20T07:21:09.233Z"
+    },
+    {
+      "name": "IconLuYin",
+      "originalName": "录音",
+      "svgPath": "svg/录音.svg",
+      "componentPath": "src/icons/IconLuYin.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:21:09.224Z"
     },
     {
       "name": "IconYiTongGuo",
