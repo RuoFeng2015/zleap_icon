@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-05-20T07:25:19.833Z
+Generated at: 2026-05-20T07:28:12.724Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 83 |
+| Total Icons | 85 |
 | Valid Icons | 0 |
-| Invalid Icons | 83 |
-| Total Errors | 83 |
-| Total Warnings | 85 |
+| Invalid Icons | 85 |
+| Total Errors | 85 |
+| Total Warnings | 86 |
 
-⚠️ **83 icon(s) failed validation**
+⚠️ **85 icon(s) failed validation**
 
 ## Errors
 
-### size (83 errors)
+### size (85 errors)
 
 | Icon | Message |
 |------|---------|
@@ -29,6 +29,7 @@ Generated at: 2026-05-20T07:25:19.833Z
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
 | notifications-sharp | Icon size 24x24 not in allowed sizes:  |
+| play | Icon size 24x24 not in allowed sizes:  |
 | search | Icon size 24x24 not in allowed sizes:  |
 | share | Icon size 24x24 not in allowed sizes:  |
 | 体育 | Icon size 36x36 not in allowed sizes:  |
@@ -64,6 +65,7 @@ Generated at: 2026-05-20T07:25:19.833Z
 | 探索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索1 | Icon size 24x24 not in allowed sizes:  |
+| 播放 | Icon size 24x24 not in allowed sizes:  |
 | 收藏 | Icon size 24x24 not in allowed sizes:  |
 | 教育 | Icon size 216x87 not in allowed sizes:  |
 | 教育1 | Icon size 36x36 not in allowed sizes:  |
@@ -106,7 +108,7 @@ Generated at: 2026-05-20T07:25:19.833Z
 
 ## Warnings
 
-### naming (77 warnings)
+### naming (78 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -148,6 +150,7 @@ Generated at: 2026-05-20T07:25:19.833Z
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索 | Icon name "搜索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索1 | Icon name "搜索1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 播放 | Icon name "播放" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 收藏 | Icon name "收藏" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育 | Icon name "教育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育1 | Icon name "教育1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

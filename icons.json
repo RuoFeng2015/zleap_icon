@@ -1,9 +1,19 @@
 {
-  "version": "0.0.83",
-  "syncMode": "incremental",
-  "generatedAt": "2026-05-20T07:27:35.719Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-05-20T07:28:16.081Z",
   "totalCount": 85,
   "icons": [
+    {
+      "name": "IconBoFang",
+      "originalName": "播放",
+      "svgPath": "svg/播放.svg",
+      "componentPath": "src/icons/IconBoFang.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:28:16.061Z"
+    },
     {
       "name": "IconPlay",
       "originalName": "play",
@@ -13,18 +23,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-05-20T07:27:35.718Z"
-    },
-    {
-      "name": "Icon播放",
-      "originalName": "播放",
-      "svgPath": "svg/播放.svg",
-      "componentPath": "src/icons/Icon播放.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-05-20T07:27:35.718Z"
+      "createdAt": "2026-05-20T07:28:16.049Z"
     },
     {
       "name": "IconYinFu",
