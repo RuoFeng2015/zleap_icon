@@ -1,8 +1,53 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-05-19T03:08:22.536Z",
-  "totalCount": 79,
+  "version": "0.0.81",
+  "syncMode": "incremental",
+  "generatedAt": "2026-05-20T07:20:30.132Z",
+  "totalCount": 83,
   "icons": [
+    {
+      "name": "Icon录音",
+      "originalName": "录音",
+      "svgPath": "svg/录音.svg",
+      "componentPath": "src/icons/Icon录音.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:20:30.131Z"
+    },
+    {
+      "name": "Icon音符",
+      "originalName": "音符",
+      "svgPath": "svg/音符.svg",
+      "componentPath": "src/icons/Icon音符.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:20:30.131Z"
+    },
+    {
+      "name": "Icon音频",
+      "originalName": "音频",
+      "svgPath": "svg/音频.svg",
+      "componentPath": "src/icons/Icon音频.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:20:30.131Z"
+    },
+    {
+      "name": "Icon音频1",
+      "originalName": "音频1",
+      "svgPath": "svg/音频1.svg",
+      "componentPath": "src/icons/Icon音频1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:20:30.131Z"
+    },
     {
       "name": "IconYiTongGuo",
       "originalName": "已通过",
