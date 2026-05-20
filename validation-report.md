@@ -1,30 +1,32 @@
 # Icon Validation Report
 
-Generated at: 2026-05-20T07:54:51.984Z
+Generated at: 2026-05-20T08:12:50.772Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 85 |
+| Total Icons | 87 |
 | Valid Icons | 0 |
-| Invalid Icons | 85 |
-| Total Errors | 85 |
-| Total Warnings | 86 |
+| Invalid Icons | 87 |
+| Total Errors | 87 |
+| Total Warnings | 88 |
 
-⚠️ **85 icon(s) failed validation**
+⚠️ **87 icon(s) failed validation**
 
 ## Errors
 
-### size (85 errors)
+### size (87 errors)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon size 36x36 not in allowed sizes:  |
 | AI1 | Icon size 132x87 not in allowed sizes:  |
+| Frame-1261156360 | Icon size 20x20 not in allowed sizes:  |
 | Frame | Icon size 24x24 not in allowed sizes:  |
 | Frame1 | Icon size 24x24 not in allowed sizes:  |
 | Frame2 | Icon size 24x24 not in allowed sizes:  |
+| Frame3 | Icon size 20x20 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
@@ -108,15 +110,17 @@ Generated at: 2026-05-20T07:54:51.984Z
 
 ## Warnings
 
-### naming (78 warnings)
+### naming (80 warnings)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon name "AI" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | AI1 | Icon name "AI1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame-1261156360 | Icon name "Frame-1261156360" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame | Icon name "Frame" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame1 | Icon name "Frame1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame2 | Icon name "Frame2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame3 | Icon name "Frame3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 体育 | Icon name "体育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

@@ -1,9 +1,42 @@
 {
-  "version": "0.0.83",
+  "version": "0.0.85",
   "syncMode": "incremental",
-  "generatedAt": "2026-05-20T07:27:35.719Z",
-  "totalCount": 85,
+  "generatedAt": "2026-05-20T08:12:27.579Z",
+  "totalCount": 87,
   "icons": [
+    {
+      "name": "IconFrame3",
+      "originalName": "Frame3",
+      "svgPath": "svg/Frame3.svg",
+      "componentPath": "src/icons/IconFrame3.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "uploadedAt": "2026-05-20T08:12:27.579Z"
+    },
+    {
+      "name": "IconFrame1261156360",
+      "originalName": "Frame 1261156360",
+      "svgPath": "svg/Frame-1261156360.svg",
+      "componentPath": "src/icons/IconFrame1261156360.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "uploadedAt": "2026-05-20T08:12:27.579Z"
+    },
+    {
+      "name": "IconBoFang",
+      "originalName": "播放",
+      "svgPath": "svg/播放.svg",
+      "componentPath": "src/icons/IconBoFang.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:28:16.061Z"
+    },
     {
       "name": "IconPlay",
       "originalName": "play",
@@ -13,18 +46,7 @@
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-05-20T07:27:35.718Z"
-    },
-    {
-      "name": "Icon播放",
-      "originalName": "播放",
-      "svgPath": "svg/播放.svg",
-      "componentPath": "src/icons/Icon播放.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-05-20T07:27:35.718Z"
+      "createdAt": "2026-05-20T07:28:16.049Z"
     },
     {
       "name": "IconYinFu",
