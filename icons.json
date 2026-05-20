@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-05-20T07:25:23.144Z",
-  "totalCount": 83,
+  "version": "0.0.83",
+  "syncMode": "incremental",
+  "generatedAt": "2026-05-20T07:27:35.719Z",
+  "totalCount": 85,
   "icons": [
+    {
+      "name": "IconPlay",
+      "originalName": "play",
+      "svgPath": "svg/play.svg",
+      "componentPath": "src/icons/IconPlay.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:27:35.718Z"
+    },
+    {
+      "name": "Icon播放",
+      "originalName": "播放",
+      "svgPath": "svg/播放.svg",
+      "componentPath": "src/icons/Icon播放.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:27:35.718Z"
+    },
     {
       "name": "IconYinFu",
       "originalName": "音符",
