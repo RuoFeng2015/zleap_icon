@@ -1,7 +1,6 @@
 {
-  "version": "0.0.85",
-  "syncMode": "incremental",
-  "generatedAt": "2026-05-20T08:12:27.579Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-05-20T08:12:54.443Z",
   "totalCount": 87,
   "icons": [
     {
@@ -10,21 +9,21 @@
       "svgPath": "svg/Frame3.svg",
       "componentPath": "src/icons/IconFrame3.tsx",
       "size": {
-        "width": 20,
-        "height": 20
+        "width": 1440,
+        "height": 961
       },
-      "uploadedAt": "2026-05-20T08:12:27.579Z"
+      "createdAt": "2026-05-20T08:12:54.410Z"
     },
     {
       "name": "IconFrame1261156360",
-      "originalName": "Frame 1261156360",
+      "originalName": "Frame-1261156360",
       "svgPath": "svg/Frame-1261156360.svg",
       "componentPath": "src/icons/IconFrame1261156360.tsx",
       "size": {
-        "width": 20,
-        "height": 20
+        "width": 1440,
+        "height": 961
       },
-      "uploadedAt": "2026-05-20T08:12:27.579Z"
+      "createdAt": "2026-05-20T08:12:54.409Z"
     },
     {
       "name": "IconBoFang",
