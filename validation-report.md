@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-05-19T03:08:18.966Z
+Generated at: 2026-05-20T07:21:05.884Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 79 |
+| Total Icons | 83 |
 | Valid Icons | 0 |
-| Invalid Icons | 79 |
-| Total Errors | 79 |
-| Total Warnings | 81 |
+| Invalid Icons | 83 |
+| Total Errors | 83 |
+| Total Warnings | 85 |
 
-⚠️ **79 icon(s) failed validation**
+⚠️ **83 icon(s) failed validation**
 
 ## Errors
 
-### size (79 errors)
+### size (83 errors)
 
 | Icon | Message |
 |------|---------|
@@ -58,6 +58,7 @@ Generated at: 2026-05-19T03:08:18.966Z
 | 已点赞1 | Icon size 24x24 not in allowed sizes:  |
 | 已通过 | Icon size 180x180 not in allowed sizes:  |
 | 已驳回 | Icon size 180x180 not in allowed sizes:  |
+| 录音 | Icon size 24x24 not in allowed sizes:  |
 | 待审核 | Icon size 180x180 not in allowed sizes:  |
 | 微信好友 | Icon size 24x24 not in allowed sizes:  |
 | 探索 | Icon size 24x24 not in allowed sizes:  |
@@ -95,6 +96,9 @@ Generated at: 2026-05-19T03:08:18.966Z
 | 通讯录-细 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
 | 锁定 | Icon size 24x24 not in allowed sizes:  |
+| 音符 | Icon size 24x24 not in allowed sizes:  |
+| 音频 | Icon size 24x24 not in allowed sizes:  |
+| 音频1 | Icon size 24x24 not in allowed sizes:  |
 | 预览-关闭 | Icon size 24x24 not in allowed sizes:  |
 | 预览 | Icon size 24x24 not in allowed sizes:  |
 | 预览1 | Icon size 24x24 not in allowed sizes:  |
@@ -102,7 +106,7 @@ Generated at: 2026-05-19T03:08:18.966Z
 
 ## Warnings
 
-### naming (73 warnings)
+### naming (77 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -138,6 +142,7 @@ Generated at: 2026-05-19T03:08:18.966Z
 | 已点赞1 | Icon name "已点赞1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已通过 | Icon name "已通过" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已驳回 | Icon name "已驳回" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 录音 | Icon name "录音" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 待审核 | Icon name "待审核" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 微信好友 | Icon name "微信好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -175,6 +180,9 @@ Generated at: 2026-05-19T03:08:18.966Z
 | 通讯录-细 | Icon name "通讯录-细" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 锁定 | Icon name "锁定" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 音符 | Icon name "音符" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 音频 | Icon name "音频" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 音频1 | Icon name "音频1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 预览-关闭 | Icon name "预览-关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 预览 | Icon name "预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

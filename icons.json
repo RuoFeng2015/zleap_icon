@@ -1,8 +1,52 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-05-19T03:08:22.536Z",
-  "totalCount": 79,
+  "generatedAt": "2026-05-20T07:21:09.245Z",
+  "totalCount": 83,
   "icons": [
+    {
+      "name": "IconYinFu",
+      "originalName": "音符",
+      "svgPath": "svg/音符.svg",
+      "componentPath": "src/icons/IconYinFu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:21:09.233Z"
+    },
+    {
+      "name": "IconYinPin",
+      "originalName": "音频",
+      "svgPath": "svg/音频.svg",
+      "componentPath": "src/icons/IconYinPin.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:21:09.233Z"
+    },
+    {
+      "name": "IconYinPin1",
+      "originalName": "音频1",
+      "svgPath": "svg/音频1.svg",
+      "componentPath": "src/icons/IconYinPin1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:21:09.233Z"
+    },
+    {
+      "name": "IconLuYin",
+      "originalName": "录音",
+      "svgPath": "svg/录音.svg",
+      "componentPath": "src/icons/IconLuYin.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:21:09.224Z"
+    },
     {
       "name": "IconYiTongGuo",
       "originalName": "已通过",

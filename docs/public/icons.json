@@ -1,41 +1,85 @@
 {
-  "version": "0.0.80",
+  "version": "0.0.81",
   "syncMode": "incremental",
-  "generatedAt": "2026-05-19T03:07:41.211Z",
-  "totalCount": 79,
+  "generatedAt": "2026-05-20T07:20:30.132Z",
+  "totalCount": 83,
   "icons": [
     {
-      "name": "Icon已通过",
+      "name": "Icon录音",
+      "originalName": "录音",
+      "svgPath": "svg/录音.svg",
+      "componentPath": "src/icons/Icon录音.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:20:30.131Z"
+    },
+    {
+      "name": "Icon音符",
+      "originalName": "音符",
+      "svgPath": "svg/音符.svg",
+      "componentPath": "src/icons/Icon音符.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:20:30.131Z"
+    },
+    {
+      "name": "Icon音频",
+      "originalName": "音频",
+      "svgPath": "svg/音频.svg",
+      "componentPath": "src/icons/Icon音频.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:20:30.131Z"
+    },
+    {
+      "name": "Icon音频1",
+      "originalName": "音频1",
+      "svgPath": "svg/音频1.svg",
+      "componentPath": "src/icons/Icon音频1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-20T07:20:30.131Z"
+    },
+    {
+      "name": "IconYiTongGuo",
       "originalName": "已通过",
       "svgPath": "svg/已通过.svg",
-      "componentPath": "src/icons/Icon已通过.tsx",
+      "componentPath": "src/icons/IconYiTongGuo.tsx",
       "size": {
         "width": 180,
         "height": 180
       },
-      "uploadedAt": "2026-05-19T03:07:41.211Z"
+      "createdAt": "2026-05-19T03:08:22.514Z"
     },
     {
-      "name": "Icon已驳回",
+      "name": "IconYiBoHui",
       "originalName": "已驳回",
       "svgPath": "svg/已驳回.svg",
-      "componentPath": "src/icons/Icon已驳回.tsx",
+      "componentPath": "src/icons/IconYiBoHui.tsx",
       "size": {
         "width": 180,
         "height": 180
       },
-      "uploadedAt": "2026-05-19T03:07:41.211Z"
+      "createdAt": "2026-05-19T03:08:22.514Z"
     },
     {
-      "name": "Icon待审核",
+      "name": "IconDaiShenHe",
       "originalName": "待审核",
       "svgPath": "svg/待审核.svg",
-      "componentPath": "src/icons/Icon待审核.tsx",
+      "componentPath": "src/icons/IconDaiShenHe.tsx",
       "size": {
         "width": 180,
         "height": 180
       },
-      "uploadedAt": "2026-05-19T03:07:41.211Z"
+      "createdAt": "2026-05-19T03:08:22.514Z"
     },
     {
       "name": "IconShenQingChengGong",
