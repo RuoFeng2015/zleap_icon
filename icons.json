@@ -1,52 +1,51 @@
 {
-  "version": "0.0.82",
-  "syncMode": "incremental",
-  "generatedAt": "2026-05-20T07:25:06.697Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-05-20T07:25:48.660Z",
   "totalCount": 87,
   "icons": [
     {
-      "name": "Icon展开1",
-      "originalName": "展开1",
-      "svgPath": "svg/展开1.svg",
-      "componentPath": "src/icons/Icon展开1.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-05-20T07:25:06.697Z"
-    },
-    {
-      "name": "Icon收起",
-      "originalName": "收起",
-      "svgPath": "svg/收起.svg",
-      "componentPath": "src/icons/Icon收起.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-05-20T07:25:06.697Z"
-    },
-    {
-      "name": "Icon暂停",
-      "originalName": "暂停",
-      "svgPath": "svg/暂停.svg",
-      "componentPath": "src/icons/Icon暂停.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-05-20T07:25:06.697Z"
-    },
-    {
-      "name": "Icon结束",
+      "name": "IconJieShu",
       "originalName": "结束",
       "svgPath": "svg/结束.svg",
-      "componentPath": "src/icons/Icon结束.tsx",
+      "componentPath": "src/icons/IconJieShu.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-05-20T07:25:06.697Z"
+      "createdAt": "2026-05-20T07:25:48.644Z"
+    },
+    {
+      "name": "IconZanTing",
+      "originalName": "暂停",
+      "svgPath": "svg/暂停.svg",
+      "componentPath": "src/icons/IconZanTing.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:25:48.640Z"
+    },
+    {
+      "name": "IconShouQi",
+      "originalName": "收起",
+      "svgPath": "svg/收起.svg",
+      "componentPath": "src/icons/IconShouQi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:25:48.639Z"
+    },
+    {
+      "name": "IconZhanKai1",
+      "originalName": "展开1",
+      "svgPath": "svg/展开1.svg",
+      "componentPath": "src/icons/IconZhanKai1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-20T07:25:48.635Z"
     },
     {
       "name": "IconYinFu",

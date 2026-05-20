@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-05-20T07:21:05.884Z
+Generated at: 2026-05-20T07:25:45.296Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 83 |
+| Total Icons | 87 |
 | Valid Icons | 0 |
-| Invalid Icons | 83 |
-| Total Errors | 83 |
-| Total Warnings | 85 |
+| Invalid Icons | 87 |
+| Total Errors | 87 |
+| Total Warnings | 89 |
 
-⚠️ **83 icon(s) failed validation**
+⚠️ **87 icon(s) failed validation**
 
 ## Errors
 
-### size (83 errors)
+### size (87 errors)
 
 | Icon | Message |
 |------|---------|
@@ -52,6 +52,7 @@ Generated at: 2026-05-20T07:21:05.884Z
 | 多选 | Icon size 24x24 not in allowed sizes:  |
 | 好友 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
+| 展开1 | Icon size 24x24 not in allowed sizes:  |
 | 左 | Icon size 24x24 not in allowed sizes:  |
 | 已勾选 | Icon size 24x24 not in allowed sizes:  |
 | 已收藏1 | Icon size 24x24 not in allowed sizes:  |
@@ -65,10 +66,12 @@ Generated at: 2026-05-20T07:21:05.884Z
 | 搜索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索1 | Icon size 24x24 not in allowed sizes:  |
 | 收藏 | Icon size 24x24 not in allowed sizes:  |
+| 收起 | Icon size 24x24 not in allowed sizes:  |
 | 教育 | Icon size 216x87 not in allowed sizes:  |
 | 教育1 | Icon size 36x36 not in allowed sizes:  |
 | 文化体育-1 | Icon size 186x87 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
+| 暂停 | Icon size 24x24 not in allowed sizes:  |
 | 更多 | Icon size 24x24 not in allowed sizes:  |
 | 更多1 | Icon size 24x24 not in allowed sizes:  |
 | 正确 | Icon size 24x24 not in allowed sizes:  |
@@ -80,6 +83,7 @@ Generated at: 2026-05-20T07:21:05.884Z
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
 | 科技 | Icon size 36x36 not in allowed sizes:  |
 | 科技1 | Icon size 132x87 not in allowed sizes:  |
+| 结束 | Icon size 24x24 not in allowed sizes:  |
 | 编辑 | Icon size 24x24 not in allowed sizes:  |
 | 职场 | Icon size 132x87 not in allowed sizes:  |
 | 职场1 | Icon size 36x36 not in allowed sizes:  |
@@ -106,7 +110,7 @@ Generated at: 2026-05-20T07:21:05.884Z
 
 ## Warnings
 
-### naming (77 warnings)
+### naming (81 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -136,6 +140,7 @@ Generated at: 2026-05-20T07:21:05.884Z
 | 多选 | Icon name "多选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 好友 | Icon name "好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 展开1 | Icon name "展开1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 左 | Icon name "左" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已勾选 | Icon name "已勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已收藏1 | Icon name "已收藏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -149,10 +154,12 @@ Generated at: 2026-05-20T07:21:05.884Z
 | 搜索 | Icon name "搜索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索1 | Icon name "搜索1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 收藏 | Icon name "收藏" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 收起 | Icon name "收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育 | Icon name "教育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育1 | Icon name "教育1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文化体育-1 | Icon name "文化体育-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 暂停 | Icon name "暂停" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多 | Icon name "更多" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多1 | Icon name "更多1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 正确 | Icon name "正确" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -164,6 +171,7 @@ Generated at: 2026-05-20T07:21:05.884Z
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技 | Icon name "科技" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技1 | Icon name "科技1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 结束 | Icon name "结束" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 编辑 | Icon name "编辑" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场 | Icon name "职场" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场1 | Icon name "职场1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
