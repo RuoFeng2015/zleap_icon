@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-05-26T06:40:19.065Z
+Generated at: 2026-05-26T06:42:22.478Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 90 |
+| Total Icons | 91 |
 | Valid Icons | 0 |
-| Invalid Icons | 90 |
-| Total Errors | 90 |
-| Total Warnings | 94 |
+| Invalid Icons | 91 |
+| Total Errors | 91 |
+| Total Warnings | 95 |
 
-⚠️ **90 icon(s) failed validation**
+⚠️ **91 icon(s) failed validation**
 
 ## Errors
 
-### size (90 errors)
+### size (91 errors)
 
 | Icon | Message |
 |------|---------|
@@ -57,6 +57,7 @@ Generated at: 2026-05-26T06:40:19.065Z
 | 好友 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 展开1 | Icon size 24x24 not in allowed sizes:  |
+| 展开2 | Icon size 24x24 not in allowed sizes:  |
 | 左 | Icon size 24x24 not in allowed sizes:  |
 | 已勾选 | Icon size 24x24 not in allowed sizes:  |
 | 已收藏1 | Icon size 24x24 not in allowed sizes:  |
@@ -113,7 +114,7 @@ Generated at: 2026-05-26T06:40:19.065Z
 
 ## Warnings
 
-### naming (83 warnings)
+### naming (84 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -147,6 +148,7 @@ Generated at: 2026-05-26T06:40:19.065Z
 | 好友 | Icon name "好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开1 | Icon name "展开1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 展开2 | Icon name "展开2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 左 | Icon name "左" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已勾选 | Icon name "已勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已收藏1 | Icon name "已收藏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

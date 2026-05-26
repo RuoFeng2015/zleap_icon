@@ -88,6 +88,7 @@ import { IconZengJia } from './icons/IconZengJia';
 import { IconZengJia1 } from './icons/IconZengJia1';
 import { IconZhanKai } from './icons/IconZhanKai';
 import { IconZhanKai1 } from './icons/IconZhanKai1';
+import { IconZhanKai2 } from './icons/IconZhanKai2';
 import { IconZhengQue } from './icons/IconZhengQue';
 import { IconZhiChang } from './icons/IconZhiChang';
 import { IconZhiChang1 } from './icons/IconZhiChang1';
@@ -179,6 +180,7 @@ export { IconZengJia, type IconZengJiaProps } from './icons/IconZengJia';
 export { IconZengJia1, type IconZengJia1Props } from './icons/IconZengJia1';
 export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai';
 export { IconZhanKai1, type IconZhanKai1Props } from './icons/IconZhanKai1';
+export { IconZhanKai2, type IconZhanKai2Props } from './icons/IconZhanKai2';
 export { IconZhengQue, type IconZhengQueProps } from './icons/IconZhengQue';
 export { IconZhiChang, type IconZhiChangProps } from './icons/IconZhiChang';
 export { IconZhiChang1, type IconZhiChang1Props } from './icons/IconZhiChang1';
@@ -274,6 +276,7 @@ export const allIcons = {
   IconZengJia1,
   IconZhanKai,
   IconZhanKai1,
+  IconZhanKai2,
   IconZhengQue,
   IconZhiChang,
   IconZhiChang1,
