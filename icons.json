@@ -1,19 +1,18 @@
 {
-  "version": "0.0.88",
-  "syncMode": "incremental",
-  "generatedAt": "2026-05-26T06:41:57.987Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-05-26T06:42:25.853Z",
   "totalCount": 91,
   "icons": [
     {
-      "name": "Icon展开2",
+      "name": "IconZhanKai2",
       "originalName": "展开2",
       "svgPath": "svg/展开2.svg",
-      "componentPath": "src/icons/Icon展开2.tsx",
+      "componentPath": "src/icons/IconZhanKai2.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-05-26T06:41:57.986Z"
+      "createdAt": "2026-05-26T06:42:25.830Z"
     },
     {
       "name": "IconChongXin",
