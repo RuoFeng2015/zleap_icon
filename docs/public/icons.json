@@ -1,30 +1,41 @@
 {
-  "version": "0.0.85",
+  "version": "0.0.86",
   "syncMode": "incremental",
-  "generatedAt": "2026-05-20T08:12:27.579Z",
-  "totalCount": 87,
+  "generatedAt": "2026-05-26T06:32:47.946Z",
+  "totalCount": 88,
   "icons": [
+    {
+      "name": "IconFrame4",
+      "originalName": "Frame4",
+      "svgPath": "svg/Frame4.svg",
+      "componentPath": "src/icons/IconFrame4.tsx",
+      "size": {
+        "width": 18,
+        "height": 18
+      },
+      "uploadedAt": "2026-05-26T06:32:47.946Z"
+    },
     {
       "name": "IconFrame3",
       "originalName": "Frame3",
       "svgPath": "svg/Frame3.svg",
       "componentPath": "src/icons/IconFrame3.tsx",
       "size": {
-        "width": 20,
-        "height": 20
+        "width": 1440,
+        "height": 961
       },
-      "uploadedAt": "2026-05-20T08:12:27.579Z"
+      "createdAt": "2026-05-20T08:12:54.410Z"
     },
     {
       "name": "IconFrame1261156360",
-      "originalName": "Frame 1261156360",
+      "originalName": "Frame-1261156360",
       "svgPath": "svg/Frame-1261156360.svg",
       "componentPath": "src/icons/IconFrame1261156360.tsx",
       "size": {
-        "width": 20,
-        "height": 20
+        "width": 1440,
+        "height": 961
       },
-      "uploadedAt": "2026-05-20T08:12:27.579Z"
+      "createdAt": "2026-05-20T08:12:54.409Z"
     },
     {
       "name": "IconBoFang",

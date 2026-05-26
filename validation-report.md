@@ -1,32 +1,33 @@
 # Icon Validation Report
 
-Generated at: 2026-05-20T08:12:50.772Z
+Generated at: 2026-05-26T06:33:10.111Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 87 |
+| Total Icons | 88 |
 | Valid Icons | 0 |
-| Invalid Icons | 87 |
-| Total Errors | 87 |
-| Total Warnings | 88 |
+| Invalid Icons | 88 |
+| Total Errors | 88 |
+| Total Warnings | 91 |
 
-⚠️ **87 icon(s) failed validation**
+⚠️ **88 icon(s) failed validation**
 
 ## Errors
 
-### size (87 errors)
+### size (88 errors)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon size 36x36 not in allowed sizes:  |
 | AI1 | Icon size 132x87 not in allowed sizes:  |
-| Frame-1261156360 | Icon size 20x20 not in allowed sizes:  |
+| Frame-1261156360 | Icon size 1440x961 not in allowed sizes:  |
 | Frame | Icon size 24x24 not in allowed sizes:  |
 | Frame1 | Icon size 24x24 not in allowed sizes:  |
 | Frame2 | Icon size 24x24 not in allowed sizes:  |
-| Frame3 | Icon size 20x20 not in allowed sizes:  |
+| Frame3 | Icon size 1440x961 not in allowed sizes:  |
+| Frame4 | Icon size 18x18 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
@@ -110,7 +111,7 @@ Generated at: 2026-05-20T08:12:50.772Z
 
 ## Warnings
 
-### naming (80 warnings)
+### naming (81 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -121,6 +122,7 @@ Generated at: 2026-05-20T08:12:50.772Z
 | Frame1 | Icon name "Frame1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame2 | Icon name "Frame2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame3 | Icon name "Frame3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame4 | Icon name "Frame4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 体育 | Icon name "体育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -195,11 +197,13 @@ Generated at: 2026-05-20T08:12:50.772Z
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
-### size (8 warnings)
+### size (10 warnings)
 
 | Icon | Message |
 |------|---------|
 | AI1 | Icon is not square: 132x87 |
+| Frame-1261156360 | Icon is not square: 1440x961 |
+| Frame3 | Icon is not square: 1440x961 |
 | 商业1 | Icon is not square: 132x87 |
 | 教育 | Icon is not square: 216x87 |
 | 文化体育-1 | Icon is not square: 186x87 |

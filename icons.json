@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-05-20T08:12:54.443Z",
-  "totalCount": 87,
+  "generatedAt": "2026-05-26T06:33:13.713Z",
+  "totalCount": 88,
   "icons": [
+    {
+      "name": "IconFrame4",
+      "originalName": "Frame4",
+      "svgPath": "svg/Frame4.svg",
+      "componentPath": "src/icons/IconFrame4.tsx",
+      "size": {
+        "width": 476,
+        "height": 435
+      },
+      "createdAt": "2026-05-26T06:33:13.682Z"
+    },
     {
       "name": "IconFrame3",
       "originalName": "Frame3",
