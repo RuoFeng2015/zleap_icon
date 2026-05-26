@@ -1,7 +1,6 @@
 {
-  "version": "0.0.86",
-  "syncMode": "incremental",
-  "generatedAt": "2026-05-26T06:32:47.946Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-05-26T06:33:13.713Z",
   "totalCount": 88,
   "icons": [
     {
@@ -10,10 +9,10 @@
       "svgPath": "svg/Frame4.svg",
       "componentPath": "src/icons/IconFrame4.tsx",
       "size": {
-        "width": 18,
-        "height": 18
+        "width": 476,
+        "height": 435
       },
-      "uploadedAt": "2026-05-26T06:32:47.946Z"
+      "createdAt": "2026-05-26T06:33:13.682Z"
     },
     {
       "name": "IconFrame3",

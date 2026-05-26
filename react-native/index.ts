@@ -18,6 +18,7 @@ import { IconFrame1 } from './icons/IconFrame1'
 import { IconFrame1261156360 } from './icons/IconFrame1261156360'
 import { IconFrame2 } from './icons/IconFrame2'
 import { IconFrame3 } from './icons/IconFrame3'
+import { IconFrame4 } from './icons/IconFrame4'
 import { IconFuZhiLianJie } from './icons/IconFuZhiLianJie'
 import { IconGengDuo } from './icons/IconGengDuo'
 import { IconGengDuo1 } from './icons/IconGengDuo1'
@@ -106,6 +107,7 @@ export { IconFrame1, type IconFrame1Props } from './icons/IconFrame1'
 export { IconFrame1261156360, type IconFrame1261156360Props } from './icons/IconFrame1261156360'
 export { IconFrame2, type IconFrame2Props } from './icons/IconFrame2'
 export { IconFrame3, type IconFrame3Props } from './icons/IconFrame3'
+export { IconFrame4, type IconFrame4Props } from './icons/IconFrame4'
 export { IconFuZhiLianJie, type IconFuZhiLianJieProps } from './icons/IconFuZhiLianJie'
 export { IconGengDuo, type IconGengDuoProps } from './icons/IconGengDuo'
 export { IconGengDuo1, type IconGengDuo1Props } from './icons/IconGengDuo1'
@@ -195,6 +197,7 @@ export const allIcons = {
   IconFrame1261156360,
   IconFrame2,
   IconFrame3,
+  IconFrame4,
   IconFuZhiLianJie,
   IconGengDuo,
   IconGengDuo1,
