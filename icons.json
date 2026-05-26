@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-05-26T06:33:13.713Z",
-  "totalCount": 88,
+  "version": "0.0.87",
+  "syncMode": "incremental",
+  "generatedAt": "2026-05-26T06:39:51.732Z",
+  "totalCount": 90,
   "icons": [
+    {
+      "name": "Icon展开1",
+      "originalName": "展开1",
+      "svgPath": "svg/展开1.svg",
+      "componentPath": "src/icons/Icon展开1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-26T06:39:51.732Z"
+    },
+    {
+      "name": "Icon重新",
+      "originalName": "重新",
+      "svgPath": "svg/重新.svg",
+      "componentPath": "src/icons/Icon重新.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-26T06:39:51.732Z"
+    },
     {
       "name": "IconFrame4",
       "originalName": "Frame4",
