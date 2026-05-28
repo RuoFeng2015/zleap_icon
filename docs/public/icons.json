@@ -1,19 +1,85 @@
 {
-  "version": "0.0.88",
+  "version": "0.0.89",
   "syncMode": "incremental",
-  "generatedAt": "2026-05-26T06:41:57.987Z",
-  "totalCount": 91,
+  "generatedAt": "2026-05-28T03:50:58.502Z",
+  "totalCount": 97,
   "icons": [
     {
-      "name": "Icon展开2",
-      "originalName": "展开2",
-      "svgPath": "svg/展开2.svg",
-      "componentPath": "src/icons/Icon展开2.tsx",
+      "name": "Icon传入",
+      "originalName": "传入",
+      "svgPath": "svg/传入.svg",
+      "componentPath": "src/icons/Icon传入.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-05-26T06:41:57.986Z"
+      "uploadedAt": "2026-05-28T03:50:58.502Z"
+    },
+    {
+      "name": "Icon快进15秒",
+      "originalName": "快进15秒",
+      "svgPath": "svg/快进15秒.svg",
+      "componentPath": "src/icons/Icon快进15秒.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-28T03:50:58.502Z"
+    },
+    {
+      "name": "Icon播放1",
+      "originalName": "播放1",
+      "svgPath": "svg/播放1.svg",
+      "componentPath": "src/icons/Icon播放1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-28T03:50:58.502Z"
+    },
+    {
+      "name": "Icon文件夹",
+      "originalName": "文件夹",
+      "svgPath": "svg/文件夹.svg",
+      "componentPath": "src/icons/Icon文件夹.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-28T03:50:58.502Z"
+    },
+    {
+      "name": "Icon暂停",
+      "originalName": "暂停",
+      "svgPath": "svg/暂停.svg",
+      "componentPath": "src/icons/Icon暂停.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-28T03:50:58.502Z"
+    },
+    {
+      "name": "Icon音频2",
+      "originalName": "音频2",
+      "svgPath": "svg/音频2.svg",
+      "componentPath": "src/icons/Icon音频2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-05-28T03:50:58.502Z"
+    },
+    {
+      "name": "IconZhanKai2",
+      "originalName": "展开2",
+      "svgPath": "svg/展开2.svg",
+      "componentPath": "src/icons/IconZhanKai2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-26T06:42:25.830Z"
     },
     {
       "name": "IconChongXin",
