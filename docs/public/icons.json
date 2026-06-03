@@ -1,74 +1,85 @@
 {
-  "version": "0.0.89",
+  "version": "0.0.90",
   "syncMode": "incremental",
-  "generatedAt": "2026-05-28T03:50:58.502Z",
-  "totalCount": 97,
+  "generatedAt": "2026-06-03T11:14:30.747Z",
+  "totalCount": 98,
   "icons": [
     {
-      "name": "Icon传入",
-      "originalName": "传入",
-      "svgPath": "svg/传入.svg",
-      "componentPath": "src/icons/Icon传入.tsx",
+      "name": "Icon删除",
+      "originalName": "删除",
+      "svgPath": "svg/删除.svg",
+      "componentPath": "src/icons/Icon删除.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-05-28T03:50:58.502Z"
+      "uploadedAt": "2026-06-03T11:14:30.747Z"
     },
     {
-      "name": "Icon快进15秒",
-      "originalName": "快进15秒",
-      "svgPath": "svg/快进15秒.svg",
-      "componentPath": "src/icons/Icon快进15秒.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-05-28T03:50:58.502Z"
-    },
-    {
-      "name": "Icon播放1",
-      "originalName": "播放1",
-      "svgPath": "svg/播放1.svg",
-      "componentPath": "src/icons/Icon播放1.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-05-28T03:50:58.502Z"
-    },
-    {
-      "name": "Icon文件夹",
-      "originalName": "文件夹",
-      "svgPath": "svg/文件夹.svg",
-      "componentPath": "src/icons/Icon文件夹.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-05-28T03:50:58.502Z"
-    },
-    {
-      "name": "Icon暂停",
-      "originalName": "暂停",
-      "svgPath": "svg/暂停.svg",
-      "componentPath": "src/icons/Icon暂停.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-05-28T03:50:58.502Z"
-    },
-    {
-      "name": "Icon音频2",
+      "name": "IconYinPin2",
       "originalName": "音频2",
       "svgPath": "svg/音频2.svg",
-      "componentPath": "src/icons/Icon音频2.tsx",
+      "componentPath": "src/icons/IconYinPin2.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-05-28T03:50:58.502Z"
+      "createdAt": "2026-05-28T03:51:28.449Z"
+    },
+    {
+      "name": "IconWenJianJia",
+      "originalName": "文件夹",
+      "svgPath": "svg/文件夹.svg",
+      "componentPath": "src/icons/IconWenJianJia.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-28T03:51:28.441Z"
+    },
+    {
+      "name": "IconZanTing",
+      "originalName": "暂停",
+      "svgPath": "svg/暂停.svg",
+      "componentPath": "src/icons/IconZanTing.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-28T03:51:28.441Z"
+    },
+    {
+      "name": "IconBoFang1",
+      "originalName": "播放1",
+      "svgPath": "svg/播放1.svg",
+      "componentPath": "src/icons/IconBoFang1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-28T03:51:28.440Z"
+    },
+    {
+      "name": "IconKuaiJin15Miao",
+      "originalName": "快进15秒",
+      "svgPath": "svg/快进15秒.svg",
+      "componentPath": "src/icons/IconKuaiJin15Miao.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-28T03:51:28.439Z"
+    },
+    {
+      "name": "IconChuanRu",
+      "originalName": "传入",
+      "svgPath": "svg/传入.svg",
+      "componentPath": "src/icons/IconChuanRu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-05-28T03:51:28.430Z"
     },
     {
       "name": "IconZhanKai2",

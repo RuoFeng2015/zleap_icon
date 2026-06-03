@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-05-28T03:51:28.461Z",
-  "totalCount": 97,
+  "generatedAt": "2026-06-03T11:15:04.331Z",
+  "totalCount": 98,
   "icons": [
+    {
+      "name": "IconShanChu",
+      "originalName": "删除",
+      "svgPath": "svg/删除.svg",
+      "componentPath": "src/icons/IconShanChu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-03T11:15:04.302Z"
+    },
     {
       "name": "IconYinPin2",
       "originalName": "音频2",

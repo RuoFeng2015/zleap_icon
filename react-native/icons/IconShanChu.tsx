@@ -2,15 +2,15 @@ import React, { forwardRef, useMemo } from 'react'
 import type { ComponentProps } from 'react'
 import { SvgXml } from 'react-native-svg'
 
-export interface IconZanTingProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+export interface IconShanChuProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
   size?: number | string
   color?: string
 }
 
-export const IconZanTing = forwardRef<unknown, IconZanTingProps>(
+export const IconShanChu = forwardRef<unknown, IconShanChuProps>(
   ({ size = 24, color, ...props }, ref) => {
     const baseXml = useMemo(
-      () => `<svg fill="none" viewBox="0 0 24 24"><path fill="#171717" d="M13.655 5.793c0-.457.37-.827.827-.827h2.483c.457 0 .828.37.828.827v13.242c0 .457-.37.827-.828.827h-2.483a.83.83 0 0 1-.827-.827z"/><path fill="#171717" d="M6.207 5.793c0-.457.37-.827.827-.827h2.483c.457 0 .828.37.828.827v13.242a.83.83 0 0 1-.828.827H7.034a.83.83 0 0 1-.827-.827z"/></svg>`,
+      () => `<svg fill="none" viewBox="0 0 24 24"><path stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h2m0 0h16M5 6v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6zm3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m-6 5v6m4-6v6"/></svg>`,
       [],
     )
 
@@ -48,6 +48,6 @@ export const IconZanTing = forwardRef<unknown, IconZanTingProps>(
   },
 )
 
-IconZanTing.displayName = 'IconZanTing'
+IconShanChu.displayName = 'IconShanChu'
 
-export default IconZanTing
+export default IconShanChu
