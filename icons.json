@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-06-03T11:15:04.331Z",
-  "totalCount": 98,
+  "version": "0.0.91",
+  "syncMode": "incremental",
+  "generatedAt": "2026-06-03T11:18:45.227Z",
+  "totalCount": 99,
   "icons": [
+    {
+      "name": "Icon删除1",
+      "originalName": "删除1",
+      "svgPath": "svg/删除1.svg",
+      "componentPath": "src/icons/Icon删除1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-03T11:18:45.227Z"
+    },
     {
       "name": "IconShanChu",
       "originalName": "删除",
