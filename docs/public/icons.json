@@ -1,30 +1,18 @@
 {
-  "version": "0.0.91",
-  "syncMode": "incremental",
-  "generatedAt": "2026-06-03T11:18:45.227Z",
-  "totalCount": 99,
+  "version": "2026.06.04",
+  "generatedAt": "2026-06-04T03:14:01.729Z",
+  "totalCount": 98,
   "icons": [
     {
-      "name": "Icon删除1",
+      "name": "IconShanChu1",
       "originalName": "删除1",
       "svgPath": "svg/删除1.svg",
-      "componentPath": "src/icons/Icon删除1.tsx",
+      "componentPath": "src/icons/IconShanChu1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-06-03T11:18:45.227Z"
-    },
-    {
-      "name": "IconShanChu",
-      "originalName": "删除",
-      "svgPath": "svg/删除.svg",
-      "componentPath": "src/icons/IconShanChu.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-06-03T11:15:04.302Z"
+      "createdAt": "2026-06-03T11:19:22.653Z"
     },
     {
       "name": "IconYinPin2",
