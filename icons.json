@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-06-03T11:19:22.684Z",
-  "totalCount": 99,
+  "version": "2026.06.04",
+  "generatedAt": "2026-06-04T03:14:01.729Z",
+  "totalCount": 98,
   "icons": [
     {
       "name": "IconShanChu1",
@@ -13,17 +13,6 @@
         "height": 24
       },
       "createdAt": "2026-06-03T11:19:22.653Z"
-    },
-    {
-      "name": "IconShanChu",
-      "originalName": "删除",
-      "svgPath": "svg/删除.svg",
-      "componentPath": "src/icons/IconShanChu.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-06-03T11:15:04.302Z"
     },
     {
       "name": "IconYinPin2",
