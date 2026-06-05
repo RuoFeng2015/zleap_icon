@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-06-04T03:16:37.821Z
+Generated at: 2026-06-05T03:29:24.040Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 98 |
+| Total Icons | 101 |
 | Valid Icons | 0 |
-| Invalid Icons | 98 |
-| Total Errors | 98 |
-| Total Warnings | 102 |
+| Invalid Icons | 101 |
+| Total Errors | 101 |
+| Total Warnings | 105 |
 
-⚠️ **98 icon(s) failed validation**
+⚠️ **101 icon(s) failed validation**
 
 ## Errors
 
-### size (98 errors)
+### size (101 errors)
 
 | Icon | Message |
 |------|---------|
@@ -35,6 +35,7 @@ Generated at: 2026-06-04T03:16:37.821Z
 | play | Icon size 24x24 not in allowed sizes:  |
 | search | Icon size 24x24 not in allowed sizes:  |
 | share | Icon size 24x24 not in allowed sizes:  |
+| 下拉 | Icon size 24x24 not in allowed sizes:  |
 | 传入 | Icon size 24x24 not in allowed sizes:  |
 | 体育 | Icon size 36x36 not in allowed sizes:  |
 | 关闭-小 | Icon size 24x24 not in allowed sizes:  |
@@ -60,6 +61,7 @@ Generated at: 2026-06-04T03:16:37.821Z
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 展开1 | Icon size 24x24 not in allowed sizes:  |
 | 展开2 | Icon size 24x24 not in allowed sizes:  |
+| 展开3 | Icon size 24x24 not in allowed sizes:  |
 | 左 | Icon size 24x24 not in allowed sizes:  |
 | 已勾选 | Icon size 24x24 not in allowed sizes:  |
 | 已收藏1 | Icon size 24x24 not in allowed sizes:  |
@@ -76,6 +78,7 @@ Generated at: 2026-06-04T03:16:37.821Z
 | 播放 | Icon size 24x24 not in allowed sizes:  |
 | 播放1 | Icon size 24x24 not in allowed sizes:  |
 | 收藏 | Icon size 24x24 not in allowed sizes:  |
+| 收藏1 | Icon size 24x24 not in allowed sizes:  |
 | 教育 | Icon size 216x87 not in allowed sizes:  |
 | 教育1 | Icon size 36x36 not in allowed sizes:  |
 | 文件夹 | Icon size 24x24 not in allowed sizes:  |
@@ -121,7 +124,7 @@ Generated at: 2026-06-04T03:16:37.821Z
 
 ## Warnings
 
-### naming (91 warnings)
+### naming (94 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -133,6 +136,7 @@ Generated at: 2026-06-04T03:16:37.821Z
 | Frame2 | Icon name "Frame2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame3 | Icon name "Frame3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame4 | Icon name "Frame4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 下拉 | Icon name "下拉" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 传入 | Icon name "传入" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 体育 | Icon name "体育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -158,6 +162,7 @@ Generated at: 2026-06-04T03:16:37.821Z
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开1 | Icon name "展开1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开2 | Icon name "展开2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 展开3 | Icon name "展开3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 左 | Icon name "左" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已勾选 | Icon name "已勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已收藏1 | Icon name "已收藏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -174,6 +179,7 @@ Generated at: 2026-06-04T03:16:37.821Z
 | 播放 | Icon name "播放" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 播放1 | Icon name "播放1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 收藏 | Icon name "收藏" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 收藏1 | Icon name "收藏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育 | Icon name "教育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育1 | Icon name "教育1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹 | Icon name "文件夹" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
