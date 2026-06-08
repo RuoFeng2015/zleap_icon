@@ -1,8 +1,19 @@
 {
-  "version": "2026.06.08",
-  "generatedAt": "2026-06-08T08:15:00.726Z",
-  "totalCount": 101,
+  "version": "1.0.0",
+  "generatedAt": "2026-06-08T09:01:30.548Z",
+  "totalCount": 102,
   "icons": [
+    {
+      "name": "IconZleapLogo",
+      "originalName": "zleap-logo",
+      "svgPath": "svg/zleap-logo.svg",
+      "componentPath": "src/icons/IconZleapLogo.tsx",
+      "size": {
+        "width": 45,
+        "height": 37
+      },
+      "createdAt": "2026-06-08T09:01:30.548Z"
+    },
     {
       "name": "IconShouCang1",
       "originalName": "收藏1",
