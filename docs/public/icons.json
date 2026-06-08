@@ -1,8 +1,19 @@
 {
-  "version": "2026.06.08",
-  "generatedAt": "2026-06-08T09:04:15.708Z",
-  "totalCount": 101,
+  "version": "1.0.0",
+  "generatedAt": "2026-06-08T09:27:41.945Z",
+  "totalCount": 102,
   "icons": [
+    {
+      "name": "IconLogo",
+      "originalName": "logo",
+      "svgPath": "svg/logo.svg",
+      "componentPath": "src/icons/IconLogo.tsx",
+      "size": {
+        "width": 45,
+        "height": 37
+      },
+      "createdAt": "2026-06-08T09:27:41.945Z"
+    },
     {
       "name": "IconShouCang1",
       "originalName": "收藏1",
