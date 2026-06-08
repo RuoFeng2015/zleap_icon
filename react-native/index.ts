@@ -42,6 +42,7 @@ import { IconLianXiRen1 } from './icons/IconLianXiRen1'
 import { IconLianXiRen2 } from './icons/IconLianXiRen2'
 import { IconLianXiRen3 } from './icons/IconLianXiRen3'
 import { IconLike } from './icons/IconLike'
+import { IconLogo } from './icons/IconLogo'
 import { IconLuYin } from './icons/IconLuYin'
 import { IconNotificationsSharp } from './icons/IconNotificationsSharp'
 import { IconPingLun } from './icons/IconPingLun'
@@ -102,7 +103,6 @@ import { IconZhiChang1 } from './icons/IconZhiChang1'
 import { IconZhiShiKu } from './icons/IconZhiShiKu'
 import { IconZhuShou } from './icons/IconZhuShou'
 import { IconZhuShouGuanLi } from './icons/IconZhuShouGuanLi'
-import { IconZleapLogo } from './icons/IconZleapLogo'
 import { IconZuo } from './icons/IconZuo'
 
 export { IconAi, type IconAiProps } from './icons/IconAi'
@@ -145,6 +145,7 @@ export { IconLianXiRen1, type IconLianXiRen1Props } from './icons/IconLianXiRen1
 export { IconLianXiRen2, type IconLianXiRen2Props } from './icons/IconLianXiRen2'
 export { IconLianXiRen3, type IconLianXiRen3Props } from './icons/IconLianXiRen3'
 export { IconLike, type IconLikeProps } from './icons/IconLike'
+export { IconLogo, type IconLogoProps } from './icons/IconLogo'
 export { IconLuYin, type IconLuYinProps } from './icons/IconLuYin'
 export { IconNotificationsSharp, type IconNotificationsSharpProps } from './icons/IconNotificationsSharp'
 export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun'
@@ -205,7 +206,6 @@ export { IconZhiChang1, type IconZhiChang1Props } from './icons/IconZhiChang1'
 export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu'
 export { IconZhuShou, type IconZhuShouProps } from './icons/IconZhuShou'
 export { IconZhuShouGuanLi, type IconZhuShouGuanLiProps } from './icons/IconZhuShouGuanLi'
-export { IconZleapLogo, type IconZleapLogoProps } from './icons/IconZleapLogo'
 export { IconZuo, type IconZuoProps } from './icons/IconZuo'
 
 export const allIcons = {
@@ -249,6 +249,7 @@ export const allIcons = {
   IconLianXiRen2,
   IconLianXiRen3,
   IconLike,
+  IconLogo,
   IconLuYin,
   IconNotificationsSharp,
   IconPingLun,
@@ -309,7 +310,6 @@ export const allIcons = {
   IconZhiShiKu,
   IconZhuShou,
   IconZhuShouGuanLi,
-  IconZleapLogo,
   IconZuo
 } as const
 

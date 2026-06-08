@@ -1,6 +1,6 @@
 # Icon Validation Report
 
-Generated at: 2026-06-08T09:04:47.052Z
+Generated at: 2026-06-08T09:30:38.133Z
 
 ## Summary
 
@@ -31,11 +31,11 @@ Generated at: 2026-06-08T09:04:47.052Z
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
+| logo | Icon size 45x37 not in allowed sizes:  |
 | notifications-sharp | Icon size 24x24 not in allowed sizes:  |
 | play | Icon size 24x24 not in allowed sizes:  |
 | search | Icon size 24x24 not in allowed sizes:  |
 | share | Icon size 24x24 not in allowed sizes:  |
-| zleap-logo | Icon size 45x37 not in allowed sizes:  |
 | 下拉 | Icon size 24x24 not in allowed sizes:  |
 | 传入 | Icon size 24x24 not in allowed sizes:  |
 | 体育 | Icon size 36x36 not in allowed sizes:  |
@@ -232,7 +232,7 @@ Generated at: 2026-06-08T09:04:47.052Z
 | Frame-1261156360 | Icon is not square: 1440x961 |
 | Frame3 | Icon is not square: 1440x961 |
 | Frame4 | Icon is not square: 476x435 |
-| zleap-logo | Icon is not square: 45x37 |
+| logo | Icon is not square: 45x37 |
 | 商业1 | Icon is not square: 132x87 |
 | 教育 | Icon is not square: 216x87 |
 | 文化体育-1 | Icon is not square: 186x87 |
