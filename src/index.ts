@@ -105,6 +105,7 @@ import { IconZhiChang1 } from './icons/IconZhiChang1';
 import { IconZhiShiKu } from './icons/IconZhiShiKu';
 import { IconZhuShou } from './icons/IconZhuShou';
 import { IconZhuShouGuanLi } from './icons/IconZhuShouGuanLi';
+import { IconZleapLogo } from './icons/IconZleapLogo';
 import { IconZuo } from './icons/IconZuo';
 
 export { IconAi, type IconAiProps } from './icons/IconAi';
@@ -207,6 +208,7 @@ export { IconZhiChang1, type IconZhiChang1Props } from './icons/IconZhiChang1';
 export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
 export { IconZhuShou, type IconZhuShouProps } from './icons/IconZhuShou';
 export { IconZhuShouGuanLi, type IconZhuShouGuanLiProps } from './icons/IconZhuShouGuanLi';
+export { IconZleapLogo, type IconZleapLogoProps } from './icons/IconZleapLogo';
 export { IconZuo, type IconZuoProps } from './icons/IconZuo';
 
 /**
@@ -313,6 +315,7 @@ export const allIcons = {
   IconZhiShiKu,
   IconZhuShou,
   IconZhuShouGuanLi,
+  IconZleapLogo,
   IconZuo
 } as const;
 
