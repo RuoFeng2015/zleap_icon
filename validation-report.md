@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-06-05T03:29:24.040Z
+Generated at: 2026-06-08T07:14:39.642Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 101 |
+| Total Icons | 102 |
 | Valid Icons | 0 |
-| Invalid Icons | 101 |
-| Total Errors | 101 |
-| Total Warnings | 105 |
+| Invalid Icons | 102 |
+| Total Errors | 102 |
+| Total Warnings | 106 |
 
-⚠️ **101 icon(s) failed validation**
+⚠️ **102 icon(s) failed validation**
 
 ## Errors
 
-### size (101 errors)
+### size (102 errors)
 
 | Icon | Message |
 |------|---------|
@@ -31,6 +31,7 @@ Generated at: 2026-06-05T03:29:24.040Z
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
+| lxx-test | Icon size 45x37 not in allowed sizes:  |
 | notifications-sharp | Icon size 24x24 not in allowed sizes:  |
 | play | Icon size 24x24 not in allowed sizes:  |
 | search | Icon size 24x24 not in allowed sizes:  |
@@ -223,7 +224,7 @@ Generated at: 2026-06-05T03:29:24.040Z
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
-### size (11 warnings)
+### size (12 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -231,6 +232,7 @@ Generated at: 2026-06-05T03:29:24.040Z
 | Frame-1261156360 | Icon is not square: 1440x961 |
 | Frame3 | Icon is not square: 1440x961 |
 | Frame4 | Icon is not square: 476x435 |
+| lxx-test | Icon is not square: 45x37 |
 | 商业1 | Icon is not square: 132x87 |
 | 教育 | Icon is not square: 216x87 |
 | 文化体育-1 | Icon is not square: 186x87 |

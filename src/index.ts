@@ -46,6 +46,7 @@ import { IconLianXiRen2 } from './icons/IconLianXiRen2';
 import { IconLianXiRen3 } from './icons/IconLianXiRen3';
 import { IconLike } from './icons/IconLike';
 import { IconLuYin } from './icons/IconLuYin';
+import { IconLxxTest } from './icons/IconLxxTest';
 import { IconNotificationsSharp } from './icons/IconNotificationsSharp';
 import { IconPingLun } from './icons/IconPingLun';
 import { IconPlay } from './icons/IconPlay';
@@ -148,6 +149,7 @@ export { IconLianXiRen2, type IconLianXiRen2Props } from './icons/IconLianXiRen2
 export { IconLianXiRen3, type IconLianXiRen3Props } from './icons/IconLianXiRen3';
 export { IconLike, type IconLikeProps } from './icons/IconLike';
 export { IconLuYin, type IconLuYinProps } from './icons/IconLuYin';
+export { IconLxxTest, type IconLxxTestProps } from './icons/IconLxxTest';
 export { IconNotificationsSharp, type IconNotificationsSharpProps } from './icons/IconNotificationsSharp';
 export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun';
 export { IconPlay, type IconPlayProps } from './icons/IconPlay';
@@ -254,6 +256,7 @@ export const allIcons = {
   IconLianXiRen3,
   IconLike,
   IconLuYin,
+  IconLxxTest,
   IconNotificationsSharp,
   IconPingLun,
   IconPlay,
