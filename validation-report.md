@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-06-08T09:30:39.409Z
+Generated at: 2026-06-09T05:58:40.697Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 102 |
+| Total Icons | 103 |
 | Valid Icons | 0 |
-| Invalid Icons | 102 |
-| Total Errors | 102 |
-| Total Warnings | 106 |
+| Invalid Icons | 103 |
+| Total Errors | 103 |
+| Total Warnings | 107 |
 
-⚠️ **102 icon(s) failed validation**
+⚠️ **103 icon(s) failed validation**
 
 ## Errors
 
-### size (102 errors)
+### size (103 errors)
 
 | Icon | Message |
 |------|---------|
@@ -82,6 +82,7 @@ Generated at: 2026-06-08T09:30:39.409Z
 | 收藏1 | Icon size 24x24 not in allowed sizes:  |
 | 教育 | Icon size 216x87 not in allowed sizes:  |
 | 教育1 | Icon size 36x36 not in allowed sizes:  |
+| 数据源图标-2 | Icon size 36x36 not in allowed sizes:  |
 | 文件夹 | Icon size 24x24 not in allowed sizes:  |
 | 文化体育-1 | Icon size 186x87 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
@@ -125,7 +126,7 @@ Generated at: 2026-06-08T09:30:39.409Z
 
 ## Warnings
 
-### naming (94 warnings)
+### naming (95 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -183,6 +184,7 @@ Generated at: 2026-06-08T09:30:39.409Z
 | 收藏1 | Icon name "收藏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育 | Icon name "教育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育1 | Icon name "教育1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 数据源图标-2 | Icon name "数据源图标-2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹 | Icon name "文件夹" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文化体育-1 | Icon name "文化体育-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

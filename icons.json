@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-09T05:58:09.424Z",
+  "generatedAt": "2026-06-09T05:58:44.093Z",
   "totalCount": 103,
   "icons": [
     {
-      "name": "Icon数据源图标2",
+      "name": "IconShuJuYuanTuBiao2",
       "originalName": "数据源图标-2",
       "svgPath": "svg/数据源图标-2.svg",
-      "componentPath": "src/icons/Icon数据源图标2.tsx",
+      "componentPath": "src/icons/IconShuJuYuanTuBiao2.tsx",
       "size": {
         "width": 36,
         "height": 36

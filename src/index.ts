@@ -66,6 +66,7 @@ import { IconShouCang } from './icons/IconShouCang';
 import { IconShouCang1 } from './icons/IconShouCang1';
 import { IconShouYe } from './icons/IconShouYe';
 import { IconShuaXin } from './icons/IconShuaXin';
+import { IconShuJuYuanTuBiao2 } from './icons/IconShuJuYuanTuBiao2';
 import { IconSouSuo } from './icons/IconSouSuo';
 import { IconSouSuo1 } from './icons/IconSouSuo1';
 import { IconSuoDing } from './icons/IconSuoDing';
@@ -169,6 +170,7 @@ export { IconShouCang, type IconShouCangProps } from './icons/IconShouCang';
 export { IconShouCang1, type IconShouCang1Props } from './icons/IconShouCang1';
 export { IconShouYe, type IconShouYeProps } from './icons/IconShouYe';
 export { IconShuaXin, type IconShuaXinProps } from './icons/IconShuaXin';
+export { IconShuJuYuanTuBiao2, type IconShuJuYuanTuBiao2Props } from './icons/IconShuJuYuanTuBiao2';
 export { IconSouSuo, type IconSouSuoProps } from './icons/IconSouSuo';
 export { IconSouSuo1, type IconSouSuo1Props } from './icons/IconSouSuo1';
 export { IconSuoDing, type IconSuoDingProps } from './icons/IconSuoDing';
@@ -276,6 +278,7 @@ export const allIcons = {
   IconShouCang1,
   IconShouYe,
   IconShuaXin,
+  IconShuJuYuanTuBiao2,
   IconSouSuo,
   IconSouSuo1,
   IconSuoDing,
