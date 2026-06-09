@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-08T09:27:41.945Z",
-  "totalCount": 102,
+  "generatedAt": "2026-06-09T05:58:52.954Z",
+  "totalCount": 103,
   "icons": [
+    {
+      "name": "Icon数据源图标3",
+      "originalName": "数据源图标-3",
+      "svgPath": "svg/数据源图标-3.svg",
+      "componentPath": "src/icons/Icon数据源图标3.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "createdAt": "2026-06-09T05:58:52.954Z"
+    },
     {
       "name": "IconLogo",
       "originalName": "logo",
