@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-06-09T05:58:40.697Z
+Generated at: 2026-06-09T08:04:46.062Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 103 |
+| Total Icons | 136 |
 | Valid Icons | 0 |
-| Invalid Icons | 103 |
-| Total Errors | 103 |
-| Total Warnings | 107 |
+| Invalid Icons | 136 |
+| Total Errors | 136 |
+| Total Warnings | 114 |
 
-⚠️ **103 icon(s) failed validation**
+⚠️ **136 icon(s) failed validation**
 
 ## Errors
 
-### size (103 errors)
+### size (136 errors)
 
 | Icon | Message |
 |------|---------|
@@ -30,12 +30,43 @@ Generated at: 2026-06-09T05:58:40.697Z
 | Frame4 | Icon size 476x435 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
+| delete-outline | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
 | logo | Icon size 45x37 not in allowed sizes:  |
+| menu-assistant-management-active | Icon size 49x49 not in allowed sizes:  |
+| menu-assistant-management | Icon size 120x120 not in allowed sizes:  |
+| menu-download-assistant | Icon size 120x120 not in allowed sizes:  |
+| menu-enterprise | Icon size 120x120 not in allowed sizes:  |
+| menu-home-active | Icon size 12x8 not in allowed sizes:  |
+| menu-home | Icon size 49x49 not in allowed sizes:  |
+| menu-info-management-active | Icon size 49x49 not in allowed sizes:  |
+| menu-info-management | Icon size 120x120 not in allowed sizes:  |
+| menu-member-management-active | Icon size 49x50 not in allowed sizes:  |
+| menu-member-management | Icon size 120x120 not in allowed sizes:  |
+| menu-operations-management-active | Icon size 49x49 not in allowed sizes:  |
+| menu-operations-management | Icon size 120x120 not in allowed sizes:  |
+| menu-profile-active | Icon size 49x49 not in allowed sizes:  |
+| menu-profile | Icon size 120x120 not in allowed sizes:  |
+| menu-qa-assistant-active | Icon size 49x50 not in allowed sizes:  |
+| menu-qa-assistant-large | Icon size 110x110 not in allowed sizes:  |
+| menu-qa-assistant | Icon size 120x120 not in allowed sizes:  |
+| menu-report-assistant-active | Icon size 49x49 not in allowed sizes:  |
+| menu-report-assistant | Icon size 120x120 not in allowed sizes:  |
+| menu-search-assistant-active | Icon size 49x49 not in allowed sizes:  |
+| menu-search-assistant | Icon size 120x119 not in allowed sizes:  |
+| menu-system-log-active | Icon size 49x49 not in allowed sizes:  |
+| menu-system-log | Icon size 49x49 not in allowed sizes:  |
+| menu-system-settings-active | Icon size 49x49 not in allowed sizes:  |
+| menu-system-settings | Icon size 48x48 not in allowed sizes:  |
+| menu-task-management-active | Icon size 49x49 not in allowed sizes:  |
+| menu-task-management | Icon size 120x120 not in allowed sizes:  |
+| message-avatar-icon | Icon size 48x48 not in allowed sizes:  |
 | notifications-sharp | Icon size 24x24 not in allowed sizes:  |
 | play | Icon size 24x24 not in allowed sizes:  |
 | search | Icon size 24x24 not in allowed sizes:  |
 | share | Icon size 24x24 not in allowed sizes:  |
+| success-check | Icon size 20x20 not in allowed sizes:  |
+| zleap-brand-logo | Icon size 79x66 not in allowed sizes:  |
 | 下拉 | Icon size 24x24 not in allowed sizes:  |
 | 传入 | Icon size 24x24 not in allowed sizes:  |
 | 体育 | Icon size 36x36 not in allowed sizes:  |
@@ -82,7 +113,9 @@ Generated at: 2026-06-09T05:58:40.697Z
 | 收藏1 | Icon size 24x24 not in allowed sizes:  |
 | 教育 | Icon size 216x87 not in allowed sizes:  |
 | 教育1 | Icon size 36x36 not in allowed sizes:  |
+| 数据源图标-1 | Icon size 36x36 not in allowed sizes:  |
 | 数据源图标-2 | Icon size 36x36 not in allowed sizes:  |
+| 数据源图标-3 | Icon size 36x36 not in allowed sizes:  |
 | 文件夹 | Icon size 24x24 not in allowed sizes:  |
 | 文化体育-1 | Icon size 186x87 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
@@ -126,7 +159,7 @@ Generated at: 2026-06-09T05:58:40.697Z
 
 ## Warnings
 
-### naming (95 warnings)
+### naming (97 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -184,7 +217,9 @@ Generated at: 2026-06-09T05:58:40.697Z
 | 收藏1 | Icon name "收藏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育 | Icon name "教育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育1 | Icon name "教育1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 数据源图标-1 | Icon name "数据源图标-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 数据源图标-2 | Icon name "数据源图标-2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 数据源图标-3 | Icon name "数据源图标-3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹 | Icon name "文件夹" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文化体育-1 | Icon name "文化体育-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -226,7 +261,7 @@ Generated at: 2026-06-09T05:58:40.697Z
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
-### size (12 warnings)
+### size (17 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -235,6 +270,11 @@ Generated at: 2026-06-09T05:58:40.697Z
 | Frame3 | Icon is not square: 1440x961 |
 | Frame4 | Icon is not square: 476x435 |
 | logo | Icon is not square: 45x37 |
+| menu-home-active | Icon is not square: 12x8 |
+| menu-member-management-active | Icon is not square: 49x50 |
+| menu-qa-assistant-active | Icon is not square: 49x50 |
+| menu-search-assistant | Icon is not square: 120x119 |
+| zleap-brand-logo | Icon is not square: 79x66 |
 | 商业1 | Icon is not square: 132x87 |
 | 教育 | Icon is not square: 216x87 |
 | 文化体育-1 | Icon is not square: 186x87 |
