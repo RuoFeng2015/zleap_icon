@@ -1,0 +1,36 @@
+import React, { forwardRef, useMemo } from 'react'
+import type { ComponentProps } from 'react'
+import { SvgXml } from 'react-native-svg'
+
+export interface IconMenuProfileActiveProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+  size?: number | string
+  color?: string
+}
+
+export const IconMenuProfileActive = forwardRef<unknown, IconMenuProfileActiveProps>(
+  ({ size = 24, color, ...props }, ref) => {
+    const baseXml = useMemo(
+      () => `<svg fill="none" viewBox="0 0 49 49"><path fill="#F6F6F6" d="M38.2.1c5.577 0 10.099 4.522 10.099 10.1v28c0 5.578-4.522 10.1-10.1 10.1h-28C4.621 48.3.1 43.778.1 38.2v-28C.1 4.622 4.622.1 10.2.1z"/><path stroke="#D4D4D8" stroke-width=".2" d="M38.2.1c5.577 0 10.099 4.522 10.099 10.1v28c0 5.578-4.522 10.1-10.1 10.1h-28C4.621 48.3.1 43.778.1 38.2v-28C.1 4.622 4.622.1 10.2.1z"/><g filter="url(#a)"><path fill="#919191" d="M24.2 39.8c8.395 0 15.2-6.805 15.2-15.2S32.595 9.4 24.2 9.4 9 16.206 9 24.6c0 8.395 6.805 15.2 15.2 15.2"/></g><g fill="#D9D9D9" filter="url(#b)"><path d="M24.197 39.8c4.552 0 8.636-2.004 11.42-5.176-.816-4.176-5.616-7.384-11.42-7.384s-10.604 3.208-11.42 7.384a15.15 15.15 0 0 0 11.42 5.176"/><path d="M23.997 25.4c3.204 0 5.8-2.507 5.8-5.6s-2.596-5.6-5.8-5.6-5.8 2.507-5.8 5.6 2.597 5.6 5.8 5.6"/></g><defs><filter id="a" width="32.805" height="33.275" x="8.531" y="8.932" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".938" dy="1.406"/><feGaussianBlur stdDeviation=".5"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0.394602 0 0 0 0 0.394602 0 0 0 0 0.394602 0 0 0 0.08 0"/><feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_15801_31574"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_15801_31574" mode="normal" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".5" dy=".5"/><feGaussianBlur stdDeviation=".5"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.109684 0 0 0 0 0.0922738 0 0 0 0 0.0922738 0 0 0 0.1 0"/><feBlend in2="shape" mode="normal" result="effect2_innerShadow_15801_31574"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.469" dy="-.469"/><feGaussianBlur stdDeviation=".5"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/><feBlend in2="effect2_innerShadow_15801_31574" mode="normal" result="effect3_innerShadow_15801_31574"/></filter><filter id="b" width="23.777" height="26.538" x="12.309" y="13.731" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".469" dy=".469"/><feGaussianBlur stdDeviation=".703"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.121569 0 0 0 0 0.121569 0 0 0 0 0.117647 0 0 0 0.05 0"/><feBlend in2="shape" mode="normal" result="effect1_innerShadow_15801_31574"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.469" dy="-.469"/><feGaussianBlur stdDeviation=".703"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.121569 0 0 0 0 0.121569 0 0 0 0 0.117647 0 0 0 0.05 0"/><feBlend in2="effect1_innerShadow_15801_31574" mode="normal" result="effect2_innerShadow_15801_31574"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".469" dy=".469"/><feGaussianBlur stdDeviation=".938"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.121569 0 0 0 0 0.121569 0 0 0 0 0.117647 0 0 0 0.05 0"/><feBlend in2="effect2_innerShadow_15801_31574" mode="normal" result="effect3_innerShadow_15801_31574"/></filter></defs></svg>`,
+      [],
+    )
+
+    const xml = useMemo(() => {
+      return baseXml
+    }, [baseXml, color])
+
+    return (
+      <SvgXml
+        ref={ref as never}
+        xml={xml}
+        width={size}
+        height={size}
+        viewBox="0 0 49 49"
+        {...props}
+      />
+    )
+  },
+)
+
+IconMenuProfileActive.displayName = 'IconMenuProfileActive'
+
+export default IconMenuProfileActive

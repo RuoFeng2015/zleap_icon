@@ -1098,8 +1098,23 @@ const adminLoginError = document.getElementById('admin-login-error');
 // Admin Toolbar
 const adminToolbar = document.getElementById('admin-toolbar');
 const adminSelectedCount = document.getElementById('admin-selected-count');
+const adminUploadBtn = document.getElementById('admin-upload-btn');
 const adminDeleteBtn = document.getElementById('admin-delete-btn');
 const adminExitBtn = document.getElementById('admin-exit-btn');
+
+// Upload Icon Modal
+const uploadIconModal = document.getElementById('upload-icon-modal');
+const uploadIconBackdrop = document.getElementById('upload-icon-backdrop');
+const uploadIconClose = document.getElementById('upload-icon-close');
+const uploadIconNameInput = document.getElementById('upload-icon-name');
+const uploadSvgCodeInput = document.getElementById('upload-svg-code');
+const uploadError = document.getElementById('upload-error');
+const uploadPreview = document.getElementById('upload-preview');
+const uploadCancelBtn = document.getElementById('upload-cancel-btn');
+const uploadSubmitBtn = document.getElementById('upload-submit-btn');
+const uploadProgress = document.getElementById('upload-progress');
+const uploadProgressFill = document.getElementById('upload-progress-fill');
+const uploadProgressText = document.getElementById('upload-progress-text');
 
 // Delete Confirm Modal
 const deleteConfirmModal = document.getElementById('delete-confirm-modal');
@@ -1111,6 +1126,9 @@ const deleteConfirmBtn = document.getElementById('delete-confirm-btn');
 const deleteProgress = document.getElementById('delete-progress');
 const deleteProgressFill = document.getElementById('delete-progress-fill');
 const deleteProgressText = document.getElementById('delete-progress-text');
+
+let uploadItem = null;
+let uploadBusy = false;
 
 function openAdminLogin() {
   adminLoginModal.classList.remove('hidden');
@@ -1220,6 +1238,382 @@ function updateCardSelectionUI() {
     const originalName = card.dataset.originalName;
     card.classList.toggle('selected', selectedIcons.has(originalName));
   });
+}
+
+function normalizeUploadName(name) {
+  return name
+    .trim()
+    .replace(/\.svg$/i, '')
+    .replace(/[\\/:*?"<>|]/g, '-')
+    .replace(/\s+/g, '-');
+}
+
+function getSvgSize(svgContent) {
+  const widthMatch = svgContent.match(/\bwidth=["']([\d.]+)["']/i);
+  const heightMatch = svgContent.match(/\bheight=["']([\d.]+)["']/i);
+  const viewBoxMatch = svgContent.match(/\bviewBox=["'][^"']*?\s+([\d.]+)\s+([\d.]+)["']/i);
+
+  if (widthMatch && heightMatch) {
+    return {
+      width: Math.round(Number(widthMatch[1])) || 24,
+      height: Math.round(Number(heightMatch[1])) || 24
+    };
+  }
+
+  if (viewBoxMatch) {
+    return {
+      width: Math.round(Number(viewBoxMatch[1])) || 24,
+      height: Math.round(Number(viewBoxMatch[2])) || 24
+    };
+  }
+
+  return { width: 24, height: 24 };
+}
+
+function toUploadComponentName(iconName) {
+  return `Icon${iconName
+    .split(/[-_\s]+/)
+    .filter(Boolean)
+    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    .join('')}`;
+}
+
+function validateSvgContent(svgContent) {
+  const errors = [];
+  const warnings = [];
+  const trimmed = svgContent.trim();
+
+  if (!trimmed) {
+    return { errors: ['SVG 代码不能为空'], warnings };
+  }
+  if (!/^<svg[\s>]/i.test(trimmed)) {
+    errors.push('SVG 必须以 <svg 标签开始');
+  }
+  if (!/<\/svg>\s*$/i.test(trimmed)) {
+    errors.push('SVG 必须包含结束标签 </svg>');
+  }
+  if (!/\bviewBox=["'][^"']+["']/i.test(trimmed)) {
+    warnings.push('SVG 建议包含 viewBox 属性');
+  }
+
+  const lower = trimmed.toLowerCase();
+  for (const tag of ['script', 'iframe', 'object', 'embed', 'link']) {
+    if (lower.includes(`<${tag}`)) {
+      errors.push(`SVG 包含不安全标签 <${tag}>`);
+    }
+  }
+  if (/\son[a-z]+\s*=/i.test(trimmed)) {
+    errors.push('SVG 不能包含 onload/onclick 等事件属性');
+  }
+
+  try {
+    const doc = new DOMParser().parseFromString(trimmed, 'image/svg+xml');
+    if (doc.querySelector('parsererror')) {
+      errors.push('SVG XML 格式无法解析');
+    }
+  } catch (error) {
+    errors.push(`SVG 解析失败: ${error.message}`);
+  }
+
+  return { errors, warnings };
+}
+
+function createUploadItem(name, svgContent) {
+  const originalName = normalizeUploadName(name);
+  const trimmedSvg = svgContent.trim();
+  const errors = [];
+
+  if (!originalName) {
+    errors.push('图标名称不能为空');
+  }
+  if (icons.some(icon => icon.originalName === originalName || icon.svgPath === `svg/${originalName}.svg`)) {
+    errors.push(`图标 ${originalName} 已存在`);
+  }
+
+  const svgValidation = validateSvgContent(trimmedSvg);
+  errors.push(...svgValidation.errors);
+
+  return {
+    id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+    originalName,
+    fileName: `${originalName}.svg`,
+    svgContent: trimmedSvg,
+    errors,
+    svgErrors: svgValidation.errors,
+    warnings: svgValidation.warnings,
+    size: getSvgSize(trimmedSvg)
+  };
+}
+
+function setUploadError(message) {
+  if (!message) {
+    uploadError.classList.add('hidden');
+    uploadError.textContent = '';
+    return;
+  }
+
+  uploadError.textContent = message;
+  uploadError.classList.remove('hidden');
+}
+
+function renderUploadPreview() {
+  if (!uploadItem || !uploadItem.svgContent || uploadItem.svgErrors.length > 0) {
+    uploadPreview.classList.add('hidden');
+    uploadPreview.innerHTML = '';
+    return;
+  }
+
+  uploadPreview.classList.remove('hidden');
+  uploadPreview.innerHTML = `
+    <div class="upload-preview-title">展示效果</div>
+    <div class="upload-preview-single">
+      <div class="upload-preview-icon">${createSvgWithStyles(uploadItem.svgContent, 48, 'currentColor', `upload-${uploadItem.id}`)}</div>
+      <div class="upload-preview-name" title="${uploadItem.originalName}">${uploadItem.originalName}</div>
+      <div class="upload-preview-meta">${uploadItem.size.width}x${uploadItem.size.height}</div>
+      ${uploadItem.warnings.length ? `<div class="upload-preview-warning">${uploadItem.warnings[0]}</div>` : ''}
+    </div>
+  `;
+}
+
+function updateUploadState() {
+  renderUploadPreview();
+
+  const error = uploadItem?.errors?.[0] || '';
+  setUploadError(error);
+  uploadSubmitBtn.disabled = uploadBusy || !uploadItem || uploadItem.errors.length > 0;
+}
+
+function resetUploadModal() {
+  uploadItem = null;
+  uploadIconNameInput.value = '';
+  uploadSvgCodeInput.value = '';
+  uploadBusy = false;
+  uploadSubmitBtn.disabled = true;
+  uploadSubmitBtn.textContent = '创建上传 PR';
+  uploadCancelBtn.disabled = false;
+  uploadCancelBtn.textContent = '取消';
+  uploadProgress.classList.add('hidden');
+  uploadProgressFill.style.width = '0%';
+  uploadProgressText.textContent = '准备上传...';
+  setUploadError('');
+  renderUploadPreview();
+}
+
+function openUploadModal() {
+  if (!adminConfig) {
+    showToast('请先进入管理模式');
+    return;
+  }
+  resetUploadModal();
+  uploadIconModal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeUploadModal() {
+  if (uploadBusy) return;
+  uploadIconModal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+function syncManualUploadItem() {
+  const svgContent = uploadSvgCodeInput.value.trim();
+  const name = uploadIconNameInput.value.trim();
+
+  if (svgContent || name) {
+    uploadItem = createUploadItem(name, svgContent);
+  } else {
+    uploadItem = null;
+  }
+
+  updateUploadState();
+}
+
+async function fetchJsonFromRepo(repo, branchName, path, headers) {
+  const response = await fetch(`https://api.github.com/repos/${repo}/contents/${path}?ref=${encodeURIComponent(branchName)}`, { headers });
+  if (!response.ok) {
+    throw new Error(`读取 ${path} 失败`);
+  }
+
+  const data = await response.json();
+  const content = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
+  return { data, json: JSON.parse(content) };
+}
+
+function buildUpdatedIconsJson(baseJson, item) {
+  const now = new Date().toISOString();
+  const existing = Array.isArray(baseJson.icons) ? baseJson.icons : [];
+  const existingNames = new Set(existing.map(icon => icon.originalName));
+  const additions = existingNames.has(item.originalName)
+    ? []
+    : [
+      {
+        name: toUploadComponentName(item.originalName),
+        originalName: item.originalName,
+        svgPath: `svg/${item.fileName}`,
+        componentPath: `src/icons/${toUploadComponentName(item.originalName)}.tsx`,
+        size: item.size,
+        createdAt: now
+      }
+    ];
+
+  return {
+    ...baseJson,
+    generatedAt: now,
+    totalCount: additions.length + existing.length,
+    icons: [...additions, ...existing]
+  };
+}
+
+async function putRepoFile(repo, path, branchName, content, message, headers, sha = null) {
+  const body = {
+    message,
+    content: btoa(unescape(encodeURIComponent(content))),
+    branch: branchName
+  };
+
+  if (sha) {
+    body.sha = sha;
+  }
+
+  const response = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+    method: 'PUT',
+    headers,
+    body: JSON.stringify(body)
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.message || `上传 ${path} 失败`);
+  }
+
+  return response.json();
+}
+
+async function executeUpload() {
+  if (!adminConfig || !uploadItem || uploadBusy) return;
+
+  if (uploadItem.errors.length > 0) {
+    setUploadError(uploadItem.errors[0]);
+    return;
+  }
+
+  uploadBusy = true;
+  uploadSubmitBtn.disabled = true;
+  uploadSubmitBtn.textContent = '正在创建...';
+  uploadCancelBtn.disabled = true;
+  uploadProgress.classList.remove('hidden');
+  uploadProgressFill.style.width = '0%';
+  uploadProgressText.textContent = '正在创建上传分支...';
+
+  const { repo, token, branch } = adminConfig;
+  const headers = {
+    'Accept': 'application/vnd.github.v3+json',
+    'Authorization': `token ${token}`,
+    'Content-Type': 'application/json'
+  };
+
+  try {
+    const encodedBaseBranch = branch.split('/').map(encodeURIComponent).join('/');
+    const refResponse = await fetch(
+      `https://api.github.com/repos/${repo}/git/ref/heads/${encodedBaseBranch}`,
+      { headers }
+    );
+    if (!refResponse.ok) throw new Error('获取默认分支信息失败');
+    const refData = await refResponse.json();
+
+    const branchName = `upload-icons-${Date.now()}`;
+    const createBranchResponse = await fetch(`https://api.github.com/repos/${repo}/git/refs`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        ref: `refs/heads/${branchName}`,
+        sha: refData.object.sha
+      })
+    });
+    if (!createBranchResponse.ok) throw new Error('创建上传分支失败');
+
+    uploadProgressFill.style.width = '35%';
+    uploadProgressText.textContent = `正在上传 ${uploadItem.fileName}`;
+    await putRepoFile(
+      repo,
+      `svg/${uploadItem.fileName}`,
+      branchName,
+      uploadItem.svgContent,
+      `Add icon: ${uploadItem.fileName}`,
+      headers
+    );
+
+    uploadProgressFill.style.width = '68%';
+    uploadProgressText.textContent = '正在更新 icons.json...';
+
+    const rootJson = await fetchJsonFromRepo(repo, branchName, 'icons.json', headers);
+    const updatedRootJson = buildUpdatedIconsJson(rootJson.json, uploadItem);
+    const updatedJsonText = JSON.stringify(updatedRootJson, null, 2) + '\n';
+
+    await putRepoFile(
+      repo,
+      'icons.json',
+      branchName,
+      updatedJsonText,
+      'Update icons.json for uploaded icons',
+      headers,
+      rootJson.data.sha
+    );
+
+    try {
+      const docsJson = await fetchJsonFromRepo(repo, branchName, 'docs/public/icons.json', headers);
+      await putRepoFile(
+        repo,
+        'docs/public/icons.json',
+        branchName,
+        updatedJsonText,
+        'Update docs/public/icons.json for uploaded icons',
+        headers,
+        docsJson.data.sha
+      );
+    } catch (error) {
+      console.warn('更新 docs/public/icons.json 失败:', error);
+    }
+
+    uploadProgressFill.style.width = '86%';
+    uploadProgressText.textContent = '正在创建 PR...';
+
+    const prResponse = await fetch(`https://api.github.com/repos/${repo}/pulls`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        title: `上传图标: ${uploadItem.originalName}`,
+        body: `## 上传图标\n\n本 PR 由文档站管理员上传功能创建。\n\n### 新增 SVG\n- \`${uploadItem.fileName}\`\n\n### 展示信息\n- 图标名称: \`${uploadItem.originalName}\`\n- 尺寸: ${uploadItem.size.width}x${uploadItem.size.height}\n\n### 合并后建议流水线执行\n\n\`\`\`bash\nnpm run transform-svg\nnpm run generate-components\nnpm run generate-rn-components\nnpm run generate-outputs\nnpm run build:docs\n\`\`\``,
+        head: branchName,
+        base: branch
+      })
+    });
+
+    uploadProgressFill.style.width = '100%';
+
+    if (!prResponse.ok) {
+      const errorData = await prResponse.json().catch(() => ({}));
+      throw new Error(errorData.message || '创建 PR 失败');
+    }
+
+    const prData = await prResponse.json();
+    uploadProgressText.innerHTML = `✅ PR 已创建！<a href="${prData.html_url}" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">查看 PR →</a>`;
+    uploadBusy = false;
+    uploadCancelBtn.disabled = false;
+    uploadCancelBtn.textContent = '关闭';
+    uploadSubmitBtn.disabled = true;
+    uploadSubmitBtn.textContent = '已创建 PR';
+    showToast(`✅ 已创建上传 ${uploadItem.originalName} 的 PR`);
+  } catch (error) {
+    console.error('上传失败:', error);
+    setUploadError(error.message);
+    uploadProgressText.textContent = `❌ ${error.message}`;
+    uploadBusy = false;
+    uploadSubmitBtn.disabled = false;
+    uploadSubmitBtn.textContent = '创建上传 PR';
+    uploadCancelBtn.disabled = false;
+    updateUploadState();
+  }
 }
 
 function openDeleteConfirm() {
@@ -1435,8 +1829,16 @@ adminUsernameInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') adminPasswordInput.focus();
 });
 
+adminUploadBtn.addEventListener('click', openUploadModal);
 adminDeleteBtn.addEventListener('click', openDeleteConfirm);
 adminExitBtn.addEventListener('click', exitAdminMode);
+
+uploadIconClose.addEventListener('click', closeUploadModal);
+uploadIconBackdrop.addEventListener('click', closeUploadModal);
+uploadCancelBtn.addEventListener('click', closeUploadModal);
+uploadSubmitBtn.addEventListener('click', executeUpload);
+uploadIconNameInput.addEventListener('input', syncManualUploadItem);
+uploadSvgCodeInput.addEventListener('input', syncManualUploadItem);
 
 deleteConfirmBackdrop.addEventListener('click', () => {
   if (!deleteConfirmBtn.disabled) closeDeleteConfirm();

@@ -144,7 +144,6 @@ function isOversizedRectBackgroundPath(
 /**
  * 自定义 SVGO 插件：清理 Figma 导出的 SVG 问题元素
  * - 移除超大背景路径（设计稿背景泄漏）
- * - 移除 clipPath 内的填充路径
  * - 移除不需要的白色/透明填充背景
  */
 const cleanFigmaExport: CustomPlugin = {
@@ -168,22 +167,6 @@ const cleanFigmaExport: CustomPlugin = {
             ) {
               removeNodeFromParent(node, parentNode)
               return
-            }
-          }
-
-          // 移除 clipPath 定义中的纯白色填充路径
-          if (node.name === 'clipPath') {
-            if (node.children) {
-              node.children = node.children.filter((child: any) => {
-                if (child.type === 'element' && child.name === 'path') {
-                  const fill = child.attributes?.fill
-                  // 保留非白色填充的元素
-                  return (
-                    fill !== 'white' && fill !== '#fff' && fill !== '#ffffff'
-                  )
-                }
-                return true
-              })
             }
           }
 
