@@ -17,6 +17,7 @@ import { IconCheck } from './icons/IconCheck';
 import { IconChongXin } from './icons/IconChongXin';
 import { IconChuanRu } from './icons/IconChuanRu';
 import { IconDaiShenHe } from './icons/IconDaiShenHe';
+import { IconDeleteOutline } from './icons/IconDeleteOutline';
 import { IconDuoXuan } from './icons/IconDuoXuan';
 import { IconFenXiang } from './icons/IconFenXiang';
 import { IconFrame } from './icons/IconFrame';
@@ -47,6 +48,34 @@ import { IconLianXiRen3 } from './icons/IconLianXiRen3';
 import { IconLike } from './icons/IconLike';
 import { IconLogo } from './icons/IconLogo';
 import { IconLuYin } from './icons/IconLuYin';
+import { IconMenuAssistantManagement } from './icons/IconMenuAssistantManagement';
+import { IconMenuAssistantManagementActive } from './icons/IconMenuAssistantManagementActive';
+import { IconMenuDownloadAssistant } from './icons/IconMenuDownloadAssistant';
+import { IconMenuEnterprise } from './icons/IconMenuEnterprise';
+import { IconMenuHome } from './icons/IconMenuHome';
+import { IconMenuHomeActive } from './icons/IconMenuHomeActive';
+import { IconMenuInfoManagement } from './icons/IconMenuInfoManagement';
+import { IconMenuInfoManagementActive } from './icons/IconMenuInfoManagementActive';
+import { IconMenuMemberManagement } from './icons/IconMenuMemberManagement';
+import { IconMenuMemberManagementActive } from './icons/IconMenuMemberManagementActive';
+import { IconMenuOperationsManagement } from './icons/IconMenuOperationsManagement';
+import { IconMenuOperationsManagementActive } from './icons/IconMenuOperationsManagementActive';
+import { IconMenuProfile } from './icons/IconMenuProfile';
+import { IconMenuProfileActive } from './icons/IconMenuProfileActive';
+import { IconMenuQaAssistant } from './icons/IconMenuQaAssistant';
+import { IconMenuQaAssistantActive } from './icons/IconMenuQaAssistantActive';
+import { IconMenuQaAssistantLarge } from './icons/IconMenuQaAssistantLarge';
+import { IconMenuReportAssistant } from './icons/IconMenuReportAssistant';
+import { IconMenuReportAssistantActive } from './icons/IconMenuReportAssistantActive';
+import { IconMenuSearchAssistant } from './icons/IconMenuSearchAssistant';
+import { IconMenuSearchAssistantActive } from './icons/IconMenuSearchAssistantActive';
+import { IconMenuSystemLog } from './icons/IconMenuSystemLog';
+import { IconMenuSystemLogActive } from './icons/IconMenuSystemLogActive';
+import { IconMenuSystemSettings } from './icons/IconMenuSystemSettings';
+import { IconMenuSystemSettingsActive } from './icons/IconMenuSystemSettingsActive';
+import { IconMenuTaskManagement } from './icons/IconMenuTaskManagement';
+import { IconMenuTaskManagementActive } from './icons/IconMenuTaskManagementActive';
+import { IconMessageAvatarIcon } from './icons/IconMessageAvatarIcon';
 import { IconNotificationsSharp } from './icons/IconNotificationsSharp';
 import { IconPingLun } from './icons/IconPingLun';
 import { IconPlay } from './icons/IconPlay';
@@ -66,9 +95,12 @@ import { IconShouCang } from './icons/IconShouCang';
 import { IconShouCang1 } from './icons/IconShouCang1';
 import { IconShouYe } from './icons/IconShouYe';
 import { IconShuaXin } from './icons/IconShuaXin';
+import { IconShuJuYuanTuBiao1 } from './icons/IconShuJuYuanTuBiao1';
 import { IconShuJuYuanTuBiao2 } from './icons/IconShuJuYuanTuBiao2';
+import { IconShuJuYuanTuBiao3 } from './icons/IconShuJuYuanTuBiao3';
 import { IconSouSuo } from './icons/IconSouSuo';
 import { IconSouSuo1 } from './icons/IconSouSuo1';
+import { IconSuccessCheck } from './icons/IconSuccessCheck';
 import { IconSuoDing } from './icons/IconSuoDing';
 import { IconTanSuo } from './icons/IconTanSuo';
 import { IconTiYu } from './icons/IconTiYu';
@@ -107,6 +139,7 @@ import { IconZhiChang1 } from './icons/IconZhiChang1';
 import { IconZhiShiKu } from './icons/IconZhiShiKu';
 import { IconZhuShou } from './icons/IconZhuShou';
 import { IconZhuShouGuanLi } from './icons/IconZhuShouGuanLi';
+import { IconZleapBrandLogo } from './icons/IconZleapBrandLogo';
 import { IconZuo } from './icons/IconZuo';
 
 export { IconAi, type IconAiProps } from './icons/IconAi';
@@ -121,6 +154,7 @@ export { IconCheck, type IconCheckProps } from './icons/IconCheck';
 export { IconChongXin, type IconChongXinProps } from './icons/IconChongXin';
 export { IconChuanRu, type IconChuanRuProps } from './icons/IconChuanRu';
 export { IconDaiShenHe, type IconDaiShenHeProps } from './icons/IconDaiShenHe';
+export { IconDeleteOutline, type IconDeleteOutlineProps } from './icons/IconDeleteOutline';
 export { IconDuoXuan, type IconDuoXuanProps } from './icons/IconDuoXuan';
 export { IconFenXiang, type IconFenXiangProps } from './icons/IconFenXiang';
 export { IconFrame, type IconFrameProps } from './icons/IconFrame';
@@ -151,6 +185,34 @@ export { IconLianXiRen3, type IconLianXiRen3Props } from './icons/IconLianXiRen3
 export { IconLike, type IconLikeProps } from './icons/IconLike';
 export { IconLogo, type IconLogoProps } from './icons/IconLogo';
 export { IconLuYin, type IconLuYinProps } from './icons/IconLuYin';
+export { IconMenuAssistantManagement, type IconMenuAssistantManagementProps } from './icons/IconMenuAssistantManagement';
+export { IconMenuAssistantManagementActive, type IconMenuAssistantManagementActiveProps } from './icons/IconMenuAssistantManagementActive';
+export { IconMenuDownloadAssistant, type IconMenuDownloadAssistantProps } from './icons/IconMenuDownloadAssistant';
+export { IconMenuEnterprise, type IconMenuEnterpriseProps } from './icons/IconMenuEnterprise';
+export { IconMenuHome, type IconMenuHomeProps } from './icons/IconMenuHome';
+export { IconMenuHomeActive, type IconMenuHomeActiveProps } from './icons/IconMenuHomeActive';
+export { IconMenuInfoManagement, type IconMenuInfoManagementProps } from './icons/IconMenuInfoManagement';
+export { IconMenuInfoManagementActive, type IconMenuInfoManagementActiveProps } from './icons/IconMenuInfoManagementActive';
+export { IconMenuMemberManagement, type IconMenuMemberManagementProps } from './icons/IconMenuMemberManagement';
+export { IconMenuMemberManagementActive, type IconMenuMemberManagementActiveProps } from './icons/IconMenuMemberManagementActive';
+export { IconMenuOperationsManagement, type IconMenuOperationsManagementProps } from './icons/IconMenuOperationsManagement';
+export { IconMenuOperationsManagementActive, type IconMenuOperationsManagementActiveProps } from './icons/IconMenuOperationsManagementActive';
+export { IconMenuProfile, type IconMenuProfileProps } from './icons/IconMenuProfile';
+export { IconMenuProfileActive, type IconMenuProfileActiveProps } from './icons/IconMenuProfileActive';
+export { IconMenuQaAssistant, type IconMenuQaAssistantProps } from './icons/IconMenuQaAssistant';
+export { IconMenuQaAssistantActive, type IconMenuQaAssistantActiveProps } from './icons/IconMenuQaAssistantActive';
+export { IconMenuQaAssistantLarge, type IconMenuQaAssistantLargeProps } from './icons/IconMenuQaAssistantLarge';
+export { IconMenuReportAssistant, type IconMenuReportAssistantProps } from './icons/IconMenuReportAssistant';
+export { IconMenuReportAssistantActive, type IconMenuReportAssistantActiveProps } from './icons/IconMenuReportAssistantActive';
+export { IconMenuSearchAssistant, type IconMenuSearchAssistantProps } from './icons/IconMenuSearchAssistant';
+export { IconMenuSearchAssistantActive, type IconMenuSearchAssistantActiveProps } from './icons/IconMenuSearchAssistantActive';
+export { IconMenuSystemLog, type IconMenuSystemLogProps } from './icons/IconMenuSystemLog';
+export { IconMenuSystemLogActive, type IconMenuSystemLogActiveProps } from './icons/IconMenuSystemLogActive';
+export { IconMenuSystemSettings, type IconMenuSystemSettingsProps } from './icons/IconMenuSystemSettings';
+export { IconMenuSystemSettingsActive, type IconMenuSystemSettingsActiveProps } from './icons/IconMenuSystemSettingsActive';
+export { IconMenuTaskManagement, type IconMenuTaskManagementProps } from './icons/IconMenuTaskManagement';
+export { IconMenuTaskManagementActive, type IconMenuTaskManagementActiveProps } from './icons/IconMenuTaskManagementActive';
+export { IconMessageAvatarIcon, type IconMessageAvatarIconProps } from './icons/IconMessageAvatarIcon';
 export { IconNotificationsSharp, type IconNotificationsSharpProps } from './icons/IconNotificationsSharp';
 export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun';
 export { IconPlay, type IconPlayProps } from './icons/IconPlay';
@@ -170,9 +232,12 @@ export { IconShouCang, type IconShouCangProps } from './icons/IconShouCang';
 export { IconShouCang1, type IconShouCang1Props } from './icons/IconShouCang1';
 export { IconShouYe, type IconShouYeProps } from './icons/IconShouYe';
 export { IconShuaXin, type IconShuaXinProps } from './icons/IconShuaXin';
+export { IconShuJuYuanTuBiao1, type IconShuJuYuanTuBiao1Props } from './icons/IconShuJuYuanTuBiao1';
 export { IconShuJuYuanTuBiao2, type IconShuJuYuanTuBiao2Props } from './icons/IconShuJuYuanTuBiao2';
+export { IconShuJuYuanTuBiao3, type IconShuJuYuanTuBiao3Props } from './icons/IconShuJuYuanTuBiao3';
 export { IconSouSuo, type IconSouSuoProps } from './icons/IconSouSuo';
 export { IconSouSuo1, type IconSouSuo1Props } from './icons/IconSouSuo1';
+export { IconSuccessCheck, type IconSuccessCheckProps } from './icons/IconSuccessCheck';
 export { IconSuoDing, type IconSuoDingProps } from './icons/IconSuoDing';
 export { IconTanSuo, type IconTanSuoProps } from './icons/IconTanSuo';
 export { IconTiYu, type IconTiYuProps } from './icons/IconTiYu';
@@ -211,6 +276,7 @@ export { IconZhiChang1, type IconZhiChang1Props } from './icons/IconZhiChang1';
 export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
 export { IconZhuShou, type IconZhuShouProps } from './icons/IconZhuShou';
 export { IconZhuShouGuanLi, type IconZhuShouGuanLiProps } from './icons/IconZhuShouGuanLi';
+export { IconZleapBrandLogo, type IconZleapBrandLogoProps } from './icons/IconZleapBrandLogo';
 export { IconZuo, type IconZuoProps } from './icons/IconZuo';
 
 /**
@@ -229,6 +295,7 @@ export const allIcons = {
   IconChongXin,
   IconChuanRu,
   IconDaiShenHe,
+  IconDeleteOutline,
   IconDuoXuan,
   IconFenXiang,
   IconFrame,
@@ -259,6 +326,34 @@ export const allIcons = {
   IconLike,
   IconLogo,
   IconLuYin,
+  IconMenuAssistantManagement,
+  IconMenuAssistantManagementActive,
+  IconMenuDownloadAssistant,
+  IconMenuEnterprise,
+  IconMenuHome,
+  IconMenuHomeActive,
+  IconMenuInfoManagement,
+  IconMenuInfoManagementActive,
+  IconMenuMemberManagement,
+  IconMenuMemberManagementActive,
+  IconMenuOperationsManagement,
+  IconMenuOperationsManagementActive,
+  IconMenuProfile,
+  IconMenuProfileActive,
+  IconMenuQaAssistant,
+  IconMenuQaAssistantActive,
+  IconMenuQaAssistantLarge,
+  IconMenuReportAssistant,
+  IconMenuReportAssistantActive,
+  IconMenuSearchAssistant,
+  IconMenuSearchAssistantActive,
+  IconMenuSystemLog,
+  IconMenuSystemLogActive,
+  IconMenuSystemSettings,
+  IconMenuSystemSettingsActive,
+  IconMenuTaskManagement,
+  IconMenuTaskManagementActive,
+  IconMessageAvatarIcon,
   IconNotificationsSharp,
   IconPingLun,
   IconPlay,
@@ -278,9 +373,12 @@ export const allIcons = {
   IconShouCang1,
   IconShouYe,
   IconShuaXin,
+  IconShuJuYuanTuBiao1,
   IconShuJuYuanTuBiao2,
+  IconShuJuYuanTuBiao3,
   IconSouSuo,
   IconSouSuo1,
+  IconSuccessCheck,
   IconSuoDing,
   IconTanSuo,
   IconTiYu,
@@ -319,6 +417,7 @@ export const allIcons = {
   IconZhiShiKu,
   IconZhuShou,
   IconZhuShouGuanLi,
+  IconZleapBrandLogo,
   IconZuo
 } as const;
 

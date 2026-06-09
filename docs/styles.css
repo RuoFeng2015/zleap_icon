@@ -747,6 +747,20 @@ body {
   cursor: not-allowed;
 }
 
+.admin-upload-btn {
+  background: var(--color-primary);
+  color: white;
+}
+
+.admin-upload-btn:hover:not(:disabled) {
+  background: #005bb5;
+}
+
+.admin-upload-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .admin-exit-btn {
   background: rgba(255,255,255,0.15);
   color: white;
@@ -800,6 +814,198 @@ body {
 
 .icon-card.admin-mode:hover {
   transform: translateY(-4px);
+}
+
+/* Upload Icon Modal */
+.upload-icon-content {
+  max-width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.upload-icon-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 2rem 1.25rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.upload-icon-mark {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  background: rgba(0, 113, 227, 0.08);
+  border-radius: 16px;
+}
+
+.upload-icon-header h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.upload-icon-header p {
+  max-width: 460px;
+  font-size: 0.86rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.upload-icon-body {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.admin-form-group textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.8);
+  transition: all 0.2s;
+  resize: vertical;
+}
+
+.admin-form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.upload-svg-textarea {
+  min-height: 150px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  line-height: 1.5;
+}
+
+.upload-error {
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.upload-error.hidden {
+  display: none;
+}
+
+.upload-preview {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.02);
+}
+
+.upload-preview.hidden {
+  display: none;
+}
+
+.upload-preview-title {
+  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.upload-preview-single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 128px;
+  padding: 1rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  background: white;
+  text-align: center;
+}
+
+.upload-preview-icon {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.55rem;
+}
+
+.upload-preview-name {
+  max-width: 100%;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upload-preview-meta {
+  margin-top: 0.25rem;
+  font-size: 0.74rem;
+  color: var(--color-text-secondary);
+}
+
+.upload-preview-warning {
+  margin-top: 0.45rem;
+  color: #b45309;
+  font-size: 0.74rem;
+}
+
+.upload-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.upload-actions .admin-action-btn {
+  justify-content: center;
+  min-width: 112px;
+  padding: 0.7rem 1rem;
+}
+
+.upload-progress {
+  padding: 1rem 2rem 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.upload-progress.hidden {
+  display: none;
+}
+
+.upload-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.upload-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.upload-progress-text {
+  margin-top: 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 /* Delete Confirm Modal */

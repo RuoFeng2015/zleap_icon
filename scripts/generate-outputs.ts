@@ -173,6 +173,73 @@ async function createMetadataFromFile(
   }
 }
 
+function parseNumberedSeries(originalName: string | undefined): {
+  prefix: string
+  number: number
+} | null {
+  const match = originalName?.match(/^(.*?)-(\d+)$/)
+  if (!match || !match[1]) {
+    return null
+  }
+
+  return {
+    prefix: match[1],
+    number: Number(match[2]),
+  }
+}
+
+function getCreatedAtTime(icon: IconMetadata): number {
+  if (!icon.createdAt) {
+    return 0
+  }
+
+  const time = new Date(icon.createdAt).getTime()
+  return Number.isFinite(time) ? time : 0
+}
+
+function sortIconsForDisplay(icons: IconMetadata[]): IconMetadata[] {
+  const groups = new Map<
+    string,
+    {
+      icons: IconMetadata[]
+      index: number
+      newestTime: number
+    }
+  >()
+
+  icons.forEach((icon, index) => {
+    const series = parseNumberedSeries(icon.originalName)
+    const groupKey = series
+      ? `series:${series.prefix}`
+      : `single:${icon.originalName || icon.name}`
+    const group = groups.get(groupKey) || {
+      icons: [],
+      index,
+      newestTime: 0,
+    }
+
+    group.icons.push(icon)
+    group.index = Math.min(group.index, index)
+    group.newestTime = Math.max(group.newestTime, getCreatedAtTime(icon))
+    groups.set(groupKey, group)
+  })
+
+  return Array.from(groups.values())
+    .sort((a, b) => b.newestTime - a.newestTime || a.index - b.index)
+    .flatMap((group) =>
+      group.icons.sort((a, b) => {
+        const seriesA = parseNumberedSeries(a.originalName)
+        const seriesB = parseNumberedSeries(b.originalName)
+
+        if (seriesA && seriesB && seriesA.prefix === seriesB.prefix) {
+          return seriesA.number - seriesB.number
+        }
+
+        return getCreatedAtTime(b) - getCreatedAtTime(a)
+      }),
+    )
+}
+
 /**
  * Main script execution
  */
@@ -284,16 +351,11 @@ async function main(): Promise<void> {
       // 合并所有图标
       const allIcons = [...newIcons, ...orderedByJson]
       
-      // 按 createdAt 倒序排序 (最新的在最前)
-      icons = allIcons.sort((a, b) => {
-        const timeA = a.createdAt ? new Date(a.createdAt).getTime() : 0
-        const timeB = b.createdAt ? new Date(b.createdAt).getTime() : 0
-        return timeB - timeA
-      })
+      icons = sortIconsForDisplay(allIcons)
 
-      console.log(`   ✅ Sorted ${icons.length} icons by createdAt (newest first)\n`)
+      console.log(`   ✅ Sorted ${icons.length} icons for display\n`)
     } else {
-      icons = allSvgIcons
+      icons = sortIconsForDisplay(allSvgIcons)
       console.log(`   ✅ Loaded ${icons.length} icons\n`)
     }
   }

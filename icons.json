@@ -1,8 +1,360 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-09T05:58:44.093Z",
-  "totalCount": 103,
+  "generatedAt": "2026-06-09T07:48:13.180Z",
+  "totalCount": 136,
   "icons": [
+    {
+      "name": "IconZleapBrandLogo",
+      "originalName": "zleap-brand-logo",
+      "svgPath": "svg/zleap-brand-logo.svg",
+      "componentPath": "src/icons/IconZleapBrandLogo.tsx",
+      "size": {
+        "width": 79,
+        "height": 66
+      },
+      "createdAt": "2026-06-09T06:49:51.691Z"
+    },
+    {
+      "name": "IconSuccessCheck",
+      "originalName": "success-check",
+      "svgPath": "svg/success-check.svg",
+      "componentPath": "src/icons/IconSuccessCheck.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "createdAt": "2026-06-09T06:49:51.690Z"
+    },
+    {
+      "name": "IconMenuSystemSettings",
+      "originalName": "menu-system-settings",
+      "svgPath": "svg/menu-system-settings.svg",
+      "componentPath": "src/icons/IconMenuSystemSettings.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-06-09T06:49:51.687Z"
+    },
+    {
+      "name": "IconMenuTaskManagementActive",
+      "originalName": "menu-task-management-active",
+      "svgPath": "svg/menu-task-management-active.svg",
+      "componentPath": "src/icons/IconMenuTaskManagementActive.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-06-09T06:49:51.687Z"
+    },
+    {
+      "name": "IconMenuTaskManagement",
+      "originalName": "menu-task-management",
+      "svgPath": "svg/menu-task-management.svg",
+      "componentPath": "src/icons/IconMenuTaskManagement.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-06-09T06:49:51.687Z"
+    },
+    {
+      "name": "IconMessageAvatarIcon",
+      "originalName": "message-avatar-icon",
+      "svgPath": "svg/message-avatar-icon.svg",
+      "componentPath": "src/icons/IconMessageAvatarIcon.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-06-09T06:49:51.687Z"
+    },
+    {
+      "name": "IconMenuSystemLog",
+      "originalName": "menu-system-log",
+      "svgPath": "svg/menu-system-log.svg",
+      "componentPath": "src/icons/IconMenuSystemLog.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-06-09T06:49:51.686Z"
+    },
+    {
+      "name": "IconMenuSystemSettingsActive",
+      "originalName": "menu-system-settings-active",
+      "svgPath": "svg/menu-system-settings-active.svg",
+      "componentPath": "src/icons/IconMenuSystemSettingsActive.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-06-09T06:49:51.686Z"
+    },
+    {
+      "name": "IconMenuSearchAssistantActive",
+      "originalName": "menu-search-assistant-active",
+      "svgPath": "svg/menu-search-assistant-active.svg",
+      "componentPath": "src/icons/IconMenuSearchAssistantActive.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-06-09T06:49:51.685Z"
+    },
+    {
+      "name": "IconMenuSearchAssistant",
+      "originalName": "menu-search-assistant",
+      "svgPath": "svg/menu-search-assistant.svg",
+      "componentPath": "src/icons/IconMenuSearchAssistant.tsx",
+      "size": {
+        "width": 120,
+        "height": 119
+      },
+      "createdAt": "2026-06-09T06:49:51.685Z"
+    },
+    {
+      "name": "IconMenuSystemLogActive",
+      "originalName": "menu-system-log-active",
+      "svgPath": "svg/menu-system-log-active.svg",
+      "componentPath": "src/icons/IconMenuSystemLogActive.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-06-09T06:49:51.685Z"
+    },
+    {
+      "name": "IconMenuQaAssistant",
+      "originalName": "menu-qa-assistant",
+      "svgPath": "svg/menu-qa-assistant.svg",
+      "componentPath": "src/icons/IconMenuQaAssistant.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-06-09T06:49:51.684Z"
+    },
+    {
+      "name": "IconMenuReportAssistantActive",
+      "originalName": "menu-report-assistant-active",
+      "svgPath": "svg/menu-report-assistant-active.svg",
+      "componentPath": "src/icons/IconMenuReportAssistantActive.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-06-09T06:49:51.684Z"
+    },
+    {
+      "name": "IconMenuReportAssistant",
+      "originalName": "menu-report-assistant",
+      "svgPath": "svg/menu-report-assistant.svg",
+      "componentPath": "src/icons/IconMenuReportAssistant.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-06-09T06:49:51.684Z"
+    },
+    {
+      "name": "IconMenuQaAssistantActive",
+      "originalName": "menu-qa-assistant-active",
+      "svgPath": "svg/menu-qa-assistant-active.svg",
+      "componentPath": "src/icons/IconMenuQaAssistantActive.tsx",
+      "size": {
+        "width": 49,
+        "height": 50
+      },
+      "createdAt": "2026-06-09T06:49:51.683Z"
+    },
+    {
+      "name": "IconMenuQaAssistantLarge",
+      "originalName": "menu-qa-assistant-large",
+      "svgPath": "svg/menu-qa-assistant-large.svg",
+      "componentPath": "src/icons/IconMenuQaAssistantLarge.tsx",
+      "size": {
+        "width": 110,
+        "height": 110
+      },
+      "createdAt": "2026-06-09T06:49:51.683Z"
+    },
+    {
+      "name": "IconMenuOperationsManagement",
+      "originalName": "menu-operations-management",
+      "svgPath": "svg/menu-operations-management.svg",
+      "componentPath": "src/icons/IconMenuOperationsManagement.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-06-09T06:49:51.682Z"
+    },
+    {
+      "name": "IconMenuProfileActive",
+      "originalName": "menu-profile-active",
+      "svgPath": "svg/menu-profile-active.svg",
+      "componentPath": "src/icons/IconMenuProfileActive.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-06-09T06:49:51.682Z"
+    },
+    {
+      "name": "IconMenuProfile",
+      "originalName": "menu-profile",
+      "svgPath": "svg/menu-profile.svg",
+      "componentPath": "src/icons/IconMenuProfile.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-06-09T06:49:51.682Z"
+    },
+    {
+      "name": "IconMenuInfoManagement",
+      "originalName": "menu-info-management",
+      "svgPath": "svg/menu-info-management.svg",
+      "componentPath": "src/icons/IconMenuInfoManagement.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-06-09T06:49:51.681Z"
+    },
+    {
+      "name": "IconMenuMemberManagementActive",
+      "originalName": "menu-member-management-active",
+      "svgPath": "svg/menu-member-management-active.svg",
+      "componentPath": "src/icons/IconMenuMemberManagementActive.tsx",
+      "size": {
+        "width": 49,
+        "height": 50
+      },
+      "createdAt": "2026-06-09T06:49:51.681Z"
+    },
+    {
+      "name": "IconMenuMemberManagement",
+      "originalName": "menu-member-management",
+      "svgPath": "svg/menu-member-management.svg",
+      "componentPath": "src/icons/IconMenuMemberManagement.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-06-09T06:49:51.681Z"
+    },
+    {
+      "name": "IconMenuOperationsManagementActive",
+      "originalName": "menu-operations-management-active",
+      "svgPath": "svg/menu-operations-management-active.svg",
+      "componentPath": "src/icons/IconMenuOperationsManagementActive.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-06-09T06:49:51.681Z"
+    },
+    {
+      "name": "IconMenuHome",
+      "originalName": "menu-home",
+      "svgPath": "svg/menu-home.svg",
+      "componentPath": "src/icons/IconMenuHome.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-06-09T06:49:51.680Z"
+    },
+    {
+      "name": "IconMenuInfoManagementActive",
+      "originalName": "menu-info-management-active",
+      "svgPath": "svg/menu-info-management-active.svg",
+      "componentPath": "src/icons/IconMenuInfoManagementActive.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-06-09T06:49:51.680Z"
+    },
+    {
+      "name": "IconMenuDownloadAssistant",
+      "originalName": "menu-download-assistant",
+      "svgPath": "svg/menu-download-assistant.svg",
+      "componentPath": "src/icons/IconMenuDownloadAssistant.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-06-09T06:49:51.679Z"
+    },
+    {
+      "name": "IconMenuEnterprise",
+      "originalName": "menu-enterprise",
+      "svgPath": "svg/menu-enterprise.svg",
+      "componentPath": "src/icons/IconMenuEnterprise.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-06-09T06:49:51.679Z"
+    },
+    {
+      "name": "IconMenuHomeActive",
+      "originalName": "menu-home-active",
+      "svgPath": "svg/menu-home-active.svg",
+      "componentPath": "src/icons/IconMenuHomeActive.tsx",
+      "size": {
+        "width": 12,
+        "height": 8
+      },
+      "createdAt": "2026-06-09T06:49:51.679Z"
+    },
+    {
+      "name": "IconMenuAssistantManagementActive",
+      "originalName": "menu-assistant-management-active",
+      "svgPath": "svg/menu-assistant-management-active.svg",
+      "componentPath": "src/icons/IconMenuAssistantManagementActive.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-06-09T06:49:51.678Z"
+    },
+    {
+      "name": "IconMenuAssistantManagement",
+      "originalName": "menu-assistant-management",
+      "svgPath": "svg/menu-assistant-management.svg",
+      "componentPath": "src/icons/IconMenuAssistantManagement.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-06-09T06:49:51.678Z"
+    },
+    {
+      "name": "IconDeleteOutline",
+      "originalName": "delete-outline",
+      "svgPath": "svg/delete-outline.svg",
+      "componentPath": "src/icons/IconDeleteOutline.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-09T06:49:51.677Z"
+    },
+    {
+      "name": "IconShuJuYuanTuBiao1",
+      "originalName": "数据源图标-1",
+      "svgPath": "svg/数据源图标-1.svg",
+      "componentPath": "src/icons/IconShuJuYuanTuBiao1.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "createdAt": "2026-06-09T06:29:37.977Z"
+    },
     {
       "name": "IconShuJuYuanTuBiao2",
       "originalName": "数据源图标-2",
@@ -13,6 +365,17 @@
         "height": 36
       },
       "createdAt": "2026-06-09T05:58:09.424Z"
+    },
+    {
+      "name": "IconShuJuYuanTuBiao3",
+      "originalName": "数据源图标-3",
+      "svgPath": "svg/数据源图标-3.svg",
+      "componentPath": "src/icons/IconShuJuYuanTuBiao3.tsx",
+      "size": {
+        "width": 36,
+        "height": 36
+      },
+      "createdAt": "2026-06-09T06:29:37.978Z"
     },
     {
       "name": "IconLogo",

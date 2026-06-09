@@ -132,6 +132,15 @@
       <div class="admin-toolbar-inner">
         <span class="admin-toolbar-label">🔧 管理模式</span>
         <span id="admin-selected-count" class="admin-selected-count">已选择 0 个图标</span>
+        <button id="admin-upload-btn" class="admin-action-btn admin-upload-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="17 8 12 3 7 8" />
+            <line x1="12" y1="3" x2="12" y2="15" />
+          </svg>
+          上传 SVG
+        </button>
         <button id="admin-delete-btn" class="admin-action-btn admin-delete-btn" disabled>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
@@ -143,6 +152,54 @@
           删除选中
         </button>
         <button id="admin-exit-btn" class="admin-action-btn admin-exit-btn">退出管理</button>
+      </div>
+    </div>
+
+    <!-- Upload Icon Modal -->
+    <div id="upload-icon-modal" class="modal hidden">
+      <div class="modal-backdrop" id="upload-icon-backdrop"></div>
+      <div class="modal-content upload-icon-content">
+        <button class="modal-close" id="upload-icon-close">&times;</button>
+        <div class="upload-icon-header">
+          <div class="upload-icon-mark">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0071e3" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="17 8 12 3 7 8" />
+              <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+          </div>
+          <h2>上传 SVG 图标</h2>
+          <p>输入图标名称并粘贴完整 SVG 代码，确认展示效果后创建上传 PR</p>
+        </div>
+
+        <div class="upload-icon-body">
+          <div class="admin-form-group">
+            <label for="upload-icon-name">图标名称 / 文件名</label>
+            <input type="text" id="upload-icon-name" placeholder="请输入SVG图标的名称，使用小写字母和连字符，例如：my-icon">
+          </div>
+
+          <div class="admin-form-group">
+            <label for="upload-svg-code">SVG 代码</label>
+            <textarea id="upload-svg-code" class="upload-svg-textarea" rows="8"
+              placeholder='<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">...</svg>'></textarea>
+          </div>
+
+          <div id="upload-error" class="upload-error hidden"></div>
+          <div id="upload-preview" class="upload-preview hidden"></div>
+
+          <div class="upload-actions">
+            <button id="upload-cancel-btn" class="admin-action-btn admin-exit-btn">取消</button>
+            <button id="upload-submit-btn" class="admin-action-btn admin-upload-btn" disabled>创建上传 PR</button>
+          </div>
+        </div>
+
+        <div id="upload-progress" class="upload-progress hidden">
+          <div class="upload-progress-bar">
+            <div id="upload-progress-fill" class="upload-progress-fill"></div>
+          </div>
+          <div id="upload-progress-text" class="upload-progress-text">准备上传...</div>
+        </div>
       </div>
     </div>
 
