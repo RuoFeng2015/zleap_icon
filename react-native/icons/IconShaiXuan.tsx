@@ -2,15 +2,15 @@ import React, { forwardRef, useMemo } from 'react'
 import type { ComponentProps } from 'react'
 import { SvgXml } from 'react-native-svg'
 
-export interface IconShanChuProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+export interface IconShaiXuanProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
   size?: number | string
   color?: string
 }
 
-export const IconShanChu = forwardRef<unknown, IconShanChuProps>(
+export const IconShaiXuan = forwardRef<unknown, IconShaiXuanProps>(
   ({ size = 24, color, ...props }, ref) => {
     const baseXml = useMemo(
-      () => `<svg fill="none" viewBox="0 0 24 24"><path stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 6h2m0 0h16M5 6v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6zm3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m-6 5v6m4-6v6"/></svg>`,
+      () => `<svg fill="none" viewBox="0 0 24 24"><path stroke="#0D131A" stroke-linejoin="round" stroke-width="1.5" d="m3 4.5 7.2 8.409v6.313L13.8 21v-8.091L21 4.5z"/></svg>`,
       [],
     )
 
@@ -48,6 +48,6 @@ export const IconShanChu = forwardRef<unknown, IconShanChuProps>(
   },
 )
 
-IconShanChu.displayName = 'IconShanChu'
+IconShaiXuan.displayName = 'IconShaiXuan'
 
-export default IconShanChu
+export default IconShaiXuan

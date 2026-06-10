@@ -2,15 +2,15 @@ import React, { forwardRef, useMemo } from 'react'
 import type { ComponentProps } from 'react'
 import { SvgXml } from 'react-native-svg'
 
-export interface IconShanChuProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+export interface IconQianJin15MiaoProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
   size?: number | string
   color?: string
 }
 
-export const IconShanChu = forwardRef<unknown, IconShanChuProps>(
+export const IconQianJin15Miao = forwardRef<unknown, IconQianJin15MiaoProps>(
   ({ size = 24, color, ...props }, ref) => {
     const baseXml = useMemo(
-      () => `<svg fill="none" viewBox="0 0 24 24"><path stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M3 6h2m0 0h16M5 6v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6zm3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m-6 5v6m4-6v6"/></svg>`,
+      () => `<svg fill="none" viewBox="0 0 24 26"><path stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.125" d="M9.75 17.813v-7.5l-1.5 1.406"/><path stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.125" d="M12.75 17.344a2.344 2.344 0 1 0 0-3.75l.469-3.282H16.5"/><path stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.875" d="M19.161 6.128a10.383 10.383 0 0 1 .518 14.742c-3.955 4.214-10.599 4.444-14.84.515a10.383 10.383 0 0 1-.518-14.742 10.52 10.52 0 0 1 8.422-3.292M11.25.938l2.674 2.533-2.674 2.717"/></svg>`,
       [],
     )
 
@@ -41,13 +41,13 @@ export const IconShanChu = forwardRef<unknown, IconShanChuProps>(
         xml={xml}
         width={size}
         height={size}
-        viewBox="0 0 24 24"
+        viewBox="0 0 24 26"
         {...props}
       />
     )
   },
 )
 
-IconShanChu.displayName = 'IconShanChu'
+IconQianJin15Miao.displayName = 'IconQianJin15Miao'
 
-export default IconShanChu
+export default IconQianJin15Miao

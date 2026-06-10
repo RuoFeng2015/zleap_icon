@@ -1,8 +1,118 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-09T08:04:49.751Z",
-  "totalCount": 136,
+  "generatedAt": "2026-06-10T12:01:25.819Z",
+  "totalCount": 146,
   "icons": [
+    {
+      "name": "IconBuFenXuanZhong",
+      "originalName": "部分选中",
+      "svgPath": "svg/部分选中.svg",
+      "componentPath": "src/icons/IconBuFenXuanZhong.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-10T12:01:25.805Z"
+    },
+    {
+      "name": "IconChongBo",
+      "originalName": "重播",
+      "svgPath": "svg/重播.svg",
+      "componentPath": "src/icons/IconChongBo.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-10T12:01:25.805Z"
+    },
+    {
+      "name": "IconShaiXuan",
+      "originalName": "筛选",
+      "svgPath": "svg/筛选.svg",
+      "componentPath": "src/icons/IconShaiXuan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-10T12:01:25.801Z"
+    },
+    {
+      "name": "IconWeiGouXuan",
+      "originalName": "未勾选",
+      "svgPath": "svg/未勾选.svg",
+      "componentPath": "src/icons/IconWeiGouXuan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-10T12:01:25.799Z"
+    },
+    {
+      "name": "IconZanTing1",
+      "originalName": "暂停1",
+      "svgPath": "svg/暂停1.svg",
+      "componentPath": "src/icons/IconZanTing1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-10T12:01:25.798Z"
+    },
+    {
+      "name": "IconBoFangZhong",
+      "originalName": "播放中",
+      "svgPath": "svg/播放中.svg",
+      "componentPath": "src/icons/IconBoFangZhong.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-10T12:01:25.795Z"
+    },
+    {
+      "name": "IconYiGouXuanQuanXuan",
+      "originalName": "已勾选-全选",
+      "svgPath": "svg/已勾选-全选.svg",
+      "componentPath": "src/icons/IconYiGouXuanQuanXuan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-10T12:01:25.792Z"
+    },
+    {
+      "name": "IconHouTui15Miao",
+      "originalName": "后退15秒",
+      "svgPath": "svg/后退15秒.svg",
+      "componentPath": "src/icons/IconHouTui15Miao.tsx",
+      "size": {
+        "width": 24,
+        "height": 26
+      },
+      "createdAt": "2026-06-10T12:01:25.789Z"
+    },
+    {
+      "name": "IconQianJin15Miao",
+      "originalName": "前进15秒",
+      "svgPath": "svg/前进15秒.svg",
+      "componentPath": "src/icons/IconQianJin15Miao.tsx",
+      "size": {
+        "width": 24,
+        "height": 26
+      },
+      "createdAt": "2026-06-10T12:01:25.788Z"
+    },
+    {
+      "name": "IconShanChu",
+      "originalName": "删除",
+      "svgPath": "svg/删除.svg",
+      "componentPath": "src/icons/IconShanChu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-10T12:01:25.786Z"
+    },
     {
       "name": "IconZleapBrandLogo",
       "originalName": "zleap-brand-logo",

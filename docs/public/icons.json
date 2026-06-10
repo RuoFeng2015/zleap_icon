@@ -1,8 +1,119 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-06-09T07:48:13.180Z",
-  "totalCount": 136,
+  "version": "0.0.101",
+  "syncMode": "incremental",
+  "generatedAt": "2026-06-10T12:00:40.024Z",
+  "totalCount": 146,
   "icons": [
+    {
+      "name": "Icon删除",
+      "originalName": "删除",
+      "svgPath": "svg/删除.svg",
+      "componentPath": "src/icons/Icon删除.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-10T12:00:40.024Z"
+    },
+    {
+      "name": "Icon前进15秒",
+      "originalName": "前进15秒",
+      "svgPath": "svg/前进15秒.svg",
+      "componentPath": "src/icons/Icon前进15秒.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-10T12:00:40.024Z"
+    },
+    {
+      "name": "Icon后退15秒",
+      "originalName": "后退15秒",
+      "svgPath": "svg/后退15秒.svg",
+      "componentPath": "src/icons/Icon后退15秒.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-10T12:00:40.024Z"
+    },
+    {
+      "name": "Icon已勾选/全选",
+      "originalName": "已勾选/全选",
+      "svgPath": "svg/已勾选-全选.svg",
+      "componentPath": "src/icons/Icon已勾选/全选.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-10T12:00:40.024Z"
+    },
+    {
+      "name": "Icon播放中",
+      "originalName": "播放中",
+      "svgPath": "svg/播放中.svg",
+      "componentPath": "src/icons/Icon播放中.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-10T12:00:40.024Z"
+    },
+    {
+      "name": "Icon暂停1",
+      "originalName": "暂停1",
+      "svgPath": "svg/暂停1.svg",
+      "componentPath": "src/icons/Icon暂停1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-10T12:00:40.024Z"
+    },
+    {
+      "name": "Icon未勾选",
+      "originalName": "未勾选",
+      "svgPath": "svg/未勾选.svg",
+      "componentPath": "src/icons/Icon未勾选.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-10T12:00:40.024Z"
+    },
+    {
+      "name": "Icon筛选",
+      "originalName": "筛选",
+      "svgPath": "svg/筛选.svg",
+      "componentPath": "src/icons/Icon筛选.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-10T12:00:40.024Z"
+    },
+    {
+      "name": "Icon部分选中",
+      "originalName": "部分选中",
+      "svgPath": "svg/部分选中.svg",
+      "componentPath": "src/icons/Icon部分选中.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-10T12:00:40.024Z"
+    },
+    {
+      "name": "Icon重播",
+      "originalName": "重播",
+      "svgPath": "svg/重播.svg",
+      "componentPath": "src/icons/Icon重播.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-10T12:00:40.024Z"
+    },
     {
       "name": "IconZleapBrandLogo",
       "originalName": "zleap-brand-logo",
