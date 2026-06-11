@@ -50,6 +50,7 @@ import { IconLianXiRen3 } from './icons/IconLianXiRen3'
 import { IconLike } from './icons/IconLike'
 import { IconLogo } from './icons/IconLogo'
 import { IconLuYin } from './icons/IconLuYin'
+import { IconLuYin1 } from './icons/IconLuYin1'
 import { IconMenuAssistantManagement } from './icons/IconMenuAssistantManagement'
 import { IconMenuAssistantManagementActive } from './icons/IconMenuAssistantManagementActive'
 import { IconMenuDownloadAssistant } from './icons/IconMenuDownloadAssistant'
@@ -198,6 +199,7 @@ export { IconLianXiRen3, type IconLianXiRen3Props } from './icons/IconLianXiRen3
 export { IconLike, type IconLikeProps } from './icons/IconLike'
 export { IconLogo, type IconLogoProps } from './icons/IconLogo'
 export { IconLuYin, type IconLuYinProps } from './icons/IconLuYin'
+export { IconLuYin1, type IconLuYin1Props } from './icons/IconLuYin1'
 export { IconMenuAssistantManagement, type IconMenuAssistantManagementProps } from './icons/IconMenuAssistantManagement'
 export { IconMenuAssistantManagementActive, type IconMenuAssistantManagementActiveProps } from './icons/IconMenuAssistantManagementActive'
 export { IconMenuDownloadAssistant, type IconMenuDownloadAssistantProps } from './icons/IconMenuDownloadAssistant'
@@ -347,6 +349,7 @@ export const allIcons = {
   IconLike,
   IconLogo,
   IconLuYin,
+  IconLuYin1,
   IconMenuAssistantManagement,
   IconMenuAssistantManagementActive,
   IconMenuDownloadAssistant,
