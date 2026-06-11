@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-06-10T12:01:25.819Z",
-  "totalCount": 146,
+  "version": "0.0.102",
+  "syncMode": "incremental",
+  "generatedAt": "2026-06-11T08:00:44.793Z",
+  "totalCount": 147,
   "icons": [
+    {
+      "name": "Icon重试",
+      "originalName": "重试",
+      "svgPath": "svg/重试.svg",
+      "componentPath": "src/icons/Icon重试.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-11T08:00:44.792Z"
+    },
     {
       "name": "IconBuFenXuanZhong",
       "originalName": "部分选中",
