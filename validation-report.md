@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-06-10T12:01:21.825Z
+Generated at: 2026-06-11T08:01:21.251Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 146 |
+| Total Icons | 147 |
 | Valid Icons | 0 |
-| Invalid Icons | 146 |
-| Total Errors | 146 |
-| Total Warnings | 126 |
+| Invalid Icons | 147 |
+| Total Errors | 147 |
+| Total Warnings | 127 |
 
-⚠️ **146 icon(s) failed validation**
+⚠️ **147 icon(s) failed validation**
 
 ## Errors
 
-### size (146 errors)
+### size (147 errors)
 
 | Icon | Message |
 |------|---------|
@@ -156,6 +156,7 @@ Generated at: 2026-06-10T12:01:21.825Z
 | 部分选中 | Icon size 24x24 not in allowed sizes:  |
 | 重播 | Icon size 24x24 not in allowed sizes:  |
 | 重新 | Icon size 24x24 not in allowed sizes:  |
+| 重试 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
 | 锁定 | Icon size 24x24 not in allowed sizes:  |
 | 音符 | Icon size 24x24 not in allowed sizes:  |
@@ -169,7 +170,7 @@ Generated at: 2026-06-10T12:01:21.825Z
 
 ## Warnings
 
-### naming (107 warnings)
+### naming (108 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -270,6 +271,7 @@ Generated at: 2026-06-10T12:01:21.825Z
 | 部分选中 | Icon name "部分选中" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 重播 | Icon name "重播" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 重新 | Icon name "重新" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 重试 | Icon name "重试" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 锁定 | Icon name "锁定" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 音符 | Icon name "音符" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

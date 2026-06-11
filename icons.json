@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-10T12:01:25.819Z",
-  "totalCount": 146,
+  "generatedAt": "2026-06-11T08:01:24.876Z",
+  "totalCount": 147,
   "icons": [
+    {
+      "name": "IconChongShi",
+      "originalName": "重试",
+      "svgPath": "svg/重试.svg",
+      "componentPath": "src/icons/IconChongShi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-11T08:01:24.862Z"
+    },
     {
       "name": "IconBuFenXuanZhong",
       "originalName": "部分选中",
