@@ -14,6 +14,7 @@ import { IconCaiJing } from './icons/IconCaiJing'
 import { IconCaiJing1 } from './icons/IconCaiJing1'
 import { IconCheck } from './icons/IconCheck'
 import { IconChongBo } from './icons/IconChongBo'
+import { IconChongShi } from './icons/IconChongShi'
 import { IconChongXin } from './icons/IconChongXin'
 import { IconChuanRu } from './icons/IconChuanRu'
 import { IconDaiShenHe } from './icons/IconDaiShenHe'
@@ -161,6 +162,7 @@ export { IconCaiJing, type IconCaiJingProps } from './icons/IconCaiJing'
 export { IconCaiJing1, type IconCaiJing1Props } from './icons/IconCaiJing1'
 export { IconCheck, type IconCheckProps } from './icons/IconCheck'
 export { IconChongBo, type IconChongBoProps } from './icons/IconChongBo'
+export { IconChongShi, type IconChongShiProps } from './icons/IconChongShi'
 export { IconChongXin, type IconChongXinProps } from './icons/IconChongXin'
 export { IconChuanRu, type IconChuanRuProps } from './icons/IconChuanRu'
 export { IconDaiShenHe, type IconDaiShenHeProps } from './icons/IconDaiShenHe'
@@ -309,6 +311,7 @@ export const allIcons = {
   IconCaiJing1,
   IconCheck,
   IconChongBo,
+  IconChongShi,
   IconChongXin,
   IconChuanRu,
   IconDaiShenHe,
