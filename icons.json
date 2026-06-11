@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-06-11T08:01:24.876Z",
-  "totalCount": 147,
+  "version": "0.0.103",
+  "syncMode": "incremental",
+  "generatedAt": "2026-06-11T10:21:19.037Z",
+  "totalCount": 148,
   "icons": [
+    {
+      "name": "Icon录音1",
+      "originalName": "录音1",
+      "svgPath": "svg/录音1.svg",
+      "componentPath": "src/icons/Icon录音1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-11T10:21:19.037Z"
+    },
     {
       "name": "IconChongShi",
       "originalName": "重试",
