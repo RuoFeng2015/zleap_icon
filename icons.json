@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-11T08:01:24.876Z",
-  "totalCount": 147,
+  "generatedAt": "2026-06-11T10:21:56.756Z",
+  "totalCount": 148,
   "icons": [
+    {
+      "name": "IconLuYin1",
+      "originalName": "录音1",
+      "svgPath": "svg/录音1.svg",
+      "componentPath": "src/icons/IconLuYin1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-11T10:21:56.727Z"
+    },
     {
       "name": "IconChongShi",
       "originalName": "重试",
