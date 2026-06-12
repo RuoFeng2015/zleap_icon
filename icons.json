@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-06-12T05:50:08.877Z",
-  "totalCount": 149,
+  "version": "0.0.105",
+  "syncMode": "incremental",
+  "generatedAt": "2026-06-12T07:37:44.082Z",
+  "totalCount": 151,
   "icons": [
+    {
+      "name": "Icon下拉收起",
+      "originalName": "下拉收起",
+      "svgPath": "svg/下拉收起.svg",
+      "componentPath": "src/icons/Icon下拉收起.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-12T07:37:44.082Z"
+    },
+    {
+      "name": "Icon暂停2",
+      "originalName": "暂停2",
+      "svgPath": "svg/暂停2.svg",
+      "componentPath": "src/icons/Icon暂停2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-06-12T07:37:44.082Z"
+    },
     {
       "name": "IconFrame5",
       "originalName": "Frame5",
