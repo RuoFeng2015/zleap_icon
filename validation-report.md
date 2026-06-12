@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-06-11T10:21:53.126Z
+Generated at: 2026-06-12T05:50:05.035Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 148 |
+| Total Icons | 149 |
 | Valid Icons | 0 |
-| Invalid Icons | 148 |
-| Total Errors | 148 |
-| Total Warnings | 128 |
+| Invalid Icons | 149 |
+| Total Errors | 149 |
+| Total Warnings | 129 |
 
-⚠️ **148 icon(s) failed validation**
+⚠️ **149 icon(s) failed validation**
 
 ## Errors
 
-### size (148 errors)
+### size (149 errors)
 
 | Icon | Message |
 |------|---------|
@@ -28,6 +28,7 @@ Generated at: 2026-06-11T10:21:53.126Z
 | Frame2 | Icon size 24x24 not in allowed sizes:  |
 | Frame3 | Icon size 1440x961 not in allowed sizes:  |
 | Frame4 | Icon size 476x435 not in allowed sizes:  |
+| Frame5 | Icon size 42x42 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | delete-outline | Icon size 24x24 not in allowed sizes:  |
@@ -171,7 +172,7 @@ Generated at: 2026-06-11T10:21:53.126Z
 
 ## Warnings
 
-### naming (109 warnings)
+### naming (110 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -183,6 +184,7 @@ Generated at: 2026-06-11T10:21:53.126Z
 | Frame2 | Icon name "Frame2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame3 | Icon name "Frame3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame4 | Icon name "Frame4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Frame5 | Icon name "Frame5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉 | Icon name "下拉" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 传入 | Icon name "传入" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 体育 | Icon name "体育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
