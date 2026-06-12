@@ -1,19 +1,30 @@
 {
-  "version": "0.0.103",
+  "version": "0.0.104",
   "syncMode": "incremental",
-  "generatedAt": "2026-06-11T10:21:19.037Z",
-  "totalCount": 148,
+  "generatedAt": "2026-06-12T05:49:39.548Z",
+  "totalCount": 149,
   "icons": [
     {
-      "name": "Icon录音1",
+      "name": "IconFrame5",
+      "originalName": "Frame5",
+      "svgPath": "svg/Frame5.svg",
+      "componentPath": "src/icons/IconFrame5.tsx",
+      "size": {
+        "width": 42,
+        "height": 42
+      },
+      "uploadedAt": "2026-06-12T05:49:39.548Z"
+    },
+    {
+      "name": "IconLuYin1",
       "originalName": "录音1",
       "svgPath": "svg/录音1.svg",
-      "componentPath": "src/icons/Icon录音1.tsx",
+      "componentPath": "src/icons/IconLuYin1.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-06-11T10:21:19.037Z"
+      "createdAt": "2026-06-11T10:21:56.727Z"
     },
     {
       "name": "IconChongShi",
