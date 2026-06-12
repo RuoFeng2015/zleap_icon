@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-12T05:50:08.877Z",
-  "totalCount": 149,
+  "generatedAt": "2026-06-12T07:38:13.169Z",
+  "totalCount": 151,
   "icons": [
+    {
+      "name": "IconZanTing2",
+      "originalName": "暂停2",
+      "svgPath": "svg/暂停2.svg",
+      "componentPath": "src/icons/IconZanTing2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-12T07:38:13.146Z"
+    },
+    {
+      "name": "IconXiaLaShouQi",
+      "originalName": "下拉收起",
+      "svgPath": "svg/下拉收起.svg",
+      "componentPath": "src/icons/IconXiaLaShouQi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-12T07:38:13.130Z"
+    },
     {
       "name": "IconFrame5",
       "originalName": "Frame5",
