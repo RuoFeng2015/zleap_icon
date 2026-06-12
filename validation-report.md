@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-06-12T05:50:05.035Z
+Generated at: 2026-06-12T07:38:08.988Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 149 |
+| Total Icons | 151 |
 | Valid Icons | 0 |
-| Invalid Icons | 149 |
-| Total Errors | 149 |
-| Total Warnings | 129 |
+| Invalid Icons | 151 |
+| Total Errors | 151 |
+| Total Warnings | 131 |
 
-⚠️ **149 icon(s) failed validation**
+⚠️ **151 icon(s) failed validation**
 
 ## Errors
 
-### size (149 errors)
+### size (151 errors)
 
 | Icon | Message |
 |------|---------|
@@ -69,6 +69,7 @@ Generated at: 2026-06-12T05:50:05.035Z
 | success-check | Icon size 20x20 not in allowed sizes:  |
 | zleap-brand-logo | Icon size 79x66 not in allowed sizes:  |
 | 下拉 | Icon size 24x24 not in allowed sizes:  |
+| 下拉收起 | Icon size 24x24 not in allowed sizes:  |
 | 传入 | Icon size 24x24 not in allowed sizes:  |
 | 体育 | Icon size 36x36 not in allowed sizes:  |
 | 关闭-小 | Icon size 24x24 not in allowed sizes:  |
@@ -128,6 +129,7 @@ Generated at: 2026-06-12T05:50:05.035Z
 | 文档 | Icon size 24x24 not in allowed sizes:  |
 | 暂停 | Icon size 24x24 not in allowed sizes:  |
 | 暂停1 | Icon size 24x24 not in allowed sizes:  |
+| 暂停2 | Icon size 24x24 not in allowed sizes:  |
 | 更多 | Icon size 24x24 not in allowed sizes:  |
 | 更多1 | Icon size 24x24 not in allowed sizes:  |
 | 未勾选 | Icon size 24x24 not in allowed sizes:  |
@@ -172,7 +174,7 @@ Generated at: 2026-06-12T05:50:05.035Z
 
 ## Warnings
 
-### naming (110 warnings)
+### naming (112 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -186,6 +188,7 @@ Generated at: 2026-06-12T05:50:05.035Z
 | Frame4 | Icon name "Frame4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame5 | Icon name "Frame5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉 | Icon name "下拉" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 下拉收起 | Icon name "下拉收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 传入 | Icon name "传入" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 体育 | Icon name "体育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -245,6 +248,7 @@ Generated at: 2026-06-12T05:50:05.035Z
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 暂停 | Icon name "暂停" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 暂停1 | Icon name "暂停1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 暂停2 | Icon name "暂停2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多 | Icon name "更多" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多1 | Icon name "更多1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 未勾选 | Icon name "未勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

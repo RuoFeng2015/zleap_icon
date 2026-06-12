@@ -120,6 +120,7 @@ import { IconWenDang } from './icons/IconWenDang'
 import { IconWenHuaTiYu1 } from './icons/IconWenHuaTiYu1'
 import { IconWenJianJia } from './icons/IconWenJianJia'
 import { IconXiaLa } from './icons/IconXiaLa'
+import { IconXiaLaShouQi } from './icons/IconXiaLaShouQi'
 import { IconXiaoXi } from './icons/IconXiaoXi'
 import { IconYiBoHui } from './icons/IconYiBoHui'
 import { IconYiDianZan1 } from './icons/IconYiDianZan1'
@@ -137,6 +138,7 @@ import { IconYuLan1 } from './icons/IconYuLan1'
 import { IconYuLanGuanBi } from './icons/IconYuLanGuanBi'
 import { IconZanTing } from './icons/IconZanTing'
 import { IconZanTing1 } from './icons/IconZanTing1'
+import { IconZanTing2 } from './icons/IconZanTing2'
 import { IconZengJia } from './icons/IconZengJia'
 import { IconZengJia1 } from './icons/IconZengJia1'
 import { IconZhanKai } from './icons/IconZhanKai'
@@ -270,6 +272,7 @@ export { IconWenDang, type IconWenDangProps } from './icons/IconWenDang'
 export { IconWenHuaTiYu1, type IconWenHuaTiYu1Props } from './icons/IconWenHuaTiYu1'
 export { IconWenJianJia, type IconWenJianJiaProps } from './icons/IconWenJianJia'
 export { IconXiaLa, type IconXiaLaProps } from './icons/IconXiaLa'
+export { IconXiaLaShouQi, type IconXiaLaShouQiProps } from './icons/IconXiaLaShouQi'
 export { IconXiaoXi, type IconXiaoXiProps } from './icons/IconXiaoXi'
 export { IconYiBoHui, type IconYiBoHuiProps } from './icons/IconYiBoHui'
 export { IconYiDianZan1, type IconYiDianZan1Props } from './icons/IconYiDianZan1'
@@ -287,6 +290,7 @@ export { IconYuLan1, type IconYuLan1Props } from './icons/IconYuLan1'
 export { IconYuLanGuanBi, type IconYuLanGuanBiProps } from './icons/IconYuLanGuanBi'
 export { IconZanTing, type IconZanTingProps } from './icons/IconZanTing'
 export { IconZanTing1, type IconZanTing1Props } from './icons/IconZanTing1'
+export { IconZanTing2, type IconZanTing2Props } from './icons/IconZanTing2'
 export { IconZengJia, type IconZengJiaProps } from './icons/IconZengJia'
 export { IconZengJia1, type IconZengJia1Props } from './icons/IconZengJia1'
 export { IconZhanKai, type IconZhanKaiProps } from './icons/IconZhanKai'
@@ -421,6 +425,7 @@ export const allIcons = {
   IconWenHuaTiYu1,
   IconWenJianJia,
   IconXiaLa,
+  IconXiaLaShouQi,
   IconXiaoXi,
   IconYiBoHui,
   IconYiDianZan1,
@@ -438,6 +443,7 @@ export const allIcons = {
   IconYuLanGuanBi,
   IconZanTing,
   IconZanTing1,
+  IconZanTing2,
   IconZengJia,
   IconZengJia1,
   IconZhanKai,
