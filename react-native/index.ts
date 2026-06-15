@@ -40,6 +40,7 @@ import { IconHaoYou } from './icons/IconHaoYou'
 import { IconHouTui15Miao } from './icons/IconHouTui15Miao'
 import { IconHuiDingBu } from './icons/IconHuiDingBu'
 import { IconHuiDingBu1 } from './icons/IconHuiDingBu1'
+import { IconHuiDingBu2 } from './icons/IconHuiDingBu2'
 import { IconJiaoYu } from './icons/IconJiaoYu'
 import { IconJiaoYu1 } from './icons/IconJiaoYu1'
 import { IconKeJi } from './icons/IconKeJi'
@@ -193,6 +194,7 @@ export { IconHaoYou, type IconHaoYouProps } from './icons/IconHaoYou'
 export { IconHouTui15Miao, type IconHouTui15MiaoProps } from './icons/IconHouTui15Miao'
 export { IconHuiDingBu, type IconHuiDingBuProps } from './icons/IconHuiDingBu'
 export { IconHuiDingBu1, type IconHuiDingBu1Props } from './icons/IconHuiDingBu1'
+export { IconHuiDingBu2, type IconHuiDingBu2Props } from './icons/IconHuiDingBu2'
 export { IconJiaoYu, type IconJiaoYuProps } from './icons/IconJiaoYu'
 export { IconJiaoYu1, type IconJiaoYu1Props } from './icons/IconJiaoYu1'
 export { IconKeJi, type IconKeJiProps } from './icons/IconKeJi'
@@ -347,6 +349,7 @@ export const allIcons = {
   IconHouTui15Miao,
   IconHuiDingBu,
   IconHuiDingBu1,
+  IconHuiDingBu2,
   IconJiaoYu,
   IconJiaoYu1,
   IconKeJi,

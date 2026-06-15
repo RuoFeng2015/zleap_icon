@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-15T07:59:16.487Z",
-  "totalCount": 152,
+  "generatedAt": "2026-06-15T08:51:07.278Z",
+  "totalCount": 153,
   "icons": [
+    {
+      "name": "IconHuiDingBu2",
+      "originalName": "回顶部2",
+      "svgPath": "svg/回顶部2.svg",
+      "componentPath": "src/icons/IconHuiDingBu2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-06-15T08:51:07.243Z"
+    },
     {
       "name": "IconHuiDingBu1",
       "originalName": "回顶部1",
