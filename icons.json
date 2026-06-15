@@ -1,30 +1,8 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-06-15T08:51:07.278Z",
-  "totalCount": 153,
+  "version": "2026.06.15",
+  "generatedAt": "2026-06-15T09:12:47.017Z",
+  "totalCount": 151,
   "icons": [
-    {
-      "name": "IconHuiDingBu2",
-      "originalName": "回顶部2",
-      "svgPath": "svg/回顶部2.svg",
-      "componentPath": "src/icons/IconHuiDingBu2.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "createdAt": "2026-06-15T08:51:07.243Z"
-    },
-    {
-      "name": "IconHuiDingBu1",
-      "originalName": "回顶部1",
-      "svgPath": "svg/回顶部1.svg",
-      "componentPath": "src/icons/IconHuiDingBu1.tsx",
-      "size": {
-        "width": 38,
-        "height": 38
-      },
-      "createdAt": "2026-06-15T07:59:16.455Z"
-    },
     {
       "name": "IconZanTing2",
       "originalName": "暂停2",
