@@ -1,19 +1,18 @@
 {
-  "version": "0.0.107",
-  "syncMode": "incremental",
-  "generatedAt": "2026-06-15T08:50:39.075Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-06-15T08:51:07.278Z",
   "totalCount": 153,
   "icons": [
     {
-      "name": "Icon回顶部2",
+      "name": "IconHuiDingBu2",
       "originalName": "回顶部2",
       "svgPath": "svg/回顶部2.svg",
-      "componentPath": "src/icons/Icon回顶部2.tsx",
+      "componentPath": "src/icons/IconHuiDingBu2.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-06-15T08:50:39.074Z"
+      "createdAt": "2026-06-15T08:51:07.243Z"
     },
     {
       "name": "IconHuiDingBu1",
