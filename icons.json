@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-15T09:18:31.378Z",
+  "generatedAt": "2026-06-15T09:20:04.229Z",
   "totalCount": 152,
   "icons": [
     {
-      "name": "Icon回到顶部",
+      "name": "IconHuiDaoDingBu",
       "originalName": "回到顶部",
       "svgPath": "svg/回到顶部.svg",
-      "componentPath": "src/icons/Icon回到顶部.tsx",
+      "componentPath": "src/icons/IconHuiDaoDingBu.tsx",
       "size": {
         "width": 14,
         "height": 8

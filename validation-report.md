@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-06-15T09:14:02.750Z
+Generated at: 2026-06-15T09:20:00.359Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 151 |
+| Total Icons | 152 |
 | Valid Icons | 0 |
-| Invalid Icons | 151 |
-| Total Errors | 151 |
-| Total Warnings | 131 |
+| Invalid Icons | 152 |
+| Total Errors | 152 |
+| Total Warnings | 133 |
 
-⚠️ **151 icon(s) failed validation**
+⚠️ **152 icon(s) failed validation**
 
 ## Errors
 
-### size (151 errors)
+### size (152 errors)
 
 | Icon | Message |
 |------|---------|
@@ -89,6 +89,7 @@ Generated at: 2026-06-15T09:14:02.750Z
 | 后退15秒 | Icon size 24x26 not in allowed sizes:  |
 | 商业 | Icon size 36x36 not in allowed sizes:  |
 | 商业1 | Icon size 132x87 not in allowed sizes:  |
+| 回到顶部 | Icon size 14x8 not in allowed sizes:  |
 | 回顶部 | Icon size 24x24 not in allowed sizes:  |
 | 增加 | Icon size 24x24 not in allowed sizes:  |
 | 增加1 | Icon size 24x24 not in allowed sizes:  |
@@ -174,7 +175,7 @@ Generated at: 2026-06-15T09:14:02.750Z
 
 ## Warnings
 
-### naming (112 warnings)
+### naming (113 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -208,6 +209,7 @@ Generated at: 2026-06-15T09:14:02.750Z
 | 后退15秒 | Icon name "后退15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 商业 | Icon name "商业" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 商业1 | Icon name "商业1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 回到顶部 | Icon name "回到顶部" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 回顶部 | Icon name "回顶部" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加 | Icon name "增加" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加1 | Icon name "增加1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -291,7 +293,7 @@ Generated at: 2026-06-15T09:14:02.750Z
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
-### size (19 warnings)
+### size (20 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -308,6 +310,7 @@ Generated at: 2026-06-15T09:14:02.750Z
 | 前进15秒 | Icon is not square: 24x26 |
 | 后退15秒 | Icon is not square: 24x26 |
 | 商业1 | Icon is not square: 132x87 |
+| 回到顶部 | Icon is not square: 14x8 |
 | 教育 | Icon is not square: 216x87 |
 | 文化体育-1 | Icon is not square: 186x87 |
 | 汽车 | Icon is not square: 132x87 |

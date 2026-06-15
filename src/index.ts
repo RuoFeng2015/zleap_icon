@@ -41,6 +41,7 @@ import { IconGuanBiXiao } from './icons/IconGuanBiXiao';
 import { IconGuanBiYuLan } from './icons/IconGuanBiYuLan';
 import { IconHaoYou } from './icons/IconHaoYou';
 import { IconHouTui15Miao } from './icons/IconHouTui15Miao';
+import { IconHuiDaoDingBu } from './icons/IconHuiDaoDingBu';
 import { IconHuiDingBu } from './icons/IconHuiDingBu';
 import { IconJiaoYu } from './icons/IconJiaoYu';
 import { IconJiaoYu1 } from './icons/IconJiaoYu1';
@@ -193,6 +194,7 @@ export { IconGuanBiXiao, type IconGuanBiXiaoProps } from './icons/IconGuanBiXiao
 export { IconGuanBiYuLan, type IconGuanBiYuLanProps } from './icons/IconGuanBiYuLan';
 export { IconHaoYou, type IconHaoYouProps } from './icons/IconHaoYou';
 export { IconHouTui15Miao, type IconHouTui15MiaoProps } from './icons/IconHouTui15Miao';
+export { IconHuiDaoDingBu, type IconHuiDaoDingBuProps } from './icons/IconHuiDaoDingBu';
 export { IconHuiDingBu, type IconHuiDingBuProps } from './icons/IconHuiDingBu';
 export { IconJiaoYu, type IconJiaoYuProps } from './icons/IconJiaoYu';
 export { IconJiaoYu1, type IconJiaoYu1Props } from './icons/IconJiaoYu1';
@@ -349,6 +351,7 @@ export const allIcons = {
   IconGuanBiYuLan,
   IconHaoYou,
   IconHouTui15Miao,
+  IconHuiDaoDingBu,
   IconHuiDingBu,
   IconJiaoYu,
   IconJiaoYu1,
