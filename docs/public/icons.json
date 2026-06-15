@@ -1,8 +1,19 @@
 {
-  "version": "2026.06.15",
-  "generatedAt": "2026-06-15T09:12:47.017Z",
-  "totalCount": 151,
+  "version": "1.0.0",
+  "generatedAt": "2026-06-15T09:17:49.488Z",
+  "totalCount": 152,
   "icons": [
+    {
+      "name": "Icon上传",
+      "originalName": "上传",
+      "svgPath": "svg/上传.svg",
+      "componentPath": "src/icons/Icon上传.tsx",
+      "size": {
+        "width": 14,
+        "height": 8
+      },
+      "createdAt": "2026-06-15T09:17:49.488Z"
+    },
     {
       "name": "IconZanTing2",
       "originalName": "暂停2",
