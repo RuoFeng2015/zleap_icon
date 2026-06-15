@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-06-12T07:38:08.988Z
+Generated at: 2026-06-15T07:59:12.774Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 151 |
+| Total Icons | 152 |
 | Valid Icons | 0 |
-| Invalid Icons | 151 |
-| Total Errors | 151 |
-| Total Warnings | 131 |
+| Invalid Icons | 152 |
+| Total Errors | 152 |
+| Total Warnings | 132 |
 
-⚠️ **151 icon(s) failed validation**
+⚠️ **152 icon(s) failed validation**
 
 ## Errors
 
-### size (151 errors)
+### size (152 errors)
 
 | Icon | Message |
 |------|---------|
@@ -90,6 +90,7 @@ Generated at: 2026-06-12T07:38:08.988Z
 | 商业 | Icon size 36x36 not in allowed sizes:  |
 | 商业1 | Icon size 132x87 not in allowed sizes:  |
 | 回顶部 | Icon size 24x24 not in allowed sizes:  |
+| 回顶部1 | Icon size 38x38 not in allowed sizes:  |
 | 增加 | Icon size 24x24 not in allowed sizes:  |
 | 增加1 | Icon size 24x24 not in allowed sizes:  |
 | 复制链接 | Icon size 24x24 not in allowed sizes:  |
@@ -174,7 +175,7 @@ Generated at: 2026-06-12T07:38:08.988Z
 
 ## Warnings
 
-### naming (112 warnings)
+### naming (113 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -209,6 +210,7 @@ Generated at: 2026-06-12T07:38:08.988Z
 | 商业 | Icon name "商业" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 商业1 | Icon name "商业1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 回顶部 | Icon name "回顶部" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 回顶部1 | Icon name "回顶部1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加 | Icon name "增加" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 增加1 | Icon name "增加1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 复制链接 | Icon name "复制链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

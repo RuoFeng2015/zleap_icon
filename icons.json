@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-12T07:38:13.169Z",
-  "totalCount": 151,
+  "generatedAt": "2026-06-15T07:59:16.487Z",
+  "totalCount": 152,
   "icons": [
+    {
+      "name": "IconHuiDingBu1",
+      "originalName": "回顶部1",
+      "svgPath": "svg/回顶部1.svg",
+      "componentPath": "src/icons/IconHuiDingBu1.tsx",
+      "size": {
+        "width": 38,
+        "height": 38
+      },
+      "createdAt": "2026-06-15T07:59:16.455Z"
+    },
     {
       "name": "IconZanTing2",
       "originalName": "暂停2",
