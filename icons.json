@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-15T09:14:06.457Z",
-  "totalCount": 151,
+  "generatedAt": "2026-06-15T09:18:31.378Z",
+  "totalCount": 152,
   "icons": [
+    {
+      "name": "Icon回到顶部",
+      "originalName": "回到顶部",
+      "svgPath": "svg/回到顶部.svg",
+      "componentPath": "src/icons/Icon回到顶部.tsx",
+      "size": {
+        "width": 14,
+        "height": 8
+      },
+      "createdAt": "2026-06-15T09:18:31.378Z"
+    },
     {
       "name": "IconZanTing2",
       "originalName": "暂停2",
