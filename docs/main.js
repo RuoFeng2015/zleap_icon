@@ -713,8 +713,7 @@ async function loadAndRenderIcon(card, iconName, svgPath, originalName) {
     // Copy icon SVG
     const copyIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
 
-    if (adminMode) {
-      // Admin mode: show checkbox
+    if (adminMode && editMode) {
       card.classList.add('admin-mode');
       if (selectedIcons.has(originalName)) {
         card.classList.add('selected');
@@ -1062,6 +1061,7 @@ loadVersion();
 // ============================================
 
 let adminMode = false;
+let editMode = false;
 let adminConfig = null; // { repo, token, branch }
 let selectedIcons = new Set(); // Set of icon originalName
 
@@ -1101,6 +1101,8 @@ const adminSelectedCount = document.getElementById('admin-selected-count');
 const adminUploadBtn = document.getElementById('admin-upload-btn');
 const adminDeleteBtn = document.getElementById('admin-delete-btn');
 const adminExitBtn = document.getElementById('admin-exit-btn');
+const adminEditBtn = document.getElementById('admin-edit-btn');
+const adminEditLabel = document.getElementById('admin-edit-label');
 
 // Upload Icon Modal
 const uploadIconModal = document.getElementById('upload-icon-modal');
@@ -1204,9 +1206,12 @@ async function validateGitHubCredentials(repo, token) {
 
 function enterAdminMode() {
   adminMode = true;
+  editMode = false;
   selectedIcons.clear();
   adminToolbar.classList.remove('hidden');
-  updateSelectedCount();
+  adminDeleteBtn.style.display = 'none';
+  adminSelectedCount.style.display = 'none';
+  adminEditLabel.textContent = '编辑';
   renderIcons(); // Re-render with admin mode
 }
 
@@ -1218,6 +1223,22 @@ function exitAdminMode() {
   adminToolbar.classList.add('hidden');
   renderIcons(); // Re-render without admin mode
   showToast('已退出管理模式');
+}
+
+function toggleEditMode() {
+  editMode = !editMode;
+  if (editMode) {
+    adminEditLabel.textContent = '完成';
+    adminDeleteBtn.style.display = '';
+    adminSelectedCount.style.display = '';
+    updateSelectedCount();
+  } else {
+    adminEditLabel.textContent = '编辑';
+    adminDeleteBtn.style.display = 'none';
+    adminSelectedCount.style.display = 'none';
+    selectedIcons.clear();
+  }
+  renderIcons();
 }
 
 function tryRestoreAdminMode() {
@@ -1850,6 +1871,7 @@ adminUsernameInput.addEventListener('keydown', (e) => {
 
 adminUploadBtn.addEventListener('click', openUploadModal);
 adminDeleteBtn.addEventListener('click', openDeleteConfirm);
+adminEditBtn.addEventListener('click', toggleEditMode);
 adminExitBtn.addEventListener('click', exitAdminMode);
 
 uploadIconClose.addEventListener('click', closeUploadModal);

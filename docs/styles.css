@@ -761,6 +761,15 @@ body {
   cursor: not-allowed;
 }
 
+.admin-edit-btn {
+  background: #f59e0b;
+  color: white;
+}
+
+.admin-edit-btn:hover {
+  background: #d97706;
+}
+
 .admin-exit-btn {
   background: rgba(255,255,255,0.15);
   color: white;
