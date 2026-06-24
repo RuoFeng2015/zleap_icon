@@ -1,13 +1,24 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-15T09:18:31.378Z",
-  "totalCount": 152,
+  "generatedAt": "2026-06-24T09:28:49.339Z",
+  "totalCount": 153,
   "icons": [
     {
-      "name": "Icon回到顶部",
+      "name": "IconMcp",
+      "originalName": "mcp",
+      "svgPath": "svg/mcp.svg",
+      "componentPath": "src/icons/IconMcp.tsx",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "createdAt": "2026-06-24T09:28:49.339Z"
+    },
+    {
+      "name": "IconHuiDaoDingBu",
       "originalName": "回到顶部",
       "svgPath": "svg/回到顶部.svg",
-      "componentPath": "src/icons/Icon回到顶部.tsx",
+      "componentPath": "src/icons/IconHuiDaoDingBu.tsx",
       "size": {
         "width": 14,
         "height": 8
