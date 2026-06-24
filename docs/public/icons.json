@@ -1,8 +1,19 @@
 {
-  "version": "2026.06.24",
-  "generatedAt": "2026-06-24T11:10:12.289Z",
-  "totalCount": 152,
+  "version": "1.0.0",
+  "generatedAt": "2026-06-24T11:12:03.191Z",
+  "totalCount": 153,
   "icons": [
+    {
+      "name": "IconMcp",
+      "originalName": "mcp",
+      "svgPath": "svg/mcp.svg",
+      "componentPath": "src/icons/IconMcp.tsx",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "createdAt": "2026-06-24T11:12:03.191Z"
+    },
     {
       "name": "IconHuiDaoDingBu",
       "originalName": "回到顶部",
