@@ -1,0 +1,53 @@
+import React, { forwardRef, useMemo } from 'react'
+import type { ComponentProps } from 'react'
+import { SvgXml } from 'react-native-svg'
+
+export interface IconMcpProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+  size?: number | string
+  color?: string
+}
+
+export const IconMcp = forwardRef<unknown, IconMcpProps>(
+  ({ size = 24, color, ...props }, ref) => {
+    const baseXml = useMemo(
+      () => `<svg class="icon" version="1.1" viewBox="0 0 1024 1024"><path fill="#cdcdcd" d="M916.672 304.832a37.12 37.12 0 0 1 1.28 52.032l-91.072 91.648 63.36 63.808c41.792 42.048 41.792 110.08 0 152.064L745.344 810.048a310.976 310.976 0 0 1-430.272 10.56l-11.008-10.56-18.88-19.008L159.04 917.824a35.97 35.97 0 0 1-46.4 3.2l-5.248-4.416a37.12 37.12 0 0 1-5.312-46.912l4.16-4.928 126.08-126.784-21.504-21.568a314.496 314.496 0 0 1 0-443.264l144.896-145.664a106.56 106.56 0 0 1 151.296 0l72.832 73.28 91.328-91.648a36.16 36.16 0 0 1 46.592-3.2l5.184 4.416c12.8 12.416 15.04 32.128 5.376 46.912l-4.032 4.928-91.328 91.648 140.736 141.632 91.2-91.648a35.97 35.97 0 0 1 46.4-3.008zm-77.056 258.176L456.32 177.92a35.456 35.456 0 0 0-50.432 0l-144.896 145.6a242.69 242.69 0 0 0 0 342.08l93.44 93.76 9.6 9.088a239.81 239.81 0 0 0 330.688-9.088l144.896-145.664a35.84 35.84 0 0 0 0-50.688"/></svg>`,
+      [],
+    )
+
+    const xml = useMemo(() => {
+      if (!color) return baseXml
+      return baseXml.replace(
+        /(fill|stroke)="([^"]+)"/gi,
+        (_match, attr, value) => {
+          const normalized = String(value).toLowerCase().replace(/\s/g, '')
+          if (
+            normalized === 'none' ||
+            normalized === 'currentcolor' ||
+            normalized === 'white' ||
+            normalized === '#fff' ||
+            normalized === '#ffffff' ||
+            normalized.startsWith('url(')
+          ) {
+            return `${attr}="${value}"`
+          }
+          return `${attr}="${color}"`
+        },
+      )
+    }, [baseXml, color])
+
+    return (
+      <SvgXml
+        ref={ref as never}
+        xml={xml}
+        width={size}
+        height={size}
+        viewBox="0 0 1024 1024"
+        {...props}
+      />
+    )
+  },
+)
+
+IconMcp.displayName = 'IconMcp'
+
+export default IconMcp

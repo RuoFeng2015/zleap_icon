@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-24T11:12:03.191Z",
+  "generatedAt": "2026-06-24T11:12:52.230Z",
   "totalCount": 153,
   "icons": [
     {
@@ -9,8 +9,8 @@
       "svgPath": "svg/mcp.svg",
       "componentPath": "src/icons/IconMcp.tsx",
       "size": {
-        "width": 200,
-        "height": 200
+        "width": 1024,
+        "height": 1024
       },
       "createdAt": "2026-06-24T11:12:03.191Z"
     },
