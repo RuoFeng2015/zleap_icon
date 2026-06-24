@@ -1042,7 +1042,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Initialize
-loadIcons();
+loadIcons().then(() => tryRestoreAdminMode());
 setTimeout(clearSearchAutofillIfNeeded, 0);
 setTimeout(clearSearchAutofillIfNeeded, 300);
 setTimeout(clearSearchAutofillIfNeeded, 1200);
@@ -1179,6 +1179,7 @@ async function validateGitHubCredentials(repo, token) {
         token: token,
         branch: repoData.default_branch || 'main'
       };
+      localStorage.setItem('adminConfig', JSON.stringify(adminConfig));
       closeAdminLogin();
       enterAdminMode();
       showToast('✅ 已进入管理模式');
@@ -1213,9 +1214,27 @@ function exitAdminMode() {
   adminMode = false;
   adminConfig = null;
   selectedIcons.clear();
+  localStorage.removeItem('adminConfig');
   adminToolbar.classList.add('hidden');
   renderIcons(); // Re-render without admin mode
   showToast('已退出管理模式');
+}
+
+function tryRestoreAdminMode() {
+  const saved = localStorage.getItem('adminConfig');
+  if (!saved) return;
+
+  try {
+    const config = JSON.parse(saved);
+    if (config && config.repo && config.token && config.branch) {
+      adminConfig = config;
+      enterAdminMode();
+    } else {
+      localStorage.removeItem('adminConfig');
+    }
+  } catch {
+    localStorage.removeItem('adminConfig');
+  }
 }
 
 function toggleIconSelection(iconOriginalName) {

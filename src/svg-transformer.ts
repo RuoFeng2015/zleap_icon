@@ -160,6 +160,14 @@ const cleanFigmaExport: CustomPlugin = {
 
           const currentViewBox = viewBoxStack[viewBoxStack.length - 1] || null
 
+          // 移除工具生成的无效属性（如 p-id）
+          if (node.attributes) {
+            const invalidAttrs = ['p-id', 't']
+            invalidAttrs.forEach((attr) => {
+              delete node.attributes[attr]
+            })
+          }
+
           // 移除泄漏进图标的设计稿背景矩形（支持负坐标/相对命令）
           if (node.name === 'path' && node.attributes?.d) {
             if (
