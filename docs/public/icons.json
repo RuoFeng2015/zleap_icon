@@ -1,52 +1,8 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-06-24T11:01:25.086Z",
-  "totalCount": 156,
+  "version": "2026.06.24",
+  "generatedAt": "2026-06-24T11:10:12.289Z",
+  "totalCount": 152,
   "icons": [
-    {
-      "name": "IconMcp3",
-      "originalName": "mcp3",
-      "svgPath": "svg/mcp3.svg",
-      "componentPath": "src/icons/IconMcp3.tsx",
-      "size": {
-        "width": 200,
-        "height": 200
-      },
-      "createdAt": "2026-06-24T11:01:25.086Z"
-    },
-    {
-      "name": "IconMcp2",
-      "originalName": "mcp2",
-      "svgPath": "svg/mcp2.svg",
-      "componentPath": "src/icons/IconMcp2.tsx",
-      "size": {
-        "width": 200,
-        "height": 200
-      },
-      "createdAt": "2026-06-24T10:43:23.568Z"
-    },
-    {
-      "name": "IconMcp1",
-      "originalName": "mcp1",
-      "svgPath": "svg/mcp1.svg",
-      "componentPath": "src/icons/IconMcp1.tsx",
-      "size": {
-        "width": 200,
-        "height": 200
-      },
-      "createdAt": "2026-06-24T10:25:28.151Z"
-    },
-    {
-      "name": "IconMcp",
-      "originalName": "mcp",
-      "svgPath": "svg/mcp.svg",
-      "componentPath": "src/icons/IconMcp.tsx",
-      "size": {
-        "width": 200,
-        "height": 200
-      },
-      "createdAt": "2026-06-24T09:28:49.339Z"
-    },
     {
       "name": "IconHuiDaoDingBu",
       "originalName": "回到顶部",
