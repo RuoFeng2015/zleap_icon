@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-06-24T11:12:48.558Z
+Generated at: 2026-06-25T12:02:35.086Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 153 |
+| Total Icons | 159 |
 | Valid Icons | 0 |
-| Invalid Icons | 153 |
-| Total Errors | 153 |
-| Total Warnings | 133 |
+| Invalid Icons | 159 |
+| Total Errors | 159 |
+| Total Warnings | 139 |
 
-⚠️ **153 icon(s) failed validation**
+⚠️ **159 icon(s) failed validation**
 
 ## Errors
 
-### size (153 errors)
+### size (159 errors)
 
 | Icon | Message |
 |------|---------|
@@ -34,7 +34,7 @@ Generated at: 2026-06-24T11:12:48.558Z
 | delete-outline | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
 | logo | Icon size 45x37 not in allowed sizes:  |
-| mcp | Icon size 200x200 not in allowed sizes:  |
+| mcp | Icon size 1024x1024 not in allowed sizes:  |
 | menu-assistant-management-active | Icon size 49x49 not in allowed sizes:  |
 | menu-assistant-management | Icon size 120x120 not in allowed sizes:  |
 | menu-download-assistant | Icon size 120x120 not in allowed sizes:  |
@@ -73,6 +73,10 @@ Generated at: 2026-06-24T11:12:48.558Z
 | 下拉收起 | Icon size 24x24 not in allowed sizes:  |
 | 传入 | Icon size 24x24 not in allowed sizes:  |
 | 体育 | Icon size 36x36 not in allowed sizes:  |
+| 公共信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
+| 公共信息源-高亮 | Icon size 20x20 not in allowed sizes:  |
+| 共享信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
+| 共享信息源-高亮 | Icon size 20x20 not in allowed sizes:  |
 | 关闭-小 | Icon size 24x24 not in allowed sizes:  |
 | 关闭 | Icon size 24x24 not in allowed sizes:  |
 | 关闭预览 | Icon size 24x24 not in allowed sizes:  |
@@ -113,6 +117,8 @@ Generated at: 2026-06-24T11:12:48.558Z
 | 待审核 | Icon size 180x180 not in allowed sizes:  |
 | 微信好友 | Icon size 24x24 not in allowed sizes:  |
 | 快进15秒 | Icon size 24x24 not in allowed sizes:  |
+| 我的信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
+| 我的信息源-高亮 | Icon size 20x20 not in allowed sizes:  |
 | 探索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索1 | Icon size 24x24 not in allowed sizes:  |
@@ -176,7 +182,7 @@ Generated at: 2026-06-24T11:12:48.558Z
 
 ## Warnings
 
-### naming (113 warnings)
+### naming (119 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -193,6 +199,10 @@ Generated at: 2026-06-24T11:12:48.558Z
 | 下拉收起 | Icon name "下拉收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 传入 | Icon name "传入" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 体育 | Icon name "体育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 公共信息源-置灰 | Icon name "公共信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 公共信息源-高亮 | Icon name "公共信息源-高亮" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 共享信息源-置灰 | Icon name "共享信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 共享信息源-高亮 | Icon name "共享信息源-高亮" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭-小 | Icon name "关闭-小" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭预览 | Icon name "关闭预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -233,6 +243,8 @@ Generated at: 2026-06-24T11:12:48.558Z
 | 待审核 | Icon name "待审核" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 微信好友 | Icon name "微信好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 快进15秒 | Icon name "快进15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 我的信息源-置灰 | Icon name "我的信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 我的信息源-高亮 | Icon name "我的信息源-高亮" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索 | Icon name "搜索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索1 | Icon name "搜索1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

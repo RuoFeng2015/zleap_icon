@@ -1,8 +1,74 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-24T11:12:52.230Z",
-  "totalCount": 153,
+  "generatedAt": "2026-06-25T12:02:38.958Z",
+  "totalCount": 159,
   "icons": [
+    {
+      "name": "IconWoDeXinXiYuanZhiHui",
+      "originalName": "我的信息源-置灰",
+      "svgPath": "svg/我的信息源-置灰.svg",
+      "componentPath": "src/icons/IconWoDeXinXiYuanZhiHui.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "createdAt": "2026-06-25T12:02:38.931Z"
+    },
+    {
+      "name": "IconWoDeXinXiYuanGaoLiang",
+      "originalName": "我的信息源-高亮",
+      "svgPath": "svg/我的信息源-高亮.svg",
+      "componentPath": "src/icons/IconWoDeXinXiYuanGaoLiang.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "createdAt": "2026-06-25T12:02:38.931Z"
+    },
+    {
+      "name": "IconGongXiangXinXiYuanZhiHui",
+      "originalName": "共享信息源-置灰",
+      "svgPath": "svg/共享信息源-置灰.svg",
+      "componentPath": "src/icons/IconGongXiangXinXiYuanZhiHui.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "createdAt": "2026-06-25T12:02:38.921Z"
+    },
+    {
+      "name": "IconGongXiangXinXiYuanGaoLiang",
+      "originalName": "共享信息源-高亮",
+      "svgPath": "svg/共享信息源-高亮.svg",
+      "componentPath": "src/icons/IconGongXiangXinXiYuanGaoLiang.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "createdAt": "2026-06-25T12:02:38.921Z"
+    },
+    {
+      "name": "IconGongGongXinXiYuanZhiHui",
+      "originalName": "公共信息源-置灰",
+      "svgPath": "svg/公共信息源-置灰.svg",
+      "componentPath": "src/icons/IconGongGongXinXiYuanZhiHui.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "createdAt": "2026-06-25T12:02:38.920Z"
+    },
+    {
+      "name": "IconGongGongXinXiYuanGaoLiang",
+      "originalName": "公共信息源-高亮",
+      "svgPath": "svg/公共信息源-高亮.svg",
+      "componentPath": "src/icons/IconGongGongXinXiYuanGaoLiang.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "createdAt": "2026-06-25T12:02:38.920Z"
+    },
     {
       "name": "IconMcp",
       "originalName": "mcp",
