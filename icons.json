@@ -1,8 +1,107 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-06-25T12:02:38.958Z",
-  "totalCount": 159,
+  "generatedAt": "2026-07-02T08:33:53.442Z",
+  "totalCount": 168,
   "icons": [
+    {
+      "name": "IconSiMiWenJianJiaLieBiao",
+      "originalName": "私密文件夹-列表",
+      "svgPath": "svg/私密文件夹-列表.svg",
+      "componentPath": "src/icons/IconSiMiWenJianJiaLieBiao.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-02T08:33:53.423Z"
+    },
+    {
+      "name": "IconGengDuo2",
+      "originalName": "更多2",
+      "svgPath": "svg/更多2.svg",
+      "componentPath": "src/icons/IconGengDuo2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-02T08:33:53.420Z"
+    },
+    {
+      "name": "IconXinJianXinXiYuanLieBiaoShiTu",
+      "originalName": "新建信息源-列表视图",
+      "svgPath": "svg/新建信息源-列表视图.svg",
+      "componentPath": "src/icons/IconXinJianXinXiYuanLieBiaoShiTu.tsx",
+      "size": {
+        "width": 22,
+        "height": 22
+      },
+      "createdAt": "2026-07-02T08:33:53.419Z"
+    },
+    {
+      "name": "IconXinJianXinXiYuanKaPianShiTu",
+      "originalName": "新建信息源-卡片视图",
+      "svgPath": "svg/新建信息源-卡片视图.svg",
+      "componentPath": "src/icons/IconXinJianXinXiYuanKaPianShiTu.tsx",
+      "size": {
+        "width": 22,
+        "height": 22
+      },
+      "createdAt": "2026-07-02T08:33:53.419Z"
+    },
+    {
+      "name": "IconWenJianJiaLieBiao",
+      "originalName": "文件夹-列表",
+      "svgPath": "svg/文件夹-列表.svg",
+      "componentPath": "src/icons/IconWenJianJiaLieBiao.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-02T08:33:53.418Z"
+    },
+    {
+      "name": "IconWenJianJiaSiMi",
+      "originalName": "文件夹-私密",
+      "svgPath": "svg/文件夹-私密.svg",
+      "componentPath": "src/icons/IconWenJianJiaSiMi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-02T08:33:53.418Z"
+    },
+    {
+      "name": "IconWenJianJiaGongKai",
+      "originalName": "文件夹-公开",
+      "svgPath": "svg/文件夹-公开.svg",
+      "componentPath": "src/icons/IconWenJianJiaGongKai.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-02T08:33:53.417Z"
+    },
+    {
+      "name": "IconKaPianBuJu",
+      "originalName": "卡片布局",
+      "svgPath": "svg/卡片布局.svg",
+      "componentPath": "src/icons/IconKaPianBuJu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-02T08:33:53.404Z"
+    },
+    {
+      "name": "IconLieBiaoBuJu",
+      "originalName": "列表布局",
+      "svgPath": "svg/列表布局.svg",
+      "componentPath": "src/icons/IconLieBiaoBuJu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-02T08:33:53.401Z"
+    },
     {
       "name": "IconWoDeXinXiYuanZhiHui",
       "originalName": "我的信息源-置灰",

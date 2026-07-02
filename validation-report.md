@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-06-25T12:02:35.086Z
+Generated at: 2026-07-02T08:33:49.213Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 159 |
+| Total Icons | 168 |
 | Valid Icons | 0 |
-| Invalid Icons | 159 |
-| Total Errors | 159 |
-| Total Warnings | 139 |
+| Invalid Icons | 168 |
+| Total Errors | 168 |
+| Total Warnings | 148 |
 
-⚠️ **159 icon(s) failed validation**
+⚠️ **168 icon(s) failed validation**
 
 ## Errors
 
-### size (159 errors)
+### size (168 errors)
 
 | Icon | Message |
 |------|---------|
@@ -81,6 +81,7 @@ Generated at: 2026-06-25T12:02:35.086Z
 | 关闭 | Icon size 24x24 not in allowed sizes:  |
 | 关闭预览 | Icon size 24x24 not in allowed sizes:  |
 | 分享 | Icon size 24x24 not in allowed sizes:  |
+| 列表布局 | Icon size 24x24 not in allowed sizes:  |
 | 删除 | Icon size 24x24 not in allowed sizes:  |
 | 删除1 | Icon size 24x24 not in allowed sizes:  |
 | 删除delete | Icon size 24x24 not in allowed sizes:  |
@@ -90,6 +91,7 @@ Generated at: 2026-06-25T12:02:35.086Z
 | 助手管理 | Icon size 24x24 not in allowed sizes:  |
 | 勾选-已勾选 | Icon size 24x24 not in allowed sizes:  |
 | 勾选 | Icon size 24x24 not in allowed sizes:  |
+| 卡片布局 | Icon size 24x24 not in allowed sizes:  |
 | 右 | Icon size 24x24 not in allowed sizes:  |
 | 后退15秒 | Icon size 24x26 not in allowed sizes:  |
 | 商业 | Icon size 36x36 not in allowed sizes:  |
@@ -132,14 +134,20 @@ Generated at: 2026-06-25T12:02:35.086Z
 | 数据源图标-1 | Icon size 36x36 not in allowed sizes:  |
 | 数据源图标-2 | Icon size 36x36 not in allowed sizes:  |
 | 数据源图标-3 | Icon size 36x36 not in allowed sizes:  |
+| 文件夹-公开 | Icon size 24x24 not in allowed sizes:  |
+| 文件夹-列表 | Icon size 24x24 not in allowed sizes:  |
+| 文件夹-私密 | Icon size 24x24 not in allowed sizes:  |
 | 文件夹 | Icon size 24x24 not in allowed sizes:  |
 | 文化体育-1 | Icon size 186x87 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
+| 新建信息源-列表视图 | Icon size 22x22 not in allowed sizes:  |
+| 新建信息源-卡片视图 | Icon size 22x22 not in allowed sizes:  |
 | 暂停 | Icon size 24x24 not in allowed sizes:  |
 | 暂停1 | Icon size 24x24 not in allowed sizes:  |
 | 暂停2 | Icon size 24x24 not in allowed sizes:  |
 | 更多 | Icon size 24x24 not in allowed sizes:  |
 | 更多1 | Icon size 24x24 not in allowed sizes:  |
+| 更多2 | Icon size 24x24 not in allowed sizes:  |
 | 未勾选 | Icon size 24x24 not in allowed sizes:  |
 | 正确 | Icon size 24x24 not in allowed sizes:  |
 | 汽车-1 | Icon size 36x36 not in allowed sizes:  |
@@ -148,6 +156,7 @@ Generated at: 2026-06-25T12:02:35.086Z
 | 清除-已读 | Icon size 24x24 not in allowed sizes:  |
 | 申请成功 | Icon size 70x70 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
+| 私密文件夹-列表 | Icon size 24x24 not in allowed sizes:  |
 | 科技 | Icon size 36x36 not in allowed sizes:  |
 | 科技1 | Icon size 132x87 not in allowed sizes:  |
 | 筛选 | Icon size 24x24 not in allowed sizes:  |
@@ -182,7 +191,7 @@ Generated at: 2026-06-25T12:02:35.086Z
 
 ## Warnings
 
-### naming (119 warnings)
+### naming (128 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -207,6 +216,7 @@ Generated at: 2026-06-25T12:02:35.086Z
 | 关闭 | Icon name "关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 关闭预览 | Icon name "关闭预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 分享 | Icon name "分享" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 列表布局 | Icon name "列表布局" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 删除 | Icon name "删除" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 删除1 | Icon name "删除1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 删除delete | Icon name "删除delete" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -216,6 +226,7 @@ Generated at: 2026-06-25T12:02:35.086Z
 | 助手管理 | Icon name "助手管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 勾选-已勾选 | Icon name "勾选-已勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 勾选 | Icon name "勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 卡片布局 | Icon name "卡片布局" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 右 | Icon name "右" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 后退15秒 | Icon name "后退15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 商业 | Icon name "商业" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -258,14 +269,20 @@ Generated at: 2026-06-25T12:02:35.086Z
 | 数据源图标-1 | Icon name "数据源图标-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 数据源图标-2 | Icon name "数据源图标-2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 数据源图标-3 | Icon name "数据源图标-3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 文件夹-公开 | Icon name "文件夹-公开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 文件夹-列表 | Icon name "文件夹-列表" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 文件夹-私密 | Icon name "文件夹-私密" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹 | Icon name "文件夹" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文化体育-1 | Icon name "文化体育-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 新建信息源-列表视图 | Icon name "新建信息源-列表视图" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 新建信息源-卡片视图 | Icon name "新建信息源-卡片视图" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 暂停 | Icon name "暂停" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 暂停1 | Icon name "暂停1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 暂停2 | Icon name "暂停2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多 | Icon name "更多" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 更多1 | Icon name "更多1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 更多2 | Icon name "更多2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 未勾选 | Icon name "未勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 正确 | Icon name "正确" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 汽车-1 | Icon name "汽车-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -274,6 +291,7 @@ Generated at: 2026-06-25T12:02:35.086Z
 | 清除-已读 | Icon name "清除-已读" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 申请成功 | Icon name "申请成功" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 私密文件夹-列表 | Icon name "私密文件夹-列表" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技 | Icon name "科技" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技1 | Icon name "科技1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 筛选 | Icon name "筛选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
