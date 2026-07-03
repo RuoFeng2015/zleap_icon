@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-03T03:13:47.801Z
+Generated at: 2026-07-03T07:04:44.989Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 169 |
+| Total Icons | 170 |
 | Valid Icons | 0 |
-| Invalid Icons | 169 |
-| Total Errors | 169 |
-| Total Warnings | 149 |
+| Invalid Icons | 170 |
+| Total Errors | 170 |
+| Total Warnings | 150 |
 
-⚠️ **169 icon(s) failed validation**
+⚠️ **170 icon(s) failed validation**
 
 ## Errors
 
-### size (169 errors)
+### size (170 errors)
 
 | Icon | Message |
 |------|---------|
@@ -136,6 +136,7 @@ Generated at: 2026-07-03T03:13:47.801Z
 | 数据源图标-3 | Icon size 36x36 not in allowed sizes:  |
 | 文件夹-公开 | Icon size 24x24 not in allowed sizes:  |
 | 文件夹-列表 | Icon size 24x24 not in allowed sizes:  |
+| 文件夹-卡片 | Icon size 24x24 not in allowed sizes:  |
 | 文件夹-私密 | Icon size 24x24 not in allowed sizes:  |
 | 文件夹 | Icon size 24x24 not in allowed sizes:  |
 | 文化体育-1 | Icon size 186x87 not in allowed sizes:  |
@@ -192,7 +193,7 @@ Generated at: 2026-07-03T03:13:47.801Z
 
 ## Warnings
 
-### naming (129 warnings)
+### naming (130 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -272,6 +273,7 @@ Generated at: 2026-07-03T03:13:47.801Z
 | 数据源图标-3 | Icon name "数据源图标-3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹-公开 | Icon name "文件夹-公开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹-列表 | Icon name "文件夹-列表" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 文件夹-卡片 | Icon name "文件夹-卡片" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹-私密 | Icon name "文件夹-私密" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹 | Icon name "文件夹" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文化体育-1 | Icon name "文化体育-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
