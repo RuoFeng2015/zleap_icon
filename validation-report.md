@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-02T08:33:49.213Z
+Generated at: 2026-07-03T03:13:47.801Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 168 |
+| Total Icons | 169 |
 | Valid Icons | 0 |
-| Invalid Icons | 168 |
-| Total Errors | 168 |
-| Total Warnings | 148 |
+| Invalid Icons | 169 |
+| Total Errors | 169 |
+| Total Warnings | 149 |
 
-⚠️ **168 icon(s) failed validation**
+⚠️ **169 icon(s) failed validation**
 
 ## Errors
 
-### size (168 errors)
+### size (169 errors)
 
 | Icon | Message |
 |------|---------|
@@ -160,6 +160,7 @@ Generated at: 2026-07-02T08:33:49.213Z
 | 科技 | Icon size 36x36 not in allowed sizes:  |
 | 科技1 | Icon size 132x87 not in allowed sizes:  |
 | 筛选 | Icon size 24x24 not in allowed sizes:  |
+| 筛选1 | Icon size 24x24 not in allowed sizes:  |
 | 编辑 | Icon size 24x24 not in allowed sizes:  |
 | 职场 | Icon size 132x87 not in allowed sizes:  |
 | 职场1 | Icon size 36x36 not in allowed sizes:  |
@@ -191,7 +192,7 @@ Generated at: 2026-07-02T08:33:49.213Z
 
 ## Warnings
 
-### naming (128 warnings)
+### naming (129 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -295,6 +296,7 @@ Generated at: 2026-07-02T08:33:49.213Z
 | 科技 | Icon name "科技" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技1 | Icon name "科技1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 筛选 | Icon name "筛选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 筛选1 | Icon name "筛选1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 编辑 | Icon name "编辑" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场 | Icon name "职场" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场1 | Icon name "职场1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
