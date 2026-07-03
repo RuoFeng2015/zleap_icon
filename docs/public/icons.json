@@ -1,19 +1,96 @@
 {
-  "version": "0.0.121",
+  "version": "0.0.122",
   "syncMode": "incremental",
-  "generatedAt": "2026-07-03T10:27:40.898Z",
-  "totalCount": 175,
+  "generatedAt": "2026-07-03T11:00:42.960Z",
+  "totalCount": 182,
   "icons": [
     {
-      "name": "Icon筛选2",
-      "originalName": "筛选2",
-      "svgPath": "svg/筛选2.svg",
-      "componentPath": "src/icons/Icon筛选2.tsx",
+      "name": "Icon上传音频",
+      "originalName": "上传音频",
+      "svgPath": "svg/上传音频.svg",
+      "componentPath": "src/icons/Icon上传音频.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-07-03T10:27:40.897Z"
+      "uploadedAt": "2026-07-03T11:00:42.959Z"
+    },
+    {
+      "name": "Icon实时录音",
+      "originalName": "实时录音",
+      "svgPath": "svg/实时录音.svg",
+      "componentPath": "src/icons/Icon实时录音.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-03T11:00:42.960Z"
+    },
+    {
+      "name": "Icon思源笔记",
+      "originalName": "思源笔记",
+      "svgPath": "svg/思源笔记.svg",
+      "componentPath": "src/icons/Icon思源笔记.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-03T11:00:42.960Z"
+    },
+    {
+      "name": "Icon文档上传",
+      "originalName": "文档上传",
+      "svgPath": "svg/文档上传.svg",
+      "componentPath": "src/icons/Icon文档上传.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-03T11:00:42.960Z"
+    },
+    {
+      "name": "Icon浏览器插件",
+      "originalName": "浏览器插件",
+      "svgPath": "svg/浏览器插件.svg",
+      "componentPath": "src/icons/Icon浏览器插件.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-03T11:00:42.960Z"
+    },
+    {
+      "name": "Icon笔记本",
+      "originalName": "笔记本",
+      "svgPath": "svg/笔记本.svg",
+      "componentPath": "src/icons/Icon笔记本.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-03T11:00:42.960Z"
+    },
+    {
+      "name": "Icon语雀知识库",
+      "originalName": "语雀知识库",
+      "svgPath": "svg/语雀知识库.svg",
+      "componentPath": "src/icons/Icon语雀知识库.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-03T11:00:42.960Z"
+    },
+    {
+      "name": "IconShaiXuan2",
+      "originalName": "筛选2",
+      "svgPath": "svg/筛选2.svg",
+      "componentPath": "src/icons/IconShaiXuan2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T10:28:19.841Z"
     },
     {
       "name": "IconChongShi1",
