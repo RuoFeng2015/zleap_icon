@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-03T09:40:38.597Z
+Generated at: 2026-07-03T09:44:43.603Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 183 |
+| Total Icons | 178 |
 | Valid Icons | 0 |
-| Invalid Icons | 183 |
-| Total Errors | 183 |
-| Total Warnings | 163 |
+| Invalid Icons | 178 |
+| Total Errors | 178 |
+| Total Warnings | 158 |
 
-⚠️ **183 icon(s) failed validation**
+⚠️ **178 icon(s) failed validation**
 
 ## Errors
 
-### size (183 errors)
+### size (178 errors)
 
 | Icon | Message |
 |------|---------|
@@ -94,7 +94,6 @@ Generated at: 2026-07-03T09:40:38.597Z
 | 卡片布局 | Icon size 24x24 not in allowed sizes:  |
 | 右 | Icon size 24x24 not in allowed sizes:  |
 | 同步中 | Icon size 24x24 not in allowed sizes:  |
-| 同步中1 | Icon size 24x24 not in allowed sizes:  |
 | 同步中2 | Icon size 24x24 not in allowed sizes:  |
 | 后退15秒 | Icon size 24x26 not in allowed sizes:  |
 | 商业 | Icon size 36x36 not in allowed sizes:  |
@@ -106,7 +105,6 @@ Generated at: 2026-07-03T09:40:38.597Z
 | 复制链接 | Icon size 24x24 not in allowed sizes:  |
 | 多选 | Icon size 24x24 not in allowed sizes:  |
 | 失败 | Icon size 24x24 not in allowed sizes:  |
-| 失败1 | Icon size 24x24 not in allowed sizes:  |
 | 失败2 | Icon size 24x24 not in allowed sizes:  |
 | 好友 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
@@ -126,7 +124,6 @@ Generated at: 2026-07-03T09:40:38.597Z
 | 微信好友 | Icon size 24x24 not in allowed sizes:  |
 | 快进15秒 | Icon size 24x24 not in allowed sizes:  |
 | 成功 | Icon size 24x24 not in allowed sizes:  |
-| 成功1 | Icon size 24x24 not in allowed sizes:  |
 | 成功2 | Icon size 24x24 not in allowed sizes:  |
 | 我的信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
 | 我的信息源-高亮 | Icon size 20x20 not in allowed sizes:  |
@@ -171,7 +168,6 @@ Generated at: 2026-07-03T09:40:38.597Z
 | 科技1 | Icon size 132x87 not in allowed sizes:  |
 | 筛选 | Icon size 24x24 not in allowed sizes:  |
 | 筛选1 | Icon size 24x24 not in allowed sizes:  |
-| 筛选2 | Icon size 24x24 not in allowed sizes:  |
 | 编辑 | Icon size 24x24 not in allowed sizes:  |
 | 职场 | Icon size 132x87 not in allowed sizes:  |
 | 职场1 | Icon size 36x36 not in allowed sizes:  |
@@ -191,7 +187,6 @@ Generated at: 2026-07-03T09:40:38.597Z
 | 重新 | Icon size 24x24 not in allowed sizes:  |
 | 重试 | Icon size 24x24 not in allowed sizes:  |
 | 重试1 | Icon size 24x24 not in allowed sizes:  |
-| 重试2 | Icon size 24x24 not in allowed sizes:  |
 | 重试3 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
 | 锁定 | Icon size 24x24 not in allowed sizes:  |
@@ -206,7 +201,7 @@ Generated at: 2026-07-03T09:40:38.597Z
 
 ## Warnings
 
-### naming (143 warnings)
+### naming (138 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -244,7 +239,6 @@ Generated at: 2026-07-03T09:40:38.597Z
 | 卡片布局 | Icon name "卡片布局" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 右 | Icon name "右" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 同步中 | Icon name "同步中" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 同步中1 | Icon name "同步中1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 同步中2 | Icon name "同步中2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 后退15秒 | Icon name "后退15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 商业 | Icon name "商业" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -256,7 +250,6 @@ Generated at: 2026-07-03T09:40:38.597Z
 | 复制链接 | Icon name "复制链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 多选 | Icon name "多选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 失败 | Icon name "失败" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 失败1 | Icon name "失败1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 失败2 | Icon name "失败2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 好友 | Icon name "好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -276,7 +269,6 @@ Generated at: 2026-07-03T09:40:38.597Z
 | 微信好友 | Icon name "微信好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 快进15秒 | Icon name "快进15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 成功 | Icon name "成功" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 成功1 | Icon name "成功1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 成功2 | Icon name "成功2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 我的信息源-置灰 | Icon name "我的信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 我的信息源-高亮 | Icon name "我的信息源-高亮" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -321,7 +313,6 @@ Generated at: 2026-07-03T09:40:38.597Z
 | 科技1 | Icon name "科技1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 筛选 | Icon name "筛选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 筛选1 | Icon name "筛选1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 筛选2 | Icon name "筛选2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 编辑 | Icon name "编辑" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场 | Icon name "职场" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场1 | Icon name "职场1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -341,7 +332,6 @@ Generated at: 2026-07-03T09:40:38.597Z
 | 重新 | Icon name "重新" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 重试 | Icon name "重试" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 重试1 | Icon name "重试1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 重试2 | Icon name "重试2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 重试3 | Icon name "重试3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 锁定 | Icon name "锁定" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

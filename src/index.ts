@@ -17,12 +17,10 @@ import { IconCaiJing } from './icons/IconCaiJing';
 import { IconCaiJing1 } from './icons/IconCaiJing1';
 import { IconCheck } from './icons/IconCheck';
 import { IconChengGong } from './icons/IconChengGong';
-import { IconChengGong1 } from './icons/IconChengGong1';
 import { IconChengGong2 } from './icons/IconChengGong2';
 import { IconChongBo } from './icons/IconChongBo';
 import { IconChongShi } from './icons/IconChongShi';
 import { IconChongShi1 } from './icons/IconChongShi1';
-import { IconChongShi2 } from './icons/IconChongShi2';
 import { IconChongShi3 } from './icons/IconChongShi3';
 import { IconChongXin } from './icons/IconChongXin';
 import { IconChuanRu } from './icons/IconChuanRu';
@@ -108,7 +106,6 @@ import { IconQingChuYiDu } from './icons/IconQingChuYiDu';
 import { IconSearch } from './icons/IconSearch';
 import { IconShaiXuan } from './icons/IconShaiXuan';
 import { IconShaiXuan1 } from './icons/IconShaiXuan1';
-import { IconShaiXuan2 } from './icons/IconShaiXuan2';
 import { IconShanChu } from './icons/IconShanChu';
 import { IconShanChu1 } from './icons/IconShanChu1';
 import { IconShanChuDELETE } from './icons/IconShanChuDELETE';
@@ -119,7 +116,6 @@ import { IconShenQingChengGong } from './icons/IconShenQingChengGong';
 import { IconSheZhi } from './icons/IconSheZhi';
 import { IconSheZhi1 } from './icons/IconSheZhi1';
 import { IconShiBai } from './icons/IconShiBai';
-import { IconShiBai1 } from './icons/IconShiBai1';
 import { IconShiBai2 } from './icons/IconShiBai2';
 import { IconShouCang } from './icons/IconShouCang';
 import { IconShouCang1 } from './icons/IconShouCang1';
@@ -136,7 +132,6 @@ import { IconSuoDing } from './icons/IconSuoDing';
 import { IconTanSuo } from './icons/IconTanSuo';
 import { IconTiYu } from './icons/IconTiYu';
 import { IconTongBuZhong } from './icons/IconTongBuZhong';
-import { IconTongBuZhong1 } from './icons/IconTongBuZhong1';
 import { IconTongBuZhong2 } from './icons/IconTongBuZhong2';
 import { IconTongXunLuXi } from './icons/IconTongXunLuXi';
 import { IconTongZhi } from './icons/IconTongZhi';
@@ -201,12 +196,10 @@ export { IconCaiJing, type IconCaiJingProps } from './icons/IconCaiJing';
 export { IconCaiJing1, type IconCaiJing1Props } from './icons/IconCaiJing1';
 export { IconCheck, type IconCheckProps } from './icons/IconCheck';
 export { IconChengGong, type IconChengGongProps } from './icons/IconChengGong';
-export { IconChengGong1, type IconChengGong1Props } from './icons/IconChengGong1';
 export { IconChengGong2, type IconChengGong2Props } from './icons/IconChengGong2';
 export { IconChongBo, type IconChongBoProps } from './icons/IconChongBo';
 export { IconChongShi, type IconChongShiProps } from './icons/IconChongShi';
 export { IconChongShi1, type IconChongShi1Props } from './icons/IconChongShi1';
-export { IconChongShi2, type IconChongShi2Props } from './icons/IconChongShi2';
 export { IconChongShi3, type IconChongShi3Props } from './icons/IconChongShi3';
 export { IconChongXin, type IconChongXinProps } from './icons/IconChongXin';
 export { IconChuanRu, type IconChuanRuProps } from './icons/IconChuanRu';
@@ -292,7 +285,6 @@ export { IconQingChuYiDu, type IconQingChuYiDuProps } from './icons/IconQingChuY
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
 export { IconShaiXuan, type IconShaiXuanProps } from './icons/IconShaiXuan';
 export { IconShaiXuan1, type IconShaiXuan1Props } from './icons/IconShaiXuan1';
-export { IconShaiXuan2, type IconShaiXuan2Props } from './icons/IconShaiXuan2';
 export { IconShanChu, type IconShanChuProps } from './icons/IconShanChu';
 export { IconShanChu1, type IconShanChu1Props } from './icons/IconShanChu1';
 export { IconShanChuDELETE, type IconShanChuDELETEProps } from './icons/IconShanChuDELETE';
@@ -303,7 +295,6 @@ export { IconShenQingChengGong, type IconShenQingChengGongProps } from './icons/
 export { IconSheZhi, type IconSheZhiProps } from './icons/IconSheZhi';
 export { IconSheZhi1, type IconSheZhi1Props } from './icons/IconSheZhi1';
 export { IconShiBai, type IconShiBaiProps } from './icons/IconShiBai';
-export { IconShiBai1, type IconShiBai1Props } from './icons/IconShiBai1';
 export { IconShiBai2, type IconShiBai2Props } from './icons/IconShiBai2';
 export { IconShouCang, type IconShouCangProps } from './icons/IconShouCang';
 export { IconShouCang1, type IconShouCang1Props } from './icons/IconShouCang1';
@@ -320,7 +311,6 @@ export { IconSuoDing, type IconSuoDingProps } from './icons/IconSuoDing';
 export { IconTanSuo, type IconTanSuoProps } from './icons/IconTanSuo';
 export { IconTiYu, type IconTiYuProps } from './icons/IconTiYu';
 export { IconTongBuZhong, type IconTongBuZhongProps } from './icons/IconTongBuZhong';
-export { IconTongBuZhong1, type IconTongBuZhong1Props } from './icons/IconTongBuZhong1';
 export { IconTongBuZhong2, type IconTongBuZhong2Props } from './icons/IconTongBuZhong2';
 export { IconTongXunLuXi, type IconTongXunLuXiProps } from './icons/IconTongXunLuXi';
 export { IconTongZhi, type IconTongZhiProps } from './icons/IconTongZhi';
@@ -389,12 +379,10 @@ export const allIcons = {
   IconCaiJing1,
   IconCheck,
   IconChengGong,
-  IconChengGong1,
   IconChengGong2,
   IconChongBo,
   IconChongShi,
   IconChongShi1,
-  IconChongShi2,
   IconChongShi3,
   IconChongXin,
   IconChuanRu,
@@ -480,7 +468,6 @@ export const allIcons = {
   IconSearch,
   IconShaiXuan,
   IconShaiXuan1,
-  IconShaiXuan2,
   IconShanChu,
   IconShanChu1,
   IconShanChuDELETE,
@@ -491,7 +478,6 @@ export const allIcons = {
   IconSheZhi,
   IconSheZhi1,
   IconShiBai,
-  IconShiBai1,
   IconShiBai2,
   IconShouCang,
   IconShouCang1,
@@ -508,7 +494,6 @@ export const allIcons = {
   IconTanSuo,
   IconTiYu,
   IconTongBuZhong,
-  IconTongBuZhong1,
   IconTongBuZhong2,
   IconTongXunLuXi,
   IconTongZhi,
