@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-03T07:04:48.917Z",
-  "totalCount": 170,
+  "generatedAt": "2026-07-03T07:06:11.015Z",
+  "totalCount": 171,
   "icons": [
+    {
+      "name": "IconShaiXuan2",
+      "originalName": "筛选2",
+      "svgPath": "svg/筛选2.svg",
+      "componentPath": "src/icons/IconShaiXuan2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T07:06:10.995Z"
+    },
     {
       "name": "IconWenJianJiaKaPian",
       "originalName": "文件夹-卡片",
