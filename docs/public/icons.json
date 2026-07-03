@@ -1,30 +1,63 @@
 {
-  "version": "0.0.116",
+  "version": "0.0.117",
   "syncMode": "incremental",
-  "generatedAt": "2026-07-03T07:05:29.909Z",
-  "totalCount": 172,
+  "generatedAt": "2026-07-03T09:30:47.136Z",
+  "totalCount": 175,
   "icons": [
     {
-      "name": "Icon文件夹/卡片",
-      "originalName": "文件夹/卡片",
-      "svgPath": "svg/文件夹-卡片.svg",
-      "componentPath": "src/icons/Icon文件夹/卡片.tsx",
+      "name": "Icon同步中",
+      "originalName": "同步中",
+      "svgPath": "svg/同步中.svg",
+      "componentPath": "src/icons/Icon同步中.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-07-03T07:05:29.909Z"
+      "uploadedAt": "2026-07-03T09:30:47.135Z"
     },
     {
-      "name": "Icon筛选2",
-      "originalName": "筛选2",
-      "svgPath": "svg/筛选2.svg",
-      "componentPath": "src/icons/Icon筛选2.tsx",
+      "name": "Icon失败",
+      "originalName": "失败",
+      "svgPath": "svg/失败.svg",
+      "componentPath": "src/icons/Icon失败.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-07-03T07:05:29.909Z"
+      "uploadedAt": "2026-07-03T09:30:47.135Z"
+    },
+    {
+      "name": "Icon成功",
+      "originalName": "成功",
+      "svgPath": "svg/成功.svg",
+      "componentPath": "src/icons/Icon成功.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-03T09:30:47.135Z"
+    },
+    {
+      "name": "Icon重试1",
+      "originalName": "重试1",
+      "svgPath": "svg/重试1.svg",
+      "componentPath": "src/icons/Icon重试1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-03T09:30:47.135Z"
+    },
+    {
+      "name": "IconShaiXuan2",
+      "originalName": "筛选2",
+      "svgPath": "svg/筛选2.svg",
+      "componentPath": "src/icons/IconShaiXuan2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T07:06:10.995Z"
     },
     {
       "name": "IconWenJianJiaKaPian",

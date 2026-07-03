@@ -1,8 +1,52 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-03T07:06:11.015Z",
-  "totalCount": 171,
+  "generatedAt": "2026-07-03T09:31:24.036Z",
+  "totalCount": 175,
   "icons": [
+    {
+      "name": "IconChongShi1",
+      "originalName": "重试1",
+      "svgPath": "svg/重试1.svg",
+      "componentPath": "src/icons/IconChongShi1.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T09:31:24.021Z"
+    },
+    {
+      "name": "IconChengGong",
+      "originalName": "成功",
+      "svgPath": "svg/成功.svg",
+      "componentPath": "src/icons/IconChengGong.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T09:31:24.008Z"
+    },
+    {
+      "name": "IconShiBai",
+      "originalName": "失败",
+      "svgPath": "svg/失败.svg",
+      "componentPath": "src/icons/IconShiBai.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T09:31:24.004Z"
+    },
+    {
+      "name": "IconTongBuZhong",
+      "originalName": "同步中",
+      "svgPath": "svg/同步中.svg",
+      "componentPath": "src/icons/IconTongBuZhong.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T09:31:24.002Z"
+    },
     {
       "name": "IconShaiXuan2",
       "originalName": "筛选2",
