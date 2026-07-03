@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-03T09:44:47.740Z",
-  "totalCount": 174,
+  "generatedAt": "2026-07-03T10:28:19.862Z",
+  "totalCount": 175,
   "icons": [
+    {
+      "name": "IconShaiXuan2",
+      "originalName": "筛选2",
+      "svgPath": "svg/筛选2.svg",
+      "componentPath": "src/icons/IconShaiXuan2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T10:28:19.841Z"
+    },
     {
       "name": "IconChongShi1",
       "originalName": "重试1",

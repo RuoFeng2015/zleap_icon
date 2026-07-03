@@ -10,7 +10,7 @@ export interface IconShaiXuan2Props extends Omit<ComponentProps<typeof SvgXml>, 
 export const IconShaiXuan2 = forwardRef<unknown, IconShaiXuan2Props>(
   ({ size = 24, color, ...props }, ref) => {
     const baseXml = useMemo(
-      () => `<svg fill="none" viewBox="0 0 24 24"><path stroke="#525252" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.681" d="M19.565 5.275h-5.883"/><path stroke="#525252" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.681" d="M10.319 5.275H4.436"/><path stroke="#525252" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.681" d="M19.565 12H12"/><path stroke="#525252" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.681" d="M8.638 12H4.436"/><path stroke="#525252" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.681" d="M19.564 18.725H15.36"/><path stroke="#525252" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.681" d="M12 18.725H4.436"/><path stroke="#525252" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.681" d="M13.682 3.596v3.362"/><path stroke="#525252" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.681" d="M8.639 10.318v3.362"/><path stroke="#525252" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.681" d="M15.361 17.043v3.362"/></svg>`,
+      () => `<svg fill="none" viewBox="0 0 24 24"><path stroke="#D4D4D8" stroke-linejoin="round" stroke-width="1.5" d="m12 21-4.5-6.5h9z"/><path stroke="#D4D4D8" stroke-linejoin="round" stroke-width="1.5" d="M12 3 7.5 9.5h9z"/></svg>`,
       [],
     )
 
