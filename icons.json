@@ -1,52 +1,51 @@
 {
-  "version": "0.0.119",
-  "syncMode": "incremental",
-  "generatedAt": "2026-07-03T09:40:06.836Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-07-03T09:40:42.507Z",
   "totalCount": 183,
   "icons": [
     {
-      "name": "Icon同步中2",
-      "originalName": "同步中2",
-      "svgPath": "svg/同步中2.svg",
-      "componentPath": "src/icons/Icon同步中2.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-07-03T09:40:06.836Z"
-    },
-    {
-      "name": "Icon失败2",
-      "originalName": "失败2",
-      "svgPath": "svg/失败2.svg",
-      "componentPath": "src/icons/Icon失败2.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-07-03T09:40:06.836Z"
-    },
-    {
-      "name": "Icon成功2",
-      "originalName": "成功2",
-      "svgPath": "svg/成功2.svg",
-      "componentPath": "src/icons/Icon成功2.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-07-03T09:40:06.836Z"
-    },
-    {
-      "name": "Icon重试3",
+      "name": "IconChongShi3",
       "originalName": "重试3",
       "svgPath": "svg/重试3.svg",
-      "componentPath": "src/icons/Icon重试3.tsx",
+      "componentPath": "src/icons/IconChongShi3.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-07-03T09:40:06.836Z"
+      "createdAt": "2026-07-03T09:40:42.492Z"
+    },
+    {
+      "name": "IconChengGong2",
+      "originalName": "成功2",
+      "svgPath": "svg/成功2.svg",
+      "componentPath": "src/icons/IconChengGong2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T09:40:42.474Z"
+    },
+    {
+      "name": "IconShiBai2",
+      "originalName": "失败2",
+      "svgPath": "svg/失败2.svg",
+      "componentPath": "src/icons/IconShiBai2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T09:40:42.469Z"
+    },
+    {
+      "name": "IconTongBuZhong2",
+      "originalName": "同步中2",
+      "svgPath": "svg/同步中2.svg",
+      "componentPath": "src/icons/IconTongBuZhong2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T09:40:42.467Z"
     },
     {
       "name": "IconChongShi2",

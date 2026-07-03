@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-03T09:36:02.542Z
+Generated at: 2026-07-03T09:40:38.597Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 179 |
+| Total Icons | 183 |
 | Valid Icons | 0 |
-| Invalid Icons | 179 |
-| Total Errors | 179 |
-| Total Warnings | 159 |
+| Invalid Icons | 183 |
+| Total Errors | 183 |
+| Total Warnings | 163 |
 
-⚠️ **179 icon(s) failed validation**
+⚠️ **183 icon(s) failed validation**
 
 ## Errors
 
-### size (179 errors)
+### size (183 errors)
 
 | Icon | Message |
 |------|---------|
@@ -95,6 +95,7 @@ Generated at: 2026-07-03T09:36:02.542Z
 | 右 | Icon size 24x24 not in allowed sizes:  |
 | 同步中 | Icon size 24x24 not in allowed sizes:  |
 | 同步中1 | Icon size 24x24 not in allowed sizes:  |
+| 同步中2 | Icon size 24x24 not in allowed sizes:  |
 | 后退15秒 | Icon size 24x26 not in allowed sizes:  |
 | 商业 | Icon size 36x36 not in allowed sizes:  |
 | 商业1 | Icon size 132x87 not in allowed sizes:  |
@@ -106,6 +107,7 @@ Generated at: 2026-07-03T09:36:02.542Z
 | 多选 | Icon size 24x24 not in allowed sizes:  |
 | 失败 | Icon size 24x24 not in allowed sizes:  |
 | 失败1 | Icon size 24x24 not in allowed sizes:  |
+| 失败2 | Icon size 24x24 not in allowed sizes:  |
 | 好友 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 展开1 | Icon size 24x24 not in allowed sizes:  |
@@ -125,6 +127,7 @@ Generated at: 2026-07-03T09:36:02.542Z
 | 快进15秒 | Icon size 24x24 not in allowed sizes:  |
 | 成功 | Icon size 24x24 not in allowed sizes:  |
 | 成功1 | Icon size 24x24 not in allowed sizes:  |
+| 成功2 | Icon size 24x24 not in allowed sizes:  |
 | 我的信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
 | 我的信息源-高亮 | Icon size 20x20 not in allowed sizes:  |
 | 探索 | Icon size 24x24 not in allowed sizes:  |
@@ -189,6 +192,7 @@ Generated at: 2026-07-03T09:36:02.542Z
 | 重试 | Icon size 24x24 not in allowed sizes:  |
 | 重试1 | Icon size 24x24 not in allowed sizes:  |
 | 重试2 | Icon size 24x24 not in allowed sizes:  |
+| 重试3 | Icon size 24x24 not in allowed sizes:  |
 | 链接 | Icon size 24x24 not in allowed sizes:  |
 | 锁定 | Icon size 24x24 not in allowed sizes:  |
 | 音符 | Icon size 24x24 not in allowed sizes:  |
@@ -202,7 +206,7 @@ Generated at: 2026-07-03T09:36:02.542Z
 
 ## Warnings
 
-### naming (139 warnings)
+### naming (143 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -241,6 +245,7 @@ Generated at: 2026-07-03T09:36:02.542Z
 | 右 | Icon name "右" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 同步中 | Icon name "同步中" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 同步中1 | Icon name "同步中1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 同步中2 | Icon name "同步中2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 后退15秒 | Icon name "后退15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 商业 | Icon name "商业" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 商业1 | Icon name "商业1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -252,6 +257,7 @@ Generated at: 2026-07-03T09:36:02.542Z
 | 多选 | Icon name "多选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 失败 | Icon name "失败" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 失败1 | Icon name "失败1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 失败2 | Icon name "失败2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 好友 | Icon name "好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开1 | Icon name "展开1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -271,6 +277,7 @@ Generated at: 2026-07-03T09:36:02.542Z
 | 快进15秒 | Icon name "快进15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 成功 | Icon name "成功" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 成功1 | Icon name "成功1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 成功2 | Icon name "成功2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 我的信息源-置灰 | Icon name "我的信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 我的信息源-高亮 | Icon name "我的信息源-高亮" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -335,6 +342,7 @@ Generated at: 2026-07-03T09:36:02.542Z
 | 重试 | Icon name "重试" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 重试1 | Icon name "重试1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 重试2 | Icon name "重试2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 重试3 | Icon name "重试3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 链接 | Icon name "链接" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 锁定 | Icon name "锁定" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 音符 | Icon name "音符" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
