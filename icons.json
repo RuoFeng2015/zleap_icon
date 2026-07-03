@@ -1,30 +1,18 @@
 {
-  "version": "0.0.116",
-  "syncMode": "incremental",
-  "generatedAt": "2026-07-03T07:05:29.909Z",
-  "totalCount": 172,
+  "version": "1.0.0",
+  "generatedAt": "2026-07-03T07:06:11.015Z",
+  "totalCount": 171,
   "icons": [
     {
-      "name": "Icon文件夹/卡片",
-      "originalName": "文件夹/卡片",
-      "svgPath": "svg/文件夹-卡片.svg",
-      "componentPath": "src/icons/Icon文件夹/卡片.tsx",
-      "size": {
-        "width": 24,
-        "height": 24
-      },
-      "uploadedAt": "2026-07-03T07:05:29.909Z"
-    },
-    {
-      "name": "Icon筛选2",
+      "name": "IconShaiXuan2",
       "originalName": "筛选2",
       "svgPath": "svg/筛选2.svg",
-      "componentPath": "src/icons/Icon筛选2.tsx",
+      "componentPath": "src/icons/IconShaiXuan2.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-07-03T07:05:29.909Z"
+      "createdAt": "2026-07-03T07:06:10.995Z"
     },
     {
       "name": "IconWenJianJiaKaPian",
