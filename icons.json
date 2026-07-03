@@ -1,19 +1,18 @@
 {
-  "version": "0.0.115",
-  "syncMode": "incremental",
-  "generatedAt": "2026-07-03T07:04:08.104Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-07-03T07:04:48.917Z",
   "totalCount": 170,
   "icons": [
     {
-      "name": "Icon文件夹/卡片",
-      "originalName": "文件夹/卡片",
+      "name": "IconWenJianJiaKaPian",
+      "originalName": "文件夹-卡片",
       "svgPath": "svg/文件夹-卡片.svg",
-      "componentPath": "src/icons/Icon文件夹/卡片.tsx",
+      "componentPath": "src/icons/IconWenJianJiaKaPian.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-07-03T07:04:08.104Z"
+      "createdAt": "2026-07-03T07:04:48.891Z"
     },
     {
       "name": "IconShaiXuan1",
