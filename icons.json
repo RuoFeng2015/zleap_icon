@@ -1,8 +1,85 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-03T10:28:19.862Z",
-  "totalCount": 175,
+  "generatedAt": "2026-07-03T11:01:23.094Z",
+  "totalCount": 182,
   "icons": [
+    {
+      "name": "IconYuQueZhiShiKu",
+      "originalName": "语雀知识库",
+      "svgPath": "svg/语雀知识库.svg",
+      "componentPath": "src/icons/IconYuQueZhiShiKu.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T11:01:23.077Z"
+    },
+    {
+      "name": "IconBiJiBen",
+      "originalName": "笔记本",
+      "svgPath": "svg/笔记本.svg",
+      "componentPath": "src/icons/IconBiJiBen.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T11:01:23.074Z"
+    },
+    {
+      "name": "IconLiuLanQiChaJian",
+      "originalName": "浏览器插件",
+      "svgPath": "svg/浏览器插件.svg",
+      "componentPath": "src/icons/IconLiuLanQiChaJian.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T11:01:23.072Z"
+    },
+    {
+      "name": "IconWenDangShangChuan",
+      "originalName": "文档上传",
+      "svgPath": "svg/文档上传.svg",
+      "componentPath": "src/icons/IconWenDangShangChuan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T11:01:23.070Z"
+    },
+    {
+      "name": "IconSiYuanBiJi",
+      "originalName": "思源笔记",
+      "svgPath": "svg/思源笔记.svg",
+      "componentPath": "src/icons/IconSiYuanBiJi.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T11:01:23.064Z"
+    },
+    {
+      "name": "IconShiShiLuYin",
+      "originalName": "实时录音",
+      "svgPath": "svg/实时录音.svg",
+      "componentPath": "src/icons/IconShiShiLuYin.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T11:01:23.060Z"
+    },
+    {
+      "name": "IconShangChuanYinPin",
+      "originalName": "上传音频",
+      "svgPath": "svg/上传音频.svg",
+      "componentPath": "src/icons/IconShangChuanYinPin.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-03T11:01:23.051Z"
+    },
     {
       "name": "IconShaiXuan2",
       "originalName": "筛选2",
