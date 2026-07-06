@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-07-03T11:01:23.094Z",
-  "totalCount": 182,
+  "version": "0.0.123",
+  "syncMode": "incremental",
+  "generatedAt": "2026-07-06T05:42:56.905Z",
+  "totalCount": 183,
   "icons": [
+    {
+      "name": "Icon信息来源",
+      "originalName": "信息来源",
+      "svgPath": "svg/信息来源.svg",
+      "componentPath": "src/icons/Icon信息来源.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-06T05:42:56.904Z"
+    },
     {
       "name": "IconYuQueZhiShiKu",
       "originalName": "语雀知识库",
