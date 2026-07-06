@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-03T11:01:23.094Z",
-  "totalCount": 182,
+  "generatedAt": "2026-07-06T05:43:31.140Z",
+  "totalCount": 183,
   "icons": [
+    {
+      "name": "IconXinXiLaiYuan",
+      "originalName": "信息来源",
+      "svgPath": "svg/信息来源.svg",
+      "componentPath": "src/icons/IconXinXiLaiYuan.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-06T05:43:31.095Z"
+    },
     {
       "name": "IconYuQueZhiShiKu",
       "originalName": "语雀知识库",
