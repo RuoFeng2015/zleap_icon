@@ -152,6 +152,7 @@ import { IconXiaLaShouQi } from './icons/IconXiaLaShouQi'
 import { IconXiaoXi } from './icons/IconXiaoXi'
 import { IconXinJianXinXiYuanKaPianShiTu } from './icons/IconXinJianXinXiYuanKaPianShiTu'
 import { IconXinJianXinXiYuanLieBiaoShiTu } from './icons/IconXinJianXinXiYuanLieBiaoShiTu'
+import { IconXinXiLaiYuan } from './icons/IconXinXiLaiYuan'
 import { IconYiBoHui } from './icons/IconYiBoHui'
 import { IconYiDianZan1 } from './icons/IconYiDianZan1'
 import { IconYiGouXuan } from './icons/IconYiGouXuan'
@@ -335,6 +336,7 @@ export { IconXiaLaShouQi, type IconXiaLaShouQiProps } from './icons/IconXiaLaSho
 export { IconXiaoXi, type IconXiaoXiProps } from './icons/IconXiaoXi'
 export { IconXinJianXinXiYuanKaPianShiTu, type IconXinJianXinXiYuanKaPianShiTuProps } from './icons/IconXinJianXinXiYuanKaPianShiTu'
 export { IconXinJianXinXiYuanLieBiaoShiTu, type IconXinJianXinXiYuanLieBiaoShiTuProps } from './icons/IconXinJianXinXiYuanLieBiaoShiTu'
+export { IconXinXiLaiYuan, type IconXinXiLaiYuanProps } from './icons/IconXinXiLaiYuan'
 export { IconYiBoHui, type IconYiBoHuiProps } from './icons/IconYiBoHui'
 export { IconYiDianZan1, type IconYiDianZan1Props } from './icons/IconYiDianZan1'
 export { IconYiGouXuan, type IconYiGouXuanProps } from './icons/IconYiGouXuan'
@@ -519,6 +521,7 @@ export const allIcons = {
   IconXiaoXi,
   IconXinJianXinXiYuanKaPianShiTu,
   IconXinJianXinXiYuanLieBiaoShiTu,
+  IconXinXiLaiYuan,
   IconYiBoHui,
   IconYiDianZan1,
   IconYiGouXuan,
