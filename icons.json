@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-10T11:31:25.870Z",
-  "totalCount": 183,
+  "generatedAt": "2026-07-10T12:20:55.439Z",
+  "totalCount": 184,
   "icons": [
+    {
+      "name": "Icon部分可见文件夹无内容",
+      "originalName": "部分可见文件夹-无内容",
+      "svgPath": "svg/部分可见文件夹-无内容.svg",
+      "componentPath": "src/icons/Icon部分可见文件夹无内容.tsx",
+      "size": {
+        "width": 544,
+        "height": 544
+      },
+      "createdAt": "2026-07-10T12:20:55.439Z"
+    },
     {
       "name": "IconXinXiLaiYuan",
       "originalName": "信息来源",
