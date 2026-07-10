@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-06T05:43:27.104Z
+Generated at: 2026-07-10T10:55:11.629Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 183 |
+| Total Icons | 184 |
 | Valid Icons | 0 |
-| Invalid Icons | 183 |
-| Total Errors | 183 |
-| Total Warnings | 163 |
+| Invalid Icons | 184 |
+| Total Errors | 184 |
+| Total Warnings | 164 |
 
-⚠️ **183 icon(s) failed validation**
+⚠️ **184 icon(s) failed validation**
 
 ## Errors
 
-### size (183 errors)
+### size (184 errors)
 
 | Icon | Message |
 |------|---------|
@@ -167,6 +167,7 @@ Generated at: 2026-07-06T05:43:27.104Z
 | 申请成功 | Icon size 70x70 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
 | 私密文件夹-列表 | Icon size 24x24 not in allowed sizes:  |
+| 私密文件夹-有内容 | Icon size 544x544 not in allowed sizes:  |
 | 科技 | Icon size 36x36 not in allowed sizes:  |
 | 科技1 | Icon size 132x87 not in allowed sizes:  |
 | 笔记本 | Icon size 24x24 not in allowed sizes:  |
@@ -206,7 +207,7 @@ Generated at: 2026-07-06T05:43:27.104Z
 
 ## Warnings
 
-### naming (143 warnings)
+### naming (144 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -317,6 +318,7 @@ Generated at: 2026-07-06T05:43:27.104Z
 | 申请成功 | Icon name "申请成功" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 私密文件夹-列表 | Icon name "私密文件夹-列表" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 私密文件夹-有内容 | Icon name "私密文件夹-有内容" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技 | Icon name "科技" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 科技1 | Icon name "科技1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 笔记本 | Icon name "笔记本" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
