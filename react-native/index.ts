@@ -11,6 +11,7 @@ import { IconBoFang } from './icons/IconBoFang'
 import { IconBoFang1 } from './icons/IconBoFang1'
 import { IconBoFangZhong } from './icons/IconBoFangZhong'
 import { IconBuFenKeJianWenJianJiaWuNeiRong } from './icons/IconBuFenKeJianWenJianJiaWuNeiRong'
+import { IconBuFenKeJianWenJianJiaYouNeiRong } from './icons/IconBuFenKeJianWenJianJiaYouNeiRong'
 import { IconBuFenXuanZhong } from './icons/IconBuFenXuanZhong'
 import { IconCaiJing } from './icons/IconCaiJing'
 import { IconCaiJing1 } from './icons/IconCaiJing1'
@@ -196,6 +197,7 @@ export { IconBoFang, type IconBoFangProps } from './icons/IconBoFang'
 export { IconBoFang1, type IconBoFang1Props } from './icons/IconBoFang1'
 export { IconBoFangZhong, type IconBoFangZhongProps } from './icons/IconBoFangZhong'
 export { IconBuFenKeJianWenJianJiaWuNeiRong, type IconBuFenKeJianWenJianJiaWuNeiRongProps } from './icons/IconBuFenKeJianWenJianJiaWuNeiRong'
+export { IconBuFenKeJianWenJianJiaYouNeiRong, type IconBuFenKeJianWenJianJiaYouNeiRongProps } from './icons/IconBuFenKeJianWenJianJiaYouNeiRong'
 export { IconBuFenXuanZhong, type IconBuFenXuanZhongProps } from './icons/IconBuFenXuanZhong'
 export { IconCaiJing, type IconCaiJingProps } from './icons/IconCaiJing'
 export { IconCaiJing1, type IconCaiJing1Props } from './icons/IconCaiJing1'
@@ -382,6 +384,7 @@ export const allIcons = {
   IconBoFang1,
   IconBoFangZhong,
   IconBuFenKeJianWenJianJiaWuNeiRong,
+  IconBuFenKeJianWenJianJiaYouNeiRong,
   IconBuFenXuanZhong,
   IconCaiJing,
   IconCaiJing1,
