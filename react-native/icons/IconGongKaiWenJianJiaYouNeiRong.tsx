@@ -1,0 +1,53 @@
+import React, { forwardRef, useMemo } from 'react'
+import type { ComponentProps } from 'react'
+import { SvgXml } from 'react-native-svg'
+
+export interface IconGongKaiWenJianJiaYouNeiRongProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+  size?: number | string
+  color?: string
+}
+
+export const IconGongKaiWenJianJiaYouNeiRong = forwardRef<unknown, IconGongKaiWenJianJiaYouNeiRongProps>(
+  ({ size = 24, color, ...props }, ref) => {
+    const baseXml = useMemo(
+      () => `<svg fill="none" viewBox="0 0 544 544"><path fill="#438DA6" d="M16 98.56v346.388c0 14.804 12.002 26.806 26.806 26.806h458.388c14.804 0 26.806-12.002 26.806-26.806V153.227c0-14.805-12.002-26.806-26.806-26.806H260.603c-10.421 0-19.86-6.083-25.312-14.965-9.934-16.185-27.847-39.702-48.066-39.702H42.765C27.96 71.754 16 83.755 16 98.56"/><rect width="482" height="173" x="31" y="143" fill="white" rx="20"/><path fill="url(#a)" d="M528 187.277v248.386c0 14.805-12.002 26.807-26.806 26.807H42.839c-14.817 0-26.824-12.022-26.806-26.84l.306-248.386c.019-14.792 11.976-26.774 26.768-26.774h205.437c85.023.004 201.002.002 252.695.001 14.805 0 26.761 12.001 26.761 26.806"/><defs><linearGradient id="a" x1="528" x2="52.19" y1="160.47" y2="511.521" gradientUnits="userSpaceOnUse"><stop offset=".234" stop-color="#65CDE3"/><stop offset="1" stop-color="#438DA6"/></linearGradient></defs></svg>`,
+      [],
+    )
+
+    const xml = useMemo(() => {
+      if (!color) return baseXml
+      return baseXml.replace(
+        /(fill|stroke)="([^"]+)"/gi,
+        (_match, attr, value) => {
+          const normalized = String(value).toLowerCase().replace(/\s/g, '')
+          if (
+            normalized === 'none' ||
+            normalized === 'currentcolor' ||
+            normalized === 'white' ||
+            normalized === '#fff' ||
+            normalized === '#ffffff' ||
+            normalized.startsWith('url(')
+          ) {
+            return `${attr}="${value}"`
+          }
+          return `${attr}="${color}"`
+        },
+      )
+    }, [baseXml, color])
+
+    return (
+      <SvgXml
+        ref={ref as never}
+        xml={xml}
+        width={size}
+        height={size}
+        viewBox="0 0 544 544"
+        {...props}
+      />
+    )
+  },
+)
+
+IconGongKaiWenJianJiaYouNeiRong.displayName = 'IconGongKaiWenJianJiaYouNeiRong'
+
+export default IconGongKaiWenJianJiaYouNeiRong
