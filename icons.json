@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-06T05:43:31.140Z",
-  "totalCount": 183,
+  "generatedAt": "2026-07-10T10:52:42.203Z",
+  "totalCount": 184,
   "icons": [
+    {
+      "name": "Icon公开文件夹有内容",
+      "originalName": "公开文件夹-有内容",
+      "svgPath": "svg/公开文件夹-有内容.svg",
+      "componentPath": "src/icons/Icon公开文件夹有内容.tsx",
+      "size": {
+        "width": 544,
+        "height": 544
+      },
+      "createdAt": "2026-07-10T10:52:42.203Z"
+    },
     {
       "name": "IconXinXiLaiYuan",
       "originalName": "信息来源",
