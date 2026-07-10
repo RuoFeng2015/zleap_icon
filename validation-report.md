@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-10T11:31:21.884Z
+Generated at: 2026-07-10T12:21:52.923Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 183 |
+| Total Icons | 184 |
 | Valid Icons | 0 |
-| Invalid Icons | 183 |
-| Total Errors | 183 |
-| Total Warnings | 163 |
+| Invalid Icons | 184 |
+| Total Errors | 184 |
+| Total Warnings | 164 |
 
-⚠️ **183 icon(s) failed validation**
+⚠️ **184 icon(s) failed validation**
 
 ## Errors
 
-### size (183 errors)
+### size (184 errors)
 
 | Icon | Message |
 |------|---------|
@@ -188,6 +188,7 @@ Generated at: 2026-07-10T11:31:21.884Z
 | 通知 | Icon size 24x24 not in allowed sizes:  |
 | 通知1 | Icon size 24x24 not in allowed sizes:  |
 | 通讯录-细 | Icon size 24x24 not in allowed sizes:  |
+| 部分可见文件夹-无内容 | Icon size 544x544 not in allowed sizes:  |
 | 部分选中 | Icon size 24x24 not in allowed sizes:  |
 | 重播 | Icon size 24x24 not in allowed sizes:  |
 | 重新 | Icon size 24x24 not in allowed sizes:  |
@@ -206,7 +207,7 @@ Generated at: 2026-07-10T11:31:21.884Z
 
 ## Warnings
 
-### naming (143 warnings)
+### naming (144 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -338,6 +339,7 @@ Generated at: 2026-07-10T11:31:21.884Z
 | 通知 | Icon name "通知" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知1 | Icon name "通知1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通讯录-细 | Icon name "通讯录-细" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 部分可见文件夹-无内容 | Icon name "部分可见文件夹-无内容" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 部分选中 | Icon name "部分选中" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 重播 | Icon name "重播" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 重新 | Icon name "重新" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

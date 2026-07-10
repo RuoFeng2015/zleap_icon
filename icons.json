@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-10T12:20:55.439Z",
+  "generatedAt": "2026-07-10T12:21:57.299Z",
   "totalCount": 184,
   "icons": [
     {
-      "name": "Icon部分可见文件夹无内容",
+      "name": "IconBuFenKeJianWenJianJiaWuNeiRong",
       "originalName": "部分可见文件夹-无内容",
       "svgPath": "svg/部分可见文件夹-无内容.svg",
-      "componentPath": "src/icons/Icon部分可见文件夹无内容.tsx",
+      "componentPath": "src/icons/IconBuFenKeJianWenJianJiaWuNeiRong.tsx",
       "size": {
         "width": 544,
         "height": 544
