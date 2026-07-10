@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-10T12:22:01.454Z",
-  "totalCount": 184,
+  "generatedAt": "2026-07-10T12:23:57.388Z",
+  "totalCount": 185,
   "icons": [
+    {
+      "name": "Icon部分可见文件夹有内容",
+      "originalName": "部分可见文件夹-有内容",
+      "svgPath": "svg/部分可见文件夹-有内容.svg",
+      "componentPath": "src/icons/Icon部分可见文件夹有内容.tsx",
+      "size": {
+        "width": 544,
+        "height": 544
+      },
+      "createdAt": "2026-07-10T12:23:57.388Z"
+    },
     {
       "name": "IconBuFenKeJianWenJianJiaWuNeiRong",
       "originalName": "部分可见文件夹-无内容",
