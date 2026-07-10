@@ -1110,6 +1110,8 @@ const uploadIconBackdrop = document.getElementById('upload-icon-backdrop');
 const uploadIconClose = document.getElementById('upload-icon-close');
 const uploadIconNameInput = document.getElementById('upload-icon-name');
 const uploadSvgCodeInput = document.getElementById('upload-svg-code');
+const uploadFileInput = document.getElementById('upload-file-input');
+const uploadFileList = document.getElementById('upload-file-list');
 const uploadError = document.getElementById('upload-error');
 const uploadPreview = document.getElementById('upload-preview');
 const uploadCancelBtn = document.getElementById('upload-cancel-btn');
@@ -1131,6 +1133,7 @@ const deleteProgressText = document.getElementById('delete-progress-text');
 
 let uploadItem = null;
 let uploadBusy = false;
+let uploadItems = [];
 
 function openAdminLogin() {
   adminLoginModal.classList.remove('hidden');
@@ -1397,36 +1400,39 @@ function setUploadError(message) {
 }
 
 function renderUploadPreview() {
-  if (!uploadItem || !uploadItem.svgContent || uploadItem.svgErrors.length > 0) {
+  const items = uploadItems.length ? uploadItems : (uploadItem ? [uploadItem] : []);
+  if (!items.length) {
     uploadPreview.classList.add('hidden');
     uploadPreview.innerHTML = '';
     return;
   }
 
   uploadPreview.classList.remove('hidden');
-  uploadPreview.innerHTML = `
-    <div class="upload-preview-title">展示效果</div>
-    <div class="upload-preview-single">
-      <div class="upload-preview-icon">${createSvgWithStyles(uploadItem.svgContent, 48, 'currentColor', `upload-${uploadItem.id}`)}</div>
-      <div class="upload-preview-name" title="${uploadItem.originalName}">${uploadItem.originalName}</div>
-      <div class="upload-preview-meta">${uploadItem.size.width}x${uploadItem.size.height}</div>
-      ${uploadItem.warnings.length ? `<div class="upload-preview-warning">${uploadItem.warnings[0]}</div>` : ''}
-    </div>
-  `;
+  uploadPreview.innerHTML = `<div class="upload-preview-title">展示效果（${items.length} 个）</div><div class="upload-preview-grid">${items.map(item => `
+    <div class="upload-preview-single ${item.errors.length ? 'has-error' : ''}">
+      <div class="upload-preview-icon">${item.svgContent && !item.svgErrors.length ? createSvgWithStyles(item.svgContent, 48, 'currentColor', `upload-${item.id}`) : '!'}</div>
+      <div class="upload-preview-name" title="${item.originalName}">${item.originalName || '未命名'}</div>
+      <div class="upload-preview-meta">${item.errors[0] || `${item.size.width}x${item.size.height}`}</div>
+    </div>`).join('')}</div>`;
 }
 
 function updateUploadState() {
   renderUploadPreview();
 
-  const error = uploadItem?.errors?.[0] || '';
+  const items = uploadItems.length ? uploadItems : (uploadItem ? [uploadItem] : []);
+  const error = items.find(item => item.errors.length)?.errors[0] || '';
   setUploadError(error);
-  uploadSubmitBtn.disabled = uploadBusy || !uploadItem || uploadItem.errors.length > 0;
+  uploadSubmitBtn.disabled = uploadBusy || !items.length || items.some(item => item.errors.length > 0);
 }
 
 function resetUploadModal() {
   uploadItem = null;
+  uploadItems = [];
   uploadIconNameInput.value = '';
   uploadSvgCodeInput.value = '';
+  uploadFileInput.value = '';
+  uploadFileList.classList.add('hidden');
+  uploadFileList.innerHTML = '';
   uploadBusy = false;
   uploadSubmitBtn.disabled = true;
   uploadSubmitBtn.textContent = '创建上传 PR';
@@ -1456,6 +1462,7 @@ function closeUploadModal() {
 }
 
 function syncManualUploadItem() {
+  uploadItems = [];
   const svgContent = uploadSvgCodeInput.value.trim();
   const name = uploadIconNameInput.value.trim();
 
@@ -1466,6 +1473,34 @@ function syncManualUploadItem() {
   }
 
   updateUploadState();
+}
+
+function readFile(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(createUploadItem(file.name, String(reader.result || '')));
+    reader.onerror = () => reject(new Error(`读取 ${file.name} 失败`));
+    reader.readAsText(file);
+  });
+}
+
+async function syncBatchUploadItems() {
+  uploadItem = null;
+  uploadIconNameInput.value = '';
+  uploadSvgCodeInput.value = '';
+  try {
+    uploadItems = await Promise.all(Array.from(uploadFileInput.files || []).map(readFile));
+    const names = new Set();
+    uploadItems.forEach(item => {
+      if (names.has(item.originalName)) item.errors.push(`批次内图标 ${item.originalName} 重复`);
+      names.add(item.originalName);
+    });
+    uploadFileList.innerHTML = uploadItems.map(item => `<div>${item.fileName} ${item.errors.length ? `<span class="upload-file-error">${item.errors[0]}</span>` : '✓'}</div>`).join('');
+    uploadFileList.classList.toggle('hidden', !uploadItems.length);
+    updateUploadState();
+  } catch (error) {
+    setUploadError(error.message);
+  }
 }
 
 async function fetchJsonFromRepo(repo, branchName, path, headers) {
@@ -1479,22 +1514,16 @@ async function fetchJsonFromRepo(repo, branchName, path, headers) {
   return { data, json: JSON.parse(content) };
 }
 
-function buildUpdatedIconsJson(baseJson, item) {
+function buildUpdatedIconsJson(baseJson, inputItems) {
   const now = new Date().toISOString();
   const existing = Array.isArray(baseJson.icons) ? baseJson.icons : [];
   const existingNames = new Set(existing.map(icon => icon.originalName));
-  const additions = existingNames.has(item.originalName)
-    ? []
-    : [
-      {
-        name: toUploadComponentName(item.originalName),
-        originalName: item.originalName,
-        svgPath: `svg/${item.fileName}`,
-        componentPath: `src/icons/${toUploadComponentName(item.originalName)}.tsx`,
-        size: item.size,
-        createdAt: now
-      }
-    ];
+  const items = Array.isArray(inputItems) ? inputItems : [inputItems];
+  const additions = items.filter(item => !existingNames.has(item.originalName)).map(item => ({
+    name: toUploadComponentName(item.originalName), originalName: item.originalName,
+    svgPath: `svg/${item.fileName}`, componentPath: `src/icons/${toUploadComponentName(item.originalName)}.tsx`,
+    size: item.size, createdAt: now
+  }));
 
   return {
     ...baseJson,
@@ -1530,10 +1559,12 @@ async function putRepoFile(repo, path, branchName, content, message, headers, sh
 }
 
 async function executeUpload() {
-  if (!adminConfig || !uploadItem || uploadBusy) return;
+  const items = uploadItems.length ? uploadItems : (uploadItem ? [uploadItem] : []);
+  if (!adminConfig || !items.length || uploadBusy) return;
 
-  if (uploadItem.errors.length > 0) {
-    setUploadError(uploadItem.errors[0]);
+  const invalidItem = items.find(item => item.errors.length > 0);
+  if (invalidItem) {
+    setUploadError(invalidItem.errors[0]);
     return;
   }
 
@@ -1573,21 +1604,17 @@ async function executeUpload() {
     if (!createBranchResponse.ok) throw new Error('创建上传分支失败');
 
     uploadProgressFill.style.width = '35%';
-    uploadProgressText.textContent = `正在上传 ${uploadItem.fileName}`;
-    await putRepoFile(
-      repo,
-      `svg/${uploadItem.fileName}`,
-      branchName,
-      uploadItem.svgContent,
-      `Add icon: ${uploadItem.fileName}`,
-      headers
-    );
+    for (const [index, item] of items.entries()) {
+      uploadProgressText.textContent = `正在上传 ${index + 1}/${items.length}: ${item.fileName}`;
+      await putRepoFile(repo, `svg/${item.fileName}`, branchName, item.svgContent, `Add icon: ${item.fileName}`, headers);
+      uploadProgressFill.style.width = `${35 + ((index + 1) / items.length) * 25}%`;
+    }
 
     uploadProgressFill.style.width = '68%';
     uploadProgressText.textContent = '正在更新 icons.json...';
 
     const rootJson = await fetchJsonFromRepo(repo, branchName, 'icons.json', headers);
-    const updatedRootJson = buildUpdatedIconsJson(rootJson.json, uploadItem);
+    const updatedRootJson = buildUpdatedIconsJson(rootJson.json, items);
     const updatedJsonText = JSON.stringify(updatedRootJson, null, 2) + '\n';
 
     await putRepoFile(
@@ -1622,8 +1649,8 @@ async function executeUpload() {
       method: 'POST',
       headers,
       body: JSON.stringify({
-        title: `上传图标: ${uploadItem.originalName}`,
-        body: `## 上传图标\n\n本 PR 由文档站管理员上传功能创建。\n\n### 新增 SVG\n- \`${uploadItem.fileName}\`\n\n### 展示信息\n- 图标名称: \`${uploadItem.originalName}\`\n- 尺寸: ${uploadItem.size.width}x${uploadItem.size.height}\n\n### 合并后建议流水线执行\n\n\`\`\`bash\nnpm run transform-svg\nnpm run generate-components\nnpm run generate-rn-components\nnpm run generate-outputs\nnpm run build:docs\n\`\`\``,
+        title: `上传图标: ${items.length} 个`,
+        body: `## 批量上传图标\n\n本 PR 由文档站管理员上传功能创建。\n\n### 新增 SVG\n${items.map(item => `- \`${item.fileName}\`（${item.size.width}x${item.size.height}）`).join('\n')}\n\n### 合并后建议流水线执行\n\n\`\`\`bash\nnpm run transform-svg\nnpm run generate-components\nnpm run generate-rn-components\nnpm run generate-outputs\nnpm run build:docs\n\`\`\``,
         head: branchName,
         base: branch
       })
@@ -1643,7 +1670,7 @@ async function executeUpload() {
     uploadCancelBtn.textContent = '关闭';
     uploadSubmitBtn.disabled = true;
     uploadSubmitBtn.textContent = '已创建 PR';
-    showToast(`✅ 已创建上传 ${uploadItem.originalName} 的 PR`);
+    showToast(`✅ 已创建 ${items.length} 个图标的上传 PR`);
   } catch (error) {
     console.error('上传失败:', error);
     setUploadError(error.message);
@@ -1880,6 +1907,7 @@ uploadCancelBtn.addEventListener('click', closeUploadModal);
 uploadSubmitBtn.addEventListener('click', executeUpload);
 uploadIconNameInput.addEventListener('input', syncManualUploadItem);
 uploadSvgCodeInput.addEventListener('input', syncManualUploadItem);
+uploadFileInput.addEventListener('change', syncBatchUploadItems);
 
 deleteConfirmBackdrop.addEventListener('click', () => {
   if (!deleteConfirmBtn.disabled) closeDeleteConfirm();
