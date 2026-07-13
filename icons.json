@@ -1,8 +1,41 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-10T12:43:56.031Z",
-  "totalCount": 189,
+  "generatedAt": "2026-07-13T10:35:33.970Z",
+  "totalCount": 192,
   "icons": [
+    {
+      "name": "IconSiMiBuFenGongKaiXinXi",
+      "originalName": "私密-部分公开信息",
+      "svgPath": "svg/私密-部分公开信息.svg",
+      "componentPath": "src/icons/IconSiMiBuFenGongKaiXinXi.tsx",
+      "size": {
+        "width": 90,
+        "height": 90
+      },
+      "createdAt": "2026-07-13T10:35:33.948Z"
+    },
+    {
+      "name": "IconHuiBao",
+      "originalName": "汇报",
+      "svgPath": "svg/汇报.svg",
+      "componentPath": "src/icons/IconHuiBao.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-13T10:35:33.947Z"
+    },
+    {
+      "name": "IconGongKaiXinXi",
+      "originalName": "公开信息",
+      "svgPath": "svg/公开信息.svg",
+      "componentPath": "src/icons/IconGongKaiXinXi.tsx",
+      "size": {
+        "width": 90,
+        "height": 90
+      },
+      "createdAt": "2026-07-13T10:35:33.928Z"
+    },
     {
       "name": "IconGongKaiWenJianJiaWuNeiRong",
       "originalName": "公开文件夹-无内容",
