@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-10T12:43:51.968Z
+Generated at: 2026-07-13T10:35:29.609Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 189 |
+| Total Icons | 192 |
 | Valid Icons | 0 |
-| Invalid Icons | 189 |
-| Total Errors | 189 |
-| Total Warnings | 170 |
+| Invalid Icons | 192 |
+| Total Errors | 192 |
+| Total Warnings | 176 |
 
-⚠️ **189 icon(s) failed validation**
+⚠️ **192 icon(s) failed validation**
 
 ## Errors
 
-### size (189 errors)
+### size (192 errors)
 
 | Icon | Message |
 |------|---------|
@@ -77,8 +77,9 @@ Generated at: 2026-07-10T12:43:51.968Z
 | 信息来源 | Icon size 24x24 not in allowed sizes:  |
 | 公共信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
 | 公共信息源-高亮 | Icon size 20x20 not in allowed sizes:  |
+| 公开信息 | Icon size 90x90 not in allowed sizes:  |
 | 公开文件夹-无内容 | Icon size 544x544 not in allowed sizes:  |
-| 公开文件夹-有内容 | Icon size 544x544 not in allowed sizes:  |
+| 公开文件夹-有内容 | Icon size 482x173 not in allowed sizes:  |
 | 共享信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
 | 共享信息源-高亮 | Icon size 20x20 not in allowed sizes:  |
 | 关闭-小 | Icon size 24x24 not in allowed sizes:  |
@@ -161,6 +162,7 @@ Generated at: 2026-07-10T12:43:51.968Z
 | 更多2 | Icon size 24x24 not in allowed sizes:  |
 | 未勾选 | Icon size 24x24 not in allowed sizes:  |
 | 正确 | Icon size 24x24 not in allowed sizes:  |
+| 汇报 | Icon size 24x24 not in allowed sizes:  |
 | 汽车-1 | Icon size 36x36 not in allowed sizes:  |
 | 汽车 | Icon size 132x87 not in allowed sizes:  |
 | 浏览器插件 | Icon size 24x24 not in allowed sizes:  |
@@ -168,9 +170,10 @@ Generated at: 2026-07-10T12:43:51.968Z
 | 清除-已读 | Icon size 24x24 not in allowed sizes:  |
 | 申请成功 | Icon size 70x70 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
+| 私密-部分公开信息 | Icon size 90x90 not in allowed sizes:  |
 | 私密文件夹-列表 | Icon size 24x24 not in allowed sizes:  |
-| 私密文件夹-无内容 | Icon size 544x544 not in allowed sizes:  |
-| 私密文件夹-有内容 | Icon size 544x544 not in allowed sizes:  |
+| 私密文件夹-无内容 | Icon size 512x326 not in allowed sizes:  |
+| 私密文件夹-有内容 | Icon size 482x173 not in allowed sizes:  |
 | 科技 | Icon size 36x36 not in allowed sizes:  |
 | 科技1 | Icon size 132x87 not in allowed sizes:  |
 | 笔记本 | Icon size 24x24 not in allowed sizes:  |
@@ -212,7 +215,7 @@ Generated at: 2026-07-10T12:43:51.968Z
 
 ## Warnings
 
-### naming (149 warnings)
+### naming (152 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -233,6 +236,7 @@ Generated at: 2026-07-10T12:43:51.968Z
 | 信息来源 | Icon name "信息来源" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公共信息源-置灰 | Icon name "公共信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公共信息源-高亮 | Icon name "公共信息源-高亮" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 公开信息 | Icon name "公开信息" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公开文件夹-无内容 | Icon name "公开文件夹-无内容" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公开文件夹-有内容 | Icon name "公开文件夹-有内容" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 共享信息源-置灰 | Icon name "共享信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -317,6 +321,7 @@ Generated at: 2026-07-10T12:43:51.968Z
 | 更多2 | Icon name "更多2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 未勾选 | Icon name "未勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 正确 | Icon name "正确" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 汇报 | Icon name "汇报" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 汽车-1 | Icon name "汽车-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 汽车 | Icon name "汽车" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 浏览器插件 | Icon name "浏览器插件" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -324,6 +329,7 @@ Generated at: 2026-07-10T12:43:51.968Z
 | 清除-已读 | Icon name "清除-已读" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 申请成功 | Icon name "申请成功" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 私密-部分公开信息 | Icon name "私密-部分公开信息" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 私密文件夹-列表 | Icon name "私密文件夹-列表" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 私密文件夹-无内容 | Icon name "私密文件夹-无内容" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 私密文件夹-有内容 | Icon name "私密文件夹-有内容" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -366,7 +372,7 @@ Generated at: 2026-07-10T12:43:51.968Z
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
-### size (21 warnings)
+### size (24 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -380,6 +386,7 @@ Generated at: 2026-07-10T12:43:51.968Z
 | menu-qa-assistant-active | Icon is not square: 49x50 |
 | menu-search-assistant | Icon is not square: 120x119 |
 | zleap-brand-logo | Icon is not square: 79x66 |
+| 公开文件夹-有内容 | Icon is not square: 482x173 |
 | 前进15秒 | Icon is not square: 24x26 |
 | 后退15秒 | Icon is not square: 24x26 |
 | 商业1 | Icon is not square: 132x87 |
@@ -387,6 +394,8 @@ Generated at: 2026-07-10T12:43:51.968Z
 | 教育 | Icon is not square: 216x87 |
 | 文化体育-1 | Icon is not square: 186x87 |
 | 汽车 | Icon is not square: 132x87 |
+| 私密文件夹-无内容 | Icon is not square: 512x326 |
+| 私密文件夹-有内容 | Icon is not square: 482x173 |
 | 科技1 | Icon is not square: 132x87 |
 | 职场 | Icon is not square: 132x87 |
 | 财经 | Icon is not square: 129x87 |
