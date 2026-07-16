@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-13T10:35:29.609Z
+Generated at: 2026-07-16T12:14:03.209Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 192 |
+| Total Icons | 193 |
 | Valid Icons | 0 |
-| Invalid Icons | 192 |
-| Total Errors | 192 |
+| Invalid Icons | 193 |
+| Total Errors | 193 |
 | Total Warnings | 176 |
 
-⚠️ **192 icon(s) failed validation**
+⚠️ **193 icon(s) failed validation**
 
 ## Errors
 
-### size (192 errors)
+### size (193 errors)
 
 | Icon | Message |
 |------|---------|
@@ -35,6 +35,7 @@ Generated at: 2026-07-13T10:35:29.609Z
 | like | Icon size 24x24 not in allowed sizes:  |
 | logo | Icon size 45x37 not in allowed sizes:  |
 | mcp | Icon size 1024x1024 not in allowed sizes:  |
+| mcp2 | Icon size 24x24 not in allowed sizes:  |
 | menu-assistant-management-active | Icon size 49x49 not in allowed sizes:  |
 | menu-assistant-management | Icon size 120x120 not in allowed sizes:  |
 | menu-download-assistant | Icon size 120x120 not in allowed sizes:  |

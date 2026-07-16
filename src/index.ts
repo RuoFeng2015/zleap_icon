@@ -74,6 +74,7 @@ import { IconLogo } from './icons/IconLogo';
 import { IconLuYin } from './icons/IconLuYin';
 import { IconLuYin1 } from './icons/IconLuYin1';
 import { IconMcp } from './icons/IconMcp';
+import { IconMcp2 } from './icons/IconMcp2';
 import { IconMenuAssistantManagement } from './icons/IconMenuAssistantManagement';
 import { IconMenuAssistantManagementActive } from './icons/IconMenuAssistantManagementActive';
 import { IconMenuDownloadAssistant } from './icons/IconMenuDownloadAssistant';
@@ -267,6 +268,7 @@ export { IconLogo, type IconLogoProps } from './icons/IconLogo';
 export { IconLuYin, type IconLuYinProps } from './icons/IconLuYin';
 export { IconLuYin1, type IconLuYin1Props } from './icons/IconLuYin1';
 export { IconMcp, type IconMcpProps } from './icons/IconMcp';
+export { IconMcp2, type IconMcp2Props } from './icons/IconMcp2';
 export { IconMenuAssistantManagement, type IconMenuAssistantManagementProps } from './icons/IconMenuAssistantManagement';
 export { IconMenuAssistantManagementActive, type IconMenuAssistantManagementActiveProps } from './icons/IconMenuAssistantManagementActive';
 export { IconMenuDownloadAssistant, type IconMenuDownloadAssistantProps } from './icons/IconMenuDownloadAssistant';
@@ -464,6 +466,7 @@ export const allIcons = {
   IconLuYin,
   IconLuYin1,
   IconMcp,
+  IconMcp2,
   IconMenuAssistantManagement,
   IconMenuAssistantManagementActive,
   IconMenuDownloadAssistant,
