@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-13T10:35:33.970Z",
-  "totalCount": 192,
+  "generatedAt": "2026-07-16T12:09:00.410Z",
+  "totalCount": 193,
   "icons": [
+    {
+      "name": "IconMcp2",
+      "originalName": "mcp2",
+      "svgPath": "svg/mcp2.svg",
+      "componentPath": "src/icons/IconMcp2.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-07-16T12:09:00.410Z"
+    },
     {
       "name": "IconSiMiBuFenGongKaiXinXi",
       "originalName": "私密-部分公开信息",
