@@ -1,8 +1,31 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-07-17T08:56:34.349Z",
-  "totalCount": 196,
+  "version": "0.0.135",
+  "syncMode": "incremental",
+  "generatedAt": "2026-07-17T09:46:41.467Z",
+  "totalCount": 198,
   "icons": [
+    {
+      "name": "Icon公开信息3",
+      "originalName": "公开信息3",
+      "svgPath": "svg/公开信息3.svg",
+      "componentPath": "src/icons/Icon公开信息3.tsx",
+      "size": {
+        "width": 68,
+        "height": 90
+      },
+      "uploadedAt": "2026-07-17T09:46:41.467Z"
+    },
+    {
+      "name": "Icon私密/部分公开信息",
+      "originalName": "私密/部分公开信息",
+      "svgPath": "svg/私密-部分公开信息.svg",
+      "componentPath": "src/icons/Icon私密/部分公开信息.tsx",
+      "size": {
+        "width": 68,
+        "height": 90
+      },
+      "uploadedAt": "2026-07-17T09:46:41.467Z"
+    },
     {
       "name": "IconGongKaiXinXi2",
       "originalName": "公开信息2",
