@@ -1,19 +1,19 @@
 {
-  "version": "0.0.133",
+  "version": "0.0.134",
   "syncMode": "incremental",
-  "generatedAt": "2026-07-17T07:53:47.141Z",
-  "totalCount": 195,
+  "generatedAt": "2026-07-17T08:55:52.020Z",
+  "totalCount": 197,
   "icons": [
     {
-      "name": "Icon公开信息1",
-      "originalName": "公开信息1",
-      "svgPath": "svg/公开信息1.svg",
-      "componentPath": "src/icons/Icon公开信息1.tsx",
+      "name": "Icon公开信息2",
+      "originalName": "公开信息2",
+      "svgPath": "svg/公开信息2.svg",
+      "componentPath": "src/icons/Icon公开信息2.tsx",
       "size": {
         "width": 68,
         "height": 90
       },
-      "uploadedAt": "2026-07-17T07:53:47.140Z"
+      "uploadedAt": "2026-07-17T08:55:52.019Z"
     },
     {
       "name": "Icon私密/部分公开信息",
@@ -24,7 +24,29 @@
         "width": 68,
         "height": 90
       },
-      "uploadedAt": "2026-07-17T07:53:47.141Z"
+      "uploadedAt": "2026-07-17T08:55:52.019Z"
+    },
+    {
+      "name": "IconSiMiBuFenGongKaiXinXi",
+      "originalName": "私密-部分公开信息",
+      "svgPath": "svg/私密-部分公开信息.svg",
+      "componentPath": "src/icons/IconSiMiBuFenGongKaiXinXi.tsx",
+      "size": {
+        "width": 70,
+        "height": 93
+      },
+      "createdAt": "2026-07-17T07:54:19.546Z"
+    },
+    {
+      "name": "IconGongKaiXinXi1",
+      "originalName": "公开信息1",
+      "svgPath": "svg/公开信息1.svg",
+      "componentPath": "src/icons/IconGongKaiXinXi1.tsx",
+      "size": {
+        "width": 70,
+        "height": 93
+      },
+      "createdAt": "2026-07-17T07:54:19.526Z"
     },
     {
       "name": "IconBuFenGongKaiKongZhuangTai",
