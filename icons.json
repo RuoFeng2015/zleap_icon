@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-17T08:56:34.349Z",
-  "totalCount": 196,
+  "generatedAt": "2026-07-17T09:47:17.025Z",
+  "totalCount": 197,
   "icons": [
+    {
+      "name": "IconGongKaiXinXi3",
+      "originalName": "公开信息3",
+      "svgPath": "svg/公开信息3.svg",
+      "componentPath": "src/icons/IconGongKaiXinXi3.tsx",
+      "size": {
+        "width": 74,
+        "height": 97
+      },
+      "createdAt": "2026-07-17T09:47:16.980Z"
+    },
     {
       "name": "IconGongKaiXinXi2",
       "originalName": "公开信息2",
