@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-17T10:30:01.052Z
+Generated at: 2026-07-17T10:42:43.640Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 199 |
+| Total Icons | 201 |
 | Valid Icons | 0 |
-| Invalid Icons | 199 |
-| Total Errors | 199 |
-| Total Warnings | 190 |
+| Invalid Icons | 201 |
+| Total Errors | 201 |
+| Total Warnings | 192 |
 
-⚠️ **199 icon(s) failed validation**
+⚠️ **201 icon(s) failed validation**
 
 ## Errors
 
-### size (199 errors)
+### size (201 errors)
 
 | Icon | Message |
 |------|---------|
@@ -83,6 +83,7 @@ Generated at: 2026-07-17T10:30:01.052Z
 | 公开信息2 | Icon size 74x97 not in allowed sizes:  |
 | 公开信息3 | Icon size 74x97 not in allowed sizes:  |
 | 公开信息4 | Icon size 100x100 not in allowed sizes:  |
+| 公开信息5 | Icon size 100x100 not in allowed sizes:  |
 | 公开文件夹-有内容 | Icon size 482x173 not in allowed sizes:  |
 | 公开文件夹-空状态 | Icon size 544x432 not in allowed sizes:  |
 | 共享信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
@@ -177,6 +178,7 @@ Generated at: 2026-07-17T10:30:01.052Z
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
 | 私密-部分公开信息 | Icon size 74x97 not in allowed sizes:  |
 | 私密和部分公开 | Icon size 100x100 not in allowed sizes:  |
+| 私密和部分公开1 | Icon size 100x100 not in allowed sizes:  |
 | 私密文件夹-列表 | Icon size 24x24 not in allowed sizes:  |
 | 私密文件夹-有内容 | Icon size 482x173 not in allowed sizes:  |
 | 私密文件夹-空状态 | Icon size 544x326 not in allowed sizes:  |
@@ -222,7 +224,7 @@ Generated at: 2026-07-17T10:30:01.052Z
 
 ## Warnings
 
-### naming (158 warnings)
+### naming (160 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -248,6 +250,7 @@ Generated at: 2026-07-17T10:30:01.052Z
 | 公开信息2 | Icon name "公开信息2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公开信息3 | Icon name "公开信息3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公开信息4 | Icon name "公开信息4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 公开信息5 | Icon name "公开信息5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公开文件夹-有内容 | Icon name "公开文件夹-有内容" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公开文件夹-空状态 | Icon name "公开文件夹-空状态" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 共享信息源-置灰 | Icon name "共享信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -342,6 +345,7 @@ Generated at: 2026-07-17T10:30:01.052Z
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 私密-部分公开信息 | Icon name "私密-部分公开信息" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 私密和部分公开 | Icon name "私密和部分公开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 私密和部分公开1 | Icon name "私密和部分公开1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 私密文件夹-列表 | Icon name "私密文件夹-列表" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 私密文件夹-有内容 | Icon name "私密文件夹-有内容" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 私密文件夹-空状态 | Icon name "私密文件夹-空状态" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
