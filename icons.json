@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-17T10:42:47.718Z",
-  "totalCount": 201,
+  "generatedAt": "2026-07-17T11:08:23.455Z",
+  "totalCount": 202,
   "icons": [
+    {
+      "name": "IconGongKaiXinXi6",
+      "originalName": "公开信息6",
+      "svgPath": "svg/公开信息6.svg",
+      "componentPath": "src/icons/IconGongKaiXinXi6.tsx",
+      "size": {
+        "width": 100,
+        "height": 100
+      },
+      "createdAt": "2026-07-17T11:08:23.407Z"
+    },
     {
       "name": "IconSiMiHeBuFenGongKai1",
       "originalName": "私密和部分公开1",
