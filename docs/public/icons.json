@@ -1,19 +1,8 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-07-17T02:54:32.551Z",
-  "totalCount": 194,
+  "version": "2026.07.17",
+  "generatedAt": "2026-07-17T03:12:21.195Z",
+  "totalCount": 185,
   "icons": [
-    {
-      "name": "Icon部分公开空状态",
-      "originalName": "部分公开-空状态",
-      "svgPath": "svg/部分公开-空状态.svg",
-      "componentPath": "src/icons/Icon部分公开空状态.tsx",
-      "size": {
-        "width": 544,
-        "height": 432
-      },
-      "createdAt": "2026-07-17T02:54:32.551Z"
-    },
     {
       "name": "IconMcp2",
       "originalName": "mcp2",
@@ -26,17 +15,6 @@
       "createdAt": "2026-07-16T12:09:00.410Z"
     },
     {
-      "name": "IconSiMiBuFenGongKaiXinXi",
-      "originalName": "私密-部分公开信息",
-      "svgPath": "svg/私密-部分公开信息.svg",
-      "componentPath": "src/icons/IconSiMiBuFenGongKaiXinXi.tsx",
-      "size": {
-        "width": 90,
-        "height": 90
-      },
-      "createdAt": "2026-07-13T10:35:33.948Z"
-    },
-    {
       "name": "IconHuiBao",
       "originalName": "汇报",
       "svgPath": "svg/汇报.svg",
@@ -46,83 +24,6 @@
         "height": 24
       },
       "createdAt": "2026-07-13T10:35:33.947Z"
-    },
-    {
-      "name": "IconGongKaiXinXi",
-      "originalName": "公开信息",
-      "svgPath": "svg/公开信息.svg",
-      "componentPath": "src/icons/IconGongKaiXinXi.tsx",
-      "size": {
-        "width": 90,
-        "height": 90
-      },
-      "createdAt": "2026-07-13T10:35:33.928Z"
-    },
-    {
-      "name": "IconGongKaiWenJianJiaWuNeiRong",
-      "originalName": "公开文件夹-无内容",
-      "svgPath": "svg/公开文件夹-无内容.svg",
-      "componentPath": "src/icons/IconGongKaiWenJianJiaWuNeiRong.tsx",
-      "size": {
-        "width": 544,
-        "height": 544
-      },
-      "createdAt": "2026-07-10T12:43:14.287Z"
-    },
-    {
-      "name": "IconGongKaiWenJianJiaYouNeiRong",
-      "originalName": "公开文件夹-有内容",
-      "svgPath": "svg/公开文件夹-有内容.svg",
-      "componentPath": "src/icons/IconGongKaiWenJianJiaYouNeiRong.tsx",
-      "size": {
-        "width": 482,
-        "height": 173
-      },
-      "createdAt": "2026-07-10T12:43:14.287Z"
-    },
-    {
-      "name": "IconSiMiWenJianJiaWuNeiRong",
-      "originalName": "私密文件夹-无内容",
-      "svgPath": "svg/私密文件夹-无内容.svg",
-      "componentPath": "src/icons/IconSiMiWenJianJiaWuNeiRong.tsx",
-      "size": {
-        "width": 512,
-        "height": 326
-      },
-      "createdAt": "2026-07-10T12:43:14.287Z"
-    },
-    {
-      "name": "IconSiMiWenJianJiaYouNeiRong",
-      "originalName": "私密文件夹-有内容",
-      "svgPath": "svg/私密文件夹-有内容.svg",
-      "componentPath": "src/icons/IconSiMiWenJianJiaYouNeiRong.tsx",
-      "size": {
-        "width": 482,
-        "height": 173
-      },
-      "createdAt": "2026-07-10T12:43:14.287Z"
-    },
-    {
-      "name": "IconBuFenKeJianWenJianJiaYouNeiRong",
-      "originalName": "部分可见文件夹-有内容",
-      "svgPath": "svg/部分可见文件夹-有内容.svg",
-      "componentPath": "src/icons/IconBuFenKeJianWenJianJiaYouNeiRong.tsx",
-      "size": {
-        "width": 482,
-        "height": 173
-      },
-      "createdAt": "2026-07-10T12:23:57.388Z"
-    },
-    {
-      "name": "IconBuFenKeJianWenJianJiaWuNeiRong",
-      "originalName": "部分可见文件夹-无内容",
-      "svgPath": "svg/部分可见文件夹-无内容.svg",
-      "componentPath": "src/icons/IconBuFenKeJianWenJianJiaWuNeiRong.tsx",
-      "size": {
-        "width": 544,
-        "height": 544
-      },
-      "createdAt": "2026-07-10T12:20:55.439Z"
     },
     {
       "name": "IconXinXiLaiYuan",
