@@ -10,7 +10,7 @@ export interface IconGongKaiWenJianJiaYouNeiRongProps extends Omit<ComponentProp
 export const IconGongKaiWenJianJiaYouNeiRong = forwardRef<unknown, IconGongKaiWenJianJiaYouNeiRongProps>(
   ({ size = 24, color, ...props }, ref) => {
     const baseXml = useMemo(
-      () => `<svg fill="none" viewBox="0 0 544 544"><path fill="#438DA6" d="M16 98.56v346.388c0 14.804 12.002 26.806 26.806 26.806h458.388c14.804 0 26.806-12.002 26.806-26.806V153.227c0-14.805-12.002-26.806-26.806-26.806H260.603c-10.421 0-19.86-6.083-25.312-14.965-9.934-16.185-27.847-39.702-48.066-39.702H42.765C27.96 71.754 16 83.755 16 98.56"/><rect width="482" height="173" x="31" y="143" fill="white" rx="20"/><path fill="url(#a)" d="M528 187.277v248.386c0 14.805-12.002 26.807-26.806 26.807H42.839c-14.817 0-26.824-12.022-26.806-26.84l.306-248.386c.019-14.792 11.976-26.774 26.768-26.774h205.437c85.023.004 201.002.002 252.695.001 14.805 0 26.761 12.001 26.761 26.806"/><defs><linearGradient id="a" x1="528" x2="52.19" y1="160.47" y2="511.521" gradientUnits="userSpaceOnUse"><stop offset=".234" stop-color="#65CDE3"/><stop offset="1" stop-color="#438DA6"/></linearGradient></defs></svg>`,
+      () => `<svg fill="none" viewBox="0 0 544 432"><g filter="url(#a)"><path fill="#438DA6" d="M16 38.806v346.388C16 399.998 28.002 412 42.806 412h458.388C515.998 412 528 399.998 528 385.194V93.473c0-14.805-12.002-26.806-26.806-26.806H260.603c-10.421 0-19.86-6.083-25.312-14.965C225.357 35.517 207.444 12 187.225 12H42.765C27.96 12 16 24.002 16 38.806"/><rect width="482" height="173" x="31" y="83.246" fill="white" rx="20"/><path fill="url(#b)" d="M528 127.524V375.91c0 14.805-12.002 26.806-26.806 26.806H42.839c-14.817 0-26.824-12.021-26.806-26.839l.306-248.387c.019-14.792 11.976-26.773 26.768-26.773h205.437c85.023.004 201.002.002 252.695.001 14.805-.001 26.761 12.001 26.761 26.806"/></g><defs><linearGradient id="b" x1="528" x2="52.19" y1="100.716" y2="451.768" gradientUnits="userSpaceOnUse"><stop offset=".234" stop-color="#65CDE3"/><stop offset="1" stop-color="#438DA6"/></linearGradient><filter id="a" width="544" height="432.246" x="0" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="4"/><feGaussianBlur stdDeviation="8"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/><feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_2645_1768"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_2645_1768" mode="normal" result="shape"/></filter></defs></svg>`,
       [],
     )
 
@@ -41,7 +41,7 @@ export const IconGongKaiWenJianJiaYouNeiRong = forwardRef<unknown, IconGongKaiWe
         xml={xml}
         width={size}
         height={size}
-        viewBox="0 0 544 544"
+        viewBox="0 0 544 432"
         {...props}
       />
     )
