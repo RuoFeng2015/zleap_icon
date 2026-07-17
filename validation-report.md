@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-17T10:42:43.640Z
+Generated at: 2026-07-17T11:08:19.127Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 201 |
+| Total Icons | 202 |
 | Valid Icons | 0 |
-| Invalid Icons | 201 |
-| Total Errors | 201 |
-| Total Warnings | 192 |
+| Invalid Icons | 202 |
+| Total Errors | 202 |
+| Total Warnings | 193 |
 
-⚠️ **201 icon(s) failed validation**
+⚠️ **202 icon(s) failed validation**
 
 ## Errors
 
-### size (201 errors)
+### size (202 errors)
 
 | Icon | Message |
 |------|---------|
@@ -84,6 +84,7 @@ Generated at: 2026-07-17T10:42:43.640Z
 | 公开信息3 | Icon size 74x97 not in allowed sizes:  |
 | 公开信息4 | Icon size 100x100 not in allowed sizes:  |
 | 公开信息5 | Icon size 100x100 not in allowed sizes:  |
+| 公开信息6 | Icon size 100x100 not in allowed sizes:  |
 | 公开文件夹-有内容 | Icon size 482x173 not in allowed sizes:  |
 | 公开文件夹-空状态 | Icon size 544x432 not in allowed sizes:  |
 | 共享信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
@@ -224,7 +225,7 @@ Generated at: 2026-07-17T10:42:43.640Z
 
 ## Warnings
 
-### naming (160 warnings)
+### naming (161 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -251,6 +252,7 @@ Generated at: 2026-07-17T10:42:43.640Z
 | 公开信息3 | Icon name "公开信息3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公开信息4 | Icon name "公开信息4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公开信息5 | Icon name "公开信息5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 公开信息6 | Icon name "公开信息6" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公开文件夹-有内容 | Icon name "公开文件夹-有内容" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公开文件夹-空状态 | Icon name "公开文件夹-空状态" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 共享信息源-置灰 | Icon name "共享信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

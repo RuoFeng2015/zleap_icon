@@ -1,19 +1,18 @@
 {
-  "version": "0.0.138",
-  "syncMode": "incremental",
-  "generatedAt": "2026-07-17T11:07:44.567Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-07-17T11:08:23.455Z",
   "totalCount": 202,
   "icons": [
     {
-      "name": "Icon公开信息6",
+      "name": "IconGongKaiXinXi6",
       "originalName": "公开信息6",
       "svgPath": "svg/公开信息6.svg",
-      "componentPath": "src/icons/Icon公开信息6.tsx",
+      "componentPath": "src/icons/IconGongKaiXinXi6.tsx",
       "size": {
         "width": 100,
         "height": 100
       },
-      "uploadedAt": "2026-07-17T11:07:44.566Z"
+      "createdAt": "2026-07-17T11:08:23.407Z"
     },
     {
       "name": "IconSiMiHeBuFenGongKai1",
