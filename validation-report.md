@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-16T12:14:07.912Z
+Generated at: 2026-07-17T02:55:54.867Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 193 |
+| Total Icons | 194 |
 | Valid Icons | 0 |
-| Invalid Icons | 193 |
-| Total Errors | 193 |
-| Total Warnings | 176 |
+| Invalid Icons | 194 |
+| Total Errors | 194 |
+| Total Warnings | 178 |
 
-⚠️ **193 icon(s) failed validation**
+⚠️ **194 icon(s) failed validation**
 
 ## Errors
 
-### size (193 errors)
+### size (194 errors)
 
 | Icon | Message |
 |------|---------|
@@ -196,6 +196,7 @@ Generated at: 2026-07-16T12:14:07.912Z
 | 通知 | Icon size 24x24 not in allowed sizes:  |
 | 通知1 | Icon size 24x24 not in allowed sizes:  |
 | 通讯录-细 | Icon size 24x24 not in allowed sizes:  |
+| 部分公开-空状态 | Icon size 544x432 not in allowed sizes:  |
 | 部分可见文件夹-无内容 | Icon size 544x544 not in allowed sizes:  |
 | 部分可见文件夹-有内容 | Icon size 482x173 not in allowed sizes:  |
 | 部分选中 | Icon size 24x24 not in allowed sizes:  |
@@ -216,7 +217,7 @@ Generated at: 2026-07-16T12:14:07.912Z
 
 ## Warnings
 
-### naming (152 warnings)
+### naming (153 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -355,6 +356,7 @@ Generated at: 2026-07-16T12:14:07.912Z
 | 通知 | Icon name "通知" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知1 | Icon name "通知1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通讯录-细 | Icon name "通讯录-细" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 部分公开-空状态 | Icon name "部分公开-空状态" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 部分可见文件夹-无内容 | Icon name "部分可见文件夹-无内容" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 部分可见文件夹-有内容 | Icon name "部分可见文件夹-有内容" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 部分选中 | Icon name "部分选中" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -373,7 +375,7 @@ Generated at: 2026-07-16T12:14:07.912Z
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
-### size (24 warnings)
+### size (25 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -400,4 +402,5 @@ Generated at: 2026-07-16T12:14:07.912Z
 | 科技1 | Icon is not square: 132x87 |
 | 职场 | Icon is not square: 132x87 |
 | 财经 | Icon is not square: 129x87 |
+| 部分公开-空状态 | Icon is not square: 544x432 |
 | 部分可见文件夹-有内容 | Icon is not square: 482x173 |
