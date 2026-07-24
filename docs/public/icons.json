@@ -1,19 +1,74 @@
 {
-  "version": "0.0.138",
+  "version": "0.0.139",
   "syncMode": "incremental",
-  "generatedAt": "2026-07-17T11:07:44.567Z",
-  "totalCount": 202,
+  "generatedAt": "2026-07-24T09:39:31.327Z",
+  "totalCount": 207,
   "icons": [
     {
-      "name": "Icon公开信息6",
+      "name": "IconSparkles",
+      "originalName": "Sparkles",
+      "svgPath": "svg/Sparkles.svg",
+      "componentPath": "src/icons/IconSparkles.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-24T09:39:31.326Z"
+    },
+    {
+      "name": "IconSpiralCalendar",
+      "originalName": "Spiral Calendar",
+      "svgPath": "svg/Spiral-Calendar.svg",
+      "componentPath": "src/icons/IconSpiralCalendar.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-24T09:39:31.326Z"
+    },
+    {
+      "name": "IconWarning",
+      "originalName": "Warning",
+      "svgPath": "svg/Warning.svg",
+      "componentPath": "src/icons/IconWarning.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-24T09:39:31.326Z"
+    },
+    {
+      "name": "Icon动态",
+      "originalName": "动态",
+      "svgPath": "svg/动态.svg",
+      "componentPath": "src/icons/Icon动态.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "uploadedAt": "2026-07-24T09:39:31.327Z"
+    },
+    {
+      "name": "Icon开启新对话",
+      "originalName": "开启新对话",
+      "svgPath": "svg/开启新对话.svg",
+      "componentPath": "src/icons/Icon开启新对话.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-24T09:39:31.327Z"
+    },
+    {
+      "name": "IconGongKaiXinXi6",
       "originalName": "公开信息6",
       "svgPath": "svg/公开信息6.svg",
-      "componentPath": "src/icons/Icon公开信息6.tsx",
+      "componentPath": "src/icons/IconGongKaiXinXi6.tsx",
       "size": {
         "width": 100,
         "height": 100
       },
-      "uploadedAt": "2026-07-17T11:07:44.566Z"
+      "createdAt": "2026-07-17T11:08:23.407Z"
     },
     {
       "name": "IconSiMiHeBuFenGongKai1",
