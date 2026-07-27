@@ -1,8 +1,75 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-07-27T06:29:10.987Z",
-  "totalCount": 202,
+  "version": "0.0.140",
+  "syncMode": "incremental",
+  "generatedAt": "2026-07-27T06:33:33.938Z",
+  "totalCount": 208,
   "icons": [
+    {
+      "name": "IconSparkles",
+      "originalName": "Sparkles",
+      "svgPath": "svg/Sparkles.svg",
+      "componentPath": "src/icons/IconSparkles.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-27T06:33:33.938Z"
+    },
+    {
+      "name": "IconSpiralCalendar",
+      "originalName": "Spiral Calendar",
+      "svgPath": "svg/Spiral-Calendar.svg",
+      "componentPath": "src/icons/IconSpiralCalendar.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-27T06:33:33.938Z"
+    },
+    {
+      "name": "IconWarning",
+      "originalName": "Warning",
+      "svgPath": "svg/Warning.svg",
+      "componentPath": "src/icons/IconWarning.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-27T06:33:33.938Z"
+    },
+    {
+      "name": "Icon任务",
+      "originalName": "任务",
+      "svgPath": "svg/任务.svg",
+      "componentPath": "src/icons/Icon任务.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "uploadedAt": "2026-07-27T06:33:33.938Z"
+    },
+    {
+      "name": "Icon动态",
+      "originalName": "动态",
+      "svgPath": "svg/动态.svg",
+      "componentPath": "src/icons/Icon动态.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "uploadedAt": "2026-07-27T06:33:33.938Z"
+    },
+    {
+      "name": "Icon开启新对话",
+      "originalName": "开启新对话",
+      "svgPath": "svg/开启新对话.svg",
+      "componentPath": "src/icons/Icon开启新对话.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "uploadedAt": "2026-07-27T06:33:33.938Z"
+    },
     {
       "name": "IconGongKaiXinXi6",
       "originalName": "公开信息6",
