@@ -342,7 +342,7 @@ export function convertToJsx(svgContent: string): string {
   // Match all attributes in the SVG
   // Pattern: attribute-name="value" or attribute-name='value'
   return svgContent.replace(
-    /\s([a-z][a-z0-9]*(?:-[a-z0-9]+)+)=/gi,
+    /\s([a-z][a-z0-9]*(?:(?:-|:)[a-z0-9]+)+)=/gi,
     (_, attrName) => {
       const jsxAttrName = kebabToCamelCase(attrName.toLowerCase())
       return ` ${jsxAttrName}=`
@@ -448,8 +448,8 @@ export function usesCurrentColor(svgContent: string): boolean {
  * @returns true if all attributes are in camelCase
  */
 export function hasJsxAttributes(svgContent: string): boolean {
-  // List of common kebab-case SVG attributes that should be converted
-  const kebabAttributes = [
+  // List of common SVG attributes that should be converted to JSX camelCase
+  const svgAttributes = [
     'stroke-width',
     'stroke-linecap',
     'stroke-linejoin',
@@ -458,11 +458,14 @@ export function hasJsxAttributes(svgContent: string): boolean {
     'clip-path',
     'font-family',
     'font-size',
+    'xlink:href',
+    'xml:space',
+    'xmlns:xlink',
   ]
 
-  for (const attr of kebabAttributes) {
-    // Check if the kebab-case version exists (it shouldn't after conversion)
-    const regex = new RegExp(`\\s${attr}=`, 'i')
+  for (const attr of svgAttributes) {
+    // Check if the original attribute exists (it shouldn't after conversion)
+    const regex = new RegExp(`\\s${attr.replace(/:/g, '\\:')}=`, 'i')
     if (regex.test(svgContent)) {
       return false
     }
