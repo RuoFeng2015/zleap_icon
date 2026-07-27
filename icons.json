@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-07-27T06:34:05.025Z",
-  "totalCount": 208,
+  "version": "2026.07.27",
+  "generatedAt": "2026-07-27T06:36:57.998Z",
+  "totalCount": 205,
   "icons": [
     {
       "name": "IconKaiQiXinDuiHua",
@@ -35,39 +35,6 @@
         "height": 20
       },
       "createdAt": "2026-07-27T06:34:04.976Z"
-    },
-    {
-      "name": "IconSpiralCalendar",
-      "originalName": "Spiral-Calendar",
-      "svgPath": "svg/Spiral-Calendar.svg",
-      "componentPath": "src/icons/IconSpiralCalendar.tsx",
-      "size": {
-        "width": 1,
-        "height": 1
-      },
-      "createdAt": "2026-07-27T06:34:04.966Z"
-    },
-    {
-      "name": "IconWarning",
-      "originalName": "Warning",
-      "svgPath": "svg/Warning.svg",
-      "componentPath": "src/icons/IconWarning.tsx",
-      "size": {
-        "width": 1,
-        "height": 1
-      },
-      "createdAt": "2026-07-27T06:34:04.966Z"
-    },
-    {
-      "name": "IconSparkles",
-      "originalName": "Sparkles",
-      "svgPath": "svg/Sparkles.svg",
-      "componentPath": "src/icons/IconSparkles.tsx",
-      "size": {
-        "width": 1,
-        "height": 1
-      },
-      "createdAt": "2026-07-27T06:34:04.965Z"
     },
     {
       "name": "IconGongKaiXinXi6",
