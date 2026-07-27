@@ -152,8 +152,6 @@ import { IconSiMiWenJianJiaYouNeiRong } from './icons/IconSiMiWenJianJiaYouNeiRo
 import { IconSiYuanBiJi } from './icons/IconSiYuanBiJi';
 import { IconSouSuo } from './icons/IconSouSuo';
 import { IconSouSuo1 } from './icons/IconSouSuo1';
-import { IconSparkles } from './icons/IconSparkles';
-import { IconSpiralCalendar } from './icons/IconSpiralCalendar';
 import { IconSuccessCheck } from './icons/IconSuccessCheck';
 import { IconSuoDing } from './icons/IconSuoDing';
 import { IconTanSuo } from './icons/IconTanSuo';
@@ -162,7 +160,6 @@ import { IconTongBuZhong } from './icons/IconTongBuZhong';
 import { IconTongXunLuXi } from './icons/IconTongXunLuXi';
 import { IconTongZhi } from './icons/IconTongZhi';
 import { IconTongZhi1 } from './icons/IconTongZhi1';
-import { IconWarning } from './icons/IconWarning';
 import { IconWeiGouXuan } from './icons/IconWeiGouXuan';
 import { IconWeiXinHaoYou } from './icons/IconWeiXinHaoYou';
 import { IconWenDang } from './icons/IconWenDang';
@@ -361,8 +358,6 @@ export { IconSiMiWenJianJiaYouNeiRong, type IconSiMiWenJianJiaYouNeiRongProps } 
 export { IconSiYuanBiJi, type IconSiYuanBiJiProps } from './icons/IconSiYuanBiJi';
 export { IconSouSuo, type IconSouSuoProps } from './icons/IconSouSuo';
 export { IconSouSuo1, type IconSouSuo1Props } from './icons/IconSouSuo1';
-export { IconSparkles, type IconSparklesProps } from './icons/IconSparkles';
-export { IconSpiralCalendar, type IconSpiralCalendarProps } from './icons/IconSpiralCalendar';
 export { IconSuccessCheck, type IconSuccessCheckProps } from './icons/IconSuccessCheck';
 export { IconSuoDing, type IconSuoDingProps } from './icons/IconSuoDing';
 export { IconTanSuo, type IconTanSuoProps } from './icons/IconTanSuo';
@@ -371,7 +366,6 @@ export { IconTongBuZhong, type IconTongBuZhongProps } from './icons/IconTongBuZh
 export { IconTongXunLuXi, type IconTongXunLuXiProps } from './icons/IconTongXunLuXi';
 export { IconTongZhi, type IconTongZhiProps } from './icons/IconTongZhi';
 export { IconTongZhi1, type IconTongZhi1Props } from './icons/IconTongZhi1';
-export { IconWarning, type IconWarningProps } from './icons/IconWarning';
 export { IconWeiGouXuan, type IconWeiGouXuanProps } from './icons/IconWeiGouXuan';
 export { IconWeiXinHaoYou, type IconWeiXinHaoYouProps } from './icons/IconWeiXinHaoYou';
 export { IconWenDang, type IconWenDangProps } from './icons/IconWenDang';
@@ -574,8 +568,6 @@ export const allIcons = {
   IconSiYuanBiJi,
   IconSouSuo,
   IconSouSuo1,
-  IconSparkles,
-  IconSpiralCalendar,
   IconSuccessCheck,
   IconSuoDing,
   IconTanSuo,
@@ -584,7 +576,6 @@ export const allIcons = {
   IconTongXunLuXi,
   IconTongZhi,
   IconTongZhi1,
-  IconWarning,
   IconWeiGouXuan,
   IconWeiXinHaoYou,
   IconWenDang,

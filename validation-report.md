@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-27T06:34:00.617Z
+Generated at: 2026-07-27T06:37:59.978Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 208 |
+| Total Icons | 205 |
 | Valid Icons | 0 |
-| Invalid Icons | 208 |
-| Total Errors | 211 |
-| Total Warnings | 199 |
+| Invalid Icons | 205 |
+| Total Errors | 205 |
+| Total Warnings | 196 |
 
-⚠️ **208 icon(s) failed validation**
+⚠️ **205 icon(s) failed validation**
 
 ## Errors
 
-### size (208 errors)
+### size (205 errors)
 
 | Icon | Message |
 |------|---------|
@@ -29,9 +29,6 @@ Generated at: 2026-07-27T06:34:00.617Z
 | Frame3 | Icon size 1440x961 not in allowed sizes:  |
 | Frame4 | Icon size 476x435 not in allowed sizes:  |
 | Frame5 | Icon size 42x42 not in allowed sizes:  |
-| Sparkles | Icon size 24x24 not in allowed sizes:  |
-| Spiral-Calendar | Icon size 24x24 not in allowed sizes:  |
-| Warning | Icon size 24x24 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | delete-outline | Icon size 24x24 not in allowed sizes:  |
@@ -229,17 +226,9 @@ Generated at: 2026-07-27T06:34:00.617Z
 | 预览1 | Icon size 24x24 not in allowed sizes:  |
 | 首页 | Icon size 24x24 not in allowed sizes:  |
 
-### forbidden-elements (3 errors)
-
-| Icon | Message |
-|------|---------|
-| Sparkles | Icon contains forbidden elements: image |
-| Spiral-Calendar | Icon contains forbidden elements: image |
-| Warning | Icon contains forbidden elements: image |
-
 ## Warnings
 
-### naming (167 warnings)
+### naming (164 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -252,9 +241,6 @@ Generated at: 2026-07-27T06:34:00.617Z
 | Frame3 | Icon name "Frame3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame4 | Icon name "Frame4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame5 | Icon name "Frame5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| Sparkles | Icon name "Sparkles" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| Spiral-Calendar | Icon name "Spiral-Calendar" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| Warning | Icon name "Warning" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 上传音频 | Icon name "上传音频" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉 | Icon name "下拉" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉收起 | Icon name "下拉收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
