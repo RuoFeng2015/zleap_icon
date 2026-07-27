@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-27T06:29:06.737Z
+Generated at: 2026-07-27T06:34:00.617Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 202 |
+| Total Icons | 208 |
 | Valid Icons | 0 |
-| Invalid Icons | 202 |
-| Total Errors | 202 |
-| Total Warnings | 193 |
+| Invalid Icons | 208 |
+| Total Errors | 211 |
+| Total Warnings | 199 |
 
-⚠️ **202 icon(s) failed validation**
+⚠️ **208 icon(s) failed validation**
 
 ## Errors
 
-### size (202 errors)
+### size (208 errors)
 
 | Icon | Message |
 |------|---------|
@@ -29,6 +29,9 @@ Generated at: 2026-07-27T06:29:06.737Z
 | Frame3 | Icon size 1440x961 not in allowed sizes:  |
 | Frame4 | Icon size 476x435 not in allowed sizes:  |
 | Frame5 | Icon size 42x42 not in allowed sizes:  |
+| Sparkles | Icon size 24x24 not in allowed sizes:  |
+| Spiral-Calendar | Icon size 24x24 not in allowed sizes:  |
+| Warning | Icon size 24x24 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | delete-outline | Icon size 24x24 not in allowed sizes:  |
@@ -73,6 +76,7 @@ Generated at: 2026-07-27T06:29:06.737Z
 | 上传音频 | Icon size 24x24 not in allowed sizes:  |
 | 下拉 | Icon size 24x24 not in allowed sizes:  |
 | 下拉收起 | Icon size 24x24 not in allowed sizes:  |
+| 任务 | Icon size 20x20 not in allowed sizes:  |
 | 传入 | Icon size 24x24 not in allowed sizes:  |
 | 体育 | Icon size 36x36 not in allowed sizes:  |
 | 信息来源 | Icon size 24x24 not in allowed sizes:  |
@@ -99,6 +103,7 @@ Generated at: 2026-07-27T06:29:06.737Z
 | 删除delete | Icon size 24x24 not in allowed sizes:  |
 | 刷新 | Icon size 24x24 not in allowed sizes:  |
 | 前进15秒 | Icon size 24x26 not in allowed sizes:  |
+| 动态 | Icon size 48x48 not in allowed sizes:  |
 | 助手 | Icon size 24x24 not in allowed sizes:  |
 | 助手管理 | Icon size 24x24 not in allowed sizes:  |
 | 勾选-已勾选 | Icon size 24x24 not in allowed sizes:  |
@@ -129,6 +134,7 @@ Generated at: 2026-07-27T06:29:06.737Z
 | 已点赞1 | Icon size 24x24 not in allowed sizes:  |
 | 已通过 | Icon size 180x180 not in allowed sizes:  |
 | 已驳回 | Icon size 180x180 not in allowed sizes:  |
+| 开启新对话 | Icon size 24x24 not in allowed sizes:  |
 | 录音 | Icon size 24x24 not in allowed sizes:  |
 | 录音1 | Icon size 24x24 not in allowed sizes:  |
 | 待审核 | Icon size 180x180 not in allowed sizes:  |
@@ -223,9 +229,17 @@ Generated at: 2026-07-27T06:29:06.737Z
 | 预览1 | Icon size 24x24 not in allowed sizes:  |
 | 首页 | Icon size 24x24 not in allowed sizes:  |
 
+### forbidden-elements (3 errors)
+
+| Icon | Message |
+|------|---------|
+| Sparkles | Icon contains forbidden elements: image |
+| Spiral-Calendar | Icon contains forbidden elements: image |
+| Warning | Icon contains forbidden elements: image |
+
 ## Warnings
 
-### naming (161 warnings)
+### naming (167 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -238,9 +252,13 @@ Generated at: 2026-07-27T06:29:06.737Z
 | Frame3 | Icon name "Frame3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame4 | Icon name "Frame4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame5 | Icon name "Frame5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Sparkles | Icon name "Sparkles" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Spiral-Calendar | Icon name "Spiral-Calendar" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Warning | Icon name "Warning" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 上传音频 | Icon name "上传音频" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉 | Icon name "下拉" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉收起 | Icon name "下拉收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 任务 | Icon name "任务" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 传入 | Icon name "传入" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 体育 | Icon name "体育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 信息来源 | Icon name "信息来源" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -267,6 +285,7 @@ Generated at: 2026-07-27T06:29:06.737Z
 | 删除delete | Icon name "删除delete" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 刷新 | Icon name "刷新" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 前进15秒 | Icon name "前进15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 动态 | Icon name "动态" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 助手 | Icon name "助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 助手管理 | Icon name "助手管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 勾选-已勾选 | Icon name "勾选-已勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -297,6 +316,7 @@ Generated at: 2026-07-27T06:29:06.737Z
 | 已点赞1 | Icon name "已点赞1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已通过 | Icon name "已通过" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 已驳回 | Icon name "已驳回" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 开启新对话 | Icon name "开启新对话" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 录音 | Icon name "录音" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 录音1 | Icon name "录音1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 待审核 | Icon name "待审核" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
