@@ -1,8 +1,20 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-07-27T06:38:03.894Z",
-  "totalCount": 205,
+  "version": "0.0.142",
+  "syncMode": "incremental",
+  "generatedAt": "2026-07-29T09:04:42.307Z",
+  "totalCount": 206,
   "icons": [
+    {
+      "name": "IconFrame6",
+      "originalName": "Frame6",
+      "svgPath": "svg/Frame6.svg",
+      "componentPath": "src/icons/IconFrame6.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "uploadedAt": "2026-07-29T09:04:42.307Z"
+    },
     {
       "name": "IconKaiQiXinDuiHua",
       "originalName": "开启新对话",
