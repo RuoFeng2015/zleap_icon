@@ -1,7 +1,6 @@
 {
-  "version": "0.0.142",
-  "syncMode": "incremental",
-  "generatedAt": "2026-07-29T09:04:42.307Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-07-29T09:05:18.831Z",
   "totalCount": 206,
   "icons": [
     {
@@ -10,10 +9,10 @@
       "svgPath": "svg/Frame6.svg",
       "componentPath": "src/icons/IconFrame6.tsx",
       "size": {
-        "width": 20,
-        "height": 20
+        "width": 500,
+        "height": 336
       },
-      "uploadedAt": "2026-07-29T09:04:42.307Z"
+      "createdAt": "2026-07-29T09:05:18.771Z"
     },
     {
       "name": "IconKaiQiXinDuiHua",
