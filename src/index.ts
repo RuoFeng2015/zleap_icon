@@ -120,6 +120,7 @@ import { IconQiChe } from './icons/IconQiChe';
 import { IconQiChe1 } from './icons/IconQiChe1';
 import { IconQingChuYiDu } from './icons/IconQingChuYiDu';
 import { IconRenWu } from './icons/IconRenWu';
+import { IconRenWu1 } from './icons/IconRenWu1';
 import { IconSearch } from './icons/IconSearch';
 import { IconShaiXuan } from './icons/IconShaiXuan';
 import { IconShaiXuan1 } from './icons/IconShaiXuan1';
@@ -326,6 +327,7 @@ export { IconQiChe, type IconQiCheProps } from './icons/IconQiChe';
 export { IconQiChe1, type IconQiChe1Props } from './icons/IconQiChe1';
 export { IconQingChuYiDu, type IconQingChuYiDuProps } from './icons/IconQingChuYiDu';
 export { IconRenWu, type IconRenWuProps } from './icons/IconRenWu';
+export { IconRenWu1, type IconRenWu1Props } from './icons/IconRenWu1';
 export { IconSearch, type IconSearchProps } from './icons/IconSearch';
 export { IconShaiXuan, type IconShaiXuanProps } from './icons/IconShaiXuan';
 export { IconShaiXuan1, type IconShaiXuan1Props } from './icons/IconShaiXuan1';
@@ -536,6 +538,7 @@ export const allIcons = {
   IconQiChe1,
   IconQingChuYiDu,
   IconRenWu,
+  IconRenWu1,
   IconSearch,
   IconShaiXuan,
   IconShaiXuan1,

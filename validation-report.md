@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-29T09:09:55.187Z
+Generated at: 2026-07-29T09:12:59.546Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 205 |
+| Total Icons | 206 |
 | Valid Icons | 0 |
-| Invalid Icons | 205 |
-| Total Errors | 205 |
-| Total Warnings | 196 |
+| Invalid Icons | 206 |
+| Total Errors | 206 |
+| Total Warnings | 197 |
 
-⚠️ **205 icon(s) failed validation**
+⚠️ **206 icon(s) failed validation**
 
 ## Errors
 
-### size (205 errors)
+### size (206 errors)
 
 | Icon | Message |
 |------|---------|
@@ -74,6 +74,7 @@ Generated at: 2026-07-29T09:09:55.187Z
 | 下拉 | Icon size 24x24 not in allowed sizes:  |
 | 下拉收起 | Icon size 24x24 not in allowed sizes:  |
 | 任务 | Icon size 20x20 not in allowed sizes:  |
+| 任务1 | Icon size 20x20 not in allowed sizes:  |
 | 传入 | Icon size 24x24 not in allowed sizes:  |
 | 体育 | Icon size 36x36 not in allowed sizes:  |
 | 信息来源 | Icon size 24x24 not in allowed sizes:  |
@@ -228,7 +229,7 @@ Generated at: 2026-07-29T09:09:55.187Z
 
 ## Warnings
 
-### naming (164 warnings)
+### naming (165 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -245,6 +246,7 @@ Generated at: 2026-07-29T09:09:55.187Z
 | 下拉 | Icon name "下拉" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉收起 | Icon name "下拉收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 任务 | Icon name "任务" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 任务1 | Icon name "任务1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 传入 | Icon name "传入" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 体育 | Icon name "体育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 信息来源 | Icon name "信息来源" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
