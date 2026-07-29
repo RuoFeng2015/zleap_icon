@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-29T09:09:59.278Z",
-  "totalCount": 205,
+  "generatedAt": "2026-07-29T09:11:56.613Z",
+  "totalCount": 206,
   "icons": [
+    {
+      "name": "Icon任务1",
+      "originalName": "任务1",
+      "svgPath": "svg/任务1.svg",
+      "componentPath": "src/icons/Icon任务1.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "createdAt": "2026-07-29T09:11:56.613Z"
+    },
     {
       "name": "IconKaiQiXinDuiHua",
       "originalName": "开启新对话",
