@@ -1664,13 +1664,40 @@ async function executeUpload() {
     }
 
     const prData = await prResponse.json();
-    uploadProgressText.innerHTML = `✅ PR 已创建！<a href="${prData.html_url}" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">查看 PR →</a>`;
+
+    // Auto-merge the PR
+    uploadProgressText.textContent = '正在自动合并 PR...';
+    try {
+      const mergeResponse = await fetch(
+        `https://api.github.com/repos/${repo}/pulls/${prData.number}/merge`,
+        {
+          method: 'PUT',
+          headers,
+          body: JSON.stringify({
+            merge_method: 'squash',
+            commit_title: `上传图标: ${items.length} 个`
+          })
+        }
+      );
+
+      if (mergeResponse.ok) {
+        uploadProgressText.innerHTML = `✅ PR 已自动合并！<a href="${prData.html_url}" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">查看 PR →</a>`;
+        showToast(`✅ 已上传 ${items.length} 个图标并自动合并`);
+      } else {
+        const mergeError = await mergeResponse.json().catch(() => ({}));
+        throw new Error(mergeError.message || '自动合并失败');
+      }
+    } catch (mergeErr) {
+      console.warn('自动合并失败:', mergeErr);
+      uploadProgressText.innerHTML = `✅ PR 已创建，但自动合并失败（${mergeErr.message}）<br><a href="${prData.html_url}" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">请手动合并 →</a>`;
+      showToast(`⚠️ PR 已创建，需手动合并`);
+    }
+
     uploadBusy = false;
     uploadCancelBtn.disabled = false;
     uploadCancelBtn.textContent = '关闭';
     uploadSubmitBtn.disabled = true;
     uploadSubmitBtn.textContent = '已创建 PR';
-    showToast(`✅ 已创建 ${items.length} 个图标的上传 PR`);
   } catch (error) {
     console.error('上传失败:', error);
     setUploadError(error.message);
@@ -1861,7 +1888,32 @@ async function executeDelete() {
 
     if (prResponse.ok) {
       const prData = await prResponse.json();
-      deleteProgressText.innerHTML = `✅ PR 已创建！<a href="${prData.html_url}" target="_blank" style="color: var(--color-primary);">查看 PR →</a>`;
+
+      // Auto-merge the PR
+      deleteProgressText.textContent = '正在自动合并 PR...';
+      try {
+        const mergeResponse = await fetch(
+          `https://api.github.com/repos/${repo}/pulls/${prData.number}/merge`,
+          {
+            method: 'PUT',
+            headers,
+            body: JSON.stringify({
+              merge_method: 'squash',
+              commit_title: `删除图标: ${iconsToDelete.length} 个`
+            })
+          }
+        );
+
+        if (mergeResponse.ok) {
+          deleteProgressText.innerHTML = `✅ PR 已自动合并！<a href="${prData.html_url}" target="_blank" style="color: var(--color-primary);">查看 PR →</a>`;
+        } else {
+          const mergeError = await mergeResponse.json().catch(() => ({}));
+          throw new Error(mergeError.message || '自动合并失败');
+        }
+      } catch (mergeErr) {
+        console.warn('自动合并失败:', mergeErr);
+        deleteProgressText.innerHTML = `✅ PR 已创建，但自动合并失败（${mergeErr.message}）<br><a href="${prData.html_url}" target="_blank" style="color: var(--color-primary);">请手动合并 →</a>`;
+      }
 
       // Remove deleted icons from local state
       icons = icons.filter(icon => !selectedIcons.has(icon.originalName));
@@ -1872,7 +1924,7 @@ async function executeDelete() {
       setTimeout(() => {
         closeDeleteConfirm();
         renderIcons();
-        showToast(`✅ 已创建删除 ${deletedCount} 个图标的 PR`);
+        showToast(`✅ 已删除 ${deletedCount} 个图标并自动合并`);
       }, 3000);
     } else {
       throw new Error('创建 PR 失败');
