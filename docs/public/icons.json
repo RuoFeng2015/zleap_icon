@@ -1,13 +1,101 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-29T09:11:56.613Z",
-  "totalCount": 206,
+  "generatedAt": "2026-07-30T06:40:01.775Z",
+  "totalCount": 214,
   "icons": [
     {
-      "name": "Icon任务1",
+      "name": "IconClaude",
+      "originalName": "claude",
+      "svgPath": "svg/claude.svg",
+      "componentPath": "src/icons/IconClaude.tsx",
+      "size": {
+        "width": 56,
+        "height": 56
+      },
+      "createdAt": "2026-07-30T06:40:01.775Z"
+    },
+    {
+      "name": "IconCodex",
+      "originalName": "codex",
+      "svgPath": "svg/codex.svg",
+      "componentPath": "src/icons/IconCodex.tsx",
+      "size": {
+        "width": 56,
+        "height": 56
+      },
+      "createdAt": "2026-07-30T06:40:01.775Z"
+    },
+    {
+      "name": "IconCursor",
+      "originalName": "cursor",
+      "svgPath": "svg/cursor.svg",
+      "componentPath": "src/icons/IconCursor.tsx",
+      "size": {
+        "width": 56,
+        "height": 56
+      },
+      "createdAt": "2026-07-30T06:40:01.775Z"
+    },
+    {
+      "name": "IconGemini",
+      "originalName": "gemini",
+      "svgPath": "svg/gemini.svg",
+      "componentPath": "src/icons/IconGemini.tsx",
+      "size": {
+        "width": 56,
+        "height": 56
+      },
+      "createdAt": "2026-07-30T06:40:01.775Z"
+    },
+    {
+      "name": "IconHermesagent",
+      "originalName": "hermesagent",
+      "svgPath": "svg/hermesagent.svg",
+      "componentPath": "src/icons/IconHermesagent.tsx",
+      "size": {
+        "width": 56,
+        "height": 56
+      },
+      "createdAt": "2026-07-30T06:40:01.775Z"
+    },
+    {
+      "name": "IconOpencode",
+      "originalName": "opencode",
+      "svgPath": "svg/opencode.svg",
+      "componentPath": "src/icons/IconOpencode.tsx",
+      "size": {
+        "width": 56,
+        "height": 56
+      },
+      "createdAt": "2026-07-30T06:40:01.775Z"
+    },
+    {
+      "name": "IconPi",
+      "originalName": "pi",
+      "svgPath": "svg/pi.svg",
+      "componentPath": "src/icons/IconPi.tsx",
+      "size": {
+        "width": 56,
+        "height": 56
+      },
+      "createdAt": "2026-07-30T06:40:01.775Z"
+    },
+    {
+      "name": "IconZai",
+      "originalName": "zai",
+      "svgPath": "svg/zai.svg",
+      "componentPath": "src/icons/IconZai.tsx",
+      "size": {
+        "width": 56,
+        "height": 56
+      },
+      "createdAt": "2026-07-30T06:40:01.775Z"
+    },
+    {
+      "name": "IconRenWu1",
       "originalName": "任务1",
       "svgPath": "svg/任务1.svg",
-      "componentPath": "src/icons/Icon任务1.tsx",
+      "componentPath": "src/icons/IconRenWu1.tsx",
       "size": {
         "width": 20,
         "height": 20
