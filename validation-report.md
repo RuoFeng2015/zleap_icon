@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-29T09:13:01.160Z
+Generated at: 2026-07-30T06:41:31.590Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 206 |
+| Total Icons | 214 |
 | Valid Icons | 0 |
-| Invalid Icons | 206 |
-| Total Errors | 206 |
+| Invalid Icons | 214 |
+| Total Errors | 214 |
 | Total Warnings | 197 |
 
-⚠️ **206 icon(s) failed validation**
+⚠️ **214 icon(s) failed validation**
 
 ## Errors
 
-### size (206 errors)
+### size (214 errors)
 
 | Icon | Message |
 |------|---------|
@@ -31,7 +31,12 @@ Generated at: 2026-07-29T09:13:01.160Z
 | Frame5 | Icon size 42x42 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
+| claude | Icon size 56x56 not in allowed sizes:  |
+| codex | Icon size 56x56 not in allowed sizes:  |
+| cursor | Icon size 56x56 not in allowed sizes:  |
 | delete-outline | Icon size 24x24 not in allowed sizes:  |
+| gemini | Icon size 56x56 not in allowed sizes:  |
+| hermesagent | Icon size 56x56 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
 | logo | Icon size 45x37 not in allowed sizes:  |
 | mcp | Icon size 1024x1024 not in allowed sizes:  |
@@ -65,10 +70,13 @@ Generated at: 2026-07-29T09:13:01.160Z
 | menu-task-management | Icon size 120x120 not in allowed sizes:  |
 | message-avatar-icon | Icon size 48x48 not in allowed sizes:  |
 | notifications-sharp | Icon size 24x24 not in allowed sizes:  |
+| opencode | Icon size 56x56 not in allowed sizes:  |
+| pi | Icon size 56x56 not in allowed sizes:  |
 | play | Icon size 24x24 not in allowed sizes:  |
 | search | Icon size 24x24 not in allowed sizes:  |
 | share | Icon size 24x24 not in allowed sizes:  |
 | success-check | Icon size 20x20 not in allowed sizes:  |
+| zai | Icon size 56x56 not in allowed sizes:  |
 | zleap-brand-logo | Icon size 79x66 not in allowed sizes:  |
 | 上传音频 | Icon size 24x24 not in allowed sizes:  |
 | 下拉 | Icon size 24x24 not in allowed sizes:  |

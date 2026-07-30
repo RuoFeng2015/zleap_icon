@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-30T06:40:01.775Z",
+  "generatedAt": "2026-07-30T06:41:35.931Z",
   "totalCount": 214,
   "icons": [
     {
@@ -9,8 +9,8 @@
       "svgPath": "svg/claude.svg",
       "componentPath": "src/icons/IconClaude.tsx",
       "size": {
-        "width": 56,
-        "height": 56
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-07-30T06:40:01.775Z"
     },
@@ -20,8 +20,8 @@
       "svgPath": "svg/codex.svg",
       "componentPath": "src/icons/IconCodex.tsx",
       "size": {
-        "width": 56,
-        "height": 56
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-07-30T06:40:01.775Z"
     },
@@ -31,8 +31,8 @@
       "svgPath": "svg/cursor.svg",
       "componentPath": "src/icons/IconCursor.tsx",
       "size": {
-        "width": 56,
-        "height": 56
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-07-30T06:40:01.775Z"
     },
@@ -42,8 +42,8 @@
       "svgPath": "svg/gemini.svg",
       "componentPath": "src/icons/IconGemini.tsx",
       "size": {
-        "width": 56,
-        "height": 56
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-07-30T06:40:01.775Z"
     },
@@ -53,8 +53,8 @@
       "svgPath": "svg/hermesagent.svg",
       "componentPath": "src/icons/IconHermesagent.tsx",
       "size": {
-        "width": 56,
-        "height": 56
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-07-30T06:40:01.775Z"
     },
@@ -64,8 +64,8 @@
       "svgPath": "svg/opencode.svg",
       "componentPath": "src/icons/IconOpencode.tsx",
       "size": {
-        "width": 56,
-        "height": 56
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-07-30T06:40:01.775Z"
     },
@@ -75,8 +75,8 @@
       "svgPath": "svg/pi.svg",
       "componentPath": "src/icons/IconPi.tsx",
       "size": {
-        "width": 56,
-        "height": 56
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-07-30T06:40:01.775Z"
     },
@@ -86,8 +86,8 @@
       "svgPath": "svg/zai.svg",
       "componentPath": "src/icons/IconZai.tsx",
       "size": {
-        "width": 56,
-        "height": 56
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-07-30T06:40:01.775Z"
     },

@@ -26,6 +26,9 @@ import { IconChongShi } from './icons/IconChongShi';
 import { IconChongShi1 } from './icons/IconChongShi1';
 import { IconChongXin } from './icons/IconChongXin';
 import { IconChuanRu } from './icons/IconChuanRu';
+import { IconClaude } from './icons/IconClaude';
+import { IconCodex } from './icons/IconCodex';
+import { IconCursor } from './icons/IconCursor';
 import { IconDaiShenHe } from './icons/IconDaiShenHe';
 import { IconDeleteOutline } from './icons/IconDeleteOutline';
 import { IconDongTai } from './icons/IconDongTai';
@@ -39,6 +42,7 @@ import { IconFrame3 } from './icons/IconFrame3';
 import { IconFrame4 } from './icons/IconFrame4';
 import { IconFrame5 } from './icons/IconFrame5';
 import { IconFuZhiLianJie } from './icons/IconFuZhiLianJie';
+import { IconGemini } from './icons/IconGemini';
 import { IconGengDuo } from './icons/IconGengDuo';
 import { IconGengDuo1 } from './icons/IconGengDuo1';
 import { IconGengDuo2 } from './icons/IconGengDuo2';
@@ -61,6 +65,7 @@ import { IconGuanBi } from './icons/IconGuanBi';
 import { IconGuanBiXiao } from './icons/IconGuanBiXiao';
 import { IconGuanBiYuLan } from './icons/IconGuanBiYuLan';
 import { IconHaoYou } from './icons/IconHaoYou';
+import { IconHermesagent } from './icons/IconHermesagent';
 import { IconHouTui15Miao } from './icons/IconHouTui15Miao';
 import { IconHuiBao } from './icons/IconHuiBao';
 import { IconHuiDaoDingBu } from './icons/IconHuiDaoDingBu';
@@ -113,6 +118,8 @@ import { IconMenuTaskManagement } from './icons/IconMenuTaskManagement';
 import { IconMenuTaskManagementActive } from './icons/IconMenuTaskManagementActive';
 import { IconMessageAvatarIcon } from './icons/IconMessageAvatarIcon';
 import { IconNotificationsSharp } from './icons/IconNotificationsSharp';
+import { IconOpencode } from './icons/IconOpencode';
+import { IconPi } from './icons/IconPi';
 import { IconPingLun } from './icons/IconPingLun';
 import { IconPlay } from './icons/IconPlay';
 import { IconQianJin15Miao } from './icons/IconQianJin15Miao';
@@ -194,6 +201,7 @@ import { IconYuLan } from './icons/IconYuLan';
 import { IconYuLan1 } from './icons/IconYuLan1';
 import { IconYuLanGuanBi } from './icons/IconYuLanGuanBi';
 import { IconYuQueZhiShiKu } from './icons/IconYuQueZhiShiKu';
+import { IconZai } from './icons/IconZai';
 import { IconZanTing } from './icons/IconZanTing';
 import { IconZanTing1 } from './icons/IconZanTing1';
 import { IconZanTing2 } from './icons/IconZanTing2';
@@ -233,6 +241,9 @@ export { IconChongShi, type IconChongShiProps } from './icons/IconChongShi';
 export { IconChongShi1, type IconChongShi1Props } from './icons/IconChongShi1';
 export { IconChongXin, type IconChongXinProps } from './icons/IconChongXin';
 export { IconChuanRu, type IconChuanRuProps } from './icons/IconChuanRu';
+export { IconClaude, type IconClaudeProps } from './icons/IconClaude';
+export { IconCodex, type IconCodexProps } from './icons/IconCodex';
+export { IconCursor, type IconCursorProps } from './icons/IconCursor';
 export { IconDaiShenHe, type IconDaiShenHeProps } from './icons/IconDaiShenHe';
 export { IconDeleteOutline, type IconDeleteOutlineProps } from './icons/IconDeleteOutline';
 export { IconDongTai, type IconDongTaiProps } from './icons/IconDongTai';
@@ -246,6 +257,7 @@ export { IconFrame3, type IconFrame3Props } from './icons/IconFrame3';
 export { IconFrame4, type IconFrame4Props } from './icons/IconFrame4';
 export { IconFrame5, type IconFrame5Props } from './icons/IconFrame5';
 export { IconFuZhiLianJie, type IconFuZhiLianJieProps } from './icons/IconFuZhiLianJie';
+export { IconGemini, type IconGeminiProps } from './icons/IconGemini';
 export { IconGengDuo, type IconGengDuoProps } from './icons/IconGengDuo';
 export { IconGengDuo1, type IconGengDuo1Props } from './icons/IconGengDuo1';
 export { IconGengDuo2, type IconGengDuo2Props } from './icons/IconGengDuo2';
@@ -268,6 +280,7 @@ export { IconGuanBi, type IconGuanBiProps } from './icons/IconGuanBi';
 export { IconGuanBiXiao, type IconGuanBiXiaoProps } from './icons/IconGuanBiXiao';
 export { IconGuanBiYuLan, type IconGuanBiYuLanProps } from './icons/IconGuanBiYuLan';
 export { IconHaoYou, type IconHaoYouProps } from './icons/IconHaoYou';
+export { IconHermesagent, type IconHermesagentProps } from './icons/IconHermesagent';
 export { IconHouTui15Miao, type IconHouTui15MiaoProps } from './icons/IconHouTui15Miao';
 export { IconHuiBao, type IconHuiBaoProps } from './icons/IconHuiBao';
 export { IconHuiDaoDingBu, type IconHuiDaoDingBuProps } from './icons/IconHuiDaoDingBu';
@@ -320,6 +333,8 @@ export { IconMenuTaskManagement, type IconMenuTaskManagementProps } from './icon
 export { IconMenuTaskManagementActive, type IconMenuTaskManagementActiveProps } from './icons/IconMenuTaskManagementActive';
 export { IconMessageAvatarIcon, type IconMessageAvatarIconProps } from './icons/IconMessageAvatarIcon';
 export { IconNotificationsSharp, type IconNotificationsSharpProps } from './icons/IconNotificationsSharp';
+export { IconOpencode, type IconOpencodeProps } from './icons/IconOpencode';
+export { IconPi, type IconPiProps } from './icons/IconPi';
 export { IconPingLun, type IconPingLunProps } from './icons/IconPingLun';
 export { IconPlay, type IconPlayProps } from './icons/IconPlay';
 export { IconQianJin15Miao, type IconQianJin15MiaoProps } from './icons/IconQianJin15Miao';
@@ -401,6 +416,7 @@ export { IconYuLan, type IconYuLanProps } from './icons/IconYuLan';
 export { IconYuLan1, type IconYuLan1Props } from './icons/IconYuLan1';
 export { IconYuLanGuanBi, type IconYuLanGuanBiProps } from './icons/IconYuLanGuanBi';
 export { IconYuQueZhiShiKu, type IconYuQueZhiShiKuProps } from './icons/IconYuQueZhiShiKu';
+export { IconZai, type IconZaiProps } from './icons/IconZai';
 export { IconZanTing, type IconZanTingProps } from './icons/IconZanTing';
 export { IconZanTing1, type IconZanTing1Props } from './icons/IconZanTing1';
 export { IconZanTing2, type IconZanTing2Props } from './icons/IconZanTing2';
@@ -444,6 +460,9 @@ export const allIcons = {
   IconChongShi1,
   IconChongXin,
   IconChuanRu,
+  IconClaude,
+  IconCodex,
+  IconCursor,
   IconDaiShenHe,
   IconDeleteOutline,
   IconDongTai,
@@ -457,6 +476,7 @@ export const allIcons = {
   IconFrame4,
   IconFrame5,
   IconFuZhiLianJie,
+  IconGemini,
   IconGengDuo,
   IconGengDuo1,
   IconGengDuo2,
@@ -479,6 +499,7 @@ export const allIcons = {
   IconGuanBiXiao,
   IconGuanBiYuLan,
   IconHaoYou,
+  IconHermesagent,
   IconHouTui15Miao,
   IconHuiBao,
   IconHuiDaoDingBu,
@@ -531,6 +552,8 @@ export const allIcons = {
   IconMenuTaskManagementActive,
   IconMessageAvatarIcon,
   IconNotificationsSharp,
+  IconOpencode,
+  IconPi,
   IconPingLun,
   IconPlay,
   IconQianJin15Miao,
@@ -612,6 +635,7 @@ export const allIcons = {
   IconYuLan1,
   IconYuLanGuanBi,
   IconYuQueZhiShiKu,
+  IconZai,
   IconZanTing,
   IconZanTing1,
   IconZanTing2,
