@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-04T08:38:41.501Z",
-  "totalCount": 215,
+  "generatedAt": "2026-08-04T08:43:22.677Z",
+  "totalCount": 216,
   "icons": [
+    {
+      "name": "IconEyeOffIcon",
+      "originalName": "EyeOffIcon",
+      "svgPath": "svg/EyeOffIcon.svg",
+      "componentPath": "src/icons/IconEyeOffIcon.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "createdAt": "2026-08-04T08:43:22.677Z"
+    },
     {
       "name": "IconIcon",
       "originalName": "Icon",
