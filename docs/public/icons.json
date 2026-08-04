@@ -1,9 +1,19 @@
 {
-  "version": "0.0.147",
-  "syncMode": "incremental",
-  "generatedAt": "2026-08-04T08:37:57.697Z",
-  "totalCount": 215,
+  "version": "1.0.0",
+  "generatedAt": "2026-08-04T08:42:53.375Z",
+  "totalCount": 216,
   "icons": [
+    {
+      "name": "IconEyeIcon",
+      "originalName": "EyeIcon",
+      "svgPath": "svg/EyeIcon.svg",
+      "componentPath": "src/icons/IconEyeIcon.tsx",
+      "size": {
+        "width": 20,
+        "height": 20
+      },
+      "createdAt": "2026-08-04T08:42:53.375Z"
+    },
     {
       "name": "IconIcon",
       "originalName": "Icon",
@@ -13,7 +23,7 @@
         "width": 15,
         "height": 15
       },
-      "uploadedAt": "2026-08-04T08:37:57.697Z"
+      "createdAt": "2026-08-04T08:38:41.440Z"
     },
     {
       "name": "IconClaude",
