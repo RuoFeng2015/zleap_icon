@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-07-30T06:41:34.927Z
+Generated at: 2026-08-04T07:25:03.219Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 214 |
+| Total Icons | 215 |
 | Valid Icons | 0 |
-| Invalid Icons | 214 |
-| Total Errors | 214 |
-| Total Warnings | 197 |
+| Invalid Icons | 215 |
+| Total Errors | 215 |
+| Total Warnings | 198 |
 
-⚠️ **214 icon(s) failed validation**
+⚠️ **215 icon(s) failed validation**
 
 ## Errors
 
-### size (214 errors)
+### size (215 errors)
 
 | Icon | Message |
 |------|---------|
@@ -31,12 +31,12 @@ Generated at: 2026-07-30T06:41:34.927Z
 | Frame5 | Icon size 42x42 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
-| claude | Icon size 56x56 not in allowed sizes:  |
-| codex | Icon size 56x56 not in allowed sizes:  |
-| cursor | Icon size 56x56 not in allowed sizes:  |
+| claude | Icon size 24x24 not in allowed sizes:  |
+| codex | Icon size 24x24 not in allowed sizes:  |
+| cursor | Icon size 24x24 not in allowed sizes:  |
 | delete-outline | Icon size 24x24 not in allowed sizes:  |
-| gemini | Icon size 56x56 not in allowed sizes:  |
-| hermesagent | Icon size 56x56 not in allowed sizes:  |
+| gemini | Icon size 24x24 not in allowed sizes:  |
+| hermesagent | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
 | logo | Icon size 45x37 not in allowed sizes:  |
 | mcp | Icon size 1024x1024 not in allowed sizes:  |
@@ -70,13 +70,13 @@ Generated at: 2026-07-30T06:41:34.927Z
 | menu-task-management | Icon size 120x120 not in allowed sizes:  |
 | message-avatar-icon | Icon size 48x48 not in allowed sizes:  |
 | notifications-sharp | Icon size 24x24 not in allowed sizes:  |
-| opencode | Icon size 56x56 not in allowed sizes:  |
-| pi | Icon size 56x56 not in allowed sizes:  |
+| opencode | Icon size 24x24 not in allowed sizes:  |
+| pi | Icon size 24x24 not in allowed sizes:  |
 | play | Icon size 24x24 not in allowed sizes:  |
 | search | Icon size 24x24 not in allowed sizes:  |
 | share | Icon size 24x24 not in allowed sizes:  |
 | success-check | Icon size 20x20 not in allowed sizes:  |
-| zai | Icon size 56x56 not in allowed sizes:  |
+| zai | Icon size 24x24 not in allowed sizes:  |
 | zleap-brand-logo | Icon size 79x66 not in allowed sizes:  |
 | 上传音频 | Icon size 24x24 not in allowed sizes:  |
 | 下拉 | Icon size 24x24 not in allowed sizes:  |
@@ -129,6 +129,7 @@ Generated at: 2026-07-30T06:41:34.927Z
 | 失败 | Icon size 24x24 not in allowed sizes:  |
 | 好友 | Icon size 24x24 not in allowed sizes:  |
 | 实时录音 | Icon size 24x24 not in allowed sizes:  |
+| 对话框关闭 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 展开1 | Icon size 24x24 not in allowed sizes:  |
 | 展开2 | Icon size 24x24 not in allowed sizes:  |
@@ -237,7 +238,7 @@ Generated at: 2026-07-30T06:41:34.927Z
 
 ## Warnings
 
-### naming (165 warnings)
+### naming (166 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -301,6 +302,7 @@ Generated at: 2026-07-30T06:41:34.927Z
 | 失败 | Icon name "失败" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 好友 | Icon name "好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 实时录音 | Icon name "实时录音" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 对话框关闭 | Icon name "对话框关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开1 | Icon name "展开1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开2 | Icon name "展开2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
