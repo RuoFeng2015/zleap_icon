@@ -1,18 +1,18 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-04T08:43:31.462Z",
+  "generatedAt": "2026-08-04T08:43:22.677Z",
   "totalCount": 216,
   "icons": [
     {
-      "name": "IconEyeIcon",
-      "originalName": "EyeIcon",
-      "svgPath": "svg/EyeIcon.svg",
-      "componentPath": "src/icons/IconEyeIcon.tsx",
+      "name": "IconEyeOffIcon",
+      "originalName": "EyeOffIcon",
+      "svgPath": "svg/EyeOffIcon.svg",
+      "componentPath": "src/icons/IconEyeOffIcon.tsx",
       "size": {
         "width": 20,
         "height": 20
       },
-      "createdAt": "2026-08-04T08:42:53.375Z"
+      "createdAt": "2026-08-04T08:43:22.677Z"
     },
     {
       "name": "IconIcon",
