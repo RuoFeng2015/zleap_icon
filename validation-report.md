@@ -1,28 +1,29 @@
 # Icon Validation Report
 
-Generated at: 2026-08-04T08:43:26.990Z
+Generated at: 2026-08-04T09:03:52.212Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 216 |
+| Total Icons | 217 |
 | Valid Icons | 0 |
-| Invalid Icons | 216 |
-| Total Errors | 216 |
-| Total Warnings | 199 |
+| Invalid Icons | 217 |
+| Total Errors | 217 |
+| Total Warnings | 200 |
 
-⚠️ **216 icon(s) failed validation**
+⚠️ **217 icon(s) failed validation**
 
 ## Errors
 
-### size (216 errors)
+### size (217 errors)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon size 36x36 not in allowed sizes:  |
 | AI1 | Icon size 132x87 not in allowed sizes:  |
 | EyeIcon | Icon size 20x20 not in allowed sizes:  |
+| EyeOffIcon | Icon size 20x20 not in allowed sizes:  |
 | Frame-1261156360 | Icon size 1440x961 not in allowed sizes:  |
 | Frame | Icon size 24x24 not in allowed sizes:  |
 | Frame1 | Icon size 24x24 not in allowed sizes:  |
@@ -239,13 +240,14 @@ Generated at: 2026-08-04T08:43:26.990Z
 
 ## Warnings
 
-### naming (167 warnings)
+### naming (168 warnings)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon name "AI" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | AI1 | Icon name "AI1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | EyeIcon | Icon name "EyeIcon" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| EyeOffIcon | Icon name "EyeOffIcon" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame-1261156360 | Icon name "Frame-1261156360" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame | Icon name "Frame" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame1 | Icon name "Frame1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
