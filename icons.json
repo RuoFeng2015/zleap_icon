@@ -1,7 +1,6 @@
 {
-  "version": "0.0.147",
-  "syncMode": "incremental",
-  "generatedAt": "2026-08-04T08:37:57.697Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-08-04T08:38:41.501Z",
   "totalCount": 215,
   "icons": [
     {
@@ -13,7 +12,7 @@
         "width": 15,
         "height": 15
       },
-      "uploadedAt": "2026-08-04T08:37:57.697Z"
+      "createdAt": "2026-08-04T08:38:41.440Z"
     },
     {
       "name": "IconClaude",

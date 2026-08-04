@@ -29,7 +29,6 @@ import { IconCursor } from './icons/IconCursor'
 import { IconDaiShenHe } from './icons/IconDaiShenHe'
 import { IconDeleteOutline } from './icons/IconDeleteOutline'
 import { IconDongTai } from './icons/IconDongTai'
-import { IconDuiHuaKuangGuanBi } from './icons/IconDuiHuaKuangGuanBi'
 import { IconDuoXuan } from './icons/IconDuoXuan'
 import { IconFenXiang } from './icons/IconFenXiang'
 import { IconFrame } from './icons/IconFrame'
@@ -68,6 +67,7 @@ import { IconHouTui15Miao } from './icons/IconHouTui15Miao'
 import { IconHuiBao } from './icons/IconHuiBao'
 import { IconHuiDaoDingBu } from './icons/IconHuiDaoDingBu'
 import { IconHuiDingBu } from './icons/IconHuiDingBu'
+import { IconIcon } from './icons/IconIcon'
 import { IconJiaoYu } from './icons/IconJiaoYu'
 import { IconJiaoYu1 } from './icons/IconJiaoYu1'
 import { IconKaiQiXinDuiHua } from './icons/IconKaiQiXinDuiHua'
@@ -245,7 +245,6 @@ export { IconCursor, type IconCursorProps } from './icons/IconCursor'
 export { IconDaiShenHe, type IconDaiShenHeProps } from './icons/IconDaiShenHe'
 export { IconDeleteOutline, type IconDeleteOutlineProps } from './icons/IconDeleteOutline'
 export { IconDongTai, type IconDongTaiProps } from './icons/IconDongTai'
-export { IconDuiHuaKuangGuanBi, type IconDuiHuaKuangGuanBiProps } from './icons/IconDuiHuaKuangGuanBi'
 export { IconDuoXuan, type IconDuoXuanProps } from './icons/IconDuoXuan'
 export { IconFenXiang, type IconFenXiangProps } from './icons/IconFenXiang'
 export { IconFrame, type IconFrameProps } from './icons/IconFrame'
@@ -284,6 +283,7 @@ export { IconHouTui15Miao, type IconHouTui15MiaoProps } from './icons/IconHouTui
 export { IconHuiBao, type IconHuiBaoProps } from './icons/IconHuiBao'
 export { IconHuiDaoDingBu, type IconHuiDaoDingBuProps } from './icons/IconHuiDaoDingBu'
 export { IconHuiDingBu, type IconHuiDingBuProps } from './icons/IconHuiDingBu'
+export { IconIcon, type IconIconProps } from './icons/IconIcon'
 export { IconJiaoYu, type IconJiaoYuProps } from './icons/IconJiaoYu'
 export { IconJiaoYu1, type IconJiaoYu1Props } from './icons/IconJiaoYu1'
 export { IconKaiQiXinDuiHua, type IconKaiQiXinDuiHuaProps } from './icons/IconKaiQiXinDuiHua'
@@ -462,7 +462,6 @@ export const allIcons = {
   IconDaiShenHe,
   IconDeleteOutline,
   IconDongTai,
-  IconDuiHuaKuangGuanBi,
   IconDuoXuan,
   IconFenXiang,
   IconFrame,
@@ -501,6 +500,7 @@ export const allIcons = {
   IconHuiBao,
   IconHuiDaoDingBu,
   IconHuiDingBu,
+  IconIcon,
   IconJiaoYu,
   IconJiaoYu1,
   IconKaiQiXinDuiHua,

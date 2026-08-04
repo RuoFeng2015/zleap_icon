@@ -1,6 +1,6 @@
 # Icon Validation Report
 
-Generated at: 2026-08-04T07:25:03.219Z
+Generated at: 2026-08-04T08:38:37.426Z
 
 ## Summary
 
@@ -29,6 +29,7 @@ Generated at: 2026-08-04T07:25:03.219Z
 | Frame3 | Icon size 1440x961 not in allowed sizes:  |
 | Frame4 | Icon size 476x435 not in allowed sizes:  |
 | Frame5 | Icon size 42x42 not in allowed sizes:  |
+| Icon | Icon size 15x15 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | claude | Icon size 24x24 not in allowed sizes:  |
@@ -129,7 +130,6 @@ Generated at: 2026-08-04T07:25:03.219Z
 | 失败 | Icon size 24x24 not in allowed sizes:  |
 | 好友 | Icon size 24x24 not in allowed sizes:  |
 | 实时录音 | Icon size 24x24 not in allowed sizes:  |
-| 对话框关闭 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 展开1 | Icon size 24x24 not in allowed sizes:  |
 | 展开2 | Icon size 24x24 not in allowed sizes:  |
@@ -251,6 +251,7 @@ Generated at: 2026-08-04T07:25:03.219Z
 | Frame3 | Icon name "Frame3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame4 | Icon name "Frame4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame5 | Icon name "Frame5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Icon | Icon name "Icon" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 上传音频 | Icon name "上传音频" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉 | Icon name "下拉" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉收起 | Icon name "下拉收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -302,7 +303,6 @@ Generated at: 2026-08-04T07:25:03.219Z
 | 失败 | Icon name "失败" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 好友 | Icon name "好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 实时录音 | Icon name "实时录音" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 对话框关闭 | Icon name "对话框关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开1 | Icon name "展开1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开2 | Icon name "展开2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
