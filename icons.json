@@ -1,19 +1,18 @@
 {
-  "version": "0.0.150",
-  "syncMode": "incremental",
-  "generatedAt": "2026-08-05T07:42:16.316Z",
+  "version": "1.0.0",
+  "generatedAt": "2026-08-05T07:43:08.659Z",
   "totalCount": 218,
   "icons": [
     {
-      "name": "Icon对话框关闭",
+      "name": "IconDuiHuaKuangGuanBi",
       "originalName": "对话框关闭",
       "svgPath": "svg/对话框关闭.svg",
-      "componentPath": "src/icons/Icon对话框关闭.tsx",
+      "componentPath": "src/icons/IconDuiHuaKuangGuanBi.tsx",
       "size": {
         "width": 24,
         "height": 24
       },
-      "uploadedAt": "2026-08-05T07:42:16.314Z"
+      "createdAt": "2026-08-05T07:43:08.630Z"
     },
     {
       "name": "IconEyeOffIcon",

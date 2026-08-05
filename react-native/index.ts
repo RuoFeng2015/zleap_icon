@@ -29,6 +29,7 @@ import { IconCursor } from './icons/IconCursor'
 import { IconDaiShenHe } from './icons/IconDaiShenHe'
 import { IconDeleteOutline } from './icons/IconDeleteOutline'
 import { IconDongTai } from './icons/IconDongTai'
+import { IconDuiHuaKuangGuanBi } from './icons/IconDuiHuaKuangGuanBi'
 import { IconDuoXuan } from './icons/IconDuoXuan'
 import { IconEyeIcon } from './icons/IconEyeIcon'
 import { IconEyeOffIcon } from './icons/IconEyeOffIcon'
@@ -247,6 +248,7 @@ export { IconCursor, type IconCursorProps } from './icons/IconCursor'
 export { IconDaiShenHe, type IconDaiShenHeProps } from './icons/IconDaiShenHe'
 export { IconDeleteOutline, type IconDeleteOutlineProps } from './icons/IconDeleteOutline'
 export { IconDongTai, type IconDongTaiProps } from './icons/IconDongTai'
+export { IconDuiHuaKuangGuanBi, type IconDuiHuaKuangGuanBiProps } from './icons/IconDuiHuaKuangGuanBi'
 export { IconDuoXuan, type IconDuoXuanProps } from './icons/IconDuoXuan'
 export { IconEyeIcon, type IconEyeIconProps } from './icons/IconEyeIcon'
 export { IconEyeOffIcon, type IconEyeOffIconProps } from './icons/IconEyeOffIcon'
@@ -466,6 +468,7 @@ export const allIcons = {
   IconDaiShenHe,
   IconDeleteOutline,
   IconDongTai,
+  IconDuiHuaKuangGuanBi,
   IconDuoXuan,
   IconEyeIcon,
   IconEyeOffIcon,

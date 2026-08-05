@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-08-04T09:03:56.444Z
+Generated at: 2026-08-05T07:43:05.288Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 217 |
+| Total Icons | 218 |
 | Valid Icons | 0 |
-| Invalid Icons | 217 |
-| Total Errors | 217 |
-| Total Warnings | 200 |
+| Invalid Icons | 218 |
+| Total Errors | 218 |
+| Total Warnings | 201 |
 
-⚠️ **217 icon(s) failed validation**
+⚠️ **218 icon(s) failed validation**
 
 ## Errors
 
-### size (217 errors)
+### size (218 errors)
 
 | Icon | Message |
 |------|---------|
@@ -132,6 +132,7 @@ Generated at: 2026-08-04T09:03:56.444Z
 | 失败 | Icon size 24x24 not in allowed sizes:  |
 | 好友 | Icon size 24x24 not in allowed sizes:  |
 | 实时录音 | Icon size 24x24 not in allowed sizes:  |
+| 对话框关闭 | Icon size 24x24 not in allowed sizes:  |
 | 展开 | Icon size 24x24 not in allowed sizes:  |
 | 展开1 | Icon size 24x24 not in allowed sizes:  |
 | 展开2 | Icon size 24x24 not in allowed sizes:  |
@@ -240,7 +241,7 @@ Generated at: 2026-08-04T09:03:56.444Z
 
 ## Warnings
 
-### naming (168 warnings)
+### naming (169 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -307,6 +308,7 @@ Generated at: 2026-08-04T09:03:56.444Z
 | 失败 | Icon name "失败" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 好友 | Icon name "好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 实时录音 | Icon name "实时录音" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 对话框关闭 | Icon name "对话框关闭" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开 | Icon name "展开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开1 | Icon name "展开1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 展开2 | Icon name "展开2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
