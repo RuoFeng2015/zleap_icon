@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-08-07T08:41:53.318Z
+Generated at: 2026-08-07T08:43:41.788Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 227 |
+| Total Icons | 224 |
 | Valid Icons | 0 |
-| Invalid Icons | 227 |
-| Total Errors | 227 |
-| Total Warnings | 210 |
+| Invalid Icons | 224 |
+| Total Errors | 224 |
+| Total Warnings | 207 |
 
-⚠️ **227 icon(s) failed validation**
+⚠️ **224 icon(s) failed validation**
 
 ## Errors
 
-### size (227 errors)
+### size (224 errors)
 
 | Icon | Message |
 |------|---------|
@@ -116,10 +116,8 @@ Generated at: 2026-08-07T08:41:53.318Z
 | 刷新 | Icon size 24x24 not in allowed sizes:  |
 | 前进15秒 | Icon size 24x26 not in allowed sizes:  |
 | 动态 | Icon size 48x48 not in allowed sizes:  |
-| 动态2 | Icon size 48x48 not in allowed sizes:  |
 | 助手 | Icon size 24x24 not in allowed sizes:  |
 | 助手管理 | Icon size 24x24 not in allowed sizes:  |
-| 助手管理2 | Icon size 120x120 not in allowed sizes:  |
 | 勾选-已勾选 | Icon size 24x24 not in allowed sizes:  |
 | 勾选 | Icon size 24x24 not in allowed sizes:  |
 | 卡片布局 | Icon size 24x24 not in allowed sizes:  |
@@ -246,11 +244,10 @@ Generated at: 2026-08-07T08:41:53.318Z
 | 预览 | Icon size 24x24 not in allowed sizes:  |
 | 预览1 | Icon size 24x24 not in allowed sizes:  |
 | 首页 | Icon size 24x24 not in allowed sizes:  |
-| 首页2 | Icon size 49x49 not in allowed sizes:  |
 
 ## Warnings
 
-### naming (177 warnings)
+### naming (174 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -300,10 +297,8 @@ Generated at: 2026-08-07T08:41:53.318Z
 | 刷新 | Icon name "刷新" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 前进15秒 | Icon name "前进15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 动态 | Icon name "动态" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 动态2 | Icon name "动态2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 助手 | Icon name "助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 助手管理 | Icon name "助手管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 助手管理2 | Icon name "助手管理2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 勾选-已勾选 | Icon name "勾选-已勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 勾选 | Icon name "勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 卡片布局 | Icon name "卡片布局" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -430,7 +425,6 @@ Generated at: 2026-08-07T08:41:53.318Z
 | 预览 | Icon name "预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 首页2 | Icon name "首页2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
 ### size (33 warnings)
 
