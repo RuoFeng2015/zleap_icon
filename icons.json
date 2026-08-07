@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-05T07:43:08.659Z",
-  "totalCount": 218,
+  "generatedAt": "2026-08-07T07:30:40.373Z",
+  "totalCount": 219,
   "icons": [
+    {
+      "name": "IconHeaderLogo",
+      "originalName": "header-logo",
+      "svgPath": "svg/header-logo.svg",
+      "componentPath": "src/icons/IconHeaderLogo.tsx",
+      "size": {
+        "width": 45,
+        "height": 37
+      },
+      "createdAt": "2026-08-07T07:30:40.373Z"
+    },
     {
       "name": "IconDuiHuaKuangGuanBi",
       "originalName": "对话框关闭",
