@@ -1,8 +1,41 @@
 {
-  "version": "2026.08.07",
-  "generatedAt": "2026-08-07T08:28:48.108Z",
-  "totalCount": 224,
+  "version": "1.0.0",
+  "generatedAt": "2026-08-07T08:41:19.549Z",
+  "totalCount": 227,
   "icons": [
+    {
+      "name": "Icon动态2",
+      "originalName": "动态2",
+      "svgPath": "svg/动态2.svg",
+      "componentPath": "src/icons/Icon动态2.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-08-07T08:41:19.549Z"
+    },
+    {
+      "name": "Icon首页2",
+      "originalName": "首页2",
+      "svgPath": "svg/首页2.svg",
+      "componentPath": "src/icons/Icon首页2.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-08-07T08:41:19.549Z"
+    },
+    {
+      "name": "Icon助手管理2",
+      "originalName": "助手管理2",
+      "svgPath": "svg/助手管理2.svg",
+      "componentPath": "src/icons/Icon助手管理2.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-08-07T08:41:19.549Z"
+    },
     {
       "name": "IconChengYuanGuanLi",
       "originalName": "成员管理",
