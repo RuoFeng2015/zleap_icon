@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-07T08:23:29.362Z",
+  "generatedAt": "2026-08-07T08:23:57.260Z",
   "totalCount": 224,
   "icons": [
     {
-      "name": "Icon成员管理",
+      "name": "IconChengYuanGuanLi",
       "originalName": "成员管理",
       "svgPath": "svg/成员管理.svg",
-      "componentPath": "src/icons/Icon成员管理.tsx",
+      "componentPath": "src/icons/IconChengYuanGuanLi.tsx",
       "size": {
         "width": 120,
         "height": 120
@@ -15,10 +15,10 @@
       "createdAt": "2026-08-07T08:23:29.362Z"
     },
     {
-      "name": "Icon任务管理",
+      "name": "IconRenWuGuanLi",
       "originalName": "任务管理",
       "svgPath": "svg/任务管理.svg",
-      "componentPath": "src/icons/Icon任务管理.tsx",
+      "componentPath": "src/icons/IconRenWuGuanLi.tsx",
       "size": {
         "width": 120,
         "height": 120
@@ -26,10 +26,10 @@
       "createdAt": "2026-08-07T08:23:29.362Z"
     },
     {
-      "name": "Icon系统配置",
+      "name": "IconXiTongPeiZhi",
       "originalName": "系统配置",
       "svgPath": "svg/系统配置.svg",
-      "componentPath": "src/icons/Icon系统配置.tsx",
+      "componentPath": "src/icons/IconXiTongPeiZhi.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -37,10 +37,10 @@
       "createdAt": "2026-08-07T08:23:29.362Z"
     },
     {
-      "name": "Icon信息管理",
+      "name": "IconXinXiGuanLi",
       "originalName": "信息管理",
       "svgPath": "svg/信息管理.svg",
-      "componentPath": "src/icons/Icon信息管理.tsx",
+      "componentPath": "src/icons/IconXinXiGuanLi.tsx",
       "size": {
         "width": 120,
         "height": 120
@@ -48,10 +48,10 @@
       "createdAt": "2026-08-07T08:23:29.362Z"
     },
     {
-      "name": "Icon运营管理48",
+      "name": "IconYunYingGuanLi48",
       "originalName": "运营管理48",
       "svgPath": "svg/运营管理48.svg",
-      "componentPath": "src/icons/Icon运营管理48.tsx",
+      "componentPath": "src/icons/IconYunYingGuanLi48.tsx",
       "size": {
         "width": 120,
         "height": 120

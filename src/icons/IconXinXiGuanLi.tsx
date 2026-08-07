@@ -4,7 +4,7 @@ import type { SVGProps } from 'react';
 export interface IconXinXiGuanLiProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (not applicable for multicolor icons) */
+  /** Icon color (for multicolor icons, original fills/strokes are preserved) */
   color?: string;
 }
 
@@ -15,7 +15,7 @@ export interface IconXinXiGuanLiProps extends SVGProps<SVGSVGElement> {
  * @param ref - Forwarded ref to the SVG element
  */
 export const IconXinXiGuanLi = forwardRef<SVGSVGElement, IconXinXiGuanLiProps>(
-  ({ size = 24, color = 'currentColor', className, style, ...props }, ref) => {
+  ({ size = 24, color, className, style, ...props }, ref) => {
     const uniqueId = useId();
     
      // Replace gradient IDs with unique ones

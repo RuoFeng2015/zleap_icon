@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-08-07T07:31:08.653Z
+Generated at: 2026-08-07T08:23:53.843Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 219 |
+| Total Icons | 224 |
 | Valid Icons | 0 |
-| Invalid Icons | 219 |
-| Total Errors | 219 |
-| Total Warnings | 202 |
+| Invalid Icons | 224 |
+| Total Errors | 224 |
+| Total Warnings | 207 |
 
-⚠️ **219 icon(s) failed validation**
+⚠️ **224 icon(s) failed validation**
 
 ## Errors
 
-### size (219 errors)
+### size (224 errors)
 
 | Icon | Message |
 |------|---------|
@@ -87,9 +87,11 @@ Generated at: 2026-08-07T07:31:08.653Z
 | 下拉收起 | Icon size 24x24 not in allowed sizes:  |
 | 任务 | Icon size 20x20 not in allowed sizes:  |
 | 任务1 | Icon size 20x20 not in allowed sizes:  |
+| 任务管理 | Icon size 120x120 not in allowed sizes:  |
 | 传入 | Icon size 24x24 not in allowed sizes:  |
 | 体育 | Icon size 36x36 not in allowed sizes:  |
 | 信息来源 | Icon size 24x24 not in allowed sizes:  |
+| 信息管理 | Icon size 120x120 not in allowed sizes:  |
 | 公共信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
 | 公共信息源-高亮 | Icon size 20x20 not in allowed sizes:  |
 | 公开信息 | Icon size 84x106 not in allowed sizes:  |
@@ -153,6 +155,7 @@ Generated at: 2026-08-07T07:31:08.653Z
 | 快进15秒 | Icon size 24x24 not in allowed sizes:  |
 | 思源笔记 | Icon size 24x24 not in allowed sizes:  |
 | 成功 | Icon size 24x24 not in allowed sizes:  |
+| 成员管理 | Icon size 120x120 not in allowed sizes:  |
 | 我的信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
 | 我的信息源-高亮 | Icon size 20x20 not in allowed sizes:  |
 | 探索 | Icon size 24x24 not in allowed sizes:  |
@@ -206,6 +209,7 @@ Generated at: 2026-08-07T07:31:08.653Z
 | 筛选 | Icon size 24x24 not in allowed sizes:  |
 | 筛选1 | Icon size 24x24 not in allowed sizes:  |
 | 筛选2 | Icon size 24x24 not in allowed sizes:  |
+| 系统配置 | Icon size 48x48 not in allowed sizes:  |
 | 编辑 | Icon size 24x24 not in allowed sizes:  |
 | 职场 | Icon size 132x87 not in allowed sizes:  |
 | 职场1 | Icon size 36x36 not in allowed sizes:  |
@@ -218,6 +222,7 @@ Generated at: 2026-08-07T07:31:08.653Z
 | 语雀知识库 | Icon size 24x24 not in allowed sizes:  |
 | 财经-1 | Icon size 36x36 not in allowed sizes:  |
 | 财经 | Icon size 129x87 not in allowed sizes:  |
+| 运营管理48 | Icon size 120x120 not in allowed sizes:  |
 | 通知 | Icon size 24x24 not in allowed sizes:  |
 | 通知1 | Icon size 24x24 not in allowed sizes:  |
 | 通讯录-细 | Icon size 24x24 not in allowed sizes:  |
@@ -242,7 +247,7 @@ Generated at: 2026-08-07T07:31:08.653Z
 
 ## Warnings
 
-### naming (169 warnings)
+### naming (174 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -263,9 +268,11 @@ Generated at: 2026-08-07T07:31:08.653Z
 | 下拉收起 | Icon name "下拉收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 任务 | Icon name "任务" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 任务1 | Icon name "任务1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 任务管理 | Icon name "任务管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 传入 | Icon name "传入" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 体育 | Icon name "体育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 信息来源 | Icon name "信息来源" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 信息管理 | Icon name "信息管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公共信息源-置灰 | Icon name "公共信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公共信息源-高亮 | Icon name "公共信息源-高亮" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 公开信息 | Icon name "公开信息" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -329,6 +336,7 @@ Generated at: 2026-08-07T07:31:08.653Z
 | 快进15秒 | Icon name "快进15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 思源笔记 | Icon name "思源笔记" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 成功 | Icon name "成功" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 成员管理 | Icon name "成员管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 我的信息源-置灰 | Icon name "我的信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 我的信息源-高亮 | Icon name "我的信息源-高亮" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -382,6 +390,7 @@ Generated at: 2026-08-07T07:31:08.653Z
 | 筛选 | Icon name "筛选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 筛选1 | Icon name "筛选1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 筛选2 | Icon name "筛选2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 系统配置 | Icon name "系统配置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 编辑 | Icon name "编辑" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场 | Icon name "职场" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场1 | Icon name "职场1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -394,6 +403,7 @@ Generated at: 2026-08-07T07:31:08.653Z
 | 语雀知识库 | Icon name "语雀知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 财经-1 | Icon name "财经-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 财经 | Icon name "财经" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 运营管理48 | Icon name "运营管理48" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知 | Icon name "通知" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通知1 | Icon name "通知1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 通讯录-细 | Icon name "通讯录-细" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

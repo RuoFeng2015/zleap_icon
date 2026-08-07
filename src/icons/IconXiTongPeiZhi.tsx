@@ -4,7 +4,7 @@ import type { SVGProps } from 'react';
 export interface IconXiTongPeiZhiProps extends SVGProps<SVGSVGElement> {
   /** Icon size (width and height) */
   size?: number | string;
-  /** Icon color (controls the main color, preserves white/light decorations) */
+  /** Icon color (for multicolor icons, original fills/strokes are preserved) */
   color?: string;
 }
 
@@ -19,7 +19,7 @@ export const IconXiTongPeiZhi = forwardRef<SVGSVGElement, IconXiTongPeiZhiProps>
     const uniqueId = useId();
     
      // Replace gradient IDs with unique ones
-    const svgContent = `<defs><linearGradient id="${uniqueId}a" x1="60" x2="60" y1="120" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#74ABDC"/><stop offset="1" stop-color="#52D8E1"/></linearGradient><linearGradient id="${uniqueId}b" x1="60" x2="60" y1="23" y2="99" gradientUnits="userSpaceOnUse"><stop stop-color="#BFF6FF"/><stop offset="1" stop-color="#C6EBFF"/></linearGradient><linearGradient id="${uniqueId}c" x1="60" x2="60" y1="35" y2="99" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="#94E8FF"/></linearGradient><linearGradient id="${uniqueId}d" x1="60" x2="60" y1="35" y2="99" gradientUnits="userSpaceOnUse"><stop offset=".096" stop-color="white"/><stop offset="1" stop-color="#A1FAFF"/></linearGradient></defs><rect width="120" height="120" fill="url(#${uniqueId}a)" rx="30"/><path fill="url(#${uniqueId}b)" fill-opacity=".6" d="M60 99c20.987 0 38-17.013 38-38S80.987 23 60 23 22 40.013 22 61s17.013 38 38 38" opacity=".8"/><path fill="url(#${uniqueId}c)" stroke="url(#${uniqueId}d)" d="M60 68.1c14.257 0 25.893 7.812 28.008 17.814C81.143 93.633 71.14 98.5 60 98.5s-21.144-4.867-28.009-12.586C34.106 75.912 45.743 68.1 60 68.1Zm-.5-32.6c7.749 0 14 6.06 14 13.5s-6.251 13.5-14 13.5-14-6.06-14-13.5 6.251-13.5 14-13.5Z"/>`;
+    const svgContent = `<defs><linearGradient id="${uniqueId}a" x1="24" x2="24" y1="48" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#8E8E93"/><stop offset="1" stop-color="#E5E5EA"/></linearGradient><linearGradient id="${uniqueId}b" x1="24.201" x2="24.201" y1="9.6" y2="37.2" gradientUnits="userSpaceOnUse"><stop stop-color="#7E7E7E"/><stop offset="1" stop-color="#434445"/></linearGradient><linearGradient id="${uniqueId}c" x1="24.201" x2="24.201" y1="9.6" y2="37.2" gradientUnits="userSpaceOnUse"><stop stop-color="#EDEDED"/><stop offset="1" stop-color="#343434"/></linearGradient><linearGradient id="${uniqueId}d" x1="23.999" x2="23.999" y1="20" y2="26.8" gradientUnits="userSpaceOnUse"><stop stop-color="white"/><stop offset="1" stop-color="#D0D0D0"/></linearGradient></defs><path fill="url(#${uniqueId}a)" d="M0 10C0 4.477 4.477 0 10 0h28c5.523 0 10 4.477 10 10v28c0 5.523-4.477 10-10 10H10C4.477 48 0 43.523 0 38z"/><path fill="url(#${uniqueId}b)" stroke="url(#${uniqueId}c)" stroke-width=".4" d="M38.063 19.144a1.3 1.3 0 0 0-1.26-.896h-.036c-1.47 0-2.666-1.176-2.666-2.63 0-.42.098-.813.275-1.161a1.26 1.26 0 0 0-.281-1.5 14.54 14.54 0 0 0-6.006-3.31 1.31 1.31 0 0 0-1.506.65 2.67 2.67 0 0 1-2.38 1.437 2.67 2.67 0 0 1-2.378-1.437 1.31 1.31 0 0 0-1.507-.65 14.6 14.6 0 0 0-6.005 3.31 1.265 1.265 0 0 0-.281 1.5c.174.348.274.74.274 1.16 0 1.455-1.195 2.63-2.665 2.63h-.037a1.3 1.3 0 0 0-1.26.897 14 14 0 0 0-.664 4.292c0 .986.1 1.95.296 2.879.134.642.738 1.08 1.4 1.016q.132-.011.265-.011c1.47 0 2.665 1.175 2.665 2.63a2.58 2.58 0 0 1-.628 1.694c-.427.5-.402 1.236.058 1.71a14.56 14.56 0 0 0 6.314 3.793 1.31 1.31 0 0 0 1.61-.837 2.66 2.66 0 0 1 2.54-1.826c1.187 0 2.197.765 2.541 1.826.217.663.93 1.035 1.61.837a14.5 14.5 0 0 0 6.314-3.794c.46-.47.485-1.208.058-1.71a2.6 2.6 0 0 1-.628-1.694c0-1.454 1.196-2.63 2.666-2.63q.137 0 .265.012a1.297 1.297 0 0 0 1.4-1.016c.192-.933.296-1.896.296-2.88 0-1.493-.232-2.935-.665-4.29zm-13.856 9.879c-3.157 0-5.719-2.516-5.719-5.623s2.559-5.623 5.719-5.623 5.718 2.516 5.718 5.623-2.558 5.623-5.718 5.623Z"/><path fill="url(#${uniqueId}d)" d="M23.999 26.8c1.893 0 3.428-1.522 3.428-3.4S25.893 20 24 20s-3.429 1.522-3.429 3.4 1.535 3.4 3.429 3.4" opacity=".8"/>`;
     
     return (
       <svg
@@ -27,7 +27,7 @@ export const IconXiTongPeiZhi = forwardRef<SVGSVGElement, IconXiTongPeiZhiProps>
         xmlns="http://www.w3.org/2000/svg"
         width={size}
         height={size}
-        viewBox="0 0 120 120"
+        viewBox="0 0 48 48"
         fill="none"
         className={className}
         style={style}
