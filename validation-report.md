@@ -1,27 +1,28 @@
 # Icon Validation Report
 
-Generated at: 2026-08-07T08:43:41.788Z
+Generated at: 2026-08-07T08:45:00.686Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 224 |
+| Total Icons | 227 |
 | Valid Icons | 0 |
-| Invalid Icons | 224 |
-| Total Errors | 224 |
-| Total Warnings | 207 |
+| Invalid Icons | 227 |
+| Total Errors | 227 |
+| Total Warnings | 208 |
 
-⚠️ **224 icon(s) failed validation**
+⚠️ **227 icon(s) failed validation**
 
 ## Errors
 
-### size (224 errors)
+### size (227 errors)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon size 36x36 not in allowed sizes:  |
 | AI1 | Icon size 132x87 not in allowed sizes:  |
+| Dynamic | Icon size 48x48 not in allowed sizes:  |
 | EyeIcon | Icon size 20x20 not in allowed sizes:  |
 | EyeOffIcon | Icon size 20x20 not in allowed sizes:  |
 | Frame-1261156360 | Icon size 1440x961 not in allowed sizes:  |
@@ -32,6 +33,7 @@ Generated at: 2026-08-07T08:43:41.788Z
 | Frame4 | Icon size 476x435 not in allowed sizes:  |
 | Frame5 | Icon size 42x42 not in allowed sizes:  |
 | Icon | Icon size 15x15 not in allowed sizes:  |
+| agent | Icon size 120x120 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
 | claude | Icon size 24x24 not in allowed sizes:  |
@@ -41,6 +43,7 @@ Generated at: 2026-08-07T08:43:41.788Z
 | gemini | Icon size 24x24 not in allowed sizes:  |
 | header-logo | Icon size 45x37 not in allowed sizes:  |
 | hermesagent | Icon size 24x24 not in allowed sizes:  |
+| index | Icon size 49x49 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
 | logo | Icon size 45x37 not in allowed sizes:  |
 | mcp | Icon size 1024x1024 not in allowed sizes:  |
@@ -247,12 +250,13 @@ Generated at: 2026-08-07T08:43:41.788Z
 
 ## Warnings
 
-### naming (174 warnings)
+### naming (175 warnings)
 
 | Icon | Message |
 |------|---------|
 | AI | Icon name "AI" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | AI1 | Icon name "AI1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| Dynamic | Icon name "Dynamic" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | EyeIcon | Icon name "EyeIcon" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | EyeOffIcon | Icon name "EyeOffIcon" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame-1261156360 | Icon name "Frame-1261156360" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
