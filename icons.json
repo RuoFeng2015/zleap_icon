@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-07T08:23:56.397Z",
-  "totalCount": 224,
+  "generatedAt": "2026-08-07T08:25:10.051Z",
+  "totalCount": 225,
   "icons": [
+    {
+      "name": "Icon首页2",
+      "originalName": "首页2",
+      "svgPath": "svg/首页2.svg",
+      "componentPath": "src/icons/Icon首页2.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-08-07T08:25:10.051Z"
+    },
     {
       "name": "IconChengYuanGuanLi",
       "originalName": "成员管理",
