@@ -65,6 +65,7 @@ import { IconGuanBi } from './icons/IconGuanBi'
 import { IconGuanBiXiao } from './icons/IconGuanBiXiao'
 import { IconGuanBiYuLan } from './icons/IconGuanBiYuLan'
 import { IconHaoYou } from './icons/IconHaoYou'
+import { IconHeaderLogo } from './icons/IconHeaderLogo'
 import { IconHermesagent } from './icons/IconHermesagent'
 import { IconHouTui15Miao } from './icons/IconHouTui15Miao'
 import { IconHuiBao } from './icons/IconHuiBao'
@@ -284,6 +285,7 @@ export { IconGuanBi, type IconGuanBiProps } from './icons/IconGuanBi'
 export { IconGuanBiXiao, type IconGuanBiXiaoProps } from './icons/IconGuanBiXiao'
 export { IconGuanBiYuLan, type IconGuanBiYuLanProps } from './icons/IconGuanBiYuLan'
 export { IconHaoYou, type IconHaoYouProps } from './icons/IconHaoYou'
+export { IconHeaderLogo, type IconHeaderLogoProps } from './icons/IconHeaderLogo'
 export { IconHermesagent, type IconHermesagentProps } from './icons/IconHermesagent'
 export { IconHouTui15Miao, type IconHouTui15MiaoProps } from './icons/IconHouTui15Miao'
 export { IconHuiBao, type IconHuiBaoProps } from './icons/IconHuiBao'
@@ -504,6 +506,7 @@ export const allIcons = {
   IconGuanBiXiao,
   IconGuanBiYuLan,
   IconHaoYou,
+  IconHeaderLogo,
   IconHermesagent,
   IconHouTui15Miao,
   IconHuiBao,

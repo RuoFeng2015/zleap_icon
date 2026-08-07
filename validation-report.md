@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-08-05T07:43:05.288Z
+Generated at: 2026-08-07T07:31:06.837Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 218 |
+| Total Icons | 219 |
 | Valid Icons | 0 |
-| Invalid Icons | 218 |
-| Total Errors | 218 |
-| Total Warnings | 201 |
+| Invalid Icons | 219 |
+| Total Errors | 219 |
+| Total Warnings | 202 |
 
-⚠️ **218 icon(s) failed validation**
+⚠️ **219 icon(s) failed validation**
 
 ## Errors
 
-### size (218 errors)
+### size (219 errors)
 
 | Icon | Message |
 |------|---------|
@@ -39,6 +39,7 @@ Generated at: 2026-08-05T07:43:05.288Z
 | cursor | Icon size 24x24 not in allowed sizes:  |
 | delete-outline | Icon size 24x24 not in allowed sizes:  |
 | gemini | Icon size 24x24 not in allowed sizes:  |
+| header-logo | Icon size 45x37 not in allowed sizes:  |
 | hermesagent | Icon size 24x24 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
 | logo | Icon size 45x37 not in allowed sizes:  |
@@ -415,7 +416,7 @@ Generated at: 2026-08-05T07:43:05.288Z
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
-### size (32 warnings)
+### size (33 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -423,6 +424,7 @@ Generated at: 2026-08-05T07:43:05.288Z
 | Frame-1261156360 | Icon is not square: 1440x961 |
 | Frame3 | Icon is not square: 1440x961 |
 | Frame4 | Icon is not square: 476x435 |
+| header-logo | Icon is not square: 45x37 |
 | logo | Icon is not square: 45x37 |
 | menu-home-active | Icon is not square: 12x8 |
 | menu-member-management-active | Icon is not square: 49x50 |
