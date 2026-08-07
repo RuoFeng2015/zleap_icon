@@ -1,0 +1,53 @@
+import React, { forwardRef, useMemo } from 'react'
+import type { ComponentProps } from 'react'
+import { SvgXml } from 'react-native-svg'
+
+export interface IconDongTai2Props extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+  size?: number | string
+  color?: string
+}
+
+export const IconDongTai2 = forwardRef<unknown, IconDongTai2Props>(
+  ({ size = 24, color, ...props }, ref) => {
+    const baseXml = useMemo(
+      () => `<svg fill="none" viewBox="0 0 48 48"><rect width="47.2" height="47.2" x=".4" y=".4" fill="white" rx="11.6"/><rect width="47.2" height="47.2" x=".4" y=".4" stroke="url(#a)" stroke-width=".8" rx="11.6"/><rect width="47.2" height="47.2" x=".4" y=".4" stroke="url(#b)" stroke-width=".8" rx="11.6"/><rect width="47.2" height="47.2" x=".4" y=".4" stroke="url(#c)" stroke-opacity=".4" stroke-width=".8" rx="11.6" style="mix-blend-mode:plus-darker"/><path fill="url(#d)" d="M28.28 24.044q.002.333-.053.644a4.264 4.264 0 0 1-3.935 3.62c-.092.015-.192.015-.291.015-.108 0-.207 0-.307-.015a4.273 4.273 0 0 1-3.973-4.264c0-.162 0-.323.03-.484a4.283 4.283 0 0 1 4.211-3.796h.039c.16 0 .314.007.467.03a4.265 4.265 0 0 1 3.751 3.56q.06.333.062.69" opacity=".8"/><path fill="url(#e)" stroke="url(#f)" stroke-width=".399" d="M14.69 24.044c0-.979.15-1.923.427-2.806l.002-.005a9.35 9.35 0 0 1 4.814-5.557 1.305 1.305 0 0 1 1.14 2.346 6.74 6.74 0 0 0-3.468 4 6.78 6.78 0 0 0-.037 3.913 6.73 6.73 0 0 0 3.255 4.01 1.304 1.304 0 0 1-1.237 2.295 9.34 9.34 0 0 1-4.521-5.574l-.002-.004a9.4 9.4 0 0 1-.373-2.618Z"/><path fill="url(#g)" stroke="url(#h)" stroke-width=".399" d="M30.704 24.044c0-.654-.082-1.22-.242-1.788l-.002-.005a6.7 6.7 0 0 0-3.197-4.056 1.304 1.304 0 1 1 1.268-2.279 9.3 9.3 0 0 1 4.44 5.635l.08.299c.172.699.26 1.41.26 2.194q.001 1.338-.373 2.592a9.32 9.32 0 0 1-4.664 5.676 1.305 1.305 0 0 1-1.2-2.317 6.7 6.7 0 0 0 3.36-4.082l.004-.013a6.4 6.4 0 0 0 .266-1.856Z"/><path fill="url(#i)" stroke="url(#j)" stroke-width=".399" d="M37.392 24.045a13.4 13.4 0 0 0-1.375-5.925l-.163-.318a13.4 13.4 0 0 0-3.332-4.086 1.305 1.305 0 0 1 1.656-2.015 16 16 0 0 1 3.981 4.881l.194.38.002.002A16 16 0 0 1 40 24.045c0 2.54-.64 5.147-1.788 7.352a15.9 15.9 0 0 1-4.41 5.285 1.304 1.304 0 0 1-1.594-2.064 13.3 13.3 0 0 0 3.688-4.421l.176-.352a13.6 13.6 0 0 0 1.32-5.8Z"/><path fill="url(#k)" stroke="url(#l)" stroke-width=".399" d="M8 24.043c0-2.721.685-5.286 1.88-7.524a15.9 15.9 0 0 1 4.47-5.23 1.304 1.304 0 0 1 1.567 2.085 13.3 13.3 0 0 0-3.736 4.371v.002a13.34 13.34 0 0 0-1.573 6.296c0 2.162.51 4.201 1.424 6.008l.003.005a13.2 13.2 0 0 0 3.525 4.377 1.305 1.305 0 0 1-1.635 2.032 15.8 15.8 0 0 1-4.222-5.242v-.001A15.9 15.9 0 0 1 8 24.043Z"/><defs><linearGradient id="e" x1="18.249" x2="18.249" y1="15.545" y2="32.397" gradientUnits="userSpaceOnUse"><stop offset=".127" stop-color="#FFC699"/><stop offset="1" stop-color="#FF3838" stop-opacity=".7"/></linearGradient><linearGradient id="f" x1="18.249" x2="18.249" y1="15.545" y2="32.397" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE1CB"/><stop offset="1" stop-color="#FF5867"/></linearGradient><linearGradient id="g" x1="29.841" x2="29.841" y1="15.752" y2="32.458" gradientUnits="userSpaceOnUse"><stop offset=".127" stop-color="#FFC699"/><stop offset="1" stop-color="#FF3838" stop-opacity=".7"/></linearGradient><linearGradient id="h" x1="29.841" x2="29.841" y1="15.752" y2="32.458" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE1CB"/><stop offset="1" stop-color="#FF5867"/></linearGradient><linearGradient id="i" x1="35.851" x2="35.851" y1="11.404" y2="36.954" gradientUnits="userSpaceOnUse"><stop offset=".127" stop-color="#FFC699"/><stop offset="1" stop-color="#FF3838" stop-opacity=".7"/></linearGradient><linearGradient id="j" x1="35.851" x2="35.851" y1="11.404" y2="36.954" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE1CB"/><stop offset="1" stop-color="#FF5867"/></linearGradient><linearGradient id="k" x1="12.219" x2="12.219" y1="11.027" y2="36.753" gradientUnits="userSpaceOnUse"><stop offset=".127" stop-color="#FFC699"/><stop offset="1" stop-color="#FF3838" stop-opacity=".7"/></linearGradient><linearGradient id="l" x1="12.219" x2="12.219" y1="11.027" y2="36.753" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE1CB"/><stop offset="1" stop-color="#FF5867"/></linearGradient><radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(17.3333 -69.4545 24.4398 73.7787 4.82 42.91)" gradientUnits="userSpaceOnUse"><stop stop-color="#FF4649"/><stop offset="1" stop-color="#FA2EAD" stop-opacity="0"/></radialGradient><radialGradient id="b" cx="0" cy="0" r="1" gradientTransform="matrix(-40.2324 96.6857 -25.1131 -123.866 45.61 3.771)" gradientUnits="userSpaceOnUse"><stop stop-color="#FF7F81"/><stop offset="1" stop-color="#FF9D9F" stop-opacity="0"/></radialGradient><radialGradient id="c" cx="0" cy="0" r="1" gradientTransform="matrix(-18.722 31.2 -6.9296 -49.2883 42.622 24)" gradientUnits="userSpaceOnUse"><stop stop-color="#7DFFB3"/><stop offset="1" stop-color="#FFD0F0"/></radialGradient><radialGradient id="d" cx="0" cy="0" r="1" gradientTransform="rotate(52.431 -10.701 33.928)scale(7.02436)" gradientUnits="userSpaceOnUse"><stop offset=".328" stop-color="#FFD8D6"/><stop offset="1" stop-color="#FF5E53"/></radialGradient></defs></svg>`,
+      [],
+    )
+
+    const xml = useMemo(() => {
+      if (!color) return baseXml
+      return baseXml.replace(
+        /(fill|stroke)="([^"]+)"/gi,
+        (_match, attr, value) => {
+          const normalized = String(value).toLowerCase().replace(/\s/g, '')
+          if (
+            normalized === 'none' ||
+            normalized === 'currentcolor' ||
+            normalized === 'white' ||
+            normalized === '#fff' ||
+            normalized === '#ffffff' ||
+            normalized.startsWith('url(')
+          ) {
+            return `${attr}="${value}"`
+          }
+          return `${attr}="${color}"`
+        },
+      )
+    }, [baseXml, color])
+
+    return (
+      <SvgXml
+        ref={ref as never}
+        xml={xml}
+        width={size}
+        height={size}
+        viewBox="0 0 48 48"
+        {...props}
+      />
+    )
+  },
+)
+
+IconDongTai2.displayName = 'IconDongTai2'
+
+export default IconDongTai2

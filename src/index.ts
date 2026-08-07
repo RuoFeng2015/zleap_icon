@@ -33,6 +33,7 @@ import { IconCursor } from './icons/IconCursor';
 import { IconDaiShenHe } from './icons/IconDaiShenHe';
 import { IconDeleteOutline } from './icons/IconDeleteOutline';
 import { IconDongTai } from './icons/IconDongTai';
+import { IconDongTai2 } from './icons/IconDongTai2';
 import { IconDuiHuaKuangGuanBi } from './icons/IconDuiHuaKuangGuanBi';
 import { IconDuoXuan } from './icons/IconDuoXuan';
 import { IconEyeIcon } from './icons/IconEyeIcon';
@@ -154,6 +155,7 @@ import { IconShiShiLuYin } from './icons/IconShiShiLuYin';
 import { IconShouCang } from './icons/IconShouCang';
 import { IconShouCang1 } from './icons/IconShouCang1';
 import { IconShouYe } from './icons/IconShouYe';
+import { IconShouYe2 } from './icons/IconShouYe2';
 import { IconShuaXin } from './icons/IconShuaXin';
 import { IconShuJuYuanTuBiao1 } from './icons/IconShuJuYuanTuBiao1';
 import { IconShuJuYuanTuBiao2 } from './icons/IconShuJuYuanTuBiao2';
@@ -227,6 +229,7 @@ import { IconZhiChang1 } from './icons/IconZhiChang1';
 import { IconZhiShiKu } from './icons/IconZhiShiKu';
 import { IconZhuShou } from './icons/IconZhuShou';
 import { IconZhuShouGuanLi } from './icons/IconZhuShouGuanLi';
+import { IconZhuShouGuanLi2 } from './icons/IconZhuShouGuanLi2';
 import { IconZleapBrandLogo } from './icons/IconZleapBrandLogo';
 import { IconZuo } from './icons/IconZuo';
 
@@ -258,6 +261,7 @@ export { IconCursor, type IconCursorProps } from './icons/IconCursor';
 export { IconDaiShenHe, type IconDaiShenHeProps } from './icons/IconDaiShenHe';
 export { IconDeleteOutline, type IconDeleteOutlineProps } from './icons/IconDeleteOutline';
 export { IconDongTai, type IconDongTaiProps } from './icons/IconDongTai';
+export { IconDongTai2, type IconDongTai2Props } from './icons/IconDongTai2';
 export { IconDuiHuaKuangGuanBi, type IconDuiHuaKuangGuanBiProps } from './icons/IconDuiHuaKuangGuanBi';
 export { IconDuoXuan, type IconDuoXuanProps } from './icons/IconDuoXuan';
 export { IconEyeIcon, type IconEyeIconProps } from './icons/IconEyeIcon';
@@ -379,6 +383,7 @@ export { IconShiShiLuYin, type IconShiShiLuYinProps } from './icons/IconShiShiLu
 export { IconShouCang, type IconShouCangProps } from './icons/IconShouCang';
 export { IconShouCang1, type IconShouCang1Props } from './icons/IconShouCang1';
 export { IconShouYe, type IconShouYeProps } from './icons/IconShouYe';
+export { IconShouYe2, type IconShouYe2Props } from './icons/IconShouYe2';
 export { IconShuaXin, type IconShuaXinProps } from './icons/IconShuaXin';
 export { IconShuJuYuanTuBiao1, type IconShuJuYuanTuBiao1Props } from './icons/IconShuJuYuanTuBiao1';
 export { IconShuJuYuanTuBiao2, type IconShuJuYuanTuBiao2Props } from './icons/IconShuJuYuanTuBiao2';
@@ -452,6 +457,7 @@ export { IconZhiChang1, type IconZhiChang1Props } from './icons/IconZhiChang1';
 export { IconZhiShiKu, type IconZhiShiKuProps } from './icons/IconZhiShiKu';
 export { IconZhuShou, type IconZhuShouProps } from './icons/IconZhuShou';
 export { IconZhuShouGuanLi, type IconZhuShouGuanLiProps } from './icons/IconZhuShouGuanLi';
+export { IconZhuShouGuanLi2, type IconZhuShouGuanLi2Props } from './icons/IconZhuShouGuanLi2';
 export { IconZleapBrandLogo, type IconZleapBrandLogoProps } from './icons/IconZleapBrandLogo';
 export { IconZuo, type IconZuoProps } from './icons/IconZuo';
 
@@ -487,6 +493,7 @@ export const allIcons = {
   IconDaiShenHe,
   IconDeleteOutline,
   IconDongTai,
+  IconDongTai2,
   IconDuiHuaKuangGuanBi,
   IconDuoXuan,
   IconEyeIcon,
@@ -608,6 +615,7 @@ export const allIcons = {
   IconShouCang,
   IconShouCang1,
   IconShouYe,
+  IconShouYe2,
   IconShuaXin,
   IconShuJuYuanTuBiao1,
   IconShuJuYuanTuBiao2,
@@ -681,6 +689,7 @@ export const allIcons = {
   IconZhiShiKu,
   IconZhuShou,
   IconZhuShouGuanLi,
+  IconZhuShouGuanLi2,
   IconZleapBrandLogo,
   IconZuo
 } as const;
