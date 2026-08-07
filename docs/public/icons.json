@@ -1,8 +1,41 @@
 {
-  "version": "2026.08.07",
-  "generatedAt": "2026-08-07T08:43:15.167Z",
-  "totalCount": 224,
+  "version": "1.0.0",
+  "generatedAt": "2026-08-07T08:44:34.785Z",
+  "totalCount": 227,
   "icons": [
+    {
+      "name": "IconAgent",
+      "originalName": "agent",
+      "svgPath": "svg/agent.svg",
+      "componentPath": "src/icons/IconAgent.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-08-07T08:44:34.785Z"
+    },
+    {
+      "name": "IconDynamic",
+      "originalName": "Dynamic",
+      "svgPath": "svg/Dynamic.svg",
+      "componentPath": "src/icons/IconDynamic.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-08-07T08:44:34.785Z"
+    },
+    {
+      "name": "IconIndex",
+      "originalName": "index",
+      "svgPath": "svg/index.svg",
+      "componentPath": "src/icons/IconIndex.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-08-07T08:44:34.785Z"
+    },
     {
       "name": "IconChengYuanGuanLi",
       "originalName": "成员管理",
