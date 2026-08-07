@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-08-07T08:23:52.128Z
+Generated at: 2026-08-07T08:25:32.138Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 224 |
+| Total Icons | 225 |
 | Valid Icons | 0 |
-| Invalid Icons | 224 |
-| Total Errors | 224 |
-| Total Warnings | 207 |
+| Invalid Icons | 225 |
+| Total Errors | 225 |
+| Total Warnings | 208 |
 
-⚠️ **224 icon(s) failed validation**
+⚠️ **225 icon(s) failed validation**
 
 ## Errors
 
-### size (224 errors)
+### size (225 errors)
 
 | Icon | Message |
 |------|---------|
@@ -244,10 +244,11 @@ Generated at: 2026-08-07T08:23:52.128Z
 | 预览 | Icon size 24x24 not in allowed sizes:  |
 | 预览1 | Icon size 24x24 not in allowed sizes:  |
 | 首页 | Icon size 24x24 not in allowed sizes:  |
+| 首页2 | Icon size 49x49 not in allowed sizes:  |
 
 ## Warnings
 
-### naming (174 warnings)
+### naming (175 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -425,6 +426,7 @@ Generated at: 2026-08-07T08:23:52.128Z
 | 预览 | Icon name "预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 首页2 | Icon name "首页2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
 ### size (33 warnings)
 

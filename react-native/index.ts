@@ -151,6 +151,7 @@ import { IconShiShiLuYin } from './icons/IconShiShiLuYin'
 import { IconShouCang } from './icons/IconShouCang'
 import { IconShouCang1 } from './icons/IconShouCang1'
 import { IconShouYe } from './icons/IconShouYe'
+import { IconShouYe2 } from './icons/IconShouYe2'
 import { IconShuaXin } from './icons/IconShuaXin'
 import { IconShuJuYuanTuBiao1 } from './icons/IconShuJuYuanTuBiao1'
 import { IconShuJuYuanTuBiao2 } from './icons/IconShuJuYuanTuBiao2'
@@ -376,6 +377,7 @@ export { IconShiShiLuYin, type IconShiShiLuYinProps } from './icons/IconShiShiLu
 export { IconShouCang, type IconShouCangProps } from './icons/IconShouCang'
 export { IconShouCang1, type IconShouCang1Props } from './icons/IconShouCang1'
 export { IconShouYe, type IconShouYeProps } from './icons/IconShouYe'
+export { IconShouYe2, type IconShouYe2Props } from './icons/IconShouYe2'
 export { IconShuaXin, type IconShuaXinProps } from './icons/IconShuaXin'
 export { IconShuJuYuanTuBiao1, type IconShuJuYuanTuBiao1Props } from './icons/IconShuJuYuanTuBiao1'
 export { IconShuJuYuanTuBiao2, type IconShuJuYuanTuBiao2Props } from './icons/IconShuJuYuanTuBiao2'
@@ -602,6 +604,7 @@ export const allIcons = {
   IconShouCang,
   IconShouCang1,
   IconShouYe,
+  IconShouYe2,
   IconShuaXin,
   IconShuJuYuanTuBiao1,
   IconShuJuYuanTuBiao2,
