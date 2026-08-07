@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-08-07T08:25:37.212Z
+Generated at: 2026-08-07T08:27:19.090Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 225 |
+| Total Icons | 226 |
 | Valid Icons | 0 |
-| Invalid Icons | 225 |
-| Total Errors | 225 |
-| Total Warnings | 208 |
+| Invalid Icons | 226 |
+| Total Errors | 226 |
+| Total Warnings | 209 |
 
-⚠️ **225 icon(s) failed validation**
+⚠️ **226 icon(s) failed validation**
 
 ## Errors
 
-### size (225 errors)
+### size (226 errors)
 
 | Icon | Message |
 |------|---------|
@@ -118,6 +118,7 @@ Generated at: 2026-08-07T08:25:37.212Z
 | 动态 | Icon size 48x48 not in allowed sizes:  |
 | 助手 | Icon size 24x24 not in allowed sizes:  |
 | 助手管理 | Icon size 24x24 not in allowed sizes:  |
+| 助手管理2 | Icon size 120x120 not in allowed sizes:  |
 | 勾选-已勾选 | Icon size 24x24 not in allowed sizes:  |
 | 勾选 | Icon size 24x24 not in allowed sizes:  |
 | 卡片布局 | Icon size 24x24 not in allowed sizes:  |
@@ -248,7 +249,7 @@ Generated at: 2026-08-07T08:25:37.212Z
 
 ## Warnings
 
-### naming (175 warnings)
+### naming (176 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -300,6 +301,7 @@ Generated at: 2026-08-07T08:25:37.212Z
 | 动态 | Icon name "动态" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 助手 | Icon name "助手" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 助手管理 | Icon name "助手管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 助手管理2 | Icon name "助手管理2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 勾选-已勾选 | Icon name "勾选-已勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 勾选 | Icon name "勾选" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 卡片布局 | Icon name "卡片布局" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-07T08:26:56.442Z",
+  "generatedAt": "2026-08-07T08:27:23.238Z",
   "totalCount": 226,
   "icons": [
     {
-      "name": "Icon助手管理2",
+      "name": "IconZhuShouGuanLi2",
       "originalName": "助手管理2",
       "svgPath": "svg/助手管理2.svg",
-      "componentPath": "src/icons/Icon助手管理2.tsx",
+      "componentPath": "src/icons/IconZhuShouGuanLi2.tsx",
       "size": {
         "width": 120,
         "height": 120
