@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-07T08:27:25.740Z",
-  "totalCount": 226,
+  "generatedAt": "2026-08-07T08:29:43.394Z",
+  "totalCount": 228,
   "icons": [
+    {
+      "name": "IconAgent2",
+      "originalName": "agent2",
+      "svgPath": "svg/agent2.svg",
+      "componentPath": "src/icons/IconAgent2.tsx",
+      "size": {
+        "width": 120,
+        "height": 120
+      },
+      "createdAt": "2026-08-07T08:29:43.394Z"
+    },
+    {
+      "name": "IconIndex2",
+      "originalName": "index2",
+      "svgPath": "svg/index2.svg",
+      "componentPath": "src/icons/IconIndex2.tsx",
+      "size": {
+        "width": 49,
+        "height": 49
+      },
+      "createdAt": "2026-08-07T08:29:43.394Z"
+    },
     {
       "name": "IconZhuShouGuanLi2",
       "originalName": "助手管理2",
