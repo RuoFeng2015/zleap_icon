@@ -1,8 +1,118 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-07T08:45:06.539Z",
-  "totalCount": 227,
+  "generatedAt": "2026-08-12T07:51:15.959Z",
+  "totalCount": 237,
   "icons": [
+    {
+      "name": "Icon0AllThreeNofocus",
+      "originalName": "0-all-three-nofocus",
+      "svgPath": "svg/0-all-three-nofocus.svg",
+      "componentPath": "src/icons/Icon0AllThreeNofocus.tsx",
+      "size": {
+        "width": 85,
+        "height": 85
+      },
+      "createdAt": "2026-08-12T07:51:15.959Z"
+    },
+    {
+      "name": "Icon1Close1Normal",
+      "originalName": "1-close-1-normal",
+      "svgPath": "svg/1-close-1-normal.svg",
+      "componentPath": "src/icons/Icon1Close1Normal.tsx",
+      "size": {
+        "width": 85,
+        "height": 85
+      },
+      "createdAt": "2026-08-12T07:51:15.959Z"
+    },
+    {
+      "name": "Icon2Close2Hover",
+      "originalName": "2-close-2-hover",
+      "svgPath": "svg/2-close-2-hover.svg",
+      "componentPath": "src/icons/Icon2Close2Hover.tsx",
+      "size": {
+        "width": 85,
+        "height": 85
+      },
+      "createdAt": "2026-08-12T07:51:15.959Z"
+    },
+    {
+      "name": "Icon2Close3Press",
+      "originalName": "2-close-3-press",
+      "svgPath": "svg/2-close-3-press.svg",
+      "componentPath": "src/icons/Icon2Close3Press.tsx",
+      "size": {
+        "width": 85,
+        "height": 85
+      },
+      "createdAt": "2026-08-12T07:51:15.959Z"
+    },
+    {
+      "name": "Icon2Minimize1Normal",
+      "originalName": "2-minimize-1-normal",
+      "svgPath": "svg/2-minimize-1-normal.svg",
+      "componentPath": "src/icons/Icon2Minimize1Normal.tsx",
+      "size": {
+        "width": 85,
+        "height": 85
+      },
+      "createdAt": "2026-08-12T07:51:15.959Z"
+    },
+    {
+      "name": "Icon2Minimize2Hover",
+      "originalName": "2-minimize-2-hover",
+      "svgPath": "svg/2-minimize-2-hover.svg",
+      "componentPath": "src/icons/Icon2Minimize2Hover.tsx",
+      "size": {
+        "width": 85,
+        "height": 85
+      },
+      "createdAt": "2026-08-12T07:51:15.959Z"
+    },
+    {
+      "name": "Icon2Minimize3Press",
+      "originalName": "2-minimize-3-press",
+      "svgPath": "svg/2-minimize-3-press.svg",
+      "componentPath": "src/icons/Icon2Minimize3Press.tsx",
+      "size": {
+        "width": 85,
+        "height": 85
+      },
+      "createdAt": "2026-08-12T07:51:15.959Z"
+    },
+    {
+      "name": "Icon3Maximize1Normal",
+      "originalName": "3-maximize-1-normal",
+      "svgPath": "svg/3-maximize-1-normal.svg",
+      "componentPath": "src/icons/Icon3Maximize1Normal.tsx",
+      "size": {
+        "width": 85,
+        "height": 85
+      },
+      "createdAt": "2026-08-12T07:51:15.959Z"
+    },
+    {
+      "name": "Icon3Maximize2Hover",
+      "originalName": "3-maximize-2-hover",
+      "svgPath": "svg/3-maximize-2-hover.svg",
+      "componentPath": "src/icons/Icon3Maximize2Hover.tsx",
+      "size": {
+        "width": 85,
+        "height": 85
+      },
+      "createdAt": "2026-08-12T07:51:15.959Z"
+    },
+    {
+      "name": "Icon3Maximize3Press",
+      "originalName": "3-maximize-3-press",
+      "svgPath": "svg/3-maximize-3-press.svg",
+      "componentPath": "src/icons/Icon3Maximize3Press.tsx",
+      "size": {
+        "width": 85,
+        "height": 85
+      },
+      "createdAt": "2026-08-12T07:51:15.959Z"
+    },
     {
       "name": "IconAgent",
       "originalName": "agent",
