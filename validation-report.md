@@ -1,25 +1,35 @@
 # Icon Validation Report
 
-Generated at: 2026-08-07T08:45:02.347Z
+Generated at: 2026-08-12T07:51:41.858Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 227 |
+| Total Icons | 237 |
 | Valid Icons | 0 |
-| Invalid Icons | 227 |
-| Total Errors | 227 |
-| Total Warnings | 208 |
+| Invalid Icons | 237 |
+| Total Errors | 237 |
+| Total Warnings | 228 |
 
-⚠️ **227 icon(s) failed validation**
+⚠️ **237 icon(s) failed validation**
 
 ## Errors
 
-### size (227 errors)
+### size (237 errors)
 
 | Icon | Message |
 |------|---------|
+| 0-all-three-nofocus | Icon size 85x85 not in allowed sizes:  |
+| 1-close-1-normal | Icon size 85x85 not in allowed sizes:  |
+| 2-close-2-hover | Icon size 85x85 not in allowed sizes:  |
+| 2-close-3-press | Icon size 85x85 not in allowed sizes:  |
+| 2-minimize-1-normal | Icon size 85x85 not in allowed sizes:  |
+| 2-minimize-2-hover | Icon size 85x85 not in allowed sizes:  |
+| 2-minimize-3-press | Icon size 85x85 not in allowed sizes:  |
+| 3-maximize-1-normal | Icon size 85x85 not in allowed sizes:  |
+| 3-maximize-2-hover | Icon size 85x85 not in allowed sizes:  |
+| 3-maximize-3-press | Icon size 85x85 not in allowed sizes:  |
 | AI | Icon size 36x36 not in allowed sizes:  |
 | AI1 | Icon size 132x87 not in allowed sizes:  |
 | Dynamic | Icon size 48x48 not in allowed sizes:  |
@@ -250,10 +260,30 @@ Generated at: 2026-08-07T08:45:02.347Z
 
 ## Warnings
 
-### naming (175 warnings)
+### naming (195 warnings)
 
 | Icon | Message |
 |------|---------|
+| 0-all-three-nofocus | Icon name "0-all-three-nofocus" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 0-all-three-nofocus | Icon name "0-all-three-nofocus" starts with a number |
+| 1-close-1-normal | Icon name "1-close-1-normal" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 1-close-1-normal | Icon name "1-close-1-normal" starts with a number |
+| 2-close-2-hover | Icon name "2-close-2-hover" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 2-close-2-hover | Icon name "2-close-2-hover" starts with a number |
+| 2-close-3-press | Icon name "2-close-3-press" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 2-close-3-press | Icon name "2-close-3-press" starts with a number |
+| 2-minimize-1-normal | Icon name "2-minimize-1-normal" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 2-minimize-1-normal | Icon name "2-minimize-1-normal" starts with a number |
+| 2-minimize-2-hover | Icon name "2-minimize-2-hover" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 2-minimize-2-hover | Icon name "2-minimize-2-hover" starts with a number |
+| 2-minimize-3-press | Icon name "2-minimize-3-press" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 2-minimize-3-press | Icon name "2-minimize-3-press" starts with a number |
+| 3-maximize-1-normal | Icon name "3-maximize-1-normal" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 3-maximize-1-normal | Icon name "3-maximize-1-normal" starts with a number |
+| 3-maximize-2-hover | Icon name "3-maximize-2-hover" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 3-maximize-2-hover | Icon name "3-maximize-2-hover" starts with a number |
+| 3-maximize-3-press | Icon name "3-maximize-3-press" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 3-maximize-3-press | Icon name "3-maximize-3-press" starts with a number |
 | AI | Icon name "AI" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | AI1 | Icon name "AI1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Dynamic | Icon name "Dynamic" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

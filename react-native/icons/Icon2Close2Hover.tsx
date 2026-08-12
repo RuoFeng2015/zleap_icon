@@ -1,0 +1,36 @@
+import React, { forwardRef, useMemo } from 'react'
+import type { ComponentProps } from 'react'
+import { SvgXml } from 'react-native-svg'
+
+export interface Icon2Close2HoverProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+  size?: number | string
+  color?: string
+}
+
+export const Icon2Close2Hover = forwardRef<unknown, Icon2Close2HoverProps>(
+  ({ size = 24, color, ...props }, ref) => {
+    const baseXml = useMemo(
+      () => `<svg viewBox="0 0 85.4 85.4"><g fill-rule="evenodd" clip-rule="evenodd"><path fill="#e24b41" d="M42.7 85.4c23.6 0 42.7-19.1 42.7-42.7S66.3 0 42.7 0 0 19.1 0 42.7s19.1 42.7 42.7 42.7"/><path fill="#ed6a5f" d="M42.7 81.8c21.6 0 39.1-17.5 39.1-39.1S64.3 3.6 42.7 3.6 3.6 21.1 3.6 42.7s17.5 39.1 39.1 39.1"/><g fill="#460804"><path d="m22.5 57.8 35.3-35.3c1.4-1.4 3.6-1.4 5 0l.1.1c1.4 1.4 1.4 3.6 0 5L27.6 62.9c-1.4 1.4-3.6 1.4-5 0l-.1-.1c-1.3-1.4-1.3-3.6 0-5"/><path d="m27.6 22.5 35.3 35.3c1.4 1.4 1.4 3.6 0 5l-.1.1c-1.4 1.4-3.6 1.4-5 0L22.5 27.6c-1.4-1.4-1.4-3.6 0-5l.1-.1c1.4-1.3 3.6-1.3 5 0"/></g></g></svg>`,
+      [],
+    )
+
+    const xml = useMemo(() => {
+      return baseXml
+    }, [baseXml, color])
+
+    return (
+      <SvgXml
+        ref={ref as never}
+        xml={xml}
+        width={size}
+        height={size}
+        viewBox="0 0 85.4 85.4"
+        {...props}
+      />
+    )
+  },
+)
+
+Icon2Close2Hover.displayName = 'Icon2Close2Hover'
+
+export default Icon2Close2Hover
