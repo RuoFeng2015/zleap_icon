@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-08-12T07:51:42.540Z
+Generated at: 2026-08-20T09:52:42.334Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 237 |
+| Total Icons | 238 |
 | Valid Icons | 0 |
-| Invalid Icons | 237 |
-| Total Errors | 237 |
-| Total Warnings | 228 |
+| Invalid Icons | 238 |
+| Total Errors | 238 |
+| Total Warnings | 229 |
 
-⚠️ **237 icon(s) failed validation**
+⚠️ **238 icon(s) failed validation**
 
 ## Errors
 
-### size (237 errors)
+### size (238 errors)
 
 | Icon | Message |
 |------|---------|
@@ -184,6 +184,7 @@ Generated at: 2026-08-12T07:51:42.540Z
 | 数据源图标-1 | Icon size 36x36 not in allowed sizes:  |
 | 数据源图标-2 | Icon size 36x36 not in allowed sizes:  |
 | 数据源图标-3 | Icon size 36x36 not in allowed sizes:  |
+| 文件夹-new | Icon size 200x200 not in allowed sizes:  |
 | 文件夹-公开 | Icon size 24x24 not in allowed sizes:  |
 | 文件夹-列表 | Icon size 24x24 not in allowed sizes:  |
 | 文件夹-卡片 | Icon size 24x24 not in allowed sizes:  |
@@ -260,7 +261,7 @@ Generated at: 2026-08-12T07:51:42.540Z
 
 ## Warnings
 
-### naming (195 warnings)
+### naming (196 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -386,6 +387,7 @@ Generated at: 2026-08-12T07:51:42.540Z
 | 数据源图标-1 | Icon name "数据源图标-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 数据源图标-2 | Icon name "数据源图标-2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 数据源图标-3 | Icon name "数据源图标-3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 文件夹-new | Icon name "文件夹-new" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹-公开 | Icon name "文件夹-公开" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹-列表 | Icon name "文件夹-列表" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹-卡片 | Icon name "文件夹-卡片" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
