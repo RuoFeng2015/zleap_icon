@@ -1,16 +1,27 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-12T07:51:15.959Z",
-  "totalCount": 237,
+  "generatedAt": "2026-08-20T09:52:12.475Z",
+  "totalCount": 238,
   "icons": [
+    {
+      "name": "Icon文件夹New",
+      "originalName": "文件夹-new",
+      "svgPath": "svg/文件夹-new.svg",
+      "componentPath": "src/icons/Icon文件夹New.tsx",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "createdAt": "2026-08-20T09:52:12.475Z"
+    },
     {
       "name": "Icon0AllThreeNofocus",
       "originalName": "0-all-three-nofocus",
       "svgPath": "svg/0-all-three-nofocus.svg",
       "componentPath": "src/icons/Icon0AllThreeNofocus.tsx",
       "size": {
-        "width": 85,
-        "height": 85
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-08-12T07:51:15.959Z"
     },
@@ -20,8 +31,8 @@
       "svgPath": "svg/1-close-1-normal.svg",
       "componentPath": "src/icons/Icon1Close1Normal.tsx",
       "size": {
-        "width": 85,
-        "height": 85
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-08-12T07:51:15.959Z"
     },
@@ -31,8 +42,8 @@
       "svgPath": "svg/2-close-2-hover.svg",
       "componentPath": "src/icons/Icon2Close2Hover.tsx",
       "size": {
-        "width": 85,
-        "height": 85
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-08-12T07:51:15.959Z"
     },
@@ -42,8 +53,8 @@
       "svgPath": "svg/2-close-3-press.svg",
       "componentPath": "src/icons/Icon2Close3Press.tsx",
       "size": {
-        "width": 85,
-        "height": 85
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-08-12T07:51:15.959Z"
     },
@@ -53,8 +64,8 @@
       "svgPath": "svg/2-minimize-1-normal.svg",
       "componentPath": "src/icons/Icon2Minimize1Normal.tsx",
       "size": {
-        "width": 85,
-        "height": 85
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-08-12T07:51:15.959Z"
     },
@@ -64,8 +75,8 @@
       "svgPath": "svg/2-minimize-2-hover.svg",
       "componentPath": "src/icons/Icon2Minimize2Hover.tsx",
       "size": {
-        "width": 85,
-        "height": 85
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-08-12T07:51:15.959Z"
     },
@@ -75,8 +86,8 @@
       "svgPath": "svg/2-minimize-3-press.svg",
       "componentPath": "src/icons/Icon2Minimize3Press.tsx",
       "size": {
-        "width": 85,
-        "height": 85
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-08-12T07:51:15.959Z"
     },
@@ -86,8 +97,8 @@
       "svgPath": "svg/3-maximize-1-normal.svg",
       "componentPath": "src/icons/Icon3Maximize1Normal.tsx",
       "size": {
-        "width": 85,
-        "height": 85
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-08-12T07:51:15.959Z"
     },
@@ -97,8 +108,8 @@
       "svgPath": "svg/3-maximize-2-hover.svg",
       "componentPath": "src/icons/Icon3Maximize2Hover.tsx",
       "size": {
-        "width": 85,
-        "height": 85
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-08-12T07:51:15.959Z"
     },
@@ -108,8 +119,8 @@
       "svgPath": "svg/3-maximize-3-press.svg",
       "componentPath": "src/icons/Icon3Maximize3Press.tsx",
       "size": {
-        "width": 85,
-        "height": 85
+        "width": 24,
+        "height": 24
       },
       "createdAt": "2026-08-12T07:51:15.959Z"
     },
