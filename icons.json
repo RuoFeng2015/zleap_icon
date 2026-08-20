@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-12T07:51:46.815Z",
-  "totalCount": 237,
+  "generatedAt": "2026-08-20T09:52:12.475Z",
+  "totalCount": 238,
   "icons": [
+    {
+      "name": "Icon文件夹New",
+      "originalName": "文件夹-new",
+      "svgPath": "svg/文件夹-new.svg",
+      "componentPath": "src/icons/Icon文件夹New.tsx",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "createdAt": "2026-08-20T09:52:12.475Z"
+    },
     {
       "name": "Icon0AllThreeNofocus",
       "originalName": "0-all-three-nofocus",
