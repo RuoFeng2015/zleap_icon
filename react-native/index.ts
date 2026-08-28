@@ -13,6 +13,7 @@ import { Icon3Maximize1Normal } from './icons/Icon3Maximize1Normal'
 import { Icon3Maximize2Hover } from './icons/Icon3Maximize2Hover'
 import { Icon3Maximize3Press } from './icons/Icon3Maximize3Press'
 import { IconAgent } from './icons/IconAgent'
+import { IconAGENTOSWenJianJia } from './icons/IconAGENTOSWenJianJia'
 import { IconAi } from './icons/IconAi'
 import { IconAi1 } from './icons/IconAi1'
 import { IconBack } from './icons/IconBack'
@@ -252,6 +253,7 @@ export { Icon3Maximize1Normal, type Icon3Maximize1NormalProps } from './icons/Ic
 export { Icon3Maximize2Hover, type Icon3Maximize2HoverProps } from './icons/Icon3Maximize2Hover'
 export { Icon3Maximize3Press, type Icon3Maximize3PressProps } from './icons/Icon3Maximize3Press'
 export { IconAgent, type IconAgentProps } from './icons/IconAgent'
+export { IconAGENTOSWenJianJia, type IconAGENTOSWenJianJiaProps } from './icons/IconAGENTOSWenJianJia'
 export { IconAi, type IconAiProps } from './icons/IconAi'
 export { IconAi1, type IconAi1Props } from './icons/IconAi1'
 export { IconBack, type IconBackProps } from './icons/IconBack'
@@ -492,6 +494,7 @@ export const allIcons = {
   Icon3Maximize2Hover,
   Icon3Maximize3Press,
   IconAgent,
+  IconAGENTOSWenJianJia,
   IconAi,
   IconAi1,
   IconBack,

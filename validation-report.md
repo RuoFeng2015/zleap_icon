@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-08-20T09:52:42.334Z
+Generated at: 2026-08-28T03:23:06.529Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 238 |
+| Total Icons | 239 |
 | Valid Icons | 0 |
-| Invalid Icons | 238 |
-| Total Errors | 238 |
-| Total Warnings | 229 |
+| Invalid Icons | 239 |
+| Total Errors | 239 |
+| Total Warnings | 230 |
 
-⚠️ **238 icon(s) failed validation**
+⚠️ **239 icon(s) failed validation**
 
 ## Errors
 
-### size (238 errors)
+### size (239 errors)
 
 | Icon | Message |
 |------|---------|
@@ -43,6 +43,7 @@ Generated at: 2026-08-20T09:52:42.334Z
 | Frame4 | Icon size 476x435 not in allowed sizes:  |
 | Frame5 | Icon size 42x42 not in allowed sizes:  |
 | Icon | Icon size 15x15 not in allowed sizes:  |
+| agent-os文件夹 | Icon size 24x24 not in allowed sizes:  |
 | agent | Icon size 120x120 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
@@ -184,7 +185,7 @@ Generated at: 2026-08-20T09:52:42.334Z
 | 数据源图标-1 | Icon size 36x36 not in allowed sizes:  |
 | 数据源图标-2 | Icon size 36x36 not in allowed sizes:  |
 | 数据源图标-3 | Icon size 36x36 not in allowed sizes:  |
-| 文件夹-new | Icon size 200x200 not in allowed sizes:  |
+| 文件夹-new | Icon size 1024x1024 not in allowed sizes:  |
 | 文件夹-公开 | Icon size 24x24 not in allowed sizes:  |
 | 文件夹-列表 | Icon size 24x24 not in allowed sizes:  |
 | 文件夹-卡片 | Icon size 24x24 not in allowed sizes:  |
@@ -261,7 +262,7 @@ Generated at: 2026-08-20T09:52:42.334Z
 
 ## Warnings
 
-### naming (196 warnings)
+### naming (197 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -298,6 +299,7 @@ Generated at: 2026-08-20T09:52:42.334Z
 | Frame4 | Icon name "Frame4" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Frame5 | Icon name "Frame5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | Icon | Icon name "Icon" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| agent-os文件夹 | Icon name "agent-os文件夹" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 上传音频 | Icon name "上传音频" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉 | Icon name "下拉" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉收起 | Icon name "下拉收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
