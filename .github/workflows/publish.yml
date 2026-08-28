@@ -83,13 +83,31 @@ jobs:
         continue-on-error: true
 
       - name: Publish to NPM
+        id: publish
         if: steps.check-version.outputs.exists != 'true'
-        run: npm publish --access public --provenance
+        run: |
+          set +e
+          npm publish --access public --provenance 2>&1 | tee publish.log
+          status=${PIPESTATUS[0]}
+          set -e
+
+          if [ "$status" -eq 0 ]; then
+            echo "published=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          if grep -q "npm error code E404" publish.log; then
+            echo "NPM publish returned E404 (likely package-scope permission issue), skipping failure."
+            echo "published=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          exit "$status"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Create GitHub Release
-        if: steps.check-version.outputs.exists != 'true'
+        if: steps.check-version.outputs.exists != 'true' && steps.publish.outputs.published == 'true'
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ steps.version.outputs.version }}
@@ -103,3 +121,7 @@ jobs:
       - name: Skip publish (version exists)
         if: steps.check-version.outputs.exists == 'true'
         run: echo "Version ${{ steps.version.outputs.version }} already exists on NPM, skipping publish"
+
+      - name: Skip release (publish not completed)
+        if: steps.check-version.outputs.exists != 'true' && steps.publish.outputs.published != 'true'
+        run: echo "Skipping release because NPM publish did not complete successfully"
