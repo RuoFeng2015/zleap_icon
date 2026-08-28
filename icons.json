@@ -1,8 +1,19 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-08-20T09:52:45.958Z",
-  "totalCount": 238,
+  "generatedAt": "2026-08-28T03:22:33.313Z",
+  "totalCount": 239,
   "icons": [
+    {
+      "name": "IconAgentOs文件夹",
+      "originalName": "agent-os文件夹",
+      "svgPath": "svg/agent-os文件夹.svg",
+      "componentPath": "src/icons/IconAgentOs文件夹.tsx",
+      "size": {
+        "width": 24,
+        "height": 24
+      },
+      "createdAt": "2026-08-28T03:22:33.313Z"
+    },
     {
       "name": "IconWenJianJiaNEW",
       "originalName": "文件夹-new",
