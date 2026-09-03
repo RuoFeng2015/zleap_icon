@@ -1,0 +1,53 @@
+import React, { forwardRef, useMemo } from 'react'
+import type { ComponentProps } from 'react'
+import { SvgXml } from 'react-native-svg'
+
+export interface IconChaXunShiJianProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+  size?: number | string
+  color?: string
+}
+
+export const IconChaXunShiJian = forwardRef<unknown, IconChaXunShiJianProps>(
+  ({ size = 24, color, ...props }, ref) => {
+    const baseXml = useMemo(
+      () => `<svg fill="none" viewBox="0 0 48 48"><g filter="url(#a)"><rect width="48" height="48" fill="url(#b)" rx="12"/><path fill="url(#c)" stroke="url(#d)" stroke-width=".403" d="M39.184 24.603c0 1.276-.356 2.512-1.124 3.544-.924 1.236-2.348 2.096-3.833 2.472-.78.195-1.544.18-2.34.18a.582.582 0 0 1-.536-.8c.852-2.26.592-4.996-.772-7.02-2.832-4.704-10.312-4.696-13.144 0-1.364 2.016-1.62 4.764-.772 7.02a.583.583 0 0 1-.536.8H14.55c-6.636.067-7.952-9.452-1.616-11.16-.22-3.344 3.504-5.74 6.52-4.396 3.564-5.948 13.853-3.736 14.429 3.252 3.008.48 5.3 3.032 5.3 6.108Z"/><path fill="url(#e)" d="m32.25 33.747-2.762-2.8a6.5 6.5 0 0 0 1.066-3.574c0-3.614-2.936-6.543-6.558-6.543-3.623 0-6.558 2.929-6.558 6.543s2.935 6.543 6.558 6.543a6.56 6.56 0 0 0 3.424-.961l2.772 2.81c.283.287.655.43 1.03.43s.731-.138 1.011-.414c.568-.559.576-1.47.016-2.036zm-8.254-1.485c-2.701 0-4.898-2.192-4.898-4.887s2.197-4.886 4.898-4.886 4.897 2.192 4.897 4.886-2.196 4.887-4.897 4.887"/><path fill="url(#f)" d="M19.977 27.453c0-2.216 1.685-4.107 3.873-4.107.369 0 .668.297.668.663a.665.665 0 0 1-.668.662c-1.351 0-2.538 1.195-2.538 2.782a.665.665 0 0 1-.668.662.665.665 0 0 1-.667-.662"/></g><defs><linearGradient id="c" x1="22.204" x2="22.405" y1="7.873" y2="38.124" gradientUnits="userSpaceOnUse"><stop stop-color="#FEFBFB"/><stop offset="1" stop-color="#FFAA21"/></linearGradient><linearGradient id="d" x1="24" x2="24" y1="11.806" y2="30.799" gradientUnits="userSpaceOnUse"><stop offset=".232" stop-color="#FFF8EB"/><stop offset="1" stop-color="#FF9A37"/></linearGradient><linearGradient id="e" x1="26.049" x2="40.542" y1="19.462" y2="52.383" gradientUnits="userSpaceOnUse"><stop stop-color="#FEFBFB"/><stop offset=".5" stop-color="#FED38E"/><stop offset="1" stop-color="#FFAA21"/></linearGradient><linearGradient id="f" x1="22.247" x2="22.204" y1="23.346" y2="34.09" gradientUnits="userSpaceOnUse"><stop stop-color="#FEFBFB"/><stop offset="1" stop-color="#FFAA21"/></linearGradient><radialGradient id="b" cx="0" cy="0" r="1" gradientTransform="rotate(96.551 20.697 5.981)scale(60.4066)" gradientUnits="userSpaceOnUse"><stop offset=".564" stop-color="#FBA601"/><stop offset="1" stop-color="#FE810D"/></radialGradient><filter id="a" width="49.2" height="49.2" x="-.6" y="-.6" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".6" dy=".6"/><feGaussianBlur stdDeviation=".3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.35 0"/><feBlend in2="shape" mode="normal" result="effect1_innerShadow_1063_1503"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.6" dy="-.6"/><feGaussianBlur stdDeviation=".3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.71095 0 0 0 0 0.495497 0 0 0 0 0.276453 0 0 0 0.8 0"/><feBlend in2="effect1_innerShadow_1063_1503" mode="normal" result="effect2_innerShadow_1063_1503"/></filter></defs></svg>`,
+      [],
+    )
+
+    const xml = useMemo(() => {
+      if (!color) return baseXml
+      return baseXml.replace(
+        /(fill|stroke)="([^"]+)"/gi,
+        (_match, attr, value) => {
+          const normalized = String(value).toLowerCase().replace(/\s/g, '')
+          if (
+            normalized === 'none' ||
+            normalized === 'currentcolor' ||
+            normalized === 'white' ||
+            normalized === '#fff' ||
+            normalized === '#ffffff' ||
+            normalized.startsWith('url(')
+          ) {
+            return `${attr}="${value}"`
+          }
+          return `${attr}="${color}"`
+        },
+      )
+    }, [baseXml, color])
+
+    return (
+      <SvgXml
+        ref={ref as never}
+        xml={xml}
+        width={size}
+        height={size}
+        viewBox="0 0 48 48"
+        {...props}
+      />
+    )
+  },
+)
+
+IconChaXunShiJian.displayName = 'IconChaXunShiJian'
+
+export default IconChaXunShiJian
