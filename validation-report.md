@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-08-28T03:23:05.761Z
+Generated at: 2026-09-03T06:47:40.484Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 239 |
+| Total Icons | 249 |
 | Valid Icons | 0 |
-| Invalid Icons | 239 |
-| Total Errors | 239 |
-| Total Warnings | 230 |
+| Invalid Icons | 249 |
+| Total Errors | 250 |
+| Total Warnings | 241 |
 
-⚠️ **239 icon(s) failed validation**
+⚠️ **249 icon(s) failed validation**
 
 ## Errors
 
-### size (239 errors)
+### size (249 errors)
 
 | Icon | Message |
 |------|---------|
@@ -43,7 +43,7 @@ Generated at: 2026-08-28T03:23:05.761Z
 | Frame4 | Icon size 476x435 not in allowed sizes:  |
 | Frame5 | Icon size 42x42 not in allowed sizes:  |
 | Icon | Icon size 15x15 not in allowed sizes:  |
-| agent-os文件夹 | Icon size 24x24 not in allowed sizes:  |
+| agent-os文件夹 | Icon size 544x173 not in allowed sizes:  |
 | agent | Icon size 120x120 not in allowed sizes:  |
 | back | Icon size 24x24 not in allowed sizes:  |
 | check | Icon size 24x24 not in allowed sizes:  |
@@ -99,6 +99,7 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 上传音频 | Icon size 24x24 not in allowed sizes:  |
 | 下拉 | Icon size 24x24 not in allowed sizes:  |
 | 下拉收起 | Icon size 24x24 not in allowed sizes:  |
+| 云文档 | Icon size 48x48 not in allowed sizes:  |
 | 任务 | Icon size 20x20 not in allowed sizes:  |
 | 任务1 | Icon size 20x20 not in allowed sizes:  |
 | 任务管理 | Icon size 120x120 not in allowed sizes:  |
@@ -164,6 +165,7 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 开启新对话 | Icon size 24x24 not in allowed sizes:  |
 | 录音 | Icon size 24x24 not in allowed sizes:  |
 | 录音1 | Icon size 24x24 not in allowed sizes:  |
+| 待办 | Icon size 48x48 not in allowed sizes:  |
 | 待审核 | Icon size 180x180 not in allowed sizes:  |
 | 微信好友 | Icon size 24x24 not in allowed sizes:  |
 | 快进15秒 | Icon size 24x24 not in allowed sizes:  |
@@ -182,6 +184,8 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 收藏1 | Icon size 24x24 not in allowed sizes:  |
 | 教育 | Icon size 216x87 not in allowed sizes:  |
 | 教育1 | Icon size 36x36 not in allowed sizes:  |
+| 教育2 | Icon size 48x48 not in allowed sizes:  |
+| 数据库 | Icon size 48x48 not in allowed sizes:  |
 | 数据源图标-1 | Icon size 36x36 not in allowed sizes:  |
 | 数据源图标-2 | Icon size 36x36 not in allowed sizes:  |
 | 数据源图标-3 | Icon size 36x36 not in allowed sizes:  |
@@ -191,6 +195,7 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 文件夹-卡片 | Icon size 24x24 not in allowed sizes:  |
 | 文件夹-私密 | Icon size 24x24 not in allowed sizes:  |
 | 文件夹 | Icon size 24x24 not in allowed sizes:  |
+| 文件夹1 | Icon size 48x48 not in allowed sizes:  |
 | 文化体育-1 | Icon size 186x87 not in allowed sizes:  |
 | 文档 | Icon size 24x24 not in allowed sizes:  |
 | 文档上传 | Icon size 24x24 not in allowed sizes:  |
@@ -209,6 +214,7 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 汽车 | Icon size 132x87 not in allowed sizes:  |
 | 浏览器插件 | Icon size 24x24 not in allowed sizes:  |
 | 消息 | Icon size 24x24 not in allowed sizes:  |
+| 消息1 | Icon size 48x48 not in allowed sizes:  |
 | 清除-已读 | Icon size 24x24 not in allowed sizes:  |
 | 申请成功 | Icon size 70x70 not in allowed sizes:  |
 | 知识库 | Icon size 24x24 not in allowed sizes:  |
@@ -225,14 +231,17 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 筛选1 | Icon size 24x24 not in allowed sizes:  |
 | 筛选2 | Icon size 24x24 not in allowed sizes:  |
 | 系统配置 | Icon size 48x48 not in allowed sizes:  |
+| 终端 | Icon size 48x48 not in allowed sizes:  |
 | 编辑 | Icon size 24x24 not in allowed sizes:  |
 | 职场 | Icon size 132x87 not in allowed sizes:  |
 | 职场1 | Icon size 36x36 not in allowed sizes:  |
 | 联系人1 | Icon size 24x24 not in allowed sizes:  |
 | 联系人2 | Icon size 24x24 not in allowed sizes:  |
 | 联系人3 | Icon size 48x48 not in allowed sizes:  |
+| 视频工作室 | Icon size 48x48 not in allowed sizes:  |
 | 设置 | Icon size 24x24 not in allowed sizes:  |
 | 设置1 | Icon size 24x24 not in allowed sizes:  |
+| 设置2 | Icon size 48x48 not in allowed sizes:  |
 | 评论 | Icon size 24x24 not in allowed sizes:  |
 | 语雀知识库 | Icon size 24x24 not in allowed sizes:  |
 | 财经-1 | Icon size 36x36 not in allowed sizes:  |
@@ -259,10 +268,17 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 预览 | Icon size 24x24 not in allowed sizes:  |
 | 预览1 | Icon size 24x24 not in allowed sizes:  |
 | 首页 | Icon size 24x24 not in allowed sizes:  |
+| 首页1 | Icon size 48x48 not in allowed sizes:  |
+
+### forbidden-elements (1 error)
+
+| Icon | Message |
+|------|---------|
+| 设置2 | Icon contains forbidden elements: foreignObject |
 
 ## Warnings
 
-### naming (197 warnings)
+### naming (207 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -303,6 +319,7 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 上传音频 | Icon name "上传音频" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉 | Icon name "下拉" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 下拉收起 | Icon name "下拉收起" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 云文档 | Icon name "云文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 任务 | Icon name "任务" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 任务1 | Icon name "任务1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 任务管理 | Icon name "任务管理" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -368,6 +385,7 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 开启新对话 | Icon name "开启新对话" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 录音 | Icon name "录音" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 录音1 | Icon name "录音1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 待办 | Icon name "待办" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 待审核 | Icon name "待审核" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 微信好友 | Icon name "微信好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 快进15秒 | Icon name "快进15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -386,6 +404,8 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 收藏1 | Icon name "收藏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育 | Icon name "教育" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 教育1 | Icon name "教育1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 教育2 | Icon name "教育2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 数据库 | Icon name "数据库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 数据源图标-1 | Icon name "数据源图标-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 数据源图标-2 | Icon name "数据源图标-2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 数据源图标-3 | Icon name "数据源图标-3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -395,6 +415,7 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 文件夹-卡片 | Icon name "文件夹-卡片" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹-私密 | Icon name "文件夹-私密" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文件夹 | Icon name "文件夹" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 文件夹1 | Icon name "文件夹1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文化体育-1 | Icon name "文化体育-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档 | Icon name "文档" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 文档上传 | Icon name "文档上传" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -413,6 +434,7 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 汽车 | Icon name "汽车" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 浏览器插件 | Icon name "浏览器插件" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 消息 | Icon name "消息" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 消息1 | Icon name "消息1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 清除-已读 | Icon name "清除-已读" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 申请成功 | Icon name "申请成功" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 知识库 | Icon name "知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -429,14 +451,17 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 筛选1 | Icon name "筛选1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 筛选2 | Icon name "筛选2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 系统配置 | Icon name "系统配置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 终端 | Icon name "终端" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 编辑 | Icon name "编辑" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场 | Icon name "职场" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 职场1 | Icon name "职场1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人1 | Icon name "联系人1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人2 | Icon name "联系人2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人3 | Icon name "联系人3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 视频工作室 | Icon name "视频工作室" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置 | Icon name "设置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置1 | Icon name "设置1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 设置2 | Icon name "设置2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 评论 | Icon name "评论" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 语雀知识库 | Icon name "语雀知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 财经-1 | Icon name "财经-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -463,8 +488,9 @@ Generated at: 2026-08-28T03:23:05.761Z
 | 预览 | Icon name "预览" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 首页1 | Icon name "首页1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
-### size (33 warnings)
+### size (34 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -472,6 +498,7 @@ Generated at: 2026-08-28T03:23:05.761Z
 | Frame-1261156360 | Icon is not square: 1440x961 |
 | Frame3 | Icon is not square: 1440x961 |
 | Frame4 | Icon is not square: 476x435 |
+| agent-os文件夹 | Icon is not square: 544x173 |
 | header-logo | Icon is not square: 45x37 |
 | logo | Icon is not square: 45x37 |
 | menu-home-active | Icon is not square: 12x8 |
