@@ -203,7 +203,7 @@ const cleanFigmaExport: CustomPlugin = {
 
 /**
  * Default SVGO configuration for icon optimization
- * - Removes dimensions (width/height)
+ * - Preserves dimensions (width/height) and xmlns so icons render when loaded as standalone/images
  * - Preserves original colors (不替换为 currentColor)
  * - Removes unnecessary metadata
  * - Cleans up Figma export artifacts

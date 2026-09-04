@@ -137,7 +137,7 @@ describe('Property 3: SVG Optimization Invariants', () => {
    *
    * For any valid SVG input, after SVG_Transformer processing:
    * - The output size SHALL be less than or equal to the input size
-   * - The output SHALL NOT contain width/height attributes
+   * - The output SHALL preserve width/height attributes (so icons render when loaded as standalone/images)
    * - All color values SHALL be replaced with "currentColor"
    * - All attribute names SHALL be in JSX camelCase format
    */
@@ -152,11 +152,11 @@ describe('Property 3: SVG Optimization Invariants', () => {
     )
   })
 
-  it('optimized SVG should not contain fixed width/height attributes', () => {
+  it('optimized SVG should preserve fixed width/height attributes', () => {
     fc.assert(
       fc.property(svgArbitrary, (svg) => {
         const result = transformSvg(svg)
-        expect(hasFixedDimensions(result.svgContent)).toBe(false)
+        expect(hasFixedDimensions(result.svgContent)).toBe(true)
       }),
       { numRuns: 100 }
     )
@@ -302,7 +302,7 @@ describe('Property 4: SVG Structure Round-Trip', () => {
         expect(result.svgContent).toMatch(/<\/svg>$/)
 
         // Should have balanced tags (basic check)
-        const openTags = (result.svgContent.match(/<[a-z][^/>]*>/gi) || [])
+        const openTags = (result.svgContent.match(/<[a-z][^>]*[^/]>/gi) || [])
           .length
         const closeTags = (result.svgContent.match(/<\/[a-z]+>/gi) || []).length
 

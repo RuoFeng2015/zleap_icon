@@ -199,9 +199,10 @@ describe('End-to-End Integration: Icon Sync Pipeline', () => {
 
       // Assert: Core optimization invariants
       expect(result.optimizedSize).toBeLessThanOrEqual(result.originalSize)
-      // Check that SVG element doesn't have width/height attributes (use more specific regex)
-      expect(result.svgContent).not.toMatch(/<svg[^>]*\swidth="\d+"[^>]*>/)
-      expect(result.svgContent).not.toMatch(/<svg[^>]*\sheight="\d+"[^>]*>/)
+      // Check that SVG element preserves width/height attributes (required for
+      // standalone/img rendering; CSS/props can still override for dynamic sizing)
+      expect(result.svgContent).toMatch(/<svg[^>]*\swidth="\d+"[^>]*>/)
+      expect(result.svgContent).toMatch(/<svg[^>]*\sheight="\d+"[^>]*>/)
       // Note: SVG transformer preserves original colors; the component layer handles currentColor
       // For stroke-based SVGs, we expect fill="none" and stroke="currentColor"
       expect(result.svgContent).toMatch(/stroke="currentColor"/)
