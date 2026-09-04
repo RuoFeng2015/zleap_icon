@@ -5,140 +5,140 @@
  * Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6
  */
 
-import { optimize, type Config as SvgoConfig, type CustomPlugin } from 'svgo'
-import type { TransformOptions, TransformResult } from './types'
+import { optimize, type Config as SvgoConfig, type CustomPlugin } from "svgo";
+import type { TransformOptions, TransformResult } from "./types";
 
 interface ParsedViewBox {
-  minX: number
-  minY: number
-  width: number
-  height: number
+ minX: number;
+ minY: number;
+ width: number;
+ height: number;
 }
 
 interface PathCommand {
-  command: string
-  values: number[]
+ command: string;
+ values: number[];
 }
 
 function removeNodeFromParent(node: any, parentNode: any): boolean {
-  if (parentNode?.type !== 'element' || !Array.isArray(parentNode.children)) {
-    return false
-  }
+ if (parentNode?.type !== "element" || !Array.isArray(parentNode.children)) {
+  return false;
+ }
 
-  const index = parentNode.children.indexOf(node)
-  if (index < 0) {
-    return false
-  }
+ const index = parentNode.children.indexOf(node);
+ if (index < 0) {
+  return false;
+ }
 
-  parentNode.children.splice(index, 1)
-  return true
+ parentNode.children.splice(index, 1);
+ return true;
 }
 
 function parseViewBox(viewBox: string | undefined): ParsedViewBox | null {
-  if (!viewBox) {
-    return null
-  }
+ if (!viewBox) {
+  return null;
+ }
 
-  const parts = viewBox
-    .trim()
-    .split(/[\s,]+/)
-    .map((part) => Number(part))
+ const parts = viewBox
+  .trim()
+  .split(/[\s,]+/)
+  .map((part) => Number(part));
 
-  if (parts.length !== 4 || parts.some((value) => !Number.isFinite(value))) {
-    return null
-  }
+ if (parts.length !== 4 || parts.some((value) => !Number.isFinite(value))) {
+  return null;
+ }
 
-  return {
-    minX: parts[0],
-    minY: parts[1],
-    width: Math.abs(parts[2]),
-    height: Math.abs(parts[3]),
-  }
+ return {
+  minX: parts[0],
+  minY: parts[1],
+  width: Math.abs(parts[2]),
+  height: Math.abs(parts[3]),
+ };
 }
 
 function parsePathCommands(d: string): PathCommand[] {
-  const matches = Array.from(d.matchAll(/([a-zA-Z])([^a-zA-Z]*)/g))
-  return matches.map((match) => ({
-    command: match[1],
-    values: (match[2].match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || []).map(Number),
-  }))
+ const matches = Array.from(d.matchAll(/([a-zA-Z])([^a-zA-Z]*)/g));
+ return matches.map((match) => ({
+  command: match[1],
+  values: (match[2].match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi) || []).map(Number),
+ }));
 }
 
 function getSimpleHvRectMetrics(d: string): {
-  minX: number
-  maxX: number
-  minY: number
-  maxY: number
-  width: number
-  height: number
+ minX: number;
+ maxX: number;
+ minY: number;
+ maxY: number;
+ width: number;
+ height: number;
 } | null {
-  const commands = parsePathCommands(d)
-  const commandSeq = commands.map((item) => item.command.toLowerCase()).join('')
+ const commands = parsePathCommands(d);
+ const commandSeq = commands.map((item) => item.command.toLowerCase()).join("");
 
-  if (commandSeq !== 'mhvh' && commandSeq !== 'mhvhz') {
-    return null
-  }
+ if (commandSeq !== "mhvh" && commandSeq !== "mhvhz") {
+  return null;
+ }
 
-  if (
-    commands.length < 4 ||
-    commands[0].values.length < 2 ||
-    commands[1].values.length < 1 ||
-    commands[2].values.length < 1 ||
-    commands[3].values.length < 1
-  ) {
-    return null
-  }
+ if (
+  commands.length < 4 ||
+  commands[0].values.length < 2 ||
+  commands[1].values.length < 1 ||
+  commands[2].values.length < 1 ||
+  commands[3].values.length < 1
+ ) {
+  return null;
+ }
 
-  const startX = commands[0].values[0]
-  const startY = commands[0].values[1]
+ const startX = commands[0].values[0];
+ const startY = commands[0].values[1];
 
-  const h1 = commands[1]
-  const v1 = commands[2]
-  const h2 = commands[3]
+ const h1 = commands[1];
+ const v1 = commands[2];
+ const h2 = commands[3];
 
-  const xAfterH1 = h1.command === 'H' ? h1.values[0] : startX + h1.values[0]
-  const yAfterV1 = v1.command === 'V' ? v1.values[0] : startY + v1.values[0]
-  const xAfterH2 = h2.command === 'H' ? h2.values[0] : xAfterH1 + h2.values[0]
+ const xAfterH1 = h1.command === "H" ? h1.values[0] : startX + h1.values[0];
+ const yAfterV1 = v1.command === "V" ? v1.values[0] : startY + v1.values[0];
+ const xAfterH2 = h2.command === "H" ? h2.values[0] : xAfterH1 + h2.values[0];
 
-  const minX = Math.min(startX, xAfterH1, xAfterH2)
-  const maxX = Math.max(startX, xAfterH1, xAfterH2)
-  const minY = Math.min(startY, yAfterV1)
-  const maxY = Math.max(startY, yAfterV1)
+ const minX = Math.min(startX, xAfterH1, xAfterH2);
+ const maxX = Math.max(startX, xAfterH1, xAfterH2);
+ const minY = Math.min(startY, yAfterV1);
+ const maxY = Math.max(startY, yAfterV1);
 
-  return {
-    minX,
-    maxX,
-    minY,
-    maxY,
-    width: Math.abs(xAfterH1 - startX),
-    height: Math.abs(yAfterV1 - startY),
-  }
+ return {
+  minX,
+  maxX,
+  minY,
+  maxY,
+  width: Math.abs(xAfterH1 - startX),
+  height: Math.abs(yAfterV1 - startY),
+ };
 }
 
 function isOversizedRectBackgroundPath(
-  d: string,
-  viewBox: ParsedViewBox | null,
+ d: string,
+ viewBox: ParsedViewBox | null,
 ): boolean {
-  const metrics = getSimpleHvRectMetrics(d)
-  if (!metrics) {
-    return false
-  }
+ const metrics = getSimpleHvRectMetrics(d);
+ if (!metrics) {
+  return false;
+ }
 
-  if (!viewBox || viewBox.width <= 0 || viewBox.height <= 0) {
-    return metrics.width > 200 || metrics.height > 200
-  }
+ if (!viewBox || viewBox.width <= 0 || viewBox.height <= 0) {
+  return metrics.width > 200 || metrics.height > 200;
+ }
 
-  const viewMaxX = viewBox.minX + viewBox.width
-  const viewMaxY = viewBox.minY + viewBox.height
-  const isHuge =
-    metrics.width > viewBox.width * 3 || metrics.height > viewBox.height * 3
-  const isFarOutside =
-    metrics.minX < viewBox.minX - viewBox.width ||
-    metrics.maxX > viewMaxX + viewBox.width ||
-    metrics.minY < viewBox.minY - viewBox.height ||
-    metrics.maxY > viewMaxY + viewBox.height
+ const viewMaxX = viewBox.minX + viewBox.width;
+ const viewMaxY = viewBox.minY + viewBox.height;
+ const isHuge =
+  metrics.width > viewBox.width * 3 || metrics.height > viewBox.height * 3;
+ const isFarOutside =
+  metrics.minX < viewBox.minX - viewBox.width ||
+  metrics.maxX > viewMaxX + viewBox.width ||
+  metrics.minY < viewBox.minY - viewBox.height ||
+  metrics.maxY > viewMaxY + viewBox.height;
 
-  return isHuge || isFarOutside
+ return isHuge || isFarOutside;
 }
 
 /**
@@ -147,61 +147,59 @@ function isOversizedRectBackgroundPath(
  * - 移除不需要的白色/透明填充背景
  */
 const cleanFigmaExport: CustomPlugin = {
-  name: 'cleanFigmaExport',
-  fn: () => {
-    const viewBoxStack: Array<ParsedViewBox | null> = []
+ name: "cleanFigmaExport",
+ fn: () => {
+  const viewBoxStack: Array<ParsedViewBox | null> = [];
 
-    return {
-      element: {
-        enter: (node, parentNode) => {
-          if (node.name === 'svg') {
-            viewBoxStack.push(parseViewBox(node.attributes?.viewBox))
-          }
+  return {
+   element: {
+    enter: (node, parentNode) => {
+     if (node.name === "svg") {
+      viewBoxStack.push(parseViewBox(node.attributes?.viewBox));
+     }
 
-          const currentViewBox = viewBoxStack[viewBoxStack.length - 1] || null
+     const currentViewBox = viewBoxStack[viewBoxStack.length - 1] || null;
 
-          // 移除工具生成的无效属性（如 p-id）
-          if (node.attributes) {
-            const invalidAttrs = ['p-id', 't']
-            invalidAttrs.forEach((attr) => {
-              delete node.attributes[attr]
-            })
-          }
+     // 移除工具生成的无效属性（如 p-id）
+     if (node.attributes) {
+      const invalidAttrs = ["p-id", "t"];
+      invalidAttrs.forEach((attr) => {
+       delete node.attributes[attr];
+      });
+     }
 
-          // 移除泄漏进图标的设计稿背景矩形（支持负坐标/相对命令）
-          if (node.name === 'path' && node.attributes?.d) {
-            if (
-              isOversizedRectBackgroundPath(node.attributes.d, currentViewBox)
-            ) {
-              removeNodeFromParent(node, parentNode)
-              return
-            }
-          }
+     // 移除泄漏进图标的设计稿背景矩形（支持负坐标/相对命令）
+     if (node.name === "path" && node.attributes?.d) {
+      if (isOversizedRectBackgroundPath(node.attributes.d, currentViewBox)) {
+       removeNodeFromParent(node, parentNode);
+       return;
+      }
+     }
 
-          // 移除带有 transform="translate(负值)" 的大背景
-          if (
-            node.name === 'path' &&
-            node.attributes?.transform &&
-            node.attributes?.d
-          ) {
-            const transform = node.attributes.transform
-            if (
-              transform.includes('translate(-') &&
-              isOversizedRectBackgroundPath(node.attributes.d, currentViewBox)
-            ) {
-              removeNodeFromParent(node, parentNode)
-            }
-          }
-        },
-        exit: (node) => {
-          if (node.name === 'svg') {
-            viewBoxStack.pop()
-          }
-        },
-      },
-    }
-  },
-}
+     // 移除带有 transform="translate(负值)" 的大背景
+     if (
+      node.name === "path" &&
+      node.attributes?.transform &&
+      node.attributes?.d
+     ) {
+      const transform = node.attributes.transform;
+      if (
+       transform.includes("translate(-") &&
+       isOversizedRectBackgroundPath(node.attributes.d, currentViewBox)
+      ) {
+       removeNodeFromParent(node, parentNode);
+      }
+     }
+    },
+    exit: (node) => {
+     if (node.name === "svg") {
+      viewBoxStack.pop();
+     }
+    },
+   },
+  };
+ },
+};
 
 /**
  * Default SVGO configuration for icon optimization
@@ -211,44 +209,42 @@ const cleanFigmaExport: CustomPlugin = {
  * - Cleans up Figma export artifacts
  */
 export const defaultSvgoConfig: SvgoConfig = {
-  plugins: [
-    {
-      name: 'preset-default',
-      params: {
-        overrides: {
-          // 禁用颜色转换，保留原始颜色
-          convertColors: false,
-          // 禁用移除 viewBox
-          removeViewBox: false,
-          // 禁用移除未使用的 defs（保留渐变定义）
-          removeUselessDefs: false,
-          // 禁用移除未知属性（保留 stop-color 等属性）
-          removeUnknownsAndDefaults: false,
-          // 禁用合并路径（可能影响渐变引用）
-          mergePaths: false,
-          // 禁用路径转换（保留原始路径数据）
-          convertPathData: {
-            floatPrecision: 3,
-          },
-        },
-      },
+ plugins: [
+  {
+   name: "preset-default",
+   params: {
+    overrides: {
+     // 禁用颜色转换，保留原始颜色
+     convertColors: false,
+     // 禁用移除 viewBox
+     removeViewBox: false,
+     // 禁用移除未使用的 defs（保留渐变定义）
+     removeUselessDefs: false,
+     // 禁用移除未知属性（保留 stop-color 等属性）
+     removeUnknownsAndDefaults: false,
+     // 禁用合并路径（可能影响渐变引用）
+     mergePaths: false,
+     // 禁用路径转换（保留原始路径数据）
+     convertPathData: {
+      floatPrecision: 3,
+     },
     },
-    'removeDimensions',
-    'removeXMLNS',
-    // 添加自定义清理插件
-    cleanFigmaExport,
-  ],
-}
+   },
+  },
+  // 添加自定义清理插件
+  cleanFigmaExport,
+ ],
+};
 
 /**
  * Default transformation options
  */
 export const defaultTransformOptions: TransformOptions = {
-  replaceColors: true,
-  removeSize: true,
-  removeFill: true,
-  addViewBox: true,
-}
+ replaceColors: true,
+ removeSize: true,
+ removeFill: true,
+ addViewBox: true,
+};
 
 /**
  * Optimizes SVG content using SVGO
@@ -260,56 +256,56 @@ export const defaultTransformOptions: TransformOptions = {
  * Requirements: 3.1, 3.2, 3.3, 3.4
  */
 export function optimizeSvg(
-  svgContent: string,
-  config: SvgoConfig = defaultSvgoConfig,
+ svgContent: string,
+ config: SvgoConfig = defaultSvgoConfig,
 ): string {
-  const result = optimize(svgContent, config)
-  return result.data
+ const result = optimize(svgContent, config);
+ return result.data;
 }
 
 /**
  * Map of SVG attribute names to their JSX equivalents
  */
 const svgToJsxAttributeMap: Record<string, string> = {
-  class: 'className',
-  'stroke-width': 'strokeWidth',
-  'stroke-linecap': 'strokeLinecap',
-  'stroke-linejoin': 'strokeLinejoin',
-  'stroke-dasharray': 'strokeDasharray',
-  'stroke-dashoffset': 'strokeDashoffset',
-  'stroke-miterlimit': 'strokeMiterlimit',
-  'stroke-opacity': 'strokeOpacity',
-  'fill-rule': 'fillRule',
-  'fill-opacity': 'fillOpacity',
-  'clip-rule': 'clipRule',
-  'clip-path': 'clipPath',
-  'font-family': 'fontFamily',
-  'font-size': 'fontSize',
-  'font-style': 'fontStyle',
-  'font-weight': 'fontWeight',
-  'text-anchor': 'textAnchor',
-  'text-decoration': 'textDecoration',
-  'dominant-baseline': 'dominantBaseline',
-  'alignment-baseline': 'alignmentBaseline',
-  'baseline-shift': 'baselineShift',
-  'stop-color': 'stopColor',
-  'stop-opacity': 'stopOpacity',
-  'color-interpolation': 'colorInterpolation',
-  'color-interpolation-filters': 'colorInterpolationFilters',
-  'flood-color': 'floodColor',
-  'flood-opacity': 'floodOpacity',
-  'lighting-color': 'lightingColor',
-  'marker-start': 'markerStart',
-  'marker-mid': 'markerMid',
-  'marker-end': 'markerEnd',
-  'paint-order': 'paintOrder',
-  'shape-rendering': 'shapeRendering',
-  'vector-effect': 'vectorEffect',
-  'pointer-events': 'pointerEvents',
-  'xlink:href': 'xlinkHref',
-  'xml:space': 'xmlSpace',
-  'xmlns:xlink': 'xmlnsXlink',
-}
+ class: "className",
+ "stroke-width": "strokeWidth",
+ "stroke-linecap": "strokeLinecap",
+ "stroke-linejoin": "strokeLinejoin",
+ "stroke-dasharray": "strokeDasharray",
+ "stroke-dashoffset": "strokeDashoffset",
+ "stroke-miterlimit": "strokeMiterlimit",
+ "stroke-opacity": "strokeOpacity",
+ "fill-rule": "fillRule",
+ "fill-opacity": "fillOpacity",
+ "clip-rule": "clipRule",
+ "clip-path": "clipPath",
+ "font-family": "fontFamily",
+ "font-size": "fontSize",
+ "font-style": "fontStyle",
+ "font-weight": "fontWeight",
+ "text-anchor": "textAnchor",
+ "text-decoration": "textDecoration",
+ "dominant-baseline": "dominantBaseline",
+ "alignment-baseline": "alignmentBaseline",
+ "baseline-shift": "baselineShift",
+ "stop-color": "stopColor",
+ "stop-opacity": "stopOpacity",
+ "color-interpolation": "colorInterpolation",
+ "color-interpolation-filters": "colorInterpolationFilters",
+ "flood-color": "floodColor",
+ "flood-opacity": "floodOpacity",
+ "lighting-color": "lightingColor",
+ "marker-start": "markerStart",
+ "marker-mid": "markerMid",
+ "marker-end": "markerEnd",
+ "paint-order": "paintOrder",
+ "shape-rendering": "shapeRendering",
+ "vector-effect": "vectorEffect",
+ "pointer-events": "pointerEvents",
+ "xlink:href": "xlinkHref",
+ "xml:space": "xmlSpace",
+ "xmlns:xlink": "xmlnsXlink",
+};
 
 /**
  * Converts a kebab-case attribute name to camelCase
@@ -318,13 +314,13 @@ const svgToJsxAttributeMap: Record<string, string> = {
  * @returns Attribute name in camelCase
  */
 export function kebabToCamelCase(attr: string): string {
-  // Check if it's a known SVG attribute that needs special handling
-  if (svgToJsxAttributeMap[attr]) {
-    return svgToJsxAttributeMap[attr]
-  }
+ // Check if it's a known SVG attribute that needs special handling
+ if (svgToJsxAttributeMap[attr]) {
+  return svgToJsxAttributeMap[attr];
+ }
 
-  // Convert kebab-case to camelCase
-  return attr.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())
+ // Convert kebab-case to camelCase
+ return attr.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
 }
 
 /**
@@ -339,15 +335,15 @@ export function kebabToCamelCase(attr: string): string {
  * Requirements: 3.5
  */
 export function convertToJsx(svgContent: string): string {
-  // Match all attributes in the SVG
-  // Pattern: attribute-name="value" or attribute-name='value'
-  return svgContent.replace(
-    /\s([a-z][a-z0-9]*(?:(?:-|:)[a-z0-9]+)+)=/gi,
-    (_, attrName) => {
-      const jsxAttrName = kebabToCamelCase(attrName.toLowerCase())
-      return ` ${jsxAttrName}=`
-    },
-  )
+ // Match all attributes in the SVG
+ // Pattern: attribute-name="value" or attribute-name='value'
+ return svgContent.replace(
+  /\s([a-z][a-z0-9]*(?:(?:-|:)[a-z0-9]+)+)=/gi,
+  (_, attrName) => {
+   const jsxAttrName = kebabToCamelCase(attrName.toLowerCase());
+   return ` ${jsxAttrName}=`;
+  },
+ );
 }
 
 /**
@@ -361,25 +357,25 @@ export function convertToJsx(svgContent: string): string {
  * Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6
  */
 export function transformSvg(
-  svgContent: string,
-  _options: TransformOptions = defaultTransformOptions,
-  svgoConfig: SvgoConfig = defaultSvgoConfig,
+ svgContent: string,
+ _options: TransformOptions = defaultTransformOptions,
+ svgoConfig: SvgoConfig = defaultSvgoConfig,
 ): TransformResult {
-  const originalSize = svgContent.length
+ const originalSize = svgContent.length;
 
-  // Optimize SVG with SVGO
-  // Note: _options is reserved for future use when custom transform options are needed
-  const optimizedSvg = optimizeSvg(svgContent, svgoConfig)
+ // Optimize SVG with SVGO
+ // Note: _options is reserved for future use when custom transform options are needed
+ const optimizedSvg = optimizeSvg(svgContent, svgoConfig);
 
-  // Convert to JSX format
-  const jsxContent = convertToJsx(optimizedSvg)
+ // Convert to JSX format
+ const jsxContent = convertToJsx(optimizedSvg);
 
-  return {
-    originalSize,
-    optimizedSize: optimizedSvg.length,
-    svgContent: optimizedSvg,
-    jsxContent,
-  }
+ return {
+  originalSize,
+  optimizedSize: optimizedSvg.length,
+  svgContent: optimizedSvg,
+  jsxContent,
+ };
 }
 
 /**
@@ -389,9 +385,9 @@ export function transformSvg(
  * @returns Inner content of the SVG
  */
 export function extractSvgInnerContent(svgContent: string): string {
-  // Match content between <svg ...> and </svg>
-  const match = svgContent.match(/<svg[^>]*>([\s\S]*)<\/svg>/i)
-  return match ? match[1].trim() : ''
+ // Match content between <svg ...> and </svg>
+ const match = svgContent.match(/<svg[^>]*>([\s\S]*)<\/svg>/i);
+ return match ? match[1].trim() : "";
 }
 
 /**
@@ -401,8 +397,8 @@ export function extractSvgInnerContent(svgContent: string): string {
  * @returns viewBox value or null if not found
  */
 export function extractViewBox(svgContent: string): string | null {
-  const match = svgContent.match(/viewBox=["']([^"']+)["']/i)
-  return match ? match[1] : null
+ const match = svgContent.match(/viewBox=["']([^"']+)["']/i);
+ return match ? match[1] : null;
 }
 
 /**
@@ -412,8 +408,8 @@ export function extractViewBox(svgContent: string): string | null {
  * @returns fill value or null if not found
  */
 export function extractSvgRootFill(svgContent: string): string | null {
-  const match = svgContent.match(/<svg[^>]*\sfill=["']([^"']+)["']/i)
-  return match ? match[1] : null
+ const match = svgContent.match(/<svg[^>]*\sfill=["']([^"']+)["']/i);
+ return match ? match[1] : null;
 }
 
 /**
@@ -423,9 +419,9 @@ export function extractSvgRootFill(svgContent: string): string | null {
  * @returns true if width or height attributes are present
  */
 export function hasFixedDimensions(svgContent: string): boolean {
-  const widthMatch = svgContent.match(/<svg[^>]*\swidth=["'][^"']+["']/i)
-  const heightMatch = svgContent.match(/<svg[^>]*\sheight=["'][^"']+["']/i)
-  return !!(widthMatch || heightMatch)
+ const widthMatch = svgContent.match(/<svg[^>]*\swidth=["'][^"']+["']/i);
+ const heightMatch = svgContent.match(/<svg[^>]*\sheight=["'][^"']+["']/i);
+ return !!(widthMatch || heightMatch);
 }
 
 /**
@@ -435,10 +431,10 @@ export function hasFixedDimensions(svgContent: string): boolean {
  * @returns true if fill="currentColor" is present on the svg element
  */
 export function usesCurrentColor(svgContent: string): boolean {
-  // Check if the SVG element has fill="currentColor"
-  const svgTagMatch = svgContent.match(/<svg[^>]*>/i)
-  if (!svgTagMatch) return false
-  return /fill=["']currentColor["']/i.test(svgTagMatch[0])
+ // Check if the SVG element has fill="currentColor"
+ const svgTagMatch = svgContent.match(/<svg[^>]*>/i);
+ if (!svgTagMatch) return false;
+ return /fill=["']currentColor["']/i.test(svgTagMatch[0]);
 }
 
 /**
@@ -448,28 +444,28 @@ export function usesCurrentColor(svgContent: string): boolean {
  * @returns true if all attributes are in camelCase
  */
 export function hasJsxAttributes(svgContent: string): boolean {
-  // List of common SVG attributes that should be converted to JSX camelCase
-  const svgAttributes = [
-    'stroke-width',
-    'stroke-linecap',
-    'stroke-linejoin',
-    'fill-rule',
-    'clip-rule',
-    'clip-path',
-    'font-family',
-    'font-size',
-    'xlink:href',
-    'xml:space',
-    'xmlns:xlink',
-  ]
+ // List of common SVG attributes that should be converted to JSX camelCase
+ const svgAttributes = [
+  "stroke-width",
+  "stroke-linecap",
+  "stroke-linejoin",
+  "fill-rule",
+  "clip-rule",
+  "clip-path",
+  "font-family",
+  "font-size",
+  "xlink:href",
+  "xml:space",
+  "xmlns:xlink",
+ ];
 
-  for (const attr of svgAttributes) {
-    // Check if the original attribute exists (it shouldn't after conversion)
-    const regex = new RegExp(`\\s${attr.replace(/:/g, '\\:')}=`, 'i')
-    if (regex.test(svgContent)) {
-      return false
-    }
+ for (const attr of svgAttributes) {
+  // Check if the original attribute exists (it shouldn't after conversion)
+  const regex = new RegExp(`\\s${attr.replace(/:/g, "\\:")}=`, "i");
+  if (regex.test(svgContent)) {
+   return false;
   }
+ }
 
-  return true
+ return true;
 }
