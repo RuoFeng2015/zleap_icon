@@ -1,8 +1,52 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-04T06:07:18.472Z",
-  "totalCount": 256,
+  "generatedAt": "2026-09-04T06:34:47.507Z",
+  "totalCount": 260,
   "icons": [
+    {
+      "name": "IconShouYe2",
+      "originalName": "首页2",
+      "svgPath": "svg/首页2.svg",
+      "componentPath": "src/icons/IconShouYe2.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-09-04T06:34:47.492Z"
+    },
+    {
+      "name": "IconShiPinGongZuoShi1",
+      "originalName": "视频工作室1",
+      "svgPath": "svg/视频工作室1.svg",
+      "componentPath": "src/icons/IconShiPinGongZuoShi1.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-09-04T06:34:47.486Z"
+    },
+    {
+      "name": "IconJiePingLuPing1",
+      "originalName": "截屏录屏1",
+      "svgPath": "svg/截屏录屏1.svg",
+      "componentPath": "src/icons/IconJiePingLuPing1.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-09-04T06:34:47.473Z"
+    },
+    {
+      "name": "IconDaiBan1",
+      "originalName": "待办1",
+      "svgPath": "svg/待办1.svg",
+      "componentPath": "src/icons/IconDaiBan1.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-09-04T06:34:47.471Z"
+    },
     {
       "name": "IconSheZhi5",
       "originalName": "设置5",

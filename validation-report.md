@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-09-04T06:07:15.017Z
+Generated at: 2026-09-04T06:34:43.003Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 256 |
+| Total Icons | 260 |
 | Valid Icons | 0 |
-| Invalid Icons | 256 |
-| Total Errors | 257 |
-| Total Warnings | 248 |
+| Invalid Icons | 260 |
+| Total Errors | 261 |
+| Total Warnings | 252 |
 
-⚠️ **256 icon(s) failed validation**
+⚠️ **260 icon(s) failed validation**
 
 ## Errors
 
-### size (256 errors)
+### size (260 errors)
 
 | Icon | Message |
 |------|---------|
@@ -168,6 +168,7 @@ Generated at: 2026-09-04T06:07:15.017Z
 | 录音 | Icon size 24x24 not in allowed sizes:  |
 | 录音1 | Icon size 24x24 not in allowed sizes:  |
 | 待办 | Icon size 48x48 not in allowed sizes:  |
+| 待办1 | Icon size 48x48 not in allowed sizes:  |
 | 待审核 | Icon size 180x180 not in allowed sizes:  |
 | 微信好友 | Icon size 24x24 not in allowed sizes:  |
 | 快进15秒 | Icon size 24x24 not in allowed sizes:  |
@@ -177,6 +178,7 @@ Generated at: 2026-09-04T06:07:15.017Z
 | 我的信息源-置灰 | Icon size 20x20 not in allowed sizes:  |
 | 我的信息源-高亮 | Icon size 20x20 not in allowed sizes:  |
 | 截屏录屏 | Icon size 48x48 not in allowed sizes:  |
+| 截屏录屏1 | Icon size 48x48 not in allowed sizes:  |
 | 探索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索 | Icon size 24x24 not in allowed sizes:  |
 | 搜索1 | Icon size 24x24 not in allowed sizes:  |
@@ -245,6 +247,7 @@ Generated at: 2026-09-04T06:07:15.017Z
 | 联系人2 | Icon size 24x24 not in allowed sizes:  |
 | 联系人3 | Icon size 48x48 not in allowed sizes:  |
 | 视频工作室 | Icon size 48x48 not in allowed sizes:  |
+| 视频工作室1 | Icon size 48x48 not in allowed sizes:  |
 | 设置 | Icon size 24x24 not in allowed sizes:  |
 | 设置1 | Icon size 24x24 not in allowed sizes:  |
 | 设置5 | Icon size 48x48 not in allowed sizes:  |
@@ -276,6 +279,7 @@ Generated at: 2026-09-04T06:07:15.017Z
 | 预览1 | Icon size 24x24 not in allowed sizes:  |
 | 首页 | Icon size 24x24 not in allowed sizes:  |
 | 首页1 | Icon size 48x48 not in allowed sizes:  |
+| 首页2 | Icon size 48x48 not in allowed sizes:  |
 
 ### forbidden-elements (1 error)
 
@@ -285,7 +289,7 @@ Generated at: 2026-09-04T06:07:15.017Z
 
 ## Warnings
 
-### naming (214 warnings)
+### naming (218 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -395,6 +399,7 @@ Generated at: 2026-09-04T06:07:15.017Z
 | 录音 | Icon name "录音" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 录音1 | Icon name "录音1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 待办 | Icon name "待办" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 待办1 | Icon name "待办1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 待审核 | Icon name "待审核" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 微信好友 | Icon name "微信好友" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 快进15秒 | Icon name "快进15秒" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -404,6 +409,7 @@ Generated at: 2026-09-04T06:07:15.017Z
 | 我的信息源-置灰 | Icon name "我的信息源-置灰" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 我的信息源-高亮 | Icon name "我的信息源-高亮" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 截屏录屏 | Icon name "截屏录屏" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 截屏录屏1 | Icon name "截屏录屏1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 探索 | Icon name "探索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索 | Icon name "搜索" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 搜索1 | Icon name "搜索1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -472,6 +478,7 @@ Generated at: 2026-09-04T06:07:15.017Z
 | 联系人2 | Icon name "联系人2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 联系人3 | Icon name "联系人3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 视频工作室 | Icon name "视频工作室" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 视频工作室1 | Icon name "视频工作室1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置 | Icon name "设置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置1 | Icon name "设置1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置5 | Icon name "设置5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
@@ -503,6 +510,7 @@ Generated at: 2026-09-04T06:07:15.017Z
 | 预览1 | Icon name "预览1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页 | Icon name "首页" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 首页1 | Icon name "首页1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 首页2 | Icon name "首页2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 
 ### size (34 warnings)
 
