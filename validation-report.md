@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-09-04T02:57:37.450Z
+Generated at: 2026-09-04T03:05:14.273Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 256 |
+| Total Icons | 257 |
 | Valid Icons | 0 |
-| Invalid Icons | 256 |
-| Total Errors | 257 |
-| Total Warnings | 248 |
+| Invalid Icons | 257 |
+| Total Errors | 259 |
+| Total Warnings | 249 |
 
-⚠️ **256 icon(s) failed validation**
+⚠️ **257 icon(s) failed validation**
 
 ## Errors
 
-### size (256 errors)
+### size (257 errors)
 
 | Icon | Message |
 |------|---------|
@@ -248,6 +248,7 @@ Generated at: 2026-09-04T02:57:37.450Z
 | 设置 | Icon size 24x24 not in allowed sizes:  |
 | 设置1 | Icon size 24x24 not in allowed sizes:  |
 | 设置2 | Icon size 48x48 not in allowed sizes:  |
+| 设置3 | Icon size 48x48 not in allowed sizes:  |
 | 评论 | Icon size 24x24 not in allowed sizes:  |
 | 语雀知识库 | Icon size 24x24 not in allowed sizes:  |
 | 财经-1 | Icon size 36x36 not in allowed sizes:  |
@@ -277,15 +278,16 @@ Generated at: 2026-09-04T02:57:37.450Z
 | 首页 | Icon size 24x24 not in allowed sizes:  |
 | 首页1 | Icon size 48x48 not in allowed sizes:  |
 
-### forbidden-elements (1 error)
+### forbidden-elements (2 errors)
 
 | Icon | Message |
 |------|---------|
 | 设置2 | Icon contains forbidden elements: foreignObject |
+| 设置3 | Icon contains forbidden elements: foreignObject |
 
 ## Warnings
 
-### naming (214 warnings)
+### naming (215 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -475,6 +477,7 @@ Generated at: 2026-09-04T02:57:37.450Z
 | 设置 | Icon name "设置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置1 | Icon name "设置1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置2 | Icon name "设置2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 设置3 | Icon name "设置3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 评论 | Icon name "评论" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 语雀知识库 | Icon name "语雀知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 财经-1 | Icon name "财经-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |

@@ -170,6 +170,7 @@ import { IconShenQingChengGong } from './icons/IconShenQingChengGong';
 import { IconSheZhi } from './icons/IconSheZhi';
 import { IconSheZhi1 } from './icons/IconSheZhi1';
 import { IconSheZhi2 } from './icons/IconSheZhi2';
+import { IconSheZhi3 } from './icons/IconSheZhi3';
 import { IconShiBai } from './icons/IconShiBai';
 import { IconShiPinGongZuoShi } from './icons/IconShiPinGongZuoShi';
 import { IconShiShiLuYin } from './icons/IconShiShiLuYin';
@@ -427,6 +428,7 @@ export { IconShenQingChengGong, type IconShenQingChengGongProps } from './icons/
 export { IconSheZhi, type IconSheZhiProps } from './icons/IconSheZhi';
 export { IconSheZhi1, type IconSheZhi1Props } from './icons/IconSheZhi1';
 export { IconSheZhi2, type IconSheZhi2Props } from './icons/IconSheZhi2';
+export { IconSheZhi3, type IconSheZhi3Props } from './icons/IconSheZhi3';
 export { IconShiBai, type IconShiBaiProps } from './icons/IconShiBai';
 export { IconShiPinGongZuoShi, type IconShiPinGongZuoShiProps } from './icons/IconShiPinGongZuoShi';
 export { IconShiShiLuYin, type IconShiShiLuYinProps } from './icons/IconShiShiLuYin';
@@ -688,6 +690,7 @@ export const allIcons = {
   IconSheZhi,
   IconSheZhi1,
   IconSheZhi2,
+  IconSheZhi3,
   IconShiBai,
   IconShiPinGongZuoShi,
   IconShiShiLuYin,
