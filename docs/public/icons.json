@@ -1,8 +1,19 @@
 {
-  "version": "2026.09.04",
-  "generatedAt": "2026-09-04T05:40:15.318Z",
-  "totalCount": 255,
+  "version": "1.0.0",
+  "generatedAt": "2026-09-04T05:59:42.926Z",
+  "totalCount": 256,
   "icons": [
+    {
+      "name": "Icon设置5",
+      "originalName": "设置5",
+      "svgPath": "svg/设置5.svg",
+      "componentPath": "src/icons/Icon设置5.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-09-04T05:59:42.926Z"
+    },
     {
       "name": "IconBianQian",
       "originalName": "便签",
