@@ -1,13 +1,24 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-04T02:55:18.488Z",
-  "totalCount": 256,
+  "generatedAt": "2026-09-04T03:04:04.267Z",
+  "totalCount": 257,
   "icons": [
     {
-      "name": "Icon便签",
+      "name": "Icon设置3",
+      "originalName": "设置3",
+      "svgPath": "svg/设置3.svg",
+      "componentPath": "src/icons/Icon设置3.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-09-04T03:04:04.267Z"
+    },
+    {
+      "name": "IconBianQian",
       "originalName": "便签",
       "svgPath": "svg/便签.svg",
-      "componentPath": "src/icons/Icon便签.tsx",
+      "componentPath": "src/icons/IconBianQian.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -15,10 +26,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon查询事件",
+      "name": "IconChaXunShiJian",
       "originalName": "查询事件",
       "svgPath": "svg/查询事件.svg",
-      "componentPath": "src/icons/Icon查询事件.tsx",
+      "componentPath": "src/icons/IconChaXunShiJian.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -26,10 +37,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon待办",
+      "name": "IconDaiBan",
       "originalName": "待办",
       "svgPath": "svg/待办.svg",
-      "componentPath": "src/icons/Icon待办.tsx",
+      "componentPath": "src/icons/IconDaiBan.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -37,10 +48,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon教育2",
+      "name": "IconJiaoYu2",
       "originalName": "教育2",
       "svgPath": "svg/教育2.svg",
-      "componentPath": "src/icons/Icon教育2.tsx",
+      "componentPath": "src/icons/IconJiaoYu2.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -48,10 +59,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon截屏录屏",
+      "name": "IconJiePingLuPing",
       "originalName": "截屏录屏",
       "svgPath": "svg/截屏录屏.svg",
-      "componentPath": "src/icons/Icon截屏录屏.tsx",
+      "componentPath": "src/icons/IconJiePingLuPing.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -59,10 +70,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon任务管理器",
+      "name": "IconRenWuGuanLiQi",
       "originalName": "任务管理器",
       "svgPath": "svg/任务管理器.svg",
-      "componentPath": "src/icons/Icon任务管理器.tsx",
+      "componentPath": "src/icons/IconRenWuGuanLiQi.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -70,10 +81,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon设置2",
+      "name": "IconSheZhi2",
       "originalName": "设置2",
       "svgPath": "svg/设置2.svg",
-      "componentPath": "src/icons/Icon设置2.tsx",
+      "componentPath": "src/icons/IconSheZhi2.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -81,10 +92,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon视频工作室",
+      "name": "IconShiPinGongZuoShi",
       "originalName": "视频工作室",
       "svgPath": "svg/视频工作室.svg",
-      "componentPath": "src/icons/Icon视频工作室.tsx",
+      "componentPath": "src/icons/IconShiPinGongZuoShi.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -92,10 +103,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon首页1",
+      "name": "IconShouYe1",
       "originalName": "首页1",
       "svgPath": "svg/首页1.svg",
-      "componentPath": "src/icons/Icon首页1.tsx",
+      "componentPath": "src/icons/IconShouYe1.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -103,10 +114,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon数据库",
+      "name": "IconShuJuKu",
       "originalName": "数据库",
       "svgPath": "svg/数据库.svg",
-      "componentPath": "src/icons/Icon数据库.tsx",
+      "componentPath": "src/icons/IconShuJuKu.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -114,10 +125,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon文件夹1",
+      "name": "IconWenJianJia1",
       "originalName": "文件夹1",
       "svgPath": "svg/文件夹1.svg",
-      "componentPath": "src/icons/Icon文件夹1.tsx",
+      "componentPath": "src/icons/IconWenJianJia1.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -125,10 +136,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon项目",
+      "name": "IconXiangMu",
       "originalName": "项目",
       "svgPath": "svg/项目.svg",
-      "componentPath": "src/icons/Icon项目.tsx",
+      "componentPath": "src/icons/IconXiangMu.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -136,10 +147,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon消息1",
+      "name": "IconXiaoXi1",
       "originalName": "消息1",
       "svgPath": "svg/消息1.svg",
-      "componentPath": "src/icons/Icon消息1.tsx",
+      "componentPath": "src/icons/IconXiaoXi1.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -147,10 +158,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon云文档",
+      "name": "IconYunWenDang",
       "originalName": "云文档",
       "svgPath": "svg/云文档.svg",
-      "componentPath": "src/icons/Icon云文档.tsx",
+      "componentPath": "src/icons/IconYunWenDang.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -158,10 +169,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon智能助手",
+      "name": "IconZhiNengZhuShou",
       "originalName": "智能助手",
       "svgPath": "svg/智能助手.svg",
-      "componentPath": "src/icons/Icon智能助手.tsx",
+      "componentPath": "src/icons/IconZhiNengZhuShou.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -169,10 +180,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon终端",
+      "name": "IconZhongDuan",
       "originalName": "终端",
       "svgPath": "svg/终端.svg",
-      "componentPath": "src/icons/Icon终端.tsx",
+      "componentPath": "src/icons/IconZhongDuan.tsx",
       "size": {
         "width": 48,
         "height": 48
@@ -180,10 +191,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "Icon组织管理",
+      "name": "IconZuZhiGuanLi",
       "originalName": "组织管理",
       "svgPath": "svg/组织管理.svg",
-      "componentPath": "src/icons/Icon组织管理.tsx",
+      "componentPath": "src/icons/IconZuZhiGuanLi.tsx",
       "size": {
         "width": 48,
         "height": 48
