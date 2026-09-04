@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-09-04T04:05:21.763Z
+Generated at: 2026-09-04T05:41:00.175Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 258 |
+| Total Icons | 255 |
 | Valid Icons | 0 |
-| Invalid Icons | 258 |
-| Total Errors | 261 |
-| Total Warnings | 250 |
+| Invalid Icons | 255 |
+| Total Errors | 255 |
+| Total Warnings | 247 |
 
-⚠️ **258 icon(s) failed validation**
+⚠️ **255 icon(s) failed validation**
 
 ## Errors
 
-### size (258 errors)
+### size (255 errors)
 
 | Icon | Message |
 |------|---------|
@@ -247,9 +247,6 @@ Generated at: 2026-09-04T04:05:21.763Z
 | 视频工作室 | Icon size 48x48 not in allowed sizes:  |
 | 设置 | Icon size 24x24 not in allowed sizes:  |
 | 设置1 | Icon size 24x24 not in allowed sizes:  |
-| 设置2 | Icon size 48x48 not in allowed sizes:  |
-| 设置3 | Icon size 48x48 not in allowed sizes:  |
-| 设置5 | Icon size 48x48 not in allowed sizes:  |
 | 评论 | Icon size 24x24 not in allowed sizes:  |
 | 语雀知识库 | Icon size 24x24 not in allowed sizes:  |
 | 财经-1 | Icon size 36x36 not in allowed sizes:  |
@@ -279,17 +276,9 @@ Generated at: 2026-09-04T04:05:21.763Z
 | 首页 | Icon size 24x24 not in allowed sizes:  |
 | 首页1 | Icon size 48x48 not in allowed sizes:  |
 
-### forbidden-elements (3 errors)
-
-| Icon | Message |
-|------|---------|
-| 设置2 | Icon contains forbidden elements: foreignObject |
-| 设置3 | Icon contains forbidden elements: foreignObject |
-| 设置5 | Icon contains forbidden elements: foreignObject |
-
 ## Warnings
 
-### naming (216 warnings)
+### naming (213 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -478,9 +467,6 @@ Generated at: 2026-09-04T04:05:21.763Z
 | 视频工作室 | Icon name "视频工作室" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置 | Icon name "设置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置1 | Icon name "设置1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 设置2 | Icon name "设置2" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 设置3 | Icon name "设置3" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
-| 设置5 | Icon name "设置5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 评论 | Icon name "评论" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 语雀知识库 | Icon name "语雀知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 财经-1 | Icon name "财经-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
