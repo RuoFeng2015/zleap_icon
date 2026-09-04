@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-09-04T05:47:57.335Z
+Generated at: 2026-09-04T06:03:48.327Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 255 |
+| Total Icons | 256 |
 | Valid Icons | 0 |
-| Invalid Icons | 255 |
-| Total Errors | 255 |
-| Total Warnings | 247 |
+| Invalid Icons | 256 |
+| Total Errors | 257 |
+| Total Warnings | 248 |
 
-⚠️ **255 icon(s) failed validation**
+⚠️ **256 icon(s) failed validation**
 
 ## Errors
 
-### size (255 errors)
+### size (256 errors)
 
 | Icon | Message |
 |------|---------|
@@ -247,6 +247,7 @@ Generated at: 2026-09-04T05:47:57.335Z
 | 视频工作室 | Icon size 48x48 not in allowed sizes:  |
 | 设置 | Icon size 24x24 not in allowed sizes:  |
 | 设置1 | Icon size 24x24 not in allowed sizes:  |
+| 设置5 | Icon size 48x48 not in allowed sizes:  |
 | 评论 | Icon size 24x24 not in allowed sizes:  |
 | 语雀知识库 | Icon size 24x24 not in allowed sizes:  |
 | 财经-1 | Icon size 36x36 not in allowed sizes:  |
@@ -276,9 +277,15 @@ Generated at: 2026-09-04T05:47:57.335Z
 | 首页 | Icon size 24x24 not in allowed sizes:  |
 | 首页1 | Icon size 48x48 not in allowed sizes:  |
 
+### forbidden-elements (1 error)
+
+| Icon | Message |
+|------|---------|
+| 设置5 | Icon contains forbidden elements: foreignObject |
+
 ## Warnings
 
-### naming (213 warnings)
+### naming (214 warnings)
 
 | Icon | Message |
 |------|---------|
@@ -467,6 +474,7 @@ Generated at: 2026-09-04T05:47:57.335Z
 | 视频工作室 | Icon name "视频工作室" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置 | Icon name "设置" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 设置1 | Icon name "设置1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
+| 设置5 | Icon name "设置5" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 评论 | Icon name "评论" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 语雀知识库 | Icon name "语雀知识库" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
 | 财经-1 | Icon name "财经-1" doesn't match naming convention: /^[a-z][a-z0-9-]*$/ |
