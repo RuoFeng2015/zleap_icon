@@ -1,8 +1,30 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-04T06:59:23.624Z",
-  "totalCount": 255,
+  "generatedAt": "2026-09-04T07:05:11.497Z",
+  "totalCount": 257,
   "icons": [
+    {
+      "name": "IconHome",
+      "originalName": "home",
+      "svgPath": "svg/home.svg",
+      "componentPath": "src/icons/IconHome.tsx",
+      "size": {
+        "width": 35,
+        "height": 35
+      },
+      "createdAt": "2026-09-04T07:05:11.497Z"
+    },
+    {
+      "name": "IconSet",
+      "originalName": "set",
+      "svgPath": "svg/set.svg",
+      "componentPath": "src/icons/IconSet.tsx",
+      "size": {
+        "width": 48,
+        "height": 48
+      },
+      "createdAt": "2026-09-04T07:05:11.497Z"
+    },
     {
       "name": "IconShouYe2",
       "originalName": "首页2",
