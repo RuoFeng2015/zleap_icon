@@ -1,13 +1,13 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-04T04:01:58.777Z",
+  "generatedAt": "2026-09-04T04:02:49.975Z",
   "totalCount": 258,
   "icons": [
     {
-      "name": "Icon设置5",
+      "name": "IconSheZhi5",
       "originalName": "设置5",
       "svgPath": "svg/设置5.svg",
-      "componentPath": "src/icons/Icon设置5.tsx",
+      "componentPath": "src/icons/IconSheZhi5.tsx",
       "size": {
         "width": 48,
         "height": 48
