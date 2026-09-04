@@ -1,0 +1,53 @@
+import React, { forwardRef, useMemo } from 'react'
+import type { ComponentProps } from 'react'
+import { SvgXml } from 'react-native-svg'
+
+export interface IconHomeProps extends Omit<ComponentProps<typeof SvgXml>, 'xml' | 'width' | 'height'> {
+  size?: number | string
+  color?: string
+}
+
+export const IconHome = forwardRef<unknown, IconHomeProps>(
+  ({ size = 24, color, ...props }, ref) => {
+    const baseXml = useMemo(
+      () => `<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="none" viewBox="0 0 35 35"><g filter="url(#a)"><path fill="url(#b)" d="M4.174 7.95a3.75 3.75 0 0 1 3.75-3.75h4.5a3.75 3.75 0 0 1 3.75 3.75v7.5a3.75 3.75 0 0 1-3.75 3.75h-4.5a3.75 3.75 0 0 1-3.75-3.75z"/></g><g filter="url(#c)"><path fill="url(#d)" d="M4.174 24.2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2z"/></g><g filter="url(#e)"><path fill="url(#f)" d="M18.174 21.95a3.75 3.75 0 0 1 3.75-3.75h4.5a3.75 3.75 0 0 1 3.75 3.75v4.5a3.75 3.75 0 0 1-3.75 3.75h-4.5a3.75 3.75 0 0 1-3.75-3.75z"/></g><g filter="url(#g)"><path fill="url(#h)" d="M18.174 10.2a6 6 0 1 1 12 0 6 6 0 0 1-12 0"/></g><defs><linearGradient id="b" x1="10.174" x2="10.174" y1="4.199" y2="29.905" gradientUnits="userSpaceOnUse"><stop stop-color="#5BF776"/><stop offset="1" stop-color="#0DBC29"/></linearGradient><linearGradient id="d" x1="10.174" x2="10.174" y1="19.19" y2="34.429" gradientUnits="userSpaceOnUse"><stop stop-color="#C873F5"/><stop offset="1" stop-color="#7B33BB"/></linearGradient><linearGradient id="f" x1="24.174" x2="24.174" y1="18.199" y2="30.199" gradientUnits="userSpaceOnUse"><stop stop-color="#FE9D02"/><stop offset="1" stop-color="#F7701D"/></linearGradient><linearGradient id="h" x1="24.174" x2="24.174" y1="-2.16" y2="18.329" gradientUnits="userSpaceOnUse"><stop stop-color="#1D6FF2"/><stop offset="1" stop-color="#1AC8FC"/></linearGradient><filter id="a" width="14.6" height="17.6" x="2.874" y="2.899" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".3" dy=".3"/><feGaussianBlur stdDeviation=".5"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"/><feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_3483_5228"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.3" dy="-.3"/><feGaussianBlur stdDeviation=".5"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"/><feBlend in2="effect1_dropShadow_3483_5228" mode="normal" result="effect2_dropShadow_3483_5228"/><feBlend in="SourceGraphic" in2="effect2_dropShadow_3483_5228" mode="normal" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".6" dy=".6"/><feGaussianBlur stdDeviation=".3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.241118 0 0 0 0 0.493535 0 0 0 0 0.232414 0 0 0 0.15 0"/><feBlend in2="shape" mode="normal" result="effect3_innerShadow_3483_5228"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.6" dy="-.6"/><feGaussianBlur stdDeviation=".3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.239216 0 0 0 0 0.494118 0 0 0 0 0.231373 0 0 0 0.15 0"/><feBlend in2="effect3_innerShadow_3483_5228" mode="normal" result="effect4_innerShadow_3483_5228"/></filter><filter id="c" width="14.6" height="10.6" x="2.874" y="20.899" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".3" dy=".3"/><feGaussianBlur stdDeviation=".5"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"/><feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_3483_5228"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.3" dy="-.3"/><feGaussianBlur stdDeviation=".5"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"/><feBlend in2="effect1_dropShadow_3483_5228" mode="normal" result="effect2_dropShadow_3483_5228"/><feBlend in="SourceGraphic" in2="effect2_dropShadow_3483_5228" mode="normal" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".6" dy=".6"/><feGaussianBlur stdDeviation=".3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.274649 0 0 0 0 0.169609 0 0 0 0 0.361235 0 0 0 0.15 0"/><feBlend in2="shape" mode="normal" result="effect3_innerShadow_3483_5228"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.6" dy="-.6"/><feGaussianBlur stdDeviation=".3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.27451 0 0 0 0 0.168627 0 0 0 0 0.360784 0 0 0 0.15 0"/><feBlend in2="effect3_innerShadow_3483_5228" mode="normal" result="effect4_innerShadow_3483_5228"/></filter><filter id="e" width="14.6" height="14.6" x="16.874" y="16.899" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".3" dy=".3"/><feGaussianBlur stdDeviation=".5"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"/><feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_3483_5228"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.3" dy="-.3"/><feGaussianBlur stdDeviation=".5"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"/><feBlend in2="effect1_dropShadow_3483_5228" mode="normal" result="effect2_dropShadow_3483_5228"/><feBlend in="SourceGraphic" in2="effect2_dropShadow_3483_5228" mode="normal" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.6" dy="-.6"/><feGaussianBlur stdDeviation=".3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.656422 0 0 0 0 0.424951 0 0 0 0 0.177516 0 0 0 0.25 0"/><feBlend in2="shape" mode="normal" result="effect3_innerShadow_3483_5228"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".6" dy=".6"/><feGaussianBlur stdDeviation=".3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.654902 0 0 0 0 0.423529 0 0 0 0 0.176471 0 0 0 0.15 0"/><feBlend in2="effect3_innerShadow_3483_5228" mode="normal" result="effect4_innerShadow_3483_5228"/></filter><filter id="g" width="14.6" height="14.6" x="16.874" y="2.899" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.3" dy="-.3"/><feGaussianBlur stdDeviation=".5"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"/><feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_3483_5228"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".3" dy=".3"/><feGaussianBlur stdDeviation=".5"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"/><feBlend in2="effect1_dropShadow_3483_5228" mode="normal" result="effect2_dropShadow_3483_5228"/><feBlend in="SourceGraphic" in2="effect2_dropShadow_3483_5228" mode="normal" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx=".6" dy=".6"/><feGaussianBlur stdDeviation=".3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.205171 0 0 0 0 0.466297 0 0 0 0 0.734743 0 0 0 0.25 0"/><feBlend in2="shape" mode="normal" result="effect3_innerShadow_3483_5228"/><feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-.6" dy="-.6"/><feGaussianBlur stdDeviation=".3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix type="matrix" values="0 0 0 0 0.203922 0 0 0 0 0.466667 0 0 0 0 0.733333 0 0 0 0.25 0"/><feBlend in2="effect3_innerShadow_3483_5228" mode="normal" result="effect4_innerShadow_3483_5228"/></filter></defs></svg>`,
+      [],
+    )
+
+    const xml = useMemo(() => {
+      if (!color) return baseXml
+      return baseXml.replace(
+        /(fill|stroke)="([^"]+)"/gi,
+        (_match, attr, value) => {
+          const normalized = String(value).toLowerCase().replace(/\s/g, '')
+          if (
+            normalized === 'none' ||
+            normalized === 'currentcolor' ||
+            normalized === 'white' ||
+            normalized === '#fff' ||
+            normalized === '#ffffff' ||
+            normalized.startsWith('url(')
+          ) {
+            return `${attr}="${value}"`
+          }
+          return `${attr}="${color}"`
+        },
+      )
+    }, [baseXml, color])
+
+    return (
+      <SvgXml
+        ref={ref as never}
+        xml={xml}
+        width={size}
+        height={size}
+        viewBox="0 0 35 35"
+        {...props}
+      />
+    )
+  },
+)
+
+IconHome.displayName = 'IconHome'
+
+export default IconHome
