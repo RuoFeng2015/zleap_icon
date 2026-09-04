@@ -245,20 +245,6 @@ describe('End-to-End Integration: Icon Sync Pipeline', () => {
       expect(result.svgContent).not.toContain('fill="#D9D9D9"')
       expect((result.svgContent.match(/<path/g) || []).length).toBe(3)
     })
-
-    it('should expand self-closing HTML tags inside foreignObject for inline rendering', () => {
-      // Arrange: Figma 导出的渐变图标会在 foreignObject 里放 HTML div
-      const rawSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-  <foreignObject x="0" y="0" width="48" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="background:red;height:100%;width:100%"></div></foreignObject>
-</svg>`
-
-      // Act
-      const result = transformSvg(rawSvg)
-
-      // Assert: <div> 不能用自闭合（innerHTML 内联时 <div/> 不是合法自闭合，会吞掉后续内容）
-      expect(result.svgContent).not.toMatch(/<div[^>]*\/>/)
-      expect(result.svgContent).toMatch(/<div[^>]*><\/div>/)
-    })
   })
 
   describe('Phase 3: React Component Generation', () => {

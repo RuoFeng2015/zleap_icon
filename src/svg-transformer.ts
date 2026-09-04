@@ -260,51 +260,7 @@ export function optimizeSvg(
  config: SvgoConfig = defaultSvgoConfig,
 ): string {
  const result = optimize(svgContent, config);
- return expandForeignObjectHtml(result.data);
-}
-
-/**
- * HTML void elements (self-closing is valid for these)
- */
-const HTML_VOID_ELEMENTS = new Set([
- "area",
- "base",
- "br",
- "col",
- "embed",
- "hr",
- "img",
- "input",
- "link",
- "meta",
- "param",
- "source",
- "track",
- "wbr",
-]);
-
-/**
- * SVGO 会把 foreignObject 内的空 HTML 元素（如 <div>）序列化成自闭合 <div/>。
- * 但当 SVG 用 innerHTML 内联进 HTML 时，<div/> 对 HTML 解析器不是合法自闭合
- * （div 非 void 元素），会被当作未闭合标签吞掉后续内容，导致图标空白。
- * 这里把 foreignObject 内非 void 的 HTML 标签强制展开成 <div></div>。
- */
-function expandForeignObjectHtml(svg: string): string {
- return svg.replace(
-  /(<foreignObject\b[^>]*>)([\s\S]*?)(<\/foreignObject>)/gi,
-  (_, open: string, inner: string, close: string) => {
-   const fixed = inner.replace(
-    /<([a-zA-Z][a-zA-Z0-9]*)\b([^>]*?)\/>/g,
-    (m: string, tag: string, attrs: string) => {
-     if (HTML_VOID_ELEMENTS.has(tag.toLowerCase())) {
-      return m;
-     }
-     return `<${tag}${attrs}></${tag}>`;
-    },
-   );
-   return open + fixed + close;
-  },
- );
+ return result.data;
 }
 
 /**
