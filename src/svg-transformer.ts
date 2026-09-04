@@ -34,6 +34,70 @@ function removeNodeFromParent(node: any, parentNode: any): boolean {
  return true;
 }
 
+/**
+ * Figma serializes angular/conic gradients as an HTML foreignObject plus a
+ * proprietary data-figma-gradient-fill attribute. Browsers do not use that
+ * attribute as an SVG paint server, and a path carrying only that attribute
+ * is therefore invisible (especially when the root SVG has fill="none").
+ * Use a deterministic solid-color fallback so the icon remains renderable in
+ * standalone SVGs and when inlined into HTML.
+ */
+function getFigmaGradientFallback(attrs: Record<string, string>): {
+ fill: string;
+ fillOpacity?: string;
+} | null {
+ const raw = attrs["data-figma-gradient-fill"];
+ if (!raw || (attrs.fill && attrs.fill !== "none")) return null;
+
+ // Always provide a safe fallback, even if the metadata is malformed or has
+ // already been entity-decoded by the SVG parser.
+ const fallback = { fill: "#ffffff", fillOpacity: "0.8" };
+
+ try {
+  const decoded = raw
+   .replace(/&quot;/g, '"')
+   .replace(/&#34;/g, '"')
+   .replace(/&amp;/g, "&");
+  const parsed = JSON.parse(decoded);
+  const stops = Array.isArray(parsed?.stops) ? parsed.stops : [];
+  if (!stops.length) return fallback;
+
+  const first = stops[0]?.color || {};
+  const r = Math.round(Math.max(0, Math.min(1, Number(first.r))) * 255);
+  const g = Math.round(Math.max(0, Math.min(1, Number(first.g))) * 255);
+  const b = Math.round(Math.max(0, Math.min(1, Number(first.b))) * 255);
+  const alphas = stops
+   .map((stop: any) => Number(stop?.color?.a))
+   .filter((value: number) => Number.isFinite(value));
+  const averageAlpha = alphas.length
+   ? alphas.reduce((sum: number, value: number) => sum + value, 0) /
+     alphas.length
+   : 1;
+
+  return {
+   fill: `#${[r, g, b].map((value) => value.toString(16).padStart(2, "0")).join("")}`,
+   ...(averageAlpha < 0.999
+    ? { fillOpacity: String(Math.round(averageAlpha * 1000) / 1000) }
+    : {}),
+  };
+ } catch {
+  return fallback;
+ }
+}
+
+function containsConicGradient(node: any): boolean {
+ if (
+  typeof node?.attributes?.style === "string" &&
+  /conic-gradient/i.test(node.attributes.style)
+ ) {
+  return true;
+ }
+ return (
+  Array.isArray(node?.children) &&
+  node.children.some((child: any) => containsConicGradient(child))
+ );
+}
+
 function parseViewBox(viewBox: string | undefined): ParsedViewBox | null {
  if (!viewBox) {
   return null;
@@ -166,6 +230,23 @@ const cleanFigmaExport: CustomPlugin = {
       invalidAttrs.forEach((attr) => {
        delete node.attributes[attr];
       });
+
+      const gradientFallback =
+       node.name === "path" ? getFigmaGradientFallback(node.attributes) : null;
+      if (gradientFallback) {
+       node.attributes.fill = gradientFallback.fill;
+       if (gradientFallback.fillOpacity) {
+        node.attributes["fill-opacity"] = gradientFallback.fillOpacity;
+       }
+      }
+     }
+
+     // foreignObject is not a portable SVG paint source and is ignored by
+     // several browsers when embedded in HTML. Remove it after applying the
+     // path fallback above.
+     if (node.name === "foreignObject" && containsConicGradient(node)) {
+      removeNodeFromParent(node, parentNode);
+      return;
      }
 
      // 移除泄漏进图标的设计稿背景矩形（支持负坐标/相对命令）
@@ -260,7 +341,68 @@ export function optimizeSvg(
  config: SvgoConfig = defaultSvgoConfig,
 ): string {
  const result = optimize(svgContent, config);
- return result.data;
+ return ensureFigmaGradientFallback(expandForeignObjectHtml(result.data));
+}
+
+function ensureFigmaGradientFallback(svg: string): string {
+ return svg.replace(
+  /<path\b([^>]*data-figma-gradient-fill=["'][^>]*)(\s*\/?)>/gi,
+  (match, attrs: string, slash: string) => {
+   const existingFill = attrs.match(/\sfill\s*=\s*["']([^"']*)["']/i);
+   if (existingFill && existingFill[1].toLowerCase() !== 'none') {
+    return match;
+   }
+   const withoutFill = attrs
+    .replace(/\sfill\s*=\s*["'][^"']*["']/gi, '')
+    .replace(/\s*\/\s*$/, '');
+   const selfClosing = slash.trim() ? ' />' : '>';
+   return `<path${withoutFill} fill="#ffffff" fill-opacity="0.8"${selfClosing}`;
+  },
+ );
+}
+
+/**
+ * HTML void elements (self-closing is valid for these)
+ */
+const HTML_VOID_ELEMENTS = new Set([
+ "area",
+ "base",
+ "br",
+ "col",
+ "embed",
+ "hr",
+ "img",
+ "input",
+ "link",
+ "meta",
+ "param",
+ "source",
+ "track",
+ "wbr",
+]);
+
+/**
+ * SVGO 会把 foreignObject 内的空 HTML 元素（如 <div>）序列化成自闭合 <div/>。
+ * 但当 SVG 用 innerHTML 内联进 HTML 时，<div/> 对 HTML 解析器不是合法自闭合
+ * （div 非 void 元素），会被当作未闭合标签吞掉后续内容，导致图标空白。
+ * 这里把 foreignObject 内非 void 的 HTML 标签强制展开成 <div></div>。
+ */
+function expandForeignObjectHtml(svg: string): string {
+ return svg.replace(
+  /(<foreignObject\b[^>]*>)([\s\S]*?)(<\/foreignObject>)/gi,
+  (_, open: string, inner: string, close: string) => {
+   const fixed = inner.replace(
+    /<([a-zA-Z][a-zA-Z0-9]*)\b([^>]*?)\/>/g,
+    (m: string, tag: string, attrs: string) => {
+     if (HTML_VOID_ELEMENTS.has(tag.toLowerCase())) {
+      return m;
+     }
+     return `<${tag}${attrs}></${tag}>`;
+    },
+   );
+   return open + fixed + close;
+  },
+ );
 }
 
 /**

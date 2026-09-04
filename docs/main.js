@@ -602,6 +602,80 @@ function isMulticolorSvg(svgContent) {
 }
 
 /**
+ * HTML void elements (self-closing is valid for these)
+ */
+const HTML_VOID_ELEMENTS = new Set([
+  'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
+  'link', 'meta', 'param', 'source', 'track', 'wbr',
+]);
+
+/**
+ * Expand self-closing HTML tags inside <foreignObject> to explicit closing tags.
+ * <div/> is not valid self-closing for the HTML parser (div is not void), so
+ * when the SVG is inlined via innerHTML it swallows following content -> blank icon.
+ */
+function expandForeignObjectHtml(svg) {
+  return svg.replace(
+    /(<foreignObject\b[^>]*>)([\s\S]*?)(<\/foreignObject>)/gi,
+    (_, open, inner, close) => {
+      const fixed = inner.replace(
+        /<([a-zA-Z][a-zA-Z0-9]*)\b([^>]*?)\/>/g,
+        (m, tag, attrs) => {
+          if (HTML_VOID_ELEMENTS.has(tag.toLowerCase())) return m;
+          return `<${tag}${attrs}></${tag}>`;
+        },
+      );
+      return open + fixed + close;
+    },
+  );
+}
+
+/**
+ * Figma angular gradients are represented by a foreignObject containing an
+ * HTML conic-gradient. That is not a portable SVG fill and can make the
+ * associated path (which has no regular fill) render fully transparent when
+ * the SVG is inlined. Remove the unsupported node and add a visible fallback
+ * fill to paths that only carry Figma's proprietary gradient metadata.
+ */
+function normalizeFigmaGradientFallback(svg) {
+  svg = svg.replace(/<foreignObject\b[^>]*>[\s\S]*?conic-gradient[\s\S]*?<\/foreignObject>/gi, '');
+
+  return svg.replace(/<path\b([^>]*data-figma-gradient-fill=["'][^>]*)(\s*\/?)>/gi,
+    (match, attrs, slash) => {
+      const existingFill = attrs.match(/\sfill\s*=\s*["']([^"']*)["']/i);
+      if (existingFill && existingFill[1].toLowerCase() !== 'none') {
+        return match;
+      }
+
+      let fill = '#ffffff';
+      let opacity = 0.8;
+      const dataMatch = attrs.match(/data-figma-gradient-fill=["']([^"']*)["']/i);
+      if (dataMatch) {
+        try {
+          const parsed = JSON.parse(dataMatch[1].replace(/&quot;|&#34;/g, '"').replace(/&amp;/g, '&'));
+          const stops = Array.isArray(parsed?.stops) ? parsed.stops : [];
+          const first = stops[0]?.color;
+          if (first) {
+            const channel = (value) => Math.round(Math.max(0, Math.min(1, Number(value))) * 255);
+            fill = `#${[channel(first.r), channel(first.g), channel(first.b)]
+              .map((value) => value.toString(16).padStart(2, '0')).join('')}`;
+            const alphas = stops.map((stop) => Number(stop?.color?.a)).filter(Number.isFinite);
+            if (alphas.length) opacity = alphas.reduce((sum, value) => sum + value, 0) / alphas.length;
+          }
+        } catch (_) {
+          // Keep the white fallback when metadata is malformed.
+        }
+      }
+
+      const withoutFill = attrs
+        .replace(/\sfill\s*=\s*["'][^"']*["']/gi, '')
+        .replace(/\s*\/\s*$/, '');
+      const suffix = ` fill="${fill}"${opacity < 0.999 ? ` fill-opacity="${Math.round(opacity * 1000) / 1000}"` : ''}`;
+      return `<path${withoutFill}${suffix}${slash.trim() ? ' />' : '>'}`;
+    });
+}
+
+/**
  * Create SVG element with current size and color
  * @param {string} svgContent - Raw SVG content
  * @param {number} size - Icon size
@@ -614,6 +688,11 @@ function createSvgWithStyles(svgContent, size, color, uniqueId = null) {
 
   // 生成唯一前缀，避免多个 SVG 使用相同的渐变 ID 导致冲突
   const prefix = uniqueId || `svg-${Math.random().toString(36).substr(2, 9)}`;
+
+  // 修复：foreignObject 内的 HTML 元素不能用自闭合（<div/>）
+  // innerHTML 解析时 <div/> 不是合法自闭合，会吞掉后续内容导致图标空白
+  svg = expandForeignObjectHtml(svg);
+  svg = normalizeFigmaGradientFallback(svg);
 
   // 替换所有 id="xxx" 为 id="prefix-xxx"
   // 同时替换引用 url(#xxx) 为 url(#prefix-xxx)
