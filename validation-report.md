@@ -1,22 +1,22 @@
 # Icon Validation Report
 
-Generated at: 2026-09-04T06:59:19.208Z
+Generated at: 2026-09-04T07:07:32.390Z
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total Icons | 255 |
+| Total Icons | 257 |
 | Valid Icons | 0 |
-| Invalid Icons | 255 |
-| Total Errors | 255 |
+| Invalid Icons | 257 |
+| Total Errors | 258 |
 | Total Warnings | 247 |
 
-⚠️ **255 icon(s) failed validation**
+⚠️ **257 icon(s) failed validation**
 
 ## Errors
 
-### size (255 errors)
+### size (257 errors)
 
 | Icon | Message |
 |------|---------|
@@ -54,6 +54,7 @@ Generated at: 2026-09-04T06:59:19.208Z
 | gemini | Icon size 24x24 not in allowed sizes:  |
 | header-logo | Icon size 45x37 not in allowed sizes:  |
 | hermesagent | Icon size 24x24 not in allowed sizes:  |
+| home | Icon size 35x35 not in allowed sizes:  |
 | index | Icon size 49x49 not in allowed sizes:  |
 | like | Icon size 24x24 not in allowed sizes:  |
 | logo | Icon size 45x37 not in allowed sizes:  |
@@ -92,6 +93,7 @@ Generated at: 2026-09-04T06:59:19.208Z
 | pi | Icon size 24x24 not in allowed sizes:  |
 | play | Icon size 24x24 not in allowed sizes:  |
 | search | Icon size 24x24 not in allowed sizes:  |
+| set | Icon size 48x48 not in allowed sizes:  |
 | share | Icon size 24x24 not in allowed sizes:  |
 | success-check | Icon size 20x20 not in allowed sizes:  |
 | zai | Icon size 24x24 not in allowed sizes:  |
@@ -275,6 +277,12 @@ Generated at: 2026-09-04T06:59:19.208Z
 | 预览1 | Icon size 24x24 not in allowed sizes:  |
 | 首页 | Icon size 24x24 not in allowed sizes:  |
 | 首页2 | Icon size 48x48 not in allowed sizes:  |
+
+### forbidden-elements (1 error)
+
+| Icon | Message |
+|------|---------|
+| set | Icon contains forbidden elements: foreignObject |
 
 ## Warnings
 

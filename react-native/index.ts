@@ -84,6 +84,7 @@ import { IconGuanBiYuLan } from './icons/IconGuanBiYuLan'
 import { IconHaoYou } from './icons/IconHaoYou'
 import { IconHeaderLogo } from './icons/IconHeaderLogo'
 import { IconHermesagent } from './icons/IconHermesagent'
+import { IconHome } from './icons/IconHome'
 import { IconHouTui15Miao } from './icons/IconHouTui15Miao'
 import { IconHuiBao } from './icons/IconHuiBao'
 import { IconHuiDaoDingBu } from './icons/IconHuiDaoDingBu'
@@ -153,6 +154,7 @@ import { IconRenWu1 } from './icons/IconRenWu1'
 import { IconRenWuGuanLi } from './icons/IconRenWuGuanLi'
 import { IconRenWuGuanLiQi } from './icons/IconRenWuGuanLiQi'
 import { IconSearch } from './icons/IconSearch'
+import { IconSet } from './icons/IconSet'
 import { IconShaiXuan } from './icons/IconShaiXuan'
 import { IconShaiXuan1 } from './icons/IconShaiXuan1'
 import { IconShaiXuan2 } from './icons/IconShaiXuan2'
@@ -340,6 +342,7 @@ export { IconGuanBiYuLan, type IconGuanBiYuLanProps } from './icons/IconGuanBiYu
 export { IconHaoYou, type IconHaoYouProps } from './icons/IconHaoYou'
 export { IconHeaderLogo, type IconHeaderLogoProps } from './icons/IconHeaderLogo'
 export { IconHermesagent, type IconHermesagentProps } from './icons/IconHermesagent'
+export { IconHome, type IconHomeProps } from './icons/IconHome'
 export { IconHouTui15Miao, type IconHouTui15MiaoProps } from './icons/IconHouTui15Miao'
 export { IconHuiBao, type IconHuiBaoProps } from './icons/IconHuiBao'
 export { IconHuiDaoDingBu, type IconHuiDaoDingBuProps } from './icons/IconHuiDaoDingBu'
@@ -409,6 +412,7 @@ export { IconRenWu1, type IconRenWu1Props } from './icons/IconRenWu1'
 export { IconRenWuGuanLi, type IconRenWuGuanLiProps } from './icons/IconRenWuGuanLi'
 export { IconRenWuGuanLiQi, type IconRenWuGuanLiQiProps } from './icons/IconRenWuGuanLiQi'
 export { IconSearch, type IconSearchProps } from './icons/IconSearch'
+export { IconSet, type IconSetProps } from './icons/IconSet'
 export { IconShaiXuan, type IconShaiXuanProps } from './icons/IconShaiXuan'
 export { IconShaiXuan1, type IconShaiXuan1Props } from './icons/IconShaiXuan1'
 export { IconShaiXuan2, type IconShaiXuan2Props } from './icons/IconShaiXuan2'
@@ -597,6 +601,7 @@ export const allIcons = {
   IconHaoYou,
   IconHeaderLogo,
   IconHermesagent,
+  IconHome,
   IconHouTui15Miao,
   IconHuiBao,
   IconHuiDaoDingBu,
@@ -666,6 +671,7 @@ export const allIcons = {
   IconRenWuGuanLi,
   IconRenWuGuanLiQi,
   IconSearch,
+  IconSet,
   IconShaiXuan,
   IconShaiXuan1,
   IconShaiXuan2,
