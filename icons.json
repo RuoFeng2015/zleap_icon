@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
-  "generatedAt": "2026-09-04T06:34:47.507Z",
-  "totalCount": 260,
+  "version": "2026.09.04",
+  "generatedAt": "2026-09-04T06:51:40.867Z",
+  "totalCount": 255,
   "icons": [
     {
       "name": "IconShouYe2",
@@ -48,17 +48,6 @@
       "createdAt": "2026-09-04T06:34:47.471Z"
     },
     {
-      "name": "IconSheZhi5",
-      "originalName": "设置5",
-      "svgPath": "svg/设置5.svg",
-      "componentPath": "src/icons/IconSheZhi5.tsx",
-      "size": {
-        "width": 48,
-        "height": 48
-      },
-      "createdAt": "2026-09-04T05:59:42.926Z"
-    },
-    {
       "name": "IconBianQian",
       "originalName": "便签",
       "svgPath": "svg/便签.svg",
@@ -81,17 +70,6 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "IconDaiBan",
-      "originalName": "待办",
-      "svgPath": "svg/待办.svg",
-      "componentPath": "src/icons/IconDaiBan.tsx",
-      "size": {
-        "width": 48,
-        "height": 48
-      },
-      "createdAt": "2026-09-04T02:55:18.488Z"
-    },
-    {
       "name": "IconJiaoYu2",
       "originalName": "教育2",
       "svgPath": "svg/教育2.svg",
@@ -103,43 +81,10 @@
       "createdAt": "2026-09-04T02:55:18.488Z"
     },
     {
-      "name": "IconJiePingLuPing",
-      "originalName": "截屏录屏",
-      "svgPath": "svg/截屏录屏.svg",
-      "componentPath": "src/icons/IconJiePingLuPing.tsx",
-      "size": {
-        "width": 48,
-        "height": 48
-      },
-      "createdAt": "2026-09-04T02:55:18.488Z"
-    },
-    {
       "name": "IconRenWuGuanLiQi",
       "originalName": "任务管理器",
       "svgPath": "svg/任务管理器.svg",
       "componentPath": "src/icons/IconRenWuGuanLiQi.tsx",
-      "size": {
-        "width": 48,
-        "height": 48
-      },
-      "createdAt": "2026-09-04T02:55:18.488Z"
-    },
-    {
-      "name": "IconShiPinGongZuoShi",
-      "originalName": "视频工作室",
-      "svgPath": "svg/视频工作室.svg",
-      "componentPath": "src/icons/IconShiPinGongZuoShi.tsx",
-      "size": {
-        "width": 48,
-        "height": 48
-      },
-      "createdAt": "2026-09-04T02:55:18.488Z"
-    },
-    {
-      "name": "IconShouYe1",
-      "originalName": "首页1",
-      "svgPath": "svg/首页1.svg",
-      "componentPath": "src/icons/IconShouYe1.tsx",
       "size": {
         "width": 48,
         "height": 48
